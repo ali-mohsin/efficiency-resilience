@@ -47,7 +47,6 @@ bool Flow::commitPath(Path* path,int back)
 
      if (!path->isUp())
      {
-     	cout <<"+ Commit Failed"<<endl;
      	return false;
      }
 	for(int i=0;i<path->switches.size();i++)
@@ -65,7 +64,6 @@ bool Flow::commitPath(Path* path,int back)
 
 void Flow::antiCommitPath(Path* path)
 {
-	cout << "+ Anti Commiting path" << endl;
 	for(int i=0;i<path->switches.size();i++)
 	{
 		path->switches[i]->removeFlow(this);
