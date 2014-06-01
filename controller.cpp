@@ -205,7 +205,7 @@ void Controller::findFaults()
 			vector<Flow*> flows=all_switches[i]->flows;
 			for(int j=0;j<flows.size();j++)
 			{
-				cout <<"+ Critical Switch Failed with ID: "<<all_switches[i]->toString()<<endl;
+				cout <<"+ Critical Switch Failed with ID: "<<all_switches[i]->toString()<<" For "<<all_switches[i]<<"Seconds"<<endl;
 				critical_switches.push_back(all_switches[i]);
 				flows[j]->antiCommitPath(flows[j]->primaryPath);
 				if(backUp)
@@ -270,7 +270,6 @@ void Controller::revert_to_primary()
 			cout<<downTime<<" is the new downtime"<<endl;
 			cout<<"+ Critical Switch Back with ID :"<<critical_switches[i]->toString()<<endl;
 			critical_switches.erase(critical_switches.begin()+i);
-			cout<<"Number of flows on back:"<<flows_on_back.size()<<endl;;
 
 		}
 	}
@@ -295,7 +294,6 @@ void Controller::revert_to_primary()
 			Flow* f=flows_on_back[i];
 			if(f->primaryPath->isUp())
 			{
-				cout<<"Reverting to primary"<<endl;
 				f->antiCommitPath(f->backUpPath);
 				f->commitPath(f->primaryPath,0); //Assumption is that link capacity would not be a bottleneck
 				flows_on_back.erase(flows_on_back.begin()+i);
@@ -309,7 +307,6 @@ void Controller::revert_to_primary()
 		Flow* f=flows_down[i];
 		if(f->primaryPath->isUp())
 		{
-			cout<<"Reverting to primary"<<endl;
 			f->commitPath(f->primaryPath,0); //Assumption is that link capacity would not be a bottleneck
 			flows_down.erase(flows_down.begin()+i);
 		}
@@ -340,7 +337,6 @@ void Controller::detect_downTime()
 
 int Controller::getTTR(Switch* curSwitch)
 {
-	cout<<"+ Switch Failed with ID: "<<curSwitch->toString()<<endl;
 	int random;
 	if(curSwitch->level==2)//TOR
 	{
@@ -743,7 +739,16 @@ void Controller::logFailures(int time)
 	{
 		if(down_switches[i]->status > 0)
 		{	
-			writeLog("Switch "+down_switches[i]->toString()+" Up "+t);
+
+			int level=all_switches[i]->level;
+			string l;
+			if(level==0)
+				l="Core";
+			if(level==1)
+				l="Aggr";
+			if(level==2)
+				l="Tor";
+			writeLog("Switch "+l+" "+down_switches[i]->toString()+" Up "+t);
 			down_switches.erase(down_switches.begin()+i);
 			//TODO check if this causes seg fault
 		}
@@ -757,7 +762,8 @@ void Controller::logFailures(int time)
 			int idd=down_links[i]->link_id;
 			o<<idd;
 			string id=o.str();
-			writeLog("Link "+id+" Up "+t);
+			writeLog("Link "+down_links[i]->label+" "+ id+" Up "+t);
+
 			down_links.erase(down_links.begin()+i);
 			//TODO check if this causes seg fault
 		}
@@ -767,7 +773,15 @@ void Controller::logFailures(int time)
 	{
 		if(all_switches[i]->status < 0 && notIn(down_switches,all_switches[i]))
 		{	
-			writeLog("Switch "+all_switches[i]->toString()+" Down "+t);
+			int level=all_switches[i]->level;
+			string l;
+			if(level==0)
+				l="Core";
+			if(level==1)
+				l="Aggr";
+			if(level==2)
+				l="Tor";
+			writeLog("Switch "+l+" "+all_switches[i]->toString()+" Down "+t);
 			down_switches.push_back(all_switches[i]);
 		}
 	}
@@ -780,7 +794,7 @@ void Controller::logFailures(int time)
 			int idd=all_links[i]->link_id;
 			o<<idd;
 			string id=o.str();
-			writeLog("Link "+id+" Down "+t);
+			writeLog("Link "+all_links[i]->label+" "+ id+" Down "+t);
 			down_links.push_back(all_links[i]);
 		}
 	}
