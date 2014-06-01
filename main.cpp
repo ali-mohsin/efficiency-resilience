@@ -7,7 +7,7 @@ int main (int argc, char *argv[])
 
 	int oneToOne=0;
 
-	dc= new Controller(8,1024,10240,10240,oneToOne,1000000,1);
+	dc= new Controller(32,1024,1024,1024,oneToOne,1000000,1);
 int runFor=1000000;
 
 

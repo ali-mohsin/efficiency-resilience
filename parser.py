@@ -73,6 +73,7 @@ with open('script.ns','rb') as fin:
                     line= "\tdc= new Controller("+k+","+torCap+","+aggrCap+","+coreCap+",oneToOne,"+runFor+",0);"
                     code.append(line)
                     auto=0
+                    
                 alpha="int runFor="+str(runFor)+";"
                 code.append(alpha)
 

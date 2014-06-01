@@ -42,9 +42,8 @@ void Flow::setDone(bool d)
 
 bool Flow::commitPath(Path* path,int back)
 {
-	cout << "+ Commiting path" << endl;
-	path->print();
-
+	// cout<<"+ commitPath";
+	// path->print();
      if (!path->isUp())
      {
      	return false;
@@ -58,12 +57,13 @@ bool Flow::commitPath(Path* path,int back)
 	{
 		path->links[i]->addFlow(this->rate,path->direction[i],back);
 	}
-	cout <<"+ Committed "<<endl;
 	return true;
 }
 
 void Flow::antiCommitPath(Path* path)
 {
+	// cout<<"+ antiCommitPath ";
+	// path->print();
 	for(int i=0;i<path->switches.size();i++)
 	{
 		path->switches[i]->removeFlow(this);

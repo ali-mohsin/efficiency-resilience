@@ -49,7 +49,6 @@
 
 	void Path::print()
 	{
-
 		for(int i=0;i<switches.size();i++)
 		{
 

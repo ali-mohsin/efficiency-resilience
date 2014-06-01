@@ -1,0 +1,7 @@
+#define FatTree -k 4 -auto yes -reduncancy backUp -algo default -torLinks 1G -aggrLinks 1G -coreLinks 1G
+#define Flow -sourceId 1 -destId 7 -rate 30M -size 57G -startTime 0
+#define Flow -sourceId 2 -destId 1 -rate 30M -size 304G -startTime 0
+#define Flow -sourceId 2 -destId 2 -rate 30M -size 539G -startTime 0
+#define Flow -sourceId 1 -destId 4 -rate 30M -size 321G -startTime 00
+#define Flow -sourceId 8 -destId 5 -rate 30M -size 574G -startTime 00
+#define Flow -sourceId 1 -destId 7 -rate 30M -size 57G -startTime 0

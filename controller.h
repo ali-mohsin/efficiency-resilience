@@ -64,6 +64,10 @@ public:
 	void updateStatus(vector<Switch*> all_switches,int);
 	void updateStatus(vector<Link*> all_switches,int);
 	void writeLog(string str);
+	vector<Link*> critical_links;
+
+	void counter(vector<Link*> Tors);
+	void counter(vector<Switch*> Tors);
 
 
 

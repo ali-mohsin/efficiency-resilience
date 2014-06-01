@@ -68,6 +68,7 @@ void Topology::createFatTree()
 	{
 		Switch* curCore=new Switch(-1, coreID++, "core switch", 0, k); //new Address(deviceID++,-1),"core switch",0);
 		coreSwitches.push_back(curCore);
+		allSwitches.push_back(curCore);
 	}
 
 	for (int i=0;i<k/2;i++)

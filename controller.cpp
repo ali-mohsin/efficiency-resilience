@@ -28,6 +28,7 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int runFor,int
 	createTopology(tor,aggr,core);
 	backUp=back;
 	// TODO seperate variable for backup
+	// TODO intra-rack communication, path assigned goes all the way round from core
 	failures=0;
 	totalTime=runFor;
 	assignResilience();
@@ -44,7 +45,7 @@ void Controller::createFlows()
 	{
 		for (int j=0;j<all_hosts.size();j++)
 		{
-			if(i!=j)
+			if(all_hosts[i]->getPodID()!=all_hosts[j]->getPodID())
 				instantiateFlow(all_hosts[i],all_hosts[j],10,10,0);
 		}
 	}
@@ -87,7 +88,6 @@ void Controller::checkProb(vector<Link*> Tors, int prob, float factor)
 				Tors[i]->failAt=failAt;
 				Tors[i]->resilience=1;
 			}
-
 			else 
 			{
 				Tors[i]->resilience=2;
@@ -95,6 +95,54 @@ void Controller::checkProb(vector<Link*> Tors, int prob, float factor)
 
 		}
 }
+
+void Controller::counter(vector<Switch*> Tors){
+	cout<<"Size of device" << Tors.size()<<endl;
+	int zero_count=0;
+	int one_count=0;
+	int two_count=0;
+	for(int i =0 ; i < Tors.size();i++)
+	{
+		if(Tors[i]->resilience==0)
+			zero_count++;
+		else if (Tors[i]->resilience==1)
+			one_count++;
+		else
+			two_count++;
+	}
+
+	int sum=Tors.size();
+	cout<< "zero_count ratio: " << (float)zero_count/(float)sum <<endl;
+	cout<< "one_count ratio: " << (float)one_count/(float)sum <<endl;
+	cout<< "two_count ratio: " << (float)two_count/(float)sum <<endl;
+
+
+}
+
+
+void Controller::counter(vector<Link*> Tors){
+
+	int zero_count=0;
+	int one_count=0;
+	int two_count=0;
+	for(int i =0 ; i < Tors.size();i++)
+	{
+		if(Tors[i]->resilience==0)
+			zero_count++;
+		else if (Tors[i]->resilience==1)
+			one_count++;
+		else
+			two_count++;
+	}
+
+	int sum=Tors.size();
+	cout<< "zero_count ratio: " << (float)zero_count/(float)sum <<endl;
+	cout<< "one_count ratio: " << (float)one_count/(float)sum <<endl;
+	cout<< "two_count ratio: " << (float)two_count/(float)sum <<endl;
+
+
+}
+
 
 
 void Controller::assignResilience()
@@ -109,6 +157,8 @@ void Controller::assignResilience()
 	checkProb(Tors,0.039*k,factor);
 	checkProb(Aggrs,0.07*k,factor);
 	checkProb(Cores,0.02*k,factor);
+
+
 	//TODO check this number for core prob
 
 	vector<Link*> TorsL = getAllTorLinks();
@@ -118,6 +168,21 @@ void Controller::assignResilience()
 	checkProb(TorsL,0.054*k,factor);
 	checkProb(AggrsL,0.054*k,factor);
 	checkProb(CoresL,0.095*k,factor);
+
+//***Printing for debugging purposes
+	cout<< "TORs" <<endl;
+	counter(Tors);
+	cout<< "Aggr" <<endl;
+	counter(Aggrs);
+	cout<< "Cores" <<endl;
+	counter(Cores);
+	cout<< "TorsL" <<endl;
+	counter(TorsL);
+	cout<< "AggrsL" <<endl;
+	counter(AggrsL);
+	cout<< "CoresL" <<endl;
+	counter(CoresL);
+
 
 }
 
@@ -153,8 +218,10 @@ vector<Switch*> Controller::getAllCores()
 	for (int i=0; i<all_switches.size();i++)
 	{
 		if(all_switches[i]->level == 0)
+		{
 			cores.push_back(all_switches[i]);
-
+			cout<< "I'm  meeting" << endl;
+		}
 	}
 	return cores;
 }
@@ -194,6 +261,70 @@ vector<Link*> Controller::getAllTorLinks()
 }
 
 
+vector<Flow*> getCommonFlows(vector<Flow*> u,vector<Flow*> d)
+{
+	vector<Flow*> flows;
+	for (int i=0;i<u.size();i++)
+	{
+		for(int j=0;j<d.size();j++)
+		{
+			if(u[i]==d[j])
+			{
+				flows.push_back(u[i]);
+			}
+		}
+	}
+	return flows;
+}
+
+
+// bool duplicateIn(vector<Flow*> v)
+// {
+// 	for(int i=0;i<v.size();i++)
+// 	{
+// 		for(int j=i+1;j<v.size();j++)
+// 		{
+// 			if(v[i]==v[j])
+// 			{
+// 				return true;
+// 			}
+// 		}
+// 	}
+// 	return false;
+// }
+
+
+// bool duplicateIn(vector<Switch*> v)
+// {
+// 	for(int i=0;i<v.size();i++)
+// 	{
+// 		for(int j=i+1;j<v.size();j++)
+// 		{
+// 			if(v[i]==v[j])
+// 			{
+// 				return true;
+// 			}
+// 		}
+// 	}
+// 	return false;
+// }
+
+
+// bool duplicateIn(vector<Link*> v)
+// {
+// 	for(int i=0;i<v.size();i++)
+// 	{
+// 		for(int j=i+1;j<v.size();j++)
+// 		{
+// 			if(v[i]==v[j])
+// 			{
+// 				return true;
+// 			}
+// 		}
+// 	}
+// 	return false;
+// }
+
 void Controller::findFaults()
 {
 	//TODO implement for links as well
@@ -203,10 +334,14 @@ void Controller::findFaults()
 		if( all_switches[i]->getStatus() < 0 )
 		{
 			vector<Flow*> flows=all_switches[i]->flows;
+			if(flows.size()>0)
+			{
+
+				// cout <<"+ Critical Switch Failed with ID: "<<all_switches[i]->toString()<<" For "<<all_switches[i]->status<<" Seconds Num Flows: "<<flows.size()<<endl;
+				critical_switches.push_back(all_switches[i]);
+ 			}
 			for(int j=0;j<flows.size();j++)
 			{
-				cout <<"+ Critical Switch Failed with ID: "<<all_switches[i]->toString()<<" For "<<all_switches[i]<<"Seconds"<<endl;
-				critical_switches.push_back(all_switches[i]);
 				flows[j]->antiCommitPath(flows[j]->primaryPath);
 				if(backUp)
 				{
@@ -224,6 +359,69 @@ void Controller::findFaults()
 			}
 		}
 	}
+
+	//************For Links******************//
+
+	len = all_links.size();
+	for(int i=0; i<len; i++)
+	{
+		if( all_links[i]->getStatus() < 0 && all_links[i]->label!="Tor")
+		{
+
+			vector<Flow*> flows;
+			if(all_links[i]->host==NULL)
+				{
+					flows=getCommonFlows(all_links[i]->up_switch->flows,all_links[i]->down_switch->flows);
+				}
+			else
+				flows=all_links[i]->up_switch->flows;
+
+			if(flows.size()>0)
+			{
+				cout <<"+ Critical Link Failed with ID: "<<all_links[i]->link_id<<" label: "<<all_links[i]->label<<" For "<<all_links[i]->status<<" Seconds Num flows: " <<flows.size()<<endl;
+				critical_links.push_back(all_links[i]);
+			}
+
+			// if(duplicateIn(flows))
+			// {
+			// 	cout<<"++++++ ERROR: DUPLICATES DETECTED IN FLOWS"<<endl;
+			// }
+
+			for(int j=0;j<flows.size();j++)
+			{
+
+				flows[j]->antiCommitPath(flows[j]->primaryPath);
+
+				if(backUp)
+				{
+					int commit=flows[j]->commitPath(flows[j]->backUpPath,0);
+
+					if(commit)
+						flows_on_back.push_back(flows[j]);
+					else
+						flows_down.push_back(flows[j]);
+				}
+				else
+				{
+					flows_down.push_back(flows[j]);
+				}
+			}
+
+			// if(all_links[i]->host==NULL)
+			// {
+			// 	flows=getCommonFlows(all_links[i]->up_switch->flows,all_links[i]->down_switch->flows);
+			// 	if(flows.size()>0)
+			// 		cout<<"+++++++++++ ERROR, ANTICOMMIT FAILED"<<endl;
+			// }
+			// else
+			// {
+			// 	flows=all_links[i]->up_switch->flows;
+			// 	if(flows.size()>0)
+			// 		cout<<"+++++++++++ ERROR, ANTICOMMIT FAILED 2"<<endl;
+			// }
+		}
+	}
+
 }
 
 
@@ -236,10 +434,28 @@ void Controller::revert_to_primary()
 			cout<<downTime<<" is the new downtime"<<endl;
 			cout<<"+ Critical Switch Back with ID :"<<critical_switches[i]->toString()<<endl;
 			critical_switches.erase(critical_switches.begin()+i);
-
+			// if(duplicateIn(critical_switches))
+			// {
+			// 	cout<<"++++++++ ERROR, DUPLICATES IN CRITICAL SWITCHES"<<endl;
+			// }
 		}
 	}
 
+
+	for(int i=0;i<critical_links.size();i++)
+	{
+		if(critical_links[i]->status > 0)
+		{
+			cout<<downTime<<" is the new downtime"<<endl;
+			cout<<"+ Critical Link Back with ID :"<<critical_links[i]->link_id<<endl;
+			critical_links.erase(critical_links.begin()+i);
+			// if(duplicateIn(critical_links))
+			// {
+			// 	cout<<"++++++++ ERROR, DUPLICATES IN CRITICAL LINKS"<<endl;
+			// }
+
+		}
+	}
 
 	if(backUp)
 	{
@@ -352,7 +568,6 @@ int Controller::getTTR(Switch* curSwitch)
 
 int Controller::getTTR(Link* curSwitch)
 {
-		cout<<"+ Link Failed with ID: "<<curSwitch->link_id<<" with resilience "<<curSwitch->resilience<<endl;
 		int random;
 		random=rand()%100;
 		if(random < 80)
@@ -373,7 +588,6 @@ int Controller::getTTR(Link* curSwitch)
 
 int Controller::getTTF(Switch* curSwitch)
 {
-	cout<<"+ Switch back with ID"<<curSwitch->toString()<< "with resilience: "<<curSwitch->resilience<<endl;
 	int random;
 	if(curSwitch->level==2)//TOR
 	{
@@ -436,7 +650,6 @@ int Controller::getTTF(Switch* curSwitch)
 
 int Controller::getTTF(Link* curSwitch)
 {
-	cout<<"+ Link back with ID"<<curSwitch->link_id<<endl;
     int random;
 	if(curSwitch->label=="Tor" || curSwitch->label=="Aggr")// TOR and aggr
 	{
@@ -768,16 +981,16 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 	filterPaths(rate,dest);
 	if(paths.size()<2)
 	{
-		cout<<"ERROR: Request could not be entertained with Rate: "<<rate<<" Size: "<<size<<", Not enough Bandwith remaining on Candidate Paths"<<endl;
+//		cout<<"ERROR: Request could not be entertained with Rate: "<<rate<<" Size: "<<size<<", Not enough Bandwith remaining on Candidate Paths"<<endl;
 		return 0;
 	}
 
-	cout << "Request Entertained: Rate: "<<rate<<" Size: "<<size<<endl;
+//	cout << "Request Entertained: Rate: "<<rate<<" Size: "<<size<<endl;
 	int ind=rand()%paths.size();
 	Path* primary=paths[ind];
 	paths.erase(paths.begin()+ind);
-	cout<<"Primary Path is: "<<endl;
-	primary->print();
+//	cout<<"Primary Path is: "<<endl;
+//	primary->print();
 	Path* back=NULL;
 
 	if(backUp)
