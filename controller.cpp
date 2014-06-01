@@ -31,7 +31,7 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int runFor,int
 	assignResilience();
 	if(makeFlows)
 	{
-		createFlows()
+		createFlows();
 	}
 }
 

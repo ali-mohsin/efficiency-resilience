@@ -36,6 +36,7 @@ public:
 	int failures;
 	bool backUp;
 	vector<int> violations;
+	void createFlows();
 	Topology* createTopology(int,int,int);				//to create topology
 	void assignPaths();
 	void autofail(int);									//primary + backups

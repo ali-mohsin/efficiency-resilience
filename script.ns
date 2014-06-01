@@ -1,4 +1,4 @@
-#define FatTree -k 16 -auto yes -repeatForAll -reduncancy backUp  -algo default -torLinks 1G -aggrLinks 1G -coreLinks 1G -failures enable -runFor 100000000
+#define FatTree -k 8 -auto yes -repeatForAll -reduncancy backUp  -algo default -torLinks 1G -aggrLinks 10G -coreLinks 10G -failures enable -runFor 100000000
 #define Flow -sourceId 1 -destId 17 -rate 10M -size 57G -startTime 0
 #define Flow -sourceId 24 -destId 31 -rate 10M -size 304M -startTime 3600
 #define Flow -sourceId 23 -destId 42 -rate 10M -size 539M -startTime 7200
