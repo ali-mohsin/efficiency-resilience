@@ -14,7 +14,7 @@ Topology* Controller::createTopology(int tor,int aggr,int core)
 	all_links = tree->getLinks();
 }
 
-Controller::Controller(int kay,int tor,int aggr,int core,int back,int runFor)
+Controller::Controller(int kay,int tor,int aggr,int core,int back,int runFor,int makeFlows)
 {
 	downTime=0;
 	srand(time(0));
@@ -29,8 +29,24 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int runFor)
 	failures=0;
 	totalTime=runFor;
 	assignResilience();
+	if(makeFlows)
+	{
+		createFlows()
+	}
 }
 
+
+void Controller::createFlows()
+{
+	for (int i=0;i<all_hosts.size();i++)
+	{
+		for (int j=0;j<all_hosts.size();j++)
+		{
+			if(i!=j)
+				instantiateFlow(all_hosts[i],all_hosts[j],10,10,0);
+		}
+	}
+}
 
 void Controller::checkProb(vector<Switch*> Tors, int prob, float factor)
 {

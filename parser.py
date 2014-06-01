@@ -45,6 +45,7 @@ with open('script.ns','rb') as fin:
                 code.append("storeFailure("+str(pod)+","+str(level)+","+str(seq)+","+str(sTime)+ ");\n")
             if(identifier=="FatTree"):
                 k=find(row,"-k")
+                auto=find(row,'-auto')
                 algo=find(row,"-algo")
                 runFor=find(row,"-runFor")
                 torCap=bw2int(find(row,"-torLinks"))
@@ -64,14 +65,18 @@ with open('script.ns','rb') as fin:
                     code.append("\tint oneToOne=0;\n")
 
 
-                if(algo=="default"):
-                    line= "\tdc= new Controller("+k+","+torCap+","+aggrCap+","+coreCap+",oneToOne,"+runFor+");"
+                if(algo=="default" and auto=='yes'):
+                    line= "\tdc= new Controller("+k+","+torCap+","+aggrCap+","+coreCap+",oneToOne,"+runFor+",1);"
                     code.append(line)
-
+                    auto=1
+                elif(algo=='default'):
+                    line= "\tdc= new Controller("+k+","+torCap+","+aggrCap+","+coreCap+",oneToOne,"+runFor+",0);"
+                    code.append(line)
+                    auto=0
                 alpha="int runFor="+str(runFor)+";"
                 code.append(alpha)
 
-            if(identifier=="flow" or identifier=="Flow"):
+            if(identifier=="flow" or identifier=="Flow" and auto==0):
                 srcId=find(row,"-sourceId")
                 dstId=find(row,"-destId")
                 rate=bw2int(find(row,"-rate"))
