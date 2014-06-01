@@ -2,6 +2,8 @@
 #include "flow.h"
 #include <fstream>
 #include <cstdlib>
+#include <string>
+
 class Topology;
 
 Topology* Controller::createTopology(int tor,int aggr,int core)
@@ -194,6 +196,7 @@ vector<Link*> Controller::getAllTorLinks()
 
 void Controller::findFaults()
 {
+	//TODO implement for links as well
 	int len = all_switches.size();
 	for(int i=0; i<len; i++)
 	{
@@ -571,6 +574,10 @@ void Controller::autofail(int curSec)
 	findFaults();
 	updateStatus(all_switches,curSec);
 	updateStatus(all_links,curSec);
+	if(curSec%10)
+	{
+		logFailures(curSec);
+	}
 	//TODO plot the cdfs to verify the sampling
 }
 
@@ -656,6 +663,83 @@ void Controller::filterPaths(int rate,Host* dest)
 			continue;
 		}
 	}
+}
+
+bool notIn(vector<Switch*> v,Switch* e)
+{
+	for (int i=0;i<v.size();i++)
+	{
+		if(e==v[i])
+			return false;
+	}
+	return true;
+}
+
+
+bool notIn(vector<Link*> v,Link* e)
+{
+	for (int i=0;i<v.size();i++)
+	{
+		if(e==v[i])
+			return false;
+	}
+	return true;
+}
+
+void Controller::logFailures(int time)
+{
+	string t;
+	stringstream out;
+	out<<time;
+	t=out.str()+'\n';
+
+	for(int i=0;i<down_switches.size();i++)
+	{
+		if(down_switches[i]->status > 0)
+		{	
+			writeLog("Switch "+down_switches[i]->toString()+" Up "+t);
+			down_switches.erase(down_switches.begin()+i);
+			//TODO check if this causes seg fault
+		}
+	}
+
+	for(int i=0;i<down_links.size();i++)
+	{
+		if(down_links[i]->status > 0)
+		{	
+			stringstream o;
+			int idd=down_links[i]->link_id;
+			o<<idd;
+			string id=o.str();
+			writeLog("Link "+id+" Up "+t);
+			down_links.erase(down_links.begin()+i);
+			//TODO check if this causes seg fault
+		}
+	}
+
+	for(int i=0;i<all_switches.size();i++)
+	{
+		if(all_switches[i]->status < 0 && notIn(down_switches,all_switches[i]))
+		{	
+			writeLog("Switch "+all_switches[i]->toString()+" Down "+t);
+			down_switches.push_back(all_switches[i]);
+		}
+	}
+
+	for(int i=0;i<all_links.size();i++)
+	{
+		if(all_links[i]->status < 0 && notIn(down_links,all_links[i]))
+		{	
+			stringstream o;
+			int idd=all_links[i]->link_id;
+			o<<idd;
+			string id=o.str();
+			writeLog("Link "+id+" Down "+t);
+			down_links.push_back(all_links[i]);
+		}
+	}
+
+
 }
 
 bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size,double sTime)	//rate in MBps, size in MB
@@ -773,6 +857,14 @@ Path* Controller::getBackUpPath(Path* primary)
 
 	}
 	return back;
+}
+
+void Controller::writeLog(string str)
+{
+	ofstream fout;
+	fout.open("logs.txt",ios::app);
+	fout<<str;
+	fout.close();
 }
 
 

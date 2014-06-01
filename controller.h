@@ -23,6 +23,8 @@ public:
 	vector<Switch*> critical_switches;
 	vector<Flow*> flows_down;
 	vector<Path*> paths_to_be_shared;
+	vector<Switch*> down_switches;
+	vector<Link*> down_links;
 	float downTime;
 	int torCap;
 	int aggrCap;
@@ -37,6 +39,7 @@ public:
 	bool backUp;
 	vector<int> violations;
 	void createFlows();
+	void logFailures(int time);
 	Topology* createTopology(int,int,int);				//to create topology
 	void assignPaths();
 	void autofail(int);									//primary + backups
@@ -60,6 +63,8 @@ public:
 	void checkProb(vector<Link*> Tors, int prob, float factor);
 	void updateStatus(vector<Switch*> all_switches,int);
 	void updateStatus(vector<Link*> all_switches,int);
+	void writeLog(string str);
+
 
 
 

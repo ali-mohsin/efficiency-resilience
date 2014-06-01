@@ -7,14 +7,14 @@ int main (int argc, char *argv[])
 
 	int oneToOne=0;
 
-	dc= new Controller(8,1024,10240,10240,oneToOne,100000000,1);
-int runFor=100000000;
+	dc= new Controller(8,1024,10240,10240,oneToOne,1000000,1);
+int runFor=1000000;
 
 
 	//Main tasks that this code does is that iterate for run number of times and after every ping interval which represents 1 sec, dump the data, 
 
 	pthread_t t1,t2;//, t3;
-	pthread_create(&t1, NULL, pingFaults, NULL);
+//	pthread_create(&t1, NULL, pingFaults, NULL);
 
 	int flowsNum = dc->all_flows.size();
 	end_delay = 1000000 + 5.0;
@@ -46,7 +46,6 @@ int runFor=100000000;
 					seconds_run = seconds_run - 31536000;
 				}
 				long time_so_far = years_run*31536000 + seconds_run;
-				dc->dumpData(time_so_far);
 			}
 
 			if(nanosleep(&time1, &time2) < 0)

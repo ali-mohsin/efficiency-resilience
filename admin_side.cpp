@@ -3,7 +3,7 @@
 	//Main tasks that this code does is that iterate for run number of times and after every ping interval which represents 1 sec, dump the data, 
 
 	pthread_t t1,t2;//, t3;
-	pthread_create(&t1, NULL, pingFaults, NULL);
+//	pthread_create(&t1, NULL, pingFaults, NULL);
 
 	int flowsNum = dc->all_flows.size();
 	end_delay = 1000000 + 5.0;
@@ -35,7 +35,6 @@
 					seconds_run = seconds_run - 31536000;
 				}
 				long time_so_far = years_run*31536000 + seconds_run;
-				dc->dumpData(time_so_far);
 			}
 
 			if(nanosleep(&time1, &time2) < 0)
