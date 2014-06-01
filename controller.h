@@ -21,6 +21,7 @@ public:
 	vector<Path*> paths;
 	vector<Flow*> flows_on_back;
 	vector<Switch*> critical_switches;
+	vector<Link*> critical_links;
 	vector<Flow*> flows_down;
 	vector<Path*> paths_to_be_shared;
 	vector<Switch*> down_switches;

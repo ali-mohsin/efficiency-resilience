@@ -224,6 +224,40 @@ void Controller::findFaults()
 			}
 		}
 	}
+
+//************For Links******************//
+
+	flows.clear();
+	len = all_links.size();
+	for(int i=0; i<len; i++)
+	{
+		if( all_links[i]->getStatus() < 0 )
+		{
+			vector<Flow*> flows=all_links[i]->flows;
+			for(int j=0;j<flows.size();j++)
+			{
+				cout <<"+ Critical Link Failed with ID: "<<all_links[i]->link_id()<<endl;
+				critical_links.push_back(all_links[i]);
+				flows[j]->antiCommitPath(flows[j]->primaryPath);
+				if(backUp)
+				{
+					int commit=flows[j]->commitPath(flows[j]->backUpPath,0);
+
+					if(commit)
+						flows_on_back.push_back(flows[j]);
+					else
+						flows_down.push_back(flows[j]);
+				}
+				else
+				{
+					flows_down.push_back(flows[j]);
+				}
+			}
+		}
+	}
+
+
+
 }
 
 
@@ -236,6 +270,18 @@ void Controller::revert_to_primary()
 			cout<<downTime<<" is the new downtime"<<endl;
 			cout<<"+ Critical Switch Back with ID :"<<critical_switches[i]->toString()<<endl;
 			critical_switches.erase(critical_switches.begin()+i);
+			cout<<"Number of flows on back:"<<flows_on_back.size()<<endl;;
+
+		}
+	}
+
+	for(int i=0;i<critical_links.size();i++)
+	{
+		if(critical_links[i]->status > 0)
+		{
+			cout<<downTime<<" is the new downtime"<<endl;
+			cout<<"+ Critical Link Back with ID :"<<critical_links[i]->link_id()<<endl;
+			critical_links.erase(critical_links.begin()+i);
 			cout<<"Number of flows on back:"<<flows_on_back.size()<<endl;;
 
 		}
