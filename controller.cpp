@@ -4,6 +4,8 @@
 #include <cstdlib>
 #include <algorithm>
 #include <string>
+#include "time.h"
+
 using namespace std;
 
 class Topology;
@@ -39,18 +41,58 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int runFor,int
 	{
 		createFlows();
 	}
+
+	for(int i=0;i<all_links.size();i++)
+	{
+		if(all_links[i]->flows.size()!=0)
+		{
+			cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows.size()<<" Flows passing through"<<endl;
+		}
+		else
+		{
+			cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows.size()<<" Flows passing through"<<endl;
+			int x=1/0;
+		}
+	}
 }
 
 
+Switch* Controller::getTorFromAnotherPod(int pod)
+{
+	int otherPod=pod;
+	Switch* curSwitch=all_switches[0];
+
+	while(otherPod==pod || curSwitch->level!=2)
+	{
+		curSwitch=all_switches[rand()%all_switches.size()];
+		otherPod=curSwitch->getPodID();
+	}
+	return curSwitch;
+}
+
 void Controller::createFlows()
 {
-	for (int i=0;i<all_hosts.size();i++)
+	for (int i=0;i<all_switches.size();i++)
 	{
-		for (int j=0;j<all_hosts.size();j++)
+		Switch* curSwitch=all_switches[i];
+		if(curSwitch->level==2)
 		{
-			if(all_hosts[i]->getPodID()!=all_hosts[j]->getPodID())
-				instantiateFlow(all_hosts[i],all_hosts[j],10,10,0);
+			int pod=curSwitch->getPodID();
+			for(int j=0;j<k*k/4;j++)
+			{
+				Switch* otherTor=getTorFromAnotherPod(pod);
+				Host* start=curSwitch->down_links[rand()%curSwitch->down_links.size()]->host;
+				Host* end=otherTor->down_links[rand()%curSwitch->down_links.size()]->host;
+				// cout<<"Flow started from "<<curSwitch->toString()<<" to "<<otherTor->toString()<<endl;
+				instantiateFlow(start,end,10,10,0);
+
+			}	
 		}
+		// for (int j=0;j<all_hosts.size();j++)
+		// {
+		// 	if(all_hosts[i]->getPodID()!=all_hosts[j]->getPodID())
+		// 		instantiateFlow(all_hosts[i],all_hosts[j],10,10,0);
+		// }
 	}
 }
 
@@ -265,12 +307,39 @@ vector<Link*> Controller::getAllTorLinks()
 }
 
 
-vector<Flow*> getCommonFlows(vector<Flow*> u,vector<Flow*> d)
+vector<Flow*> Controller::getCommonFlows(vector<Flow*> u,vector<Flow*> d)
 {
-	sort(u.begin(), u.end());
-	sort(d.begin(), d.end());
 	vector<Flow*> flows;
-	set_intersection(u.begin(), u.end(), d.begin(), d.end(), back_inserter(flows));
+	int* arr =  new int(all_flows.size());
+
+	for(int i=0;i<all_flows.size();i++)
+	{
+		arr[i]=0;
+	}
+
+	for (int i=0;i<u.size();i++)
+	{
+		arr[u[i]->flow_id]+=1;
+	}
+
+	for (int i=0;i<d.size();i++)
+	{
+		int h=d[i]->flow_id;
+		int val=arr[h];
+		if(val>0 && val < 2)
+		{
+			flows.push_back(d[i]);
+			arr[h]+=1;
+		}
+		if(val>2)
+			cout<<"ERROR,Collision-------------------------"<<endl;
+	}
+	return flows;
+
+	// sort(u.begin(), u.end());
+	// sort(d.begin(), d.end());
+	// vector<Flow*> flows;
+	// set_intersection(u.begin(), u.end(), d.begin(), d.end(), back_inserter(flows));
 	// for (int i=0;i<u.size();i++)
 	// {
 	// 	for(int j=0;j<d.size();j++)
@@ -334,13 +403,14 @@ vector<Flow*> getCommonFlows(vector<Flow*> u,vector<Flow*> d)
 
 void Controller::findFaults()
 {
+	////startTimer();
 	//TODO implement for links as well
 	int len = all_switches.size();
 	for(int i=0; i<len; i++)
 	{
 		if( all_switches[i]->getStatus() < 0 )
 		{
-			vector<Flow*> flows=all_switches[i]->flows;
+			vector<Flow*> flows=all_switches[i]->getActiveFlows();
 			if(flows.size()>0)
 			{
 
@@ -366,7 +436,8 @@ void Controller::findFaults()
 			}
 		}
 	}
-
+	////stopTimer("switches in find faults");
+	////startTimer();
 	//************For Links******************//
 
 	len = all_links.size();
@@ -376,12 +447,15 @@ void Controller::findFaults()
 		{
 
 			vector<Flow*> flows;
-			if(all_links[i]->host==NULL)
-				{
-					flows=getCommonFlows(all_links[i]->up_switch->flows,all_links[i]->down_switch->flows);
-				}
-			else
-				flows=all_links[i]->up_switch->flows;
+			// if(all_links[i]->host==NULL)
+			// 	{
+			// 		////startTimer();
+			// 		flows=getCommonFlows(all_links[i]->up_switch->flows,all_links[i]->down_switch->flows);
+			// 		////stopTimer("getting common flows");
+			// 	}
+			// else
+			// 	flows=all_links[i]->up_switch->flows;
+			flows=all_links[i]->getActiveFlows();
 
 			if(flows.size()>0)
 			{
@@ -396,9 +470,7 @@ void Controller::findFaults()
 
 			for(int j=0;j<flows.size();j++)
 			{
-
 				flows[j]->antiCommitPath(flows[j]->primaryPath);
-
 				if(backUp)
 				{
 					int commit=flows[j]->commitPath(flows[j]->backUpPath,0);
@@ -428,12 +500,14 @@ void Controller::findFaults()
 			// }
 		}
 	}
+	////stopTimer("links in find faults");
 
 }
 
 
 void Controller::revert_to_primary()
 {
+	////startTimer();
 	for(int i=0;i<critical_switches.size();i++)
 	{
 		if(critical_switches[i]->status > 0)
@@ -447,7 +521,8 @@ void Controller::revert_to_primary()
 			// }
 		}
 	}
-
+	////stopTimer("for switches to revert");
+	////startTimer();
 
 	for(int i=0;i<critical_links.size();i++)
 	{
@@ -464,6 +539,7 @@ void Controller::revert_to_primary()
 		}
 	}
 
+	////stopTimer("for links to revert");
 	if(backUp)
 	{
 		for (int i=0;i<flows_on_back.size();i++)
@@ -479,13 +555,16 @@ void Controller::revert_to_primary()
 	}
 
 
+
 	for (int i=0;i<flows_down.size();i++)
 	{
 		Flow* f=flows_down[i];
-		if(f->primaryPath->isUp())
+		if(f->down!=1)
+			continue;
+		bool check=f->primaryPath->isUp();
+		if(check)
 		{
 			f->commitPath(f->primaryPath,0); //Assumption is that link capacity would not be a bottleneck
-			flows_down.erase(flows_down.begin()+i);
 		}
 	}
 }
@@ -739,7 +818,7 @@ void Controller::updateStatus(vector<Switch*> all_switches,int curSec)
 		{
 			int ttf=getTTF(curSwitch);
 			if(ttf==0)
-				ttf=getTTF(curSwitch);
+				ttf=2;
 
 			curSwitch->status=rand()%ttf;
 			//TODO check this with dr ihsan ,dr fahad and dr zartash, how to induce first failure
@@ -780,7 +859,10 @@ void Controller::updateStatus(vector<Link*> all_switches,int curSec)
 
 		if(curSwitch->status==0 && curSwitch->resilience==2)
 		{
-			curSwitch->status=rand()%getTTF(curSwitch);
+			int ttf=getTTF(curSwitch);
+			if(ttf==0)
+				ttf=2;
+			curSwitch->status=rand()%ttf;
 			//TODO check this with dr ihsan ,dr fahad and dr zartash, how to induce first failure
 		}
 
@@ -789,26 +871,126 @@ void Controller::updateStatus(vector<Link*> all_switches,int curSec)
 void Controller::autofail(int curSec)
 {
 	// This function needs to be rewritten, from insights from philipa gill
-	revert_to_primary();
+
+
+
+	//startTimer();
 	detect_downTime();
-	findFaults();
+	//stopTimer("detect_downTime");
+
+
+	//startTimer();
 	updateStatus(all_switches,curSec);
+	//stopTimer("updateStatus 1");
+
+	// ////startTimer();
 	updateStatus(all_links,curSec);
-	if(curSec%10)
+	// ////stopTimer("updateStatus 2");
+
+	if(curSec%100==0)
 	{
+		//startTimer();
+		revert_to_primary();
+		//stopTimer("revert_to_primary");
+
+		//startTimer();
+		findFaults();
+		//stopTimer("find faults");
+
+		//startTimer();
 		logFailures(curSec);
+		//stopTimer("log failures");
 	}
 	//TODO plot the cdfs to verify the sampling
 }
 
-
-void Controller::getAllPaths(Switch* src,Switch* dst, vector<Switch*> switches,vector<Link*> links, vector<bool> directions, int dir)
+void Controller::getIntraPodPaths(Switch* src, Switch* dst, Link* destLink, vector<Switch*> switches,vector<Link*> links, vector<bool> directions, int dir)
 {
 	// cout<<paths.size()<<" is the num of paths found "<<endl;
 	vector<Link*> poolToVisit;
 	int size=paths.size();
-	if(size>5)
+	// if(size>5)
+	// 	return;
+
+	if(src==NULL || dst==NULL)
+	{
+		cout<<"moving back; base case"<<endl;
 		return;
+	}
+
+	if(dir==1 && src->level!=1)
+	{
+			poolToVisit=src->up_links;
+	}
+	else
+	{
+		poolToVisit=src->down_links;
+	}
+	for(int i=0;i<poolToVisit.size();i++)
+	{
+		Link* curLink=poolToVisit[i];
+		if(curLink->label=="Tor")
+			continue;
+		Switch* curDst=curLink->getOtherNode(src);
+		if(curDst==NULL)
+		{
+			switches.pop_back();
+			links.pop_back();
+			directions.pop_back();
+			return;
+		}
+		if(curDst->num_ports==0)
+		{
+			cout<<"culprit link: "<<curLink->label<<endl;
+		}
+
+		if(dir==0 && src->level==1)
+		{
+			int id=curDst->getPodID();
+			if(id!=dst->getPodID())
+				continue;
+		}
+		switches.push_back(curDst);
+		links.push_back(curLink);
+		directions.push_back(dir);
+
+		if(curDst->level==1)
+		{
+			if(dir==0)
+				dir=1;
+			else
+				dir=0;
+		}
+
+		if(curDst==dst)
+		{
+			links.push_back(destLink);
+			directions.push_back(dir);
+			Path* p= new Path(switches,links,directions);
+			paths.push_back(p);
+		}
+
+		getIntraPodPaths(curDst,dst,destLink,switches,links,directions,dir);
+		links.pop_back();
+		directions.pop_back();
+		if(switches.back()->level==1)
+		{
+			if(dir==0)
+				dir=1;
+			else
+				dir=0;	
+		}	
+		switches.pop_back();
+	}
+}
+
+void Controller::getInterPodPaths(Switch* src, Switch* dst, Link* destLink, vector<Switch*> switches,vector<Link*> links, vector<bool> directions, int dir)
+{
+	// cout<<paths.size()<<" is the num of paths found "<<endl;
+	vector<Link*> poolToVisit;
+	int size=paths.size();
+	// if(size>5)
+	// 	return;
 
 	if(src==NULL || dst==NULL)
 	{
@@ -840,7 +1022,9 @@ void Controller::getAllPaths(Switch* src,Switch* dst, vector<Switch*> switches,v
 	}
 	for(int i=0;i<poolToVisit.size();i++)
 	{
+		// int index=rand()%poolToVisit.size();
 		Link* curLink=poolToVisit[i];
+		//TODO randomization done here beware
 		if(curLink->label=="Tor")
 			continue;
 		Switch* curDst=curLink->getOtherNode(src);
@@ -876,6 +1060,8 @@ void Controller::getAllPaths(Switch* src,Switch* dst, vector<Switch*> switches,v
 
 		if(curDst==dst)
 		{
+			links.push_back(destLink);
+			directions.push_back(dir);
 			Path* p= new Path(switches,links,directions);
 			paths.push_back(p);
 			// p->print();
@@ -883,7 +1069,7 @@ void Controller::getAllPaths(Switch* src,Switch* dst, vector<Switch*> switches,v
 		}
 		// cout<<"calling rec"<<endl;
 		// cout<<curDst->level<<" is the next level"<<endl;
-		getAllPaths(curDst,dst,switches,links,directions,dir);
+		getInterPodPaths(curDst,dst,destLink,switches,links,directions,dir);
 		links.pop_back();
 		directions.pop_back();
 		if(switches.back()->level==0)
@@ -910,6 +1096,8 @@ void Controller::filterPaths(int rate,Host* dest)
 		{
 			paths.erase(paths.begin()+i);
 			i--;
+			//TODO remove this erase
+
 			continue;
 		}
 	}
@@ -1013,22 +1201,57 @@ void Controller::logFailures(int time)
 			down_links.push_back(all_links[i]);
 		}
 	}
+}
+
+bool Controller::getPaths(Host* source, Host* dest, vector<Switch*> switches,vector<Link*> links, vector<bool> directions, int dir)
+{
 
 
+	switches.push_back(source->getTor());
+	links.push_back(source->getLink());
+	directions.push_back(1);
+
+	Link* destLink = dest->getLink();
+	Switch* src = source->getTor();
+	Switch* dst = dest->getTor();
+
+	bool intraRack = false;
+	if(src == dst)		// the end hosts are under the same ToR switch
+	{
+		links.push_back(destLink);
+		directions.push_back(0);
+		Path* p= new Path(switches,links,directions);
+		paths.push_back(p);
+		intraRack = true;
+	}
+	else if(src->getPodID() == dst->getPodID())		// the end hosts are in the same pod
+	{
+		getIntraPodPaths(src, dst, destLink, switches, links, directions,1);
+	}
+	else				// the end hosts are in different pods
+	{
+		getInterPodPaths(src, dst, destLink, switches, links, directions,1);
+	}
+
+	return intraRack;
 }
 
 bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size,double sTime)	//rate in MBps, size in MB
 {
+	// if 'intraRack' is true, then there will be no backup path, only 1 path
 	vector<Switch*> switches;
 	vector<Link*> links;
 	vector<bool> directions;
-	switches.push_back(source->getTor());
-	directions.push_back(1);
-	links.push_back(source->link);
-	getAllPaths(source->getTor(),dest->getTor(), switches, links, directions,1);
+	bool intraRack = getPaths(source, dest, switches, links, directions, 1);
+
 	// cout<<paths.size()<<" is the num of paths"<<endl;
 	filterPaths(rate,dest);
-	if(paths.size()<2)
+	// if(intraRack && paths.size()!=1)
+	// {
+	// 	cout<<"ERROR: Request could not be entertained with Rate: "<<rate<<" Size: "<<size<<", Not enough Bandwith remaining on Candidate Path"<<endl;
+	// 	return 0;
+	// }
+	if(!intraRack && paths.size()<2)
 	{
 		paths.clear();
 		cout<<"ERROR: Request could not be entertained with Rate: "<<rate<<" Size: "<<size<<", Not enough Bandwith remaining on Candidate Paths"<<endl;

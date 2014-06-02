@@ -7,8 +7,8 @@ int main (int argc, char *argv[])
 
 	int oneToOne=0;
 
-	dc= new Controller(12,10240000,10240000,10240000,oneToOne,1000000,1);
-int runFor=1000000;
+	dc= new Controller(12,10240000,10240000,10240000,oneToOne,30000000,1);
+int runFor=30000000;
 
 
 	//Main tasks that this code does is that iterate for run number of times and after every ping interval which represents 1 sec, dump the data, 
@@ -24,7 +24,7 @@ int runFor=1000000;
 
 	//TODO (ali-mohsin), verify this 100 nsec is the optimal, if not then it can be optimized
 
-	int runs = (end_delay);
+	int runs = (runFor);
 	int num_fails = failTimes.size(); // would compute to 0
 
 	cout<<"Number of run: "<<runs<<"\n";
@@ -32,7 +32,7 @@ int runFor=1000000;
 	{
 		for(int i=0; i<runs; i++)
 		{
-			if (i%100==0)
+			if (i%10000==0)
 				cout<<i<<"th run"<<endl;
 			
 

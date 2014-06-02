@@ -21,6 +21,7 @@ public:
 	Switch* getTor();
 	int getPodID();
 	int getDeviceID();
+	Link* getLink();
 };
 
 #endif /* HOST_H */

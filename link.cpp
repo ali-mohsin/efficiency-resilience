@@ -116,9 +116,10 @@ Switch* Link::getOtherNode(Switch* cur)
 }
 
 
-void Link::addFlow(int rate, int dir, int  back)
+void Link::addFlow(Flow* f,int rate, int dir, int  back)
 {
 	//cout<<"Im here to add flow with directions as back= "<<back<<" and dir= "<<dir<<endl;
+	flows.push_back(f);
 	num_flows++;
 	if(dir==1)
 	{
@@ -139,8 +140,20 @@ void Link::addFlow(int rate, int dir, int  back)
 
 }
 
+vector<Flow*> Link::getActiveFlows()
+{
+	vector<Flow*> v;
+	for(int i=0;i<flows.size();i++)
+	{
+		if(flows[i]->down!=1)
+			v.push_back(flows[i]);
+	}
+	return v;
+}
 
-void Link::removeFlow(int rate, int dir)
+
+
+void Link::removeFlow(Flow* f,int rate, int dir)
 {
 	//cout<<"Im here to add flow with directions as back= "<<back<<" and dir= "<<dir<<endl;
 	num_flows--;
@@ -152,6 +165,13 @@ void Link::removeFlow(int rate, int dir)
 	{
 		
 			available_cap_down+=rate;
+	}
+	for(int i=0;i<flows.size();i++)
+	{
+		if(flows[i]==f)
+		{
+			flows.erase(flows.begin()+i);
+		}
 	}
 
 }

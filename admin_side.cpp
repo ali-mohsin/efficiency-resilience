@@ -13,7 +13,7 @@
 
 	//TODO (ali-mohsin), verify this 100 nsec is the optimal, if not then it can be optimized
 
-	int runs = (end_delay);
+	int runs = (runFor);
 	int num_fails = failTimes.size(); // would compute to 0
 
 	cout<<"Number of run: "<<runs<<"\n";
@@ -21,7 +21,7 @@
 	{
 		for(int i=0; i<runs; i++)
 		{
-			if (i%100==0)
+			if (i%10000==0)
 				cout<<i<<"th run"<<endl;
 			
 

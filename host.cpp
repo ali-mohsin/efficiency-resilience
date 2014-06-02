@@ -12,6 +12,12 @@ void Host::connectToSwitch(Switch* dev,Link* link)
 	dev->down_links.push_back(link);
 }
 
+Link* Host::getLink()
+{
+	return link;
+}
+
+
 string Host::toString()
 {
 	return Device::toString();

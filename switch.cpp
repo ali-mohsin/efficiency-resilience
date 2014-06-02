@@ -32,6 +32,18 @@ int Switch::getLevel()
 	return level;
 }
 
+vector<Flow*> Switch::getActiveFlows()
+{
+	vector<Flow*> v;
+	for(int i=0;i<flows.size();i++)
+	{
+		if(flows[i]->down!=1)
+			v.push_back(flows[i]);
+	}
+	return v;
+}
+
+
 vector<Switch*> Switch::getDownSwitches()
 {
 	vector<Switch*> switches;
@@ -163,12 +175,14 @@ void Switch::addFlow(Flow* flow)
 void Switch::removeFlow(Flow* flow)
 {
 
+	// startTimer();
 	for(int i=0;i<flows.size();i++)
 	{
 		if(flows[i]->flow_id==flow->flow_id)
 		{
 			flows.erase(flows.begin()+i);
 			i--;
+			// stopTimer("To remove flow");
 			return;
 		}
 	}

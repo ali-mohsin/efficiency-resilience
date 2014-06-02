@@ -25,6 +25,7 @@ public:
 	int backup_up;
 	int backup_down;
 	int num_flows;
+	vector<Flow*> flows;
 	Switch* up_switch;
 	Switch* down_switch;
 	Host* host;
@@ -44,11 +45,12 @@ public:
 	int getID();
 	string getLabel();
 	int getStatus();
+	vector<Flow*> getActiveFlows();
 	void setStatus(int stat);
 	void printInfo();
 	Switch* getOtherNode(Switch* cur);
-	void addFlow(int rate, int dir, int back);
-	void removeFlow(int rate, int dir);
+	void addFlow(Flow* f,int rate, int dir, int back);
+	void removeFlow(Flow* f,int rate, int dir);
 	void commitPath(Path* p, int back);
 
 };

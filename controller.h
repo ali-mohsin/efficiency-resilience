@@ -65,7 +65,10 @@ public:
 	void updateStatus(vector<Link*> all_switches,int);
 	void writeLog(string str);
 	vector<Link*> critical_links;
-
+	vector<Flow*> getCommonFlows(vector<Flow*> u,vector<Flow*> d);
+	void getIntraPodPaths(Switch*, Switch*, Link*, std::vector<Switch*>, std::vector<Link*>, std::vector<bool>, int);
+	void getInterPodPaths(Switch*, Switch*, Link*, std::vector<Switch*>, std::vector<Link*>, std::vector<bool>, int);
+	bool getPaths(Host*, Host*, std::vector<Switch*>, std::vector<Link*>, std::vector<bool>, int);
 	void counter(vector<Link*> Tors);
 	void counter(vector<Switch*> Tors);
 
@@ -86,6 +89,8 @@ public:
 	int getTTR(Link* curSwitch);
 	int getTTF(Switch* curSwitch);
 	int getTTF(Link* curSwitch);
+	Switch* getTorFromAnotherPod(int pod);
+
 	void assignResilience();
 
 };

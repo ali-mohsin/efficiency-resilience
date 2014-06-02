@@ -22,6 +22,7 @@ public:
 	int dur;
 	bool done;
 	int oneToOne;
+	int down;
 
 	Host* source;
 	Host* dest;

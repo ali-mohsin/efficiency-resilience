@@ -12,6 +12,7 @@ Flow::Flow(Host* src,Host* dst,Path* pp, Path* bp, int r, int s,int one,double s
 	backUpPath=bp;
 	done = false;
 	oneToOne=one;
+	down=-1;
 	// if(oneToOne)
 	// 	commitPath(backUpPath,0);
 	// else
@@ -44,19 +45,27 @@ bool Flow::commitPath(Path* path,int back)
 {
 	// cout<<"+ commitPath";
 	// path->print();
+
      if (!path->isUp())
      {
      	return false;
      }
-	for(int i=0;i<path->switches.size();i++)
-	{
-		path->switches[i]->addFlow(this);
+
+    if(down==-1) // just started
+    {
+		for(int i=0;i<path->switches.size();i++)
+		{
+			path->switches[i]->addFlow(this);
+		}
+
+		for(int i=0;i<path->links.size();i++)
+		{
+			path->links[i]->addFlow(this,this->rate,path->direction[i],back);
+		}
 	}
 
-	for(int i=0;i<path->links.size();i++)
-	{
-		path->links[i]->addFlow(this->rate,path->direction[i],back);
-	}
+	down=0;
+
 	return true;
 }
 
@@ -64,15 +73,17 @@ void Flow::antiCommitPath(Path* path)
 {
 	// cout<<"+ antiCommitPath ";
 	// path->print();
-	for(int i=0;i<path->switches.size();i++)
-	{
-		path->switches[i]->removeFlow(this);
-	}
 
-	for(int i=0;i<path->links.size();i++)
-	{
-		path->links[i]->removeFlow(this->rate,path->direction[i]);
-	}
+	down=1;
+	// for(int i=0;i<path->switches.size();i++)
+	// {
+	// 	path->switches[i]->removeFlow(this);
+	// }
+
+	// for(int i=0;i<path->links.size();i++)
+	// {
+	// 	path->links[i]->removeFlow(this,this->rate,path->direction[i]);
+	// }
 }
 
 
