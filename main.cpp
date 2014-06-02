@@ -7,7 +7,7 @@ int main (int argc, char *argv[])
 
 	int oneToOne=0;
 
-	dc= new Controller(32,10240000,10240000,10240000,oneToOne,1000000,1);
+	dc= new Controller(12,10240000,10240000,10240000,oneToOne,1000000,1);
 int runFor=1000000;
 
 
@@ -32,7 +32,7 @@ int runFor=1000000;
 	{
 		for(int i=0; i<runs; i++)
 		{
-			if (i%10000==0)
+			if (i%100==0)
 				cout<<i<<"th run"<<endl;
 			
 

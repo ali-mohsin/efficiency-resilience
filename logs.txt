@@ -1,25 +1,31 @@
-Link 372 Down 73
-Link 345 Down 222
-Link 372 Up 246
-Switch [2,1,3] Down 597
-Link 22 Down 811
-Link 372 Down 921
-Link 22 Up 1014
-Link 372 Up 1078
-Link 372 Down 1695
-Link 261 Down 1914
-Link 372 Up 1934
-Link 291 Down 2037
-Link 291 Up 2224
-Link 261 Up 2473
-Link 151 Down 2739
-Link 151 Up 3248
-Link 22 Down 3671
-Link 261 Down 3691
-Link 22 Up 3831
-Link 261 Up 3895
-Switch [2,1,3] Up 55061
-Switch [2,1,3] Down 55861
-Switch [2,1,3] Up 57801
-Switch [2,1,3] Down 58538
-Switch [2,1,3] Up 58811
+Link Core 1206 Down curTime: 12 downFor: -148
+Link Tor 410 Down curTime: 31 downFor: -242
+Link Tor 256 Down curTime: 35 downFor: -169
+Link Core 1134 Down curTime: 56 downFor: -109
+Link Tor 702 Down curTime: 85 downFor: -289
+Link Tor 402 Down curTime: 107 downFor: -279
+Link Core 1122 Down curTime: 135 downFor: -150
+Link Tor 342 Down curTime: 151 downFor: -205
+Link Core 1206 Up 159
+Link Core 1134 Up 164
+Link Core 871 Down curTime: 181 downFor: -558
+Link Tor 776 Down curTime: 182 downFor: -191
+Link Tor 492 Down curTime: 183 downFor: -261
+Link Tor 256 Up 203
+Link Core 1180 Down curTime: 243 downFor: -124401
+Link Core 1246 Down curTime: 265 downFor: -291
+Link Tor 410 Up 272
+Link Core 1122 Up 284
+Link Core 1134 Down curTime: 325 downFor: -147
+Link Tor 130 Down curTime: 341 downFor: -214
+Link Tor 342 Up 355
+Link Tor 776 Up 372
+Link Tor 702 Up 373
+Link Tor 402 Up 385
+Link Tor 492 Up 443
+Link Core 1134 Up 471
+Link Tor 130 Up 554
+Link Core 1246 Up 555
+Link Core 871 Up 738
+Link Core 1174 Down curTime: 821 downFor: -662
+Link Tor 108 Down curTime: 921 downFor: -278

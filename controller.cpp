@@ -2,7 +2,9 @@
 #include "flow.h"
 #include <fstream>
 #include <cstdlib>
+#include <algorithm>
 #include <string>
+using namespace std;
 
 class Topology;
 
@@ -265,17 +267,20 @@ vector<Link*> Controller::getAllTorLinks()
 
 vector<Flow*> getCommonFlows(vector<Flow*> u,vector<Flow*> d)
 {
+	sort(u.begin(), u.end());
+	sort(d.begin(), d.end());
 	vector<Flow*> flows;
-	for (int i=0;i<u.size();i++)
-	{
-		for(int j=0;j<d.size();j++)
-		{
-			if(u[i]==d[j])
-			{
-				flows.push_back(u[i]);
-			}
-		}
-	}
+	set_intersection(u.begin(), u.end(), d.begin(), d.end(), back_inserter(flows));
+	// for (int i=0;i<u.size();i++)
+	// {
+	// 	for(int j=0;j<d.size();j++)
+	// 	{
+	// 		if(u[i]==d[j])
+	// 		{
+	// 			flows.push_back(u[i]);
+	// 		}
+	// 	}
+	// }
 	return flows;
 }
 
@@ -732,7 +737,11 @@ void Controller::updateStatus(vector<Switch*> all_switches,int curSec)
 
 		if(curSwitch->status==0 && curSwitch->resilience==2)
 		{
-			curSwitch->status=rand()%getTTF(curSwitch);
+			int ttf=getTTF(curSwitch);
+			if(ttf==0)
+				ttf=getTTF(curSwitch);
+
+			curSwitch->status=rand()%ttf;
 			//TODO check this with dr ihsan ,dr fahad and dr zartash, how to induce first failure
 		}
 

@@ -21,7 +21,7 @@
 	{
 		for(int i=0; i<runs; i++)
 		{
-			if (i%10000==0)
+			if (i%100==0)
 				cout<<i<<"th run"<<endl;
 			
 
