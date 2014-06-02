@@ -14,6 +14,7 @@ Topology* Controller::createTopology(int tor,int aggr,int core)
 	all_switches = tree->getSwitches();
 	all_hosts = tree->getHosts();
 	all_links = tree->getLinks();
+ 		// tree->printTopology();
 }
 
 Controller::Controller(int kay,int tor,int aggr,int core,int back,int runFor,int makeFlows)
@@ -77,6 +78,7 @@ void Controller::checkProb(vector<Switch*> Tors, int prob, float factor)
 
 void Controller::checkProb(vector<Link*> Tors, int prob, float factor)
 {
+	cout<<"Size of links: " << Tors.size()<<endl;	
 	for (int i =0; i < Tors.size(); i++)
 		{
 			int random = rand()%(1000);
@@ -97,7 +99,7 @@ void Controller::checkProb(vector<Link*> Tors, int prob, float factor)
 }
 
 void Controller::counter(vector<Switch*> Tors){
-	cout<<"Size of device" << Tors.size()<<endl;
+	cout<<"Size of device: " << Tors.size()<<endl;
 	int zero_count=0;
 	int one_count=0;
 	int two_count=0;
@@ -793,10 +795,13 @@ void Controller::autofail(int curSec)
 
 void Controller::getAllPaths(Switch* src,Switch* dst, vector<Switch*> switches,vector<Link*> links, vector<bool> directions, int dir)
 {
-
+	// cout<<paths.size()<<" is the num of paths found "<<endl;
 	vector<Link*> poolToVisit;
+	int size=paths.size();
+	if(size>5)
+		return;
 
-	if(src==NULL or dst==NULL)
+	if(src==NULL || dst==NULL)
 	{
 		cout<<"moving back; base case"<<endl;
 		return;
@@ -804,14 +809,31 @@ void Controller::getAllPaths(Switch* src,Switch* dst, vector<Switch*> switches,v
 
 	//cout<<"SRC: "<<src->toString()<<"\nDST: "<< dst->toString()<<endl; 
 
-	if(dir==1)
-		poolToVisit=src->getUpLinks();
+	if(dir==1 && src->level!=0)
+	{
+		// cout<<src->toString()<<endl;
+			// cout<<src->level<<endl;			
+			// cout<<src->num_ports<<" are the ports"<<endl;			
+			poolToVisit=src->up_links;
+	}
 	else
-		poolToVisit=src->getDownLinks();
+	{
+		// cout<<src->level<<endl;			
+		// cout<<src->down_links.size()<<endl;	
+		// if(src->down_links.size()>k*k/4)
+		// {
+		// 	cout<<"ALARM"<<endl;
+		// 	return;
+		// }		
+		// cout<<src->num_ports<<" are the ports"<<endl;			
 
+		poolToVisit=src->down_links;
+	}
 	for(int i=0;i<poolToVisit.size();i++)
 	{
 		Link* curLink=poolToVisit[i];
+		if(curLink->label=="Tor")
+			continue;
 		Switch* curDst=curLink->getOtherNode(src);
 		if(curDst==NULL)
 		{
@@ -820,6 +842,11 @@ void Controller::getAllPaths(Switch* src,Switch* dst, vector<Switch*> switches,v
 			directions.pop_back();
 			return;
 		}
+		if(curDst->num_ports==0)
+		{
+			cout<<"culprit link: "<<curLink->label<<endl;
+		}
+
 		if(dir==0 && src->level==0)
 		{
 			int id=curDst->getPodID();
@@ -842,7 +869,11 @@ void Controller::getAllPaths(Switch* src,Switch* dst, vector<Switch*> switches,v
 		{
 			Path* p= new Path(switches,links,directions);
 			paths.push_back(p);
+			// p->print();
+			// cout<<"found path"<<endl;
 		}
+		// cout<<"calling rec"<<endl;
+		// cout<<curDst->level<<" is the next level"<<endl;
 		getAllPaths(curDst,dst,switches,links,directions,dir);
 		links.pop_back();
 		directions.pop_back();
@@ -851,7 +882,8 @@ void Controller::getAllPaths(Switch* src,Switch* dst, vector<Switch*> switches,v
 			if(dir==0)
 				dir=1;
 			else
-				dir=0	;	}	
+				dir=0;	
+		}	
 		switches.pop_back();
 	}
 
@@ -900,7 +932,7 @@ void Controller::logFailures(int time)
 	string t;
 	stringstream out;
 	out<<time;
-	t=out.str()+'\n';
+	t=out.str();
 
 	for(int i=0;i<down_switches.size();i++)
 	{
@@ -948,7 +980,11 @@ void Controller::logFailures(int time)
 				l="Aggr";
 			if(level==2)
 				l="Tor";
-			writeLog("Switch "+l+" "+all_switches[i]->toString()+" Down "+t);
+			stringstream o;
+			int a=all_switches[i]->status;
+			o<<a;
+			string st=o.str();
+			writeLog("Switch "+l+" "+all_switches[i]->toString()+" Down curTime: "+t+" downFor: "+st);
 			down_switches.push_back(all_switches[i]);
 		}
 	}
@@ -957,11 +993,14 @@ void Controller::logFailures(int time)
 	{
 		if(all_links[i]->status < 0 && notIn(down_links,all_links[i]))
 		{	
-			stringstream o;
+			stringstream o,oo;
 			int idd=all_links[i]->link_id;
 			o<<idd;
 			string id=o.str();
-			writeLog("Link "+all_links[i]->label+" "+ id+" Down "+t);
+			int a=all_links[i]->status;
+			oo<<a;
+			string st=oo.str();
+			writeLog("Link "+all_links[i]->label+" "+ id+" Down curTime: "+t+" downFor: "+st);
 			down_links.push_back(all_links[i]);
 		}
 	}
@@ -978,10 +1017,12 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 	directions.push_back(1);
 	links.push_back(source->link);
 	getAllPaths(source->getTor(),dest->getTor(), switches, links, directions,1);
+	// cout<<paths.size()<<" is the num of paths"<<endl;
 	filterPaths(rate,dest);
 	if(paths.size()<2)
 	{
-//		cout<<"ERROR: Request could not be entertained with Rate: "<<rate<<" Size: "<<size<<", Not enough Bandwith remaining on Candidate Paths"<<endl;
+		paths.clear();
+		cout<<"ERROR: Request could not be entertained with Rate: "<<rate<<" Size: "<<size<<", Not enough Bandwith remaining on Candidate Paths"<<endl;
 		return 0;
 	}
 
@@ -1008,6 +1049,8 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 	flow->setID(flowNumber);
 	all_flows.push_back(flow);
 	flowNumber++;
+	if(flowNumber%1000==0)
+		cout<<flowNumber<<" is the num of flows committed"<<endl;
 	paths.clear();
 	return 1;
 }
@@ -1090,7 +1133,7 @@ void Controller::writeLog(string str)
 {
 	ofstream fout;
 	fout.open("logs.txt",ios::app);
-	fout<<str;
+	fout<<str<<endl;
 	fout.close();
 }
 

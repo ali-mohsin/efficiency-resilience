@@ -97,6 +97,11 @@ void Topology::printTopology()
 		coreSwitches[i]->dfsPrint(tab);
 		tab.erase(0,1);
 	}
+
+	for (int i=0;i<coreSwitches.size();i++)
+	{
+		cout<<coreSwitches[i]->down_links.size()<<" "<<coreSwitches[i]->up_links.size()<<endl;
+	}
 }
 
 vector<Switch*> Topology::getCores()

@@ -106,7 +106,12 @@ bool Link::availAtDown(int bw)
 Switch* Link::getOtherNode(Switch* cur)
 {
 	if(up_switch==cur)
+	{
+		// cout<<"get down"<<endl;
 		return down_switch;
+	}
+	// cout<<"get up"<<endl;
+
 	return up_switch;
 }
 

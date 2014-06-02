@@ -28,6 +28,7 @@ public:
 		status=0;
 		level=l;
 		num_ports=num;
+		failAt=-1;
 	}
 
 	void connectToSwitch(Switch* dev,Link* link); //always called by the switch higher in the hierarchy

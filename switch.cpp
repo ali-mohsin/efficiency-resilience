@@ -14,7 +14,6 @@ void Switch::connectToSwitch(Switch* dev,Link* link)
 	link->down_switch=dev;
 	this->down_links.push_back(link);
 	dev->up_links.push_back(link);
-	failAt=-1;
 	//cout<<"successfully connected"<<endl;
 }
 
