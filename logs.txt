@@ -1,31 +1,82 @@
-Link Core 1206 Down curTime: 12 downFor: -148
-Link Tor 410 Down curTime: 31 downFor: -242
-Link Tor 256 Down curTime: 35 downFor: -169
-Link Core 1134 Down curTime: 56 downFor: -109
-Link Tor 702 Down curTime: 85 downFor: -289
-Link Tor 402 Down curTime: 107 downFor: -279
-Link Core 1122 Down curTime: 135 downFor: -150
-Link Tor 342 Down curTime: 151 downFor: -205
-Link Core 1206 Up 159
-Link Core 1134 Up 164
-Link Core 871 Down curTime: 181 downFor: -558
-Link Tor 776 Down curTime: 182 downFor: -191
-Link Tor 492 Down curTime: 183 downFor: -261
-Link Tor 256 Up 203
-Link Core 1180 Down curTime: 243 downFor: -124401
-Link Core 1246 Down curTime: 265 downFor: -291
-Link Tor 410 Up 272
-Link Core 1122 Up 284
-Link Core 1134 Down curTime: 325 downFor: -147
-Link Tor 130 Down curTime: 341 downFor: -214
-Link Tor 342 Up 355
-Link Tor 776 Up 372
-Link Tor 702 Up 373
-Link Tor 402 Up 385
-Link Tor 492 Up 443
-Link Core 1134 Up 471
-Link Tor 130 Up 554
-Link Core 1246 Up 555
-Link Core 871 Up 738
-Link Core 1174 Down curTime: 821 downFor: -662
-Link Tor 108 Down curTime: 921 downFor: -278
+Link Aggr 28 Down curTime: 100 downFor: -170
+Link Tor 37 Down curTime: 100 downFor: -194
+Link Aggr 77 Down curTime: 100 downFor: -68
+Link Tor 252 Down curTime: 100 downFor: -494
+Link Aggr 576 Down curTime: 100 downFor: -503887
+Link Core 985 Down curTime: 100 downFor: -167455
+Link Core 1070 Down curTime: 100 downFor: -79
+Link Aggr 77 Up 200
+Link Core 1070 Up 200
+Link Aggr 245 Down curTime: 200 downFor: -257
+Link Tor 833 Down curTime: 200 downFor: -101
+Link Core 888 Down curTime: 200 downFor: -229
+Link Core 1224 Down curTime: 200 downFor: -182
+Link Aggr 28 Up 300
+Link Tor 833 Up 300
+Link Tor 271 Down curTime: 300 downFor: -85
+Link Tor 842 Down curTime: 300 downFor: -116
+Link Tor 37 Up 400
+Link Core 1224 Up 400
+Link Aggr 28 Down curTime: 400 downFor: -88
+Link Aggr 526 Down curTime: 400 downFor: -259176
+Link Aggr 245 Up 500
+Link Tor 271 Up 500
+Link Aggr 28 Up 500
+Link Aggr 9 Down curTime: 500 downFor: -248
+Link Tor 252 Up 600
+Link Core 888 Up 600
+Link Tor 37 Down curTime: 600 downFor: -123
+Link Tor 431 Down curTime: 600 downFor: -110
+Link Tor 618 Down curTime: 600 downFor: -185
+Link Aggr 9 Up 800
+Link Tor 431 Up 800
+Link Tor 842 Up 900
+Link Tor 37 Up 900
+Link Aggr 166 Down curTime: 900 downFor: -99
+Link Aggr 658 Down curTime: 900 downFor: -84
+Link Tor 618 Up 1000
+Link Aggr 658 Up 1000
+Link Aggr 166 Up 1100
+Link Aggr 798 Down curTime: 1100 downFor: -71
+Link Core 1261 Down curTime: 1100 downFor: -74
+Link Aggr 798 Up 1200
+Link Tor 842 Down curTime: 1200 downFor: -150
+Link Core 1261 Up 1300
+Link Tor 842 Up 1400
+Link Tor 271 Down curTime: 1500 downFor: -180
+Link Aggr 462 Down curTime: 1600 downFor: -219
+Link Tor 271 Up 1700
+Link Tor 842 Down curTime: 1800 downFor: -103
+Link Core 1050 Down curTime: 1800 downFor: -154
+Link Aggr 462 Up 1900
+Link Tor 842 Up 2000
+Link Core 1050 Up 2100
+Link Aggr 462 Down curTime: 2100 downFor: -153
+Link Aggr 462 Up 2300
+Link Aggr 462 Down curTime: 2500 downFor: -26
+Link Aggr 462 Up 2600
+Link Tor 842 Down curTime: 2600 downFor: -77
+Link Tor 842 Up 2700
+Link Aggr 675 Down curTime: 2800 downFor: -690563
+Link Tor 431 Down curTime: 2900 downFor: -183470
+Link Aggr 166 Down curTime: 3300 downFor: -188
+Link Core 888 Down curTime: 3300 downFor: -329
+Link Aggr 166 Up 3500
+Link Aggr 28 Down curTime: 3500 downFor: -192919
+Link Aggr 245 Down curTime: 3500 downFor: -225
+Link Core 888 Up 3700
+Link Aggr 245 Up 3800
+Link Aggr 245 Down curTime: 3900 downFor: -303
+Link Aggr 245 Up 4300
+Link Aggr 9 Down curTime: 4300 downFor: -551
+Link Aggr 798 Down curTime: 4400 downFor: -233
+Link Core 1129 Down curTime: 4600 downFor: -40482
+Link Aggr 798 Up 4700
+Link Aggr 9 Up 4900
+Link Aggr 798 Down curTime: 5000 downFor: -193
+Link Aggr 798 Up 5200
+Link Tor 42 Down curTime: 5200 downFor: -8
+Link Tor 842 Down curTime: 6200 downFor: -217
+Link Aggr 245 Down curTime: 6400 downFor: -198
+Link Tor 842 Up 6500
+Link Aggr 245 Up 6600

@@ -5,10 +5,12 @@ int main (int argc, char *argv[])
 
 	int failures=1;
 
-	int oneToOne=0;
+	int oneToOne=1;
 
-	dc= new Controller(12,10240000,10240000,10240000,oneToOne,30000000,1);
-int runFor=30000000;
+	int sharing=0;
+
+	dc= new Controller(12,10240000,10240000,10240000,oneToOne,sharing,1000000,1);
+int runFor=1000000;
 
 
 	//Main tasks that this code does is that iterate for run number of times and after every ping interval which represents 1 sec, dump the data, 

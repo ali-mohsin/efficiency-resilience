@@ -30,6 +30,7 @@ public:
 	int aggrCap;
 	int coreCap;
 	int k;				
+	int sharing;
 	//k-ary tree
 	int totalTime;
 	int flowNumber;
@@ -47,7 +48,7 @@ public:
 	void findFaults();
 	Path* getPathRandom(Host* source, Host* dest);
 	void getAllPaths(Switch* src,Switch* dst, vector<Switch*> switches,vector<Link*> links, vector<bool> direction, int dir);
-	Controller(int kay,int,int,int,int,int,int);
+	Controller(int kay,int,int,int,int,int,int,int);
 	int commitPath(Path* path, int dur,int rate, int size);
 //	void antiCommitPath();
 //	void goToSwitch(Path* path, Switch* dst, Switch** tempSwitch);

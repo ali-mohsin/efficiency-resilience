@@ -13,6 +13,7 @@ Flow::Flow(Host* src,Host* dst,Path* pp, Path* bp, int r, int s,int one,double s
 	done = false;
 	oneToOne=one;
 	down=-1;
+	on_back=0;
 	// if(oneToOne)
 	// 	commitPath(backUpPath,0);
 	// else
@@ -45,6 +46,8 @@ bool Flow::commitPath(Path* path,int back)
 {
 	// cout<<"+ commitPath";
 	// path->print();
+
+     on_back=back;
 
      if (!path->isUp())
      {

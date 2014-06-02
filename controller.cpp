@@ -21,7 +21,7 @@ Topology* Controller::createTopology(int tor,int aggr,int core)
  		// tree->printTopology();
 }
 
-Controller::Controller(int kay,int tor,int aggr,int core,int back,int runFor,int makeFlows)
+Controller::Controller(int kay,int tor,int aggr,int core,int back,int share,int runFor,int makeFlows)
 {
 	downTime=0;
 	srand(time(0));
@@ -32,6 +32,7 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int runFor,int
 	flowNumber = 0;
 	createTopology(tor,aggr,core);
 	backUp=back;
+	sharing=share;
 	// TODO seperate variable for backup
 	// TODO intra-rack communication, path assigned goes all the way round from core
 	failures=0;
@@ -180,6 +181,7 @@ void Controller::counter(vector<Link*> Tors){
 		else
 			two_count++;
 	}
+
 
 	int sum=Tors.size();
 	cout<< "zero_count ratio: " << (float)zero_count/(float)sum <<endl;
@@ -422,7 +424,7 @@ void Controller::findFaults()
 				flows[j]->antiCommitPath(flows[j]->primaryPath);
 				if(backUp)
 				{
-					int commit=flows[j]->commitPath(flows[j]->backUpPath,0);
+					int commit=flows[j]->commitPath(flows[j]->backUpPath,1);
 
 					if(commit)
 						flows_on_back.push_back(flows[j]);
@@ -470,10 +472,16 @@ void Controller::findFaults()
 
 			for(int j=0;j<flows.size();j++)
 			{
+				if(flows[j]->on_back)
+				{
+					flows_down.push_back(flows[j]);
+					flows[j]->antiCommitPath(flows[j]->backUpPath);
+					continue;
+				}
 				flows[j]->antiCommitPath(flows[j]->primaryPath);
 				if(backUp)
 				{
-					int commit=flows[j]->commitPath(flows[j]->backUpPath,0);
+					int commit=flows[j]->commitPath(flows[j]->backUpPath,1);
 
 					if(commit)
 						flows_on_back.push_back(flows[j]);
@@ -581,8 +589,7 @@ void Controller::detect_downTime()
 				Flow* f2=flows_on_back[j];
 				if(f1->backUpPath==f2->backUpPath)
 				{
-					downTime+=0.5;
-					cout << downTime<<endl;
+					downTime+=1;
 				}
 			}
 		}
@@ -1246,15 +1253,15 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 
 	// cout<<paths.size()<<" is the num of paths"<<endl;
 	filterPaths(rate,dest);
-	// if(intraRack && paths.size()!=1)
-	// {
-	// 	cout<<"ERROR: Request could not be entertained with Rate: "<<rate<<" Size: "<<size<<", Not enough Bandwith remaining on Candidate Path"<<endl;
-	// 	return 0;
-	// }
+	 if(intraRack && paths.size()!=1)
+	 {
+		int x=1/0;
+	 	return 0;
+	 }
 	if(!intraRack && paths.size()<2)
 	{
 		paths.clear();
-		cout<<"ERROR: Request could not be entertained with Rate: "<<rate<<" Size: "<<size<<", Not enough Bandwith remaining on Candidate Paths"<<endl;
+		int x=1/0;
 		return 0;
 	}
 
@@ -1268,10 +1275,17 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 
 	if(backUp)
 	{
-		Path* back=	getBackUpPath(primary);
-		cout<<"Backup Path is: "<<endl;
-		back->print();
-		paths_to_be_shared.push_back(back);
+		back=getBackUpPath(primary);
+//		cout<<"Backup Path is: "<<endl;
+//		back->print();
+		if(!back)
+		{
+			int x=1/0;
+		}
+		if(sharing)
+		{
+			paths_to_be_shared.push_back(back);
+		}
 	}
 
 
@@ -1308,26 +1322,29 @@ Path* Controller::getBackUpPath(Path* primary)
 	int overlap=-1;
 	Path* back=NULL;
 	int index=0;
-	for(int i=0;i<paths.size();i++)
-	{
-		for (int j=0;j<paths_to_be_shared.size();j++)
-		{
-			Path* p1=paths[i];
-			Path* p2=paths_to_be_shared[j];
 
-			if(p2->getSrcPod()==p1->getSrcPod() && p2->getDstPod()==p1->getDstPod() && p1!=p2)
+	if(sharing)
+	{
+		for(int i=0;i<paths.size();i++)
+		{
+			for (int j=0;j<paths_to_be_shared.size();j++)
 			{
-				vector<Link*> links=p1->links;
-				vector<Link*> otherLinks=p2->links;
-				int common=getCommonCount(links,otherLinks);
-				if(common > overlap)
+				Path* p1=paths[i];
+				Path* p2=paths_to_be_shared[j];
+				if(p2->getSrcPod()==p1->getSrcPod() && p2->getDstPod()==p1->getDstPod() && p1!=p2)
 				{
-					back=p2;
-					overlap=common;
-					index=j;
-				}
+					vector<Link*> links=p1->links;
+					vector<Link*> otherLinks=p2->links;
+					int common=getCommonCount(links,otherLinks);
+					if(common > overlap)
+					{
+						back=p2;
+						overlap=common;
+						index=j;
+					}
 	
-			}	
+				}	
+			}
 		}
 	}
 

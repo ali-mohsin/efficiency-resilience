@@ -48,6 +48,7 @@ with open('script.ns','rb') as fin:
                 auto=find(row,'-auto')
                 algo=find(row,"-algo")
                 runFor=find(row,"-runFor")
+                sharing=(find(row,"-sharing"))
                 torCap=bw2int(find(row,"-torLinks"))
                 aggrCap=bw2int(find(row,"-aggrLinks"))
                 coreCap=bw2int(find(row,"-coreLinks"))
@@ -65,12 +66,18 @@ with open('script.ns','rb') as fin:
                     code.append("\tint oneToOne=0;\n")
 
 
+                if(sharing=="yes"):
+                    code.append("\tint sharing=1;\n")
+                else:
+                    code.append("\tint sharing=0;\n")
+
+
                 if(algo=="default" and auto=='yes'):
-                    line= "\tdc= new Controller("+k+","+torCap+","+aggrCap+","+coreCap+",oneToOne,"+runFor+",1);"
+                    line= "\tdc= new Controller("+k+","+torCap+","+aggrCap+","+coreCap+",oneToOne,sharing,"+runFor+",1);"
                     code.append(line)
                     auto=1
                 elif(algo=='default'):
-                    line= "\tdc= new Controller("+k+","+torCap+","+aggrCap+","+coreCap+",oneToOne,"+runFor+",0);"
+                    line= "\tdc= new Controller("+k+","+torCap+","+aggrCap+","+coreCap+",oneToOne,sharing,"+runFor+",0);"
                     code.append(line)
                     auto=0
                     
