@@ -1,0 +1,1903 @@
+Link Aggr 35 Down curTime: 100 downFor: -181
+Link Tor 209 Down curTime: 100 downFor: -421909
+Link Tor 854 Down curTime: 100 downFor: -135
+Link Core 1211 Down curTime: 100 downFor: -43
+Link Core 1243 Down curTime: 100 downFor: -250
+Link Core 1211 Up 200
+Link Tor 204 Down curTime: 200 downFor: -205
+Link Aggr 239 Down curTime: 200 downFor: -233
+Link Tor 420 Down curTime: 200 downFor: -99
+Link Aggr 438 Down curTime: 200 downFor: -82
+Link Aggr 536 Down curTime: 200 downFor: -56
+Link Tor 685 Down curTime: 200 downFor: -16
+Link Core 963 Down curTime: 200 downFor: -208
+Link Core 993 Down curTime: 200 downFor: -88
+Link Core 1032 Down curTime: 200 downFor: -66
+Link Core 1147 Down curTime: 200 downFor: -59
+Link Aggr 35 Up 300
+Link Tor 854 Up 300
+Link Tor 420 Up 300
+Link Aggr 536 Up 300
+Link Core 993 Up 300
+Link Core 1147 Up 300
+Link Tor 255 Down curTime: 300 downFor: -238
+Link Core 1139 Down curTime: 300 downFor: -62
+Link Core 1237 Down curTime: 300 downFor: -202
+Link Core 1280 Down curTime: 300 downFor: -68
+Link Core 1243 Up 400
+Link Aggr 438 Up 400
+Link Core 1032 Up 400
+Link Core 1139 Up 400
+Link Core 1280 Up 400
+Link Tor 204 Up 500
+Link Core 963 Up 500
+Link Tor 62 Down curTime: 500 downFor: -45
+Link Aggr 603 Down curTime: 500 downFor: -248
+Link Tor 854 Down curTime: 500 downFor: -170
+Link Core 904 Down curTime: 500 downFor: -245
+Link Aggr 239 Up 600
+Link Tor 255 Up 600
+Link Tor 62 Up 600
+Link Tor 844 Down curTime: 600 downFor: -80
+Link Core 1243 Down curTime: 600 downFor: -120
+Link Core 1280 Down curTime: 600 downFor: -179
+Link Tor 685 Up 700
+Link Tor 854 Up 700
+Link Tor 844 Up 700
+Link Tor 62 Down curTime: 700 downFor: -156
+Link Tor 255 Down curTime: 700 downFor: -45
+Link Aggr 603 Up 800
+Link Core 1243 Up 800
+Link Tor 255 Up 800
+Link Core 904 Up 900
+Link Tor 62 Up 900
+Link Aggr 228 Down curTime: 900 downFor: -65
+Link Tor 844 Down curTime: 900 downFor: -214
+Link Core 1237 Up 1000
+Link Aggr 228 Up 1000
+Link Tor 854 Down curTime: 1000 downFor: -632762
+Link Core 1280 Up 1100
+Link Aggr 653 Down curTime: 1100 downFor: -449
+Link Core 1237 Down curTime: 1100 downFor: -106
+Link Tor 844 Up 1200
+Link Core 1237 Up 1300
+Link Aggr 536 Down curTime: 1400 downFor: -606753
+Link Core 1173 Down curTime: 1500 downFor: -145
+Link Aggr 653 Up 1600
+Link Core 1173 Up 1700
+Link Aggr 3 Down curTime: 1800 downFor: -301618
+Switch Tor [2,6,5] Down curTime: 2000 downFor: -1787
+Link Core 999 Down curTime: 2000 downFor: -154
+Link Core 999 Up 2200
+Link Tor 48 Down curTime: 2200 downFor: -67763
+Link Aggr 735 Down curTime: 2200 downFor: -504
+Link Core 879 Down curTime: 2300 downFor: -61
+Link Core 879 Up 2400
+Link Core 1147 Down curTime: 2600 downFor: -97
+Link Core 1147 Up 2700
+Link Core 879 Down curTime: 2700 downFor: -138
+Link Aggr 735 Up 2800
+Link Aggr 239 Down curTime: 2800 downFor: -349153
+Link Core 879 Up 2900
+Link Tor 64 Down curTime: 3000 downFor: -124
+Link Tor 64 Up 3200
+Link Aggr 653 Down curTime: 3300 downFor: -925627
+Link Aggr 438 Down curTime: 3400 downFor: -205
+Link Aggr 35 Down curTime: 3500 downFor: -342378
+Link Tor 420 Down curTime: 3600 downFor: -203
+Link Aggr 438 Up 3700
+Link Tor 62 Down curTime: 3700 downFor: -220
+Switch Aggr [2,6,5] Up 3800
+Link Tor 420 Up 3900
+Link Core 1147 Down curTime: 3900 downFor: -94
+Link Tor 62 Up 4000
+Link Core 1147 Up 4100
+Link Tor 685 Down curTime: 4100 downFor: -148
+Link Core 1147 Down curTime: 4200 downFor: -478681
+Link Core 1255 Down curTime: 4200 downFor: -110
+Link Tor 685 Up 4300
+Link Tor 844 Down curTime: 4300 downFor: -189
+Link Core 1255 Up 4400
+Link Tor 685 Down curTime: 4400 downFor: -163298
+Link Tor 844 Up 4500
+Link Aggr 438 Down curTime: 4500 downFor: -236
+Link Tor 844 Down curTime: 4600 downFor: -293
+Link Aggr 438 Up 4800
+Link Tor 844 Up 4900
+Link Tor 420 Down curTime: 5400 downFor: -93
+Link Tor 420 Up 5500
+Switch Tor [2,6,5] Down curTime: 6300 downFor: -557912
+Link Tor 62 Down curTime: 6900 downFor: -592
+Link Tor 62 Up 7500
+Link Tor 420 Down curTime: 7500 downFor: -147
+Link Tor 420 Up 7700
+Link Tor 62 Down curTime: 7800 downFor: -188
+Link Aggr 737 Down curTime: 7800 downFor: -36
+Link Aggr 737 Up 7900
+Link Tor 62 Up 8000
+Link Tor 420 Down curTime: 9000 downFor: -142
+Link Tor 420 Up 9200
+Link Core 1120 Down curTime: 9300 downFor: -210
+Link Core 1120 Up 9600
+Link Aggr 737 Down curTime: 9700 downFor: -160
+Link Core 1120 Down curTime: 9700 downFor: -275279
+Link Aggr 737 Up 9900
+Link Core 1240 Down curTime: 10200 downFor: -806362
+Link Core 879 Down curTime: 11800 downFor: -439992
+Link Core 1150 Down curTime: 18100 downFor: -337
+Link Core 1150 Up 18500
+Link Core 1150 Down curTime: 19600 downFor: -383
+Link Core 1150 Up 20000
+Link Core 904 Down curTime: 25300 downFor: -684
+Link Core 904 Up 26000
+Link Core 981 Down curTime: 35600 downFor: -249
+Link Core 981 Up 35900
+Link Core 1173 Down curTime: 50900 downFor: -189
+Link Core 1173 Up 51100
+Link Core 993 Down curTime: 60000 downFor: -824286
+Link Tor 48 Up 70000
+Link Core 1052 Down curTime: 71800 downFor: -203
+Link Core 1052 Up 72100
+Link Tor 48 Down curTime: 72400 downFor: -119
+Link Tor 48 Up 72600
+Link Tor 685 Up 167700
+Link Core 1120 Up 285000
+Link Aggr 3 Up 303500
+Link Aggr 300 Down curTime: 305900 downFor: -115
+Link Aggr 300 Up 306100
+Link Aggr 300 Down curTime: 306200 downFor: -545
+Link Aggr 300 Up 306800
+Link Aggr 35 Up 345900
+Link Aggr 35 Down curTime: 347800 downFor: -177
+Link Aggr 35 Up 348000
+Link Aggr 35 Down curTime: 348100 downFor: -251
+Link Aggr 35 Up 348400
+Link Aggr 35 Down curTime: 349100 downFor: -199
+Link Aggr 35 Up 349300
+Link Aggr 35 Down curTime: 350400 downFor: -134
+Link Aggr 35 Up 350600
+Link Aggr 35 Down curTime: 350900 downFor: -168
+Link Aggr 35 Up 351100
+Link Aggr 239 Up 352000
+Link Tor 209 Up 422100
+Link Core 879 Up 451800
+Link Core 1147 Up 482900
+Link Core 1147 Down curTime: 483200 downFor: -84
+Link Core 1147 Up 483300
+Link Core 1147 Down curTime: 484300 downFor: -101
+Link Core 1147 Up 484400
+Link Core 1147 Down curTime: 524100 downFor: -835706
+Link Core 1086 Down curTime: 559900 downFor: -712674
+Link Core 1199 Down curTime: 561500 downFor: -131
+Switch Aggr [2,6,5] Up 564300
+Switch Tor [2,6,5] Down curTime: 567200 downFor: -59
+Switch Aggr [2,6,5] Up 567300
+Switch Tor [2,6,5] Down curTime: 569800 downFor: -2144
+Switch Aggr [2,6,5] Up 572000
+Switch Tor [2,6,5] Down curTime: 574600 downFor: -493936
+Link Aggr 438 Down curTime: 592700 downFor: -180
+Link Aggr 438 Up 592900
+Link Aggr 438 Down curTime: 593000 downFor: -584
+Link Aggr 438 Up 593600
+Link Core 1075 Down curTime: 594700 downFor: -229
+Link Aggr 438 Down curTime: 596200 downFor: -49
+Link Aggr 438 Up 596300
+Link Aggr 536 Up 608200
+Link Aggr 536 Down curTime: 610100 downFor: -123
+Link Aggr 536 Up 610300
+Link Core 1150 Down curTime: 625200 downFor: -109
+Link Core 1150 Up 625400
+Link Tor 854 Up 633800
+Link Tor 854 Down curTime: 634200 downFor: -71
+Link Tor 854 Up 634300
+Link Tor 854 Down curTime: 636200 downFor: -187
+Link Tor 854 Up 636400
+Link Tor 327 Down curTime: 638600 downFor: -210
+Link Tor 327 Up 638900
+Link Tor 555 Down curTime: 673200 downFor: -169
+Link Tor 555 Up 673400
+Link Core 1150 Down curTime: 688100 downFor: -79
+Link Core 1150 Up 688200
+Link Core 1150 Down curTime: 690700 downFor: -214
+Link Core 1150 Up 691000
+Link Core 1150 Down curTime: 691200 downFor: -267
+Link Core 1150 Up 691500
+Link Core 963 Down curTime: 777600 downFor: -77
+Link Core 963 Up 777700
+Link Core 963 Down curTime: 778400 downFor: -93
+Link Core 963 Up 778500
+Link Core 963 Down curTime: 782000 downFor: -153
+Link Core 963 Up 782200
+Link Core 963 Down curTime: 782500 downFor: -240
+Link Core 963 Up 782800
+Link Core 1240 Up 816600
+Link Tor 285 Down curTime: 845900 downFor: -209
+Link Tor 285 Up 846200
+Link Aggr 594 Down curTime: 849000 downFor: -197
+Link Aggr 594 Up 849200
+Link Tor 285 Down curTime: 849400 downFor: -154
+Link Tor 285 Up 849600
+Link Aggr 594 Down curTime: 851700 downFor: -57
+Link Aggr 594 Up 851800
+Link Tor 285 Down curTime: 852900 downFor: -281
+Link Tor 285 Up 853200
+Link Tor 285 Down curTime: 856100 downFor: -140
+Link Tor 285 Up 856300
+Link Core 1240 Down curTime: 871900 downFor: -114
+Link Core 1240 Up 872100
+Link Core 993 Up 884300
+Link Core 993 Down curTime: 925300 downFor: -207
+Link Core 993 Up 925600
+Link Aggr 653 Up 929000
+Link Core 993 Down curTime: 929100 downFor: -65
+Link Core 993 Up 929200
+Link Core 993 Down curTime: 929400 downFor: -136
+Link Core 993 Up 929600
+Link Aggr 653 Down curTime: 931700 downFor: -247
+Link Aggr 653 Up 932000
+Link Aggr 653 Down curTime: 932100 downFor: -132
+Link Aggr 653 Up 932300
+Link Core 980 Down curTime: 976700 downFor: -203
+Link Core 980 Up 977000
+Link Core 980 Down curTime: 977500 downFor: -508
+Link Core 980 Up 978100
+Link Aggr 597 Down curTime: 1018700 downFor: -158
+Link Aggr 597 Up 1018900
+Link Aggr 597 Down curTime: 1019400 downFor: -96
+Link Aggr 597 Up 1019500
+Switch Aggr [2,6,5] Up 1069800
+Switch Tor [2,6,5] Down curTime: 1070300 downFor: -985
+Switch Aggr [2,6,5] Up 1071300
+Switch Tor [2,6,5] Down curTime: 1092000 downFor: -107
+Switch Aggr [2,6,5] Up 1092200
+Link Core 993 Down curTime: 1166700 downFor: -73
+Link Core 993 Up 1166800
+Link Core 993 Down curTime: 1233300 downFor: -57
+Link Core 993 Up 1233400
+Link Core 1280 Down curTime: 1280500 downFor: -116
+Link Core 1280 Up 1280700
+Link Core 1280 Down curTime: 1301900 downFor: -550
+Link Core 1280 Up 1302500
+Link Core 1280 Down curTime: 1302700 downFor: -57
+Link Core 1280 Up 1302800
+Link Core 1280 Down curTime: 1305600 downFor: -388
+Link Core 1280 Up 1306000
+Link Core 993 Down curTime: 1312000 downFor: -13
+Link Core 993 Up 1312100
+Link Core 993 Down curTime: 1312400 downFor: -15
+Link Core 993 Up 1312500
+Link Core 1206 Down curTime: 1325600 downFor: -189
+Link Core 1147 Up 1359900
+Link Core 1147 Down curTime: 1361600 downFor: -148
+Link Core 1147 Up 1361800
+Link Core 1147 Down curTime: 1372800 downFor: -100
+Link Core 1147 Up 1372900
+Link Core 937 Down curTime: 1379000 downFor: -249
+Switch Aggr [1,11,5] Down curTime: 1394300 downFor: -6551
+Switch Aggr [1,11,5] Up 1400900
+Switch Aggr [1,11,5] Down curTime: 1401000 downFor: -266
+Switch Aggr [1,11,5] Up 1401300
+Link Core 896 Down curTime: 1477800 downFor: -171
+Link Core 1237 Down curTime: 1616600 downFor: -227
+Link Core 1237 Up 1616900
+Link Core 1237 Down curTime: 1620000 downFor: -182
+Link Core 1237 Up 1620200
+Link Core 1237 Down curTime: 1620500 downFor: -186
+Link Core 1237 Up 1620700
+Link Core 1237 Down curTime: 1621000 downFor: -367
+Link Core 1237 Up 1621400
+Link Core 1237 Down curTime: 1624000 downFor: -228
+Link Core 1237 Up 1624300
+Link Core 1237 Down curTime: 1624400 downFor: -560
+Link Core 1237 Up 1625000
+Link Core 1150 Down curTime: 1657500 downFor: -156
+Link Core 1150 Up 1657700
+Switch Aggr [1,11,5] Down curTime: 1658500 downFor: -7488
+Link Core 1150 Down curTime: 1658800 downFor: -649
+Link Core 1150 Up 1659500
+Switch Aggr [1,11,5] Up 1666000
+Link Tor 48 Down curTime: 1690300 downFor: -282300
+Link Aggr 725 Down curTime: 1718100 downFor: -250
+Link Tor 48 Up 1972600
+Link Core 1052 Down curTime: 2054800 downFor: -65
+Link Core 1052 Up 2054900
+Link Core 1052 Down curTime: 2058400 downFor: -266
+Link Core 1052 Up 2058700
+Link Core 1052 Down curTime: 2058900 downFor: -158
+Link Core 1052 Up 2059100
+Link Core 1052 Down curTime: 2059300 downFor: -39
+Link Core 1052 Up 2059400
+Link Core 1052 Down curTime: 2083100 downFor: -185
+Link Core 1052 Up 2083300
+Link Core 1032 Down curTime: 2113600 downFor: -207
+Link Core 1032 Up 2113900
+Link Core 1032 Down curTime: 2114100 downFor: -112
+Link Core 1032 Up 2114300
+Link Core 1032 Down curTime: 2116600 downFor: -69
+Link Core 1032 Up 2116700
+Link Tor 568 Down curTime: 2330800 downFor: -627
+Link Tor 568 Up 2331500
+Link Tor 568 Down curTime: 2332000 downFor: -679
+Link Tor 568 Up 2332700
+Link Core 956 Down curTime: 2446400 downFor: -160
+Link Core 1139 Down curTime: 2483600 downFor: -45
+Link Core 1139 Up 2483700
+Link Core 1240 Down curTime: 2485500 downFor: -142
+Link Core 1240 Up 2485700
+Link Core 1240 Down curTime: 2485900 downFor: -176
+Link Core 1240 Up 2486100
+Link Core 1139 Down curTime: 2503000 downFor: -189
+Link Core 1139 Up 2503200
+Link Core 1240 Down curTime: 2557500 downFor: -184
+Link Core 1240 Up 2557700
+Link Aggr 438 Down curTime: 2619100 downFor: -208
+Link Aggr 438 Up 2619400
+Link Aggr 438 Down curTime: 2620700 downFor: -92
+Link Aggr 438 Up 2620800
+Link Aggr 438 Down curTime: 2622500 downFor: -115
+Link Aggr 438 Up 2622700
+Link Core 992 Down curTime: 2645900 downFor: -20
+Link Aggr 228 Down curTime: 2675500 downFor: -154
+Link Aggr 228 Up 2675700
+Link Core 1255 Down curTime: 2711400 downFor: -114
+Link Core 1255 Up 2711600
+Link Core 1255 Down curTime: 2713500 downFor: -703266
+Link Core 907 Down curTime: 2771000 downFor: -104
+Link Aggr 9 Down curTime: 2873000 downFor: -110
+Link Aggr 9 Up 2873200
+Link Aggr 9 Down curTime: 2873300 downFor: -196
+Link Aggr 9 Up 2873500
+Link Aggr 735 Down curTime: 3012400 downFor: -237
+Link Aggr 735 Up 3012700
+Switch Aggr [1,11,5] Down curTime: 3135100 downFor: -431
+Switch Aggr [1,11,5] Up 3135600
+Link Core 963 Down curTime: 3200600 downFor: -160
+Link Core 963 Up 3200800
+Link Core 963 Down curTime: 3201100 downFor: -109
+Link Core 963 Up 3201300
+Link Core 963 Down curTime: 3244400 downFor: -196
+Link Core 963 Up 3244600
+Link Tor 59 Down curTime: 3278000 downFor: -95
+Link Tor 59 Up 3278100
+Link Core 999 Down curTime: 3361000 downFor: -145
+Link Core 999 Up 3361200
+Link Core 999 Down curTime: 3361300 downFor: -245
+Link Core 999 Up 3361600
+Link Core 999 Down curTime: 3392100 downFor: -61
+Link Core 999 Up 3392200
+Link Core 999 Down curTime: 3394400 downFor: -128
+Link Core 999 Up 3394600
+Link Core 999 Down curTime: 3394700 downFor: -552
+Link Core 999 Up 3395300
+Link Core 1255 Up 3416800
+Link Core 1243 Down curTime: 3422200 downFor: -952611
+Link Core 999 Down curTime: 3457200 downFor: -96
+Link Core 999 Up 3457300
+Link Core 999 Down curTime: 3528000 downFor: -187
+Link Core 999 Up 3528200
+Link Aggr 583 Down curTime: 3546900 downFor: -137
+Link Tor 568 Down curTime: 3771300 downFor: -108
+Link Tor 568 Up 3771500
+Link Tor 568 Down curTime: 3771600 downFor: -118
+Link Tor 568 Up 3771800
+Link Core 1243 Up 4374900
+Link Tor 555 Down curTime: 4385100 downFor: -283
+Link Tor 555 Up 4385400
+Link Tor 555 Down curTime: 4385700 downFor: -253
+Link Tor 555 Up 4386000
+Link Tor 555 Down curTime: 4387200 downFor: -78
+Link Tor 555 Up 4387300
+Link Tor 555 Down curTime: 4387600 downFor: -103
+Link Tor 555 Up 4387800
+Link Core 1243 Down curTime: 4439500 downFor: -227
+Link Core 1243 Up 4439800
+Link Core 1243 Down curTime: 4440000 downFor: -157
+Link Core 1243 Up 4440200
+Link Core 1243 Down curTime: 4440400 downFor: -577554
+Link Core 1173 Down curTime: 4476000 downFor: -215
+Link Core 1173 Up 4476300
+Link Core 1120 Down curTime: 4552400 downFor: -86
+Link Core 1120 Up 4552500
+Link Aggr 536 Down curTime: 4600900 downFor: -94
+Link Aggr 536 Up 4601000
+Link Core 1139 Down curTime: 4741200 downFor: -90
+Link Core 1139 Up 4741300
+Link Core 1139 Down curTime: 4768800 downFor: -116
+Link Core 1139 Up 4769000
+Link Core 1139 Down curTime: 4840400 downFor: -149
+Link Core 1139 Up 4840600
+Link Aggr 228 Down curTime: 4943500 downFor: -52
+Link Aggr 228 Up 4943600
+Link Aggr 228 Down curTime: 4943700 downFor: -210056
+Link Core 1032 Down curTime: 4999100 downFor: -198
+Link Core 1032 Up 4999300
+Link Core 1243 Up 5018000
+Link Aggr 228 Up 5153800
+Link Core 981 Down curTime: 5208700 downFor: -609
+Link Core 981 Up 5209400
+Link Core 904 Down curTime: 5235700 downFor: -176
+Link Core 904 Up 5235900
+Link Core 904 Down curTime: 5236200 downFor: -572626
+Link Aggr 536 Down curTime: 5276000 downFor: -140
+Link Aggr 536 Up 5276200
+Link Tor 701 Down curTime: 5316900 downFor: -117
+Link Core 1147 Down curTime: 5394800 downFor: -421
+Link Core 1147 Up 5395300
+Link Core 1147 Down curTime: 5397600 downFor: -406
+Link Core 1147 Up 5398100
+Link Core 1147 Down curTime: 5398300 downFor: -148
+Link Core 1147 Up 5398500
+Link Aggr 3 Down curTime: 5440600 downFor: -163
+Link Aggr 3 Up 5440800
+Link Aggr 3 Down curTime: 5444100 downFor: -211
+Link Aggr 3 Up 5444400
+Link Aggr 3 Down curTime: 5444600 downFor: -53
+Link Aggr 3 Up 5444700
+Link Aggr 3 Down curTime: 5445200 downFor: -182
+Link Aggr 3 Up 5445400
+Link Aggr 3 Down curTime: 5448700 downFor: -198
+Link Aggr 3 Up 5448900
+Link Core 1147 Down curTime: 5474700 downFor: -203
+Link Core 1147 Up 5475000
+Link Core 1255 Down curTime: 5488300 downFor: -133743
+Link Core 879 Down curTime: 5495100 downFor: -206
+Link Core 879 Up 5495400
+Link Core 879 Down curTime: 5507600 downFor: -101
+Link Core 879 Up 5507700
+Link Core 879 Down curTime: 5540600 downFor: -179
+Link Core 879 Up 5540800
+Link Core 879 Down curTime: 5544100 downFor: -186
+Link Core 879 Up 5544300
+Link Core 1255 Up 5622100
+Link Core 904 Up 5808900
+Link Core 1243 Down curTime: 5842900 downFor: -175
+Link Core 1243 Up 5843100
+Link Core 1243 Down curTime: 5843300 downFor: -149
+Link Core 1243 Up 5843500
+Link Core 1269 Down curTime: 5852800 downFor: -408973
+Switch Aggr [1,11,5] Down curTime: 5876300 downFor: -415
+Switch Aggr [1,11,5] Up 5876800
+Switch Aggr [1,11,5] Down curTime: 5876900 downFor: -338
+Switch Aggr [1,11,5] Up 5877300
+Switch Aggr [1,11,5] Down curTime: 5877500 downFor: -8432
+Link Core 1243 Down curTime: 5878600 downFor: -671227
+Switch Aggr [1,11,5] Up 5886000
+Link Aggr 35 Down curTime: 5987500 downFor: -60
+Link Aggr 35 Up 5987600
+Link Aggr 35 Down curTime: 5990800 downFor: -63
+Link Aggr 35 Up 5990900
+Link Tor 56 Down curTime: 6016300 downFor: -123
+Link Tor 56 Up 6016500
+Link Core 983 Down curTime: 6040400 downFor: -254
+Link Core 1052 Down curTime: 6101200 downFor: -164
+Link Core 1052 Up 6101400
+Link Tor 685 Down curTime: 6271200 downFor: -204
+Link Tor 685 Up 6271500
+Link Aggr 300 Down curTime: 6281500 downFor: -203
+Link Aggr 300 Up 6281800
+Link Core 1147 Down curTime: 6287100 downFor: -179
+Link Core 1147 Up 6287300
+Link Tor 285 Down curTime: 6301600 downFor: -227
+Link Tor 285 Up 6301900
+Link Core 904 Down curTime: 6382100 downFor: -203
+Link Core 904 Up 6382400
+Link Core 904 Down curTime: 6450900 downFor: -140
+Link Core 904 Up 6451100
+Link Aggr 653 Down curTime: 6538300 downFor: -203
+Link Aggr 653 Up 6538600
+Link Aggr 653 Down curTime: 6538900 downFor: -209
+Link Aggr 653 Up 6539200
+Link Core 1243 Up 6549900
+Link Core 1243 Down curTime: 6551800 downFor: -238
+Link Core 1243 Up 6552100
+Link Tor 854 Down curTime: 6634500 downFor: -174147
+Link Core 1052 Down curTime: 6685200 downFor: -261
+Link Core 1052 Up 6685500
+Link Core 1052 Down curTime: 6688300 downFor: -112
+Link Core 1052 Up 6688500
+Link Tor 849 Down curTime: 6763700 downFor: -106
+Link Tor 849 Up 6763900
+Link Tor 849 Down curTime: 6764100 downFor: -84
+Link Tor 849 Up 6764200
+Link Tor 849 Down curTime: 6766900 downFor: -155
+Link Tor 849 Up 6767100
+Link Tor 854 Up 6808700
+Link Tor 854 Down curTime: 6810700 downFor: -138
+Link Tor 854 Up 6810900
+Link Core 1224 Down curTime: 6969200 downFor: -69
+Link Aggr 603 Down curTime: 7223900 downFor: -610
+Link Aggr 603 Up 7224600
+Link Aggr 603 Down curTime: 7226000 downFor: -192
+Link Aggr 603 Up 7226200
+Link Aggr 603 Down curTime: 7228700 downFor: -90932
+Link Aggr 603 Up 7319700
+Link Aggr 603 Down curTime: 7319900 downFor: -2485
+Link Aggr 603 Up 7322400
+Link Aggr 603 Down curTime: 7324800 downFor: -218
+Link Aggr 603 Up 7325100
+Link Aggr 603 Down curTime: 7327300 downFor: -204
+Link Aggr 603 Up 7327600
+Link Aggr 603 Down curTime: 7327900 downFor: -83
+Link Aggr 603 Up 7328000
+Link Aggr 603 Down curTime: 7330400 downFor: -148
+Link Aggr 603 Up 7330600
+Link Tor 59 Down curTime: 7333200 downFor: -170
+Link Tor 59 Up 7333400
+Link Tor 420 Down curTime: 7492900 downFor: -479
+Link Tor 420 Up 7493400
+Link Core 1150 Down curTime: 7555300 downFor: -136
+Link Core 1150 Up 7555500
+Link Tor 209 Down curTime: 7562100 downFor: -144
+Link Tor 209 Up 7562300
+Link Tor 209 Down curTime: 7562400 downFor: -203
+Link Tor 209 Up 7562700
+Link Tor 209 Down curTime: 7565400 downFor: -136
+Link Tor 209 Up 7565600
+Link Tor 209 Down curTime: 7565800 downFor: -194
+Link Tor 209 Up 7566000
+Link Aggr 737 Down curTime: 7689900 downFor: -237
+Link Aggr 737 Up 7690200
+Link Core 1292 Down curTime: 7771400 downFor: -219
+Link Tor 56 Down curTime: 7785400 downFor: -842318
+Link Tor 849 Down curTime: 7788300 downFor: -200
+Link Tor 849 Up 7788500
+Link Aggr 536 Down curTime: 7846600 downFor: -157
+Link Aggr 536 Up 7846800
+Link Aggr 536 Down curTime: 7849500 downFor: -189
+Link Aggr 536 Up 7849700
+Link Core 1120 Down curTime: 8034000 downFor: -360015
+Link Core 976 Down curTime: 8096500 downFor: -262
+Link Aggr 653 Down curTime: 8224800 downFor: -263
+Link Aggr 653 Up 8225100
+Link Aggr 653 Down curTime: 8228600 downFor: -104
+Link Aggr 653 Up 8228800
+Link Core 1120 Up 8394100
+Link Core 1120 Down curTime: 8394300 downFor: -173
+Link Core 1120 Up 8394500
+Link Core 1120 Down curTime: 8394700 downFor: -651
+Link Core 1120 Up 8395400
+Link Core 1120 Down curTime: 8469600 downFor: -112
+Link Core 1120 Up 8469800
+Link Core 1243 Down curTime: 8504300 downFor: -105
+Link Core 1243 Up 8504500
+Link Core 963 Down curTime: 8569600 downFor: -227
+Link Core 963 Up 8569900
+Link Core 963 Down curTime: 8570100 downFor: -241
+Link Core 963 Up 8570400
+Link Core 1243 Down curTime: 8576400 downFor: -151
+Link Core 1243 Up 8576600
+Link Core 1237 Down curTime: 8600300 downFor: -220
+Link Core 1237 Up 8600600
+Link Core 1032 Down curTime: 8606500 downFor: -219
+Link Core 1032 Up 8606800
+Link Tor 56 Up 8627800
+Link Tor 56 Down curTime: 8628300 downFor: -241
+Link Tor 56 Up 8628600
+Link Tor 56 Down curTime: 8630500 downFor: -89
+Link Tor 56 Up 8630600
+Link Tor 56 Down curTime: 8630900 downFor: -141
+Link Tor 56 Up 8631100
+Link Tor 56 Down curTime: 8633100 downFor: -158
+Link Tor 56 Up 8633300
+Link Tor 56 Down curTime: 8636900 downFor: -75
+Link Tor 56 Up 8637000
+Link Core 1243 Down curTime: 8661200 downFor: -152
+Link Core 1243 Up 8661400
+Switch Aggr [1,11,5] Down curTime: 8708700 downFor: -492
+Switch Aggr [1,11,5] Up 8709200
+Link Aggr 228 Down curTime: 8721500 downFor: -97
+Link Aggr 228 Up 8721600
+Link Aggr 228 Down curTime: 8722600 downFor: -150
+Link Aggr 228 Up 8722800
+Link Aggr 228 Down curTime: 8723100 downFor: -118
+Link Aggr 228 Up 8723300
+Link Aggr 228 Down curTime: 8725600 downFor: -233
+Link Aggr 228 Up 8725900
+Link Aggr 228 Down curTime: 8726000 downFor: -234
+Link Aggr 228 Up 8726300
+Link Core 980 Down curTime: 8775300 downFor: -23
+Link Core 980 Up 8775400
+Link Core 980 Down curTime: 8775700 downFor: -6
+Link Core 980 Up 8775800
+Link Core 980 Down curTime: 8795400 downFor: -210
+Link Core 980 Up 8795700
+Link Core 980 Down curTime: 8797000 downFor: -133
+Link Core 980 Up 8797200
+Link Tor 204 Down curTime: 8806500 downFor: -158
+Link Tor 204 Up 8806700
+Link Core 1211 Down curTime: 8807600 downFor: -185
+Link Core 1211 Up 8807800
+Link Tor 685 Down curTime: 8817300 downFor: -199
+Link Tor 685 Up 8817500
+Link Tor 685 Down curTime: 8819900 downFor: -284
+Link Tor 685 Up 8820200
+Link Core 980 Down curTime: 8873100 downFor: -135
+Link Core 980 Up 8873300
+Link Tor 64 Down curTime: 8877700 downFor: -141
+Link Tor 64 Up 8877900
+Link Tor 64 Down curTime: 8879800 downFor: -33
+Link Tor 64 Up 8879900
+Link Tor 64 Down curTime: 8880900 downFor: -164
+Link Tor 64 Up 8881100
+Link Core 1243 Down curTime: 8903800 downFor: -192
+Link Core 1243 Up 8904000
+Link Core 1243 Down curTime: 8904200 downFor: -190
+Link Core 1243 Up 8904400
+Link Aggr 239 Down curTime: 8924300 downFor: -66
+Link Aggr 239 Up 8924400
+Link Aggr 239 Down curTime: 8926200 downFor: -55
+Link Aggr 239 Up 8926300
+Link Aggr 239 Down curTime: 8926900 downFor: -218
+Link Aggr 239 Up 8927200
+Link Aggr 239 Down curTime: 8930100 downFor: -66
+Link Aggr 239 Up 8930200
+Switch Tor [2,6,5] Down curTime: 9041100 downFor: -128
+Switch Aggr [2,6,5] Up 9041300
+Switch Tor [2,6,5] Down curTime: 9043500 downFor: -2670
+Switch Aggr [2,6,5] Up 9046200
+Link Aggr 3 Down curTime: 9048000 downFor: -73
+Link Aggr 3 Up 9048100
+Switch Tor [2,6,5] Down curTime: 9048200 downFor: -84
+Link Aggr 3 Down curTime: 9048200 downFor: -100
+Switch Aggr [2,6,5] Up 9048300
+Link Aggr 3 Up 9048300
+Link Aggr 3 Down curTime: 9048500 downFor: -75
+Link Aggr 3 Up 9048600
+Switch Tor [2,6,5] Down curTime: 9048600 downFor: -1409
+Switch Aggr [2,6,5] Up 9050100
+Link Aggr 3 Down curTime: 9051900 downFor: -170
+Link Aggr 3 Up 9052100
+Switch Tor [2,6,5] Down curTime: 9052700 downFor: -146
+Switch Aggr [2,6,5] Up 9052900
+Switch Tor [2,6,5] Down curTime: 9054600 downFor: -206791
+Link Core 1139 Down curTime: 9072900 downFor: -94
+Link Core 1139 Up 9073000
+Link Core 1139 Down curTime: 9074300 downFor: -29
+Link Core 1139 Up 9074400
+Link Core 1211 Down curTime: 9160200 downFor: -149
+Link Core 1211 Up 9160400
+Link Tor 327 Down curTime: 9177700 downFor: -701
+Link Tor 327 Up 9178400
+Link Core 1211 Down curTime: 9231300 downFor: -54
+Link Core 1211 Up 9231400
+Switch Aggr [2,6,5] Up 9261400
+Switch Tor [2,6,5] Down curTime: 9283600 downFor: -168111
+Link Tor 62 Down curTime: 9315200 downFor: -928337
+Link Core 1240 Down curTime: 9386000 downFor: -150
+Link Core 1240 Up 9386200
+Link Core 1240 Down curTime: 9386500 downFor: -596
+Link Core 1240 Up 9387100
+Link Core 1240 Down curTime: 9387200 downFor: -109
+Link Core 1240 Up 9387400
+Link Core 1240 Down curTime: 9389400 downFor: -77
+Link Core 1240 Up 9389500
+Link Tor 844 Down curTime: 9428300 downFor: -200
+Link Tor 844 Up 9428500
+Link Tor 844 Down curTime: 9428800 downFor: -105
+Link Tor 844 Up 9429000
+Link Tor 844 Down curTime: 9432000 downFor: -636
+Link Tor 844 Up 9432700
+Link Tor 568 Down curTime: 9444600 downFor: -685668
+Switch Aggr [2,6,5] Up 9451800
+Switch Tor [2,6,5] Down curTime: 9453000 downFor: -615
+Switch Aggr [2,6,5] Up 9453700
+Link Tor 255 Down curTime: 9609000 downFor: -126
+Link Tor 255 Up 9609200
+Link Tor 255 Down curTime: 9610500 downFor: -165
+Link Tor 255 Up 9610700
+Link Aggr 653 Down curTime: 9808700 downFor: -225
+Link Aggr 653 Up 9809000
+Link Aggr 653 Down curTime: 9812500 downFor: -190
+Link Aggr 653 Up 9812700
+Link Aggr 653 Down curTime: 9812800 downFor: -155
+Link Aggr 653 Up 9813000
+Link Core 1120 Down curTime: 9967900 downFor: -141
+Link Core 1120 Up 9968100
+Link Core 1120 Down curTime: 9969100 downFor: -57727
+Link Tor 204 Down curTime: 9996900 downFor: -99
+Link Tor 204 Up 9997000
+Link Core 1120 Up 10026900
+Link Aggr 594 Down curTime: 10100000 downFor: -188
+Link Aggr 594 Up 10100200
+Link Aggr 594 Down curTime: 10100500 downFor: -184
+Link Aggr 594 Up 10100700
+Link Tor 568 Up 10130300
+Link Tor 568 Down curTime: 10131200 downFor: -141
+Link Tor 568 Up 10131400
+Link Tor 568 Down curTime: 10133100 downFor: -94
+Link Tor 568 Up 10133200
+Link Tor 568 Down curTime: 10133400 downFor: -161
+Link Tor 568 Up 10133600
+Link Aggr 9 Down curTime: 10134000 downFor: -67
+Link Aggr 9 Up 10134100
+Link Tor 568 Down curTime: 10134200 downFor: -183
+Link Aggr 9 Down curTime: 10134300 downFor: -665
+Link Tor 568 Up 10134400
+Link Aggr 9 Up 10135000
+Link Tor 62 Up 10243600
+Link Tor 62 Down curTime: 10245000 downFor: -194
+Link Tor 62 Up 10245200
+Link Tor 62 Down curTime: 10246900 downFor: -93
+Link Tor 62 Up 10247000
+Link Tor 62 Down curTime: 10247300 downFor: -486
+Link Tor 62 Up 10247800
+Link Core 999 Down curTime: 10251100 downFor: -96
+Link Core 999 Up 10251200
+Link Core 999 Down curTime: 10275400 downFor: -110
+Link Core 999 Up 10275600
+Link Tor 854 Down curTime: 10328400 downFor: -45
+Link Tor 854 Up 10328500
+Link Core 999 Down curTime: 10338500 downFor: -313087
+Link Core 1074 Down curTime: 10412700 downFor: -246
+Switch Tor [2,8,2] Down curTime: 10487000 downFor: -1837
+Link Aggr 597 Down curTime: 10526300 downFor: -83
+Link Aggr 597 Up 10526400
+Link Aggr 597 Down curTime: 10526600 downFor: -139
+Link Aggr 597 Up 10526800
+Link Tor 622 Down curTime: 10530700 downFor: -109
+Link Core 879 Down curTime: 10542300 downFor: -132379
+Link Core 999 Up 10651600
+Link Aggr 438 Down curTime: 10666800 downFor: -116
+Link Aggr 438 Up 10667000
+Link Core 879 Up 10674700
+Link Core 879 Down curTime: 10674900 downFor: -493
+Link Core 879 Up 10675400
+Link Aggr 603 Down curTime: 10676400 downFor: -530028
+Link Core 879 Down curTime: 10745800 downFor: -152
+Link Core 879 Up 10746000
+Link Core 879 Down curTime: 10774900 downFor: -97780
+Link Tor 48 Down curTime: 10775200 downFor: -235
+Link Tor 48 Up 10775500
+Link Tor 48 Down curTime: 10775700 downFor: -125
+Link Tor 48 Up 10775900
+Link Tor 48 Down curTime: 10778500 downFor: -278
+Link Tor 48 Up 10778800
+Link Core 879 Up 10872700
+Link Core 993 Down curTime: 10998500 downFor: -583620
+Link Core 1173 Down curTime: 11068600 downFor: -208
+Link Core 1173 Up 11068900
+Link Core 1173 Down curTime: 11069000 downFor: -183
+Link Core 1173 Up 11069200
+Link Core 1173 Down curTime: 11142000 downFor: -60535
+Link Core 1255 Down curTime: 11177500 downFor: -28
+Link Core 1255 Up 11177600
+Link Core 1255 Down curTime: 11192500 downFor: -183
+Link Core 1255 Up 11192700
+Link Core 1255 Down curTime: 11193000 downFor: -189
+Link Core 1255 Up 11193200
+Link Core 1255 Down curTime: 11193400 downFor: -76
+Link Core 1255 Up 11193500
+Link Core 1173 Up 11202600
+Link Aggr 603 Up 11206500
+Link Aggr 603 Down curTime: 11206600 downFor: -134
+Link Aggr 603 Up 11206800
+Link Aggr 603 Down curTime: 11207000 downFor: -137
+Link Aggr 603 Up 11207200
+Link Aggr 603 Down curTime: 11210000 downFor: -477
+Link Aggr 603 Up 11210500
+Link Aggr 603 Down curTime: 11210700 downFor: -271
+Link Aggr 603 Up 11211000
+Link Core 1280 Down curTime: 11259700 downFor: -181
+Link Core 1280 Up 11259900
+Link Core 1173 Down curTime: 11267900 downFor: -171
+Link Core 1173 Up 11268100
+Link Core 1173 Down curTime: 11281600 downFor: -138
+Link Core 1173 Up 11281800
+Link Core 1280 Down curTime: 11325500 downFor: -618
+Link Core 1280 Up 11326200
+Link Core 1173 Down curTime: 11348500 downFor: -204
+Link Core 1173 Up 11348800
+Link Core 1173 Down curTime: 11351000 downFor: -197
+Link Core 1173 Up 11351200
+Link Core 1173 Down curTime: 11406500 downFor: -174
+Link Core 1173 Up 11406700
+Link Core 1173 Down curTime: 11493100 downFor: -187
+Link Core 1173 Up 11493300
+Link Core 1173 Down curTime: 11493500 downFor: -166
+Link Core 1173 Up 11493700
+Link Core 993 Up 11582200
+Link Aggr 300 Down curTime: 11594800 downFor: -118
+Link Aggr 300 Up 11595000
+Link Aggr 300 Down curTime: 11595400 downFor: -95
+Link Aggr 300 Up 11595500
+Link Aggr 300 Down curTime: 11598200 downFor: -215
+Link Aggr 300 Up 11598500
+Switch Aggr [1,11,5] Down curTime: 11611100 downFor: -32
+Switch Aggr [1,11,5] Up 11611200
+Switch Aggr [1,11,5] Down curTime: 11611400 downFor: -359
+Switch Aggr [1,11,5] Up 11611800
+Switch Aggr [1,11,5] Down curTime: 11612100 downFor: -442
+Switch Aggr [1,11,5] Up 11612600
+Switch Aggr [1,11,5] Down curTime: 11612800 downFor: -334
+Switch Aggr [1,11,5] Up 11613200
+Link Core 904 Down curTime: 11664900 downFor: -109
+Link Core 904 Up 11665100
+Link Tor 255 Down curTime: 11701800 downFor: -115
+Link Tor 255 Up 11702000
+Link Core 904 Down curTime: 11736600 downFor: -59
+Link Core 904 Up 11736700
+Link Tor 209 Down curTime: 11738300 downFor: -218
+Link Tor 209 Up 11738600
+Link Tor 327 Down curTime: 11886500 downFor: -55
+Link Tor 327 Up 11886600
+Link Tor 327 Down curTime: 11887800 downFor: -113
+Link Tor 327 Up 11888000
+Link Tor 327 Down curTime: 11889800 downFor: -109
+Link Tor 327 Up 11890000
+Link Aggr 653 Down curTime: 12279800 downFor: -451
+Link Aggr 653 Up 12280300
+Link Aggr 653 Down curTime: 12282200 downFor: -710348
+Link Tor 555 Down curTime: 12351600 downFor: -234
+Link Tor 555 Up 12351900
+Link Core 1243 Down curTime: 12378800 downFor: -203
+Link Core 1243 Up 12379100
+Link Core 1243 Down curTime: 12381700 downFor: -238
+Link Core 1243 Up 12382000
+Link Tor 64 Down curTime: 12393800 downFor: -117
+Link Tor 64 Up 12394000
+Link Aggr 239 Down curTime: 12406600 downFor: -173
+Link Aggr 239 Up 12406800
+Link Aggr 239 Down curTime: 12407000 downFor: -431142
+Link Core 1147 Down curTime: 12454300 downFor: -111
+Link Core 1147 Up 12454500
+Link Core 1147 Down curTime: 12454700 downFor: -109
+Link Core 1147 Up 12454900
+Link Tor 209 Down curTime: 12626900 downFor: -90
+Link Tor 209 Up 12627000
+Link Tor 844 Down curTime: 12670900 downFor: -167
+Link Tor 844 Up 12671100
+Link Tor 420 Down curTime: 12725200 downFor: -55
+Link Tor 420 Up 12725300
+Link Tor 420 Down curTime: 12728300 downFor: -237
+Link Tor 420 Up 12728600
+Link Aggr 35 Down curTime: 12798100 downFor: -246
+Link Aggr 35 Up 12798400
+Link Aggr 735 Down curTime: 12816600 downFor: -162
+Link Aggr 735 Up 12816800
+Link Aggr 239 Up 12838200
+Link Aggr 239 Down curTime: 12840000 downFor: -36
+Link Aggr 239 Up 12840100
+Link Aggr 239 Down curTime: 12841000 downFor: -404
+Link Aggr 239 Up 12841500
+Link Aggr 239 Down curTime: 12844000 downFor: -729012
+Link Core 980 Down curTime: 12883200 downFor: -68
+Link Core 980 Up 12883300
+Link Core 980 Down curTime: 12883500 downFor: -175
+Link Core 980 Up 12883700
+Link Core 980 Down curTime: 12885300 downFor: -197717
+Switch Aggr [1,11,5] Down curTime: 12898500 downFor: -370
+Switch Aggr [1,11,5] Up 12898900
+Link Aggr 536 Down curTime: 12910500 downFor: -186
+Link Aggr 536 Up 12910700
+Switch Aggr [1,11,5] Down curTime: 12941200 downFor: -352
+Switch Aggr [1,11,5] Up 12941600
+Link Aggr 653 Up 12992600
+Link Core 980 Up 13083100
+Link Core 1052 Down curTime: 13346200 downFor: -205
+Link Core 1052 Up 13346500
+Link Core 1052 Down curTime: 13346600 downFor: -177
+Link Core 1052 Up 13346800
+Link Aggr 603 Down curTime: 13362100 downFor: -169
+Link Aggr 603 Up 13362300
+Link Core 1052 Down curTime: 13417900 downFor: -431
+Link Core 1052 Up 13418400
+Link Core 1052 Down curTime: 13418500 downFor: -219
+Link Core 1052 Up 13418800
+Link Core 1052 Down curTime: 13421000 downFor: -85
+Link Core 1052 Up 13421100
+Link Core 1052 Down curTime: 13423200 downFor: -191
+Link Core 1052 Up 13423400
+Link Tor 327 Down curTime: 13452000 downFor: -141
+Link Tor 327 Up 13452200
+Link Tor 327 Down curTime: 13453900 downFor: -146
+Link Tor 327 Up 13454100
+Link Tor 327 Down curTime: 13456000 downFor: -239
+Link Tor 327 Up 13456300
+Link Tor 327 Down curTime: 13459000 downFor: -76
+Link Tor 327 Up 13459100
+Link Core 1052 Down curTime: 13481800 downFor: -201
+Link Core 1052 Up 13482000
+Link Core 1052 Down curTime: 13484400 downFor: -224
+Link Core 1052 Up 13484700
+Link Core 1052 Down curTime: 13484800 downFor: -295
+Link Core 1052 Up 13485100
+Link Core 1052 Down curTime: 13486200 downFor: -59
+Link Core 1052 Up 13486300
+Link Core 882 Down curTime: 13518200 downFor: -663
+Link Tor 420 Down curTime: 13520300 downFor: -847493
+Link Aggr 239 Up 13573100
+Link Aggr 239 Down curTime: 13575400 downFor: -180
+Link Aggr 239 Up 13575600
+Link Aggr 239 Down curTime: 13579100 downFor: -238402
+Link Core 999 Down curTime: 13759600 downFor: -241
+Link Core 999 Up 13759900
+Link Aggr 239 Up 13817600
+Link Aggr 239 Down curTime: 13819500 downFor: -109
+Link Aggr 239 Up 13819700
+Link Core 999 Down curTime: 13825800 downFor: -137
+Link Core 999 Up 13826000
+Link Aggr 653 Down curTime: 13827900 downFor: -366
+Link Aggr 653 Up 13828300
+Link Aggr 822 Down curTime: 13862100 downFor: -135
+Link Core 980 Down curTime: 13985200 downFor: -718
+Link Core 980 Up 13986000
+Link Core 980 Down curTime: 13986100 downFor: -195
+Link Core 980 Up 13986300
+Link Core 1052 Down curTime: 14015400 downFor: -267
+Link Core 1052 Up 14015700
+Link Core 1052 Down curTime: 14016000 downFor: -216
+Link Core 1052 Up 14016300
+Link Core 1052 Down curTime: 14016500 downFor: -170
+Link Core 1052 Up 14016700
+Link Core 1130 Down curTime: 14191100 downFor: -99
+Link Tor 420 Up 14367800
+Link Tor 420 Down curTime: 14368700 downFor: -371
+Link Tor 420 Up 14369100
+Link Tor 59 Down curTime: 14371500 downFor: -118
+Link Tor 59 Up 14371700
+Link Tor 62 Down curTime: 14482900 downFor: -132
+Link Tor 62 Up 14483100
+Link Core 1237 Down curTime: 14484000 downFor: -165
+Link Core 1237 Up 14484200
+Link Core 1237 Down curTime: 14486000 downFor: -206
+Link Core 1237 Up 14486300
+Link Core 1237 Down curTime: 14488500 downFor: -711223
+Link Core 1173 Down curTime: 14550100 downFor: -202
+Link Core 1173 Up 14550400
+Link Core 1173 Down curTime: 14552300 downFor: -125
+Link Core 1173 Up 14552500
+Link Tor 204 Down curTime: 14554300 downFor: -62
+Link Tor 204 Up 14554400
+Link Tor 204 Down curTime: 14554700 downFor: -104
+Link Tor 204 Up 14554900
+Link Core 1052 Down curTime: 14591500 downFor: -579
+Link Core 1052 Up 14592100
+Link Core 1052 Down curTime: 14594000 downFor: -217
+Link Core 1052 Up 14594300
+Link Core 1052 Down curTime: 14595700 downFor: -204
+Link Core 1052 Up 14596000
+Link Core 1052 Down curTime: 14596100 downFor: -270
+Link Core 1052 Up 14596400
+Link Core 1052 Down curTime: 14598200 downFor: -561632
+Link Aggr 228 Down curTime: 14701000 downFor: -132
+Link Aggr 228 Up 14701200
+Link Aggr 228 Down curTime: 14704400 downFor: -170
+Link Aggr 228 Up 14704600
+Link Aggr 228 Down curTime: 14707400 downFor: -158
+Link Aggr 228 Up 14707600
+Link Core 1139 Down curTime: 14793200 downFor: -289
+Link Core 1139 Up 14793500
+Link Core 1147 Down curTime: 14800100 downFor: -134
+Link Core 1147 Up 14800300
+Link Core 1147 Down curTime: 14800500 downFor: -487414
+Link Tor 48 Down curTime: 14837800 downFor: -92
+Link Tor 48 Up 14837900
+Link Tor 48 Down curTime: 14840700 downFor: -128
+Link Tor 48 Up 14840900
+Link Tor 48 Down curTime: 14841000 downFor: -827512
+Link Core 1139 Down curTime: 14847800 downFor: -15
+Link Core 1139 Up 14847900
+Link Tor 327 Down curTime: 14850300 downFor: -210
+Link Tor 327 Up 14850600
+Link Tor 497 Down curTime: 14875400 downFor: -113
+Link Core 981 Down curTime: 14899100 downFor: -97
+Link Core 981 Up 14899200
+Link Core 981 Down curTime: 14899500 downFor: -721071
+Switch Aggr [1,11,5] Down curTime: 15048300 downFor: -1733
+Switch Aggr [1,11,5] Up 15050100
+Link Core 953 Down curTime: 15068300 downFor: -167
+Link Core 993 Down curTime: 15139700 downFor: -210
+Link Core 993 Up 15140000
+Link Core 993 Down curTime: 15140100 downFor: -209
+Link Core 993 Up 15140400
+Link Core 993 Down curTime: 15141500 downFor: -220
+Link Core 993 Up 15141800
+Link Core 1052 Up 15159900
+Link Core 1237 Up 15199800
+Link Core 1147 Up 15288000
+Link Core 1147 Down curTime: 15288200 downFor: -126
+Link Core 1147 Up 15288400
+Switch Tor [2,6,5] Down curTime: 15436200 downFor: -102
+Switch Aggr [2,6,5] Up 15436400
+Link Aggr 434 Down curTime: 15441300 downFor: -85
+Switch Tor [2,6,5] Down curTime: 15450400 downFor: -235
+Switch Aggr [2,6,5] Up 15450700
+Switch Tor [2,6,5] Down curTime: 15451600 downFor: -1531
+Switch Aggr [2,6,5] Up 15453200
+Switch Tor [2,6,5] Down curTime: 15453600 downFor: -1497
+Switch Aggr [2,6,5] Up 15455100
+Switch Tor [2,6,5] Down curTime: 15457600 downFor: -184844
+Link Aggr 737 Down curTime: 15518700 downFor: -183
+Link Aggr 737 Up 15518900
+Link Aggr 737 Down curTime: 15519200 downFor: -187
+Link Aggr 737 Up 15519400
+Link Tor 685 Down curTime: 15601400 downFor: -167
+Link Tor 685 Up 15601600
+Link Core 981 Up 15620600
+Switch Aggr [2,6,5] Up 15642500
+Link Tor 48 Up 15668600
+Switch Tor [2,6,5] Down curTime: 15697800 downFor: -355779
+Link Tor 285 Down curTime: 15704300 downFor: -166
+Link Tor 285 Up 15704500
+Link Tor 285 Down curTime: 15707500 downFor: -213
+Link Tor 285 Up 15707800
+Link Core 1120 Down curTime: 15719600 downFor: -161
+Link Core 1120 Up 15719800
+Link Core 1120 Down curTime: 15720000 downFor: -176
+Link Core 1120 Up 15720200
+Link Tor 568 Down curTime: 15726900 downFor: -238
+Link Tor 568 Up 15727200
+Link Tor 568 Down curTime: 15728100 downFor: -951941
+Link Core 1120 Down curTime: 15789700 downFor: -528
+Link Core 1120 Up 15790300
+Link Core 1120 Down curTime: 15804700 downFor: -90290
+Switch Aggr [1,11,5] Down curTime: 15833300 downFor: -146
+Switch Aggr [1,11,5] Up 15833500
+Switch Aggr [1,11,5] Down curTime: 15833800 downFor: -397
+Switch Aggr [1,11,5] Up 15834200
+Link Core 1120 Up 15895000
+Link Core 1120 Down curTime: 15895300 downFor: -94
+Link Core 1120 Up 15895400
+Link Aggr 737 Down curTime: 15898300 downFor: -248
+Link Aggr 737 Up 15898600
+Link Core 1052 Down curTime: 15908200 downFor: -210
+Link Core 1052 Up 15908500
+Link Aggr 536 Down curTime: 15966500 downFor: -100
+Link Aggr 536 Up 15966600
+Link Aggr 536 Down curTime: 15969600 downFor: -368
+Link Core 1120 Down curTime: 15969800 downFor: -275
+Link Aggr 536 Up 15970000
+Link Core 1120 Up 15970100
+Link Aggr 536 Down curTime: 15971100 downFor: -132
+Link Aggr 536 Up 15971300
+Link Aggr 536 Down curTime: 15971400 downFor: -115
+Link Aggr 536 Up 15971600
+Link Aggr 676 Down curTime: 15982900 downFor: -136
+Switch Aggr [2,6,5] Up 16053600
+Switch Tor [2,6,5] Down curTime: 16056500 downFor: -3353
+Switch Aggr [2,6,5] Up 16059900
+Switch Tor [2,6,5] Down curTime: 16063400 downFor: -1608
+Switch Aggr [2,6,5] Up 16065100
+Switch Tor [2,6,5] Down curTime: 16065200 downFor: -3115
+Switch Aggr [2,6,5] Up 16068400
+Switch Tor [2,6,5] Down curTime: 16099100 downFor: -628
+Switch Aggr [2,6,5] Up 16099800
+Switch Tor [2,6,5] Down curTime: 16101100 downFor: -63
+Switch Aggr [2,6,5] Up 16101200
+Switch Tor [2,6,5] Down curTime: 16101400 downFor: -2086
+Switch Aggr [2,6,5] Up 16103500
+Switch Tor [2,6,5] Down curTime: 16106700 downFor: -497054
+Link Core 1150 Down curTime: 16284900 downFor: -105
+Link Core 1150 Up 16285100
+Link Aggr 9 Down curTime: 16293900 downFor: -226
+Link Aggr 9 Up 16294200
+Link Aggr 9 Down curTime: 16297600 downFor: -267
+Link Aggr 9 Up 16297900
+Link Aggr 9 Down curTime: 16298200 downFor: -52
+Link Aggr 9 Up 16298300
+Link Aggr 9 Down curTime: 16300600 downFor: -134
+Link Aggr 9 Up 16300800
+Switch Tor [2,11,2] Down curTime: 16326300 downFor: -212
+Link Aggr 3 Down curTime: 16363300 downFor: -75
+Link Aggr 3 Up 16363400
+Link Aggr 3 Down curTime: 16365000 downFor: -235
+Link Aggr 3 Up 16365300
+Link Aggr 239 Down curTime: 16410800 downFor: -125
+Link Aggr 239 Up 16411000
+Link Aggr 239 Down curTime: 16412700 downFor: -289
+Link Aggr 239 Up 16413000
+Link Aggr 239 Down curTime: 16413900 downFor: -269
+Link Aggr 239 Up 16414200
+Link Aggr 239 Down curTime: 16414400 downFor: -212
+Link Aggr 239 Up 16414700
+Switch Aggr [1,11,5] Down curTime: 16505000 downFor: -84
+Switch Aggr [1,11,5] Up 16505100
+Switch Aggr [1,11,5] Down curTime: 16505300 downFor: -387
+Switch Aggr [1,11,5] Up 16505700
+Switch Aggr [2,6,5] Up 16603800
+Switch Tor [2,6,5] Down curTime: 16629600 downFor: -47
+Switch Aggr [2,6,5] Up 16629700
+Switch Tor [2,6,5] Down curTime: 16629800 downFor: -883
+Switch Aggr [2,6,5] Up 16630700
+Switch Tor [2,6,5] Down curTime: 16634000 downFor: -157
+Switch Aggr [2,6,5] Up 16634200
+Switch Tor [2,6,5] Down curTime: 16634700 downFor: -393166
+Link Aggr 597 Down curTime: 16644400 downFor: -87
+Link Aggr 597 Up 16644500
+Link Tor 568 Up 16680100
+Link Tor 568 Down curTime: 16681700 downFor: -603
+Link Tor 568 Up 16682400
+Link Tor 849 Down curTime: 16694900 downFor: -22062
+Link Aggr 735 Down curTime: 16716000 downFor: -143
+Link Aggr 735 Up 16716200
+Link Aggr 735 Down curTime: 16716400 downFor: -216
+Link Aggr 735 Up 16716700
+Link Tor 849 Up 16717000
+Link Tor 849 Down curTime: 16717800 downFor: -115
+Link Tor 849 Up 16718000
+Link Tor 849 Down curTime: 16718700 downFor: -144
+Link Tor 849 Up 16718900
+Link Aggr 239 Down curTime: 16846400 downFor: -125
+Link Aggr 239 Up 16846600
+Link Tor 420 Down curTime: 16896000 downFor: -89
+Link Tor 420 Up 16896100
+Link Tor 420 Down curTime: 16897200 downFor: -124
+Link Tor 420 Up 16897400
+Link Tor 56 Down curTime: 16958400 downFor: -469997
+Switch Aggr [2,6,5] Up 17027900
+Switch Tor [2,6,5] Down curTime: 17031400 downFor: -3369
+Switch Aggr [2,6,5] Up 17034800
+Link Tor 255 Down curTime: 17047200 downFor: -209
+Link Tor 255 Up 17047500
+Link Core 1240 Down curTime: 17060700 downFor: -224
+Link Core 1240 Up 17061000
+Link Tor 849 Down curTime: 17083100 downFor: -101
+Link Tor 849 Up 17083200
+Link Tor 849 Down curTime: 17083500 downFor: -249
+Link Tor 849 Up 17083800
+Link Core 1240 Down curTime: 17083900 downFor: -56120
+Link Tor 849 Down curTime: 17087200 downFor: -77
+Link Tor 849 Up 17087300
+Link Tor 849 Down curTime: 17089400 downFor: -173
+Link Tor 849 Up 17089600
+Link Tor 849 Down curTime: 17089800 downFor: -85
+Link Tor 849 Up 17089900
+Link Tor 849 Down curTime: 17092900 downFor: -222
+Link Tor 849 Up 17093200
+Link Tor 849 Down curTime: 17094000 downFor: -65
+Link Tor 849 Up 17094100
+Link Core 1240 Up 17140100
+Link Tor 854 Down curTime: 17173900 downFor: -226
+Link Tor 854 Up 17174200
+Link Tor 854 Down curTime: 17176500 downFor: -75
+Link Tor 854 Up 17176600
+Link Tor 854 Down curTime: 17176900 downFor: -239
+Link Tor 854 Up 17177200
+Link Tor 555 Down curTime: 17264100 downFor: -167
+Link Tor 555 Up 17264300
+Link Tor 555 Down curTime: 17381200 downFor: -246
+Link Tor 555 Up 17381500
+Link Tor 56 Up 17428400
+Switch Tor [2,6,5] Down curTime: 17705400 downFor: -554931
+Link Aggr 88 Down curTime: 17786400 downFor: -120
+Link Core 1032 Down curTime: 17891400 downFor: -20
+Link Core 1032 Up 17891500
+Link Core 963 Down curTime: 17967700 downFor: -127
+Link Core 963 Up 17967900
+Link Core 963 Down curTime: 17968100 downFor: -170
+Link Core 963 Up 17968300
+Link Tor 844 Down curTime: 18006400 downFor: -187
+Link Tor 844 Up 18006600
+Link Tor 844 Down curTime: 18009800 downFor: -167
+Link Tor 844 Up 18010000
+Switch Aggr [2,6,5] Up 18260400
+Switch Tor [2,6,5] Down curTime: 18261000 downFor: -207
+Switch Aggr [2,6,5] Up 18261300
+Switch Tor [2,6,5] Down curTime: 18263600 downFor: -57
+Switch Aggr [2,6,5] Up 18263700
+Switch Tor [2,6,5] Down curTime: 18265300 downFor: -703
+Switch Aggr [2,6,5] Up 18266100
+Switch Tor [2,6,5] Down curTime: 18268100 downFor: -310567
+Link Core 1032 Down curTime: 18282700 downFor: -277
+Link Core 1032 Up 18283000
+Link Core 1032 Down curTime: 18286200 downFor: -333
+Link Core 1032 Up 18286600
+Link Core 1032 Down curTime: 18286800 downFor: -197
+Link Core 1032 Up 18287000
+Link Core 879 Down curTime: 18467000 downFor: -100
+Link Core 879 Up 18467100
+Link Core 879 Down curTime: 18470000 downFor: -222
+Link Core 879 Up 18470300
+Switch Aggr [1,11,5] Down curTime: 18483300 downFor: -489
+Switch Aggr [1,11,5] Up 18483800
+Switch Aggr [1,11,5] Down curTime: 18484000 downFor: -219
+Switch Aggr [1,11,5] Up 18484300
+Link Tor 209 Down curTime: 18532600 downFor: -129
+Link Tor 209 Up 18532800
+Link Tor 209 Down curTime: 18533300 downFor: -173
+Link Tor 209 Up 18533500
+Switch Tor [2,1,2] Down curTime: 18548500 downFor: -56
+Switch Aggr [2,6,5] Up 18578700
+Switch Tor [2,6,5] Down curTime: 18580400 downFor: -3051
+Switch Aggr [2,6,5] Up 18583500
+Link Core 1096 Down curTime: 18648800 downFor: -187
+Link Tor 56 Down curTime: 18811600 downFor: -223
+Link Tor 56 Up 18811900
+Link Aggr 597 Down curTime: 18849200 downFor: -544854
+Link Core 963 Down curTime: 18963000 downFor: -183
+Link Core 963 Up 18963200
+Switch Tor [2,6,5] Down curTime: 19193500 downFor: -890
+Switch Aggr [2,6,5] Up 19194400
+Link Core 1211 Down curTime: 19204800 downFor: -195
+Link Core 1211 Up 19205000
+Link Core 1211 Down curTime: 19224800 downFor: -170791
+Switch Tor [2,6,5] Down curTime: 19275300 downFor: -495856
+Link Tor 568 Down curTime: 19306400 downFor: -148
+Link Tor 568 Up 19306600
+Link Aggr 597 Up 19394100
+Link Core 1211 Up 19395600
+Link Core 1211 Down curTime: 19395900 downFor: -194
+Link Core 1211 Up 19396100
+Link Tor 555 Down curTime: 19405200 downFor: -143
+Link Tor 555 Up 19405400
+Link Tor 555 Down curTime: 19406900 downFor: -297
+Link Tor 555 Up 19407200
+Link Tor 555 Down curTime: 19409900 downFor: -121
+Link Tor 555 Up 19410100
+Link Tor 555 Down curTime: 19410300 downFor: -592
+Link Tor 555 Up 19410900
+Link Core 1211 Down curTime: 19413900 downFor: -80
+Link Core 1211 Up 19414000
+Link Core 1211 Down curTime: 19414300 downFor: -224
+Link Core 1211 Up 19414600
+Link Core 1211 Down curTime: 19425900 downFor: -236
+Link Core 1211 Up 19426200
+Switch Aggr [1,11,5] Down curTime: 19486600 downFor: -414
+Switch Aggr [1,11,5] Up 19487100
+Link Core 1280 Down curTime: 19590800 downFor: -89
+Link Core 1280 Up 19590900
+Link Tor 685 Down curTime: 19680300 downFor: -313979
+Link Aggr 3 Down curTime: 19767700 downFor: -116
+Link Aggr 3 Up 19767900
+Switch Aggr [2,6,5] Up 19771200
+Switch Tor [2,6,5] Down curTime: 19773700 downFor: -103452
+Switch Aggr [2,6,5] Up 19877200
+Switch Tor [2,6,5] Down curTime: 19877400 downFor: -99
+Switch Aggr [2,6,5] Up 19877500
+Switch Tor [2,6,5] Down curTime: 19879500 downFor: -282443
+Link Aggr 594 Down curTime: 19968600 downFor: -53
+Link Aggr 594 Up 19968700
+Link Aggr 594 Down curTime: 19970900 downFor: -153
+Link Aggr 594 Up 19971100
+Link Aggr 594 Down curTime: 19971300 downFor: -261
+Link Aggr 594 Up 19971600
+Link Tor 685 Up 19994300
+Link Tor 685 Down curTime: 19994500 downFor: -99
+Link Tor 685 Up 19994600
+Link Tor 685 Down curTime: 19994700 downFor: -106
+Link Tor 685 Up 19994900
+Link Tor 685 Down curTime: 19997100 downFor: -81
+Link Tor 685 Up 19997200
+Link Tor 62 Down curTime: 20138100 downFor: -193
+Link Tor 62 Up 20138300
+Link Tor 62 Down curTime: 20138500 downFor: -126
+Link Core 1150 Down curTime: 20138500 downFor: -163
+Link Tor 62 Up 20138700
+Link Core 1150 Up 20138800
+Link Tor 62 Down curTime: 20138900 downFor: -205
+Link Tor 62 Up 20139200
+Link Tor 62 Down curTime: 20140500 downFor: -192
+Link Tor 62 Up 20140700
+Switch Aggr [2,6,5] Up 20162000
+Switch Tor [2,6,5] Down curTime: 20162800 downFor: -107
+Switch Aggr [2,6,5] Up 20163000
+Link Core 1150 Down curTime: 20164400 downFor: -152
+Link Core 1150 Up 20164600
+Switch Tor [2,6,5] Down curTime: 20165000 downFor: -3041
+Switch Aggr [2,6,5] Up 20168100
+Switch Tor [2,6,5] Down curTime: 20168500 downFor: -99
+Switch Aggr [2,6,5] Up 20168600
+Switch Tor [2,6,5] Down curTime: 20169500 downFor: -352
+Switch Aggr [2,6,5] Up 20169900
+Switch Tor [2,6,5] Down curTime: 20171000 downFor: -1180
+Switch Aggr [2,6,5] Up 20172200
+Switch Tor [2,6,5] Down curTime: 20225500 downFor: -2875
+Switch Aggr [2,6,5] Up 20228400
+Switch Tor [2,6,5] Down curTime: 20229900 downFor: -2754
+Switch Aggr [2,6,5] Up 20232700
+Switch Tor [2,6,5] Down curTime: 20238300 downFor: -1476
+Switch Aggr [2,6,5] Up 20239800
+Switch Tor [2,6,5] Down curTime: 20242300 downFor: -327455
+Link Core 999 Down curTime: 20297700 downFor: -76
+Link Core 999 Up 20297800
+Link Aggr 35 Down curTime: 20306000 downFor: -166
+Link Aggr 35 Up 20306200
+Link Core 999 Down curTime: 20348500 downFor: -28
+Link Core 999 Up 20348600
+Link Core 999 Down curTime: 20361000 downFor: -37
+Link Core 999 Up 20361100
+Link Core 999 Down curTime: 20444700 downFor: -39
+Link Core 999 Up 20444800
+Link Core 999 Down curTime: 20445100 downFor: -162
+Link Core 999 Up 20445300
+Link Core 999 Down curTime: 20454000 downFor: -144
+Link Core 999 Up 20454200
+Link Core 999 Down curTime: 20454500 downFor: -164
+Link Core 999 Up 20454700
+Link Core 999 Down curTime: 20455100 downFor: -122
+Link Core 999 Up 20455300
+Link Core 999 Down curTime: 20469100 downFor: -202
+Link Core 999 Up 20469400
+Link Core 999 Down curTime: 20472200 downFor: -275
+Link Core 999 Up 20472500
+Link Core 999 Down curTime: 20473700 downFor: -872614
+Link Aggr 438 Down curTime: 20504600 downFor: -216
+Link Aggr 438 Up 20504900
+Link Aggr 438 Down curTime: 20505000 downFor: -60
+Link Aggr 438 Up 20505100
+Switch Aggr [2,6,5] Up 20569800
+Switch Tor [2,6,5] Down curTime: 20570800 downFor: -2267
+Switch Aggr [2,6,5] Up 20573100
+Switch Tor [2,6,5] Down curTime: 20573700 downFor: -105
+Link Core 1237 Down curTime: 20641900 downFor: -147
+Link Core 1237 Up 20642100
+Link Tor 343 Down curTime: 20761300 downFor: -117
+Link Tor 255 Down curTime: 20845600 downFor: -181
+Link Tor 255 Up 20845800
+Link Tor 685 Down curTime: 20876600 downFor: -162
+Link Tor 685 Up 20876800
+Switch Aggr [1,0,0] Down curTime: 20923700 downFor: -477
+Link Aggr 239 Down curTime: 20933900 downFor: -130
+Link Aggr 239 Up 20934100
+Link Aggr 239 Down curTime: 20934300 downFor: -74
+Link Aggr 239 Up 20934400
+Link Aggr 239 Down curTime: 20934600 downFor: -172
+Link Aggr 239 Up 20934800
+Link Aggr 239 Down curTime: 20935000 downFor: -174
+Link Aggr 239 Up 20935200
+Link Aggr 239 Down curTime: 20935500 downFor: -189
+Link Aggr 239 Up 20935700
+Link Aggr 239 Down curTime: 20937300 downFor: -533
+Link Aggr 239 Up 20937900
+Link Tor 204 Down curTime: 20967300 downFor: -352
+Link Tor 204 Up 20967700
+Link Tor 204 Down curTime: 20968200 downFor: -124
+Link Tor 204 Up 20968400
+Link Tor 56 Down curTime: 20977500 downFor: -251
+Link Tor 56 Up 20977800
+Link Tor 56 Down curTime: 20981100 downFor: -264
+Link Tor 56 Up 20981400
+Link Tor 56 Down curTime: 20981900 downFor: -239
+Link Tor 56 Up 20982200
+Switch Aggr [2,6,5] Up 20999500
+Switch Tor [2,6,5] Down curTime: 21000900 downFor: -188
+Switch Aggr [2,6,5] Up 21001100
+Link Core 1240 Down curTime: 21004800 downFor: -231
+Link Core 1240 Up 21005100
+Link Core 1240 Down curTime: 21008400 downFor: -152
+Link Core 1240 Up 21008600
+Link Core 1255 Down curTime: 21014000 downFor: -65
+Link Core 1255 Up 21014100
+Link Core 1255 Down curTime: 21014300 downFor: -232
+Link Core 1255 Up 21014600
+Link Core 1255 Down curTime: 21015700 downFor: -31454
+Link Tor 64 Down curTime: 21025300 downFor: -154
+Link Tor 64 Up 21025500
+Link Tor 64 Down curTime: 21025700 downFor: -122
+Link Tor 64 Up 21025900
+Switch Tor [2,6,5] Down curTime: 21030100 downFor: -258874
+Link Core 904 Down curTime: 21040600 downFor: -83
+Link Core 904 Up 21040700
+Link Core 1255 Up 21047200
+Link Core 1255 Down curTime: 21050500 downFor: -108
+Link Core 1255 Up 21050700
+Link Core 1255 Down curTime: 21054700 downFor: -643
+Link Core 1255 Up 21055400
+Link Core 1240 Down curTime: 21069900 downFor: -247
+Link Core 1240 Up 21070200
+Link Core 1175 Down curTime: 21200700 downFor: -124
+Switch Aggr [1,11,5] Down curTime: 21260000 downFor: -2594
+Switch Aggr [1,11,5] Up 21262600
+Switch Aggr [1,11,5] Down curTime: 21262800 downFor: -134
+Switch Aggr [1,11,5] Up 21263000
+Link Aggr 597 Down curTime: 21273800 downFor: -583
+Link Aggr 597 Up 21274400
+Link Aggr 300 Down curTime: 21275800 downFor: -274
+Link Aggr 300 Up 21276100
+Link Aggr 300 Down curTime: 21277000 downFor: -95
+Link Aggr 300 Up 21277100
+Link Aggr 300 Down curTime: 21277400 downFor: -143
+Link Aggr 300 Up 21277600
+Link Aggr 300 Down curTime: 21278300 downFor: -190
+Link Aggr 300 Up 21278500
+Link Aggr 300 Down curTime: 21278600 downFor: -156
+Link Aggr 300 Up 21278800
+Link Aggr 300 Down curTime: 21281900 downFor: -89
+Link Aggr 300 Up 21282000
+Link Aggr 300 Down curTime: 21282200 downFor: -69
+Link Aggr 300 Up 21282300
+Switch Aggr [2,6,5] Up 21289000
+Switch Tor [2,6,5] Down curTime: 21290900 downFor: -1594
+Switch Aggr [2,6,5] Up 21292500
+Switch Tor [2,6,5] Down curTime: 21294200 downFor: -542
+Switch Aggr [2,6,5] Up 21294800
+Switch Tor [2,6,5] Down curTime: 21295400 downFor: -446641
+Link Core 999 Up 21346400
+Link Tor 59 Down curTime: 21399500 downFor: -106
+Link Tor 59 Up 21399700
+Link Tor 59 Down curTime: 21400800 downFor: -591861
+Link Core 980 Down curTime: 21697700 downFor: -163
+Link Core 980 Up 21697900
+Switch Aggr [2,6,5] Up 21742100
+Switch Tor [2,6,5] Down curTime: 21744600 downFor: -249
+Switch Aggr [2,6,5] Up 21744900
+Link Core 1117 Down curTime: 21837200 downFor: -205
+Link Core 1243 Down curTime: 21959700 downFor: -647866
+Link Tor 59 Up 21992700
+Link Tor 59 Down curTime: 21992900 downFor: -222
+Link Tor 59 Up 21993200
+Link Tor 59 Down curTime: 21995100 downFor: -961005
+Link Aggr 301 Down curTime: 22084200 downFor: -204
+Link Core 1237 Down curTime: 22104300 downFor: -130
+Link Core 1237 Up 22104500
+Link Aggr 9 Down curTime: 22224700 downFor: -136
+Link Aggr 9 Up 22224900
+Link Aggr 9 Down curTime: 22227100 downFor: -115
+Link Aggr 9 Up 22227300
+Link Aggr 9 Down curTime: 22227400 downFor: -667
+Link Aggr 9 Up 22228100
+Link Aggr 9 Down curTime: 22229000 downFor: -128
+Link Aggr 9 Up 22229200
+Link Tor 330 Down curTime: 22302300 downFor: -597482
+Link Tor 420 Down curTime: 22323900 downFor: -213
+Link Tor 420 Up 22324200
+Link Aggr 239 Down curTime: 22342200 downFor: -131
+Link Aggr 239 Up 22342400
+Link Aggr 239 Down curTime: 22345700 downFor: -246
+Link Aggr 239 Up 22346000
+Link Core 957 Down curTime: 22361200 downFor: -124
+Link Tor 327 Down curTime: 22375000 downFor: -76
+Link Tor 327 Up 22375100
+Link Core 873 Down curTime: 22430400 downFor: -121
+Link Core 1243 Up 22607600
+Link Core 1243 Down curTime: 22623400 downFor: -210
+Link Core 1243 Up 22623700
+Switch Aggr [1,11,5] Down curTime: 22627400 downFor: -269
+Switch Aggr [1,11,5] Up 22627700
+Link Tor 844 Down curTime: 22629000 downFor: -168
+Link Tor 844 Up 22629200
+Link Tor 844 Down curTime: 22632800 downFor: -184
+Link Tor 844 Up 22633000
+Link Tor 844 Down curTime: 22633300 downFor: -72
+Link Tor 844 Up 22633400
+Switch Tor [2,6,5] Down curTime: 22727700 downFor: -2899
+f Aggr [2,6,5] Up 22730600
+Switch Tor [2,6,5] Down curTime: 22731800 downFor: -171
+Switch Aggr [2,6,5] Up 22732000
+Link Core 1229 Down curTime: 22757300 downFor: -617048
+Link Core 981 Down curTime: 22917800 downFor: -289
+Link Core 981 Up 22918100
+Link Core 1255 Down curTime: 22939100 downFor: -274
+Link Core 1255 Up 22939400
+Link Tor 59 Up 22956200
+Link Tor 59 Down curTime: 22959600 downFor: -123
+Link Tor 59 Up 22959800
+Link Core 981 Down curTime: 22977600 downFor: -199
+Link Core 981 Up 22977800
+Link Core 981 Down curTime: 22978000 downFor: -285
+Link Core 981 Up 22978300
+Link Aggr 438 Down curTime: 23017600 downFor: -281
+Link Aggr 438 Up 23017900
+Link Aggr 438 Down curTime: 23019000 downFor: -98
+Link Aggr 438 Up 23019100
+Link Core 1255 Down curTime: 23023900 downFor: -132
+Link Core 1255 Up 23024100
+Link Core 981 Down curTime: 23059100 downFor: -121
+Link Core 981 Up 23059300
+Link Core 981 Down curTime: 23059700 downFor: -331
+Link Core 981 Up 23060100
+Link Core 981 Down curTime: 23090300 downFor: -176
+Link Core 981 Up 23090500
+Link Core 981 Down curTime: 23090800 downFor: -185
+Link Core 981 Up 23091000
+Link Core 981 Down curTime: 23117600 downFor: -149
+Link Core 981 Up 23117800
+Link Core 981 Down curTime: 23118600 downFor: -80021
+Link Core 981 Up 23198700
+Link Tor 684 Down curTime: 23210200 downFor: -93
+Link Aggr 594 Down curTime: 23224500 downFor: -845181
+Link Core 1032 Down curTime: 23256000 downFor: -152
+Link Core 1032 Up 23256200
+Link Core 1032 Down curTime: 23256300 downFor: -94
+Link Core 1032 Up 23256400
+Link Core 1032 Down curTime: 23256600 downFor: -173
+Link Core 1032 Up 23256800
+Link Core 1032 Down curTime: 23257000 downFor: -67
+Link Core 1032 Up 23257100
+Link Core 1032 Down curTime: 23257300 downFor: -210
+Link Core 1032 Up 23257600
+Link Core 1032 Down curTime: 23261100 downFor: -225
+Link Core 1032 Up 23261400
+Link Aggr 603 Down curTime: 23324700 downFor: -267
+Link Aggr 603 Up 23325000
+Link Tor 568 Down curTime: 23325200 downFor: -192
+Link Aggr 603 Down curTime: 23325200 downFor: -183
+Link Tor 568 Up 23325400
+Link Aggr 603 Up 23325500
+Link Aggr 603 Down curTime: 23327600 downFor: -51
+Link Aggr 603 Up 23327700
+Link Aggr 603 Down curTime: 23330700 downFor: -181
+Link Aggr 603 Up 23330900
+Switch Aggr [1,11,5] Down curTime: 23344800 downFor: -292
+Switch Aggr [1,11,5] Up 23345100
+Switch Aggr [1,11,5] Down curTime: 23345400 downFor: -271
+Switch Aggr [1,11,5] Up 23345700
+Switch Aggr [1,11,5] Down curTime: 23345800 downFor: -333
+Switch Aggr [1,11,5] Up 23346200
+Switch Aggr [1,11,5] Down curTime: 23397600 downFor: -215
+Switch Aggr [1,11,5] Up 23397900
+Link Core 1173 Down curTime: 23432300 downFor: -705
+Link Core 1173 Up 23433100
+Link Tor 844 Down curTime: 23446900 downFor: -46
+Link Tor 844 Up 23447000
+Link Tor 844 Down curTime: 23450500 downFor: -243
+Link Tor 844 Up 23450800
+Link Core 1173 Down curTime: 23469600 downFor: -641
+Link Core 1173 Up 23470300
+Link Core 1173 Down curTime: 23473900 downFor: -133
+Link Core 1173 Up 23474100
+Link Aggr 653 Down curTime: 23529500 downFor: -164
+Link Aggr 653 Up 23529700
+Link Core 1173 Down curTime: 23532500 downFor: -112
+Link Core 1173 Up 23532700
+Link Core 1173 Down curTime: 23532900 downFor: -91
+Link Core 1173 Up 23533000
+Link Tor 204 Down curTime: 23675300 downFor: -225
+Link Tor 204 Up 23675600
+Link Tor 204 Down curTime: 23679000 downFor: -217
+Link Tor 204 Up 23679300
+Link Aggr 228 Down curTime: 23922400 downFor: -73
+Link Aggr 228 Up 23922500
+Link Tor 420 Down curTime: 24016700 downFor: -171
+Link Tor 420 Up 24016900
+Link Core 1147 Down curTime: 24018300 downFor: -394
+Link Core 1147 Up 24018700
+Link Aggr 594 Up 24069700
+Link Aggr 594 Down curTime: 24070000 downFor: -165
+Link Aggr 594 Up 24070200
+Link Aggr 594 Down curTime: 24070500 downFor: -130
+Link Aggr 594 Up 24070700
+Link Aggr 594 Down curTime: 24072300 downFor: -228
+Link Core 972 Down curTime: 24072400 downFor: -14
+Link Aggr 594 Up 24072600
+Link Aggr 594 Down curTime: 24073500 downFor: -553
+Link Aggr 594 Up 24074100
+Link Aggr 594 Down curTime: 24074400 downFor: -118
+Link Aggr 594 Up 24074600
+Link Aggr 594 Down curTime: 24077600 downFor: -109
+Link Aggr 594 Up 24077800
+Link Aggr 594 Down curTime: 24080500 downFor: -69
+Link Aggr 594 Up 24080600
+Link Aggr 594 Down curTime: 24080900 downFor: -78
+Link Aggr 594 Up 24081000
+Link Aggr 594 Down curTime: 24083400 downFor: -124
+Link Aggr 594 Up 24083600
+Link Aggr 594 Down curTime: 24083800 downFor: -179
+Link Aggr 594 Up 24084000
+Link Aggr 594 Down curTime: 24085600 downFor: -959063
+Link Core 1120 Down curTime: 24151100 downFor: -136
+Link Core 1120 Up 24151300
+Link Core 1120 Down curTime: 24151400 downFor: -111
+Link Core 1120 Up 24151600
+Switch Aggr [1,4,5] Down curTime: 24289400 downFor: -282
+Link Core 879 Down curTime: 24363700 downFor: -243
+Link Core 879 Up 24364000
+Link Core 879 Down curTime: 24364900 downFor: -192
+Link Core 879 Up 24365100
+Link Core 999 Down curTime: 24433800 downFor: -100
+Link Core 999 Up 24433900
+Link Core 999 Down curTime: 24499500 downFor: -208
+Link Core 999 Up 24499800
+Link Core 999 Down curTime: 24499900 downFor: -78
+Link Core 999 Up 24500000
+Link Core 999 Down curTime: 24500300 downFor: -141
+Link Core 999 Up 24500500
+Link Core 1120 Down curTime: 24572300 downFor: -22557
+Link Aggr 536 Down curTime: 24590300 downFor: -154
+Link Aggr 536 Up 24590500
+Link Aggr 536 Down curTime: 24590600 downFor: -152
+Link Aggr 536 Up 24590800
+Link Aggr 536 Down curTime: 24591000 downFor: -216
+Link Aggr 536 Up 24591300
+Link Core 1120 Up 24594900
+Link Core 1120 Down curTime: 24595100 downFor: -288
+Link Core 1120 Up 24595400
+Link Core 1120 Down curTime: 24595700 downFor: -107
+Link Core 1120 Up 24595900
+Link Tor 327 Down curTime: 24600100 downFor: -635
+Link Tor 327 Up 24600800
+Link Tor 327 Down curTime: 24601000 downFor: -304
+Link Tor 327 Up 24601400
+Link Aggr 603 Down curTime: 24680700 downFor: -158
+Link Aggr 603 Up 24680900
+Link Core 1120 Down curTime: 24680900 downFor: -196
+Link Core 1120 Up 24681100
+Link Tor 48 Down curTime: 24700200 downFor: -73
+Link Tor 48 Up 24700300
+Link Core 993 Down curTime: 24838900 downFor: -105
+Link Core 993 Up 24839100
+Link Core 1139 Down curTime: 24840100 downFor: -133
+Link Core 1139 Up 24840300
+Link Core 993 Down curTime: 24842200 downFor: -132
+Link Core 993 Up 24842400
+Link Core 1139 Down curTime: 24853800 downFor: -129
+Link Core 1139 Up 24854000
+Link Core 1139 Down curTime: 24854300 downFor: -156
+Link Core 1139 Up 24854500
+Link Tor 285 Down curTime: 24917000 downFor: -792409
+Link Core 993 Down curTime: 24917900 downFor: -284
+Link Core 993 Up 24918200
+Link Core 993 Down curTime: 24997100 downFor: -40
+Link Core 993 Up 24997200
+Link Core 993 Down curTime: 24997900 downFor: -163
+Link Core 993 Up 24998100
+Link Core 993 Down curTime: 24998400 downFor: -67
+Link Core 993 Up 24998500
+Link Aggr 594 Up 25044700
+Link Aggr 594 Down curTime: 25045000 downFor: -627
+Link Aggr 594 Up 25045700
+Link Aggr 594 Down curTime: 25047800 downFor: -153
+Link Aggr 594 Up 25048000
+Link Aggr 594 Down curTime: 25048600 downFor: -250
+Link Aggr 594 Up 25048900
+Link Tor 327 Down curTime: 25140500 downFor: -36
+Link Tor 327 Up 25140600
+Switch Aggr [1,8,4] Down curTime: 25259200 downFor: -6039
+Link Aggr 735 Down curTime: 25380700 downFor: -224
+Link Aggr 735 Up 25381000
+Link Aggr 735 Down curTime: 25382600 downFor: -99212
+Link Aggr 735 Up 25481900
+Link Aggr 735 Down curTime: 25483900 downFor: -182
+Link Aggr 735 Up 25484100
+Link Aggr 735 Down curTime: 25484300 downFor: -217
+Link Aggr 735 Up 25484600
+Link Aggr 735 Down curTime: 25486500 downFor: -190
+Link Aggr 735 Up 25486700
+Link Aggr 735 Down curTime: 25486900 downFor: -209
+Link Aggr 735 Up 25487200
+Link Aggr 735 Down curTime: 25487900 downFor: -127
+Link Aggr 735 Up 25488100
+Link Aggr 735 Down curTime: 25491200 downFor: -169
+Link Aggr 735 Up 25491400
+Link Aggr 735 Down curTime: 25493200 downFor: -282
+Link Aggr 735 Up 25493500
+Link Aggr 603 Down curTime: 25541500 downFor: -176
+Link Aggr 603 Up 25541700
+Link Aggr 603 Down curTime: 25544900 downFor: -100
+Link Aggr 603 Up 25545000
+Link Aggr 603 Down curTime: 25546100 downFor: -235
+Link Aggr 603 Up 25546400
+Link Core 1139 Down curTime: 25594100 downFor: -64
+Link Core 1139 Up 25594200
+Link Core 1139 Down curTime: 25594400 downFor: -256
+Link Core 1139 Up 25594700
+Link Core 1240 Down curTime: 25670500 downFor: -34
+Link Core 1240 Up 25670600
+Link Core 1058 Down curTime: 25705300 downFor: -67
+Link Tor 285 Up 25709500
+Link Tor 285 Down curTime: 25711000 downFor: -148
+Link Tor 285 Up 25711200
+Link Tor 285 Down curTime: 25711900 downFor: -198
+Link Tor 285 Up 25712100
+Link Tor 285 Down curTime: 25715500 downFor: -160
+Link Tor 285 Up 25715700
+Link Core 1052 Down curTime: 25740600 downFor: -150
+Link Core 1052 Up 25740800
+Link Core 1052 Down curTime: 25743900 downFor: -272
+Link Core 1052 Up 25744200
+Switch Tor [2,0,1] Down curTime: 25759000 downFor: -1707
+Link Core 1052 Down curTime: 25760700 downFor: -60
+Link Core 1052 Up 25760800
+Link Core 1276 Down curTime: 25786500 downFor: -35
+Link Aggr 737 Down curTime: 25894800 downFor: -109
+Link Aggr 737 Up 25895000
+Link Aggr 737 Down curTime: 25895600 downFor: -145
+Link Aggr 737 Up 25895800
+Link Aggr 737 Down curTime: 25897800 downFor: -117
+Link Aggr 737 Up 25898000
+Switch Aggr [1,11,5] Down curTime: 25942200 downFor: -347
+Switch Tor [1,11,5] Up 25942600
+Link Tor 59 Down curTime: 25986700 downFor: -158
+Link Tor 59 Up 25986900
+Link Tor 59 Down curTime: 25990500 downFor: -202
+Link Tor 59 Up 25990800
+Link Core 1280 Down curTime: 26111700 downFor: -255
+Link Core 1280 Up 26112000
+Link Core 1280 Down curTime: 26112300 downFor: -93
+Link Core 1280 Up 26112400
+Link Core 1280 Down curTime: 26112600 downFor: -163
+Link Core 1280 Up 26112800
+Link Core 1280 Down curTime: 26114400 downFor: -128
+Link Core 1280 Up 26114600
+Link Aggr 9 Down curTime: 26157800 downFor: -475
+Link Aggr 9 Up 26158300
+Link Aggr 9 Down curTime: 26160600 downFor: -68
+Link Aggr 9 Up 26160700
+Link Aggr 9 Down curTime: 26161200 downFor: -208
+Link Aggr 9 Up 26161500
+Link Tor 56 Down curTime: 26196300 downFor: -91
+Link Tor 56 Up 26196400
+Link Tor 56 Down curTime: 26198500 downFor: -184
+Link Tor 56 Up 26198700
+Link Tor 56 Down curTime: 26202100 downFor: -181
+Link Tor 56 Up 26202300
+Link Tor 849 Down curTime: 26264900 downFor: -138
+Link Tor 849 Up 26265100
+Link Tor 849 Down curTime: 26267200 downFor: -199
+Link Tor 849 Up 26267400
+Link Tor 854 Down curTime: 26304100 downFor: -57
+Link Tor 854 Up 26304200
+Link Tor 854 Down curTime: 26307400 downFor: -522
+Link Tor 854 Up 26308000
+Link Core 1211 Down curTime: 26319500 downFor: -145
+Link Core 1211 Up 26319700
+Link Core 1120 Down curTime: 26487200 downFor: -216
+Link Core 1120 Up 26487500
+Link Core 1120 Down curTime: 26487700 downFor: -209
+Link Core 1120 Up 26488000
+Link Aggr 525 Down curTime: 26548800 downFor: -748664
+Link Core 1287 Down curTime: 26568400 downFor: -357121
+Link Core 1113 Down curTime: 26597200 downFor: -211
+Link Aggr 35 Down curTime: 27098100 downFor: -43
+Link Aggr 35 Up 27098200
+Link Aggr 35 Down curTime: 27100800 downFor: -150
+Link Aggr 35 Up 27101000
+Link Aggr 35 Down curTime: 27104600 downFor: -170
+Link Aggr 35 Up 27104800
+Link Aggr 35 Down curTime: 27104900 downFor: -292
+Link Aggr 35 Up 27105200
+Link Core 1139 Down curTime: 27205500 downFor: -108
+Link Core 1139 Up 27205700
+Link Core 1139 Down curTime: 27206600 downFor: -169
+Link Core 1139 Up 27206800
+Link Core 1139 Down curTime: 27209200 downFor: -177
+Link Core 1139 Up 27209400
+Link Core 1139 Down curTime: 27211700 downFor: -73
+Link Core 1139 Up 27211800
+Link Aggr 241 Down curTime: 27215700 downFor: -196
+Link Tor 685 Down curTime: 27222600 downFor: -82
+Link Tor 685 Up 27222700
+Link Tor 685 Down curTime: 27224900 downFor: -215
+Link Tor 685 Up 27225200
+Link Tor 555 Down curTime: 27235600 downFor: -755269
+Link Core 999 Down curTime: 27828700 downFor: -232
+Link Core 999 Up 27829000
+Link Tor 420 Down curTime: 27831600 downFor: -41
+Link Tor 420 Up 27831700
+Link Tor 420 Down curTime: 27834200 downFor: -159
+Link Tor 420 Up 27834400
+Link Aggr 536 Down curTime: 27910400 downFor: -88
+Link Aggr 536 Up 27910500
+Link Aggr 536 Down curTime: 27911600 downFor: -432369
+Link Tor 555 Up 27990900
+Link Tor 555 Down curTime: 27991200 downFor: -105
+Link Tor 555 Up 27991400
+Link Tor 204 Down curTime: 28066600 downFor: -126
+Link Tor 204 Up 28066800
+Link Tor 420 Down curTime: 28118300 downFor: -84
+Link Tor 420 Up 28118400
+Link Tor 420 Down curTime: 28118800 downFor: -170
+Link Tor 420 Up 28119000
+Link Core 1237 Down curTime: 28121100 downFor: -226
+Link Core 1237 Up 28121400
+Link Tor 209 Down curTime: 28189600 downFor: -141
+Link Tor 209 Up 28189800
+Link Core 1237 Down curTime: 28191200 downFor: -195
+Link Core 1237 Up 28191400
+Link Aggr 239 Down curTime: 28203900 downFor: -229
+Link Aggr 239 Up 28204200
+Link Aggr 239 Down curTime: 28205500 downFor: -171
+Link Aggr 239 Up 28205700
+Link Aggr 239 Down curTime: 28208000 downFor: -258
+Link Aggr 239 Up 28208300
+Link Aggr 239 Down curTime: 28208500 downFor: -412
+Link Aggr 239 Up 28209000
+Link Aggr 239 Down curTime: 28209100 downFor: -569
+Link Aggr 239 Up 28209700
+Link Aggr 239 Down curTime: 28210000 downFor: -64
+Link Aggr 239 Up 28210100
+Link Aggr 239 Down curTime: 28211900 downFor: -81
+Link Aggr 239 Up 28212000
+Link Tor 255 Down curTime: 28314000 downFor: -40124
+Link Aggr 536 Up 28344000
+Link Aggr 536 Down curTime: 28346300 downFor: -585656
+Switch Aggr [1,9,2] Down curTime: 28347700 downFor: -320
+Link Tor 255 Up 28354200
+Link Tor 255 Down curTime: 28354300 downFor: -41
+Link Tor 255 Up 28354400
+Switch Aggr [1,11,5] Down curTime: 28404100 downFor: -427
+Switch Tor [1,11,5] Up 28404600
+Link Tor 844 Down curTime: 28447700 downFor: -123
+Link Tor 844 Up 28447900
+Link Tor 844 Down curTime: 28448200 downFor: -17
+Link Tor 844 Up 28448300
+Link Tor 564 Down curTime: 28520500 downFor: -94
+Link Core 963 Down curTime: 28549800 downFor: -249
+Link Core 963 Up 28550100
+Link Core 1211 Down curTime: 28562000 downFor: -189
+Link Core 1211 Up 28562200
+Link Core 1211 Down curTime: 28562400 downFor: -202
+Link Core 1211 Up 28562700
+Link Core 1211 Down curTime: 28576600 downFor: -166
+Link Core 1211 Up 28576800
+Link Core 1280 Down curTime: 28583200 downFor: -123
+Link Core 1280 Up 28583400
+Link Core 1211 Down curTime: 28595000 downFor: -376
+Link Core 1211 Up 28595400
+Link Core 963 Down curTime: 28614000 downFor: -115
+Link Core 963 Up 28614200
+Link Core 981 Down curTime: 28624500 downFor: -202
+Link Core 981 Up 28624800
+Link Core 1211 Down curTime: 28657900 downFor: -69
+Link Core 1211 Up 28658000
+Link Core 1211 Down curTime: 28658200 downFor: -135
+Link Core 1211 Up 28658400
+Link Core 981 Down curTime: 28658400 downFor: -206
+Link Core 981 Up 28658700
+Link Core 981 Down curTime: 28658800 downFor: -188
+Link Core 981 Up 28659000
+Link Core 1211 Down curTime: 28711100 downFor: -134
+Link Core 1211 Up 28711300
+Link Core 1211 Down curTime: 28711400 downFor: -250
+Link Core 1211 Up 28711700
+Link Core 1211 Down curTime: 28712800 downFor: -52
+Link Core 1211 Up 28712900
+Link Core 1150 Down curTime: 28734400 downFor: -291
+Link Core 1150 Up 28734700
+Link Aggr 737 Down curTime: 28783700 downFor: -42
+Link Aggr 737 Up 28783800
+Link Core 1150 Down curTime: 28816200 downFor: -696
+Link Core 1150 Up 28816900
+Link Core 1150 Down curTime: 28817100 downFor: -159
+Link Core 1150 Up 28817300
+Link Aggr 3 Down curTime: 28865100 downFor: -387
+Link Aggr 3 Up 28865500
+Link Aggr 3 Down curTime: 28865700 downFor: -166516
+Link Aggr 536 Up 28932000
+Link Aggr 536 Down curTime: 29010900 downFor: -203
+Link Aggr 536 Up 29011200
+Link Aggr 3 Up 29032300
+Link Aggr 3 Down curTime: 29035100 downFor: -206
+Link Aggr 3 Up 29035400
+Link Aggr 3 Down curTime: 29037000 downFor: -139
+Link Aggr 3 Up 29037200
+Link Aggr 3 Down curTime: 29037400 downFor: -132
+Link Aggr 3 Up 29037600
+Link Aggr 3 Down curTime: 29037800 downFor: -214
+Link Aggr 3 Up 29038100
+Link Aggr 3 Down curTime: 29039100 downFor: -480
+Link Aggr 3 Up 29039600
+Link Core 1255 Down curTime: 29092200 downFor: -226
+Link Core 1255 Up 29092500
+Link Tor 568 Down curTime: 29097000 downFor: -116
+Link Tor 568 Up 29097200
+Link Core 980 Down curTime: 29119300 downFor: -160
+Link Core 980 Up 29119500
+Link Core 980 Down curTime: 29120100 downFor: -96
+Link Core 980 Up 29120200
+Link Core 980 Down curTime: 29120500 downFor: -156
+Link Core 980 Up 29120700
+Link Core 980 Down curTime: 29120900 downFor: -110
+Link Core 980 Up 29121100
+Link Aggr 597 Down curTime: 29185100 downFor: -172
+Link Aggr 597 Up 29185300
+Link Aggr 597 Down curTime: 29187300 downFor: -811966
+Link Core 904 Down curTime: 29324000 downFor: -531
+Link Core 904 Up 29324600
+Link Core 904 Down curTime: 29324700 downFor: -208
+Link Core 904 Up 29325000
+Link Aggr 735 Down curTime: 29543400 downFor: -154
+Link Aggr 735 Up 29543600
+Link Core 1150 Down curTime: 29579600 downFor: -103
+Link Core 1150 Up 29579800
+Link Tor 849 Down curTime: 29586000 downFor: -589
+Link Tor 849 Up 29586600
+Link Tor 849 Down curTime: 29589700 downFor: -239
+Link Tor 849 Up 29590000
+Link Tor 849 Down curTime: 29590800 downFor: -97
+Link Tor 849 Up 29590900
+Link Tor 849 Down curTime: 29591200 downFor: -437
+Link Tor 849 Up 29591700
+Link Tor 849 Down curTime: 29594400 downFor: -89
+Link Tor 849 Up 29594500
+Link Tor 209 Down curTime: 29717400 downFor: -114
+Link Tor 209 Up 29717600
+Link Tor 48 Down curTime: 29726600 downFor: -129
+Link Tor 48 Up 29726800
+Link Tor 48 Down curTime: 29727000 downFor: -238
+Link Tor 48 Up 29727300
+Link Tor 64 Down curTime: 29740600 downFor: -123
+Link Tor 64 Up 29740800
+Link Aggr 536 Down curTime: 29754100 downFor: -144
+Link Aggr 536 Up 29754300
+Link Aggr 597 Up 29999300

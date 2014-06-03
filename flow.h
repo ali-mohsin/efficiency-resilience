@@ -23,7 +23,7 @@ public:
 	bool done;
 	int oneToOne;
 	int down;
-
+	int on_back;
 	Host* source;
 	Host* dest;
 	Path* primaryPath;

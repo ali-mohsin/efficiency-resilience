@@ -102,25 +102,3 @@ Link Tor 765 Down curTime: 17600 downFor: -285 resLevel: 2
 Link Tor 765 Up 17900
 Link Core 914 Down curTime: 19200 downFor: -78 resLevel: 2
 Link Core 914 Up 19300
-Link Core 914 Down curTime: 75800 downFor: -253 resLevel: 2
-Link Core 914 Up 76100
-Link Tor 60 Down curTime: 90300 downFor: -227 resLevel: 2
-Link Tor 60 Up 90600
-Link Tor 60 Down curTime: 90700 downFor: -205 resLevel: 2
-Link Tor 60 Up 91000
-Link Tor 60 Down curTime: 92000 downFor: -570 resLevel: 2
-Link Tor 60 Up 92600
-Link Tor 60 Down curTime: 96100 downFor: -316 resLevel: 2
-Link Tor 60 Up 96500
-Link Tor 60 Down curTime: 99900 downFor: -335 resLevel: 2
-Link Tor 60 Up 100300
-Link Tor 60 Down curTime: 100400 downFor: -141 resLevel: 2
-Link Tor 60 Up 100600
-Link Tor 60 Down curTime: 100800 downFor: -90 resLevel: 2
-Link Tor 60 Up 100900
-Link Tor 60 Down curTime: 101200 downFor: -222 resLevel: 2
-Link Tor 60 Up 101500
-Link Tor 60 Down curTime: 103300 downFor: -170 resLevel: 2
-Link Tor 60 Up 103500
-Link Tor 60 Down curTime: 103600 downFor: -131 resLevel: 2
-Link Tor 60 Up 103800

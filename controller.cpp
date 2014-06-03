@@ -21,7 +21,7 @@ Topology* Controller::createTopology(int tor,int aggr,int core)
  		// tree->printTopology();
 }
 
-Controller::Controller(int kay,int tor,int aggr,int core,int back,int runFor,int makeFlows)
+Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int runFor,int makeFlows)
 {
 	downTime=0;
 	srand(time(0));
@@ -32,6 +32,7 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int runFor,int
 	flowNumber = 0;
 	createTopology(tor,aggr,core);
 	backUp=back;
+	sharing = share;
 	// TODO seperate variable for backup
 	// TODO intra-rack communication, path assigned goes all the way round from core
 	failures=0;
@@ -99,23 +100,24 @@ void Controller::createFlows()
 void Controller::checkProb(vector<Switch*> Tors, int prob, float factor)
 {
 	for (int i =0; i < Tors.size(); i++)
+	{
+		int random = rand()%(1000);
+		if (random > prob)
+			Tors[i]->resilience=0;
+		else if (random > prob/factor)
 		{
-			int random = rand()%(1000);
-			if (random > prob)
-				Tors[i]->resilience=0;
-			else if (random > prob/factor)
-			{
-				int failAt=rand()%totalTime;
-				Tors[i]->resilience=1;
-				Tors[i]->failAt=failAt;
-			}
-
-			else 
-			{
-				Tors[i]->resilience=2;
-			}
+			int failAt=rand()%totalTime;
+			Tors[i]->resilience=1;
+			Tors[i]->failAt=failAt;
+		}
+		else 
+		{
+			int failAt=rand()%totalTime;
+			Tors[i]->resilience=2;
+			Tors[i]->failAt=failAt;
 
 		}
+	}
 }
 
 
@@ -124,25 +126,26 @@ void Controller::checkProb(vector<Link*> Tors, int prob, float factor)
 {
 	cout<<"Size of links: " << Tors.size()<<endl;	
 	for (int i =0; i < Tors.size(); i++)
+	{
+		int random = rand()%(1000);
+		if (random > prob)
+			Tors[i]->resilience=0;
+		else if (random > prob/factor)
 		{
-			int random = rand()%(1000);
-			if (random > prob)
-				Tors[i]->resilience=0;
-			else if (random > prob/factor)
-			{
-				int failAt=rand()%totalTime;
-				Tors[i]->failAt=failAt;
-				Tors[i]->resilience=1;
-			}
-			else 
-			{
-				Tors[i]->resilience=2;
-			}
-
+			int failAt=rand()%totalTime;
+			Tors[i]->failAt=failAt;
+			Tors[i]->resilience=1;
 		}
+		else 
+		{
+			int failAt=rand()%totalTime;
+			Tors[i]->failAt=failAt;
+			Tors[i]->resilience=2;		}
+	}
 }
 
-void Controller::counter(vector<Switch*> Tors){
+void Controller::counter(vector<Switch*> Tors)
+{
 	cout<<"Size of device: " << Tors.size()<<endl;
 	int zero_count=0;
 	int one_count=0;
@@ -161,7 +164,6 @@ void Controller::counter(vector<Switch*> Tors){
 	cout<< "zero_count ratio: " << (float)zero_count/(float)sum <<endl;
 	cout<< "one_count ratio: " << (float)one_count/(float)sum <<endl;
 	cout<< "two_count ratio: " << (float)two_count/(float)sum <<endl;
-
 
 }
 
@@ -185,7 +187,6 @@ void Controller::counter(vector<Link*> Tors){
 	cout<< "zero_count ratio: " << (float)zero_count/(float)sum <<endl;
 	cout<< "one_count ratio: " << (float)one_count/(float)sum <<endl;
 	cout<< "two_count ratio: " << (float)two_count/(float)sum <<endl;
-
 
 }
 
@@ -228,7 +229,6 @@ void Controller::assignResilience()
 	counter(AggrsL);
 	cout<< "CoresL" <<endl;
 	counter(CoresL);
-
 
 }
 
@@ -414,15 +414,22 @@ void Controller::findFaults()
 			if(flows.size()>0)
 			{
 
-				// cout <<"+ Critical Switch Failed with ID: "<<all_switches[i]->toString()<<" For "<<all_switches[i]->status<<" Seconds Num Flows: "<<flows.size()<<endl;
+				cout <<"+ Critical Switch Failed with ID: "<<all_switches[i]->toString()<<" For "<<all_switches[i]->status<<" Seconds Num Flows: "<<flows.size()<<endl;
 				critical_switches.push_back(all_switches[i]);
  			}
 			for(int j=0;j<flows.size();j++)
 			{
+				if(flows[j]->on_back && backUp)
+				{
+					flows[j]->antiCommitPath(flows[j]->backUpPath);
+					flows_down.push_back(flows[j]);
+					continue;
+				}
+
 				flows[j]->antiCommitPath(flows[j]->primaryPath);
 				if(backUp)
 				{
-					int commit=flows[j]->commitPath(flows[j]->backUpPath,0);
+					int commit=flows[j]->commitPath(flows[j]->backUpPath,1);
 
 					if(commit)
 						flows_on_back.push_back(flows[j]);
@@ -470,10 +477,16 @@ void Controller::findFaults()
 
 			for(int j=0;j<flows.size();j++)
 			{
+				if(flows[j]->on_back)
+ 				{
+ 					flows_down.push_back(flows[j]);
+ 					flows[j]->antiCommitPath(flows[j]->backUpPath);
+ 					continue;
+ 				}
 				flows[j]->antiCommitPath(flows[j]->primaryPath);
 				if(backUp)
 				{
-					int commit=flows[j]->commitPath(flows[j]->backUpPath,0);
+					int commit=flows[j]->commitPath(flows[j]->backUpPath,1);
 
 					if(commit)
 						flows_on_back.push_back(flows[j]);
@@ -510,7 +523,7 @@ void Controller::revert_to_primary()
 	////startTimer();
 	for(int i=0;i<critical_switches.size();i++)
 	{
-		if(critical_switches[i]->status > 0)
+		if(critical_switches[i]->status >= 0)
 		{
 			cout<<downTime<<" is the new downtime"<<endl;
 			cout<<"+ Critical Switch Back with ID :"<<critical_switches[i]->toString()<<endl;
@@ -526,7 +539,7 @@ void Controller::revert_to_primary()
 
 	for(int i=0;i<critical_links.size();i++)
 	{
-		if(critical_links[i]->status > 0)
+		if(critical_links[i]->status >= 0)
 		{
 			cout<<downTime<<" is the new downtime"<<endl;
 			cout<<"+ Critical Link Back with ID :"<<critical_links[i]->link_id<<endl;
@@ -545,6 +558,8 @@ void Controller::revert_to_primary()
 		for (int i=0;i<flows_on_back.size();i++)
 		{
 			Flow* f=flows_on_back[i];
+			if(f->down!=1)
+				continue;
 			if(f->primaryPath->isUp())
 			{
 				f->antiCommitPath(f->backUpPath);
@@ -581,8 +596,7 @@ void Controller::detect_downTime()
 				Flow* f2=flows_on_back[j];
 				if(f1->backUpPath==f2->backUpPath)
 				{
-					downTime+=0.5;
-					cout << downTime<<endl;
+					downTime+=1;
 				}
 			}
 		}
@@ -790,19 +804,39 @@ void Controller::updateStatus(vector<Switch*> all_switches,int curSec)
 	for(int i=0;i<all_switches.size();i++)
 	{
 		Switch* curSwitch=all_switches[i];
-		if(curSwitch->resilience==1 && curSwitch->status >= 0 &&  curSwitch->failAt==curSec)
+
+		if(curSwitch->status==0 && curSwitch->resilience==2)
+		{
+			int ttf=getTTF(curSwitch);
+			if(ttf==0)
+				ttf=2;
+
+			curSwitch->status=rand()%ttf;
+			//TODO check this with dr ihsan ,dr fahad and dr zartash, how to induce first failure
+			return;
+		}
+
+
+		if(curSwitch->resilience==1 && curSwitch->status == 0 &&  curSwitch->failAt==curSec)
 		{
 			curSwitch->status=-getTTR(curSwitch);
-			curSwitch->resilience-=1;
+			return;
 		}
 
 		if(curSwitch->status < 0)
 		{
 			curSwitch->status+=1;
+
+			if(curSwitch->resilience == 1 && curSwitch->status == -1)
+			{
+				curSwitch->status=1;
+			}
+
 			if(curSwitch->resilience == 2 && curSwitch->status == -1)
 			{
 				curSwitch->status=getTTF(curSwitch);
 			}
+			return;
 		}
 
 		if(curSwitch->resilience == 2 && curSwitch->status > 0)
@@ -813,17 +847,6 @@ void Controller::updateStatus(vector<Switch*> all_switches,int curSec)
 				curSwitch->status=-getTTR(curSwitch);
 			}
 		}
-
-		if(curSwitch->status==0 && curSwitch->resilience==2)
-		{
-			int ttf=getTTF(curSwitch);
-			if(ttf==0)
-				ttf=2;
-
-			curSwitch->status=rand()%ttf;
-			//TODO check this with dr ihsan ,dr fahad and dr zartash, how to induce first failure
-		}
-
 	}
 }
 
@@ -833,19 +856,39 @@ void Controller::updateStatus(vector<Link*> all_switches,int curSec)
 	for(int i=0;i<all_switches.size();i++)
 	{
 		Link* curSwitch=all_switches[i];
-		if(curSwitch->resilience==1 && curSwitch->status >= 0 &&  curSwitch->failAt==curSec)
+
+		if(curSwitch->status==0 && curSwitch->resilience==2 && curSwitch->failAt>curSec)
+		{
+			int ttf=getTTF(curSwitch);
+			if(ttf==0)
+				ttf=2;
+
+			curSwitch->status=rand()%ttf;
+			//TODO check this with dr ihsan ,dr fahad and dr zartash, how to induce first failure
+			return;
+		}
+
+
+		if(curSwitch->resilience==1 && curSwitch->status == 0 &&  curSwitch->failAt==curSec)
 		{
 			curSwitch->status=-getTTR(curSwitch);
-			curSwitch->resilience-=1;
+			return;
 		}
 
 		if(curSwitch->status < 0)
 		{
 			curSwitch->status+=1;
+
+			if(curSwitch->resilience == 1 && curSwitch->status == -1)
+			{
+				curSwitch->status=1;
+			}
+
 			if(curSwitch->resilience == 2 && curSwitch->status == -1)
 			{
 				curSwitch->status=getTTF(curSwitch);
 			}
+			return;
 		}
 
 		if(curSwitch->resilience == 2 && curSwitch->status > 0)
@@ -856,16 +899,6 @@ void Controller::updateStatus(vector<Link*> all_switches,int curSec)
 				curSwitch->status=-getTTR(curSwitch);
 			}
 		}
-
-		if(curSwitch->status==0 && curSwitch->resilience==2)
-		{
-			int ttf=getTTF(curSwitch);
-			if(ttf==0)
-				ttf=2;
-			curSwitch->status=rand()%ttf;
-			//TODO check this with dr ihsan ,dr fahad and dr zartash, how to induce first failure
-		}
-
 	}
 }
 void Controller::autofail(int curSec)
@@ -1086,7 +1119,6 @@ void Controller::getInterPodPaths(Switch* src, Switch* dst, Link* destLink, vect
 
 void Controller::filterPaths(int rate,Host* dest)
 {
-
 	for(int i=0;i<paths.size();i++)
 	{
 		Path* curPath=paths[i];
@@ -1133,7 +1165,7 @@ void Controller::logFailures(int time)
 
 	for(int i=0;i<down_switches.size();i++)
 	{
-		if(down_switches[i]->status > 0)
+		if(down_switches[i]->status >= 0)
 		{	
 
 			int level=all_switches[i]->level;
@@ -1152,7 +1184,7 @@ void Controller::logFailures(int time)
 
 	for(int i=0;i<down_links.size();i++)
 	{
-		if(down_links[i]->status > 0)
+		if(down_links[i]->status >= 0)
 		{	
 			stringstream o;
 			int idd=down_links[i]->link_id;
@@ -1178,10 +1210,13 @@ void Controller::logFailures(int time)
 			if(level==2)
 				l="Tor";
 			stringstream o;
+			stringstream oo;
 			int a=all_switches[i]->status;
 			o<<a;
 			string st=o.str();
-			writeLog("Switch "+l+" "+all_switches[i]->toString()+" Down curTime: "+t+" downFor: "+st);
+			oo<<all_switches[i]->resilience;
+			string res=oo.str();
+			writeLog("Switch "+l+" "+all_switches[i]->toString()+" Down curTime: "+t+" downFor: "+st+" resLevel: "+res);
 			down_switches.push_back(all_switches[i]);
 		}
 	}
@@ -1190,14 +1225,16 @@ void Controller::logFailures(int time)
 	{
 		if(all_links[i]->status < 0 && notIn(down_links,all_links[i]))
 		{	
-			stringstream o,oo;
+			stringstream o,oo,ooo;
 			int idd=all_links[i]->link_id;
 			o<<idd;
 			string id=o.str();
 			int a=all_links[i]->status;
 			oo<<a;
 			string st=oo.str();
-			writeLog("Link "+all_links[i]->label+" "+ id+" Down curTime: "+t+" downFor: "+st);
+			ooo<<all_links[i]->resilience;
+			string res=ooo.str();
+			writeLog("Link "+all_links[i]->label+" "+ id+" Down curTime: "+t+" downFor: "+st+" resLevel: "+res);
 			down_links.push_back(all_links[i]);
 		}
 	}
@@ -1205,8 +1242,6 @@ void Controller::logFailures(int time)
 
 bool Controller::getPaths(Host* source, Host* dest, vector<Switch*> switches,vector<Link*> links, vector<bool> directions, int dir)
 {
-
-
 	switches.push_back(source->getTor());
 	links.push_back(source->getLink());
 	directions.push_back(1);
@@ -1246,15 +1281,16 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 
 	// cout<<paths.size()<<" is the num of paths"<<endl;
 	filterPaths(rate,dest);
-	// if(intraRack && paths.size()!=1)
-	// {
-	// 	cout<<"ERROR: Request could not be entertained with Rate: "<<rate<<" Size: "<<size<<", Not enough Bandwith remaining on Candidate Path"<<endl;
-	// 	return 0;
-	// }
+	 if(intraRack && paths.size()!=1)
+ 	 {
+ 		int x=1/0;
+ 	 	return 0;
+ 	 }
 	if(!intraRack && paths.size()<2)
 	{
 		paths.clear();
 		cout<<"ERROR: Request could not be entertained with Rate: "<<rate<<" Size: "<<size<<", Not enough Bandwith remaining on Candidate Paths"<<endl;
+
 		return 0;
 	}
 
@@ -1268,10 +1304,17 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 
 	if(backUp)
 	{
-		Path* back=	getBackUpPath(primary);
-		cout<<"Backup Path is: "<<endl;
-		back->print();
-		paths_to_be_shared.push_back(back);
+		back=getBackUpPath(primary);
+ //		cout<<"Backup Path is: "<<endl;
+ //		back->print();
+ 		if(!back)
+ 		{
+ 			int x=1/0;
+ 		}
+ 		if(sharing)
+ 		{
+ 			paths_to_be_shared.push_back(back);
+ 		}
 	}
 
 
@@ -1308,26 +1351,29 @@ Path* Controller::getBackUpPath(Path* primary)
 	int overlap=-1;
 	Path* back=NULL;
 	int index=0;
-	for(int i=0;i<paths.size();i++)
-	{
-		for (int j=0;j<paths_to_be_shared.size();j++)
-		{
-			Path* p1=paths[i];
-			Path* p2=paths_to_be_shared[j];
 
-			if(p2->getSrcPod()==p1->getSrcPod() && p2->getDstPod()==p1->getDstPod() && p1!=p2)
+	if(sharing)
+	{
+		for(int i=0;i<paths.size();i++)
+		{
+			for (int j=0;j<paths_to_be_shared.size();j++)
 			{
-				vector<Link*> links=p1->links;
-				vector<Link*> otherLinks=p2->links;
-				int common=getCommonCount(links,otherLinks);
-				if(common > overlap)
+				Path* p1=paths[i];
+				Path* p2=paths_to_be_shared[j];
+				if(p2->getSrcPod()==p1->getSrcPod() && p2->getDstPod()==p1->getDstPod() && p1!=p2)
 				{
-					back=p2;
-					overlap=common;
-					index=j;
-				}
-	
-			}	
+					vector<Link*> links=p1->links;
+					vector<Link*> otherLinks=p2->links;
+					int common=getCommonCount(links,otherLinks);
+					if(common > overlap)
+					{
+						back=p2;
+						overlap=common;
+						index=j;
+					}
+
+				}	
+			}
 		}
 	}
 
