@@ -1,9 +1,0 @@
-Link Tor 118 Down curTime: 100 downFor: -587219 resLevel: 2
-Link Aggr 221 Down curTime: 100 downFor: -59 resLevel: 2
-Link Tor 477 Down curTime: 100 downFor: -150 resLevel: 2
-Link Aggr 15 Down curTime: 500 downFor: -622941 resLevel: 2
-Switch Aggr [1,11,4] Down curTime: 15900 downFor: -263 resLevel: 1
-Switch Aggr [1,11,4] Up 16200
-Switch Tor [2,4,2] Down curTime: 17800 downFor: -758 resLevel: 2
-Switch Aggr [2,4,2] Up 18600
-Switch Tor [2,4,2] Down curTime: 22000 downFor: -253363 resLevel: 2
