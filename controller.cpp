@@ -101,6 +101,8 @@ void Controller::createFlows()
 
 void Controller::checkProb(vector<Switch*> Tors, int prob, float factor)
 {
+
+	//TODO- assign classes B,C with equal number, small k not letting them be equal
 	for (int i =0; i < Tors.size(); i++)
 	{
 		int random = rand()%(1000);
@@ -126,23 +128,40 @@ void Controller::checkProb(vector<Switch*> Tors, int prob, float factor)
 
 void Controller::checkProb(vector<Link*> Tors, int prob, float factor)
 {
+	int ones=0;
+	int twos=0;
 	cout<<"Size of links: " << Tors.size()<<endl;	
 	for (int i =0; i < Tors.size(); i++)
 	{
+		cout<<ones<<" ones"<<endl;
+		cout<<twos<<" twos"<<endl;
+		int diff=ones-twos;
 		int random = rand()%(1000);
 		if (random > prob)
+		{
 			Tors[i]->resilience=0;
-		else if (random > prob/factor)
+		}	
+		else if (random > prob/factor && diff <= 1)
 		{
 			int failAt=rand()%totalTime;
 			Tors[i]->failAt=failAt;
 			Tors[i]->resilience=1;
+			ones++;
 		}
-		else 
+		else if(diff >= -1)
 		{
 			int failAt=rand()%totalTime;
 			Tors[i]->failAt=failAt;
-			Tors[i]->resilience=2;		}
+			Tors[i]->resilience=2;		
+			twos++;
+		}
+		else
+		{
+			i--;
+			continue;
+		}
+
+
 	}
 }
 
@@ -166,7 +185,14 @@ void Controller::counter(vector<Switch*> Tors)
 	cout<< "zero_count ratio: " << (float)zero_count/(float)sum <<endl;
 	cout<< "one_count ratio: " << (float)one_count/(float)sum <<endl;
 	cout<< "two_count ratio: " << (float)two_count/(float)sum <<endl;
+	float one=(float)one_count/(float)sum;
+	float two=(float)two_count/(float)sum;
+	float diff= one -two;
+	if(diff<0)
+		diff=-diff;
 
+	if(diff> 0.015)
+		int x=1/0;
 }
 
 
@@ -425,10 +451,20 @@ bool notIn(vector<Link*> v,Link* e)
 	return true;
 }
 
+bool notIn(vector<Flow*> v,Flow* e)
+{
+	for (int i=0;i<v.size();i++)
+	{
+		if(e==v[i])
+			return false;
+	}
+	return true;
+}
+
+
 void Controller::findFaults()
 {
 	//////startTimer();
-	//TODO implement for links as well
 	int len = all_switches.size();
 	for(int i=0; i<len; i++)
 	{
@@ -464,13 +500,24 @@ void Controller::findFaults()
 					}
 					else
 					{
+						if(!notIn(flows_down,flows_primary[j]))
+						{
+							int x=1/0;
+						}
 						flows_down.push_back(flows_primary[j]);
+						cout<<"Mayday: "<<endl;
+						flows_primary[j]->primaryPath->print();
+						flows_primary[j]->backUpPath->print();
 						// cout<<"And Commit Failed, put on down flows"<<endl;
 						
 					}
 				}
 				else
 				{
+					if(!notIn(flows_down,flows_primary[j]))
+					{
+						int x=1/0;
+					}
 					flows_down.push_back(flows_primary[j]);
 				}
 			}
@@ -481,6 +528,12 @@ void Controller::findFaults()
 				if(backUp)
 				{
 					// cout<<"Path is now down"<<endl;
+					if(!notIn(flows_down,flows_back[j]))
+					{
+
+						flows_back[j]->primaryPath->print();
+						int x=1/0;
+					}
 					flows_back[j]->antiCommitPath(flows_back[j]->backUpPath);
 					flows_down.push_back(flows_back[j]);
 					continue;
@@ -488,8 +541,6 @@ void Controller::findFaults()
 			}
 		}
 	}
-	//////stopTimer("switches in find faults");
-	//////startTimer();
 	//************For Links******************//
 
 	len = all_links.size();
@@ -505,7 +556,7 @@ void Controller::findFaults()
 
 				if(notIn(critical_links,all_links[i]))
 				{
-					cout <<"+ Critical Link Failed with ID: "<<all_links[i]->link_id<<" For "<<all_links[i]->status<<" Seconds "<<endl;
+					cout <<"+ Critical Link Failed with ID: "<<all_links[i]->up_switch->toString()<<" For "<<all_links[i]->status<<" Seconds "<<endl;
 					critical_links.push_back(all_links[i]);
 				}
 				else
@@ -526,11 +577,23 @@ void Controller::findFaults()
 					if(commit)
 					{
 						flows_on_back.push_back(flows_primary[j]);
+
 						 // cout<<"Commit success, put on backup flows"<<endl;
 					}
 					else
 					{
+						if(!notIn(flows_down,flows_primary[j]))
+						{
+
+							flows_primary[j]->primaryPath->print();
+							flows_primary[j]->backUpPath->print();
+							int x=1/0;
+						}
+
 						flows_down.push_back(flows_primary[j]);
+						cout<<"Mayday: "<<endl;
+						flows_primary[j]->primaryPath->print();
+						flows_primary[j]->backUpPath->print();
 						 // cout<<"Commit Failed, put on down flows"<<endl;
 					}
 				}
@@ -546,6 +609,13 @@ void Controller::findFaults()
 				if(backUp)
 				{
 					// cout<<"Was already back up, now its down"<<endl;
+					if(!notIn(flows_down,flows_back[j]))
+					{
+						flows_back[j]->primaryPath->print();
+						flows_back[j]->backUpPath->print();
+
+						int x=1/0;
+					}
 					flows_back[j]->antiCommitPath(flows_back[j]->backUpPath);
 					flows_down.push_back(flows_back[j]);
 					continue;
@@ -585,7 +655,7 @@ void Controller::revert_to_primary()
 			cout<<downTime<<" is the new downtime"<<endl;
 			cout<<backup<<" is the new down due to sharing"<<endl;
 
-			cout<<"+ Critical Link Back with ID :"<<critical_links[i]->link_id<<endl;
+			cout<<"+ Critical Link Back with ID :"<<critical_links[i]->up_switch->toString()<<endl;
 			critical_links.erase(critical_links.begin()+i);
 			// if(duplicateIn(critical_links))
 			// {
@@ -608,7 +678,7 @@ void Controller::revert_to_primary()
 				f->antiCommitPath(f->backUpPath);
 				f->commitPath(f->primaryPath,0); //Assumption is that link capacity would not be a bottleneck
 				flows_on_back.erase(flows_on_back.begin()+i);
-				// cout<<"-- Num of flows on backup are: "<<flows_on_back.size()<<endl;
+				cout<<"-- Num of flows on backup are: "<<flows_on_back.size()<<endl;
 			}
 		}
 	}
@@ -647,7 +717,7 @@ void Controller::revert_to_primary()
 
 void Controller::detect_downTime()
 {
-	if(backUp)
+	if(backUp && sharing)
 	{
 		// cout<<"Num of flows on backup are "<<flows_on_back.size()<<endl;
 		for(int i=0;i<flows_on_back.size();i++)
@@ -1359,7 +1429,8 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 
 	if(backUp)
 	{
-		back=getBackUpPath(primary);
+		paths.clear();
+		back=getBackUpPath(primary,rate);
  //		cout<<"Backup Path is: "<<endl;
  //		back->print();
  		if(!back)
@@ -1401,9 +1472,44 @@ int getCommonCount(vector<Switch*> a,vector<Switch*> b)
 	return count;
 }
 
+Host* Controller::getHostInTor(int id)
+{
+	while(true)
+	{
+		Host* h=all_hosts[rand()%all_hosts.size()];
+		if(h->getPodID()==id)
+		{
+			return h;
+		}
+	}
+}
+
+Path* Controller::getReplicatedPath(int src, int dst, int rate)
+{
+	int srcPod=src;
+	int dstPod=dst;
+	while(srcPod==src || dstPod==dst || src==dst)
+	{
+		srcPod=rand()%k;
+		dstPod=rand()%k;
+	}
+
+	vector<Switch*> switches;
+	vector<Link*> links;
+	vector<bool> directions;
+	Host* source=getHostInTor(srcPod);
+	Host* dest= getHostInTor(dstPod);
+
+	bool intraRack = getPaths(source, dest, switches, links, directions, 1);
+	filterPaths(rate,dest);
+
+	Path* back=paths[rand()%paths.size()];
+	paths.clear();
+	return back;
+}
 
 
-Path* Controller::getBackUpPath(Path* primary)
+Path* Controller::getBackUpPath(Path* primary, int rate)
 {
 	int overlap=-1;
 	Path* back=NULL;
@@ -1446,28 +1552,24 @@ Path* Controller::getBackUpPath(Path* primary)
 	}
 	else
 	{
-		overlap=10*k;
-		vector<Switch*> links=primary->switches;
-		// primary->print();
 
-        for(int i=0;i<paths.size();i++)
-        {
-            Path* cand=paths[i];
-        	// cand->print();
-            vector<Switch*> otherLinks=cand->switches;
-            // cout<<"size of other links  "<<otherLinks.size()<<endl;            
-            // cout<<"size of links  "<<links.size()<<endl;            
-            int common=getCommonCount(links,otherLinks);
-            // cout<<"Common num is "<<common<<endl;
-            if(common<overlap)
-            {
-                back=cand;
-                overlap=common;
-            }
-        }
-        // primary->print();
-        // back->print();
-        // cout<<"Overlap with primary is "<<overlap<<endl;
+		int srcTor=primary->getSrcPod();
+		int dstTor=primary->getDstPod();
+
+		back=getReplicatedPath(srcTor,dstTor,rate);
+		// overlap=10*k;
+		// vector<Switch*> links=primary->switches;
+  //       for(int i=0;i<paths.size();i++)
+  //       {
+  //           Path* cand=paths[i];
+  //           vector<Switch*> otherLinks=cand->switches;
+  //           int common=getCommonCount(links,otherLinks);
+  //           if(common<overlap)
+  //           {
+  //               back=cand;
+  //               overlap=common;
+  //           }
+  //       }
 	}
 	return back;
 }

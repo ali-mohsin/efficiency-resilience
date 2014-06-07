@@ -25,7 +25,7 @@ public:
 	vector<Path*> paths_to_be_shared;
 	vector<Switch*> down_switches;
 	vector<Link*> down_links;
-	float downTime;
+	int downTime;
 	int torCap;
 	int aggrCap;
 	int backup;
@@ -42,6 +42,8 @@ public:
 
 	vector<int> violations;
 	void createFlows();
+	Host* getHostInTor(int id);
+
 	void logFailures(int time);
 	Topology* createTopology(int,int,int);				//to create topology
 	void assignPaths();
@@ -58,8 +60,9 @@ public:
 //	void goToPod(Path* path, Host* dst, Switch** tempSwitch);
 	void filterPaths(int rate,Host* dst);
 	void commitFlow(Flow* flow);
-	Path* getBackUpPath(Path* primary);
+	Path* getBackUpPath(Path* primary,int rate);
 	void revert_to_primary();
+	Path* getReplicatedPath(int src, int dst, int rate);
 	long int getTime();
 	void detect_downTime();
 	void checkProb(vector<Switch*> Tors, int prob, float factor);
