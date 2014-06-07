@@ -47,12 +47,13 @@ bool Flow::commitPath(Path* path,int back)
 {
 	// cout<<"+ commitPath";
 	// path->print();
-     on_back=back;
 
      if (!path->isUp())
      {
      	return false;
      }
+
+     on_back=back;
 
     if(down==-1) // just started
     {

@@ -23,7 +23,7 @@ def findAll(arr,num):
 import sys
 device=sys.argv[1]
 cat=sys.argv[2]
-with open('logs.txt','rb') as fin:
+with open(sys.argv[3],'rb') as fin:
     reader = csv.reader(fin,delimiter=' ')
     rms=[]
     code=[]
@@ -57,7 +57,7 @@ for i in range(0,len(down_arr)):
     arr[down_arr[i]]+=1
 
 total=float(sum(arr))
-
+print "Total failure time: "+str(total)
 for i in range(1,len(arr)):
     arr[i]+=arr[i-1]
 

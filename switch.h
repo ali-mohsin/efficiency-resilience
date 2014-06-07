@@ -49,7 +49,9 @@ public:
 	vector<Link*> getUpLinks();
 	vector<Link*> getDownLinks();
 	vector<Link*> getTORs();
-	vector<Flow*> getActiveFlows();
+	vector<Flow*> getFlowsOnPrimary();
+	vector<Flow*> getFlowsOnBack();
+
 	
 
 };

@@ -1,126 +1,1633 @@
-Link Tor 492 Down curTime: 100 downFor: -584 resLevel: 2
-Link Aggr 515 Down curTime: 100 downFor: -113 resLevel: 2
-Link Tor 39 Down curTime: 200 downFor: -102 resLevel: 2
-Link Tor 39 Up 400
-Link Tor 407 Down curTime: 400 downFor: -178 resLevel: 2
-Link Aggr 444 Down curTime: 400 downFor: -873839 resLevel: 2
-Link Tor 39 Down curTime: 500 downFor: -212 resLevel: 2
-Link Tor 39 Up 800
-Link Tor 407 Up 900
-Link Tor 407 Down curTime: 1100 downFor: -101 resLevel: 2
-Link Tor 407 Up 1200
-Link Aggr 150 Down curTime: 1300 downFor: -65 resLevel: 2
-Link Tor 134 Down curTime: 1400 downFor: -152 resLevel: 2
-Link Aggr 150 Up 1600
-Link Tor 134 Up 1700
-Link Tor 417 Down curTime: 1700 downFor: -171 resLevel: 2
-Link Aggr 150 Down curTime: 1900 downFor: -130 resLevel: 2
-Link Tor 417 Up 2100
-Link Aggr 150 Up 2200
-Link Aggr 291 Down curTime: 2300 downFor: -494657 resLevel: 2
-Link Tor 134 Down curTime: 3500 downFor: -219 resLevel: 2
-Link Tor 134 Up 3800
-Link Tor 134 Down curTime: 4100 downFor: -106 resLevel: 2
-Link Tor 134 Up 4300
-Link Tor 134 Down curTime: 5900 downFor: -150 resLevel: 2
-Link Tor 134 Up 6100
-Link Tor 42 Down curTime: 100 downFor: -60 resLevel: 2
-Link Tor 42 Up 200
-Switch Tor [2,1,0] Down curTime: 200 downFor: -2821 resLevel: 2
-Link Tor 208 Down curTime: 300 downFor: -267 resLevel: 2
-Link Aggr 603 Down curTime: 300 downFor: -103 resLevel: 2
-Link Core 951 Down curTime: 300 downFor: -78 resLevel: 2
-Link Tor 46 Down curTime: 500 downFor: -149 resLevel: 2
-Link Tor 46 Up 700
-Link Aggr 8 Down curTime: 700 downFor: -102 resLevel: 2
-Link Tor 208 Up 900
-Link Aggr 8 Up 900
-Link Aggr 603 Up 1000
-Link Tor 46 Down curTime: 1100 downFor: -182 resLevel: 2
-Link Core 951 Up 1300
-Link Tor 46 Up 1400
-Switch Tor [2,0,3] Down curTime: 1400 downFor: -114 resLevel: 2
-Link Tor 49 Down curTime: 1400 downFor: -269 resLevel: 2
-Link Core 922 Down curTime: 1400 downFor: -598827 resLevel: 2
-Switch Aggr [2,0,3] Up 1600
-Link Tor 49 Up 1700
-Link Aggr 465 Down curTime: 1800 downFor: -145 resLevel: 2
-Link Aggr 465 Up 2000
-Link Aggr 603 Down curTime: 2000 downFor: -233 resLevel: 2
-Link Aggr 603 Up 2300
-Link Tor 616 Down curTime: 2400 downFor: -189 resLevel: 2
-Link Tor 616 Up 2600
-Link Aggr 584 Down curTime: 2800 downFor: -128 resLevel: 2
-Link Aggr 584 Up 3000
-Link Aggr 680 Down curTime: 3000 downFor: -156 resLevel: 2
-Link Aggr 680 Up 3200
-Switch Aggr [2,1,0] Up 3300
-Switch Tor [2,10,5] Down curTime: 3300 downFor: -980 resLevel: 2
-Switch Aggr [1,8,0] Down curTime: 3400 downFor: -9952 resLevel: 2
-Link Tor 685 Down curTime: 3500 downFor: -139 resLevel: 2
-Link Tor 685 Up 3700
-Link Aggr 680 Down curTime: 3700 downFor: -176 resLevel: 2
-Link Aggr 680 Up 3900
-Link Aggr 584 Down curTime: 4000 downFor: -262 resLevel: 2
-Link Aggr 584 Up 4300
-Link Core 909 Down curTime: 4700 downFor: -206 resLevel: 2
-Link Core 909 Up 5000
-Link Aggr 680 Down curTime: 5000 downFor: -251 resLevel: 2
-Link Aggr 669 Down curTime: 5200 downFor: -524 resLevel: 2
-Link Aggr 584 Down curTime: 5300 downFor: -254 resLevel: 2
-Link Aggr 584 Up 5600
-Switch Tor [2,1,0] Down curTime: 5600 downFor: -3088 resLevel: 2
-Link Tor 616 Down curTime: 5700 downFor: -248 resLevel: 2
-Link Aggr 584 Down curTime: 5900 downFor: -30 resLevel: 2
-Link Aggr 584 Up 6000
-Link Tor 616 Up 6100
-Link Aggr 584 Down curTime: 6400 downFor: -327 resLevel: 2
-Link Aggr 669 Up 6800
-Link Aggr 680 Up 6900
-Link Aggr 584 Up 7000
-Link Tor 616 Down curTime: 7100 downFor: -238 resLevel: 2
-Link Tor 616 Up 7400
-Link Tor 765 Down curTime: 7400 downFor: -703 resLevel: 2
-Link Tor 765 Up 8200
-Switch Aggr [2,1,0] Up 8700
-Link Tor 685 Down curTime: 9300 downFor: -126 resLevel: 2
-Link Tor 685 Up 9500
-Link Tor 685 Down curTime: 10900 downFor: -90 resLevel: 2
-Link Tor 685 Up 11000
-Switch Tor [2,1,0] Down curTime: 11800 downFor: -2847 resLevel: 2
-Link Tor 765 Down curTime: 11800 downFor: -105 resLevel: 2
-Link Tor 765 Up 12000
-Link Tor 765 Down curTime: 13000 downFor: -168 resLevel: 2
-Link Tor 765 Up 13200
-Link Tor 765 Down curTime: 13500 downFor: -157 resLevel: 2
-Link Tor 765 Up 13700
-Switch Aggr [2,1,0] Up 14700
-Link Tor 765 Down curTime: 14700 downFor: -44 resLevel: 2
-Link Tor 765 Up 14800
-Switch Tor [2,1,0] Down curTime: 15300 downFor: -457202 resLevel: 2
-Link Tor 765 Down curTime: 17600 downFor: -285 resLevel: 2
-Link Tor 765 Up 17900
-Link Core 914 Down curTime: 19200 downFor: -78 resLevel: 2
-Link Core 914 Up 19300
-Link Core 914 Down curTime: 75800 downFor: -253 resLevel: 2
-Link Core 914 Up 76100
-Link Tor 60 Down curTime: 90300 downFor: -227 resLevel: 2
-Link Tor 60 Up 90600
-Link Tor 60 Down curTime: 90700 downFor: -205 resLevel: 2
-Link Tor 60 Up 91000
-Link Tor 60 Down curTime: 92000 downFor: -570 resLevel: 2
-Link Tor 60 Up 92600
-Link Tor 60 Down curTime: 96100 downFor: -316 resLevel: 2
-Link Tor 60 Up 96500
-Link Tor 60 Down curTime: 99900 downFor: -335 resLevel: 2
-Link Tor 60 Up 100300
-Link Tor 60 Down curTime: 100400 downFor: -141 resLevel: 2
-Link Tor 60 Up 100600
-Link Tor 60 Down curTime: 100800 downFor: -90 resLevel: 2
-Link Tor 60 Up 100900
-Link Tor 60 Down curTime: 101200 downFor: -222 resLevel: 2
-Link Tor 60 Up 101500
-Link Tor 60 Down curTime: 103300 downFor: -170 resLevel: 2
-Link Tor 60 Up 103500
-Link Tor 60 Down curTime: 103600 downFor: -131 resLevel: 2
-Link Tor 60 Up 103800
+Switch Aggr [1,3,0] Down curTime: 100 downFor: -285 resLevel: 2
+Link Tor 560 Down curTime: 100 downFor: -67 resLevel: 2
+Link Tor 171 Down curTime: 200 downFor: -942773 resLevel: 2
+Link Aggr 74 Down curTime: 300 downFor: -213 resLevel: 2
+Switch Aggr [1,3,0] Up 400
+Switch Aggr [1,9,1] Down curTime: 500 downFor: -121 resLevel: 2
+Switch Tor [2,11,0] Down curTime: 500 downFor: -559319 resLevel: 2
+Link Aggr 74 Up 600
+Switch Aggr [1,9,1] Up 700
+Link Aggr 9 Down curTime: 700 downFor: -249 resLevel: 2
+Link Aggr 9 Up 1000
+Switch Tor [2,4,0] Down curTime: 1300 downFor: -449060 resLevel: 2
+Link Aggr 9 Down curTime: 3100 downFor: -206 resLevel: 2
+Link Aggr 9 Up 3400
+Switch Aggr [2,4,0] Up 450400
+Switch Aggr [1,3,0] Down curTime: 452300 downFor: -463 resLevel: 2
+Switch Aggr [1,3,0] Up 452800
+Switch Aggr [1,3,0] Down curTime: 453000 downFor: -356 resLevel: 2
+Switch Aggr [1,3,0] Up 453400
+Switch Aggr [1,6,8] Down curTime: 696500 downFor: -2161 resLevel: 2
+Switch Aggr [1,6,8] Up 698700
+Switch Aggr [1,9,1] Down curTime: 831900 downFor: -288 resLevel: 2
+Switch Aggr [1,9,1] Up 832200
+Switch Aggr [1,9,1] Down curTime: 889900 downFor: -430 resLevel: 2
+Switch Aggr [1,9,1] Up 890400
+Switch Aggr [1,9,1] Down curTime: 890500 downFor: -366 resLevel: 2
+Switch Aggr [1,9,1] Up 890900
+Link Tor 560 Up 943800
+Link Aggr 2080 Down curTime: 943800 downFor: -238 resLevel: 2
+Link Tor 171 Up 943900
+Link Aggr 295 Down curTime: 943900 downFor: -75 resLevel: 2
+Link Aggr 608 Down curTime: 943900 downFor: -198 resLevel: 2
+Link Aggr 295 Up 944000
+Link Aggr 295 Down curTime: 944200 downFor: -245 resLevel: 2
+Link Aggr 608 Up 944500
+Link Aggr 855 Down curTime: 944500 downFor: -556340 resLevel: 2
+Link Tor 1372 Down curTime: 944500 downFor: -249 resLevel: 2
+Link Aggr 295 Up 944600
+Link Tor 171 Down curTime: 944600 downFor: -81 resLevel: 2
+Link Tor 560 Down curTime: 944600 downFor: -196 resLevel: 2
+Link Aggr 681 Down curTime: 944600 downFor: -253 resLevel: 2
+Link Tor 171 Up 944700
+Link Tor 303 Down curTime: 944800 downFor: -150 resLevel: 2
+Link Aggr 208 Down curTime: 944900 downFor: -299 resLevel: 2
+Link Aggr 208 Up 945200
+Link Tor 303 Up 945400
+Link Tor 560 Up 945500
+Link Tor 303 Down curTime: 945500 downFor: -160 resLevel: 2
+Link Tor 303 Up 945700
+Link Aggr 681 Up 945900
+Link Tor 303 Down curTime: 946000 downFor: -85 resLevel: 2
+Link Tor 303 Up 946100
+Link Tor 740 Down curTime: 946300 downFor: -498 resLevel: 2
+Link Tor 171 Down curTime: 946500 downFor: -63 resLevel: 2
+Link Tor 171 Up 946600
+Link Tor 740 Up 947000
+Link Tor 740 Down curTime: 947100 downFor: -108 resLevel: 2
+Link Aggr 295 Down curTime: 947200 downFor: -191 resLevel: 2
+Link Aggr 295 Up 947400
+Link Tor 740 Up 947500
+Link Aggr 208 Down curTime: 947500 downFor: -240 resLevel: 2
+Link Aggr 208 Up 947800
+Link Aggr 295 Down curTime: 947900 downFor: -584489 resLevel: 2
+Link Aggr 208 Down curTime: 949700 downFor: -199 resLevel: 2
+Link Aggr 208 Up 949900
+Switch Aggr [2,11,0] Up 1013500
+Switch Tor [2,11,6] Down curTime: 1014000 downFor: -3537 resLevel: 2
+Switch Tor [2,11,0] Down curTime: 1015300 downFor: -430750 resLevel: 2
+Switch Aggr [2,11,0] Up 1446100
+Switch Aggr [2,11,6] Up 1448400
+Switch Tor [2,11,0] Down curTime: 1448900 downFor: -206 resLevel: 2
+Switch Aggr [2,11,0] Up 1451200
+Switch Tor [2,11,0] Down curTime: 1451500 downFor: -66 resLevel: 2
+Switch Aggr [2,11,0] Up 1451600
+Switch Tor [2,19,0] Down curTime: 1451700 downFor: -2276 resLevel: 2
+Switch Tor [2,11,0] Down curTime: 1452700 downFor: -113 resLevel: 2
+Switch Aggr [2,11,0] Up 1452900
+Switch Tor [2,11,6] Down curTime: 1452900 downFor: -1096 resLevel: 2
+Switch Aggr [2,11,6] Up 1454000
+Switch Aggr [2,19,0] Up 1455400
+Switch Tor [2,19,0] Down curTime: 1455800 downFor: -77 resLevel: 2
+Switch Aggr [2,19,0] Up 1455900
+Switch Tor [2,19,0] Down curTime: 1456000 downFor: -366586 resLevel: 2
+Switch Aggr [1,15,5] Down curTime: 1476100 downFor: -372 resLevel: 1
+Switch Aggr [1,15,5] Up 1476500
+Switch Tor [2,11,0] Down curTime: 1499400 downFor: -1936 resLevel: 2
+Switch Aggr [2,11,0] Up 1501400
+Switch Tor [2,11,0] Down curTime: 1502800 downFor: -2811 resLevel: 2
+Switch Aggr [2,11,0] Up 1505700
+Switch Tor [2,11,0] Down curTime: 1507800 downFor: -73041 resLevel: 2
+Switch Tor [2,4,0] Down curTime: 1526400 downFor: -420097 resLevel: 2
+Link Aggr 295 Up 1532600
+Link Aggr 295 Down curTime: 1532900 downFor: -521 resLevel: 2
+Link Aggr 295 Up 1533500
+Link Aggr 608 Down curTime: 1533900 downFor: -586765 resLevel: 2
+Switch Aggr [2,4,0] Up 1946500
+Switch Tor [2,4,0] Down curTime: 1948900 downFor: -44 resLevel: 2
+Switch Aggr [2,4,0] Up 1949000
+Switch Tor [2,4,0] Down curTime: 1949200 downFor: -583657 resLevel: 2
+Link Aggr 608 Up 2120700
+Link Aggr 608 Down curTime: 2120900 downFor: -242 resLevel: 2
+Link Aggr 608 Up 2121200
+Link Aggr 681 Down curTime: 2121900 downFor: -115 resLevel: 2
+Link Aggr 681 Up 2122100
+Link Aggr 681 Down curTime: 2122400 downFor: -679 resLevel: 2
+Link Aggr 681 Up 2123100
+Link Tor 740 Down curTime: 2124500 downFor: -226 resLevel: 2
+Link Tor 740 Up 2124800
+Link Tor 386 Down curTime: 2190400 downFor: -757246 resLevel: 1
+Switch Aggr [2,4,0] Up 2532900
+Switch Aggr [2,11,0] Up 2584900
+Switch Tor [2,11,0] Down curTime: 2612900 downFor: -571012 resLevel: 2
+Link Aggr 208 Down curTime: 2896000 downFor: -141 resLevel: 2
+Link Aggr 208 Up 2896200
+Link Aggr 208 Down curTime: 2899700 downFor: -638 resLevel: 2
+Link Aggr 208 Up 2900400
+Link Aggr 208 Down curTime: 2903000 downFor: -222 resLevel: 2
+Link Aggr 208 Up 2903300
+Link Tor 386 Up 2948800
+Switch Aggr [1,3,0] Down curTime: 3070100 downFor: -333 resLevel: 2
+Switch Aggr [1,3,0] Up 3070500
+Switch Aggr [1,3,0] Down curTime: 3070700 downFor: -513 resLevel: 2
+Switch Aggr [1,3,0] Up 3071300
+Switch Aggr [1,3,0] Down curTime: 3071500 downFor: -492 resLevel: 2
+Switch Aggr [1,3,0] Up 3072000
+Switch Aggr [2,11,0] Up 3185400
+Switch Tor [2,11,0] Down curTime: 3186900 downFor: -96 resLevel: 2
+Switch Aggr [2,11,0] Up 3187000
+Switch Tor [2,11,0] Down curTime: 3187500 downFor: -244 resLevel: 2
+Switch Aggr [2,11,0] Up 3187800
+Switch Tor [2,11,0] Down curTime: 3190500 downFor: -560012 resLevel: 2
+Link Tor 371 Down curTime: 3240700 downFor: -114 resLevel: 1
+Link Tor 371 Up 3240900
+Switch Aggr [1,6,8] Down curTime: 3253100 downFor: -188 resLevel: 2
+Switch Aggr [1,6,8] Up 3253300
+Link Tor 537 Down curTime: 3320100 downFor: -247 resLevel: 2
+Link Tor 537 Up 3320400
+Link Tor 537 Down curTime: 3320700 downFor: -179 resLevel: 2
+Link Tor 537 Up 3320900
+Link Aggr 855 Up 3436400
+Link Tor 988 Down curTime: 3436400 downFor: -162 resLevel: 2
+Link Tor 988 Up 3436600
+Link Aggr 1241 Down curTime: 3436600 downFor: -526 resLevel: 2
+Link Aggr 1026 Down curTime: 3436800 downFor: -119 resLevel: 2
+Link Aggr 1026 Up 3437000
+Link Tor 928 Down curTime: 3437000 downFor: -131 resLevel: 2
+Link Tor 928 Up 3437200
+Link Aggr 855 Down curTime: 3437300 downFor: -544264 resLevel: 2
+Link Aggr 462 Down curTime: 3450000 downFor: -306 resLevel: 1
+Link Aggr 462 Up 3450400
+Link Tor 785 Down curTime: 3582000 downFor: -85 resLevel: 2
+Link Tor 785 Up 3582100
+Link Tor 785 Down curTime: 3582900 downFor: -572 resLevel: 2
+Link Tor 785 Up 3583500
+Switch Aggr [2,11,0] Up 3750800
+Link Aggr 855 Up 3982700
+Link Aggr 1241 Up 3982900
+Link Tor 1372 Up 3983100
+Link Tor 1935 Down curTime: 3983100 downFor: -178 resLevel: 2
+Link Tor 928 Down curTime: 3983200 downFor: -191 resLevel: 2
+Link Tor 928 Up 3983400
+Link Aggr 1294 Down curTime: 3983500 downFor: -753320 resLevel: 2
+Link Tor 1163 Down curTime: 3983800 downFor: -64 resLevel: 2
+Link Tor 1163 Up 3983900
+Link Aggr 1012 Down curTime: 3983900 downFor: -191 resLevel: 2
+Link Aggr 860 Down curTime: 3984100 downFor: -93 resLevel: 2
+Link Aggr 860 Up 3984200
+Link Aggr 1012 Up 3984300
+Link Aggr 855 Down curTime: 3984400 downFor: -590 resLevel: 2
+Link Aggr 855 Up 3985000
+Link Tor 1163 Down curTime: 3985000 downFor: -131 resLevel: 2
+Link Tor 1163 Up 3985200
+Link Tor 1163 Down curTime: 3985400 downFor: -683 resLevel: 2
+Link Tor 1163 Up 3986100
+Link Tor 1163 Down curTime: 3986300 downFor: -500621 resLevel: 2
+Link Aggr 1026 Down curTime: 3986800 downFor: -154 resLevel: 2
+Link Aggr 1026 Up 3987000
+Link Aggr 855 Down curTime: 3988200 downFor: -496 resLevel: 2
+Link Aggr 855 Up 3988700
+Link Tor 1143 Down curTime: 4006000 downFor: -80 resLevel: 2
+Link Tor 1143 Up 4006100
+Link Tor 1143 Down curTime: 4009400 downFor: -144 resLevel: 2
+Link Tor 1143 Up 4009600
+Link Tor 1143 Down curTime: 4010700 downFor: -152 resLevel: 2
+Link Tor 1143 Up 4010900
+Switch Aggr [2,19,0] Up 4038200
+Switch Aggr [1,9,1] Down curTime: 4267800 downFor: -334 resLevel: 2
+Switch Aggr [1,9,1] Up 4268200
+Switch Aggr [1,9,1] Down curTime: 4268400 downFor: -6819 resLevel: 2
+Switch Aggr [1,9,1] Up 4275300
+Link Aggr 1026 Down curTime: 4454300 downFor: -167 resLevel: 2
+Link Aggr 1026 Up 4454500
+Link Aggr 1026 Down curTime: 4454600 downFor: -183 resLevel: 2
+Link Aggr 1026 Up 4454800
+Link Aggr 1026 Down curTime: 4456200 downFor: -173 resLevel: 2
+Link Aggr 1026 Up 4456400
+Link Aggr 1026 Down curTime: 4459500 downFor: -43 resLevel: 2
+Link Aggr 1026 Up 4459600
+Link Tor 1163 Up 4489000
+Link Tor 1163 Down curTime: 4489200 downFor: -344 resLevel: 2
+Link Tor 1163 Up 4489600
+Link Tor 1163 Down curTime: 4490600 downFor: -186 resLevel: 2
+Link Tor 1163 Up 4490800
+Link Tor 1163 Down curTime: 4491400 downFor: -767 resLevel: 2
+Link Tor 1163 Up 4492200
+Link Tor 1163 Down curTime: 4492400 downFor: -126 resLevel: 2
+Link Tor 1163 Up 4492600
+Link Aggr 1016 Down curTime: 4558100 downFor: -229 resLevel: 2
+Link Aggr 1016 Up 4558400
+Link Aggr 1016 Down curTime: 4558700 downFor: -94 resLevel: 2
+Link Aggr 1016 Up 4558800
+Switch Aggr [1,6,8] Down curTime: 4674700 downFor: -435 resLevel: 2
+Switch Aggr [1,6,8] Up 4675200
+Switch Aggr [1,6,8] Down curTime: 4675300 downFor: -304 resLevel: 2
+Switch Aggr [1,6,8] Up 4675700
+Link Tor 1143 Down curTime: 4711200 downFor: -128 resLevel: 2
+Link Tor 1143 Up 4711400
+Switch Aggr [1,3,0] Down curTime: 4761500 downFor: -296 resLevel: 2
+Switch Aggr [1,3,0] Up 4761800
+Switch Aggr [1,3,0] Down curTime: 4762100 downFor: -4312 resLevel: 2
+Switch Aggr [1,3,0] Up 4766500
+Link Aggr 1026 Down curTime: 4963000 downFor: -973534 resLevel: 2
+Link Tor 390 Down curTime: 5042300 downFor: -74657 resLevel: 2
+Switch Tor [2,11,6] Down curTime: 5044000 downFor: -463419 resLevel: 2
+Link Tor 390 Up 5117000
+Link Tor 975 Down curTime: 5196800 downFor: -185 resLevel: 2
+Link Tor 975 Up 5197000
+Link Tor 975 Down curTime: 5197900 downFor: -172 resLevel: 2
+Link Tor 975 Up 5198100
+Link Aggr 9 Down curTime: 5456200 downFor: -116 resLevel: 2
+Link Aggr 9 Up 5456400
+Switch Aggr [2,11,6] Up 5507500
+Switch Tor [2,11,6] Down curTime: 5508800 downFor: -143 resLevel: 2
+Switch Aggr [2,11,6] Up 5509000
+Switch Tor [2,11,6] Down curTime: 5510600 downFor: -1255 resLevel: 2
+Switch Aggr [2,11,6] Up 5511900
+Switch Tor [2,11,6] Down curTime: 5512500 downFor: -3054 resLevel: 2
+Switch Aggr [2,11,6] Up 5515600
+Switch Tor [2,11,6] Down curTime: 5516000 downFor: -1704 resLevel: 2
+Switch Aggr [2,11,6] Up 5517800
+Switch Tor [2,11,6] Down curTime: 5517900 downFor: -1702 resLevel: 2
+Switch Aggr [2,11,6] Up 5519700
+Switch Aggr [1,3,0] Down curTime: 5771600 downFor: -425 resLevel: 2
+Switch Aggr [1,3,0] Up 5772100
+Switch Aggr [1,19,6] Down curTime: 5854000 downFor: -3933 resLevel: 2
+Switch Aggr [1,19,6] Up 5858000
+Link Aggr 208 Down curTime: 5870700 downFor: -55 resLevel: 2
+Link Aggr 208 Up 5870800
+Link Aggr 208 Down curTime: 5871800 downFor: -136 resLevel: 2
+Link Aggr 208 Up 5872000
+Link Aggr 892 Down curTime: 5879900 downFor: -744657 resLevel: 2
+Switch Aggr [1,9,1] Down curTime: 5912400 downFor: -361 resLevel: 2
+Switch Aggr [1,9,1] Up 5912800
+Switch Aggr [1,9,1] Down curTime: 5913100 downFor: -276 resLevel: 2
+Switch Aggr [1,9,1] Up 5913400
+Link Tor 764 Down curTime: 6054700 downFor: -29 resLevel: 2
+Link Tor 764 Up 6054800
+Link Aggr 295 Down curTime: 6329300 downFor: -599 resLevel: 2
+Link Aggr 295 Up 6329900
+Link Aggr 892 Up 6625400
+Link Aggr 892 Down curTime: 6628100 downFor: -175 resLevel: 2
+Link Aggr 892 Up 6628300
+Link Aggr 892 Down curTime: 6628600 downFor: -251 resLevel: 2
+Link Aggr 892 Up 6628900
+Link Aggr 892 Down curTime: 6629200 downFor: -163 resLevel: 2
+Link Aggr 892 Up 6629400
+Link Aggr 892 Down curTime: 6630200 downFor: -226 resLevel: 2
+Link Aggr 892 Up 6630500
+Link Aggr 892 Down curTime: 6630600 downFor: -195 resLevel: 2
+Link Aggr 892 Up 6630800
+Link Aggr 1026 Up 6759000
+Link Aggr 1026 Down curTime: 6759200 downFor: -82 resLevel: 2
+Link Aggr 1026 Up 6759300
+Link Aggr 1026 Down curTime: 6762700 downFor: -179 resLevel: 2
+Link Aggr 1026 Up 6762900
+Link Aggr 1026 Down curTime: 6763200 downFor: -144 resLevel: 2
+Link Aggr 1026 Up 6763400
+Link Aggr 1026 Down curTime: 6766700 downFor: -75 resLevel: 2
+Link Aggr 1026 Up 6766800
+Link Aggr 1026 Down curTime: 6769800 downFor: -135 resLevel: 2
+Link Aggr 1026 Up 6770000
+Link Aggr 1026 Down curTime: 6771900 downFor: -32 resLevel: 2
+Link Aggr 1026 Up 6772000
+Link Tor 1935 Up 7040700
+Link Aggr 1294 Up 7040800
+Link Aggr 2062 Down curTime: 7040800 downFor: -104 resLevel: 2
+Link Tor 1563 Down curTime: 7040900 downFor: -131 resLevel: 2
+Link Aggr 1294 Down curTime: 7041000 downFor: -86 resLevel: 2
+Link Aggr 1294 Up 7041100
+Link Tor 1563 Up 7041200
+Link Aggr 2062 Up 7041300
+Link Tor 1372 Down curTime: 7041300 downFor: -122 resLevel: 2
+Link Aggr 1634 Down curTime: 7041300 downFor: -274 resLevel: 2
+Link Tor 1372 Up 7041500
+Link Tor 1570 Down curTime: 7041600 downFor: -104 resLevel: 2
+Link Tor 1570 Up 7041800
+Link Aggr 1634 Up 7041900
+Link Aggr 2080 Up 7042000
+Link Aggr 3258 Down curTime: 7042000 downFor: -165 resLevel: 2
+Link Aggr 1294 Down curTime: 7042100 downFor: -576055 resLevel: 2
+Link Aggr 1863 Down curTime: 7042100 downFor: -230 resLevel: 2
+Link Tor 2945 Down curTime: 7042100 downFor: -220 resLevel: 2
+Link Aggr 74 Down curTime: 7133700 downFor: -191 resLevel: 2
+Link Aggr 74 Up 7133900
+Link Aggr 74 Down curTime: 7135500 downFor: -242 resLevel: 2
+Link Aggr 74 Up 7135800
+Link Aggr 74 Down curTime: 7139400 downFor: -212 resLevel: 2
+Link Aggr 74 Up 7139700
+Link Tor 968 Down curTime: 7189300 downFor: -95 resLevel: 2
+Link Tor 968 Up 7189400
+Switch Tor [2,4,0] Down curTime: 7190100 downFor: -209 resLevel: 2
+Switch Aggr [2,4,0] Up 7190400
+Switch Tor [2,4,0] Down curTime: 7191100 downFor: -114 resLevel: 2
+Switch Aggr [2,4,0] Up 7191300
+Switch Tor [2,4,0] Down curTime: 7193200 downFor: -2331 resLevel: 2
+Switch Aggr [2,4,0] Up 7195600
+Switch Tor [2,4,0] Down curTime: 7199000 downFor: -221 resLevel: 2
+Switch Aggr [2,4,0] Up 7199300
+Switch Tor [2,4,0] Down curTime: 7200000 downFor: -181 resLevel: 2
+Switch Aggr [2,4,0] Up 7200200
+Switch Tor [2,4,0] Down curTime: 7201700 downFor: -3083 resLevel: 2
+Switch Aggr [2,4,0] Up 7204800
+Switch Tor [2,4,0] Down curTime: 7207300 downFor: -44 resLevel: 2
+Switch Aggr [2,4,0] Up 7207400
+Switch Tor [2,4,0] Down curTime: 7209700 downFor: -153 resLevel: 2
+Switch Aggr [2,4,0] Up 7209900
+Switch Tor [2,4,0] Down curTime: 7211900 downFor: -220760 resLevel: 2
+Link Aggr 860 Down curTime: 7224100 downFor: -588 resLevel: 2
+Link Aggr 860 Up 7224700
+Link Aggr 860 Down curTime: 7226400 downFor: -129 resLevel: 2
+Link Aggr 860 Up 7226600
+Link Aggr 860 Down curTime: 7226800 downFor: -244 resLevel: 2
+Link Aggr 860 Up 7227100
+Link Aggr 860 Down curTime: 7227300 downFor: -84 resLevel: 2
+Link Aggr 860 Up 7227400
+Link Aggr 1212 Down curTime: 7313900 downFor: -262 resLevel: 2
+Link Aggr 1212 Up 7314200
+Link Aggr 1212 Down curTime: 7314300 downFor: -254 resLevel: 2
+Link Aggr 1212 Up 7314600
+Link Aggr 1212 Down curTime: 7315000 downFor: -44 resLevel: 2
+Link Aggr 1212 Up 7315100
+Link Aggr 1212 Down curTime: 7315300 downFor: -223 resLevel: 2
+Link Aggr 1212 Up 7315600
+Link Aggr 295 Down curTime: 7411100 downFor: -111 resLevel: 2
+Link Aggr 295 Up 7411300
+Link Tor 523 Down curTime: 7413700 downFor: -172 resLevel: 1
+Link Tor 523 Up 7413900
+Switch Aggr [2,4,0] Up 7432700
+Switch Aggr [1,9,1] Down curTime: 7473400 downFor: -7125 resLevel: 2
+Switch Aggr [1,9,1] Up 7480600
+Switch Aggr [1,9,1] Down curTime: 7480800 downFor: -6052 resLevel: 2
+Switch Aggr [1,9,1] Up 7486900
+Switch Aggr [1,9,1] Down curTime: 7487200 downFor: -404 resLevel: 2
+Switch Aggr [1,9,1] Up 7487700
+Link Aggr 208 Down curTime: 7505100 downFor: -221 resLevel: 2
+Link Aggr 208 Up 7505400
+Link Aggr 208 Down curTime: 7505600 downFor: -69 resLevel: 2
+Link Aggr 208 Up 7505700
+Switch Aggr [1,6,8] Down curTime: 7618900 downFor: -417 resLevel: 2
+Switch Aggr [1,6,8] Up 7619400
+Link Aggr 1294 Up 7621900
+Link Aggr 1863 Up 7622100
+Link Aggr 1441 Down curTime: 7622200 downFor: -592 resLevel: 2
+Link Tor 1782 Down curTime: 7622200 downFor: -196 resLevel: 2
+Link Aggr 2062 Down curTime: 7622200 downFor: -149 resLevel: 2
+Link Aggr 1441 Up 7622800
+Link Tor 1563 Down curTime: 7623000 downFor: -172 resLevel: 2
+Link Tor 1563 Up 7623200
+Link Tor 1782 Up 7623300
+Link Aggr 2060 Down curTime: 7623300 downFor: -628 resLevel: 2
+Link Tor 1782 Down curTime: 7623400 downFor: -88 resLevel: 2
+Link Tor 1782 Up 7623500
+Link Tor 1782 Down curTime: 7623700 downFor: -233 resLevel: 2
+Link Tor 1782 Up 7624000
+Link Aggr 1863 Down curTime: 7624100 downFor: -241 resLevel: 2
+Link Tor 1705 Down curTime: 7624200 downFor: -113 resLevel: 2
+Link Tor 1705 Up 7624400
+Link Aggr 1863 Up 7624600
+Link Aggr 2060 Up 7624800
+Link Aggr 2062 Up 7624900
+Link Aggr 2839 Down curTime: 7624900 downFor: -238 resLevel: 2
+Link Aggr 2878 Down curTime: 7624900 downFor: -566 resLevel: 2
+Link Tor 2149 Down curTime: 7625000 downFor: -188 resLevel: 2
+Link Tor 2149 Up 7625200
+Link Aggr 2839 Up 7625400
+Link Aggr 1634 Down curTime: 7625400 downFor: -489 resLevel: 2
+Link Aggr 1634 Up 7625900
+Link Tor 2149 Down curTime: 7626000 downFor: -153 resLevel: 2
+Link Aggr 2080 Down curTime: 7626100 downFor: -138 resLevel: 2
+Link Aggr 2080 Up 7626300
+Link Tor 2149 Up 7626400
+Link Tor 2790 Down curTime: 7626500 downFor: -70 resLevel: 2
+Link Tor 2790 Up 7626600
+Link Tor 2149 Down curTime: 7626700 downFor: -180 resLevel: 2
+Link Tor 2149 Up 7626900
+Link Aggr 1888 Down curTime: 7627000 downFor: -110 resLevel: 2
+Link Aggr 1888 Up 7627200
+Link Aggr 2010 Down curTime: 7627200 downFor: -245 resLevel: 2
+Link Tor 2790 Down curTime: 7627200 downFor: -644 resLevel: 2
+Link Aggr 2010 Up 7627500
+Link Aggr 2664 Down curTime: 7627500 downFor: -322640 resLevel: 2
+Link Tor 1705 Down curTime: 7627700 downFor: -198 resLevel: 2
+Link Tor 1705 Up 7627900
+Link Tor 2569 Down curTime: 7628600 downFor: -164 resLevel: 2
+Link Aggr 2080 Down curTime: 7628700 downFor: -108 resLevel: 2
+Link Aggr 2080 Up 7628900
+Link Tor 2569 Up 7629000
+Link Aggr 2632 Down curTime: 7629500 downFor: -132 resLevel: 2
+Link Aggr 2632 Up 7629700
+Link Aggr 2663 Down curTime: 7630300 downFor: -432 resLevel: 2
+Link Aggr 2663 Up 7630800
+Link Tor 2569 Down curTime: 7632300 downFor: -248 resLevel: 2
+Link Tor 2569 Up 7632600
+Switch Aggr [1,3,0] Down curTime: 7635700 downFor: -535 resLevel: 2
+Switch Aggr [1,3,0] Up 7636300
+Switch Aggr [1,3,0] Down curTime: 7636400 downFor: -459 resLevel: 2
+Switch Aggr [1,3,0] Up 7636900
+Switch Aggr [1,3,0] Down curTime: 7637000 downFor: -4707 resLevel: 2
+Switch Aggr [1,3,0] Up 7641800
+Link Aggr 2098 Down curTime: 7686400 downFor: -142 resLevel: 2
+Link Aggr 2098 Up 7686600
+Link Aggr 2098 Down curTime: 7690200 downFor: -75 resLevel: 2
+Link Aggr 2098 Up 7690300
+Link Aggr 2243 Down curTime: 7747300 downFor: -182 resLevel: 2
+Link Aggr 2243 Up 7747500
+Link Aggr 2243 Down curTime: 7747800 downFor: -655 resLevel: 2
+Link Aggr 2243 Up 7748500
+Link Aggr 2243 Down curTime: 7748700 downFor: -653 resLevel: 2
+Link Aggr 2243 Up 7749400
+Link Tor 1382 Down curTime: 7761400 downFor: -512 resLevel: 2
+Link Tor 1382 Up 7762000
+Link Aggr 2212 Down curTime: 7813700 downFor: -179 resLevel: 1
+Link Aggr 2212 Up 7813900
+Link Tor 560 Down curTime: 7874100 downFor: -128 resLevel: 2
+Link Tor 560 Up 7874300
+Link Tor 560 Down curTime: 7875000 downFor: -414 resLevel: 2
+Link Tor 560 Up 7875500
+Link Aggr 681 Down curTime: 7899800 downFor: -595 resLevel: 2
+Link Aggr 681 Up 7900400
+Link Tor 1347 Down curTime: 7936400 downFor: -182 resLevel: 2
+Link Tor 1347 Up 7936600
+Switch Aggr [1,9,1] Down curTime: 7952300 downFor: -3173 resLevel: 2
+Switch Aggr [1,9,1] Up 7955500
+Switch Aggr [1,9,1] Down curTime: 7955600 downFor: -204 resLevel: 2
+Switch Aggr [1,9,1] Up 7955900
+Link Aggr 2664 Up 7956100
+Link Tor 2790 Up 7956700
+Link Tor 2790 Down curTime: 7957000 downFor: -214 resLevel: 2
+Link Aggr 2859 Down curTime: 7957000 downFor: -485384 resLevel: 2
+Link Tor 2790 Up 7957300
+Link Aggr 2664 Down curTime: 7957500 downFor: -340 resLevel: 2
+Link Aggr 2664 Up 7957900
+Link Tor 2799 Down curTime: 7958200 downFor: -139 resLevel: 2
+Link Tor 2799 Up 7958400
+Link Aggr 2664 Down curTime: 7960500 downFor: -270 resLevel: 2
+Link Aggr 2664 Up 7960800
+Link Aggr 2839 Down curTime: 7961000 downFor: -63 resLevel: 2
+Link Aggr 2839 Up 7961100
+Link Tor 2799 Down curTime: 7961900 downFor: -83 resLevel: 2
+Link Tor 2799 Up 7962000
+Link Aggr 1201 Down curTime: 8241300 downFor: -74 resLevel: 2
+Link Aggr 1201 Up 8241400
+Link Aggr 1201 Down curTime: 8244000 downFor: -116 resLevel: 2
+Link Aggr 1201 Up 8244200
+Link Aggr 1201 Down curTime: 8244700 downFor: -153 resLevel: 2
+Link Aggr 1201 Up 8244900
+Link Aggr 1201 Down curTime: 8247600 downFor: -902137 resLevel: 2
+Link Tor 342 Down curTime: 8334600 downFor: -668 resLevel: 1
+Link Tor 342 Up 8335300
+Link Tor 968 Down curTime: 8417700 downFor: -215 resLevel: 2
+Link Tor 968 Up 8418000
+Link Tor 968 Down curTime: 8418700 downFor: -252 resLevel: 2
+Link Tor 968 Up 8419000
+Link Tor 1129 Down curTime: 8628200 downFor: -188 resLevel: 2
+Link Tor 1129 Up 8628400
+Link Tor 1129 Down curTime: 8629900 downFor: -141 resLevel: 2
+Link Tor 1129 Up 8630100
+Link Tor 1182 Down curTime: 8682500 downFor: -13 resLevel: 2
+Link Tor 1182 Up 8682600
+Link Tor 1182 Down curTime: 8684000 downFor: -188 resLevel: 2
+Link Tor 1182 Up 8684200
+Link Tor 168 Down curTime: 8709400 downFor: -193 resLevel: 1
+Link Tor 168 Up 8709600
+Switch Aggr [1,9,1] Down curTime: 8797600 downFor: -533 resLevel: 2
+Switch Aggr [1,9,1] Up 8798200
+Switch Aggr [1,9,1] Down curTime: 8798400 downFor: -271 resLevel: 2
+Link Tor 928 Down curTime: 8798400 downFor: -563419 resLevel: 2
+Switch Aggr [1,9,1] Up 8798700
+Switch Aggr [1,9,1] Down curTime: 8799000 downFor: -403 resLevel: 2
+Switch Aggr [1,9,1] Up 8799500
+Link Aggr 608 Down curTime: 8829100 downFor: -236 resLevel: 2
+Switch Tor [2,11,6] Down curTime: 8829200 downFor: -441 resLevel: 2
+Link Aggr 608 Up 8829400
+Switch Aggr [2,11,6] Up 8829700
+Switch Tor [2,11,6] Down curTime: 8831000 downFor: -1507 resLevel: 2
+Switch Aggr [2,11,6] Up 8832600
+Link Aggr 608 Down curTime: 8832600 downFor: -232 resLevel: 2
+Link Aggr 608 Up 8832900
+Link Aggr 608 Down curTime: 8833100 downFor: -152 resLevel: 2
+Link Aggr 608 Up 8833300
+Switch Tor [2,11,6] Down curTime: 8869000 downFor: -2170 resLevel: 2
+Switch Aggr [2,11,6] Up 8871200
+Link Tor 171 Down curTime: 8891600 downFor: -292 resLevel: 2
+Link Tor 171 Up 8891900
+Link Tor 171 Down curTime: 8893100 downFor: -164 resLevel: 2
+Link Tor 171 Up 8893300
+Switch Tor [2,11,6] Down curTime: 8924100 downFor: -1971 resLevel: 2
+Switch Aggr [2,11,6] Up 8926100
+Switch Tor [2,11,6] Down curTime: 8929000 downFor: -85 resLevel: 2
+Switch Aggr [1,9,1] Down curTime: 8929100 downFor: -130 resLevel: 2
+Switch Aggr [2,11,6] Up 8929300
+Switch Aggr [1,9,1] Up 8929400
+Switch Tor [2,11,6] Down curTime: 8930200 downFor: -520 resLevel: 2
+Switch Aggr [2,11,6] Up 8930800
+Switch Tor [2,11,6] Down curTime: 8934000 downFor: -384454 resLevel: 2
+Switch Aggr [2,11,6] Up 9318500
+Link Tor 928 Up 9363100
+Switch Tor [2,11,0] Down curTime: 9459000 downFor: -94712 resLevel: 2
+Switch Aggr [2,11,0] Up 9553800
+Switch Aggr [1,9,1] Down curTime: 9592700 downFor: -245 resLevel: 2
+Switch Aggr [1,9,1] Up 9593000
+Link Tor 764 Down curTime: 9662600 downFor: -128 resLevel: 2
+Link Tor 764 Up 9662800
+Switch Aggr [1,19,6] Down curTime: 9668200 downFor: -162 resLevel: 2
+Switch Aggr [1,19,6] Up 9668400
+Link Aggr 681 Down curTime: 9688700 downFor: -139 resLevel: 2
+Link Aggr 681 Up 9688900
+Link Aggr 1201 Up 9717000
+Link Aggr 1201 Down curTime: 9717200 downFor: -212 resLevel: 2
+Link Aggr 1201 Up 9717500
+Switch Aggr [1,3,0] Down curTime: 9725500 downFor: -293 resLevel: 2
+Switch Aggr [1,3,0] Up 9725800
+Switch Aggr [1,3,0] Down curTime: 9726100 downFor: -170 resLevel: 2
+Switch Aggr [1,3,0] Up 9726300
+Link Tor 560 Down curTime: 9804600 downFor: -190 resLevel: 2
+Link Tor 560 Up 9804800
+Link Aggr 2859 Up 9914200
+Link Aggr 2878 Up 9914300
+Link Tor 2945 Up 9914500
+Link Aggr 3258 Up 9914600
+Link Tor 3339 Down curTime: 9914700 downFor: -234 resLevel: 2
+Link Tor 3501 Down curTime: 9914700 downFor: -79 resLevel: 2
+Link Tor 2945 Down curTime: 9914800 downFor: -81 resLevel: 2
+Link Tor 2945 Up 9914900
+Link Aggr 3038 Down curTime: 9914900 downFor: -222 resLevel: 2
+Link Aggr 3038 Up 9915200
+Link Tor 2945 Down curTime: 9915300 downFor: -151 resLevel: 2
+Link Aggr 3258 Down curTime: 9915300 downFor: -245 resLevel: 2
+Link Tor 2945 Up 9915500
+Link Aggr 3038 Down curTime: 9915600 downFor: -208 resLevel: 2
+Link Aggr 3038 Up 9915900
+Link Tor 2917 Down curTime: 9915900 downFor: -193 resLevel: 2
+Link Aggr 2859 Down curTime: 9916000 downFor: -156 resLevel: 2
+Link Aggr 2859 Up 9916200
+Link Tor 2917 Up 9916300
+Link Aggr 3258 Up 9916400
+Link Tor 3339 Up 9916500
+Link Tor 975 Down curTime: 9916500 downFor: -146 resLevel: 2
+Link Tor 3501 Up 9916700
+Link Core 5486 Down curTime: 9916700 downFor: -194 resLevel: 2
+Link Tor 975 Up 9916800
+Link Aggr 3668 Down curTime: 9916800 downFor: -207 resLevel: 2
+Link Core 4607 Down curTime: 9916800 downFor: -251 resLevel: 2
+Link Aggr 3258 Down curTime: 9916900 downFor: -229 resLevel: 2
+Link Aggr 3258 Up 9917200
+Link Aggr 3668 Up 9917300
+Link Aggr 3266 Down curTime: 9917400 downFor: -138 resLevel: 2
+Link Aggr 3867 Down curTime: 9917400 downFor: -164 resLevel: 2
+Link Core 4184 Down curTime: 9917400 downFor: -110 resLevel: 2
+Link Core 4414 Down curTime: 9917400 downFor: -246 resLevel: 2
+Link Aggr 3266 Up 9917600
+Link Aggr 3867 Up 9917700
+Link Core 4184 Up 9917900
+Link Tor 3339 Down curTime: 9917900 downFor: -128 resLevel: 2
+Link Tor 3339 Up 9918100
+Link Tor 3339 Down curTime: 9918200 downFor: -167 resLevel: 2
+Link Tor 2945 Down curTime: 9918300 downFor: -114 resLevel: 2
+Link Tor 2945 Up 9918500
+Link Core 4414 Up 9918600
+Link Tor 3339 Up 9918700
+Link Aggr 3489 Down curTime: 9918700 downFor: -192 resLevel: 2
+Link Aggr 3489 Up 9918900
+Link Core 4364 Down curTime: 9919000 downFor: -47 resLevel: 2
+Link Core 4364 Up 9919100
+Link Core 4448 Down curTime: 9919200 downFor: -184 resLevel: 2
+Link Core 4414 Down curTime: 9919300 downFor: -457214 resLevel: 2
+Link Tor 975 Down curTime: 9920300 downFor: -87 resLevel: 2
+Link Tor 975 Up 9920400
+Link Aggr 3668 Down curTime: 9920600 downFor: -213 resLevel: 2
+Link Aggr 3668 Up 9920900
+Link Aggr 3668 Down curTime: 9921100 downFor: -77 resLevel: 2
+Link Aggr 3668 Up 9921200
+Link Aggr 3489 Down curTime: 9922500 downFor: -121 resLevel: 2
+Link Aggr 3489 Up 9922700
+Link Core 4379 Down curTime: 9922700 downFor: -162 resLevel: 2
+Link Core 4379 Up 9922900
+Link Aggr 3489 Down curTime: 9923900 downFor: -11752 resLevel: 2
+Link Aggr 3489 Up 9935700
+Link Aggr 3668 Down curTime: 9935900 downFor: -214 resLevel: 2
+Link Aggr 3668 Up 9936200
+Link Aggr 3668 Down curTime: 9936400 downFor: -617121 resLevel: 2
+Switch Tor [2,4,0] Down curTime: 9959000 downFor: -290756 resLevel: 2
+Link Aggr 2632 Down curTime: 10008500 downFor: -784524 resLevel: 2
+Link Tor 1729 Down curTime: 10073800 downFor: -101 resLevel: 2
+Link Tor 1729 Up 10073900
+Link Tor 740 Down curTime: 10093200 downFor: -240 resLevel: 2
+Link Tor 740 Up 10093500
+Link Tor 740 Down curTime: 10095400 downFor: -400 resLevel: 2
+Link Tor 740 Up 10095800
+Link Tor 740 Down curTime: 10096100 downFor: -176 resLevel: 2
+Link Tor 740 Up 10096300
+Link Tor 1573 Down curTime: 10233600 downFor: -108 resLevel: 2
+Link Tor 1573 Up 10233800
+Link Tor 1573 Down curTime: 10233900 downFor: -135 resLevel: 2
+Link Tor 1573 Up 10234100
+Switch Aggr [2,4,0] Up 10249800
+Switch Tor [2,4,0] Down curTime: 10251600 downFor: -1851 resLevel: 2
+Switch Aggr [2,4,0] Up 10253500
+Switch Tor [2,4,0] Down curTime: 10255900 downFor: -826 resLevel: 2
+Link Aggr 1012 Down curTime: 10256700 downFor: -601 resLevel: 2
+Switch Aggr [2,4,0] Up 10256800
+Link Aggr 1012 Up 10257300
+Switch Tor [2,4,0] Down curTime: 10258700 downFor: -260453 resLevel: 2
+Link Aggr 1012 Down curTime: 10260000 downFor: -65 resLevel: 2
+Link Aggr 1012 Up 10260100
+Link Tor 1705 Down curTime: 10285000 downFor: -258 resLevel: 2
+Link Tor 1705 Up 10285300
+Link Tor 2309 Down curTime: 10361600 downFor: -76 resLevel: 2
+Link Tor 2309 Up 10361700
+Link Aggr 211 Down curTime: 10413600 downFor: -52 resLevel: 1
+Link Aggr 211 Up 10413700
+Link Tor 1182 Down curTime: 10451200 downFor: -43 resLevel: 2
+Link Tor 1182 Up 10451300
+Link Aggr 74 Down curTime: 10469500 downFor: -213 resLevel: 2
+Link Aggr 74 Up 10469800
+Link Aggr 74 Down curTime: 10469900 downFor: -163 resLevel: 2
+Link Aggr 74 Up 10470100
+Link Aggr 1811 Down curTime: 10511800 downFor: -154 resLevel: 2
+Link Aggr 1811 Up 10512000
+Link Aggr 1811 Down curTime: 10512100 downFor: -279 resLevel: 2
+Link Aggr 1811 Up 10512400
+Link Aggr 1811 Down curTime: 10515500 downFor: -87 resLevel: 2
+Link Aggr 1811 Up 10515600
+Switch Aggr [2,4,0] Up 10519200
+Switch Tor [2,4,0] Down curTime: 10522000 downFor: -1312 resLevel: 2
+Switch Aggr [2,4,0] Up 10523400
+Switch Tor [2,4,0] Down curTime: 10526800 downFor: -2611 resLevel: 2
+Switch Aggr [2,4,0] Up 10529500
+Link Tor 1573 Down curTime: 10585600 downFor: -97 resLevel: 2
+Link Tor 1573 Up 10585700
+Link Tor 1573 Down curTime: 10587300 downFor: -83 resLevel: 2
+Link Tor 1573 Up 10587400
+Switch Tor [2,4,0] Down curTime: 10593400 downFor: -3151 resLevel: 2
+Switch Aggr [2,4,0] Up 10596600
+Switch Tor [2,4,0] Down curTime: 10599100 downFor: -595031 resLevel: 2
+Link Tor 1770 Down curTime: 10610100 downFor: -89 resLevel: 1
+Link Tor 1770 Up 10610200
+Link Aggr 661 Down curTime: 10621200 downFor: -210 resLevel: 2
+Link Aggr 661 Up 10621500
+Link Aggr 661 Down curTime: 10621600 downFor: -263 resLevel: 2
+Link Aggr 661 Up 10621900
+Link Aggr 661 Down curTime: 10624900 downFor: -685 resLevel: 2
+Link Aggr 661 Up 10625600
+Link Aggr 1632 Down curTime: 10647500 downFor: -79 resLevel: 2
+Link Aggr 1632 Up 10647600
+Link Aggr 1632 Down curTime: 10647800 downFor: -105 resLevel: 2
+Link Aggr 1632 Up 10648000
+Link Tor 2149 Down curTime: 10679500 downFor: -253 resLevel: 2
+Link Tor 2149 Up 10679800
+Link Tor 2149 Down curTime: 10683300 downFor: -287 resLevel: 2
+Link Tor 2149 Up 10683600
+Link Tor 2149 Down curTime: 10687100 downFor: -513 resLevel: 2
+Link Tor 2149 Up 10687700
+Link Tor 2149 Down curTime: 10691100 downFor: -199 resLevel: 2
+Link Tor 2149 Up 10691300
+Link Tor 2149 Down curTime: 10691500 downFor: -173 resLevel: 2
+Link Tor 2149 Up 10691700
+Link Aggr 2080 Down curTime: 10775600 downFor: -122 resLevel: 2
+Link Aggr 2080 Up 10775800
+Link Aggr 2632 Up 10800600
+Link Tor 1563 Down curTime: 10816000 downFor: -124 resLevel: 2
+Link Tor 1563 Up 10816200
+Link Tor 1563 Down curTime: 10818100 downFor: -94 resLevel: 2
+Link Tor 1563 Up 10818200
+Link Tor 1563 Down curTime: 10819800 downFor: -405 resLevel: 2
+Link Tor 1563 Up 10820300
+Link Tor 1716 Down curTime: 10839100 downFor: -65 resLevel: 2
+Link Tor 1716 Up 10839200
+Link Tor 1716 Down curTime: 10839500 downFor: -170 resLevel: 2
+Link Tor 1716 Up 10839700
+Link Tor 1716 Down curTime: 10840700 downFor: -98 resLevel: 2
+Link Tor 1716 Up 10840800
+Link Tor 303 Down curTime: 11042100 downFor: -505 resLevel: 2
+Link Tor 303 Up 11042700
+Link Aggr 2884 Down curTime: 11052600 downFor: -145 resLevel: 2
+Link Aggr 2884 Up 11052800
+Link Tor 2569 Down curTime: 11079700 downFor: -134 resLevel: 2
+Link Tor 2569 Up 11079900
+Link Aggr 661 Down curTime: 11114500 downFor: -95 resLevel: 2
+Link Aggr 661 Up 11114600
+Link Aggr 661 Down curTime: 11116500 downFor: -236 resLevel: 2
+Link Aggr 661 Up 11116800
+Link Aggr 661 Down curTime: 11117300 downFor: -70 resLevel: 2
+Link Aggr 661 Up 11117400
+Switch Tor [2,2,2] Down curTime: 11120000 downFor: -244 resLevel: 1
+Switch Aggr [2,2,2] Up 11120300
+Link Tor 1931 Down curTime: 11168300 downFor: -803570 resLevel: 2
+Link Tor 1570 Down curTime: 11179100 downFor: -266 resLevel: 2
+Link Tor 1570 Up 11179400
+Link Tor 1570 Down curTime: 11179600 downFor: -130 resLevel: 2
+Link Tor 1570 Up 11179800
+Link Tor 1570 Down curTime: 11181000 downFor: -446578 resLevel: 2
+Switch Aggr [2,4,0] Up 11194500
+Link Tor 537 Down curTime: 11216600 downFor: -155 resLevel: 2
+Link Tor 537 Up 11216800
+Link Tor 537 Down curTime: 11217500 downFor: -175 resLevel: 2
+Link Tor 537 Up 11217700
+Link Tor 537 Down curTime: 11218000 downFor: -126 resLevel: 2
+Link Tor 537 Up 11218200
+Link Tor 537 Down curTime: 11218300 downFor: -233 resLevel: 2
+Link Tor 537 Up 11218600
+Link Tor 537 Down curTime: 11221800 downFor: -258 resLevel: 2
+Link Tor 537 Up 11222100
+Link Tor 537 Down curTime: 11225700 downFor: -26 resLevel: 2
+Link Tor 537 Up 11225800
+Link Tor 537 Down curTime: 11227900 downFor: -151 resLevel: 2
+Link Tor 537 Up 11228100
+Link Tor 537 Down curTime: 11228200 downFor: -787532 resLevel: 2
+Switch Tor [2,4,0] Down curTime: 11248100 downFor: -562380 resLevel: 2
+Switch Aggr [1,3,0] Down curTime: 11559500 downFor: -373 resLevel: 2
+Switch Aggr [1,3,0] Up 11559900
+Switch Aggr [2,4,0] Up 11810900
+Switch Tor [2,4,0] Down curTime: 11813400 downFor: -1949 resLevel: 2
+Switch Aggr [2,4,0] Up 11815400
+Link Tor 392 Down curTime: 11828800 downFor: -153 resLevel: 1
+Link Tor 392 Up 11829000
+Link Tor 537 Up 12016000
+Link Tor 537 Down curTime: 12016200 downFor: -73 resLevel: 2
+Link Tor 537 Up 12016300
+Link Tor 537 Down curTime: 12016700 downFor: -198 resLevel: 2
+Link Tor 537 Up 12016900
+Link Tor 537 Down curTime: 12018900 downFor: -154 resLevel: 2
+Link Tor 537 Up 12019100
+Link Tor 537 Down curTime: 12019300 downFor: -678 resLevel: 2
+Link Tor 537 Up 12020000
+Link Tor 537 Down curTime: 12020900 downFor: -191 resLevel: 2
+Link Tor 537 Up 12021100
+Link Aggr 1262 Down curTime: 12129300 downFor: -160 resLevel: 1
+Link Aggr 1262 Up 12129500
+Link Aggr 1471 Down curTime: 12258900 downFor: -57 resLevel: 2
+Link Aggr 1471 Up 12259000
+Link Aggr 1471 Down curTime: 12262400 downFor: -102 resLevel: 2
+Link Aggr 1471 Up 12262600
+Link Aggr 1471 Down curTime: 12262700 downFor: -817461 resLevel: 2
+Switch Aggr [1,6,8] Down curTime: 12361100 downFor: -65 resLevel: 2
+Switch Aggr [1,6,8] Up 12361200
+Link Tor 1382 Down curTime: 12412600 downFor: -207 resLevel: 2
+Link Tor 1382 Up 12412900
+Link Aggr 855 Down curTime: 12472700 downFor: -125 resLevel: 2
+Link Aggr 855 Up 12472900
+Link Aggr 855 Down curTime: 12474500 downFor: -139 resLevel: 2
+Link Aggr 855 Up 12474700
+Link Aggr 855 Down curTime: 12477700 downFor: -134 resLevel: 2
+Link Aggr 855 Up 12477900
+Link Aggr 855 Down curTime: 12478400 downFor: -204 resLevel: 2
+Link Aggr 855 Up 12478700
+Link Aggr 855 Down curTime: 12479400 downFor: -352378 resLevel: 2
+Switch Tor [2,11,0] Down curTime: 12481000 downFor: -209 resLevel: 2
+Switch Aggr [2,11,0] Up 12481300
+Switch Tor [2,11,0] Down curTime: 12484700 downFor: -1685 resLevel: 2
+Switch Aggr [2,11,0] Up 12486400
+Switch Tor [2,4,0] Down curTime: 12542600 downFor: -2336 resLevel: 2
+Switch Aggr [2,4,0] Up 12545000
+Switch Tor [2,4,0] Down curTime: 12546900 downFor: -117 resLevel: 2
+Switch Aggr [2,4,0] Up 12547100
+Switch Tor [2,4,0] Down curTime: 12550000 downFor: -2374 resLevel: 2
+Switch Aggr [2,4,0] Up 12552400
+Switch Aggr [1,7,7] Down curTime: 12624100 downFor: -478 resLevel: 1
+Switch Aggr [1,7,7] Up 12624600
+Switch Tor [2,4,0] Down curTime: 12636700 downFor: -74 resLevel: 2
+Switch Aggr [2,4,0] Up 12636800
+Switch Tor [2,4,0] Down curTime: 12637600 downFor: -3316 resLevel: 2
+Switch Aggr [2,4,0] Up 12641000
+Link Aggr 855 Up 12831800
+Link Aggr 855 Down curTime: 12832000 downFor: -359996 resLevel: 2
+Link Tor 537 Down curTime: 12954200 downFor: -35 resLevel: 2
+Link Tor 537 Up 12954300
+Link Tor 785 Down curTime: 12964100 downFor: -98 resLevel: 2
+Link Tor 785 Up 12964200
+Link Aggr 74 Down curTime: 13048600 downFor: -122 resLevel: 2
+Link Aggr 74 Up 13048800
+Link Aggr 74 Down curTime: 13048900 downFor: -221 resLevel: 2
+Link Aggr 74 Up 13049200
+Switch Aggr [1,3,3] Down curTime: 13080500 downFor: -5395 resLevel: 1
+Switch Aggr [1,3,3] Up 13085900
+Link Aggr 855 Up 13192800
+Link Aggr 1212 Down curTime: 13228400 downFor: -246 resLevel: 2
+Link Aggr 1212 Up 13228700
+Link Aggr 1212 Down curTime: 13230700 downFor: -270 resLevel: 2
+Link Aggr 1212 Up 13231000
+Link Aggr 1212 Down curTime: 13231900 downFor: -473 resLevel: 2
+Link Aggr 1212 Up 13232400
+Switch Aggr [1,3,0] Down curTime: 13398000 downFor: -366 resLevel: 2
+Switch Aggr [1,3,0] Up 13398400
+Switch Aggr [1,3,0] Down curTime: 13398700 downFor: -369 resLevel: 2
+Switch Aggr [1,3,0] Up 13399100
+Switch Aggr [1,3,0] Down curTime: 13438600 downFor: -70 resLevel: 2
+Switch Aggr [1,3,0] Up 13438700
+Switch Aggr [1,6,8] Down curTime: 13590900 downFor: -211 resLevel: 2
+Switch Aggr [1,6,8] Up 13591200
+Link Tor 560 Down curTime: 13728200 downFor: -173 resLevel: 2
+Link Tor 560 Up 13728400
+Link Aggr 1471 Up 13795700
+Link Aggr 1471 Down curTime: 13795900 downFor: -450 resLevel: 2
+Link Aggr 1471 Up 13796400
+Switch Aggr [1,9,1] Down curTime: 13931000 downFor: -542 resLevel: 2
+Switch Aggr [1,9,1] Up 13931600
+Switch Aggr [1,9,1] Down curTime: 13931700 downFor: -311 resLevel: 2
+Switch Aggr [1,9,1] Up 13932100
+Switch Aggr [1,9,1] Down curTime: 13932200 downFor: -423 resLevel: 2
+Switch Aggr [1,9,1] Up 13932700
+Link Tor 1570 Up 13952400
+Link Tor 1570 Down curTime: 13954500 downFor: -268 resLevel: 2
+Link Tor 1570 Up 13954800
+Link Tor 560 Down curTime: 13993100 downFor: -349 resLevel: 2
+Link Tor 560 Up 13993500
+Link Aggr 9 Down curTime: 14012700 downFor: -166 resLevel: 2
+Link Aggr 9 Up 14012900
+Link Aggr 9 Down curTime: 14014900 downFor: -184 resLevel: 2
+Link Aggr 9 Up 14015100
+Link Aggr 9 Down curTime: 14015300 downFor: -200 resLevel: 2
+Link Aggr 9 Up 14015500
+Link Aggr 9 Down curTime: 14016100 downFor: -217 resLevel: 2
+Link Aggr 9 Up 14016400
+Link Aggr 9 Down curTime: 14017700 downFor: -264 resLevel: 2
+Link Aggr 9 Up 14018000
+Switch Aggr [1,11,6] Down curTime: 14113600 downFor: -7082 resLevel: 1
+Switch Aggr [1,11,6] Up 14120700
+Switch Tor [2,19,0] Down curTime: 14213800 downFor: -101 resLevel: 2
+Switch Aggr [2,19,0] Up 14213900
+Switch Tor [2,19,0] Down curTime: 14214200 downFor: -131 resLevel: 2
+Switch Aggr [2,19,0] Up 14214400
+Switch Tor [2,19,0] Down curTime: 14217600 downFor: -1044 resLevel: 2
+Switch Aggr [2,19,0] Up 14218700
+Switch Tor [2,19,0] Down curTime: 14223300 downFor: -2154 resLevel: 2
+Switch Aggr [2,19,0] Up 14225500
+Switch Tor [2,19,0] Down curTime: 14238500 downFor: -135 resLevel: 2
+Switch Aggr [2,19,0] Up 14238700
+Switch Tor [2,19,0] Down curTime: 14240300 downFor: -20284 resLevel: 2
+Link Aggr 1294 Down curTime: 14256600 downFor: -236 resLevel: 2
+Link Aggr 1294 Up 14256900
+Link Aggr 1294 Down curTime: 14257400 downFor: -164 resLevel: 2
+Link Aggr 1294 Up 14257600
+Link Aggr 1294 Down curTime: 14258500 downFor: -95 resLevel: 2
+Link Aggr 1294 Up 14258600
+Link Tor 968 Down curTime: 14258900 downFor: -132 resLevel: 2
+Link Tor 968 Up 14259100
+Link Tor 968 Down curTime: 14259500 downFor: -143 resLevel: 2
+Link Tor 968 Up 14259700
+Switch Aggr [2,19,0] Up 14260600
+Link Tor 968 Down curTime: 14262700 downFor: -90 resLevel: 2
+Link Tor 968 Up 14262800
+Switch Tor [2,19,0] Down curTime: 14264000 downFor: -216 resLevel: 2
+Switch Aggr [2,19,0] Up 14264300
+Link Tor 968 Down curTime: 14264400 downFor: -81 resLevel: 2
+Link Tor 968 Up 14264500
+Switch Tor [2,19,0] Down curTime: 14266600 downFor: -530745 resLevel: 2
+Switch Aggr [1,19,6] Down curTime: 14463900 downFor: -361 resLevel: 2
+Switch Aggr [1,19,6] Up 14464300
+Link Aggr 1230 Down curTime: 14478200 downFor: -18 resLevel: 2
+Link Aggr 1230 Up 14478300
+Link Aggr 1230 Down curTime: 14478600 downFor: -209 resLevel: 2
+Link Aggr 1230 Up 14478900
+Switch Tor [2,11,0] Down curTime: 14646800 downFor: -2902 resLevel: 2
+Switch Aggr [2,11,0] Up 14649800
+Switch Tor [2,11,0] Down curTime: 14651300 downFor: -1338 resLevel: 2
+Switch Aggr [2,11,0] Up 14652700
+Switch Tor [2,11,0] Down curTime: 14655000 downFor: -2302 resLevel: 2
+Switch Aggr [2,11,0] Up 14657400
+Switch Tor [2,11,0] Down curTime: 14659200 downFor: -1848 resLevel: 2
+Switch Aggr [2,11,0] Up 14661100
+Switch Tor [2,11,0] Down curTime: 14663200 downFor: -170 resLevel: 2
+Switch Aggr [2,11,0] Up 14663400
+Link Tor 1931 Up 14747300
+Link Tor 1931 Down curTime: 14747400 downFor: -162 resLevel: 2
+Link Tor 1931 Up 14747600
+Link Tor 1931 Down curTime: 14749800 downFor: -101 resLevel: 2
+Link Tor 1931 Up 14749900
+Link Tor 1931 Down curTime: 14751900 downFor: -102 resLevel: 2
+Link Tor 1931 Up 14752100
+Link Tor 1716 Down curTime: 14774200 downFor: -437636 resLevel: 2
+Switch Aggr [2,19,0] Up 14806500
+Link Tor 390 Down curTime: 14852800 downFor: -932928 resLevel: 2
+Switch Tor [2,19,0] Down curTime: 14884500 downFor: -2622 resLevel: 2
+Switch Aggr [2,19,0] Up 14887200
+Switch Tor [2,19,0] Down curTime: 14890500 downFor: -101 resLevel: 2
+Switch Aggr [2,19,0] Up 14890600
+Switch Tor [2,19,0] Down curTime: 14891900 downFor: -143 resLevel: 2
+Switch Aggr [2,19,0] Up 14892100
+Switch Tor [2,19,0] Down curTime: 14902200 downFor: -313923 resLevel: 2
+Link Aggr 275 Down curTime: 14917400 downFor: -53 resLevel: 1
+Link Aggr 275 Up 14917500
+Switch Aggr [2,19,0] Up 15216200
+Switch Tor [2,19,0] Down curTime: 15216400 downFor: -266 resLevel: 2
+Switch Aggr [2,19,0] Up 15216700
+Switch Tor [2,19,0] Down curTime: 15218900 downFor: -144 resLevel: 2
+Switch Aggr [2,19,0] Up 15219100
+Switch Aggr [1,3,0] Down curTime: 15240200 downFor: -8354 resLevel: 2
+Switch Aggr [1,3,0] Up 15248600
+Switch Aggr [1,14,9] Down curTime: 15254200 downFor: -523 resLevel: 1
+Switch Aggr [1,14,9] Up 15254800
+Link Aggr 208 Down curTime: 15277200 downFor: -183 resLevel: 2
+Link Aggr 208 Up 15277400
+Link Tor 390 Up 15786200
+Link Tor 975 Down curTime: 15931800 downFor: -54 resLevel: 2
+Link Tor 975 Up 15931900
+Link Tor 1716 Up 16145400
+Link Tor 1716 Down curTime: 16148500 downFor: -95 resLevel: 2
+Link Tor 1716 Up 16148600
+Link Tor 1716 Down curTime: 16148800 downFor: -141 resLevel: 2
+Link Tor 1716 Up 16149000
+Link Tor 1716 Down curTime: 16149900 downFor: -625 resLevel: 2
+Link Tor 1716 Up 16150600
+Link Tor 1716 Down curTime: 16153100 downFor: -341 resLevel: 2
+Link Tor 1716 Up 16153500
+Link Tor 2507 Down curTime: 16172800 downFor: -235 resLevel: 1
+Link Tor 2507 Up 16173100
+Link Aggr 2293 Down curTime: 16173500 downFor: -36 resLevel: 1
+Link Aggr 2293 Up 16173600
+Link Tor 1716 Down curTime: 16205500 downFor: -195 resLevel: 2
+Link Tor 1716 Up 16205700
+Link Tor 1716 Down curTime: 16206800 downFor: -232 resLevel: 2
+Link Tor 1716 Up 16207100
+Link Tor 1716 Down curTime: 16207200 downFor: -179 resLevel: 2
+Link Tor 1716 Up 16207400
+Link Tor 3357 Down curTime: 16231600 downFor: -130 resLevel: 2
+Link Tor 3357 Up 16231800
+Link Tor 3357 Down curTime: 16233100 downFor: -292 resLevel: 2
+Link Tor 3357 Up 16233400
+Link Tor 988 Down curTime: 16258300 downFor: -181 resLevel: 2
+Link Tor 988 Up 16258500
+Link Tor 988 Down curTime: 16260300 downFor: -180 resLevel: 2
+Link Tor 988 Up 16260500
+Link Aggr 3668 Up 16302300
+Link Core 4219 Down curTime: 16306500 downFor: -118 resLevel: 2
+Link Core 4219 Up 16306700
+Link Tor 1725 Down curTime: 16327400 downFor: -140 resLevel: 2
+Link Tor 1725 Up 16327600
+Link Tor 1725 Down curTime: 16329800 downFor: -122 resLevel: 2
+Link Tor 1725 Up 16330000
+Link Tor 1725 Down curTime: 16331600 downFor: -144 resLevel: 2
+Link Tor 1725 Up 16331800
+Link Core 4364 Down curTime: 16333000 downFor: -305535 resLevel: 2
+Switch Aggr [1,19,6] Down curTime: 16344900 downFor: -347 resLevel: 2
+Switch Aggr [1,19,6] Up 16345300
+Link Aggr 1268 Down curTime: 16360800 downFor: -755128 resLevel: 2
+Switch Aggr [1,6,8] Down curTime: 16537000 downFor: -137 resLevel: 2
+Switch Aggr [1,6,8] Up 16537200
+Switch Aggr [1,6,8] Down curTime: 16537300 downFor: -316 resLevel: 2
+Switch Aggr [1,6,8] Up 16537700
+Link Aggr 9 Down curTime: 16586600 downFor: -902072 resLevel: 2
+Switch Aggr [1,9,1] Down curTime: 16714300 downFor: -201 resLevel: 2
+Switch Aggr [1,9,1] Up 16714500
+Link Aggr 9 Up 17488700
+Link Aggr 892 Down curTime: 17506600 downFor: -155 resLevel: 2
+Link Aggr 892 Up 17506800
+Link Aggr 892 Down curTime: 17507300 downFor: -160 resLevel: 2
+Link Aggr 892 Up 17507500
+Link Aggr 892 Down curTime: 17510400 downFor: -574 resLevel: 2
+Link Aggr 892 Up 17511000
+Link Aggr 892 Down curTime: 17513500 downFor: -102 resLevel: 2
+Link Aggr 892 Up 17513700
+Link Aggr 892 Down curTime: 17516200 downFor: -74 resLevel: 2
+Link Aggr 892 Up 17516300
+Link Aggr 1016 Down curTime: 17638200 downFor: -154 resLevel: 2
+Link Aggr 1016 Up 17638400
+Link Aggr 1016 Down curTime: 17640700 downFor: -124 resLevel: 2
+Link Aggr 1016 Up 17640900
+Link Aggr 681 Down curTime: 17761400 downFor: -196 resLevel: 2
+Link Aggr 681 Up 17761600
+Link Aggr 681 Down curTime: 17761900 downFor: -104 resLevel: 2
+Link Aggr 681 Up 17762100
+Switch Aggr [1,3,0] Down curTime: 17839700 downFor: -7039 resLevel: 2
+Switch Aggr [1,3,0] Up 17846800
+Link Aggr 1268 Up 18020100
+Link Tor 2102 Down curTime: 18041500 downFor: -91 resLevel: 2
+Link Tor 2102 Up 18041600
+Link Tor 2102 Down curTime: 18044900 downFor: -139 resLevel: 2
+Link Tor 2102 Up 18045100
+Link Aggr 860 Down curTime: 18113800 downFor: -231 resLevel: 2
+Link Aggr 860 Up 18114100
+Link Aggr 860 Down curTime: 18114300 downFor: -189 resLevel: 2
+Link Aggr 860 Up 18114500
+Switch Aggr [1,3,0] Down curTime: 18117000 downFor: -293 resLevel: 2
+Switch Aggr [1,3,0] Up 18117300
+Link Aggr 860 Down curTime: 18117300 downFor: -725 resLevel: 2
+Link Aggr 860 Up 18118100
+Link Aggr 860 Down curTime: 18120200 downFor: -103 resLevel: 2
+Link Aggr 860 Up 18120400
+Link Aggr 860 Down curTime: 18123900 downFor: -420 resLevel: 2
+Link Aggr 860 Up 18124400
+Link Tor 1716 Down curTime: 18191000 downFor: -632986 resLevel: 2
+Link Tor 1347 Down curTime: 18205900 downFor: -196417 resLevel: 2
+Link Tor 716 Down curTime: 18211000 downFor: -139 resLevel: 1
+Link Tor 716 Up 18211200
+Link Aggr 295 Down curTime: 18239600 downFor: -62 resLevel: 2
+Link Aggr 295 Up 18239700
+Link Aggr 295 Down curTime: 18243000 downFor: -60 resLevel: 2
+Link Aggr 295 Up 18243100
+Link Aggr 295 Down curTime: 18243400 downFor: -172 resLevel: 2
+Link Aggr 295 Up 18243600
+Link Aggr 1246 Down curTime: 18323200 downFor: -185 resLevel: 1
+Link Aggr 1246 Up 18323400
+Link Tor 1347 Up 18403300
+Link Tor 1347 Down curTime: 18405900 downFor: -109 resLevel: 2
+Link Tor 1347 Up 18406100
+Link Aggr 1623 Down curTime: 18450200 downFor: -101 resLevel: 2
+Link Aggr 1623 Up 18450300
+Link Tor 171 Down curTime: 18569200 downFor: -153 resLevel: 2
+Link Tor 171 Up 18569400
+Link Tor 1143 Down curTime: 18754300 downFor: -190 resLevel: 2
+Link Tor 1143 Up 18754500
+Link Aggr 661 Down curTime: 18800200 downFor: -239 resLevel: 2
+Link Aggr 661 Up 18800500
+Link Aggr 208 Down curTime: 18823900 downFor: -155 resLevel: 2
+Link Aggr 208 Up 18824100
+Switch Tor [2,11,6] Down curTime: 18859000 downFor: -276 resLevel: 2
+Switch Aggr [2,11,6] Up 18859300
+Switch Tor [2,11,6] Down curTime: 18862400 downFor: -1867 resLevel: 2
+Switch Aggr [2,11,6] Up 18864300
+Switch Tor [2,11,6] Down curTime: 18867700 downFor: -252479 resLevel: 2
+Link Aggr 1632 Down curTime: 18935600 downFor: -554 resLevel: 2
+Link Aggr 1632 Up 18936200
+Link Aggr 1632 Down curTime: 18938100 downFor: -145 resLevel: 2
+Link Aggr 1632 Up 18938300
+Link Aggr 1632 Down curTime: 18938500 downFor: -202 resLevel: 2
+Link Aggr 1632 Up 18938800
+Link Tor 1716 Up 19023600
+Link Aggr 681 Down curTime: 19030900 downFor: -145 resLevel: 2
+Link Aggr 681 Up 19031100
+Link Aggr 681 Down curTime: 19031200 downFor: -93 resLevel: 2
+Link Aggr 681 Up 19031300
+Link Tor 1163 Down curTime: 19033300 downFor: -182 resLevel: 2
+Link Tor 1163 Up 19033500
+Link Tor 1163 Down curTime: 19036300 downFor: -102 resLevel: 2
+Link Tor 1163 Up 19036500
+Link Tor 1931 Down curTime: 19095800 downFor: -376 resLevel: 2
+Link Tor 1931 Up 19096200
+Link Aggr 74 Down curTime: 19106600 downFor: -114 resLevel: 2
+Link Aggr 74 Up 19106800
+Link Aggr 74 Down curTime: 19107300 downFor: -193 resLevel: 2
+Link Aggr 74 Up 19107500
+Link Aggr 74 Down curTime: 19110000 downFor: -387 resLevel: 2
+Link Aggr 74 Up 19110400
+Link Aggr 74 Down curTime: 19113600 downFor: -75 resLevel: 2
+Link Aggr 74 Up 19113700
+Link Aggr 74 Down curTime: 19116700 downFor: -193 resLevel: 2
+Link Aggr 74 Up 19116900
+Switch Aggr [2,11,6] Up 19120200
+Switch Tor [2,11,6] Down curTime: 19122900 downFor: -114 resLevel: 2
+Switch Aggr [2,11,6] Up 19123100
+Switch Tor [2,11,6] Down curTime: 19125900 downFor: -95 resLevel: 2
+Switch Aggr [2,11,6] Up 19126000
+Switch Tor [2,11,6] Down curTime: 19128700 downFor: -3065 resLevel: 2
+Switch Aggr [2,11,6] Up 19131800
+Link Tor 2914 Down curTime: 19133700 downFor: -70 resLevel: 1
+Link Tor 2914 Up 19133800
+Link Core 4364 Up 19135000
+Link Core 4367 Down curTime: 19150100 downFor: -151 resLevel: 2
+Link Core 4367 Up 19150300
+Link Core 4367 Down curTime: 19150500 downFor: -249 resLevel: 2
+Link Core 4367 Up 19150800
+Link Aggr 3266 Down curTime: 19152200 downFor: -212 resLevel: 2
+Link Aggr 3266 Up 19152500
+Link Aggr 3266 Down curTime: 19152800 downFor: -185 resLevel: 2
+Link Aggr 3266 Up 19153000
+Link Aggr 3266 Down curTime: 19153200 downFor: -68 resLevel: 2
+Link Aggr 3266 Up 19153300
+Link Aggr 3266 Down curTime: 19155200 downFor: -82 resLevel: 2
+Link Aggr 3266 Up 19155300
+Link Core 4367 Down curTime: 19169900 downFor: -567 resLevel: 2
+Link Core 4367 Up 19170500
+Link Core 4379 Down curTime: 19170800 downFor: -128 resLevel: 2
+Link Core 4379 Up 19171000
+Link Core 4379 Down curTime: 19173500 downFor: -131 resLevel: 2
+Link Core 4379 Up 19173700
+Link Core 4379 Down curTime: 19176500 downFor: -100 resLevel: 2
+Link Core 4379 Up 19176600
+Link Tor 1997 Down curTime: 19193800 downFor: -107 resLevel: 1
+Link Tor 1997 Up 19194000
+Link Core 4364 Down curTime: 19194000 downFor: -274 resLevel: 2
+Link Core 4364 Up 19194300
+Switch Tor [2,17,6] Down curTime: 19201200 downFor: -2671 resLevel: 1
+Switch Aggr [2,17,6] Up 19203900
+Link Core 4364 Down curTime: 19229500 downFor: -163 resLevel: 2
+Link Core 4364 Up 19229700
+Link Core 4364 Down curTime: 19230000 downFor: -41 resLevel: 2
+Link Core 4364 Up 19230100
+Link Core 4364 Down curTime: 19240100 downFor: -288 resLevel: 2
+Link Core 4364 Up 19240400
+Link Core 4364 Down curTime: 19240600 downFor: -182 resLevel: 2
+Link Core 4364 Up 19240800
+Link Aggr 2632 Down curTime: 19274000 downFor: -131 resLevel: 2
+Link Aggr 2632 Up 19274200
+Link Aggr 2632 Down curTime: 19275100 downFor: -192 resLevel: 2
+Link Aggr 2632 Up 19275300
+Link Aggr 2632 Down curTime: 19275600 downFor: -116 resLevel: 2
+Link Aggr 2632 Up 19275800
+Link Tor 303 Down curTime: 19305700 downFor: -866253 resLevel: 2
+Switch Aggr [1,6,8] Down curTime: 19397300 downFor: -301 resLevel: 2
+Switch Aggr [1,6,8] Up 19397600
+Switch Aggr [1,6,8] Down curTime: 19397900 downFor: -6859 resLevel: 2
+Switch Aggr [1,6,8] Up 19404800
+Switch Aggr [1,6,8] Down curTime: 19405000 downFor: -139 resLevel: 2
+Switch Aggr [1,6,8] Up 19405200
+Switch Aggr [1,3,0] Down curTime: 19413600 downFor: -450 resLevel: 2
+Switch Aggr [1,3,0] Up 19414100
+Switch Aggr [1,19,6] Down curTime: 19437300 downFor: -100 resLevel: 2
+Switch Aggr [1,19,6] Up 19437400
+Switch Aggr [1,9,1] Down curTime: 19891200 downFor: -300 resLevel: 2
+Switch Aggr [1,9,1] Up 19891500
+Link Tor 303 Up 20172000
+Link Tor 303 Down curTime: 20173800 downFor: -599 resLevel: 2
+Link Tor 303 Up 20174400
+Link Tor 3196 Down curTime: 20218800 downFor: -175 resLevel: 2
+Link Tor 3196 Up 20219000
+Link Aggr 3489 Down curTime: 20272800 downFor: -193 resLevel: 2
+Link Aggr 3489 Up 20273000
+Link Aggr 3489 Down curTime: 20273700 downFor: -112 resLevel: 2
+Link Aggr 3489 Up 20273900
+Link Aggr 3489 Down curTime: 20274000 downFor: -189 resLevel: 2
+Link Aggr 3489 Up 20274200
+Link Tor 1573 Down curTime: 20381200 downFor: -308710 resLevel: 2
+Switch Aggr [1,3,0] Down curTime: 20469700 downFor: -262 resLevel: 2
+Switch Aggr [1,3,0] Up 20470000
+Switch Aggr [1,3,0] Down curTime: 20470100 downFor: -4026 resLevel: 2
+Switch Aggr [1,3,0] Up 20474200
+Link Tor 537 Down curTime: 20528900 downFor: -149 resLevel: 2
+Link Tor 537 Up 20529100
+Link Tor 537 Down curTime: 20531500 downFor: -295839 resLevel: 2
+Switch Aggr [1,9,1] Down curTime: 20581600 downFor: -4364 resLevel: 2
+Switch Aggr [1,9,1] Up 20586000
+Switch Aggr [1,9,1] Down curTime: 20586200 downFor: -441 resLevel: 2
+Switch Aggr [1,9,1] Up 20586700
+Link Tor 537 Up 20827400
+Link Tor 560 Down curTime: 20895100 downFor: -389 resLevel: 2
+Link Tor 560 Up 20895500
+Link Tor 560 Down curTime: 20896900 downFor: -71 resLevel: 2
+Link Tor 560 Up 20897000
+Link Tor 560 Down curTime: 20899600 downFor: -157 resLevel: 2
+Link Tor 560 Up 20899800
+Link Aggr 1026 Down curTime: 20939900 downFor: -99 resLevel: 2
+Link Aggr 1026 Up 20940000
+Link Tor 1573 Up 20986900
+Link Tor 975 Down curTime: 21002700 downFor: -259 resLevel: 2
+Link Tor 975 Up 21003000
+Link Core 4414 Up 21036500
+Link Core 4448 Up 21036600
+Link Core 4607 Up 21036700
+Link Core 4781 Down curTime: 21036700 downFor: -238 resLevel: 2
+Link Core 4441 Down curTime: 21036800 downFor: -774399 resLevel: 2
+Link Core 4642 Down curTime: 21036800 downFor: -62 resLevel: 2
+Switch Aggr [1,9,1] Down curTime: 21037300 downFor: -501 resLevel: 2
+Link Core 4414 Down curTime: 21037600 downFor: -179 resLevel: 2
+Switch Aggr [1,9,1] Up 21037800
+Link Core 4414 Up 21037800
+Link Core 4414 Down curTime: 21038000 downFor: -227253 resLevel: 2
+Link Tor 390 Down curTime: 21046300 downFor: -49 resLevel: 2
+Link Tor 390 Up 21046400
+Link Tor 390 Down curTime: 21047000 downFor: -194 resLevel: 2
+Link Tor 390 Up 21047200
+Link Tor 390 Down curTime: 21048300 downFor: -190 resLevel: 2
+Link Tor 390 Up 21048500
+Link Tor 390 Down curTime: 21050800 downFor: -275 resLevel: 2
+Link Tor 390 Up 21051100
+Link Aggr 295 Down curTime: 21052300 downFor: -573 resLevel: 2
+Link Aggr 295 Up 21052900
+Link Aggr 3258 Down curTime: 21059300 downFor: -192 resLevel: 2
+Link Aggr 3258 Up 21059500
+Link Aggr 1012 Down curTime: 21072200 downFor: -145 resLevel: 2
+Link Aggr 1012 Up 21072400
+Link Aggr 608 Down curTime: 21089900 downFor: -143 resLevel: 2
+Link Aggr 608 Up 21090100
+Link Aggr 2664 Down curTime: 21099600 downFor: -950780 resLevel: 2
+Link Aggr 210 Down curTime: 21125000 downFor: -154415 resLevel: 1
+Link Aggr 210 Up 21279500
+Switch Aggr [1,19,6] Down curTime: 21321500 downFor: -452 resLevel: 2
+Switch Aggr [1,19,6] Up 21322000
+Switch Aggr [1,19,6] Down curTime: 21322200 downFor: -266 resLevel: 2
+Switch Aggr [1,19,6] Up 21322500
+Link Tor 968 Down curTime: 21338900 downFor: -742 resLevel: 2
+Link Tor 968 Up 21339700
+Link Tor 968 Down curTime: 21341100 downFor: -220 resLevel: 2
+Link Tor 968 Up 21341400
+Link Tor 968 Down curTime: 21343600 downFor: -179 resLevel: 2
+Link Tor 968 Up 21343800
+Link Tor 968 Down curTime: 21345100 downFor: -143 resLevel: 2
+Link Tor 968 Up 21345300
+Link Tor 968 Down curTime: 21347800 downFor: -144 resLevel: 2
+Link Tor 968 Up 21348000
+Link Tor 968 Down curTime: 21348100 downFor: -173 resLevel: 2
+Link Tor 968 Up 21348300
+Link Tor 968 Down curTime: 21349800 downFor: -173 resLevel: 2
+Link Tor 968 Up 21350000
+Link Aggr 1613 Down curTime: 21350700 downFor: -79 resLevel: 2
+Link Aggr 1613 Up 21350800
+Link Aggr 1241 Down curTime: 21370700 downFor: -138 resLevel: 2
+Link Aggr 1241 Up 21370900
+Link Aggr 1241 Down curTime: 21371100 downFor: -156 resLevel: 2
+Link Aggr 1241 Up 21371300
+Link Aggr 1241 Down curTime: 21371400 downFor: -249239 resLevel: 2
+Link Tor 1182 Down curTime: 21391900 downFor: -193 resLevel: 2
+Link Tor 1182 Up 21392100
+Link Tor 1182 Down curTime: 21395500 downFor: -805021 resLevel: 2
+Switch Aggr [1,6,8] Down curTime: 21555900 downFor: -494 resLevel: 2
+Switch Aggr [1,6,8] Up 21556400
+Switch Tor [2,11,0] Down curTime: 21687200 downFor: -1569 resLevel: 2
+Switch Aggr [2,11,0] Up 21688800
+Switch Tor [2,11,0] Down curTime: 21690800 downFor: -182 resLevel: 2
+Switch Aggr [2,11,0] Up 21691000
+Switch Tor [2,11,0] Down curTime: 21693100 downFor: -55 resLevel: 2
+Switch Aggr [2,11,0] Up 21693200
+Switch Tor [2,11,0] Down curTime: 21694700 downFor: -3129 resLevel: 2
+Switch Aggr [2,11,0] Up 21697900
+Switch Tor [2,19,0] Down curTime: 21859800 downFor: -261 resLevel: 2
+Switch Aggr [2,19,0] Up 21860100
+Switch Tor [2,19,0] Down curTime: 21863400 downFor: -1455 resLevel: 2
+Switch Aggr [2,19,0] Up 21864900
+Switch Tor [2,19,0] Down curTime: 21867400 downFor: -185 resLevel: 2
+Switch Aggr [2,19,0] Up 21867600
+Switch Tor [2,19,0] Down curTime: 21870900 downFor: -128 resLevel: 2
+Switch Aggr [2,19,0] Up 21871100
+Switch Tor [2,19,0] Down curTime: 21872800 downFor: -131 resLevel: 2
+Switch Aggr [2,19,0] Up 21873000
+Switch Tor [2,19,0] Down curTime: 21874800 downFor: -71504 resLevel: 2
+Link Tor 988 Down curTime: 21905100 downFor: -179 resLevel: 2
+Link Tor 988 Up 21905300
+Link Tor 171 Down curTime: 21934800 downFor: -175 resLevel: 2
+Link Tor 171 Up 21935000
+Switch Aggr [2,19,0] Up 21946400
+Switch Tor [2,19,0] Down curTime: 21949600 downFor: -2097 resLevel: 2
+Switch Aggr [2,19,0] Up 21951700
+Switch Aggr [1,6,8] Down curTime: 21985600 downFor: -136 resLevel: 2
+Switch Aggr [1,6,8] Up 21985800
+Switch Tor [2,4,0] Down curTime: 22006500 downFor: -2189 resLevel: 2
+Switch Aggr [2,4,0] Up 22008700
+Switch Tor [2,4,0] Down curTime: 22012000 downFor: -2766 resLevel: 2
+Switch Aggr [2,4,0] Up 22014800
+Link Aggr 61 Down curTime: 22071300 downFor: -203 resLevel: 1
+Link Aggr 61 Up 22071600
+Link Aggr 1026 Down curTime: 22188400 downFor: -156 resLevel: 2
+Link Aggr 1026 Up 22188600
+Link Tor 1182 Up 22201600
+Link Aggr 801 Down curTime: 22304800 downFor: -56 resLevel: 1
+Link Aggr 801 Up 22304900
+Link Aggr 1241 Up 22427100
+Link Aggr 1241 Down curTime: 22427300 downFor: -22 resLevel: 2
+Link Aggr 1241 Up 22427400
+Link Aggr 1294 Down curTime: 22460000 downFor: -153 resLevel: 2
+Link Aggr 1294 Up 22460200
+Link Aggr 1294 Down curTime: 22460300 downFor: -97 resLevel: 2
+Link Aggr 1294 Up 22460400
+Link Aggr 1294 Down curTime: 22460700 downFor: -108 resLevel: 2
+Link Aggr 1294 Up 22460900
+Link Aggr 1294 Down curTime: 22464300 downFor: -250 resLevel: 2
+Link Aggr 1294 Up 22464600
+Switch Aggr [1,9,1] Down curTime: 22503400 downFor: -392 resLevel: 2
+Switch Aggr [1,9,1] Up 22503800
+Switch Aggr [1,9,1] Down curTime: 22504000 downFor: -174 resLevel: 2
+Switch Aggr [1,9,1] Up 22504200
+Switch Aggr [1,9,1] Down curTime: 22525300 downFor: -479 resLevel: 2
+Switch Aggr [1,9,1] Up 22525800
+Switch Aggr [1,9,1] Down curTime: 22526000 downFor: -414 resLevel: 2
+Switch Aggr [1,9,1] Up 22526500
+Switch Aggr [1,9,1] Down curTime: 22526700 downFor: -233 resLevel: 2
+Switch Aggr [1,9,1] Up 22527000
+Link Tor 988 Down curTime: 22528800 downFor: -28 resLevel: 2
+Link Tor 988 Up 22528900
+Link Tor 988 Down curTime: 22529900 downFor: -224 resLevel: 2
+Link Tor 988 Up 22530200
+Link Tor 988 Down curTime: 22531800 downFor: -129 resLevel: 2
+Link Tor 988 Up 22532000
+Link Tor 988 Down curTime: 22532100 downFor: -228 resLevel: 2
+Link Tor 988 Up 22532400
+Link Aggr 661 Down curTime: 22543900 downFor: -239 resLevel: 2
+Link Aggr 661 Up 22544200
+Link Tor 975 Down curTime: 22595600 downFor: -251 resLevel: 2
+Link Tor 975 Up 22595900
+Link Tor 928 Down curTime: 22636200 downFor: -231 resLevel: 2
+Link Tor 928 Up 22636500
+Link Tor 928 Down curTime: 22638300 downFor: -194 resLevel: 2
+Link Tor 928 Up 22638500
+Link Tor 928 Down curTime: 22639300 downFor: -656 resLevel: 2
+Link Tor 928 Up 22640000
+Link Tor 928 Down curTime: 22640300 downFor: -13 resLevel: 2
+Link Tor 928 Up 22640400
+Link Tor 928 Down curTime: 22641300 downFor: -84 resLevel: 2
+Link Tor 928 Up 22641400
+Link Tor 928 Down curTime: 22643600 downFor: -96 resLevel: 2
+Link Tor 928 Up 22643700
+Link Tor 928 Down curTime: 22645100 downFor: -82 resLevel: 2
+Link Tor 928 Up 22645200
+Link Aggr 1294 Down curTime: 22742600 downFor: -280 resLevel: 2
+Link Aggr 1294 Up 22742900
+Link Aggr 1294 Down curTime: 22745200 downFor: -167 resLevel: 2
+Link Aggr 1294 Up 22745400
+Link Aggr 1294 Down curTime: 22746300 downFor: -202 resLevel: 2
+Link Aggr 1294 Up 22746600
+Link Aggr 681 Down curTime: 22821400 downFor: -243 resLevel: 2
+Link Aggr 681 Up 22821700
+Link Aggr 681 Down curTime: 22823300 downFor: -188 resLevel: 2
+Link Aggr 681 Up 22823500
+Link Aggr 681 Down curTime: 22827000 downFor: -649 resLevel: 2
+Link Aggr 681 Up 22827700
+Link Aggr 681 Down curTime: 22830200 downFor: -206 resLevel: 2
+Link Aggr 681 Up 22830500
+Link Aggr 1294 Down curTime: 23008600 downFor: -159 resLevel: 2
+Link Aggr 1294 Up 23008800
+Link Aggr 1294 Down curTime: 23012400 downFor: -82 resLevel: 2
+Link Aggr 1294 Up 23012500
+Link Tor 390 Down curTime: 23071600 downFor: -198 resLevel: 2
+Link Tor 390 Up 23071800
+Link Tor 390 Down curTime: 23075400 downFor: -450230 resLevel: 2
+Switch Tor [2,4,0] Down curTime: 23452300 downFor: -124 resLevel: 2
+Switch Aggr [2,4,0] Up 23452500
+Switch Tor [2,4,0] Down curTime: 23453700 downFor: -206 resLevel: 2
+Switch Aggr [2,4,0] Up 23454000
+Switch Tor [2,4,0] Down curTime: 23454800 downFor: -432503 resLevel: 2
+Link Tor 390 Up 23525700
+Link Tor 390 Down curTime: 23525900 downFor: -114 resLevel: 2
+Link Tor 390 Up 23526100
+Link Tor 390 Down curTime: 23526200 downFor: -98 resLevel: 2
+Link Tor 390 Up 23526300
+Link Tor 390 Down curTime: 23527300 downFor: -224 resLevel: 2
+Link Tor 390 Up 23527600
+Link Tor 390 Down curTime: 23527700 downFor: -127266 resLevel: 2
+Switch Aggr [1,3,0] Down curTime: 23592300 downFor: -320 resLevel: 2
+Switch Aggr [1,3,0] Up 23592700
+Switch Aggr [1,3,0] Down curTime: 23592900 downFor: -3979 resLevel: 2
+Switch Aggr [1,3,0] Up 23596900
+Link Tor 328 Down curTime: 23621400 downFor: -153 resLevel: 1
+Link Tor 328 Up 23621600
+Link Tor 390 Up 23655200
+Link Tor 390 Down curTime: 23655600 downFor: -122392 resLevel: 2
+Switch Aggr [1,3,0] Down curTime: 23743800 downFor: -498 resLevel: 2
+Switch Aggr [1,3,0] Up 23744300
+Switch Aggr [1,3,0] Down curTime: 23744600 downFor: -485 resLevel: 2
+Switch Aggr [1,3,0] Up 23745100
+Link Tor 390 Up 23778000
+Link Tor 390 Down curTime: 23778800 downFor: -150 resLevel: 2
+Link Tor 390 Up 23779000
+Link Tor 390 Down curTime: 23781800 downFor: -202 resLevel: 2
+Link Tor 390 Up 23782100
+Link Tor 390 Down curTime: 23783400 downFor: -86 resLevel: 2
+Link Tor 390 Up 23783500
+Link Aggr 855 Down curTime: 23792400 downFor: -613578 resLevel: 2
+Switch Aggr [2,4,0] Up 23892800
+Link Tor 764 Down curTime: 23918900 downFor: -103 resLevel: 2
+Link Tor 764 Up 23919100
+Link Tor 764 Down curTime: 23920700 downFor: -260 resLevel: 2
+Link Tor 764 Up 23921000
+Link Tor 764 Down curTime: 23921300 downFor: -95 resLevel: 2
+Link Tor 764 Up 23921400
+Switch Aggr [1,9,1] Down curTime: 24093500 downFor: -269 resLevel: 2
+Switch Aggr [1,9,1] Up 24093800
+Switch Aggr [1,9,1] Down curTime: 24094100 downFor: -235 resLevel: 2
+Switch Aggr [1,9,1] Up 24094400
+Switch Aggr [1,9,1] Down curTime: 24094500 downFor: -2499 resLevel: 2
+Switch Aggr [1,9,1] Up 24097000
+Switch Aggr [1,9,1] Down curTime: 24097100 downFor: -489 resLevel: 2
+Switch Aggr [1,9,1] Up 24097600
+Link Tor 740 Down curTime: 24189100 downFor: -667 resLevel: 2
+Link Tor 740 Up 24189800
+Link Aggr 855 Up 24407300
+Link Tor 988 Down curTime: 24415700 downFor: -204 resLevel: 2
+Link Tor 988 Up 24416000
+Link Tor 988 Down curTime: 24416200 downFor: -655801 resLevel: 2
+Switch Aggr [1,19,6] Down curTime: 24454200 downFor: -10 resLevel: 2
+Switch Aggr [1,19,6] Up 24454300
+Switch Aggr [1,19,6] Down curTime: 24454500 downFor: -104 resLevel: 2
+Switch Aggr [1,19,6] Up 24454700
+Switch Aggr [1,19,6] Down curTime: 24454800 downFor: -93 resLevel: 2
+Switch Aggr [1,19,6] Up 24454900
+Link Aggr 52 Down curTime: 24513400 downFor: -405 resLevel: 1
+Link Aggr 52 Up 24513900
+Link Aggr 453 Down curTime: 24537300 downFor: -88 resLevel: 1
+Link Aggr 453 Up 24537400
+Switch Tor [2,19,0] Down curTime: 24566500 downFor: -1785 resLevel: 2
+Switch Aggr [2,19,0] Up 24568300
+Switch Tor [2,19,0] Down curTime: 24650200 downFor: -69 resLevel: 2
+Switch Aggr [2,19,0] Up 24650300
+Switch Tor [2,19,0] Down curTime: 24652900 downFor: -483449 resLevel: 2
+Link Aggr 661 Down curTime: 24716300 downFor: -368 resLevel: 2
+Link Aggr 661 Up 24716700
+Switch Aggr [1,19,6] Down curTime: 24725500 downFor: -322 resLevel: 2
+Switch Aggr [1,19,6] Up 24725900
+Link Aggr 95 Down curTime: 25055400 downFor: -89 resLevel: 1
+Link Aggr 95 Up 25055500
+Link Tor 988 Up 25073200
+Link Aggr 1201 Down curTime: 25083900 downFor: -81 resLevel: 2
+Link Aggr 1201 Up 25084000
+Switch Aggr [2,19,0] Up 25136800
+Switch Tor [2,11,6] Down curTime: 25176300 downFor: -2266 resLevel: 2
+Switch Aggr [2,11,6] Up 25178600
+Switch Tor [2,11,6] Down curTime: 25181100 downFor: -404 resLevel: 2
+Switch Aggr [2,11,6] Up 25182400
+Link Aggr 2010 Down curTime: 25188200 downFor: -38 resLevel: 2
+Link Aggr 2010 Up 25188300
+Link Aggr 2010 Down curTime: 25190900 downFor: -188 resLevel: 2
+Link Aggr 2010 Up 25191100
+Switch Tor [2,19,0] Down curTime: 25214700 downFor: -363280 resLevel: 2
+Link Tor 1182 Down curTime: 25217800 downFor: -201 resLevel: 2
+Link Tor 1182 Up 25218000
+Link Tor 1182 Down curTime: 25218200 downFor: -239 resLevel: 2
+Link Tor 1182 Up 25218500
+Link Aggr 2664 Up 25244500
+Link Tor 1182 Down curTime: 25278000 downFor: -130 resLevel: 2
+Link Tor 1182 Up 25278200
+Link Tor 1129 Down curTime: 25323000 downFor: -183 resLevel: 2
+Link Tor 1129 Up 25323200
+Link Aggr 3668 Down curTime: 25379500 downFor: -95 resLevel: 2
+Link Aggr 3668 Up 25379600
+Link Aggr 3668 Down curTime: 25379900 downFor: -45 resLevel: 2
+Link Aggr 3668 Up 25380000
+Link Core 4414 Up 25413000
+Link Core 4414 Down curTime: 25414800 downFor: -372436 resLevel: 2
+Link Aggr 2893 Down curTime: 25424300 downFor: -649907 resLevel: 1
+Switch Aggr [1,6,8] Down curTime: 25523000 downFor: -61 resLevel: 2
+Switch Aggr [1,6,8] Up 25523100
+Switch Aggr [2,19,0] Up 25578200
+Switch Tor [2,19,0] Down curTime: 25581700 downFor: -1903 resLevel: 2
+Switch Aggr [2,19,0] Up 25583700
+Link Tor 755 Down curTime: 25640400 downFor: -575 resLevel: 1
+Link Tor 755 Up 25641000
+Link Aggr 2098 Down curTime: 25671300 downFor: -51 resLevel: 2
+Link Aggr 2098 Up 25671400
+Link Aggr 2098 Down curTime: 25672800 downFor: -276 resLevel: 2
+Link Aggr 2098 Up 25673100
+Link Aggr 2098 Down curTime: 25673600 downFor: -237 resLevel: 2
+Link Aggr 2098 Up 25673900
+Link Aggr 2098 Down curTime: 25676400 downFor: -163 resLevel: 2
+Link Aggr 2098 Up 25676600
+Link Aggr 9 Down curTime: 25720600 downFor: -72 resLevel: 2
+Link Aggr 9 Up 25720700
+Link Tor 1347 Down curTime: 25753900 downFor: -129 resLevel: 2
+Link Tor 1347 Up 25754100
+Link Tor 1347 Down curTime: 25757200 downFor: -243 resLevel: 2
+Link Tor 1347 Up 25757500
+Link Tor 1347 Down curTime: 25761000 downFor: -46 resLevel: 2
+Link Tor 1347 Up 25761100
+Link Tor 1347 Down curTime: 25761600 downFor: -145 resLevel: 2
+Link Tor 1347 Up 25761800
+Link Tor 1347 Down curTime: 25763800 downFor: -153 resLevel: 2
+Link Tor 1347 Up 25764000
+Link Tor 1347 Down curTime: 25764500 downFor: -90 resLevel: 2
+Link Tor 1347 Up 25764600
+Link Tor 1347 Down curTime: 25766300 downFor: -242 resLevel: 2
+Link Tor 1347 Up 25766600
+Link Tor 1347 Down curTime: 25768400 downFor: -443556 resLevel: 2
+Link Aggr 681 Down curTime: 25870300 downFor: -148 resLevel: 2
+Link Aggr 681 Up 25870500
+Link Aggr 681 Down curTime: 25870800 downFor: -889185 resLevel: 2
+Switch Aggr [1,3,0] Down curTime: 25985500 downFor: -313 resLevel: 2
+Switch Aggr [1,3,0] Up 25985900
+Link Tor 390 Down curTime: 26244800 downFor: -184 resLevel: 2
+Link Tor 390 Up 26245000
+Link Tor 390 Down curTime: 26245300 downFor: -196 resLevel: 2
+Link Tor 390 Up 26245500
+Link Tor 390 Down curTime: 26245800 downFor: -220 resLevel: 2
+Link Tor 390 Up 26246100
+Switch Aggr [1,9,1] Down curTime: 26591800 downFor: -254 resLevel: 2
+Switch Aggr [1,9,1] Up 26592100
+Switch Aggr [1,9,1] Down curTime: 26592400 downFor: -320 resLevel: 2
+Switch Aggr [1,9,1] Up 26592800
+Link Aggr 681 Up 26760800
+Link Aggr 681 Down curTime: 26761300 downFor: -90 resLevel: 2
+Link Aggr 681 Up 26761400
+Link Aggr 681 Down curTime: 26761600 downFor: -96 resLevel: 2
+Link Aggr 681 Up 26761700
+Link Aggr 292 Down curTime: 26925300 downFor: -85 resLevel: 1
+Link Aggr 292 Up 26925400
+Link Tor 928 Down curTime: 26978600 downFor: -269 resLevel: 2
+Link Tor 928 Up 26978900
+Link Tor 1143 Down curTime: 27023600 downFor: -206 resLevel: 2
+Link Tor 1143 Up 27023900
+Link Tor 988 Down curTime: 27080800 downFor: -157 resLevel: 2
+Link Tor 988 Up 27081000
+Link Tor 1347 Up 27103400
+Link Aggr 1230 Down curTime: 27178200 downFor: -115 resLevel: 2
+Link Aggr 1230 Up 27178400
+Link Aggr 1230 Down curTime: 27180600 downFor: -140 resLevel: 2
+Link Aggr 1230 Up 27180800
+Link Aggr 1230 Down curTime: 27182400 downFor: -144 resLevel: 2
+Link Aggr 1230 Up 27182600
+Link Aggr 1230 Down curTime: 27182900 downFor: -72 resLevel: 2
+Link Aggr 1230 Up 27183000
+Link Aggr 1230 Down curTime: 27184600 downFor: -175 resLevel: 2
+Link Aggr 1230 Up 27184800
+Link Aggr 295 Down curTime: 27220600 downFor: -208 resLevel: 2
+Link Aggr 295 Up 27220900
+Link Aggr 295 Down curTime: 27221600 downFor: -214 resLevel: 2
+Link Aggr 295 Up 27221900
+Link Aggr 295 Down curTime: 27225000 downFor: -209 resLevel: 2
+Link Aggr 295 Up 27225300
+Link Aggr 295 Down curTime: 27227700 downFor: -144 resLevel: 2
+Link Aggr 295 Up 27227900
+Switch Aggr [1,19,6] Down curTime: 27246400 downFor: -359 resLevel: 2
+Switch Aggr [1,19,6] Up 27246800
+Switch Aggr [1,19,6] Down curTime: 27247000 downFor: -416 resLevel: 2
+Switch Aggr [1,19,6] Up 27247500
+Switch Aggr [1,6,8] Down curTime: 27249700 downFor: -421 resLevel: 2
+Switch Aggr [1,6,8] Up 27250200
+Switch Aggr [1,3,0] Down curTime: 27262000 downFor: -121 resLevel: 2
+Switch Aggr [1,3,0] Up 27262200
+Switch Aggr [1,3,0] Down curTime: 27262300 downFor: -127 resLevel: 2
+Switch Aggr [1,3,0] Up 27262500
+Link Tor 303 Down curTime: 27335400 downFor: -239 resLevel: 2
+Link Tor 303 Up 27335700
+Link Tor 303 Down curTime: 27337200 downFor: -31 resLevel: 2
+Link Tor 303 Up 27337300
+Link Tor 2120 Down curTime: 27380400 downFor: -60 resLevel: 2
+Link Tor 2120 Up 27380500
+Link Tor 2120 Down curTime: 27382400 downFor: -425 resLevel: 2
+Link Tor 2120 Up 27382900
+Link Tor 2120 Down curTime: 27386300 downFor: -159 resLevel: 2
+Link Tor 2120 Up 27386500
+Link Aggr 481 Down curTime: 27389200 downFor: -102 resLevel: 1
+Link Aggr 481 Up 27389400
+Link Aggr 1863 Down curTime: 27402400 downFor: -197 resLevel: 2
+Link Aggr 1863 Up 27402600
+Link Aggr 2893 Up 27415700
+Link Tor 2509 Down curTime: 27439500 downFor: -228 resLevel: 2
+Link Tor 2509 Up 27439800
+Switch Tor [2,11,6] Down curTime: 27443600 downFor: -73 resLevel: 2
+Switch Aggr [2,11,6] Up 27443700
+Link Tor 3749 Down curTime: 27446000 downFor: -96 resLevel: 2
+Link Tor 3749 Up 27446100
+Link Aggr 1471 Down curTime: 27461700 downFor: -103 resLevel: 2
+Link Aggr 1471 Up 27461900
+Link Aggr 1471 Down curTime: 27462100 downFor: -351 resLevel: 2
+Link Aggr 1471 Up 27462500
+Switch Aggr [1,9,1] Down curTime: 27469100 downFor: -482 resLevel: 2
+Switch Aggr [1,9,1] Up 27469600
+Switch Tor [2,11,6] Down curTime: 27482900 downFor: -996 resLevel: 2
+Switch Aggr [2,11,6] Up 27483900
+Link Aggr 208 Down curTime: 27485200 downFor: -501 resLevel: 2
+Link Aggr 208 Up 27485700
+Switch Tor [2,11,6] Down curTime: 27486100 downFor: -2323 resLevel: 2
+Link Aggr 208 Down curTime: 27487300 downFor: -201 resLevel: 2
+Link Aggr 208 Up 27487500
+Link Aggr 208 Down curTime: 27487700 downFor: -212046 resLevel: 2
+Switch Aggr [2,11,6] Up 27488500
+Link Aggr 208 Up 27699800
+Link Aggr 208 Down curTime: 27700000 downFor: -193 resLevel: 2
+Link Aggr 208 Up 27700200
+Link Tor 785 Down curTime: 27709600 downFor: -112 resLevel: 2
+Link Tor 785 Up 27709800
+Link Aggr 1201 Down curTime: 27729500 downFor: -140 resLevel: 2
+Link Aggr 1201 Up 27729700
+Link Aggr 1201 Down curTime: 27730600 downFor: -895555 resLevel: 2
+Switch Aggr [1,8,1] Down curTime: 27829600 downFor: -61 resLevel: 1
+Switch Aggr [1,8,1] Up 27829700
+Link Tor 928 Down curTime: 28108300 downFor: -162 resLevel: 2
+Link Tor 928 Up 28108500
+Link Tor 928 Down curTime: 28108600 downFor: -278 resLevel: 2
+Link Tor 928 Up 28108900
+Link Tor 928 Down curTime: 28109100 downFor: -249 resLevel: 2
+Link Tor 928 Up 28109400
+Link Tor 928 Down curTime: 28111000 downFor: -52 resLevel: 2
+Link Tor 928 Up 28111100
+Link Tor 928 Down curTime: 28111300 downFor: -605834 resLevel: 2
+Link Aggr 208 Down curTime: 28284300 downFor: -36 resLevel: 2
+Link Aggr 208 Up 28284400
+Link Aggr 208 Down curTime: 28284500 downFor: -583 resLevel: 2
+Link Aggr 208 Up 28285100
+Switch Aggr [1,3,0] Down curTime: 28393900 downFor: -453 resLevel: 2
+Switch Aggr [1,3,0] Up 28394400
+Switch Aggr [1,3,0] Down curTime: 28394600 downFor: -288 resLevel: 2
+Switch Aggr [1,3,0] Up 28394900
+Switch Aggr [1,3,0] Down curTime: 28395200 downFor: -208 resLevel: 2
+Switch Aggr [1,3,0] Up 28395500
+Switch Aggr [1,3,0] Down curTime: 28430400 downFor: -130 resLevel: 2
+Switch Aggr [1,3,0] Up 28430600
+Link Aggr 208 Down curTime: 28443000 downFor: -114 resLevel: 2
+Link Aggr 208 Up 28443200
+Link Aggr 74 Down curTime: 28587500 downFor: -341 resLevel: 2
+Link Aggr 74 Up 28587900
+Link Aggr 74 Down curTime: 28588000 downFor: -138 resLevel: 2
+Link Aggr 74 Up 28588200
+Link Tor 928 Up 28718600
+Link Tor 928 Down curTime: 28718700 downFor: -25 resLevel: 2
+Link Tor 928 Up 28718800
+Switch Tor [2,4,0] Down curTime: 28992700 downFor: -143 resLevel: 2
+Switch Aggr [2,4,0] Up 28992900
+Switch Tor [2,4,0] Down curTime: 28993300 downFor: -538033 resLevel: 2
+Link Aggr 668 Down curTime: 29132800 downFor: -158 resLevel: 1
+Link Aggr 668 Up 29133000
+Switch Aggr [1,3,0] Down curTime: 29228700 downFor: -295 resLevel: 2
+Switch Aggr [1,3,0] Up 29229000
+Switch Aggr [1,3,0] Down curTime: 29229300 downFor: -352 resLevel: 2
+Switch Aggr [1,3,0] Up 29229700
+Switch Aggr [1,3,0] Down curTime: 29229900 downFor: -1622 resLevel: 2
+Switch Aggr [1,3,0] Up 29231600
+Link Aggr 1201 Up 29234600
+Link Aggr 860 Down curTime: 29299700 downFor: -160 resLevel: 2
+Link Aggr 860 Up 29299900
+Link Core 4259 Down curTime: 29302200 downFor: -177 resLevel: 2
+Link Core 4259 Up 29302400
+Link Aggr 1268 Down curTime: 29313800 downFor: -261 resLevel: 2
+Link Aggr 1268 Up 29314100
+Link Aggr 1268 Down curTime: 29316900 downFor: -115 resLevel: 2
+Link Aggr 1268 Up 29317100
+Link Aggr 1268 Down curTime: 29320600 downFor: -771487 resLevel: 2
+Link Tor 171 Down curTime: 29384200 downFor: -78 resLevel: 2
+Link Tor 171 Up 29384300
+Link Aggr 295 Down curTime: 29385000 downFor: -215 resLevel: 2
+Link Tor 171 Down curTime: 29385100 downFor: -110 resLevel: 2
+Link Tor 171 Up 29385300
+Link Aggr 295 Up 29385400
+Link Tor 171 Down curTime: 29388400 downFor: -264 resLevel: 2
+Link Tor 171 Up 29388700
+Link Tor 171 Down curTime: 29389700 downFor: -133 resLevel: 2
+Link Tor 171 Up 29389900
+Switch Aggr [2,4,0] Up 29533700
+Switch Tor [2,4,0] Down curTime: 29534600 downFor: -341715 resLevel: 2
+Link Tor 537 Down curTime: 29571000 downFor: -277 resLevel: 2
+Link Tor 537 Up 29571300
+Link Tor 537 Down curTime: 29574400 downFor: -183 resLevel: 2
+Link Tor 537 Up 29574600
+Link Aggr 661 Down curTime: 29813300 downFor: -163 resLevel: 2
+Link Aggr 661 Up 29813500
+Link Aggr 661 Down curTime: 29816300 downFor: -585333 resLevel: 2
+Switch Aggr [2,4,0] Up 29876400

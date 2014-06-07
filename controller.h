@@ -28,6 +28,7 @@ public:
 	float downTime;
 	int torCap;
 	int aggrCap;
+	int backup;
 	int coreCap;
 	int k;				
 	//k-ary tree

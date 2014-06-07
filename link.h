@@ -52,6 +52,9 @@ public:
 	void addFlow(Flow* f,int rate, int dir, int back);
 	void removeFlow(Flow* f,int rate, int dir);
 	void commitPath(Path* p, int back);
+	vector<Flow*> getFlowsOnPrimary();
+	vector<Flow*> getFlowsOnBack();
+
 
 };
 

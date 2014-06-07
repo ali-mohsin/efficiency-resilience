@@ -33,6 +33,7 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	createTopology(tor,aggr,core);
 	backUp=back;
 	sharing = share;
+	backup=0;
 	// TODO seperate variable for backup
 	// TODO intra-rack communication, path assigned goes all the way round from core
 	failures=0;
@@ -47,11 +48,12 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	{
 		if(all_links[i]->flows.size()!=0)
 		{
-			cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows.size()<<" Flows passing through"<<endl;
+			int a=0;
+			// cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows.size()<<" Flows passing through"<<endl;
 		}
 		else
 		{
-			cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows.size()<<" Flows passing through"<<endl;
+			// cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows.size()<<" Flows passing through"<<endl;
 			int x=1/0;
 		}
 	}
@@ -401,131 +403,170 @@ vector<Flow*> Controller::getCommonFlows(vector<Flow*> u,vector<Flow*> d)
 // 	return false;
 // }
 
+
+
+bool notIn(vector<Switch*> v,Switch* e)
+{
+	for (int i=0;i<v.size();i++)
+	{
+		if(e==v[i])
+			return false;
+	}
+	return true;
+}
+
+bool notIn(vector<Link*> v,Link* e)
+{
+	for (int i=0;i<v.size();i++)
+	{
+		if(e==v[i])
+			return false;
+	}
+	return true;
+}
+
 void Controller::findFaults()
 {
-	////startTimer();
+	//////startTimer();
 	//TODO implement for links as well
 	int len = all_switches.size();
 	for(int i=0; i<len; i++)
 	{
 		if( all_switches[i]->getStatus() < 0 )
 		{
-			vector<Flow*> flows=all_switches[i]->getActiveFlows();
-			if(flows.size()>0)
+			vector<Flow*> flows_primary=all_switches[i]->getFlowsOnPrimary();
+			vector<Flow*> flows_back=all_switches[i]->getFlowsOnBack();
+
+			if(flows_primary.size()>0 || flows_back.size()>0)
 			{
 
-				cout <<"+ Critical Switch Failed with ID: "<<all_switches[i]->toString()<<" For "<<all_switches[i]->status<<" Seconds Num Flows: "<<flows.size()<<endl;
-				critical_switches.push_back(all_switches[i]);
- 			}
-			for(int j=0;j<flows.size();j++)
-			{
-				if(flows[j]->on_back && backUp)
+				if(notIn(critical_switches,all_switches[i]))
 				{
-					flows[j]->antiCommitPath(flows[j]->backUpPath);
-					flows_down.push_back(flows[j]);
-					continue;
+					cout <<"+ Critical Switch Failed with ID: "<<all_switches[i]->toString()<<" For "<<all_switches[i]->status<<endl;
+					critical_switches.push_back(all_switches[i]);					
 				}
+ 			}
 
-				flows[j]->antiCommitPath(flows[j]->primaryPath);
+			for(int j=0;j<flows_primary.size();j++)
+			{
+				// cout<<"anti commiting 2"<<endl;
+				flows_primary[j]->antiCommitPath(flows_primary[j]->primaryPath);
 				if(backUp)
 				{
-					int commit=flows[j]->commitPath(flows[j]->backUpPath,1);
+					// cout<<"commiting on backup"<<endl;
+
+					int commit=flows_primary[j]->commitPath(flows_primary[j]->backUpPath,1);
 
 					if(commit)
-						flows_on_back.push_back(flows[j]);
+					{
+						flows_on_back.push_back(flows_primary[j]);
+						// cout<<"But Commit success, put on backup flows"<<endl;
+					}
 					else
-						flows_down.push_back(flows[j]);
+					{
+						flows_down.push_back(flows_primary[j]);
+						// cout<<"And Commit Failed, put on down flows"<<endl;
+						
+					}
 				}
 				else
 				{
-					flows_down.push_back(flows[j]);
+					flows_down.push_back(flows_primary[j]);
+				}
+			}
+
+
+			for(int j=0;j<flows_back.size();j++)
+			{
+				if(backUp)
+				{
+					// cout<<"Path is now down"<<endl;
+					flows_back[j]->antiCommitPath(flows_back[j]->backUpPath);
+					flows_down.push_back(flows_back[j]);
+					continue;
 				}
 			}
 		}
 	}
-	////stopTimer("switches in find faults");
-	////startTimer();
+	//////stopTimer("switches in find faults");
+	//////startTimer();
 	//************For Links******************//
 
 	len = all_links.size();
 	for(int i=0; i<len; i++)
 	{
-		if( all_links[i]->getStatus() < 0 && all_links[i]->label!="Tor")
+		if( all_links[i]->getStatus() < 0 )
 		{
+			vector<Flow*> flows_primary=all_links[i]->getFlowsOnPrimary();
+			vector<Flow*> flows_back=all_links[i]->getFlowsOnBack();
 
-			vector<Flow*> flows;
-			// if(all_links[i]->host==NULL)
-			// 	{
-			// 		////startTimer();
-			// 		flows=getCommonFlows(all_links[i]->up_switch->flows,all_links[i]->down_switch->flows);
-			// 		////stopTimer("getting common flows");
-			// 	}
-			// else
-			// 	flows=all_links[i]->up_switch->flows;
-			flows=all_links[i]->getActiveFlows();
-
-			if(flows.size()>0)
+			if(flows_primary.size()>0 || flows_back.size()>0)
 			{
-				cout <<"+ Critical Link Failed with ID: "<<all_links[i]->link_id<<" label: "<<all_links[i]->label<<" For "<<all_links[i]->status<<" Seconds Num flows: " <<flows.size()<<endl;
-				critical_links.push_back(all_links[i]);
-			}
 
-			// if(duplicateIn(flows))
-			// {
-			// 	cout<<"++++++ ERROR: DUPLICATES DETECTED IN FLOWS"<<endl;
-			// }
-
-			for(int j=0;j<flows.size();j++)
-			{
-				if(flows[j]->on_back)
- 				{
- 					flows_down.push_back(flows[j]);
- 					flows[j]->antiCommitPath(flows[j]->backUpPath);
- 					continue;
- 				}
-				flows[j]->antiCommitPath(flows[j]->primaryPath);
-				if(backUp)
+				if(notIn(critical_links,all_links[i]))
 				{
-					int commit=flows[j]->commitPath(flows[j]->backUpPath,1);
-
-					if(commit)
-						flows_on_back.push_back(flows[j]);
-					else
-						flows_down.push_back(flows[j]);
+					cout <<"+ Critical Link Failed with ID: "<<all_links[i]->link_id<<" For "<<all_links[i]->status<<" Seconds "<<endl;
+					critical_links.push_back(all_links[i]);
 				}
 				else
 				{
-					flows_down.push_back(flows[j]);
+					continue;
+				}
+ 			}
+
+			for(int j=0;j<flows_primary.size();j++)
+			{
+				// cout<<"anti commiting 2"<<endl;
+				flows_primary[j]->antiCommitPath(flows_primary[j]->primaryPath);
+				if(backUp)
+				{
+					// cout<<"commiting on backup"<<endl;
+					int commit=flows_primary[j]->commitPath(flows_primary[j]->backUpPath,1);
+
+					if(commit)
+					{
+						flows_on_back.push_back(flows_primary[j]);
+						 // cout<<"Commit success, put on backup flows"<<endl;
+					}
+					else
+					{
+						flows_down.push_back(flows_primary[j]);
+						 // cout<<"Commit Failed, put on down flows"<<endl;
+					}
+				}
+				else
+				{
+					flows_down.push_back(flows_primary[j]);
 				}
 			}
 
-			// if(all_links[i]->host==NULL)
-			// {
-			// 	flows=getCommonFlows(all_links[i]->up_switch->flows,all_links[i]->down_switch->flows);
-			// 	if(flows.size()>0)
-			// 		cout<<"+++++++++++ ERROR, ANTICOMMIT FAILED"<<endl;
-			// }
-			// else
-			// {
-			// 	flows=all_links[i]->up_switch->flows;
-			// 	if(flows.size()>0)
-			// 		cout<<"+++++++++++ ERROR, ANTICOMMIT FAILED 2"<<endl;
-			// }
+
+			for(int j=0;j<flows_back.size();j++)
+			{
+				if(backUp)
+				{
+					// cout<<"Was already back up, now its down"<<endl;
+					flows_back[j]->antiCommitPath(flows_back[j]->backUpPath);
+					flows_down.push_back(flows_back[j]);
+					continue;
+				}
+			}
 		}
 	}
-	////stopTimer("links in find faults");
 
+	// cout<<"Num of flows down: "<<flows_down.size()<<endl;
 }
 
 
 void Controller::revert_to_primary()
 {
-	////startTimer();
+	//////startTimer();
 	for(int i=0;i<critical_switches.size();i++)
 	{
 		if(critical_switches[i]->status >= 0)
 		{
 			cout<<downTime<<" is the new downtime"<<endl;
+			cout<<backup<<" is the new down due to sharing"<<endl;
 			cout<<"+ Critical Switch Back with ID :"<<critical_switches[i]->toString()<<endl;
 			critical_switches.erase(critical_switches.begin()+i);
 			// if(duplicateIn(critical_switches))
@@ -534,14 +575,16 @@ void Controller::revert_to_primary()
 			// }
 		}
 	}
-	////stopTimer("for switches to revert");
-	////startTimer();
+	//////stopTimer("for switches to revert");
+	//////startTimer();
 
 	for(int i=0;i<critical_links.size();i++)
 	{
 		if(critical_links[i]->status >= 0)
 		{
 			cout<<downTime<<" is the new downtime"<<endl;
+			cout<<backup<<" is the new down due to sharing"<<endl;
+
 			cout<<"+ Critical Link Back with ID :"<<critical_links[i]->link_id<<endl;
 			critical_links.erase(critical_links.begin()+i);
 			// if(duplicateIn(critical_links))
@@ -552,19 +595,20 @@ void Controller::revert_to_primary()
 		}
 	}
 
-	////stopTimer("for links to revert");
+	//////stopTimer("for links to revert");
 	if(backUp)
 	{
 		for (int i=0;i<flows_on_back.size();i++)
 		{
 			Flow* f=flows_on_back[i];
-			if(f->down!=1)
-				continue;
+			// if(f->down!=1)
+			// 	continue;
 			if(f->primaryPath->isUp())
 			{
 				f->antiCommitPath(f->backUpPath);
 				f->commitPath(f->primaryPath,0); //Assumption is that link capacity would not be a bottleneck
 				flows_on_back.erase(flows_on_back.begin()+i);
+				// cout<<"-- Num of flows on backup are: "<<flows_on_back.size()<<endl;
 			}
 		}
 	}
@@ -574,12 +618,29 @@ void Controller::revert_to_primary()
 	for (int i=0;i<flows_down.size();i++)
 	{
 		Flow* f=flows_down[i];
-		if(f->down!=1)
-			continue;
+		// if(f->down!=1)
+		// 	continue;
 		bool check=f->primaryPath->isUp();
 		if(check)
 		{
 			f->commitPath(f->primaryPath,0); //Assumption is that link capacity would not be a bottleneck
+			flows_down.erase(flows_down.begin()+i);
+			cout<<"-- Num of flows down: "<<flows_down.size()<<endl;
+			continue;
+		}
+
+		if(backUp)
+		{
+			bool check=f->backUpPath->isUp();
+			if(check)
+			{
+				f->commitPath(f->backUpPath,1); //Assumption is that link capacity would not be a bottleneck
+				// cout<<"I am here here----------------------------------------------"<<endl;
+
+				flows_down.erase(flows_down.begin()+i);
+				flows_on_back.push_back(f);
+				cout<<"-- Num of flows down: "<<flows_down.size()<<endl;
+			}
 		}
 	}
 }
@@ -588,21 +649,34 @@ void Controller::detect_downTime()
 {
 	if(backUp)
 	{
+		// cout<<"Num of flows on backup are "<<flows_on_back.size()<<endl;
 		for(int i=0;i<flows_on_back.size();i++)
 		{
 			for (int j=i+1;j<flows_on_back.size();j++)
 			{
 				Flow* f1=flows_on_back[i];
 				Flow* f2=flows_on_back[j];
-				if(f1->backUpPath==f2->backUpPath)
+				if(f1->backUpPath==f2->backUpPath && f1->on_back && f2->on_back)
 				{
 					downTime+=1;
+					backup+=1;
 				}
 			}
 		}
 	}
 
+
+	// cout<<"downtime+= "<<flows_down.size() <<endl;
+
 	downTime+=flows_down.size();
+	// for(int i=0;i<flows_down.size();i++)
+	// {
+	// 	// cout<<"flow in down's var down is"<<flows_down[i]->down<<endl;
+	// 	// if(flows_down[i]->down)
+	// 	// {
+	// 		downTime+=1;
+	// 	// }1
+	// }
 }
 
 int Controller::getTTR(Switch* curSwitch)
@@ -916,9 +990,9 @@ void Controller::autofail(int curSec)
 	updateStatus(all_switches,curSec);
 	//stopTimer("updateStatus 1");
 
-	// ////startTimer();
+	// //////startTimer();
 	updateStatus(all_links,curSec);
-	// ////stopTimer("updateStatus 2");
+	// //////stopTimer("updateStatus 2");
 
 	if(curSec%100==0)
 	{
@@ -1135,26 +1209,7 @@ void Controller::filterPaths(int rate,Host* dest)
 	}
 }
 
-bool notIn(vector<Switch*> v,Switch* e)
-{
-	for (int i=0;i<v.size();i++)
-	{
-		if(e==v[i])
-			return false;
-	}
-	return true;
-}
 
-
-bool notIn(vector<Link*> v,Link* e)
-{
-	for (int i=0;i<v.size();i++)
-	{
-		if(e==v[i])
-			return false;
-	}
-	return true;
-}
 
 void Controller::logFailures(int time)
 {
@@ -1330,21 +1385,23 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 	return 1;
 }
 
-int getCommonCount(vector<Link*> a,vector<Link*> b)
+int getCommonCount(vector<Switch*> a,vector<Switch*> b)
 {
 	int count=0;
 	for(int i=0;i<a.size();i++)
 	{
-		Link* aCand=a[i];
-		for(int j=0;j<b.size();j++)
+		Switch* aCand=a[i];
+		for(int j=i+1;j<b.size();j++)
 		{
-			Link* bCand=b[i];
+			Switch* bCand=b[i];
 			if(aCand==bCand)
 				count++;
 		}
 	}
 	return count;
 }
+
+
 
 Path* Controller::getBackUpPath(Path* primary)
 {
@@ -1362,8 +1419,8 @@ Path* Controller::getBackUpPath(Path* primary)
 				Path* p2=paths_to_be_shared[j];
 				if(p2->getSrcPod()==p1->getSrcPod() && p2->getDstPod()==p1->getDstPod() && p1!=p2)
 				{
-					vector<Link*> links=p1->links;
-					vector<Link*> otherLinks=p2->links;
+					vector<Switch*> links=p1->switches;
+					vector<Switch*> otherLinks=p2->switches;
 					int common=getCommonCount(links,otherLinks);
 					if(common > overlap)
 					{
@@ -1390,19 +1447,27 @@ Path* Controller::getBackUpPath(Path* primary)
 	else
 	{
 		overlap=10*k;
-		vector<Link*> links=primary->links;
+		vector<Switch*> links=primary->switches;
+		// primary->print();
+
         for(int i=0;i<paths.size();i++)
         {
             Path* cand=paths[i];
-            vector<Link*> otherLinks=cand->links;
+        	// cand->print();
+            vector<Switch*> otherLinks=cand->switches;
+            // cout<<"size of other links  "<<otherLinks.size()<<endl;            
+            // cout<<"size of links  "<<links.size()<<endl;            
             int common=getCommonCount(links,otherLinks);
+            // cout<<"Common num is "<<common<<endl;
             if(common<overlap)
             {
                 back=cand;
                 overlap=common;
             }
         }
-
+        // primary->print();
+        // back->print();
+        // cout<<"Overlap with primary is "<<overlap<<endl;
 	}
 	return back;
 }

@@ -32,12 +32,35 @@ int Switch::getLevel()
 	return level;
 }
 
-vector<Flow*> Switch::getActiveFlows()
+// vector<Flow*> Switch::getActiveFlows()
+// {
+// 	vector<Flow*> v;
+// 	for(int i=0;i<flows.size();i++)
+// 	{
+// 		if(flows[i]->down!=1)
+// 			v.push_back(flows[i]);
+// 	}
+// 	return v;
+// }
+
+vector<Flow*> Switch::getFlowsOnPrimary()
 {
 	vector<Flow*> v;
 	for(int i=0;i<flows.size();i++)
 	{
-		if(flows[i]->down!=1)
+		if(flows[i]->down!=1 && flows[i]->on_back==0)
+			v.push_back(flows[i]);
+	}
+	return v;
+}
+
+
+vector<Flow*> Switch::getFlowsOnBack()
+{
+	vector<Flow*> v;
+	for(int i=0;i<flows.size();i++)
+	{
+		if(flows[i]->down!=1 && flows[i]->on_back==1)
 			v.push_back(flows[i]);
 	}
 	return v;

@@ -140,6 +140,30 @@ void Link::addFlow(Flow* f,int rate, int dir, int  back)
 
 }
 
+vector<Flow*> Link::getFlowsOnPrimary()
+{
+	vector<Flow*> v;
+	for(int i=0;i<flows.size();i++)
+	{
+		if(flows[i]->down!=1 && flows[i]->on_back==0)
+			v.push_back(flows[i]);
+	}
+	return v;
+}
+
+
+vector<Flow*> Link::getFlowsOnBack()
+{
+	vector<Flow*> v;
+	for(int i=0;i<flows.size();i++)
+	{
+		if(flows[i]->down!=1 && flows[i]->on_back==1)
+			v.push_back(flows[i]);
+	}
+	return v;
+}
+
+
 vector<Flow*> Link::getActiveFlows()
 {
 	vector<Flow*> v;
@@ -150,8 +174,6 @@ vector<Flow*> Link::getActiveFlows()
 	}
 	return v;
 }
-
-
 
 void Link::removeFlow(Flow* f,int rate, int dir)
 {
