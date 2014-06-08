@@ -50,16 +50,19 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 
 	for(int i=0;i<all_links.size();i++)
 	{
+		cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_primary.size()<<" Flows passing through"<<endl;
+
 		if(all_links[i]->flows_primary.size()!=0 || all_links[i]->flows_back.size()!=0)
 		{
 			int a=0;
-			// cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows.size()<<" Flows passing through"<<endl;
+			// cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_primary.size()<<" Flows passing through"<<endl;
+			// cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_back.size()<<" Flows passing through"<<endl;
 		}
-		else
-		{
-			// cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows.size()<<" Flows passing through"<<endl;
-			int x=1/0;
-		}
+		// else
+		// {
+		// 	// cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows.size()<<" Flows passing through"<<endl;
+		// 	int x=1/0;
+		// }
 	}
 }
 
@@ -85,7 +88,7 @@ void Controller::createFlows()
 		if(curSwitch->level==2)
 		{
 			int pod=curSwitch->getPodID();
-			for(int j=0;j<k*k/4;j++)
+			for(int j=0;j<k*k/16;j++)
 			{
 				Switch* otherTor=getTorFromAnotherPod(pod);
 				Host* start=curSwitch->down_links[rand()%curSwitch->down_links.size()]->host;
@@ -501,20 +504,20 @@ void Controller::findFaults()
 					// cout<<"commiting on backup"<<endl;
 
 					int commit=flows_primary[j]->commitPath(flows_primary[j]->backUpPath,1);
-					cout<<"Primary Down: flow id: "<<flows_primary[j]->flow_id<<" ";
-					flows_primary[j]->primaryPath->print();
+					// cout<<"Primary Down: flow id: "<<flows_primary[j]->flow_id<<" ";
+					// flows_primary[j]->primaryPath->print();
 
 					if(commit)
 					{
-						cout<<"Going To Backup: flow id : "<< flows_primary[j]->flow_id<<" ";
-						flows_primary[j]->backUpPath->print();
+						// cout<<"Going To Backup: flow id : "<< flows_primary[j]->flow_id<<" ";
+						// flows_primary[j]->backUpPath->print();
 						flows_on_back.push_back(flows_primary[j]);
 						// cout<<"But Commit success, put on backup flows"<<endl;
 					}
 					else
 					{
-						cout<<"Going Down the Backup is already down: flow id: "<<flows_primary[j]->flow_id<<" ";
-						flows_primary[j]->backUpPath->print();
+						// cout<<"Going Down the Backup is already down: flow id: "<<flows_primary[j]->flow_id<<" ";
+						// flows_primary[j]->backUpPath->print();
 						if(!notIn(flows_down,flows_primary[j]))
 						{
 							int x=1/0;
@@ -538,9 +541,9 @@ void Controller::findFaults()
 
 			for(int j=0;j<flows_back.size();j++)
 			{
-				cout<<"Culprit is "<<all_switches[i]->toString()<<endl;
-				cout<<"Backup is going down, flow id: "<<flows_back[j]->flow_id<<" ";
-				flows_back[j]->backUpPath->print();
+				// cout<<"Culprit is "<<all_switches[i]->toString()<<endl;
+				// cout<<"Backup is going down, flow id: "<<flows_back[j]->flow_id<<" ";
+				// flows_back[j]->backUpPath->print();
 				if(backUp)
 				{
 					// cout<<"Path is now down"<<endl;
@@ -592,9 +595,9 @@ void Controller::findFaults()
 			{
 				// cout<<"anti commiting 2"<<endl;
 				flows_primary[j]->antiCommitPath(flows_primary[j]->primaryPath);
-				cout<<"Primary Down: flow id: "<<flows_primary[j]->flow_id<<" ";
-				flows_primary[j]->primaryPath->print();
-				cout<<"culprit is: "<<all_links[i]->link_id<<endl;
+				// cout<<"Primary Down: flow id: "<<flows_primary[j]->flow_id<<" ";
+				// flows_primary[j]->primaryPath->print();
+				// cout<<"culprit is: "<<all_links[i]->link_id<<endl;
 				if(backUp)
 				{
 					// cout<<"commiting on backup"<<endl;
@@ -602,22 +605,22 @@ void Controller::findFaults()
 
 					if(commit)
 					{
-						cout<<"Going To Backup: flow id : "<< flows_primary[j]->flow_id<<" ";
-						flows_primary[j]->backUpPath->print();
+						// cout<<"Going To Backup: flow id : "<< flows_primary[j]->flow_id<<" ";
+						// flows_primary[j]->backUpPath->print();
 						flows_on_back.push_back(flows_primary[j]);
 
 						 // cout<<"Commit success, put on backup flows"<<endl;
 					}
 					else
 					{
-						cout<<"Going Down the Backup is already down: flow id: "<<flows_primary[j]->flow_id<<" ";
-						flows_primary[j]->backUpPath->print();
+						// cout<<"Going Down the Backup is already down: flow id: "<<flows_primary[j]->flow_id<<" ";
+						// flows_primary[j]->backUpPath->print();
 
 						if(!notIn(flows_down,flows_primary[j]))
 						{
 
-							flows_primary[j]->primaryPath->print();
-							flows_primary[j]->backUpPath->print();
+							// flows_primary[j]->primaryPath->print();
+							// flows_primary[j]->backUpPath->print();
 							int x=1/0;
 						}
 
@@ -639,9 +642,9 @@ void Controller::findFaults()
 			{
 				if(backUp)
 				{
-					cout<<"Culprit is "<<all_links[i]->link_id<<endl;
-					cout<<"Backup is going down, flow id: "<<flows_back[j]->flow_id<<" ";
-					flows_back[j]->backUpPath->print();
+					// cout<<"Culprit is "<<all_links[i]->link_id<<endl;
+					// cout<<"Backup is go/ing down, flow id: "<<flows_back[j]->flow_id<<" ";
+					// flows_back[j]->backUpPath->print();
 					// cout<<"Was already back up, now its down"<<endl;
 					if(!notIn(flows_down,flows_back[j]))
 					{
@@ -733,8 +736,8 @@ void Controller::revert_to_primary()
 		{
 			f->commitPath(f->primaryPath,0); //Assumption is that link capacity would not be a bottleneck
 			flows_down.erase(flows_down.begin()+i);
-			cout<<"revert to primary from down: flow_id: "<<f->flow_id<<" ";
-			f->primaryPath->print(); 
+			// cout<<"revert to primary from down: flow_id: "<<f->flow_id<<" ";
+			// f->primaryPath->print(); 
 			cout<<"-- Num of flows down: "<<flows_down.size()<<endl;
 			continue;
 		}
@@ -746,8 +749,8 @@ void Controller::revert_to_primary()
 			{
 				f->commitPath(f->backUpPath,1); //Assumption is that link capacity would not be a bottleneck
 				// cout<<"I am here here----------------------------------------------"<<endl;
-				cout<<"revert to backup from down: flow id: "<<f->flow_id<<" ";
-				f->backUpPath->print(); 
+				// cout<<"revert to backup from down: flow id: "<<f->flow_id<<" ";
+				// f->backUpPath->print(); 
 				flows_down.erase(flows_down.begin()+i);
 				flows_on_back.push_back(f);
 				cout<<"-- Num of flows down: "<<flows_down.size()<<endl;
@@ -1593,7 +1596,7 @@ Path* Controller::getBackUpPath(Path* primary, int rate)
 	{
 		paths_to_be_shared.erase(paths_to_be_shared.begin()+index);
 		cout<<"+ Sharing Back Up path with: "<<endl;
-		back->print();
+		// back->print();
 	}
 	else
 	{

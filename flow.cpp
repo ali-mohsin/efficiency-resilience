@@ -22,22 +22,28 @@ Flow::Flow(Host* src,Host* dst,Path* pp, Path* bp, int r, int s,int one,double s
 	for(int i=0;i<primaryPath->switches.size();i++)
 	{
 		primaryPath->switches[i]->addPrimaryFlow(this);
+		cout<<"adding to primary in switches"<<endl;
 	}
 
 	for(int i=0;i<primaryPath->links.size();i++)
 	{
+		cout<<"adding to primary in links"<<endl;
 		primaryPath->links[i]->addPrimaryFlow(this,this->rate,primaryPath->direction[i],on_back);
 	}
 
 
-	for(int i=0;i<backUpPath->switches.size();i++)
+	if(backUpPath!=NULL)
 	{
-		backUpPath->switches[i]->addBackFlow(this);
-	}
+		for(int i=0;i<backUpPath->switches.size();i++)
+		{
+			backUpPath->switches[i]->addBackFlow(this);
+		}
 
-	for(int i=0;i<backUpPath->links.size();i++)
-	{
-		backUpPath->links[i]->addBackFlow(this,this->rate,backUpPath->direction[i],on_back);
+		for(int i=0;i<backUpPath->links.size();i++)
+		{
+			backUpPath->links[i]->addBackFlow(this,this->rate,backUpPath->direction[i],on_back);
+		}
+
 	}
 
 
@@ -80,7 +86,8 @@ bool Flow::commitPath(Path* path,int beingUsed)
 	if(path==primaryPath)
 	{
 		primaryPath->beingUsed=1;
-		backUpPath->beingUsed=0;
+		if(backUpPath!=NULL)
+			backUpPath->beingUsed=0;
 	}	
 
 	if(path==backUpPath)
