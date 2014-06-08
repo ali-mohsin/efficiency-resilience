@@ -46,10 +46,10 @@ int Switch::getLevel()
 vector<Flow*> Switch::getFlowsOnPrimary()
 {
 	vector<Flow*> v;
-	for(int i=0;i<flows.size();i++)
+	for(int i=0;i<primary_flows.size();i++)
 	{
-		if(flows[i]->down!=1 && flows[i]->on_back==0)
-			v.push_back(flows[i]);
+		if(primary_flows[i]->primaryPath->beingUsed)
+			v.push_back(primary_flows[i]);
 	}
 	return v;
 }
@@ -58,10 +58,10 @@ vector<Flow*> Switch::getFlowsOnPrimary()
 vector<Flow*> Switch::getFlowsOnBack()
 {
 	vector<Flow*> v;
-	for(int i=0;i<flows.size();i++)
+	for(int i=0;i<back_flows.size();i++)
 	{
-		if(flows[i]->down!=1 && flows[i]->on_back==1)
-			v.push_back(flows[i]);
+		if(back_flows[i]->backUpPath->beingUsed)
+			v.push_back(back_flows[i]);
 	}
 	return v;
 }
@@ -190,23 +190,29 @@ string Switch::toString()
 }
 
 
-void Switch::addFlow(Flow* flow)
+void Switch::addPrimaryFlow(Flow* flow)
 {
-	flows.push_back(flow);
+	primary_flows.push_back(flow);
 }
 
-void Switch::removeFlow(Flow* flow)
+void Switch::addBackFlow(Flow* flow)
 {
-
-	// startTimer();
-	for(int i=0;i<flows.size();i++)
-	{
-		if(flows[i]->flow_id==flow->flow_id)
-		{
-			flows.erase(flows.begin()+i);
-			i--;
-			// stopTimer("To remove flow");
-			return;
-		}
-	}
+	back_flows.push_back(flow);
 }
+
+
+// void Switch::removeFlow(Flow* flow)
+// {
+
+// 	// startTimer();
+// 	for(int i=0;i<flows.size();i++)
+// 	{
+// 		if(flows[i]->flow_id==flow->flow_id)
+// 		{
+// 			flows.erase(flows.begin()+i);
+// 			i--;
+// 			// stopTimer("To remove flow");
+// 			return;
+// 		}
+// 	}
+// }

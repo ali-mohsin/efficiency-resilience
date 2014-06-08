@@ -25,7 +25,8 @@ public:
 	int backup_up;
 	int backup_down;
 	int num_flows;
-	vector<Flow*> flows;
+	vector<Flow*> flows_primary;
+	vector<Flow*> flows_back;
 	Switch* up_switch;
 	Switch* down_switch;
 	Host* host;
@@ -49,7 +50,8 @@ public:
 	void setStatus(int stat);
 	void printInfo();
 	Switch* getOtherNode(Switch* cur);
-	void addFlow(Flow* f,int rate, int dir, int back);
+	void addPrimaryFlow(Flow* f,int rate, int dir, int back);
+	void addBackFlow(Flow* f,int rate, int dir, int back);
 	void removeFlow(Flow* f,int rate, int dir);
 	void commitPath(Path* p, int back);
 	vector<Flow*> getFlowsOnPrimary();

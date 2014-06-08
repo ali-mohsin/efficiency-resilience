@@ -1,0 +1,12 @@
+avail:
+
+backup, 1:1, sharing on, k=12:    99.9977 , 99.9979, 99.9944
+
+after some changes:
+
+backup, 1:1, sharing off, k=12:    99.995 , 99.9943, 99.9955
+
+
+after fixing bugs:
+
+backup, 1:1, sharing off, k=12, 1 month: 99.9997  99.9996

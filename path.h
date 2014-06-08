@@ -13,7 +13,7 @@ class Path {
 public:
 	int pathID;
 	string label;
-
+	int beingUsed;
 	vector<Switch*> switches;
 	vector<Link*> links;
 	vector<bool> direction;

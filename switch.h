@@ -18,7 +18,9 @@ public:
 	int num_ports;
 	vector<Link*> up_links;
 	vector<Link*> down_links;
-	vector<Flow*> flows;
+
+	vector<Flow*> primary_flows;
+	vector<Flow*> back_flows;
 	int failAt;
 	int resilience; // 0 = no fail, 1 = single failure, 2 = multi-failure
 
@@ -44,7 +46,8 @@ public:
 	vector<Switch*> getUpSwitches();
 	Link* getLinkBetween( Switch* dst);
 	Link* getLinkBetween( Host* dst);
-	void addFlow(Flow* f);
+	void addPrimaryFlow(Flow* f);
+	void addBackFlow(Flow* f);
 	void removeFlow(Flow* f);
 	vector<Link*> getUpLinks();
 	vector<Link*> getDownLinks();

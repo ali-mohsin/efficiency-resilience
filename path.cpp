@@ -12,6 +12,8 @@
 
 	Path::Path(vector<Switch*> s , vector<Link*> l, vector<bool> dir)
 	{
+		beingUsed=0;
+
 		for(int i=0;i<s.size();i++)
 		{
 			switches.push_back(s[i]);
@@ -56,6 +58,14 @@
 			cout<<switches[i]->toString()<<",";
 		}
 		cout<<endl;
+
+		for(int i=0;i<links.size();i++)
+		{
+
+			cout<<links[i]->link_id<<" -> ";
+		}
+		cout<<endl;
+
 	}
 
 	vector<Switch*> Path::getSwitches()

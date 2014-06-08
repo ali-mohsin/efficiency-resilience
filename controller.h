@@ -25,7 +25,7 @@ public:
 	vector<Path*> paths_to_be_shared;
 	vector<Switch*> down_switches;
 	vector<Link*> down_links;
-	int downTime;
+	float downTime;
 	int torCap;
 	int aggrCap;
 	int backup;
@@ -89,7 +89,11 @@ public:
 	vector<Switch*> getAllAggrs();
 	vector<Link*> getAllCoreLinks();
 	vector<Link*> getAllAggrLinks(); 
-	vector<Link*> getAllTorLinks(); 
+	vector<Link*> getAllTorLinks(); 	
+	bool duplicateIn(vector<Switch*> v);
+	bool duplicateIn(vector<Link*> v);
+	bool duplicateIn(vector<Flow*> v);
+
 
 	int getTTR(Switch* curSwitch);
 	int getTTR(Link* curSwitch);
