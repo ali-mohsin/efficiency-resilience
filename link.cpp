@@ -119,7 +119,7 @@ Switch* Link::getOtherNode(Switch* cur)
 void Link::addPrimaryFlow(Flow* f,int rate, int dir, int  back)
 {
 	//cout<<"Im here to add flow with directions as back= "<<back<<" and dir= "<<dir<<endl;
-	flows_back.push_back(f);
+	flows_primary.push_back(f);
 	num_flows++;
 	if(dir==1)
 	{
@@ -143,7 +143,7 @@ void Link::addPrimaryFlow(Flow* f,int rate, int dir, int  back)
 void Link::addBackFlow(Flow* f,int rate, int dir, int  back)
 {
 	//cout<<"Im here to add flow with directions as back= "<<back<<" and dir= "<<dir<<endl;
-	flows_primary.push_back(f);
+	flows_back.push_back(f);
 	num_flows++;
 	if(dir==1)
 	{

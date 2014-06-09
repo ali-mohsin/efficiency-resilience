@@ -51,6 +51,7 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	for(int i=0;i<all_links.size();i++)
 	{
 		cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_primary.size()<<" Flows passing through"<<endl;
+		cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_back.size()<<" Flows passing through"<<endl;
 
 		if(all_links[i]->flows_primary.size()!=0 || all_links[i]->flows_back.size()!=0)
 		{
