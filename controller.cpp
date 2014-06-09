@@ -1,5 +1,7 @@
 #include "controller.h"
 #include "flow.h"
+#include <math.h>
+#include <stdio.h>
 #include <fstream>
 #include <cstdlib>
 #include <algorithm>
@@ -110,67 +112,98 @@ void Controller::createFlows()
 void Controller::checkProb(vector<Switch*> Tors, int prob, float factor)
 {
 
-	//TODO- assign classes B,C with equal number, small k not letting them be equal
-	for (int i =0; i < Tors.size(); i++)
-	{
-		int random = rand()%(1000);
-		if (random > prob)
-			Tors[i]->resilience=0;
-		else if (random > prob/factor)
-		{
-			int failAt=rand()%totalTime;
-			Tors[i]->resilience=1;
-			Tors[i]->failAt=failAt;
-		}
-		else 
-		{
-			int failAt=rand()%totalTime;
-			Tors[i]->resilience=2;
-			Tors[i]->failAt=failAt;
 
-		}
+	float pb=float(prob)/float(1000);
+	int a_size=(Tors.size()*(1-pb));
+	int b_size=ceil(Tors.size()*(pb/2));
+	int c_size=ceil(Tors.size()*(pb/2));
+
+	int counter=0;
+
+	while(counter<c_size)
+	{
+		int failAt=rand()%totalTime;
+		int index=rand()%Tors.size();
+		Switch* curSwitch=Tors[index];
+		Tors[index]->resilience=2;
+		Tors.erase(Tors.begin()+index);
+		Tors[index]->failAt=failAt;
+		counter++;
 	}
+
+	counter=0;
+	while(counter<b_size)
+	{
+		int failAt=rand()%totalTime;
+		int index=rand()%Tors.size();
+		Switch* curSwitch=Tors[index];
+		Tors[index]->resilience=1;
+		Tors.erase(Tors.begin()+index);
+		Tors[index]->failAt=failAt;
+		counter++;
+	}
+
+
+	counter=0;
+	while(counter<a_size && Tors.size()!=0)
+	{
+		int index=rand()%Tors.size();
+		Switch* curSwitch=Tors[index];
+		Tors[index]->resilience=0;
+		Tors.erase(Tors.begin()+index);
+		counter++;
+	}
+
 }
 
 
 
 void Controller::checkProb(vector<Link*> Tors, int prob, float factor)
 {
-	int ones=0;
-	int twos=0;
-	cout<<"Size of links: " << Tors.size()<<endl;	
-	for (int i =0; i < Tors.size(); i++)
+
+
+	float pb=float(prob)/float(1000);
+	int a_size=(Tors.size()*(1-pb));
+	int b_size=ceil(Tors.size()*(pb/2));
+	int c_size=ceil(Tors.size()*(pb/2));
+
+	int counter=0;
+
+	while(counter<c_size)
 	{
-		cout<<ones<<" ones"<<endl;
-		cout<<twos<<" twos"<<endl;
-		int diff=ones-twos;
-		int random = rand()%(1000);
-		if (random > prob)
-		{
-			Tors[i]->resilience=0;
-		}	
-		else if (random > prob/factor && diff <= 1)
-		{
-			int failAt=rand()%totalTime;
-			Tors[i]->failAt=failAt;
-			Tors[i]->resilience=1;
-			ones++;
-		}
-		else if(diff >= -1)
-		{
-			int failAt=rand()%totalTime;
-			Tors[i]->failAt=failAt;
-			Tors[i]->resilience=2;		
-			twos++;
-		}
-		else
-		{
-			i--;
-			continue;
-		}
-
-
+		int failAt=rand()%totalTime;
+		int index=rand()%Tors.size();
+		Link* curSwitch=Tors[index];
+		Tors[index]->resilience=2;
+		Tors.erase(Tors.begin()+index);
+		Tors[index]->failAt=failAt;
+		counter++;
 	}
+
+	counter=0;
+	while(counter<b_size)
+	{
+		int failAt=rand()%totalTime;
+		int index=rand()%Tors.size();
+		Link* curSwitch=Tors[index];
+		Tors[index]->resilience=1;
+		Tors.erase(Tors.begin()+index);
+		Tors[index]->failAt=failAt;
+		counter++;
+	}
+
+
+	counter=0;
+	while(counter<a_size && Tors.size()!=0)
+	{
+		int failAt=rand()%totalTime;
+		int index=rand()%Tors.size();
+		Link* curSwitch=Tors[index];
+		Tors[index]->resilience=0;
+		Tors.erase(Tors.begin()+index);
+		counter++;
+	}
+
 }
 
 void Controller::counter(vector<Switch*> Tors)
@@ -302,7 +335,7 @@ vector<Switch*> Controller::getAllCores()
 		if(all_switches[i]->level == 0)
 		{
 			cores.push_back(all_switches[i]);
-			cout<< "I'm  meeting" << endl;
+			// cout<< "I'm  meeting" << endl;
 		}
 	}
 	return cores;
