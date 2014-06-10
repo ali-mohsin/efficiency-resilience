@@ -47,9 +47,17 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	}
 
 
+	// vector<float> b=getAllocation(1);
+	// vector<float> p=getAllocation(0);
 
+	// cout<<"[";
+	// for(int i=0;i<p.size();i++)
+	// {
+	// 	cout<<p[i]<<",";
+	// }
+	// cout<<"]"<<endl;
 
-
+	// int x=1/0;
 	for(int i=0;i<all_links.size();i++)
 	{
 		cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_primary.size()<<" Flows passing through"<<endl;
@@ -69,6 +77,16 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	}
 }
 
+
+vector<float> Controller::getAllocation(int p)
+{
+	vector<float> v;
+	for(int i=0;i<all_switches.size();i++)
+	{
+		v.push_back(all_switches[i]->get_ratio(p));
+	}
+	return v;
+}
 
 Switch* Controller::getTorFromAnotherPod(int pod)
 {
@@ -126,8 +144,8 @@ void Controller::checkProb(vector<Switch*> Tors, int prob, float factor)
 		int index=rand()%Tors.size();
 		Switch* curSwitch=Tors[index];
 		Tors[index]->resilience=2;
-		Tors.erase(Tors.begin()+index);
 		Tors[index]->failAt=failAt;
+		Tors.erase(Tors.begin()+index);
 		counter++;
 	}
 
@@ -135,11 +153,12 @@ void Controller::checkProb(vector<Switch*> Tors, int prob, float factor)
 	while(counter<b_size)
 	{
 		int failAt=rand()%totalTime;
+		cout<<"Switch Will fail at: "<<failAt<<endl;
 		int index=rand()%Tors.size();
 		Switch* curSwitch=Tors[index];
 		Tors[index]->resilience=1;
-		Tors.erase(Tors.begin()+index);
 		Tors[index]->failAt=failAt;
+		Tors.erase(Tors.begin()+index);
 		counter++;
 	}
 
@@ -175,8 +194,8 @@ void Controller::checkProb(vector<Link*> Tors, int prob, float factor)
 		int index=rand()%Tors.size();
 		Link* curSwitch=Tors[index];
 		Tors[index]->resilience=2;
-		Tors.erase(Tors.begin()+index);
 		Tors[index]->failAt=failAt;
+		Tors.erase(Tors.begin()+index);
 		counter++;
 	}
 
@@ -184,11 +203,13 @@ void Controller::checkProb(vector<Link*> Tors, int prob, float factor)
 	while(counter<b_size)
 	{
 		int failAt=rand()%totalTime;
+
+		cout<<"Will fail at: "<<failAt<<endl;
 		int index=rand()%Tors.size();
 		Link* curSwitch=Tors[index];
 		Tors[index]->resilience=1;
-		Tors.erase(Tors.begin()+index);
 		Tors[index]->failAt=failAt;
+		Tors.erase(Tors.begin()+index);
 		counter++;
 	}
 
@@ -870,7 +891,7 @@ int Controller::getTTR(Switch* curSwitch)
 
 
 	// TODO. currently overall graph used for core 
-	if(curSwitch->level==2)//CORE
+	if(curSwitch->level==0)//CORE
 	{
 		random=rand()%100;
 		if(random < 50)
@@ -916,16 +937,17 @@ int Controller::getTTF(Switch* curSwitch)
 		random=rand()%100;
 		if(random < 8)
 		{
-			return rand()%(5*60);
+			return 5+rand()%(5*60);
 		}
 		if(random < 70)
 		{
 			return 300+rand()%(60*60-300);
 		}
-		if(random < 82)
+		if(random < 90)
 		{
 			return 60*60+rand()%(24*60*60-60*60);
 		}
+
 		if(random < 100)
 		{
 			return 7*24*60*60+rand()%(10000000-7*24*60*60);
@@ -937,30 +959,51 @@ int Controller::getTTF(Switch* curSwitch)
 		random=rand()%100;
 		if(random < 2)
 		{
-			return rand()%(100);
+			return 5+rand()%(100);
 		}
 		if(random < 30)
 		{
 			return 100+rand()%(300-100);
 		}
+
+		if(random < 40)
+		{
+			return 300+rand()%(60*60-300);
+		}
+	
+		if(random < 65)
+		{
+			return 3600+rand()%(24*60*60-3600);
+		}
+	
+		if(random < 82)
+		{
+			return 24*60*60+rand()%(7*24*60*60-3600);
+		}
+	
 		if(random < 100)
 		{
-			return 300+rand()%(3162277-300);
+			return 7*24*60*60+rand()%(3162277-7*24*60*60);
 		}	
 	}
 
 
 	// TODO. currently overall graph used for core 
-	if(curSwitch->level==2)//CORE
+	if(curSwitch->level==0)//CORE
 	{
 		random=rand()%100;
 		if(random < 2)
 		{
-			return rand()%(100);
+			return 5+rand()%(100);
+		}
+
+		if(random < 45)
+		{
+			return 100+rand()%(1000-100);
 		}
 		if(random < 70)
 		{
-			return 100+rand()%(60*60-100);
+			return 1000+rand()%(60*60-1000);
 		}
 		if(random < 100)
 		{
@@ -980,13 +1023,29 @@ int Controller::getTTF(Link* curSwitch)
 		{
 			return 100+rand()%(5*60-100);
 		}
+		if(random < 40)
+		{
+			return 300+rand()%(1000-300);
+		}
 		if(random < 60)
 		{
-			return 300+rand()%(60*60-300);
+			return 1000+rand()%(60*60-1000);
+		}
+		if(random < 70)
+		{
+			return 3600+rand()%(50118-3600);
+		}
+		if(random < 82)
+		{
+			return 50118+rand()%(7*24*60*60-50118);
+		}
+		if(random < 91)
+		{
+			return 50118+rand()%(1995262-50118);
 		}
 		if(random < 100)
 		{
-			return 60*60+rand()%(10000000-60*60);
+			return 1995262+rand()%(7000000-1995262);
 		}
 	}
 
@@ -1011,9 +1070,19 @@ int Controller::getTTF(Link* curSwitch)
 			return 24*60*60+rand()%(7*24*60*60-24*60*60);
 		}	
 
+		if(random < 80)
+		{
+			return 7*24*60*60+rand()%(1000000-7*24*60*60);
+		}	
+
+		if(random < 90)
+		{
+			return 7*24*60*60+rand()%(3162277-7*24*60*60);
+		}	
+
 		if(random < 100)
 		{
-			return 7*24*60*60+rand()%(10000000-7*24*60*60);
+			return 3162277+rand()%(10000000-3162277);
 		}	
 
 	}
@@ -1027,13 +1096,11 @@ void Controller::updateStatus(vector<Switch*> all_switches,int curSec)
 	{
 		Switch* curSwitch=all_switches[i];
 
-		if(curSwitch->status==0 && curSwitch->resilience==2)
+		if(curSwitch->status==0 && curSwitch->resilience==2 && curSwitch->failAt<curSec)
 		{
-			int ttf=getTTF(curSwitch);
-			if(ttf==0)
-				ttf=2;
-
-			curSwitch->status=rand()%ttf;
+			int ttr=-getTTR(curSwitch);
+			writeLog("Switch with id: "+curSwitch->toString()+" has become failure prone");
+			curSwitch->status=ttr;
 			//TODO check this with dr ihsan ,dr fahad and dr zartash, how to induce first failure
 			return;
 		}
@@ -1041,6 +1108,7 @@ void Controller::updateStatus(vector<Switch*> all_switches,int curSec)
 
 		if(curSwitch->resilience==1 && curSwitch->status == 0 &&  curSwitch->failAt==curSec)
 		{
+			cout<<"++ Failed at res=1"<<endl;
 			curSwitch->status=-getTTR(curSwitch);
 			return;
 		}
@@ -1075,25 +1143,37 @@ void Controller::updateStatus(vector<Switch*> all_switches,int curSec)
 
 void Controller::updateStatus(vector<Link*> all_switches,int curSec)
 {
+	// cout<<"CurSec: "<<curSec<<endl;
 	for(int i=0;i<all_switches.size();i++)
 	{
 		Link* curSwitch=all_switches[i];
 
-		if(curSwitch->status==0 && curSwitch->resilience==2 && curSwitch->failAt>curSec)
+		if(curSwitch->status==0 && curSwitch->resilience==2 && curSwitch->failAt<curSec)
 		{
-			int ttf=getTTF(curSwitch);
-			if(ttf==0)
-				ttf=2;
+			int id=curSwitch->link_id;
+			stringstream o;
+			o<<id;
+			string idd=o.str();
+			writeLog("Link with id: "+idd+" has become failure prone");
 
-			curSwitch->status=rand()%ttf;
+			int ttr=-getTTR(curSwitch);
+			curSwitch->status=ttr;
 			//TODO check this with dr ihsan ,dr fahad and dr zartash, how to induce first failure
 			return;
 		}
 
+		// if(curSwitch->resilience==1 && curSwitch->status == 0 &&  curSwitch->failAt<curSec)
+		// {
+		// 	cout<<"Scheduled to fail at: "<<curSwitch->failAt<<endl;
+		// 	int x=1/0;
+		// }
+
 
 		if(curSwitch->resilience==1 && curSwitch->status == 0 &&  curSwitch->failAt==curSec)
 		{
+			cout<<"++ Failed at res=1"<<endl;
 			curSwitch->status=-getTTR(curSwitch);
+			// int x=1/0;
 			return;
 		}
 
@@ -1368,10 +1448,10 @@ void Controller::logFailures(int time)
 
 	for(int i=0;i<down_switches.size();i++)
 	{
-		if(down_switches[i]->status >= 0)
+		if(down_switches[i]->status > 1)
 		{	
 
-			int level=all_switches[i]->level;
+			int level=down_switches[i]->level;
 			string l;
 			if(level==0)
 				l="Core";
@@ -1379,7 +1459,12 @@ void Controller::logFailures(int time)
 				l="Aggr";
 			if(level==2)
 				l="Tor";
-			writeLog("Switch "+l+" "+down_switches[i]->toString()+" Up "+t);
+			
+			stringstream o;
+			int a=down_switches[i]->status;
+			o<<a;
+			string st=o.str();
+			writeLog("Switch "+l+" "+down_switches[i]->toString()+" Up curTime: "+t+" upFor: "+st);
 			down_switches.erase(down_switches.begin()+i);
 			//TODO check if this causes seg fault
 		}
@@ -1387,14 +1472,16 @@ void Controller::logFailures(int time)
 
 	for(int i=0;i<down_links.size();i++)
 	{
-		if(down_links[i]->status >= 0)
+		if(down_links[i]->status > 1)
 		{	
-			stringstream o;
+			stringstream o,oo;
 			int idd=down_links[i]->link_id;
 			o<<idd;
 			string id=o.str();
-			writeLog("Link "+down_links[i]->label+" "+ id+" Up "+t);
-
+			int a=down_links[i]->status;
+			oo<<a;
+			string st=oo.str();
+			writeLog("Link "+down_links[i]->label+" "+ id+" Up curTime "+t+" upFor: "+st);
 			down_links.erase(down_links.begin()+i);
 			//TODO check if this causes seg fault
 		}

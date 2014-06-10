@@ -65,6 +65,7 @@ public:
 	Path* getReplicatedPath(int src, int dst, int rate);
 	long int getTime();
 	void detect_downTime();
+	vector<float> getAllocation(int p);
 	void checkProb(vector<Switch*> Tors, int prob, float factor);
 	void checkProb(vector<Link*> Tors, int prob, float factor);
 	void updateStatus(vector<Switch*> all_switches,int);

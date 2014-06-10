@@ -200,6 +200,15 @@ void Switch::addBackFlow(Flow* flow)
 	back_flows.push_back(flow);
 }
 
+float Switch::get_ratio(int p)
+{
+	if(p)	
+		return float(primary_flows.size())/float(back_flows.size()+primary_flows.size());
+	else
+		return float(back_flows.size())/float(back_flows.size()+primary_flows.size());
+
+}
+
 
 // void Switch::removeFlow(Flow* flow)
 // {

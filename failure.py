@@ -32,17 +32,26 @@ with open(sys.argv[3],'rb') as fin:
             continue
         rms.append(row)
 
+    string=sys.argv[4]
+    if(string=='Down'):
+        otherS='downFor:'
+    else:
+        otherS="upFor:"
     arr=[]
     down_arr=[]
     for row in rms:
         d=row[0]
         t=row[1]
-        if(device==d and 'Down' in row and t==cat):
-            downtime=find(row,'downFor:');
-            down_arr.append(-int(downtime))
+        if(device==d and string in row and t==cat):
+            downtime=int(find(row,otherS))
+            if(string=='Down'):
+                downtime=-downtime
+            else:  
+                downtime=downtime/100
+            down_arr.append((downtime))
             arr.append(row)
 
-
+print down_arr
 # import numpy
 # a = down_arr # your array of numbers
 # num_bins = 40
@@ -51,20 +60,30 @@ with open(sys.argv[3],'rb') as fin:
 # print sum(cdf)
 # plt.plot(bin_edges[1:], cdf)
 # plt.show()
-
+total=float(sum(down_arr))
+print max(down_arr)
 arr=[0]*(max(down_arr)+1)
+
+print 'hello'
+
 for i in range(0,len(down_arr)):
     arr[down_arr[i]]+=1
 
-total=float(sum(arr))
+
+del down_arr
+print 'h2'
+
 print "Total failure time: "+str(total)
+
 for i in range(1,len(arr)):
     arr[i]+=arr[i-1]
 
-for i in range(1,len(arr)):
-    arr[i]=float(arr[i])/total
+print 'here as well'
+# for i in range(1,len(arr)):
+#     arr[i]=float(arr[i])/total
 
 
+print 'plotting'
 
 import numpy as np
 # a = [ pow(10,i) for i in range(10) ]
@@ -77,11 +96,6 @@ import numpy as np
 
 ax = plt.subplot(224)
 ax.set_xscale("log", nonposx='clip')
-
-x = 10.0**np.linspace(0.0, 2.0, 20)
-y = x**2.0
-print x
-print y
 plt.plot(arr)
 plt.show()
 # ten=1

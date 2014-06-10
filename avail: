@@ -9,4 +9,7 @@ backup, 1:1, sharing off, k=12:    99.995 , 99.9943, 99.9955
 
 after fixing bugs:
 
-backup, 1:1, sharing off, k=12, 1 month: 99.9997  99.9996
+backup off, sharing off, k=12, 1 month: 99.958, 99.995
+
+backup, 1:1, sharing off, k=12, 1 month: 99.9997, 99.9996, 99.9995, 99.9997, 99.9991
+

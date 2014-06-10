@@ -31,12 +31,15 @@ public:
 		level=l;
 		num_ports=num;
 		failAt=-1;
+		resilience=0;
 	}
 
 	void connectToSwitch(Switch* dev,Link* link); //always called by the switch higher in the hierarchy
 	int getNumPorts();
 	int getStatus();
 	void setStatus(int stat);
+	float get_ratio(int p);
+
 	string toString();
 	void dfsPrint(string tab);
 	int getPodID();

@@ -10,6 +10,7 @@ Link::Link(int id,int cap,string l)
 	num_flows=0;
 	host=NULL;
 	label=l;
+	resilience=0;
 	failAt=-1;
 }
 
