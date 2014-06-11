@@ -866,9 +866,20 @@ int Controller::getTTR(Switch* curSwitch)
 		{
 			return 1200+rand()%(60*60-1200);
 		}
+
+		if(random < 90)
+		{
+			return 3600+rand()%(10000-3600);
+		}
+
+		if(random < 98)
+		{
+			return 10000+rand()%(24*60*60-10000);
+		}
+
 		if(random < 100)
 		{
-			return 3600+rand()%(7*24*60*60-60*60);
+			return 24*3600+rand()%(7*24*60*60-24*60*60);
 		}		
 	}
 
@@ -883,9 +894,20 @@ int Controller::getTTR(Switch* curSwitch)
 		{
 			return 300+rand()%(562-300);
 		}
+
+		if(random < 90)
+		{
+			return 300+rand()%(1000-30);
+		}
+
+		if(random < 97)
+		{
+			return 1000+rand()%(60*60-1000);
+		}
+
 		if(random < 100)
 		{
-			return 562+rand()%(10000-562);
+			return 3600+rand()%(10000-3600);
 		}	
 	}
 
@@ -913,17 +935,44 @@ int Controller::getTTR(Link* curSwitch)
 {
 		int random;
 		random=rand()%100;
+		if(random < 20)
+		{
+			return 1+rand()%(177);
+		}
+
+		if(random < 40)
+		{
+			return 177+rand()%(251-177);
+		}
+
+		if(random < 60)
+		{
+			return 251+rand()%(5*60-251);
+		}
+
 		if(random < 80)
 		{
-			return 100+rand()%(5*60-100);
+			return 251+rand()%(400-251);
 		}
 		if(random < 90)
 		{
-			return 300+rand()%(794-300);
+			return 251+rand()%(1000-251);
 		}
+
+		if(random < 95)
+		{
+			return 1000+rand()%(3600-1000);
+		}
+
+
+		if(random < 98)
+		{
+			return 3600+rand()%(24*60*60-3600);
+		}
+
 		if(random < 100)
 		{
-			return 794+rand()%(1000000-794);
+			return 24*60*60+rand()%(7*24*60*60-24*60*60);
 		}
 			
 }
@@ -939,18 +988,48 @@ int Controller::getTTF(Switch* curSwitch)
 		{
 			return 5+rand()%(5*60);
 		}
+
+		if(random < 20)
+		{
+			return 300+rand()%(1000-300);
+		}
+
+		if(random < 40)
+		{
+			return 1000+rand()%(60*60-1000);
+		}
+
+		if(random < 50)
+		{
+			return 1000+rand()%(17782-1000);
+		}
+
+		if(random < 60)
+		{
+			return 17782+rand()%(24*60*60-17782);
+		}
+
+
 		if(random < 70)
 		{
-			return 300+rand()%(60*60-300);
-		}
+			return 24*60*60+rand()%(316227-24*60*60);
+		}		
+
+
+		if(random < 80)
+		{
+			return 316227+rand()%(7*24*60*60-316227);
+		}		
+		
+
 		if(random < 90)
 		{
-			return 60*60+rand()%(24*60*60-60*60);
+			return 7*24*60*60+rand()%(1995262-7*24*60*60);
 		}
 
 		if(random < 100)
 		{
-			return 7*24*60*60+rand()%(10000000-7*24*60*60);
+			return 1995262+rand()%(10000000-1995262);
 		}		
 	}
 

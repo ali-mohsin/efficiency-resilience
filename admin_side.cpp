@@ -68,7 +68,7 @@
 	if(failures)
 	{
 		cout<<"fail"<<endl;
-		cout<<100-(dc->downTime/(float(dc->all_flows.size())*runs))<<" Was the Availability"<<endl;
+		cout<<100-100*(dc->downTime/(float(dc->all_flows.size())*runs))<<" Was the Availability"<<endl;
 		ofstream fout;
 		fout.open("failures.txt");
 		string failStr = "";
