@@ -61,6 +61,15 @@ print down_arr
 # plt.plot(bin_edges[1:], cdf)
 # plt.show()
 total=float(sum(down_arr))
+less_than_five=0
+for i in down_arr:
+    if(i<300):
+	less_than_five+=i
+
+
+print less_than_five,"is the downtime < 300 sec"
+print total,"is the total downtime"
+
 print max(down_arr)
 arr=[0]*(max(down_arr)+1)
 

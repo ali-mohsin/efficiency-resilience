@@ -23,3 +23,10 @@ backup, 1:1, t2t, k=12, 1 month:
 
 backup, 1:1, e2e, k=12, 1 month: 99.9961 99.9971
 
+
+
+backup off, sharing off, k=20, 1 yr: 99.754 99.7213 99.46
+
+backup, 1:1, t2t, k=12, 1 yr: 99.8846 99.9132 99.8406
+
+backup, 1:1, e2e, k=12, 1 yr: 99.999 99.9989

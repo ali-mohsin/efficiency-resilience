@@ -63,9 +63,9 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 		cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_primary.size()<<" Flows passing through"<<endl;
 		cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_back.size()<<" Flows passing through"<<endl;
 
-		if(all_links[i]->flows_primary.size()!=0 || all_links[i]->flows_back.size()!=0)
+		if(all_links[i]->flows_primary.size()==0 && all_links[i]->flows_back.size()==0)
 		{
-			int a=0;
+			int x=1/0;
 			// cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_primary.size()<<" Flows passing through"<<endl;
 			// cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_back.size()<<" Flows passing through"<<endl;
 		}
@@ -109,7 +109,7 @@ void Controller::createFlows()
 		if(curSwitch->level==2)
 		{
 			int pod=curSwitch->getPodID();
-			for(int j=0;j<k*k/16;j++)
+			for(int j=0;j<k*k/8;j++)
 			{
 				Switch* otherTor=getTorFromAnotherPod(pod);
 				Host* start=curSwitch->down_links[rand()%curSwitch->down_links.size()]->host;
@@ -534,11 +534,11 @@ void Controller::findFaults()
 		{
 			vector<Flow*> flows_primary=all_switches[i]->getFlowsOnPrimary();
 			vector<Flow*> flows_back=all_switches[i]->getFlowsOnBack();
-
-			if(duplicateIn(flows_primary) || duplicateIn(flows_back))
-			{
-				int x=1/0;
-			}
+			// cout<<flows_back.size()<<" are the flows on back"<<endl;
+			// if(duplicateIn(flows_primary) || duplicateIn(flows_back))
+			// {
+			// 	int x=1/0;
+			// }
 
 			if(flows_primary.size()>0 || flows_back.size()>0)
 			{
@@ -573,10 +573,10 @@ void Controller::findFaults()
 					{
 						// cout<<"Going Down the Backup is already down: flow id: "<<flows_primary[j]->flow_id<<" ";
 						// flows_primary[j]->backUpPath->print();
-						if(!notIn(flows_down,flows_primary[j]))
-						{
-							int x=1/0;
-						}
+						// if(!notIn(flows_down,flows_primary[j]))
+						// {
+						// 	int x=1/0;
+						// }
 						flows_down.push_back(flows_primary[j]);
 
 						// cout<<"And Commit Failed, put on down flows"<<endl;
@@ -585,10 +585,10 @@ void Controller::findFaults()
 				}
 				else
 				{
-					if(!notIn(flows_down,flows_primary[j]))
-					{
-						int x=1/0;
-					}
+					// if(!notIn(flows_down,flows_primary[j]))
+					// {
+					// 	int x=1/0;
+					// }
 					flows_down.push_back(flows_primary[j]);
 				}
 			}
@@ -602,12 +602,12 @@ void Controller::findFaults()
 				if(backUp)
 				{
 					// cout<<"Path is now down"<<endl;
-					if(!notIn(flows_down,flows_back[j]))
-					{
+					// if(!notIn(flows_down,flows_back[j]))
+					// {
 
-						flows_back[j]->primaryPath->print();
-						int x=1/0;
-					}
+					// 	flows_back[j]->primaryPath->print();
+					// 	int x=1/0;
+					// }
 					flows_back[j]->antiCommitPath(flows_back[j]->backUpPath);
 					flows_down.push_back(flows_back[j]);
 					continue;
@@ -626,10 +626,10 @@ void Controller::findFaults()
 			vector<Flow*> flows_back=all_links[i]->getFlowsOnBack();
 
 
-			if(duplicateIn(flows_primary) || duplicateIn(flows_back))
-			{
-				int x=1/0;
-			}
+			// if(duplicateIn(flows_primary) || duplicateIn(flows_back))
+			// {
+			// 	int x=1/0;
+			// }
 
 
 			if(flows_primary.size()>0 || flows_back.size()>0)
@@ -671,13 +671,13 @@ void Controller::findFaults()
 						// cout<<"Going Down the Backup is already down: flow id: "<<flows_primary[j]->flow_id<<" ";
 						// flows_primary[j]->backUpPath->print();
 
-						if(!notIn(flows_down,flows_primary[j]))
-						{
+						// if(!notIn(flows_down,flows_primary[j]))
+						// {
 
-							// flows_primary[j]->primaryPath->print();
-							// flows_primary[j]->backUpPath->print();
-							int x=1/0;
-						}
+						// 	// flows_primary[j]->primaryPath->print();
+						// 	// flows_primary[j]->backUpPath->print();
+						// 	int x=1/0;
+						// }
 
 						flows_down.push_back(flows_primary[j]);
 						// cout<<"Mayday: "<<endl;
@@ -701,13 +701,13 @@ void Controller::findFaults()
 					// cout<<"Backup is go/ing down, flow id: "<<flows_back[j]->flow_id<<" ";
 					// flows_back[j]->backUpPath->print();
 					// cout<<"Was already back up, now its down"<<endl;
-					if(!notIn(flows_down,flows_back[j]))
-					{
-						flows_back[j]->primaryPath->print();
-						flows_back[j]->backUpPath->print();
+					// if(!notIn(flows_down,flows_back[j]))
+					// {
+					// 	flows_back[j]->primaryPath->print();
+					// 	flows_back[j]->backUpPath->print();
 
-						int x=1/0;
-					}
+					// 	int x=1/0;
+					// }
 					flows_back[j]->antiCommitPath(flows_back[j]->backUpPath);
 					flows_down.push_back(flows_back[j]);
 					continue;
@@ -774,7 +774,7 @@ void Controller::revert_to_primary()
 					int x=1/0;
 				}
 				flows_on_back.erase(flows_on_back.begin()+i);
-				cout<<"-- Num of flows on backup are: "<<flows_on_back.size()<<endl;
+				// cout<<"-- Num of flows on backup are: "<<flows_on_back.size()<<endl;
 			}
 		}
 	}
@@ -1169,7 +1169,7 @@ int Controller::getTTF(Link* curSwitch)
 
 
 
-void Controller::updateStatus(vector<Switch*> all_switches,int curSec)
+void Controller::updateStatus(vector<Switch*> all_switches,int curSec, int factor)
 {
 	for(int i=0;i<all_switches.size();i++)
 	{
@@ -1194,14 +1194,14 @@ void Controller::updateStatus(vector<Switch*> all_switches,int curSec)
 
 		if(curSwitch->status < 0)
 		{
-			curSwitch->status+=1;
+			curSwitch->status+=factor;
 
-			if(curSwitch->resilience == 1 && curSwitch->status == -1)
+			if(curSwitch->resilience == 1 && curSwitch->status > -factor)
 			{
-				curSwitch->status=1;
+				curSwitch->status=factor;
 			}
 
-			if(curSwitch->resilience == 2 && curSwitch->status == -1)
+			if(curSwitch->resilience == 2 && curSwitch->status > -factor)
 			{
 				curSwitch->status=getTTF(curSwitch);
 			}
@@ -1210,8 +1210,8 @@ void Controller::updateStatus(vector<Switch*> all_switches,int curSec)
 
 		if(curSwitch->resilience == 2 && curSwitch->status > 0)
 		{
-			curSwitch->status-=1;
-			if(curSwitch->status == 1)
+			curSwitch->status-=factor;
+			if(curSwitch->status < factor)
 			{
 				curSwitch->status=-getTTR(curSwitch);
 			}
@@ -1220,7 +1220,7 @@ void Controller::updateStatus(vector<Switch*> all_switches,int curSec)
 }
 
 
-void Controller::updateStatus(vector<Link*> all_switches,int curSec)
+void Controller::updateStatus(vector<Link*> all_switches,int curSec, int factor)
 {
 	// cout<<"CurSec: "<<curSec<<endl;
 	for(int i=0;i<all_switches.size();i++)
@@ -1258,14 +1258,14 @@ void Controller::updateStatus(vector<Link*> all_switches,int curSec)
 
 		if(curSwitch->status < 0)
 		{
-			curSwitch->status+=1;
+			curSwitch->status+=factor;
 
-			if(curSwitch->resilience == 1 && curSwitch->status == -1)
+			if(curSwitch->resilience == 1 && curSwitch->status > -factor)
 			{
-				curSwitch->status=1;
+				curSwitch->status=factor;
 			}
 
-			if(curSwitch->resilience == 2 && curSwitch->status == -1)
+			if(curSwitch->resilience == 2 && curSwitch->status > -factor)
 			{
 				curSwitch->status=getTTF(curSwitch);
 			}
@@ -1274,8 +1274,8 @@ void Controller::updateStatus(vector<Link*> all_switches,int curSec)
 
 		if(curSwitch->resilience == 2 && curSwitch->status > 0)
 		{
-			curSwitch->status-=1;
-			if(curSwitch->status == 1)
+			curSwitch->status-=factor;
+			if(curSwitch->status < factor)
 			{
 				curSwitch->status=-getTTR(curSwitch);
 			}
@@ -1286,36 +1286,42 @@ void Controller::autofail(int curSec)
 {
 	// This function needs to be rewritten, from insights from philipa gill
 
+	int factor=10;
 
 
-	//startTimer();
+	// startTimer();
 	detect_downTime();
-	//stopTimer("detect_downTime");
+	// stopTimer("detect_downTime");
+
+	if(curSec%10==0)
+	{
 
 
-	//startTimer();
-	updateStatus(all_switches,curSec);
-	//stopTimer("updateStatus 1");
 
-	// //////startTimer();
-	updateStatus(all_links,curSec);
-	// //////stopTimer("updateStatus 2");
+	// startTimer();
+	updateStatus(all_switches,curSec,factor);
+	// stopTimer("updateStatus 1");
+
+	// startTimer();
+	updateStatus(all_links,curSec,factor);
+	// stopTimer("updateStatus 2");
 
 	if(curSec%100==0)
 	{
-		//startTimer();
+		// startTimer();
 		revert_to_primary();
-		//stopTimer("revert_to_primary");
+		// stopTimer("revert_to_primary");
 
-		//startTimer();
+		// startTimer();
 		findFaults();
-		//stopTimer("find faults");
+		// stopTimer("find faults");
 
-		//startTimer();
+		// startTimer();
 		logFailures(curSec);
-		//stopTimer("log failures");
+		// stopTimer("log failures");
 	}
 	//TODO plot the cdfs to verify the sampling
+	}
 }
 
 void Controller::getIntraPodPaths(Switch* src, Switch* dst, Link* destLink, vector<Switch*> switches,vector<Link*> links, vector<bool> directions, int dir)

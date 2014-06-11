@@ -68,8 +68,8 @@ public:
 	vector<float> getAllocation(int p);
 	void checkProb(vector<Switch*> Tors, int prob, float factor);
 	void checkProb(vector<Link*> Tors, int prob, float factor);
-	void updateStatus(vector<Switch*> all_switches,int);
-	void updateStatus(vector<Link*> all_switches,int);
+	void updateStatus(vector<Switch*> all_switches,int,int);
+	void updateStatus(vector<Link*> all_switches,int,int);
 	void writeLog(string str);
 	vector<Link*> critical_links;
 	vector<Flow*> getCommonFlows(vector<Flow*> u,vector<Flow*> d);
