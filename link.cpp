@@ -12,6 +12,7 @@ Link::Link(int id,int cap,string l)
 	label=l;
 	resilience=0;
 	failAt=-1;
+	old_status=0;
 }
 
 int Link::getID()

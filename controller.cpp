@@ -141,8 +141,10 @@ void Controller::checkProb(vector<Switch*> Tors, int prob, float factor)
 	while(counter<c_size)
 	{
 		int failAt=rand()%totalTime;
+		cout<<failAt<<",";
 		int index=rand()%Tors.size();
 		Switch* curSwitch=Tors[index];
+		prone_switches.push_back(curSwitch);
 		Tors[index]->resilience=2;
 		Tors[index]->failAt=failAt;
 		Tors.erase(Tors.begin()+index);
@@ -153,10 +155,12 @@ void Controller::checkProb(vector<Switch*> Tors, int prob, float factor)
 	while(counter<b_size)
 	{
 		int failAt=rand()%totalTime;
-		cout<<"Switch Will fail at: "<<failAt<<endl;
+		cout<<failAt<<",";
 		int index=rand()%Tors.size();
 		Switch* curSwitch=Tors[index];
 		Tors[index]->resilience=1;
+		prone_switches.push_back(curSwitch);
+
 		Tors[index]->failAt=failAt;
 		Tors.erase(Tors.begin()+index);
 		counter++;
@@ -191,9 +195,12 @@ void Controller::checkProb(vector<Link*> Tors, int prob, float factor)
 	while(counter<c_size)
 	{
 		int failAt=rand()%totalTime;
+		cout<<failAt<<",";
+
 		int index=rand()%Tors.size();
 		Link* curSwitch=Tors[index];
 		Tors[index]->resilience=2;
+		prone_links.push_back(curSwitch);
 		Tors[index]->failAt=failAt;
 		Tors.erase(Tors.begin()+index);
 		counter++;
@@ -203,11 +210,12 @@ void Controller::checkProb(vector<Link*> Tors, int prob, float factor)
 	while(counter<b_size)
 	{
 		int failAt=rand()%totalTime;
+		cout<<failAt<<",";
 
-		cout<<"Will fail at: "<<failAt<<endl;
 		int index=rand()%Tors.size();
 		Link* curSwitch=Tors[index];
 		Tors[index]->resilience=1;
+		prone_links.push_back(curSwitch);
 		Tors[index]->failAt=failAt;
 		Tors.erase(Tors.begin()+index);
 		counter++;
@@ -723,6 +731,7 @@ void Controller::findFaults()
 void Controller::revert_to_primary()
 {
 	//////startTimer();
+	bool revert=false;
 	for(int i=0;i<critical_switches.size();i++)
 	{
 		if(critical_switches[i]->status >= 0)
@@ -731,6 +740,8 @@ void Controller::revert_to_primary()
 			cout<<backup<<" is the new down due to sharing"<<endl;
 			cout<<"+ Critical Switch Back with ID :"<<critical_switches[i]->toString()<<endl;
 			critical_switches.erase(critical_switches.begin()+i);
+			i--;
+			revert=true;
 			// if(duplicateIn(critical_switches))
 			// {
 			// 	cout<<"++++++++ ERROR, DUPLICATES IN CRITICAL SWITCHES"<<endl;
@@ -749,16 +760,17 @@ void Controller::revert_to_primary()
 
 			cout<<"+ Critical Link Back with ID :"<<critical_links[i]->link_id<<endl;
 			critical_links.erase(critical_links.begin()+i);
+			i--;
 			// if(duplicateIn(critical_links))
 			// {
 			// 	cout<<"++++++++ ERROR, DUPLICATES IN CRITICAL LINKS"<<endl;
 			// }
-
+			revert=true;
 		}
 	}
 
 	//////stopTimer("for links to revert");
-	if(backUp)
+	if(backUp && revert)
 	{
 		for (int i=0;i<flows_on_back.size();i++)
 		{
@@ -774,6 +786,7 @@ void Controller::revert_to_primary()
 					int x=1/0;
 				}
 				flows_on_back.erase(flows_on_back.begin()+i);
+				i--;
 				// cout<<"-- Num of flows on backup are: "<<flows_on_back.size()<<endl;
 			}
 		}
@@ -781,34 +794,40 @@ void Controller::revert_to_primary()
 
 
 
-	for (int i=0;i<flows_down.size();i++)
+	if(revert)
 	{
-		Flow* f=flows_down[i];
-		// if(f->down!=1)
-		// 	continue;
-		bool check=f->primaryPath->isUp();
-		if(check)
+		for (int i=0;i<flows_down.size();i++)
 		{
-			f->commitPath(f->primaryPath,0); //Assumption is that link capacity would not be a bottleneck
-			flows_down.erase(flows_down.begin()+i);
-			// cout<<"revert to primary from down: flow_id: "<<f->flow_id<<" ";
-			// f->primaryPath->print(); 
-			cout<<"-- Num of flows down: "<<flows_down.size()<<endl;
-			continue;
-		}
-
-		if(backUp)
-		{
-			bool check=f->backUpPath->isUp();
+			Flow* f=flows_down[i];
+			// if(f->down!=1)
+			// 	continue;
+			bool check=f->primaryPath->isUp();
 			if(check)
 			{
-				f->commitPath(f->backUpPath,1); //Assumption is that link capacity would not be a bottleneck
-				// cout<<"I am here here----------------------------------------------"<<endl;
-				// cout<<"revert to backup from down: flow id: "<<f->flow_id<<" ";
-				// f->backUpPath->print(); 
+				f->commitPath(f->primaryPath,0); //Assumption is that link capacity would not be a bottleneck
 				flows_down.erase(flows_down.begin()+i);
-				flows_on_back.push_back(f);
+				i--;
+				// cout<<"revert to primary from down: flow_id: "<<f->flow_id<<" ";
+				// f->primaryPath->print(); 
 				cout<<"-- Num of flows down: "<<flows_down.size()<<endl;
+				continue;
+			}
+
+			if(backUp)
+			{
+				bool check=f->backUpPath->isUp();
+				if(check)
+				{
+					f->commitPath(f->backUpPath,1); //Assumption is that link capacity would not be a bottleneck
+					// cout<<"I am here here----------------------------------------------"<<endl;
+					// cout<<"revert to backup from down: flow id: "<<f->flow_id<<" ";
+					// f->backUpPath->print(); 
+					flows_down.erase(flows_down.begin()+i);
+					i--;
+
+					flows_on_back.push_back(f);
+					cout<<"-- Num of flows down: "<<flows_down.size()<<endl;
+				}
 			}
 		}
 	}
@@ -937,7 +956,7 @@ int Controller::getTTR(Link* curSwitch)
 		random=rand()%100;
 		if(random < 20)
 		{
-			return 1+rand()%(177);
+			return 100+rand()%(177-100);
 		}
 
 		if(random < 40)
@@ -1168,12 +1187,44 @@ int Controller::getTTF(Link* curSwitch)
 }
 
 
-
-void Controller::updateStatus(vector<Switch*> all_switches,int curSec, int factor)
+Link* Controller::getMinLink(int thresh)
 {
-	for(int i=0;i<all_switches.size();i++)
+	Link* myLink;
+	int min_status=10000000;
+	for(int i=0;i<prone_links.size();i++)
 	{
-		Switch* curSwitch=all_switches[i];
+		Link* curLink=prone_links[i];
+		if(curLink->resilience==2 && curLink->status > 0 && curLink->status < min_status && curLink-> status > thresh)
+		{
+			min_status=curLink->status;
+			myLink=curLink;
+		}
+	}
+	return myLink;
+}
+
+vector<Link*> Controller::getFailingLink(int num)
+{
+	vector<Link*> v;
+	v.push_back(getMinLink(0));
+	if(num == 2)
+	{
+		v.push_back(getMinLink(v[0]->status));
+	}
+	if(num == 3)
+	{
+		v.push_back(getMinLink(v[1]->status));
+	}
+	return v;
+}
+
+
+
+void Controller::updateStatus(int curSec, int factor)
+{
+	for(int i=0;i<prone_switches.size();i++)
+	{
+		Switch* curSwitch=prone_switches[i];
 
 		if(curSwitch->status==0 && curSwitch->resilience==2 && curSwitch->failAt<curSec)
 		{
@@ -1214,18 +1265,19 @@ void Controller::updateStatus(vector<Switch*> all_switches,int curSec, int facto
 			if(curSwitch->status < factor)
 			{
 				curSwitch->status=-getTTR(curSwitch);
+				
 			}
 		}
 	}
 }
 
 
-void Controller::updateStatus(vector<Link*> all_switches,int curSec, int factor)
+void Controller::updateStatusLink(int curSec, int factor)
 {
 	// cout<<"CurSec: "<<curSec<<endl;
-	for(int i=0;i<all_switches.size();i++)
+	for(int i=0;i<prone_links.size();i++)
 	{
-		Link* curSwitch=all_switches[i];
+		Link* curSwitch=prone_links[i];
 
 		if(curSwitch->status==0 && curSwitch->resilience==2 && curSwitch->failAt<curSec)
 		{
@@ -1267,7 +1319,16 @@ void Controller::updateStatus(vector<Link*> all_switches,int curSec, int factor)
 
 			if(curSwitch->resilience == 2 && curSwitch->status > -factor)
 			{
-				curSwitch->status=getTTF(curSwitch);
+				if(curSwitch->old_status != 0)
+				{
+					// means it was a victim of corelated failure
+					curSwitch->status=curSwitch->old_status + getTTF(curSwitch);
+					curSwitch->old_status=0;
+				}
+				else
+				{
+					curSwitch->status=getTTF(curSwitch);					
+				}
 			}
 			return;
 		}
@@ -1278,6 +1339,35 @@ void Controller::updateStatus(vector<Link*> all_switches,int curSec, int factor)
 			if(curSwitch->status < factor)
 			{
 				curSwitch->status=-getTTR(curSwitch);
+			// 	int random=rand()%100;
+			// 	vector<Link*> to_be_failed;
+			// 	if(random < 60)
+			// 	{
+			// 		continue;
+			// 	}
+			// 	if(random< 70)
+			// 	{
+			// 		to_be_failed=getFailingLink(1);
+			// 		//also fail another link
+			// 	}
+			// 	if(random < 80)
+			// 	{
+			// 		to_be_failed=getFailingLink(2);
+
+			// 		// fail 2 more
+			// 	}
+			// 	if(random < 100)
+			// 	{
+			// 		to_be_failed=getFailingLink(3);
+			// 		// fail 3 more
+			// 	}
+
+			// 	for(int j=0;j<to_be_failed.size();j++)
+			// 	{
+			// 		Link* curLink=to_be_failed[j];
+			// 		curLink->old_status=curLink->status;
+			// 		curLink->status=-getTTR(curLink);
+			// 	}
 			}
 		}
 	}
@@ -1299,11 +1389,11 @@ void Controller::autofail(int curSec)
 
 
 	// startTimer();
-	updateStatus(all_switches,curSec,factor);
+	updateStatus(curSec,factor);
 	// stopTimer("updateStatus 1");
 
 	// startTimer();
-	updateStatus(all_links,curSec,factor);
+	updateStatusLink(curSec,factor);
 	// stopTimer("updateStatus 2");
 
 	if(curSec%100==0)
@@ -1551,6 +1641,7 @@ void Controller::logFailures(int time)
 			string st=o.str();
 			writeLog("Switch "+l+" "+down_switches[i]->toString()+" Up curTime: "+t+" upFor: "+st);
 			down_switches.erase(down_switches.begin()+i);
+			i--;
 			//TODO check if this causes seg fault
 		}
 	}
@@ -1568,6 +1659,7 @@ void Controller::logFailures(int time)
 			string st=oo.str();
 			writeLog("Link "+down_links[i]->label+" "+ id+" Up curTime "+t+" upFor: "+st);
 			down_links.erase(down_links.begin()+i);
+			i--;
 			//TODO check if this causes seg fault
 		}
 	}

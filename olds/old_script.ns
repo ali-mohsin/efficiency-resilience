@@ -1,0 +1,15 @@
+#define FatTree -k 4 -repeatForAll -reduncancy backUp  -algo default -torLinks 1G -aggrLinks 1G -coreLinks 1G -failures enable -runFor 10000000
+#define Flow -sourceId 0 -destId 15 -rate 10M -size 57G -startTime 0
+#define Flow -sourceId 1 -destId 14 -rate 10M -size 57G -startTime 0
+#define Flow -sourceId 2 -destId 13 -rate 10M -size 57G -startTime 0
+#define Flow -sourceId 3 -destId 12 -rate 10M -size 57G -startTime 0
+#define Flow -sourceId 4 -destId 11 -rate 10M -size 57G -startTime 0
+#define Flow -sourceId 5 -destId 10 -rate 10M -size 57G -startTime 0
+#define Flow -sourceId 6 -destId 9 -rate 10M -size 57G -startTime 0
+#define Flow -sourceId 7 -destId 8 -rate 10M -size 57G -startTime 0
+#define Flow -sourceId 8 -destId 7 -rate 10M -size 57G -startTime 0
+#define Flow -sourceId 9 -destId 6 -rate 10M -size 57G -startTime 0
+#define Flow -sourceId 10 -destId 5 -rate 10M -size 57G -startTime 0
+#define Flow -sourceId 11 -destId 4 -rate 10M -size 57G -startTime 0
+#define Flow -sourceId 12 -destId 3 -rate 10M -size 57G -startTime 0
+#define Flow -sourceId 13 -destId 1 -rate 10M -size 57G -startTime 0

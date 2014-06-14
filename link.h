@@ -30,6 +30,7 @@ public:
 	Switch* up_switch;
 	Switch* down_switch;
 	Host* host;
+	int old_status;
 	int failAt;
 	int resilience; // 0 = no fail, 1 = single failure, 2 = multi-failure
 
