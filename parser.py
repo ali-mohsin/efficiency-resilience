@@ -62,9 +62,11 @@ with open('script.ns','rb') as fin:
                     code.append("\tint failures=0;\n")
 
 
-                if(red=="1:1"):
+                if(red=="t2t"):
                     code.append("\tint oneToOne=1;\n")
-                else:
+                elif (red=="e2e"):
+                    code.append("\tint oneToOne=2;\n")
+                elif (red=="none"):
                     code.append("\tint oneToOne=0;\n")
 
 

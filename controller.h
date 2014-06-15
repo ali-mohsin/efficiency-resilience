@@ -7,6 +7,7 @@
 #include "host.h"
 #include "path.h"
 #include "topology.h"
+#include "group.h"
 //this is to control the whole thing...includes a UI function
 class Flow;
 
@@ -27,6 +28,10 @@ public:
 	vector<Link*> down_links;
 	vector<Link*> prone_links;
 	vector<Switch*> prone_switches;
+	vector<Group*> all_groups;
+	int tor_to_tor;	
+	int end_to_end;
+
 	float downTime;
 	int torCap;
 	int aggrCap;

@@ -34,6 +34,13 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	flowNumber = 0;
 	createTopology(tor,aggr,core);
 	backUp=back;
+	tor_to_tor=0;
+	end_to_end=0;
+	if(back==1)
+		tor_to_tor=1;
+	if(back==2)
+		end_to_end=1;
+
 	sharing = share;
 	backup=0;
 	// TODO seperate variable for backup
@@ -103,13 +110,16 @@ Switch* Controller::getTorFromAnotherPod(int pod)
 
 void Controller::createFlows()
 {
+	int factor=8;
+	if(end_to_end)
+		factor=16;
 	for (int i=0;i<all_switches.size();i++)
 	{
 		Switch* curSwitch=all_switches[i];
 		if(curSwitch->level==2)
 		{
 			int pod=curSwitch->getPodID();
-			for(int j=0;j<k*k/8;j++)
+			for(int j=0;j<k*k/factor;j++)
 			{
 				Switch* otherTor=getTorFromAnotherPod(pod);
 				Host* start=curSwitch->down_links[rand()%curSwitch->down_links.size()]->host;
@@ -196,7 +206,6 @@ void Controller::checkProb(vector<Link*> Tors, int prob, float factor)
 	{
 		int failAt=rand()%totalTime;
 		cout<<failAt<<",";
-
 		int index=rand()%Tors.size();
 		Link* curSwitch=Tors[index];
 		Tors[index]->resilience=2;
@@ -314,6 +323,71 @@ void Controller::assignResilience()
 	checkProb(AggrsL,0.054*k,factor);
 	checkProb(CoresL,0.095*k,factor);
 
+	vector<Link*> prone_copy=prone_links;
+	int count=prone_copy.size()/2;
+	int singles=count*.6;
+	int doubles=count*.1;
+	int triples=count*.3; 
+
+	for(int i=0;i<prone_copy.size();i++)
+	{
+		Link* curLink=prone_copy[i];
+		if(curLink->resilience==1)
+		{
+			all_groups.push_back(new Group(curLink,1));
+			prone_copy.erase(prone_copy.begin()+i);
+			i--;
+		}
+	}
+
+	while(singles>0)
+	{
+		int index=rand()%prone_copy.size();
+		Link* curLink=prone_copy[index];
+		all_groups.push_back(new Group(curLink,2));
+		prone_copy.erase(prone_copy.begin()+index);
+		singles--;
+	}
+
+	while(doubles>0)
+	{
+		int index=rand()%prone_copy.size();
+		Link* curLink=prone_copy[index];
+		Group* g=new Group(curLink,2);
+		all_groups.push_back(g);
+		prone_copy.erase(prone_copy.begin()+index);
+		doubles--;
+		index=rand()%prone_copy.size();
+		curLink=prone_copy[index];
+		g->insert(curLink);
+		prone_copy.erase(prone_copy.begin()+index);
+		doubles--;
+	}
+
+	while(triples>0)
+	{
+		int index=rand()%prone_copy.size();
+		Link* curLink=prone_copy[index];
+		Group* g=new Group(curLink,2);
+		all_groups.push_back(g);
+		prone_copy.erase(prone_copy.begin()+index);
+		triples--;
+		index=rand()%prone_copy.size();
+		curLink=prone_copy[index];
+		g->insert(curLink);
+		prone_copy.erase(prone_copy.begin()+index);
+		triples--;	
+		index=rand()%prone_copy.size();
+		curLink=prone_copy[index];
+		g->insert(curLink);
+		prone_copy.erase(prone_copy.begin()+index);
+		triples--;	
+	}
+
+
+
+	cout<<"Total left: "<<prone_copy.size()<<endl;
+	cout<<count<<" "<<singles<<" "<<doubles<<" "<<triples<<endl;
 //***Printing for debugging purposes
 	cout<< "TORs" <<endl;
 	counter(Tors);
@@ -787,7 +861,7 @@ void Controller::revert_to_primary()
 				}
 				flows_on_back.erase(flows_on_back.begin()+i);
 				i--;
-				// cout<<"-- Num of flows on backup are: "<<flows_on_back.size()<<endl;
+				 cout<<"-- Num of flows on backup are: "<<flows_on_back.size()<<endl;
 			}
 		}
 	}
@@ -1236,7 +1310,7 @@ void Controller::updateStatus(int curSec, int factor)
 		}
 
 
-		if(curSwitch->resilience==1 && curSwitch->status == 0 &&  curSwitch->failAt==curSec)
+		if(curSwitch->resilience==1 && curSwitch->status == 0 &&  curSwitch->failAt<curSec)
 		{
 			cout<<"++ Failed at res=1"<<endl;
 			curSwitch->status=-getTTR(curSwitch);
@@ -1275,99 +1349,61 @@ void Controller::updateStatus(int curSec, int factor)
 void Controller::updateStatusLink(int curSec, int factor)
 {
 	// cout<<"CurSec: "<<curSec<<endl;
-	for(int i=0;i<prone_links.size();i++)
+	for(int i=0;i<all_groups.size();i++)
 	{
-		Link* curSwitch=prone_links[i];
+		Group* curGroup=all_groups[i];
 
-		if(curSwitch->status==0 && curSwitch->resilience==2 && curSwitch->failAt<curSec)
+		if(curGroup->getStatus()==0 && curGroup->resilience==2 && curGroup->getFailAt()<curSec)
 		{
-			int id=curSwitch->link_id;
+			int id=curGroup->leader->link_id;
 			stringstream o;
 			o<<id;
 			string idd=o.str();
-			writeLog("Link with id: "+idd+" has become failure prone");
-
-			int ttr=-getTTR(curSwitch);
-			curSwitch->status=ttr;
+			writeLog("Group with leader: Link with id: "+idd+" has become failure prone");
+			int ttr=-getTTR(curGroup->leader);
+			curGroup->setStatus(ttr);
 			//TODO check this with dr ihsan ,dr fahad and dr zartash, how to induce first failure
 			return;
 		}
 
-		// if(curSwitch->resilience==1 && curSwitch->status == 0 &&  curSwitch->failAt<curSec)
+		// if(curGroup->resilience==1 && curGroup->status == 0 &&  curGroup->failAt<curSec)
 		// {
-		// 	cout<<"Scheduled to fail at: "<<curSwitch->failAt<<endl;
+		// 	cout<<"Scheduled to fail at: "<<curGroup->failAt<<endl;
 		// 	int x=1/0;
 		// }
 
 
-		if(curSwitch->resilience==1 && curSwitch->status == 0 &&  curSwitch->failAt==curSec)
+		if(curGroup->resilience==1 && curGroup->getStatus() == 0 &&  curGroup->getFailAt() < curSec)
 		{
 			cout<<"++ Failed at res=1"<<endl;
-			curSwitch->status=-getTTR(curSwitch);
+			curGroup->setStatus(-getTTR(curGroup->leader));
 			// int x=1/0;
 			return;
 		}
 
-		if(curSwitch->status < 0)
+		if(curGroup->getStatus() < 0)
 		{
-			curSwitch->status+=factor;
+			curGroup->addStatus(factor);
 
-			if(curSwitch->resilience == 1 && curSwitch->status > -factor)
+			if(curGroup->resilience == 1 && curGroup->getStatus() > -factor)
 			{
-				curSwitch->status=factor;
+				curGroup->leader->status=factor;
 			}
 
-			if(curSwitch->resilience == 2 && curSwitch->status > -factor)
+			if(curGroup->resilience == 2 && curGroup->getStatus() > -factor)
 			{
-				if(curSwitch->old_status != 0)
-				{
-					// means it was a victim of corelated failure
-					curSwitch->status=curSwitch->old_status + getTTF(curSwitch);
-					curSwitch->old_status=0;
-				}
-				else
-				{
-					curSwitch->status=getTTF(curSwitch);					
-				}
+					int ttf=getTTF(curGroup->leader);
+					curGroup->setStatus(ttf);
 			}
 			return;
 		}
 
-		if(curSwitch->resilience == 2 && curSwitch->status > 0)
+		if(curGroup->resilience == 2 && curGroup->getStatus() > 0)
 		{
-			curSwitch->status-=factor;
-			if(curSwitch->status < factor)
+			curGroup->addStatus(-factor);
+			if(curGroup->getStatus() < factor)
 			{
-				curSwitch->status=-getTTR(curSwitch);
-			// 	int random=rand()%100;
-			// 	vector<Link*> to_be_failed;
-			// 	if(random < 60)
-			// 	{
-			// 		continue;
-			// 	}
-			// 	if(random< 70)
-			// 	{
-			// 		to_be_failed=getFailingLink(1);
-			// 		//also fail another link
-			// 	}
-			// 	if(random < 80)
-			// 	{
-			// 		to_be_failed=getFailingLink(2);
-
-			// 		// fail 2 more
-			// 	}
-			// 	if(random < 100)
-			// 	{
-			// 		to_be_failed=getFailingLink(3);
-			// 		// fail 3 more
-			// 	}
-
-			// 	for(int j=0;j<to_be_failed.size();j++)
-			// 	{
-			// 		Link* curLink=to_be_failed[j];
-			// 		curLink->old_status=curLink->status;
-			// 		curLink->status=-getTTR(curLink);
-			// 	}
+				curGroup->setStatus(-getTTR(curGroup->leader));
 			}
 		}
 	}
@@ -1769,9 +1805,15 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 	// primary->print();
 	Path* back=NULL;
 
+
+
 	if(backUp)
 	{
-		paths.clear();
+		if(end_to_end)
+		{
+			paths.clear();
+		}
+
 		back=getBackUpPath(primary,rate);
  		// cout<<"Backup Path is: "<<endl;
  		// back->print();
@@ -1899,23 +1941,30 @@ Path* Controller::getBackUpPath(Path* primary, int rate)
 	else
 	{
 
-		int srcTor=primary->getSrcPod();
-		int dstTor=primary->getDstPod();
-
-		back=getReplicatedPath(srcTor,dstTor,rate);
-		// overlap=10*k;
-		// vector<Switch*> links=primary->switches;
-  //       for(int i=0;i<paths.size();i++)
-  //       {
-  //           Path* cand=paths[i];
-  //           vector<Switch*> otherLinks=cand->switches;
-  //           int common=getCommonCount(links,otherLinks);
-  //           if(common<overlap)
-  //           {
-  //               back=cand;
-  //               overlap=common;
-  //           }
-  //       }
+		if(end_to_end)
+		{
+			int srcTor=primary->getSrcPod();
+			int dstTor=primary->getDstPod();
+			back=getReplicatedPath(srcTor,dstTor,rate);	
+		}
+		
+		if(tor_to_tor)
+		{
+			overlap=10*k;
+			vector<Switch*> links=primary->switches;
+        	for(int i=0;i<paths.size();i++)
+        	{
+            	Path* cand=paths[i];
+            	vector<Switch*> otherLinks=cand->switches;
+            	int common=getCommonCount(links,otherLinks);
+            	if(common<overlap)
+            	{
+                	back=cand;
+                	overlap=common;
+            	}
+        	}
+		}
+		
 	}
 	return back;
 }
@@ -2051,7 +2100,7 @@ Path* getPathRandom(Host* src,Host* dst, double rate)
 
 void goToPod(Path* path, Host* dst, Switch** tempSwitch)
 {
-	Address* add=dst->addr;
+	Address* add=dst->addr;curSwitch
 	int podID=add->getPodID();
 	vector<Link*> links=*(tempSwitch)->down_links;
 	for(int i=0;i<links.size();i++)
