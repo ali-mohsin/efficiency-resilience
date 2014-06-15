@@ -70,12 +70,12 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 		cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_primary.size()<<" Flows passing through"<<endl;
 		cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_back.size()<<" Flows passing through"<<endl;
 
-		if(all_links[i]->flows_primary.size()==0 && all_links[i]->flows_back.size()==0)
-		{
-			int x=1/0;
-			// cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_primary.size()<<" Flows passing through"<<endl;
-			// cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_back.size()<<" Flows passing through"<<endl;
-		}
+		// if(all_links[i]->flows_primary.size()==0 && all_links[i]->flows_back.size()==0)
+		// {
+		// 	int x=1/0;
+		// 	// cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_primary.size()<<" Flows passing through"<<endl;
+		// 	// cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_back.size()<<" Flows passing through"<<endl;
+		// }
 		// else
 		// {
 		// 	// cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows.size()<<" Flows passing through"<<endl;
@@ -890,7 +890,7 @@ void Controller::revert_to_primary()
 				}
 				flows_on_back.erase(flows_on_back.begin()+i);
 				i--;
-				 cout<<"-- Num of flows on backup are: "<<flows_on_back.size()<<endl;
+				// cout<<"-- Num of flows on backup are: "<<flows_on_back.size()<<endl;
 			}
 		}
 	}
@@ -912,7 +912,7 @@ void Controller::revert_to_primary()
 				i--;
 				// cout<<"revert to primary from down: flow_id: "<<f->flow_id<<" ";
 				// f->primaryPath->print(); 
-				cout<<"-- Num of flows down: "<<flows_down.size()<<endl;
+				// cout<<"-- Num of flows down: "<<flows_down.size()<<endl;
 				continue;
 			}
 
@@ -929,7 +929,7 @@ void Controller::revert_to_primary()
 					i--;
 
 					flows_on_back.push_back(f);
-					cout<<"-- Num of flows down: "<<flows_down.size()<<endl;
+					// cout<<"-- Num of flows down: "<<flows_down.size()<<endl;
 				}
 			}
 		}
@@ -1564,7 +1564,7 @@ void Controller::getInterPodPaths(Switch* src, Switch* dst, Link* destLink, vect
 	// cout<<paths.size()<<" is the num of paths found "<<endl;
 	vector<Link*> poolToVisit;
 	int size=paths.size();
-	if(size>100)
+	if(size>30)
 		return;
 
 	if(src==NULL || dst==NULL)
@@ -1597,8 +1597,8 @@ void Controller::getInterPodPaths(Switch* src, Switch* dst, Link* destLink, vect
 	}
 	for(int i=0;i<poolToVisit.size();i++)
 	{
-		// int index=rand()%poolToVisit.size();
-		Link* curLink=poolToVisit[i];
+		int index=rand()%poolToVisit.size();
+		Link* curLink=poolToVisit[index];
 		//TODO randomization done here beware
 		if(curLink->label=="Tor")
 			continue;
