@@ -23,7 +23,7 @@ def findAll(arr,num):
 
 import sys
 
-def extract_dt(device,rms):
+def extract_dt(device,cat,rms):
     string=sys.argv[1]
     if(string=='Down'):
         otherS='downFor:'
@@ -34,8 +34,7 @@ def extract_dt(device,rms):
     for row in rms:
         d=row[0]
         t=row[1]
-        print row
-        if(device==d and string in row):
+        if(device==d and string in row and t==cat):
             downtime=int(find(row,otherS))
             if(string=='Down'):
                 downtime=-downtime+70
@@ -46,7 +45,7 @@ def extract_dt(device,rms):
     return down_arr
 
 
-def plot_cdf(down_arr,labels,markers,colors):
+def plot_cdf(down_arr,labels):
     down_arr.sort()
     arr=[0]*(max(down_arr)+1)
     count=len(down_arr)
@@ -59,7 +58,7 @@ def plot_cdf(down_arr,labels,markers,colors):
     ax = plt.subplot(111)
     ax.set_xscale("log", nonposx='clip')
     ax.set_ylim([0,1])
-    plt.plot(arr,label=labels,marker=markers, color=colors)
+    plt.plot(arr,label=labels)
 
 
 with open(sys.argv[2],'rb') as fin:
@@ -75,5 +74,21 @@ with open(sys.argv[2],'rb') as fin:
 dev=sys.argv[3]
 markers=[]
 colors=[]
-d=extract_dt('Link',rms)
-print d
+
+if(dev=='Link'):
+    markers=['o','x']
+    colors=['r','k']
+    d=extract_dt(dev,'Core',rms)
+    plot_cdf(d,"Core "+dev,markers[1],colors[1])
+
+if(dev=='Switch'):
+   markers=['D','v']
+   colors=['c',(255/255.0,105/255.0,180/255.0)]
+ 
+
+d1=extract_dt(dev,'Tor',rms)
+d2=extract_dt(dev,'Aggr',rms)
+plot_cdf(d1,"Tor "+dev)
+plot_cdf(d2,"Aggr "+dev)
+plt.legend(loc=2)
+plt.show()

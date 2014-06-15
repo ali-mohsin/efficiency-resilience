@@ -327,7 +327,9 @@ void Controller::assignResilience()
 	int count=prone_copy.size()/2;
 	int singles=count*.6;
 	int doubles=count*.1;
-	int triples=count*.3; 
+	int triples=count*.1; 
+	int tetra=count*.2; 
+
 
 	for(int i=0;i<prone_copy.size();i++)
 	{
@@ -384,6 +386,30 @@ void Controller::assignResilience()
 		triples--;	
 	}
 
+	while(tetra>0)
+	{
+		int index=rand()%prone_copy.size();
+		Link* curLink=prone_copy[index];
+		Group* g=new Group(curLink,2);
+		all_groups.push_back(g);
+		prone_copy.erase(prone_copy.begin()+index);
+		tetra--;
+		index=rand()%prone_copy.size();
+		curLink=prone_copy[index];
+		g->insert(curLink);
+		prone_copy.erase(prone_copy.begin()+index);
+		tetra--;	
+		index=rand()%prone_copy.size();
+		curLink=prone_copy[index];
+		g->insert(curLink);
+		prone_copy.erase(prone_copy.begin()+index);
+		tetra--;	
+		index=rand()%prone_copy.size();
+		curLink=prone_copy[index];
+		g->insert(curLink);
+		prone_copy.erase(prone_copy.begin()+index);
+		tetra--;	
+	}
 
 
 	cout<<"Total left: "<<prone_copy.size()<<endl;
