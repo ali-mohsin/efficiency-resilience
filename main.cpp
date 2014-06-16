@@ -9,7 +9,7 @@ int main (int argc, char *argv[])
 
 	int sharing=0;
 
-	dc= new Controller(30,10240000,10240000,10240000,oneToOne,sharing,30000000,1);
+	dc= new Controller(12,10240000,10240000,10240000,oneToOne,sharing,30000000,1);
 int runFor=30000000;
 
 

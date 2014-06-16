@@ -22,6 +22,8 @@ public:
 	void addLink(Link* s);
 	void addSwitch(Switch* s);
 	Path(vector<Switch*> s , vector<Link*> l, vector<bool> dir);
+	Path(Path* other);
+
 	void print();
 	vector<Switch*> getSwitches();
 	bool isValid(int rate);

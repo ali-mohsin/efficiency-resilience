@@ -20,6 +20,7 @@ public:
 	vector<Link*> all_links;
 	vector<Flow*> all_flows;
 	vector<Path*> paths;
+	vector<Path*> all_paths;
 	vector<Flow*> flows_on_back;
 	vector<Switch*> critical_switches;
 	vector<Flow*> flows_down;
@@ -83,7 +84,7 @@ public:
 	vector<Flow*> getCommonFlows(vector<Flow*> u,vector<Flow*> d);
 	void getIntraPodPaths(Switch*, Switch*, Link*, std::vector<Switch*>, std::vector<Link*>, std::vector<bool>, int);
 	void getInterPodPaths(Switch*, std::vector<Switch*>, std::vector<Link*>, std::vector<bool>, int,int);
-	void getPaths(Switch*);
+	vector<Path*> getPaths(Switch*);
 	void counter(vector<Link*> Tors);
 	void counter(vector<Switch*> Tors);
 	vector<Link*> getFailingLink(int);

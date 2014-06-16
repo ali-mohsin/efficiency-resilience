@@ -31,6 +31,16 @@
 
 	}
 
+	Path::Path(Path* other)
+	{
+		beingUsed=0;
+
+		switches=other->switches;
+		links=other->links;
+		direction=other->direction;
+
+	}
+
 
 	bool Path::isUp()
 	{

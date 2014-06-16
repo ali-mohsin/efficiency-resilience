@@ -50,24 +50,30 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	assignResilience();
 
 	vector<Switch*> tors=getAllTors();
+	vector<Path*> tempPaths;
 	for(int i=0;i<tors.size();i++)
 	{
-		getPaths(tors[i]);
-		cout<<"paths.size= "<<paths.size()<<endl;
+		tempPaths=getPaths(tors[i]);
+		for(int j=0;j<tempPaths.size();j++)
+		{
+			all_paths.push_back(tempPaths[i]);
+		}
+
+		cout<<"paths.size= "<<all_paths.size()<<endl;
 		cout<<100*float(i)/float(tors.size())<<" percent complete"<<endl;
 	}															
 
 
-	for(int i=0;i<paths.size();i++)
+	for(int i=0;i<all_paths.size();i++)
 	{
-		// paths[i]->print();																																				
-		if(paths[i]->switches.size()!=5)
+		all_paths[i]->print();																																				
+		if(all_paths[i]->switches.size()!=5)
 			int x=1/0;
-		if(paths[i]->links.size()!=4)
+		if(all_paths[i]->links.size()!=6)
 			int x=1/0;
 	}
 
-	cout<<paths.size()<<" is the size of paths"<<endl;
+	cout<<all_paths.size()<<" is the size of paths"<<endl;
 	int x=1/0;
 
 	if(makeFlows)
@@ -1557,13 +1563,13 @@ void Controller::getInterPodPaths(Switch* src, vector<Switch*> switches,vector<L
 		//TODO randomization done here beware
 		if(curLink->label=="Tor" && dir==0)
 		{
-			// Host* dst=curLink->host;
-			// links.push_back(curLink);
-			// directions.push_back(dir);
-			// Path* p= new Path(switches,links,directions);
-			// paths.push_back(p);
-			// links.pop_back();
-			// directions.pop_back();
+			Host* dst=curLink->host;
+			links.push_back(curLink);
+			directions.push_back(dir);
+			Path* p= new Path(switches,links,directions);
+			paths.push_back(p);
+			links.pop_back();
+			directions.pop_back();
 			continue;
 		}
 
@@ -1600,15 +1606,15 @@ void Controller::getInterPodPaths(Switch* src, vector<Switch*> switches,vector<L
 				dir=0;
 		}
 
-		if(curDst->level==2)// it is a tor
-		{
-			// links.push_back(destLink);
-			directions.push_back(dir);
-			Path* p= new Path(switches,links,directions);
-			paths.push_back(p);
-			// p->print();
-			// cout<<"found path"<<endl;
-		}
+		// if(curDst->level==2)// it is a tor
+		// {
+		// 	// links.push_back(destLink);
+		// 	directions.push_back(dir);
+		// 	Path* p= new Path(switches,links,directions);
+		// 	paths.push_back(p);
+		// 	// p->print();
+		// 	// cout<<"found path"<<endl;
+		// }
 		// cout<<"calling rec"<<endl;
 		// cout<<curDst->level<<" is the next level"<<endl;
 		getInterPodPaths(curDst,switches,links,directions,dir,pod);
@@ -1739,7 +1745,7 @@ void Controller::logFailures(int time)
 	}
 }
 
-void  Controller::getPaths(Switch* src)
+vector<Path*>  Controller::getPaths(Switch* src)
 {
 	vector<Switch*> switches;
 	switches.push_back(src);
@@ -1749,6 +1755,7 @@ void  Controller::getPaths(Switch* src)
 	directions.push_back(1);
 
 	int srcPod=src->getPodID();
+	vector<Link*> allHostLinks=src->down_links;
 	// Link* destLink = dest->getLink();
 	// Switch* dst = dest->getTor();
 
@@ -1769,6 +1776,19 @@ void  Controller::getPaths(Switch* src)
 	// {
 	getInterPodPaths(src, switches, links, directions,1,srcPod);
 	// }
+	vector<Path*> tempPaths;
+	for(int i=0;i<paths.size();i++)
+	{
+		for(int j=0;j<allHostLinks.size();j++)
+		{
+			Link* curLink=allHostLinks[j];
+			Path* curPath=new Path(paths[i]);
+			curPath->links.insert(curPath->links.begin(),curLink);
+			tempPaths.push_back(curPath);
+		}
+	}
+	paths.clear();
+	return tempPaths;
 }
 
 bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size,double sTime)	//rate in MBps, size in MB
