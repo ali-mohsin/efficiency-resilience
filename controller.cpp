@@ -48,6 +48,28 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	failures=0;
 	totalTime=runFor;
 	assignResilience();
+
+	vector<Switch*> tors=getAllTors();
+	for(int i=0;i<tors.size();i++)
+	{
+		getPaths(tors[i]);
+		cout<<"paths.size= "<<paths.size()<<endl;
+		cout<<100*float(i)/float(tors.size())<<" percent complete"<<endl;
+	}															
+
+
+	for(int i=0;i<paths.size();i++)
+	{
+		// paths[i]->print();																																				
+		if(paths[i]->switches.size()!=5)
+			int x=1/0;
+		if(paths[i]->links.size()!=4)
+			int x=1/0;
+	}
+
+	cout<<paths.size()<<" is the size of paths"<<endl;
+	int x=1/0;
+
 	if(makeFlows)
 	{
 		createFlows();
@@ -558,21 +580,6 @@ vector<Flow*> Controller::getCommonFlows(vector<Flow*> u,vector<Flow*> d)
 	}
 	return flows;
 
-	// sort(u.begin(), u.end());
-	// sort(d.begin(), d.end());
-	// vector<Flow*> flows;
-	// set_intersection(u.begin(), u.end(), d.begin(), d.end(), back_inserter(flows));
-	// for (int i=0;i<u.size();i++)
-	// {
-	// 	for(int j=0;j<d.size();j++)
-	// 	{
-	// 		if(u[i]==d[j])
-	// 		{
-	// 			flows.push_back(u[i]);
-	// 		}
-	// 	}
-	// }
-	return flows;
 }
 
 
@@ -1290,38 +1297,6 @@ int Controller::getTTF(Link* curSwitch)
 }
 
 
-Link* Controller::getMinLink(int thresh)
-{
-	Link* myLink;
-	int min_status=10000000;
-	for(int i=0;i<prone_links.size();i++)
-	{
-		Link* curLink=prone_links[i];
-		if(curLink->resilience==2 && curLink->status > 0 && curLink->status < min_status && curLink-> status > thresh)
-		{
-			min_status=curLink->status;
-			myLink=curLink;
-		}
-	}
-	return myLink;
-}
-
-vector<Link*> Controller::getFailingLink(int num)
-{
-	vector<Link*> v;
-	v.push_back(getMinLink(0));
-	if(num == 2)
-	{
-		v.push_back(getMinLink(v[0]->status));
-	}
-	if(num == 3)
-	{
-		v.push_back(getMinLink(v[1]->status));
-	}
-	return v;
-}
-
-
 
 void Controller::updateStatus(int curSec, int factor)
 {
@@ -1559,49 +1534,39 @@ void Controller::getIntraPodPaths(Switch* src, Switch* dst, Link* destLink, vect
 	}
 }
 
-void Controller::getInterPodPaths(Switch* src, Switch* dst, Link* destLink, vector<Switch*> switches,vector<Link*> links, vector<bool> directions, int dir)
+void Controller::getInterPodPaths(Switch* src, vector<Switch*> switches,vector<Link*> links, vector<bool> directions, int dir,int pod)
 {
 	// cout<<paths.size()<<" is the num of paths found "<<endl;
 	vector<Link*> poolToVisit;
-	int size=paths.size();
-	if(size>30)
-		return;
-
-	if(src==NULL || dst==NULL)
-	{
-		cout<<"moving back; base case"<<endl;
-		return;
-	}
 
 	//cout<<"SRC: "<<src->toString()<<"\nDST: "<< dst->toString()<<endl; 
 
 	if(dir==1 && src->level!=0)
 	{
-		// cout<<src->toString()<<endl;
-			// cout<<src->level<<endl;			
-			// cout<<src->num_ports<<" are the ports"<<endl;			
 			poolToVisit=src->up_links;
 	}
 	else
 	{
-		// cout<<src->level<<endl;			
-		// cout<<src->down_links.size()<<endl;	
-		// if(src->down_links.size()>k*k/4)
-		// {
-		// 	cout<<"ALARM"<<endl;
-		// 	return;
-		// }		
-		// cout<<src->num_ports<<" are the ports"<<endl;			
-
 		poolToVisit=src->down_links;
 	}
+
 	for(int i=0;i<poolToVisit.size();i++)
 	{
-		int index=rand()%poolToVisit.size();
-		Link* curLink=poolToVisit[index];
+		// int index=rand()%poolToVisit.size();
+		Link* curLink=poolToVisit[i];
 		//TODO randomization done here beware
-		if(curLink->label=="Tor")
+		if(curLink->label=="Tor" && dir==0)
+		{
+			// Host* dst=curLink->host;
+			// links.push_back(curLink);
+			// directions.push_back(dir);
+			// Path* p= new Path(switches,links,directions);
+			// paths.push_back(p);
+			// links.pop_back();
+			// directions.pop_back();
 			continue;
+		}
+
 		Switch* curDst=curLink->getOtherNode(src);
 		if(curDst==NULL)
 		{
@@ -1610,6 +1575,7 @@ void Controller::getInterPodPaths(Switch* src, Switch* dst, Link* destLink, vect
 			directions.pop_back();
 			return;
 		}
+
 		if(curDst->num_ports==0)
 		{
 			cout<<"culprit link: "<<curLink->label<<endl;
@@ -1618,9 +1584,10 @@ void Controller::getInterPodPaths(Switch* src, Switch* dst, Link* destLink, vect
 		if(dir==0 && src->level==0)
 		{
 			int id=curDst->getPodID();
-			if(id!=dst->getPodID())
+			if(id==pod)
 				continue;
 		}
+
 		switches.push_back(curDst);
 		links.push_back(curLink);
 		directions.push_back(dir);
@@ -1633,9 +1600,9 @@ void Controller::getInterPodPaths(Switch* src, Switch* dst, Link* destLink, vect
 				dir=0;
 		}
 
-		if(curDst==dst)
+		if(curDst->level==2)// it is a tor
 		{
-			links.push_back(destLink);
+			// links.push_back(destLink);
 			directions.push_back(dir);
 			Path* p= new Path(switches,links,directions);
 			paths.push_back(p);
@@ -1644,7 +1611,7 @@ void Controller::getInterPodPaths(Switch* src, Switch* dst, Link* destLink, vect
 		}
 		// cout<<"calling rec"<<endl;
 		// cout<<curDst->level<<" is the next level"<<endl;
-		getInterPodPaths(curDst,dst,destLink,switches,links,directions,dir);
+		getInterPodPaths(curDst,switches,links,directions,dir,pod);
 		links.pop_back();
 		directions.pop_back();
 		if(switches.back()->level==0)
@@ -1772,103 +1739,104 @@ void Controller::logFailures(int time)
 	}
 }
 
-bool Controller::getPaths(Host* source, Host* dest, vector<Switch*> switches,vector<Link*> links, vector<bool> directions, int dir)
+void  Controller::getPaths(Switch* src)
 {
-	switches.push_back(source->getTor());
-	links.push_back(source->getLink());
+	vector<Switch*> switches;
+	switches.push_back(src);
+	vector<Link*> links;
+	// links.push_back(source->getLink());
+	vector<bool> directions;
 	directions.push_back(1);
 
-	Link* destLink = dest->getLink();
-	Switch* src = source->getTor();
-	Switch* dst = dest->getTor();
+	int srcPod=src->getPodID();
+	// Link* destLink = dest->getLink();
+	// Switch* dst = dest->getTor();
 
-	bool intraRack = false;
-	if(src == dst)		// the end hosts are under the same ToR switch
-	{
-		links.push_back(destLink);
-		directions.push_back(0);
-		Path* p= new Path(switches,links,directions);
-		paths.push_back(p);
-		intraRack = true;
-	}
-	else if(src->getPodID() == dst->getPodID())		// the end hosts are in the same pod
-	{
-		getIntraPodPaths(src, dst, destLink, switches, links, directions,1);
-	}
-	else				// the end hosts are in different pods
-	{
-		getInterPodPaths(src, dst, destLink, switches, links, directions,1);
-	}
-
-	return intraRack;
+	// bool intraRack = false;
+	// if(src == dst)		// the end hosts are under the same ToR switch
+	// {
+	// 	links.push_back(destLink);
+	// 	directions.push_back(0);
+	// 	Path* p= new Path(switches,links,directions);
+	// 	paths.push_back(p);
+	// 	intraRack = true;
+	// }
+	// else if(src->getPodID() == dst->getPodID())		// the end hosts are in the same pod
+	// {
+	// 	getIntraPodPaths(src, dst, destLink, switches, links, directions,1);
+	// }
+	// else				// the end hosts are in different pods
+	// {
+	getInterPodPaths(src, switches, links, directions,1,srcPod);
+	// }
 }
 
 bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size,double sTime)	//rate in MBps, size in MB
 {
 	// if 'intraRack' is true, then there will be no backup path, only 1 path
-	vector<Switch*> switches;
-	vector<Link*> links;
-	vector<bool> directions;
-	bool intraRack = getPaths(source, dest, switches, links, directions, 1);
+// 	vector<Switch*> switches;
+// 	vector<Link*> links;
+// 	vector<bool> directions;
+// 	bool intraRack = getPaths(source, dest, switches, links, directions, 1);
 
-	// cout<<paths.size()<<" is the num of paths"<<endl;
-	filterPaths(rate,dest);
-	 if(intraRack && paths.size()!=1)
- 	 {
- 		int x=1/0;
- 	 	return 0;
- 	 }
-	if(!intraRack && paths.size()<2)
-	{
-		paths.clear();
-		cout<<"ERROR: Request could not be entertained with Rate: "<<rate<<" Size: "<<size<<", Not enough Bandwith remaining on Candidate Paths"<<endl;
+// 	// cout<<paths.size()<<" is the num of paths"<<endl;
+// 	filterPaths(rate,dest);
+// 	 if(intraRack && paths.size()!=1)
+//  	 {
+//  		int x=1/0;
+//  	 	return 0;
+//  	 }
+// 	if(!intraRack && paths.size()<2)
+// 	{
+// 		paths.clear();
+// 		cout<<"ERROR: Request could not be entertained with Rate: "<<rate<<" Size: "<<size<<", Not enough Bandwith remaining on Candidate Paths"<<endl;
 
-		return 0;
-	}
+// 		return 0;
+// 	}
 
-//	cout << "Request Entertained: Rate: "<<rate<<" Size: "<<size<<endl;
-	int ind=rand()%paths.size();
-	Path* primary=paths[ind];
-	paths.erase(paths.begin()+ind);
-	// cout<<"Primary Path is: "<<endl;
-	// primary->print();
-	Path* back=NULL;
-
-
-
-	if(backUp)
-	{
-		if(end_to_end)
-		{
-			paths.clear();
-		}
-
-		back=getBackUpPath(primary,rate);
- 		// cout<<"Backup Path is: "<<endl;
- 		// back->print();
- 		if(!back)
- 		{
- 			int x=1/0;
- 		}
- 		if(sharing)
- 		{
- 			paths_to_be_shared.push_back(back);
- 		}
-	}
+// //	cout << "Request Entertained: Rate: "<<rate<<" Size: "<<size<<endl;
+// 	int ind=rand()%paths.size();
+// 	Path* primary=paths[ind];
+// 	paths.erase(paths.begin()+ind);
+// 	// cout<<"Primary Path is: "<<endl;
+// 	// primary->print();
+// 	Path* back=NULL;
 
 
-	// TODO fix the error of multiple ppl sharing one pathF
 
-	// if(duplicateIn(back->links))
-	// 	back->print();
+// 	if(backUp)
+// 	{
+// 		if(end_to_end)
+// 		{
+// 			paths.clear();
+// 		}
 
-	Flow* flow= new Flow(source,dest,primary,back,rate,size,oneToOne,sTime);
-	flow->setID(flowNumber);
-	all_flows.push_back(flow);
-	flowNumber++;
-	if(flowNumber%1000==0)
-		cout<<flowNumber<<" is the num of flows committed"<<endl;
-	paths.clear();
+// 		back=getBackUpPath(primary,rate);
+//  		// cout<<"Backup Path is: "<<endl;
+//  		// back->print();
+//  		if(!back)
+//  		{
+//  			int x=1/0;
+//  		}
+//  		if(sharing)
+//  		{
+//  			paths_to_be_shared.push_back(back);
+//  		}
+// 	}
+
+
+// 	// TODO fix the error of multiple ppl sharing one pathF
+
+// 	// if(duplicateIn(back->links))
+// 	// 	back->print();
+
+// 	Flow* flow= new Flow(source,dest,primary,back,rate,size,oneToOne,sTime);
+// 	flow->setID(flowNumber);
+// 	all_flows.push_back(flow);
+// 	flowNumber++;
+// 	if(flowNumber%1000==0)
+// 		cout<<flowNumber<<" is the num of flows committed"<<endl;
+// 	paths.clear();
 	return 1;
 }
 
@@ -1902,27 +1870,28 @@ Host* Controller::getHostInTor(int id)
 
 Path* Controller::getReplicatedPath(int src, int dst, int rate)
 {
-	int srcPod=src;
-	int dstPod=dst;
-	while(srcPod==src || dstPod==dst || srcPod==dstPod)
-	{
-		srcPod=rand()%k;
-		dstPod=rand()%k;
-	}
+	// int srcPod=src;
+	// int dstPod=dst;
+	// while(srcPod==src || dstPod==dst || srcPod==dstPod)
+	// {
+	// 	srcPod=rand()%k;
+	// 	dstPod=rand()%k;
+	// }
 
-	vector<Switch*> switches;
-	vector<Link*> links;
-	vector<bool> directions;
-	// cout<<"src: "<<srcPod<<" dst: "<<dstPod<<endl;
-	Host* source=getHostInTor(srcPod);
-	Host* dest= getHostInTor(dstPod);
+	// vector<Switch*> switches;
+	// vector<Link*> links;
+	// vector<bool> directions;
+	// // cout<<"src: "<<srcPod<<" dst: "<<dstPod<<endl;
+	// Host* source=getHostInTor(srcPod);
+	// Host* dest= getHostInTor(dstPod);
 
-	bool intraRack = getPaths(source, dest, switches, links, directions, 1);
-	filterPaths(rate,dest);
+	// bool intraRack = getPaths(source, dest, switches, links, directions, 1);
+	// filterPaths(rate,dest);
 
-	Path* back=paths[rand()%paths.size()];
-	paths.clear();
-	return back;
+	// Path* back=paths[rand()%paths.size()];
+	// paths.clear();
+	// return back;
+	return NULL;
 }
 
 

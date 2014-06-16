@@ -29,6 +29,7 @@ public:
 	vector<Link*> prone_links;
 	vector<Switch*> prone_switches;
 	vector<Group*> all_groups;
+
 	int tor_to_tor;	
 	int end_to_end;
 
@@ -81,8 +82,8 @@ public:
 	vector<Link*> critical_links;
 	vector<Flow*> getCommonFlows(vector<Flow*> u,vector<Flow*> d);
 	void getIntraPodPaths(Switch*, Switch*, Link*, std::vector<Switch*>, std::vector<Link*>, std::vector<bool>, int);
-	void getInterPodPaths(Switch*, Switch*, Link*, std::vector<Switch*>, std::vector<Link*>, std::vector<bool>, int);
-	bool getPaths(Host*, Host*, std::vector<Switch*>, std::vector<Link*>, std::vector<bool>, int);
+	void getInterPodPaths(Switch*, std::vector<Switch*>, std::vector<Link*>, std::vector<bool>, int,int);
+	void getPaths(Switch*);
 	void counter(vector<Link*> Tors);
 	void counter(vector<Switch*> Tors);
 	vector<Link*> getFailingLink(int);

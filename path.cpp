@@ -62,9 +62,21 @@
 		for(int i=0;i<links.size();i++)
 		{
 
+			cout<<links[i]->up_switch->toString()<<" -> ";
+		}
+
+		cout<<endl;
+
+		for(int i=0;i<links.size();i++)
+		{
+
 			cout<<links[i]->link_id<<" -> ";
 		}
+
+
 		cout<<endl;
+
+
 
 	}
 
