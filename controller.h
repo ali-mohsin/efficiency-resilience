@@ -8,6 +8,7 @@
 #include "path.h"
 #include "topology.h"
 #include "group.h"
+#include "pair.h"
 //this is to control the whole thing...includes a UI function
 class Flow;
 
@@ -29,13 +30,16 @@ public:
 	vector<Link*> prone_links;
 	vector<Switch*> prone_switches;
 	vector<Group*> all_groups;
+	vector<Pair*> all_pairs;
+	int flows_on_share;
+
 	int tor_to_tor;	
 	int end_to_end;
 
-	float downTime;
+	double downTime;
 	int torCap;
 	int aggrCap;
-	int backup;
+	double backup;
 	int coreCap;
 	int k;				
 	//k-ary tree

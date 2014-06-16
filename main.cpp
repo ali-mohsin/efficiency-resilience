@@ -5,11 +5,11 @@ int main (int argc, char *argv[])
 
 	int failures=1;
 
-	int oneToOne=0;
+	int oneToOne=2;
 
-	int sharing=0;
+	int sharing=1;
 
-	dc= new Controller(30,10240000,10240000,10240000,oneToOne,sharing,30000000,1);
+	dc= new Controller(20,10240000,10240000,10240000,oneToOne,sharing,30000000,1);
 int runFor=30000000;
 
 

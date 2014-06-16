@@ -26,6 +26,7 @@ Topology* Controller::createTopology(int tor,int aggr,int core)
 Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int runFor,int makeFlows)
 {
 	downTime=0;
+	flows_on_share=0;
 	srand(time(0));
 	k=kay;
 	torCap=tor;
@@ -52,6 +53,7 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	{
 		createFlows();
 	}
+
 
 
 	// vector<float> b=getAllocation(1);
@@ -82,6 +84,8 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 		// 	int x=1/0;
 		// }
 	}
+
+	cout<<"Flows on share are: "<<flows_on_share<<" out of "<<all_flows.size()<<endl;
 }
 
 
@@ -656,6 +660,17 @@ bool notIn(vector<Flow*> v,Flow* e)
 }
 
 
+bool notIn(vector<Path*> v,Path* e)
+{
+	for (int i=0;i<v.size();i++)
+	{
+		if(e==v[i])
+			return false;
+	}
+	return true;
+}
+
+
 void Controller::findFaults()
 {
 	//////startTimer();
@@ -947,8 +962,11 @@ void Controller::detect_downTime()
 			{
 				Flow* f1=flows_on_back[i];
 				Flow* f2=flows_on_back[j];
-				if(f1->backUpPath==f2->backUpPath && f1->on_back && f2->on_back)
+				if(f1!=f2 && f1->backUpPath==f2->backUpPath)// && f1->on_back && f2->on_back)
 				{
+					// f1->backUpPath->print();
+					// f2->backUpPath->print();
+					// cout<<"------------------"<<endl;
 					downTime+=1;
 					backup+=1;
 				}
@@ -1564,8 +1582,8 @@ void Controller::getInterPodPaths(Switch* src, Switch* dst, Link* destLink, vect
 	// cout<<paths.size()<<" is the num of paths found "<<endl;
 	vector<Link*> poolToVisit;
 	int size=paths.size();
-	if(size>30)
-		return;
+	// if(size>30)
+		// return;
 
 	if(src==NULL || dst==NULL)
 	{
@@ -1597,8 +1615,8 @@ void Controller::getInterPodPaths(Switch* src, Switch* dst, Link* destLink, vect
 	}
 	for(int i=0;i<poolToVisit.size();i++)
 	{
-		int index=rand()%poolToVisit.size();
-		Link* curLink=poolToVisit[index];
+		// int index=rand()%poolToVisit.size();
+		Link* curLink=poolToVisit[i];
 		//TODO randomization done here beware
 		if(curLink->label=="Tor")
 			continue;
@@ -1850,10 +1868,11 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
  		{
  			int x=1/0;
  		}
- 		if(sharing)
- 		{
- 			paths_to_be_shared.push_back(back);
- 		}
+
+ 		// if(sharing)
+ 		// {
+ 		// 	paths_to_be_shared.push_back(back);
+ 		// }
 	}
 
 
@@ -1928,34 +1947,63 @@ Path* Controller::getReplicatedPath(int src, int dst, int rate)
 
 Path* Controller::getBackUpPath(Path* primary, int rate)
 {
-	int overlap=-1;
+	int overlap=1;
 	Path* back=NULL;
 	int index=0;
 
-	if(sharing)
+	if(sharing && end_to_end)
 	{
-		for(int i=0;i<paths.size();i++)
-		{
-			for (int j=0;j<paths_to_be_shared.size();j++)
+			for (int j=0;j<all_pairs.size();j++)
 			{
-				Path* p1=paths[i];
-				Path* p2=paths_to_be_shared[j];
-				if(p2->getSrcPod()==p1->getSrcPod() && p2->getDstPod()==p1->getDstPod() && p1!=p2)
+				Path* p1=primary;
+				Pair* curPair=all_pairs[j];
+				Path* otherPrimary=curPair->primary;
+				Path* otherBack=curPair->back;
+				
+				vector<Switch*> primaryLinks=p1->switches;
+				vector<Switch*> otherPrimaryLinks=otherPrimary->switches;
+				vector<Switch*> otherBackLinks=otherBack->switches;
+				int commonPrimary=getCommonCount(primaryLinks,otherPrimaryLinks);
+				int commonBack=getCommonCount(primaryLinks,otherBackLinks);
+				if(commonPrimary==0 && commonBack==0)
 				{
-					vector<Switch*> links=p1->switches;
-					vector<Switch*> otherLinks=p2->switches;
-					int common=getCommonCount(links,otherLinks);
-					if(common > overlap)
+					if(notIn(paths_to_be_shared,otherBack))
 					{
-						back=p2;
-						overlap=common;
-						index=j;
+						// cout<<paths_to_be_shared.size()<<" is the size"<<endl;
+						continue;						
 					}
 
-				}	
-			}
-		}
+					// cout<<"found"<<endl;
+					flows_on_share++;
+					// cout<<"yes found"<<endl;
+					back=otherBack;
+					// index=j;
+					break;
+				}
+			}	
 	}
+		// // for(int i=0;i<paths.size();i++)
+		// // {
+		// 	for (int j=0;j<paths_to_be_shared.size();j++)
+		// 	{
+		// 		Path* p1=primary;
+		// 		Path* p2=paths_to_be_shared[j];
+		// // 		if(p2->getSrcPod()==p1->getSrcPod() && p2->getDstPod()==p1->getDstPod() && p1!=p2)
+		// // 		{
+		// 			vector<Switch*> links=p1->switches;
+		// 			vector<Switch*> otherLinks=p2->switches;
+		// 			int common=getCommonCount(links,otherLinks);
+		// 			if(common > overlap)
+		// 			{
+		// 				back=p2;
+		// 				overlap=common;
+		// 				index=j;
+		// 			}
+
+		// 	}	
+		// 	}
+		// // }
+	// }
 
 	overlap=10*k;
 
@@ -1963,8 +2011,18 @@ Path* Controller::getBackUpPath(Path* primary, int rate)
 
 	if(back!=NULL)
 	{
+		int index=0;
+		for(int i=0;i<paths_to_be_shared.size();i++)
+		{
+			if(paths_to_be_shared[i]==back)
+			{
+				index=i;
+				break;
+			}
+		}
 		paths_to_be_shared.erase(paths_to_be_shared.begin()+index);
-		cout<<"+ Sharing Back Up path with: "<<endl;
+		all_pairs.push_back(new Pair(primary,back));
+		// cout<<"+ Sharing Back Up path with: "<<endl;
 		// back->print();
 	}
 	else
@@ -1974,7 +2032,13 @@ Path* Controller::getBackUpPath(Path* primary, int rate)
 		{
 			int srcTor=primary->getSrcPod();
 			int dstTor=primary->getDstPod();
-			back=getReplicatedPath(srcTor,dstTor,rate);	
+			back=getReplicatedPath(srcTor,dstTor,rate);
+			all_pairs.push_back(new Pair(primary,back));
+
+			if(sharing)
+			{
+				paths_to_be_shared.push_back(back);
+			}
 		}
 		
 		if(tor_to_tor)

@@ -15,6 +15,7 @@ Flow::Flow(Host* src,Host* dst,Path* pp, Path* bp, int r, int s,int one,double s
 	down=-1;
 	on_back=0;
 
+
 	// if(oneToOne)
 	// 	commitPath(backUpPath,0);
 	// else
@@ -84,12 +85,14 @@ bool Flow::commitPath(Path* path,int beingUsed)
 	if(path==primaryPath)
 	{
 		primaryPath->beingUsed=1;
+		on_back=0;
 		if(backUpPath!=NULL)
 			backUpPath->beingUsed=0;
 	}	
 
 	if(path==backUpPath)
 	{
+		on_back=1;
 		primaryPath->beingUsed=0;
 		backUpPath->beingUsed=1;
 	}	
@@ -103,6 +106,10 @@ void Flow::antiCommitPath(Path* path)
 	// path->print();
 
 	path->beingUsed = 0;
+
+	if(path==backUpPath)
+		on_back=0;
+
 	// for(int i=0;i<path->switches.size();i++)
 	// {
 	// 	path->switches[i]->removeFlow(this);
