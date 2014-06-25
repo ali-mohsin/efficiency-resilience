@@ -112,7 +112,7 @@ t= 3*triple/total
 tt= 4*tetra/total
 
 arr=[s,d+s,t+d+s,tt+t+d+s]
-arr=[0.6,0.7,0.8,1]
+
 plt.plot([1,2,3,4],arr,marker='o',color='r')
 plt.axis([0,5,0,1])
 plt.ylabel("P[X < x]")

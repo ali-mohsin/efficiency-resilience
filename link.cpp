@@ -130,31 +130,27 @@ void Link::addPrimaryFlow(Flow* f,int rate, int dir, int  back)
 	else
 	{
 			available_cap_down-=rate;
-	
 	}
 
 }
 
-void Link::addBackFlow(Flow* f,int rate, int dir, int  back)
+void Link::addBackFlow(Flow* f,int rate, int dir, int  back, int tor2tor)
 {
 	//cout<<"Im here to add flow with directions as back= "<<back<<" and dir= "<<dir<<endl;
+	if(tor2tor && this->label=="Tor")
+		return;
+
 	flows_back.push_back(f);
 	num_flows++;
 	if(dir==1)
 	{
-		if(back)
 			backup_up+=rate;
-		else
 			available_cap_up-=rate;
 	}
 	else
 	{
-		if(back)
 			backup_down+=rate;
-		else
-		{
 			available_cap_down-=rate;
-		}
 	}
 
 }

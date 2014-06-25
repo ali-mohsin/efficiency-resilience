@@ -37,8 +37,6 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	backUp=back;
 	tor_to_tor=0;
 	end_to_end=0;
-	R=4;
-	//TODO remove this hardcoding
 	if(back==1)
 		tor_to_tor=1;
 	if(back==2)
@@ -57,7 +55,6 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	}
 
 
-	cout<<"Flows created"<<endl;
 
 	// vector<float> b=getAllocation(1);
 	// vector<float> p=getAllocation(0);
@@ -117,31 +114,34 @@ Switch* Controller::getTorFromAnotherPod(int pod)
 
 void Controller::createFlows()
 {
-	int factor=8;
+	int factor=8; // ihave temporarily disabled this
 	if(end_to_end)
 		factor=16;
+	int total_flows=0;
 	for (int i=0;i<all_switches.size();i++)
 	{
 		Switch* curSwitch=all_switches[i];
 		if(curSwitch->level==2)
 		{
 			int pod=curSwitch->getPodID();
-			for(int j=0;j<k*k/factor;j++)
+			for(int j=0;j<k*k/4;j++)
 			{
 				Switch* otherTor=getTorFromAnotherPod(pod);
 				Host* start=curSwitch->down_links[rand()%curSwitch->down_links.size()]->host;
 				Host* end=otherTor->down_links[rand()%curSwitch->down_links.size()]->host;
 				// //cout<<"Flow started from "<<curSwitch->toString()<<" to "<<otherTor->toString()<<endl;
-				instantiateFlow(start,end,10,10,0);
+				total_flows+=instantiateFlow(start,end,100,10,0);
 
 			}	
 		}
 		// for (int j=0;j<all_hosts.size();j++)
 		// {
-		// 	if(all_hosts[i]->getPodID()!=all_hosts[j]->getPodID())
-		// 		instantiateFlow(all_hosts[i],all_hosts[j],10,10,0);
+		// 	ifll_hosts[i],all_hosts[j],10,10,0);
 		// }
 	}
+
+	cout<<"Flows generated "<<total_flows<<endl;
+	int x = 1/0;
 }
 
 void Controller::checkProb(vector<Switch*> Tors, int prob, float factor)
@@ -1834,15 +1834,17 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 
 	// cout<<paths.size()<<" is the num of paths"<<endl;
 	filterPaths(rate,dest);
+	// check for only one path..n
+	
 	 if(intraRack && paths.size()!=1)
  	 {
  		int x=1/0;
  	 	return 0;
  	 }
-	if(!intraRack && paths.size()<2)
+	if(!intraRack && paths.size()<1)
 	{
 		paths.clear();
-		cout<<"ERROR: Request could not be entertained with Rate: "<<rate<<" Size: "<<size<<", Not enough Bandwith remaining on Candidate Paths"<<endl;
+//		cout<<"ERROR: Request could not be entertained with Rate: "<<rate<<" Size: "<<size<<", Not enough Bandwith remaining on Candidate Paths"<<endl;
 
 		return 0;
 	}
@@ -1869,8 +1871,10 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
  		// back->print();
  		if(!back)
  		{
- 			int x=1/0;
- 		}
+ //			int x=1/0;
+		//	cout<<"Backup Bandwidth not available"<<endl;
+			return 0;
+		}
 
  		// if(sharing)
  		// {
@@ -1884,12 +1888,12 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 	// if(duplicateIn(back->links))
 	// 	back->print();
 
-	Flow* flow= new Flow(source,dest,primary,back,rate,size,oneToOne,sTime);
+	Flow* flow= new Flow(source,dest,primary,back,rate,size,oneToOne,sTime,sharing,tor_to_tor);
 	flow->setID(flowNumber);
 	all_flows.push_back(flow);
 	flowNumber++;
-	// if(flowNumber%1000==0)
-	// 	cout<<flowNumber<<" is the num of flows committed"<<endl;
+	if(flowNumber%1000==0)
+		cout<<flowNumber<<" is the num of flows committed"<<endl;
 	paths.clear();
 	return 1;
 }
@@ -1941,6 +1945,11 @@ Path* Controller::getReplicatedPath(int src, int dst, int rate)
 
 	bool intraRack = getPaths(source, dest, switches, links, directions, 1);
 	filterPaths(rate,dest);
+		if(paths.size()==0)
+		{
+
+			return 0;			
+		}
 
 	Path* back=paths[rand()%paths.size()];
 	paths.clear();
@@ -1950,6 +1959,7 @@ Path* Controller::getReplicatedPath(int src, int dst, int rate)
 
 Path* Controller::getBackUpPath(Path* primary, int rate)
 {
+	// check for NULL condition
 	int overlap=1;
 	Path* back=NULL;
 	int index=0;
@@ -1962,7 +1972,16 @@ Path* Controller::getBackUpPath(Path* primary, int rate)
 				Pair* curPair=all_pairs[j];
 				Path* otherPrimary=curPair->primary;
 				Path* otherBack=curPair->back;
-				
+				//check for BW of otherBack. continue loop of BW not met
+//				check is valid
+				if(otherBack!=NULL){
+					if( !otherBack->isValid(rate/4)) //divided by 2 
+						continue;
+				}
+				else{
+					cout<<"@mochi:contunuing, this shoul,nt happen "<<endl;
+					continue;
+				}
 				vector<Switch*> primaryLinks=p1->switches;
 				vector<Switch*> otherPrimaryLinks=otherPrimary->switches;
 				vector<Switch*> otherBackLinks=otherBack->switches;
@@ -2035,19 +2054,25 @@ Path* Controller::getBackUpPath(Path* primary, int rate)
 		{
 			int srcTor=primary->getSrcPod();
 			int dstTor=primary->getDstPod();
-			back=getReplicatedPath(srcTor,dstTor,rate);
+			if(sharing)
+				back=getReplicatedPath(srcTor,dstTor,rate/4);
+			else{
+				back=getReplicatedPath(srcTor,dstTor,rate);				
+			}
+			if(back==NULL)
+				return 0;	
+
 			all_pairs.push_back(new Pair(primary,back));
 
 			if(sharing)
 			{
-				for(int i=0;i<R-1;i++)
-					paths_to_be_shared.push_back(back);
+				paths_to_be_shared.push_back(back);
 			}
 
-			if(back==NULL)
-			{
-				int x=1/0;
-			}
+//			if(back==NULL)
+//			{
+//				int x=1/0;
+//			}
 		}
 		
 		if(tor_to_tor)
@@ -2062,6 +2087,8 @@ Path* Controller::getBackUpPath(Path* primary, int rate)
             	if(common<overlap)
             	{
                 	back=cand;
+					if( !back->isValid(rate, tor_to_tor)) //divided by 2 
+						continue;
                 	overlap=common;
             	}
         	}
@@ -2266,7 +2293,7 @@ void Controller::uiFunc()
 		printf("1) Create a Topology\n");
 		printf("2) Fail Device\n");
 		printf("3) Fail Link\n");
-		printf("4) Instantiate Flows\n");
+		printf("4)  Flows\n");
 
 		cin>>option;
 
@@ -2292,10 +2319,10 @@ void Controller::uiFunc()
 			failLink();
 			printf("Failed link\n");
 		}
-		if(option == 4)		//instantiate flow
+		if(option == 4)		// flow
 		{
 			printf("Creating paths\n");
-			instantiateFlow();
+			();
 			printf("Assigned paths to flow\n");
 		}
 	}

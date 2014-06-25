@@ -28,7 +28,7 @@ public:
 	Host* dest;
 	Path* primaryPath;
 	Path* backUpPath;
-	Flow(Host* src,Host* dst,Path* pp, Path* bp, int rate, int size,int,double);
+	Flow(Host* src,Host* dst,Path* pp, Path* bp, int rate, int size,int,double,int,int);
 	bool commitPath(Path* path, int back);
 	void antiCommitPath(Path* path);
 	int getID();

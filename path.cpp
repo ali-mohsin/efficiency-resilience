@@ -73,8 +73,36 @@
 		return switches;
 	}
 
+	bool Path::isValid(int rate, int tor2tor)
+	{
+//		cout<<"is "<<endl;
+//		cout<<links.size()<<endl;
+		for(int i=0;i<links.size();i++)
+		{
+			Link* curLink=links[i];
+			bool dir=direction[i];
+			if(tor2tor){
+				if(links[i]->label=="Tor")
+					continue;
+			}
+			if(dir)
+			{
+				if(!curLink->availAtUp(rate))
+					return 0;
+			}
+			else
+			{
+				if(!curLink->availAtDown(rate))
+					return 0;
+			}
+		}	
+		return 1;
+	}
+
 	bool Path::isValid(int rate)
 	{
+//		cout<<"is "<<endl;
+//		cout<<links.size()<<endl;
 		for(int i=0;i<links.size();i++)
 		{
 			Link* curLink=links[i];
@@ -92,6 +120,9 @@
 		}	
 		return 1;
 	}
+
+
+
 
 	int Path::getSrcPod()
 	{

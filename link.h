@@ -52,7 +52,7 @@ public:
 	void printInfo();
 	Switch* getOtherNode(Switch* cur);
 	void addPrimaryFlow(Flow* f,int rate, int dir, int back);
-	void addBackFlow(Flow* f,int rate, int dir, int back);
+	void addBackFlow(Flow* f,int rate, int dir, int back, int tor2tor);
 	void removeFlow(Flow* f,int rate, int dir);
 	void commitPath(Path* p, int back);
 	vector<Flow*> getFlowsOnPrimary();

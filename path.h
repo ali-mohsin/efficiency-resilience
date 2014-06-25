@@ -24,7 +24,9 @@ public:
 	Path(vector<Switch*> s , vector<Link*> l, vector<bool> dir);
 	void print();
 	vector<Switch*> getSwitches();
+	bool isValid(int rate,int);
 	bool isValid(int rate);
+
 	int getSrcPod();
 	int getDstPod();
 };

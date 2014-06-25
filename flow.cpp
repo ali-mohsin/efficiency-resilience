@@ -1,6 +1,6 @@
 #include "flow.h"
 
-Flow::Flow(Host* src,Host* dst,Path* pp, Path* bp, int r, int s,int one,double sTime)
+Flow::Flow(Host* src,Host* dst,Path* pp, Path* bp, int r, int s,int one,double sTime, int sharing, int tor2tor)
 {
 	source=src;
 	dest=dst;
@@ -30,17 +30,20 @@ Flow::Flow(Host* src,Host* dst,Path* pp, Path* bp, int r, int s,int one,double s
 		primaryPath->links[i]->addPrimaryFlow(this,this->rate,primaryPath->direction[i],on_back);
 	}
 
-
+	if(sharing)
+		rate=rate/4;
+	
 	if(backUpPath!=NULL)
 	{
 		for(int i=0;i<backUpPath->switches.size();i++)
 		{
+			
 			backUpPath->switches[i]->addBackFlow(this);
 		}
 
 		for(int i=0;i<backUpPath->links.size();i++)
 		{
-			backUpPath->links[i]->addBackFlow(this,this->rate,backUpPath->direction[i],on_back);
+			backUpPath->links[i]->addBackFlow(this,this->rate,backUpPath->direction[i],on_back, tor2tor);
 		}
 
 	}

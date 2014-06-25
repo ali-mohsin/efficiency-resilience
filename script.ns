@@ -1,9 +1,9 @@
-#define FatTree -k 20 -reduncancy e2e -sharing yes -auto yes -repeatForAll  -algo default -torLinks 10000G -aggrLinks 10000G -coreLinks 10000G -failures enable -runFor 30000000
+#define FatTree -k 20 -reduncancy e2e -sharing yes -auto yes -repeatForAll  -algo default -torLinks 1G -aggrLinks 1G -coreLinks 1G -failures enable -runFor 30000000
 #define Flow -sourceId 1 -destId 17 -rate 10M -size 57G -startTime 0
 #define Flow -sourceId 24 -destId 31 -rate 10M -size 304M -startTime 3600
 #define Flow -sourceId 23 -destId 42 -rate 10M -size 539M -startTime 7200
 #define Flow -sourceId 11 -destId 14 -rate 10M -size 321G -startTime 10800
-#define Flow -sourceId 8 -destId 35 -rate 10M -size 574G -startTime 14400
+#define Flow -sourceId 8 -destId 35 -rate 10M -size 574G -startTime 1440
 #define Flow -sourceId 15 -destId 7 -rate 10M -size 565G -startTime 18000
 #define Flow -sourceId 56 -destId 3 -rate 10M -size 722G -startTime 21600
 #define Flow -sourceId 51 -destId 50 -rate 10M -size 706G -startTime 25200
