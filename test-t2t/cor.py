@@ -24,7 +24,7 @@ def findAll(arr,num):
 import sys
 
 def extract_dt(device,rms):
-    string=sys.argv[1]
+    string="Down"
     if(string=='Down'):
         otherS='downFor:'
     else:
@@ -64,7 +64,7 @@ def plot_cdf(down_arr,labels,markers,colors):
     plt.plot(arr,label=labels,marker=markers, color=colors)
 
 
-with open(sys.argv[2],'rb') as fin:
+with open(sys.argv[1],'rb') as fin:
     reader = csv.reader(fin,delimiter=' ')
     rms=[]
     for row in reader:
@@ -78,6 +78,7 @@ d=extract_dt('Link',rms)
 single=0
 double=0
 triple=0
+tetra=0
 buff=0
 for i in range(0,len(d)-3):
     print d[i],'on ',i,' th index'
@@ -86,10 +87,14 @@ for i in range(0,len(d)-3):
         continue
     if(d[i]==d[i+1]):
         if(d[i+1]==d[i+2]):
-            triple+=1
-            print 'got triple'
-            buff=2
-            continue
+            if(d[i+2]==d[i+3]):
+                tetra+=1
+                buff=3
+            else:
+                triple+=1
+                print 'got triple'
+                buff=2
+                continue
         else:
             double+=1
             print 'got double'
@@ -101,7 +106,15 @@ for i in range(0,len(d)-3):
 
 
 total=float(len(d))
-print single/total
-print 2*double/total
-print 3*triple/total
+s= single/total
+d= 2*double/total
+t= 3*triple/total
+tt= 4*tetra/total
 
+arr=[s,d+s,t+d+s,tt+t+d+s]
+
+plt.plot([1,2,3,4],arr,marker='o',color='r')
+plt.axis([0,5,0,1])
+plt.ylabel("P[X < x]")
+plt.xlabel('Size of Link Failure Groups in Simulator')
+plt.show()

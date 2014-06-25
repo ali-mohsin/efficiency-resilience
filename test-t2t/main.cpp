@@ -5,12 +5,12 @@ int main (int argc, char *argv[])
 
 	int failures=1;
 
-	int oneToOne=0;
+	int oneToOne=2;
 
-	int sharing=0;
+	int sharing=1;
 
-	dc= new Controller(20,10240000,10240000,10240000,oneToOne,sharing,3000000,1);
-int runFor=3000000;
+	dc= new Controller(20,10240000,10240000,10240000,oneToOne,sharing,30000000,1);
+int runFor=30000000;
 
 
 	//Main tasks that this code does is that iterate for run number of times and after every ping interval which represents 1 sec, dump the data, 
@@ -29,41 +29,41 @@ int runFor=3000000;
 	int runs = (runFor);
 	int num_fails = failTimes.size(); // would compute to 0
 
-	cout<<"Number of run: "<<runs<<"\n";
+	// cout<<"Number of run: "<<runs<<"\n";
 	if(failures)
 	{
 		for(int i=0; i<runs; i++)
 		{
-			if (i%10000==0)
-				cout<<i<<"th run"<<endl;
+			// if (i%10000==0)
+			// 	cout<<i<<"th run"<<endl;
 			
 
 			dc->autofail(i);
-			seconds_run++;
-			if( (seconds_run % inter_ping_time) == 0 )
-			{
-				if( (seconds_run % 31536000) == 0 )
-				{
-					years_run++;
-					seconds_run = seconds_run - 31536000;
-				}
-				long time_so_far = years_run*31536000 + seconds_run;
-			}
+			// seconds_run++;
+			// if( (seconds_run % inter_ping_time) == 0 )
+			// {
+			// 	if( (seconds_run % 31536000) == 0 )
+			// 	{
+			// 		years_run++;
+			// 		seconds_run = seconds_run - 31536000;
+			// 	}
+			// 	long time_so_far = years_run*31536000 + seconds_run;
+			// }
 
-			if(nanosleep(&time1, &time2) < 0)
-			{
-				cout<<"Nanosleep() failed\n";
-				return -1;
-			}
+			// if(nanosleep(&time1, &time2) < 0)
+			// {
+			// 	cout<<"Nanosleep() failed\n";
+			// 	return -1;
+			// }
 
-			for(int j=0; j<flowsNum; j++)
-			{
-				if( ((dc->all_flows[j]->getActive() + dc->all_flows[j]->getStart()) < run_time ) && (!(dc->all_flows[j]->getDone())))
-				{
-					dc->all_flows[j]->setDone(true);
-					cout<<"Flow has completed!\n";
-				}
-			}
+			// for(int j=0; j<flowsNum; j++)
+			// {
+			// 	if( ((dc->all_flows[j]->getActive() + dc->all_flows[j]->getStart()) < run_time ) && (!(dc->all_flows[j]->getDone())))
+			// 	{
+			// 		dc->all_flows[j]->setDone(true);
+			// 		cout<<"Flow has completed!\n";
+			// 	}
+			// }
 		}
 	}
 	else

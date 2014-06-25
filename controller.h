@@ -31,6 +31,7 @@ public:
 	vector<Switch*> prone_switches;
 	vector<Group*> all_groups;
 	vector<Pair*> all_pairs;
+	int R;
 	int flows_on_share;
 
 	int tor_to_tor;	

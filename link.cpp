@@ -125,19 +125,12 @@ void Link::addPrimaryFlow(Flow* f,int rate, int dir, int  back)
 	num_flows++;
 	if(dir==1)
 	{
-		if(back)
-			backup_up+=rate;
-		else
 			available_cap_up-=rate;
 	}
 	else
 	{
-		if(back)
-			backup_down+=rate;
-		else
-		{
 			available_cap_down-=rate;
-		}
+	
 	}
 
 }

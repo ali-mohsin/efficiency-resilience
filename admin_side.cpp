@@ -16,13 +16,13 @@
 	int runs = (runFor);
 	int num_fails = failTimes.size(); // would compute to 0
 
-	cout<<"Number of run: "<<runs<<"\n";
+	// cout<<"Number of run: "<<runs<<"\n";
 	if(failures)
 	{
 		for(int i=0; i<runs; i++)
 		{
-			if (i%10000==0)
-				cout<<i<<"th run"<<endl;
+			// if (i%10000==0)
+			// 	cout<<i<<"th run"<<endl;
 			
 
 			dc->autofail(i);
