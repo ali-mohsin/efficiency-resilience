@@ -1979,7 +1979,7 @@ int Controller::alloc(int v,int b,Host* h,Switch* s)
 	}
 }
 
-vector<VM*> Controller::octopus(int v, int b)
+vector<Host*> Controller::octopus(int v, int b)
 {
 	int done=false;
 	int level=0;
@@ -2000,7 +2000,7 @@ vector<VM*> Controller::octopus(int v, int b)
 				{
 					cout<<"Found at level 0"<<endl;
 					alloc(v,b,all_hosts[i],NULL);
-					return true;
+					return tenant_vms;
 				}
 			}
 		}
@@ -2015,7 +2015,7 @@ vector<VM*> Controller::octopus(int v, int b)
 					cout<<"Found at level 1"<<endl;
 
 					alloc(v,b,NULL,Tors[i]);
-					return true;
+					return tenant_vms;
 				}
 			}
 		}
@@ -2030,7 +2030,7 @@ vector<VM*> Controller::octopus(int v, int b)
 					cout<<"Found at level 2"<<endl;
 
 					alloc(v,b,NULL,Aggrs[i]);
-					return true;
+					return tenant_vms;
 				}
 			}
 		}
@@ -2046,7 +2046,7 @@ vector<VM*> Controller::octopus(int v, int b)
 					cout<<"Found at level 3"<<endl;
 
 					alloc(v,b,NULL,Cores[i]);
-					return true;
+					return tenant_vms;
 				}
 			}
 		}
@@ -2055,7 +2055,7 @@ vector<VM*> Controller::octopus(int v, int b)
 	}
 
 	cout<<"no more"<<endl;
-	return false;
+	return tenant_vms;
 }
 
 bool Controller::instantiateTenant(int vms, int bw)	//rate in MBps, size in MB
@@ -2066,13 +2066,15 @@ bool Controller::instantiateTenant(int vms, int bw)	//rate in MBps, size in MB
 	vector<Host*> hosts; 
 	hosts=octopus(vms,bw);
 
-	for(int i=0;i<hosts.size();i++)
-	{
-		for(int j=i+1;j<hosts.size();j++)
-		{
-			instantiateFlow(hosts[i],hosts[j],bw,10,0);
-		}
-	}	
+	// TODO saad, continue from here and generate flows
+
+	// for(int i=0;i<hosts.size();i++)
+	// {
+	// 	for(int j=i+1;j<hosts.size();j++)
+	// 	{
+	// 		instantiateFlow(hosts[i],hosts[j],bw,10,0);
+	// 	}
+// /''	}	
 
 		// 	vector<Switch*> switches;
 		// 	vector<Link*> links;
