@@ -54,38 +54,6 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 		createFlows();
 	}
 
-
-
-	// vector<float> b=getAllocation(1);
-	// vector<float> p=getAllocation(0);
-
-	// cout<<"[";
-	// for(int i=0;i<p.size();i++)
-	// {
-	// 	cout<<p[i]<<",";
-	// }
-	// cout<<"]"<<endl;
-
-	// int x=1/0;
-	// for(int i=0;i<all_links.size();i++)
-	// {
-	// 	cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_primary.size()<<" Flows passing through"<<endl;
-	// 	cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_back.size()<<" Flows passing through"<<endl;
-
-	// 	// if(all_links[i]->flows_primary.size()==0 && all_links[i]->flows_back.size()==0)
-	// 	// {
-	// 	// 	int x=1/0;
-	// 	// 	// //cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_primary.size()<<" Flows passing through"<<endl;
-	// 	// 	// //cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_back.size()<<" Flows passing through"<<endl;
-	// 	// }
-	// 	// else
-	// 	// {
-	// 	// 	// //cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows.size()<<" Flows passing through"<<endl;
-	// 	// 	int x=1/0;
-	// 	// }
-	// }++
-
-	//cout<<"Flows on share are: "<<flows_on_share<<" out of "<<all_flows.size()<<endl;
 }
 
 

@@ -39,6 +39,11 @@ with open('script.ns','rb') as fin:
         header=row[0]
         if(header=="#define"):
             identifier=row[1]
+
+            if(identifier=="Tenant"):
+                vms=int(find(row,"-vm"))
+                bw=int(find(row,"-bw"))
+                code.append("dc->instantiateTenant("+str(vms)+","+str(bw)+")")
             if(identifier=="Failure"):
                 pod=int(find(row,"-pod"))
                 level=int(find(row,"-level"))
