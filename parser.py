@@ -43,7 +43,7 @@ with open('script.ns','rb') as fin:
             if(identifier=="Tenant"):
                 vms=int(find(row,"-vm"))
                 bw=int(find(row,"-bw"))
-                code.append("dc->instantiateTenant("+str(vms)+","+str(bw)+")")
+                code.append("dc->instantiateTenant("+str(vms)+","+str(bw)+");")
             if(identifier=="Failure"):
                 pod=int(find(row,"-pod"))
                 level=int(find(row,"-level"))
@@ -54,6 +54,7 @@ with open('script.ns','rb') as fin:
                 k=find(row,"-k")
                 auto=find(row,'-auto')
                 algo=find(row,"-algo")
+                octa=find(row,"-oct")
                 runFor=find(row,"-runFor")
                 sharing=(find(row,"-sharing"))
                 torCap=bw2int(find(row,"-torLinks"))
@@ -82,11 +83,11 @@ with open('script.ns','rb') as fin:
  
 
                 if(algo=="default" and auto=='yes'):
-                    line= "\tdc= new Controller("+k+","+torCap+","+aggrCap+","+coreCap+",oneToOne,sharing,"+runFor+",1);"
+                    line= "\tdc= new Controller("+k+","+torCap+","+aggrCap+","+coreCap+",oneToOne,sharing,"+runFor+",1,0);"
                     code.append(line)
                     auto=1
-                elif(algo=='default'):
-                    line= "\tdc= new Controller("+k+","+torCap+","+aggrCap+","+coreCap+",oneToOne,sharing,"+runFor+",0);"
+                elif(algo=='default' and octa=="yes"):
+                    line= "\tdc= new Controller("+k+","+torCap+","+aggrCap+","+coreCap+",oneToOne,sharing,"+runFor+",0,1);"
                     code.append(line)
                     auto=0
                     

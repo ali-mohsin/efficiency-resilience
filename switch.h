@@ -28,6 +28,7 @@ public:
 	Switch(int pid, int did, string label, int l,int num):Device(new Address(pid, did),label)
 	{
 		status=0;
+		isHost=0;
 		level=l;
 		num_ports=num;
 		failAt=-1;

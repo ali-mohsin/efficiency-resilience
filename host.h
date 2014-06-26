@@ -20,14 +20,20 @@ public:
 	Host(int pid,int did,string label):Device(new Address(pid, did),label)
 	{
 		link=NULL;
-		all_vms=new VM()[8];
+		isHost=1;
+		for(int i=0;i<8;i++)
+		{
+			all_vms.push_back(new VM());
+		}
 	}
 	string toString();
 	Switch* getTor();
 	int getPodID();
 	int getDeviceID();
 	Link* getLink();
-	VM* all_vms;
+	int availableVMs();
+	void mark(int);
+	vector<VM*> all_vms;
 };
 
 #endif /* HOST_H */

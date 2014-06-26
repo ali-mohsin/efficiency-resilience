@@ -23,7 +23,7 @@ Topology* Controller::createTopology(int tor,int aggr,int core)
  		// tree->printTopology();
 }
 
-Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int runFor,int makeFlows)
+Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int runFor,int makeFlows,int octo)
 {
 	downTime=0;
 	flows_on_share=0;
@@ -35,6 +35,7 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	flowNumber = 0;
 	createTopology(tor,aggr,core);
 	backUp=back;
+	oct=octo;
 	tor_to_tor=0;
 	end_to_end=0;
 	if(back==1)
@@ -53,7 +54,6 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	{
 		createFlows();
 	}
-
 }
 
 
@@ -1800,7 +1800,17 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 	vector<bool> directions;
 	bool intraRack = getPaths(source, dest, switches, links, directions, 1);
 
+	if(oct)
+	{
+		if(source==dest)
+		{
+			return false; // ignoring machines on same hosts for now
+		}
+
+		// I am too tired to continue from here
+	}
 	// cout<<paths.size()<<" is the num of paths"<<endl;
+
 	filterPaths(rate,dest);
 	// check for only one path..n
 	
@@ -1866,6 +1876,276 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 	return 1;
 }
 
+int min(int a,int b)
+{
+	if(a<b)
+		return a;
+	else
+		return b;
+}
+
+int TorCount(Switch* d)
+{
+	int count=0;
+	for(int i=0;i<d->down_links.size();i++)
+	{
+		count+=d->down_links[i]->host->availableVMs();
+	}
+	return count;
+}
+
+int aggrCount(Switch* d)
+{
+	int count=0;
+	// cout<<"My level is "<<d->level<<endl;
+	for(int i=0;i<d->down_links.size();i++)
+	{
+		Switch* sw=d->down_links[i]->down_switch;
+		count+=TorCount(sw);
+	}
+	return count;
+}
+
+
+int coreCount(Switch* d)
+{
+	// cout<<"My level is "<<d->level<<endl;
+	int count=0;
+	// cout<<d->down_links.size()<<" is the size"<<endl;
+	// cout<<d->toString()<<endl;
+	for(int i=0;i<d->down_links.size();i++)
+	{
+		Switch* sw=d->down_links[i]->down_switch;
+		// cout<<"My level is "<<sw->level<<endl;
+
+		count+=aggrCount(sw);
+	}
+	return count;	
+}
+int Controller::computeMx(Switch* d)
+{
+	int count=0;
+	if(d->level==2)
+	{
+		return TorCount(d);
+	}
+	if(d->level==1)
+	{
+		return aggrCount(d);
+	}
+
+	if(d->level==0)
+	{
+		return coreCount(d);
+	}
+}
+
+int Controller::alloc(int v,int b,Host* h,Switch* s)
+{
+	if(h!=NULL)
+	{
+		h->mark(v);
+
+		for(int i=0;i<v;i++)
+			tenant_vms.push_back(h);
+
+		if(v>0)
+			cout<<"I have reserved "<<v<<" Vms on one host"<<endl;
+		return v;
+	}
+	else
+	{
+		int count=0;
+		vector<Device*> sub_trees;
+		for(int i=0;i<s->down_links.size();i++)
+		{
+			Link* curLink=s->down_links[i];
+			if(curLink->host)
+			{
+				int Mw=curLink->host->availableVMs();
+				count+=alloc(min(v-count,Mw),b,curLink->host,NULL);				
+
+			}
+			else
+			{
+				Switch* sw=curLink->down_switch;
+				int Mw=computeMx(sw);
+				count+=alloc(min(v-count,Mw),b,NULL,sw);				
+			}
+		}
+
+		return count;
+
+	}
+}
+
+vector<VM*> Controller::octopus(int v, int b)
+{
+	int done=false;
+	int level=0;
+	vector<Switch*> Tors=getAllTors();
+	vector<Switch*> Aggrs=getAllAggrs();
+	vector<Switch*> Cores=all_cores;
+	tenant_vms.clear();
+	while(level<=3)
+	{
+		//traverse through all hosts
+		if(level==0)
+		{
+			for(int i=0;i<all_hosts.size();i++)
+			{
+				int Mv=all_hosts[i]->availableVMs();
+				// cout<<"Avail Mv: "<<Mv<<endl;
+				if(v<=Mv)
+				{
+					cout<<"Found at level 0"<<endl;
+					alloc(v,b,all_hosts[i],NULL);
+					return true;
+				}
+			}
+		}
+
+		if(level==1)
+		{
+			for(int i=0;i<Tors.size();i++)
+			{
+				int Mv=TorCount(Tors[i]);
+				if(v<=Mv)
+				{
+					cout<<"Found at level 1"<<endl;
+
+					alloc(v,b,NULL,Tors[i]);
+					return true;
+				}
+			}
+		}
+
+		if(level==2)
+		{
+			for(int i=0;i<Aggrs.size();i++)
+			{
+				int Mv=aggrCount(Aggrs[i]);
+				if(v<=Mv)
+				{
+					cout<<"Found at level 2"<<endl;
+
+					alloc(v,b,NULL,Aggrs[i]);
+					return true;
+				}
+			}
+		}
+
+
+		if(level==3)
+		{
+			for(int i=0;i<Cores.size();i++)
+			{
+				int Mv=coreCount(Cores[i]);
+				if(v<=Mv)
+				{
+					cout<<"Found at level 3"<<endl;
+
+					alloc(v,b,NULL,Cores[i]);
+					return true;
+				}
+			}
+		}
+
+	level++;
+	}
+
+	cout<<"no more"<<endl;
+	return false;
+}
+
+bool Controller::instantiateTenant(int vms, int bw)	//rate in MBps, size in MB
+{
+	// if 'intraRack' is true, then there will be no backup path, only 1 path
+	cout<<"VMs required: "<<vms<<endl;
+	cout<<"BW required: "<<bw<<endl;
+	vector<Host*> hosts; 
+	hosts=octopus(vms,bw);
+
+	for(int i=0;i<hosts.size();i++)
+	{
+		for(int j=i+1;j<hosts.size();j++)
+		{
+			instantiateFlow(hosts[i],hosts[j],bw,10,0);
+		}
+	}	
+
+		// 	vector<Switch*> switches;
+		// 	vector<Link*> links;
+		// 	vector<bool> directions;
+		// 	bool intraRack = getPaths(source, dest, switches, links, directions, 1);
+
+		// 	// cout<<paths.size()<<" is the num of paths"<<endl;
+		// 	filterPaths(rate,dest);
+		// 	// check for only one path..n
+			
+		// 	 if(intraRack && paths.size()!=1)
+		//  	 {
+		//  		int x=1/0;
+		//  	 	return 0;
+		//  	 }
+		// 	if(!intraRack && paths.size()<1)
+		// 	{
+		// 		paths.clear();
+		// //		cout<<"ERROR: Request could not be entertained with Rate: "<<rate<<" Size: "<<size<<", Not enough Bandwith remaining on Candidate Paths"<<endl;
+
+		// 		return 0;
+		// 	}
+
+		// //	cout << "Request Entertained: Rate: "<<rate<<" Size: "<<size<<endl;
+		// 	int ind=rand()%paths.size();
+		// 	Path* primary=paths[ind];
+		// 	paths.erase(paths.begin()+ind);
+		// 	// cout<<"Primary Path is: "<<endl;
+		// 	// primary->print();
+		// 	Path* back=NULL;
+
+
+
+		// 	if(backUp)
+		// 	{
+		// 		if(end_to_end)
+		// 		{
+		// 			paths.clear();
+		// 		}
+
+		// 		back=getBackUpPath(primary,rate);
+		//  		// cout<<"Backup Path is: "<<endl;
+		//  		// back->print();
+		//  		if(!back)
+		//  		{
+		//  //			int x=1/0;
+		// 		//	cout<<"Backup Bandwidth not available"<<endl;
+		// 			return 0;
+		// 		}
+
+		//  		// if(sharing)
+		//  		// {
+																																																																																																																																																																																																																																																																																																																		//  		// 	paths_to_be_shared.push_back(back);
+		//  		// }
+		// 	}
+
+
+		// 	// TODO fix the error of multiple ppl sharing one pathF
+
+		// 	// if(duplicateIn(back->links))
+		// 	// 	back->print();
+
+		// 	Flow* flow= new Flow(source,dest,primary,back,rate,size,oneToOne,sTime,sharing,tor_to_tor);
+		// 	flow->setID(flowNumber);
+		// 	all_flows.push_back(flow);
+		// 	flowNumber++;
+		// 	if(flowNumber%1000==0)
+		// 		cout<<flowNumber<<" is the num of flows committed"<<endl;
+		// 	paths.clear();
+	return 1;
+}
+
+
 int getCommonCount(vector<Switch*> a,vector<Switch*> b)
 {
 	int count=0;
@@ -1915,7 +2195,6 @@ Path* Controller::getReplicatedPath(int src, int dst, int rate)
 	filterPaths(rate,dest);
 		if(paths.size()==0)
 		{
-
 			return 0;			
 		}
 

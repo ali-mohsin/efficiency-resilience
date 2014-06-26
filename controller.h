@@ -46,10 +46,12 @@ public:
 	int totalTime;
 	int flowNumber;
 	int oneToOne;
+	int oct;
 	long int t;
 	int failures;
 	bool backUp;
 	int sharing;
+	vector<Host*> tenant_vms;
 
 	vector<int> violations;
 	void createFlows();
@@ -58,12 +60,17 @@ public:
 	void logFailures(int time);
 	Topology* createTopology(int,int,int);				//to create topology
 	void assignPaths();
+	int alloc(int v,int b,Host* h,Switch* s);
+	vector<Host*> octopus(int v, int b);
+	int computeMx(Switch*);
+
 	void autofail(int);									//primary + backups
 	bool instantiateFlow(Host* source, Host* dest, double rate, int size,double);	//rate in MBps, size in MB
+	bool instantiateTenant(int vms, int bw);	//rate in MBps, size in MB
 	void findFaults();
 	Path* getPathRandom(Host* source, Host* dest);
 	void getAllPaths(Switch* src,Switch* dst, vector<Switch*> switches,vector<Link*> links, vector<bool> direction, int dir);
-	Controller(int kay,int,int,int,int,int,int,int);
+	Controller(int kay,int,int,int,int,int,int,int,int);
 	int commitPath(Path* path, int dur,int rate, int size);
 //	void antiCommitPath();
 //	void goToSwitch(Path* path, Switch* dst, Switch** tempSwitch);

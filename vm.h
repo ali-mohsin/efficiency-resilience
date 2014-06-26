@@ -4,6 +4,12 @@ class VM
 {
 public:
 	bool marked;
+
+	void mark()
+	{
+		marked=true;
+	}
+
 	VM()
 	{
 		marked=false;

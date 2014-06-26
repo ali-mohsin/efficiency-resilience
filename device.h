@@ -7,6 +7,7 @@ class Flow;
 class Device
 {
 	public:
+	int isHost;
 	Address* addr;
 	string label;
 	vector<Flow*> allFlows;

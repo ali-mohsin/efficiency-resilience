@@ -37,3 +37,28 @@ int Host::getDeviceID()
 {
 	return addr->getDeviceID();
 }
+
+int Host::availableVMs()
+{
+	int count=0;
+	for(int i=0;i<all_vms.size();i++)
+	{
+		if(!all_vms[i]->marked)
+			count++;
+	}
+	return count;
+}
+
+void Host::mark(int num)
+{
+	for(int i=0;i<all_vms.size();i++)
+	{
+		if(!all_vms[i]->marked)
+		{
+			all_vms[i]->mark();
+			num--;			
+		}
+		if(num==0)
+			return;
+	}
+}
