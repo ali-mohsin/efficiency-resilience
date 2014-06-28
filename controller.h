@@ -9,6 +9,8 @@
 #include "topology.h"
 #include "group.h"
 #include "pair.h"
+#include "tenant.h"
+#include "hostpair.h"
 //this is to control the whole thing...includes a UI function
 class Flow;
 
@@ -31,10 +33,15 @@ public:
 	vector<Switch*> prone_switches;
 	vector<Group*> all_groups;
 	vector<Pair*> all_pairs;
+	vector<Tenant*> all_tenants;
+	vector<HostPair*> all_host_pairs;
 	int flows_on_share;
-
+	int ones;
+	int twos;
+	int threes;
 	int tor_to_tor;	
 	int end_to_end;
+	int curLevel;
 
 	double downTime;
 	int torCap;
@@ -65,7 +72,7 @@ public:
 	int computeMx(Switch*);
 
 	void autofail(int);									//primary + backups
-	bool instantiateFlow(Host* source, Host* dest, double rate, int size,double);	//rate in MBps, size in MB
+	Flow* instantiateFlow(Host* source, Host* dest, double rate, int size,double);	//rate in MBps, size in MB
 	bool instantiateTenant(int vms, int bw);	//rate in MBps, size in MB
 	void findFaults();
 	Path* getPathRandom(Host* source, Host* dest);
@@ -82,7 +89,7 @@ public:
 	void revert_to_primary();
 	Path* getReplicatedPath(int src, int dst, int rate);
 	long int getTime();
-	void detect_downTime();
+	void detect_downTime(int);
 	vector<float> getAllocation(int p);
 	void checkProb(vector<Switch*> Tors, int prob, float factor);
 	void checkProb(vector<Link*> Tors, int prob, float factor);

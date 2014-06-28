@@ -1,0 +1,399 @@
+[H[2J49.668
+GNU gdb (Ubuntu/Linaro 7.4-2012.04-0ubuntu2) 7.4-2012.04
+Copyright (C) 2012 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "i686-linux-gnu".
+For bug reporting instructions, please see:
+<http://bugs.launchpad.net/gdb-linaro/>...
+Reading symbols from /home/wireless/efficiency-resilience/admin...done.
+Attaching to program: /home/wireless/efficiency-resilience/admin, process 5025
+(gdb) r
+Starting program: /home/wireless/efficiency-resilience/admin 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/i386-linux-gnu/libthread_db.so.1".
+VMs required: 24
+BW required: 38
+Found at level 1
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+VMs required: 196
+BW required: 96
+Found at level 2
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 4 Vms on one host
+10000 is the num of flows committed
+VMs required: 46
+BW required: 101
+Found at level 1
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 6 Vms on one host
+VMs required: 104
+BW required: 41
+Found at level 1
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+20000 is the num of flows committed
+VMs required: 29
+BW required: 33
+Found at level 1
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 5 Vms on one host
+VMs required: 84
+BW required: 21
+Found at level 1
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 4 Vms on one host
+VMs required: 69
+BW required: 231
+Found at level 1
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 5 Vms on one host
+30000 is the num of flows committed
+VMs required: 131
+BW required: 95
+Found at level 2
+I have reserved 2 Vms on one host
+I have reserved 3 Vms on one host
+I have reserved 4 Vms on one host
+I have reserved 3 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 7 Vms on one host
+VMs required: 73
+BW required: 234
+Found at level 1
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 1 Vms on one host
+40000 is the num of flows committed
+VMs required: 54
+BW required: 231
+Found at level 1
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 6 Vms on one host
+VMs required: 15
+BW required: 12
+Found at level 1
+I have reserved 8 Vms on one host
+I have reserved 7 Vms on one host
+VMs required: 78
+BW required: 245
+Found at level 1
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 6 Vms on one host
+VMs required: 12
+BW required: 20
+Found at level 1
+I have reserved 8 Vms on one host
+I have reserved 4 Vms on one host
+VMs required: 8
+BW required: 24
+Found at level 0
+VMs required: 122
+BW required: 1
+Found at level 2
+I have reserved 7 Vms on one host
+I have reserved 2 Vms on one host
+I have reserved 1 Vms on one host
+I have reserved 2 Vms on one host
+I have reserved 4 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 2 Vms on one host
+50000 is the num of flows committed
+VMs required: 45
+BW required: 141
+Found at level 1
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 5 Vms on one host
+VMs required: 56
+BW required: 71
+Found at level 1
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+VMs required: 42
+BW required: 504
+Found at level 1
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 2 Vms on one host
+VMs required: 33
+BW required: 1
+Found at level 1
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 1 Vms on one host
+VMs required: 150
+BW required: 8
+Found at level 2
+I have reserved 3 Vms on one host
+I have reserved 6 Vms on one host
+I have reserved 7 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 6 Vms on one host
+60000 is the num of flows committed
+VMs required: 73
+BW required: 42
+Found at level 1
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 1 Vms on one host
+VMs required: 12
+BW required: 179
+Found at level 1
+I have reserved 8 Vms on one host
+I have reserved 4 Vms on one host
+VMs required: 8
+BW required: 309
+Found at level 0
+VMs required: 21
+BW required: 99
+Found at level 1
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 5 Vms on one host
+VMs required: 74
+BW required: 8
+Found at level 1
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 2 Vms on one host
+70000 is the num of flows committed
+VMs required: 15
+BW required: 15
+Found at level 1
+I have reserved 8 Vms on one host
+I have reserved 7 Vms on one host
+VMs required: 94
+BW required: 96
+Found at level 1
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 6 Vms on one host
+VMs required: 16
+BW required: 8
+Found at level 1
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+VMs required: 52
+BW required: 37
+Found at level 1
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 4 Vms on one host
+VMs required: 33
+BW required: 23
+Found at level 1
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 1 Vms on one host
+VMs required: 16
+BW required: 3
+Found at level 1
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+VMs required: 18
+BW required: 16
+Found at level 1
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 2 Vms on one host
+VMs required: 191
+BW required: 22
+Found at level 2
+I have reserved 7 Vms on one host
+I have reserved 4 Vms on one host
+I have reserved 3 Vms on one host
+I have reserved 6 Vms on one host
+I have reserved 1 Vms on one host
+I have reserved 2 Vms on one host
+I have reserved 4 Vms on one host
+I have reserved 7 Vms on one host
+I have reserved 6 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 8 Vms on one host
+I have reserved 7 Vms on one host
+80000 is the num of flows committed
+
+Program received signal SIGTSTP, Stopped (user).
+0x08063399 in std::_Iter_base<__gnu_cxx::__normal_iterator<Switch* const*, std::vector<Switch*, std::allocator<Switch*> > >, false>::_S_base (
+    __it=...) at /usr/include/c++/4.6/bits/stl_iterator_base_types.h:214
+214	      { return __it; }
+(gdb) ^Z

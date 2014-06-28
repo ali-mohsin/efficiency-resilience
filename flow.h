@@ -10,12 +10,15 @@
 #include "link.h" 
 #include "path.h" 
 
+class Tenant;
+
 class Flow{
 public:
 	int flow_id;
 	string label;
 
 	double rate;
+	Tenant* tenant;
 	int size;
 	double startTime;
 	double activeTime;
@@ -38,6 +41,7 @@ public:
 	void setDone(bool);
 	bool getDone();
 	void activateFlow(double curTime);
+	void setTenant(Tenant*);
 };
 
 #endif /* FLOW_H */

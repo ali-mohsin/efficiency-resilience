@@ -1,0 +1,40 @@
+k=30: 98.62 tenants 250+
+k=30: 99.16 tenants 250+
+k=30: 99.1 tenants 250+
+k=30: 99.3 tenants 250+
+97.9231
+98.7808
+98.7176
+98.9671
+98.748
+
+
+Downtime due to level 1: 21553700
+Downtime due to level 2: 13608100
+Downtime due to level 3: 35657900
+
+
+
+
+
+
+
+
+
+
+
+
+
+1:1
+
+k=30: 99.4301 tenants 250+
+99.2373
+99.8001
+99.5574
+99.5961
+
+
+
+Downtime due to level 1: 15735100
+Downtime due to level 2: 9015500
+Downtime due to level 3: 3358100

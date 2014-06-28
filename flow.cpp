@@ -54,6 +54,12 @@ Flow::Flow(Host* src,Host* dst,Path* pp, Path* bp, int r, int s,int one,double s
 
 }
 
+
+void Flow::setTenant(Tenant* t)
+{
+	tenant=t;
+}
+
 void Flow::activateFlow(double curTime)
 {
 	if(curTime<startTime)

@@ -21,8 +21,8 @@
 	{
 		for(int i=0; i<runs; i++)
 		{
-			// if (i%10000==0)
-			// 	cout<<i<<"th run"<<endl;
+			if (i%100000==0)
+				cout<<i<<"th run"<<endl;
 			
 
 			dc->autofail(i);
@@ -62,118 +62,31 @@
 	finishThis = true;
 
 
+	int downTime=0;
+	int one=0;
+	int two=0;
+	int three=0;
+	int vms;
+	for(int i=0;i<dc->all_tenants.size();i++)
+	{
+		if(dc->all_tenants[i]->level==1)
+			one+=dc->all_tenants[i]->downTime;
+		if(dc->all_tenants[i]->level==2)
+			two+=dc->all_tenants[i]->downTime;
+		if(dc->all_tenants[i]->level==3)
+			three+=dc->all_tenants[i]->downTime;
+		downTime+=dc->all_tenants[i]->downTime;
+	}
+
+	cout<<dc->all_tenants.size()<<" was the number of accomodated tenants"<<endl;
+	cout<<100-100*(downTime/(float(dc->all_tenants.size())*runs))<<" Was the Availability"<<endl;
+	cout<<"Downtime due to level 1: "<<one<<endl;
+	cout<<"Downtime due to level 2: "<<two<<endl;
+	cout<<"Downtime due to level 3: "<<three<<endl;
+		// cout<<100-100*(dc->downTime/(float(dc->all_flows.size())*runs))<<" Was the Availability"<<endl;
+
+
 	// ********************************** USEFUL CODE ENDS HERE *********************
-
-
-	if(failures)
-	{
-		cout<<"fail"<<endl;
-		cout<<100-100*(dc->downTime/(float(dc->all_flows.size())*runs))<<" Was the Availability"<<endl;
-		ofstream fout;
-		fout.open("failures.txt");
-		string failStr = "";
-		int len_cores = dc->all_cores.size();
-		int len_switches = dc->all_switches.size();
-		bool shouldBreak = false;
-
-		for(int i=0; i<num_fails; i++)
-		{
-			if( failTimes[i] < end_delay)
-			{
-				shouldBreak = false;
-				stringstream pI, le, dI, start, end, simTime;
-				pI << failPID[i];
-				le << failLevel[i];
-				dI << failDID[i];
-				start << failTimes[i];
-				if( failComplete[i]+failTimes[i] < end_delay )
-				{
-					end << (failComplete[i]+failTimes[i]);
-				}
-				else
-				{
-					end << end_delay;
-				}
-				simTime << end_delay;
-
-				failStr = failStr + "Failure: PodID: " + pI.str() + " Level: " + le.str() + " DeviceID: " + dI.str() + " ";
-				for(int j=0; j<len_cores; j++)
-				{
-					if( (dc->all_cores[j]->getPodID() == failPID[i]) && (dc->all_cores[j]->getLevel() == failLevel[i]) && (dc->all_cores[j]->getDeviceID() ==failDID[i]) )
-					{
-						int num_up = dc->all_cores[j]->up_links.size();
-						for(int l=0; l<num_up; l++)
-						{
-							stringstream index;
-							stringstream upLink;
-							index << l;
-							upLink << dc->all_cores[j]->up_links[l]->getID();
-							failStr = failStr + "Link: " + upLink.str() + " ";
-						}
-						int num_down = dc->all_cores[j]->down_links.size();
-						for(int l=0; l<num_down; l++)
-						{
-							stringstream index;
-							stringstream downLink;
-							index << l;
-							downLink << dc->all_cores[j]->down_links[l]->getID();
-							failStr = failStr + "Link: " + downLink.str() + " ";
-						}
-						shouldBreak = true;
-						break;
-					}
-				}
-				if(!shouldBreak)
-				{
-					for(int j=0; j<len_switches; j++)
-					{
-						if( (dc->all_switches[j]->getPodID() == failPID[i]) && (dc->all_switches[j]->getLevel() == failLevel[i]) && (dc->all_switches[j]->getDeviceID() ==failDID[i]) )
-						{
-							int num_up = dc->all_switches[j]->up_links.size();
-							for(int l=0; l<num_up; l++)
-							{
-								stringstream index;
-								stringstream upLink;
-								index << l;
-								upLink << dc->all_switches[j]->up_links[l]->getID();
-								failStr = failStr + "Link: " + upLink.str() + " ";
-							}
-							int num_down = dc->all_switches[j]->down_links.size();
-							for(int l=0; l<num_down; l++)
-							{
-								stringstream index;
-								stringstream downLink;
-								index << l;
-								downLink << dc->all_switches[j]->down_links[l]->getID();
-								failStr = failStr + "Link: " + downLink.str() + " ";
-							}
-							shouldBreak = true;
-							break;
-						}
-					}
-				}
-				failStr = failStr + "StartTime: " + start.str() + " EndTime: " + end.str() + " SimTime: " + simTime.str() + "\n";
-			}
-		}
-		fout<<failStr;
-		fout.close();
-	}
-
-	ofstream flowOut;
-	flowOut.open("flows.txt");
-	int num_flows = dc->all_flows.size();
-	string flowStr = "";
-	for(int i=0; i<num_flows; i++)
-	{
-		stringstream id, duration;
-		id << dc->all_flows[i]->getID();
-		duration << dc->all_flows[i]->getActive();
-		flowStr = flowStr + " Flow: ID: " + id.str() + " Duration: " + duration.str() + "\n";
-	}
-	flowOut << flowStr;
-	flowOut.close();
-
-	pthread_exit(NULL);
 
 	return 0;
 }
