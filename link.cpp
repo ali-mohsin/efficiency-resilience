@@ -174,8 +174,11 @@ vector<Flow*> Link::getFlowsOnBack()
 	for(int i=0;i<flows_back.size();i++)
 	{
 		
-		if(flows_back[i]->backUpPath!=NULL && flows_back[i]->backUpPath->beingUsed)
-			v.push_back(flows_back[i]);
+			for(int j=0;j<flows_back[i]->backUpPath.size();j++)
+			{
+				if(flows_back[i]->backUpPath[j]->has(this) && flows_back[i]->backUpPath[j]->beingUsed)			
+					v.push_back(flows_back[i]);
+			}
 	}
 	return v;
 }

@@ -133,3 +133,34 @@
 	{
 		return switches[switches.size()-1]->getPodID();
 	}
+
+	
+	int Path::contains(vector<Path*> pathVec)
+	{
+		for(int i =0; i<pathVec.size();i++)
+		{
+			if(pathVec[i]==this)
+				return i;
+		}
+		return -1;
+	}	
+	
+	bool Path::has(Link* link)
+	{
+		for(int i=0; i<links.size();i++)
+		{
+				if(link==links[i])
+						return true;
+		}	
+		return false;
+	}	
+
+	bool Path::has(Switch* s)
+	{
+		for(int i=0; i<switches.size();i++)
+		{
+			if(s==switches[i])
+				return true;
+		}	
+		return false;
+	}	

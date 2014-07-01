@@ -24,11 +24,12 @@ public:
 	int oneToOne;
 	int down;
 	int on_back;
+	int allBackups;
 	Host* source;
 	Host* dest;
 	Path* primaryPath;
-	Path* backUpPath;
-	Flow(Host* src,Host* dst,Path* pp, Path* bp, int rate, int size,int,double,int,int);
+	vector <Path*> backUpPath;
+	Flow(Host* src,Host* dst,Path* pp, vector<Path*> bp, int rate, int size,int,double,int,int);
 	bool commitPath(Path* path, int back);
 	void antiCommitPath(Path* path);
 	int getID();

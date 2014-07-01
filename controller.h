@@ -72,8 +72,10 @@ public:
 	void filterPaths(int rate,Host* dst);
 	void commitFlow(Flow* flow);
 	Path* getBackUpPath(Path* primary,int rate);
+	vector <Path*> getBackUpPathVector(Path* primary,int rate);
 	void revert_to_primary();
 	Path* getReplicatedPath(int src, int dst, int rate);
+    vector<Path*> getReplicatedPathVector(int src, int dst, int rate);
 	long int getTime();
 	void detect_downTime();
 	vector<float> getAllocation(int p);

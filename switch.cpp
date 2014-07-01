@@ -60,8 +60,11 @@ vector<Flow*> Switch::getFlowsOnBack()
 	vector<Flow*> v;
 	for(int i=0;i<back_flows.size();i++)
 	{
-		if(back_flows[i]->backUpPath->beingUsed)
-			v.push_back(back_flows[i]);
+		for(int j =0;j<back_flows[i]->backUpPath.size();j++)
+		{
+			if(back_flows[i]->backUpPath[j]->beingUsed)
+				v.push_back(back_flows[i]);
+		}
 	}
 	return v;
 }

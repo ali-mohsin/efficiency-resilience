@@ -26,7 +26,9 @@ public:
 	vector<Switch*> getSwitches();
 	bool isValid(int rate,int);
 	bool isValid(int rate);
-
+	int contains(vector<Path*> pathVec);
+	bool has(Link* link);
+	bool has(Switch* link);
 	int getSrcPod();
 	int getDstPod();
 };

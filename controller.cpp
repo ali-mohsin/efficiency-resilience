@@ -707,8 +707,15 @@ void Controller::findFaults()
 				if(backUp)
 				{
 					// cout<<"commiting on backup"<<endl;
-
-					int commit=flows_primary[j]->commitPath(flows_primary[j]->backUpPath,1);
+//major implementation
+					int commit =0;
+					for(int k =0; k<flows_primary[j]->backUpPath.size();k++){
+						if(flows_primary[j]->backUpPath[k]->isValid(flows_primary[j]->rate))
+							commit=flows_primary[j]->commitPath(flows_primary[j]->backUpPath[k],1);
+						if(commit)
+							break;
+					}
+					
 					// cout<<"Primary Down: flow id: "<<flows_primary[j]->flow_id<<" ";
 					// flows_primary[j]->primaryPath->print();
 
@@ -727,6 +734,9 @@ void Controller::findFaults()
 						// {
 						// 	int x=1/0;
 						// }
+						
+						
+						//add code here too
 						flows_down.push_back(flows_primary[j]);
 
 						// cout<<"And Commit Failed, put on down flows"<<endl;
@@ -747,8 +757,32 @@ void Controller::findFaults()
 			{
 				for(int j=0;j<flows_back.size();j++)
 				{
-					flows_back[j]->antiCommitPath(flows_back[j]->backUpPath);
-					flows_down.push_back(flows_back[j]);
+					int index_of_backupPath=0;
+					for(int l=0;l<flows_back[j]->backUpPath.size();l++)
+					{
+							vector<Switch*> switches=flows_back[j]->backUpPath[l]->getSwitches();
+							for(int m=0;m<switches.size();m++)
+							{
+								if(switches[m]==prone_switches[i])
+								{
+									index_of_backupPath=l;
+									break;
+								}
+									
+							}
+								
+					}	
+					flows_back[j]->antiCommitPath(flows_back[j]->backUpPath[index_of_backupPath]);
+					int commit=0;
+					for(int k =0; k<flows_back[j]->backUpPath.size();k++)
+					{
+						if(flows_back[j]->backUpPath[k]->isValid(flows_back[j]->rate))
+								commit=flows_back[j]->commitPath(flows_back[j]->backUpPath[k],1);
+								if(commit)
+									break;
+					}
+					if(!commit)
+						flows_down.push_back(flows_back[j]);
 				}				
 			}
 
@@ -796,7 +830,13 @@ void Controller::findFaults()
 				if(backUp)
 				{
 					// cout<<"commiting on backup"<<endl;
-					int commit=flows_primary[j]->commitPath(flows_primary[j]->backUpPath,1);
+					int commit =0;
+					for(int k =0; k<flows_primary[j]->backUpPath.size();k++){
+						if(flows_primary[j]->backUpPath[k]->isValid(flows_primary[j]->rate))
+								commit=flows_primary[j]->commitPath(flows_primary[j]->backUpPath[k],1);
+								if(commit)
+									break;
+						}
 
 					if(commit)
 					{
@@ -837,9 +877,33 @@ void Controller::findFaults()
 			{
 				for(int j=0;j<flows_back.size();j++)
 				{
-						flows_back[j]->antiCommitPath(flows_back[j]->backUpPath);
-						flows_down.push_back(flows_back[j]);
-				}				
+					int index_of_backupPath=0;
+					for(int l=0;l<flows_back[j]->backUpPath.size();l++)
+					{
+						vector<Switch*> switches=flows_back[j]->backUpPath[l]->getSwitches();
+						for(int m=0;m<switches.size();m++)
+						{
+							if(switches[m]==prone_switches[i])
+							{
+								index_of_backupPath=l;
+								break;
+							}
+							
+						}
+						
+					}	
+					flows_back[j]->antiCommitPath(flows_back[j]->backUpPath[index_of_backupPath]);
+					int commit=0;
+					for(int k =0; k<flows_back[j]->backUpPath.size();k++)
+					{
+						if(flows_back[j]->backUpPath[k]->isValid(flows_back[j]->rate))
+								commit=flows_back[j]->commitPath(flows_back[j]->backUpPath[k],1);
+								if(commit)
+									break;
+						}
+						if(!commit)
+								flows_down.push_back(flows_back[j]);
+				}	
 			}
 		
 		}
@@ -900,7 +964,8 @@ void Controller::revert_to_primary()
 			// 	continue;
 			if(f->primaryPath->isUp())
 			{
-				f->antiCommitPath(f->backUpPath);
+				for(int j =0 ; j < f->backUpPath.size();j++)
+					f->antiCommitPath(f->backUpPath[j]);
 				bool check=f->commitPath(f->primaryPath,0); //Assumption is that link capacity would not be a bottleneck
 				if(!check)
 				{
@@ -936,10 +1001,15 @@ void Controller::revert_to_primary()
 
 			if(backUp)
 			{
-				bool check=f->backUpPath->isUp();
-				if(check)
+				int index=-1;
+				for(int j =0; j < f->backUpPath.size();j++){
+						if(f->backUpPath[j]->isUp())
+							index=j;
+				}
+				
+				if(index!=-1)
 				{
-					f->commitPath(f->backUpPath,1); //Assumption is that link capacity would not be a bottleneck
+					f->commitPath(f->backUpPath[index],1); //Assumption is that link capacity would not be a bottleneck
 					// cout<<"I am here here----------------------------------------------"<<endl;
 					// cout<<"revert to backup from down: flow id: "<<f->flow_id<<" ";
 					// f->backUpPath->print(); 
@@ -965,6 +1035,7 @@ void Controller::detect_downTime()
 			{
 				Flow* f1=flows_on_back[i];
 				Flow* f2=flows_on_back[j];
+//Rufy: This looks wrong
 				if(f1!=f2 && f1->backUpPath==f2->backUpPath)// && f1->on_back && f2->on_back)
 				{
 					// f1->backUpPath->print();
@@ -981,14 +1052,7 @@ void Controller::detect_downTime()
 	// cout<<"downtime+= "<<flows_down.size() <<endl;
 
 	downTime+=flows_down.size();
-	// for(int i=0;i<flows_down.size();i++)
-	// {
-	// 	// cout<<"flow in down's var down is"<<flows_down[i]->down<<endl;
-	// 	// if(flows_down[i]->down)
-	// 	// {
-	// 		downTime+=1;
-	// 	// }1
-	// }
+	
 }
 
 int Controller::getTTR(Switch* curSwitch)
@@ -1856,6 +1920,7 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 	// cout<<"Primary Path is: "<<endl;
 	// primary->print();
 	Path* back=NULL;
+	vector<Path*> backups;
 
 
 
@@ -1866,10 +1931,10 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 			paths.clear();
 		}
 
-		back=getBackUpPath(primary,rate);
+		backups=getBackUpPathVector(primary,rate);
  		// cout<<"Backup Path is: "<<endl;
  		// back->print();
- 		if(!back)
+ 		if(backups.size()==0)
  		{
  //			int x=1/0;
 		//	cout<<"Backup Bandwidth not available"<<endl;
@@ -1888,7 +1953,7 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 	// if(duplicateIn(back->links))
 	// 	back->print();
 
-	Flow* flow= new Flow(source,dest,primary,back,rate,size,oneToOne,sTime,sharing,tor_to_tor);
+	Flow* flow= new Flow(source,dest,primary,backups,rate,size,oneToOne,sTime,sharing,tor_to_tor);
 	flow->setID(flowNumber);
 	all_flows.push_back(flow);
 	flowNumber++;
@@ -1955,8 +2020,167 @@ Path* Controller::getReplicatedPath(int src, int dst, int rate)
 	paths.clear();
 	return back;
 }
+vector <Path*> Controller::getReplicatedPathVector(int src, int dst, int rate)
+{
+	vector <Path*> empty;
+	int srcPod=src;
+	int dstPod=dst;
+	while(srcPod==src || dstPod==dst || srcPod==dstPod)
+	{
+		srcPod=rand()%k;
+		dstPod=rand()%k;
+	}
+
+	vector<Switch*> switches;
+	vector<Link*> links;
+	vector<bool> directions;
+	// cout<<"src: "<<srcPod<<" dst: "<<dstPod<<endl;
+	Host* source=getHostInTor(srcPod);
+	Host* dest= getHostInTor(dstPod);
+
+	bool intraRack = getPaths(source, dest, switches, links, directions, 1);
+	filterPaths(rate,dest);
+	if(paths.size()==0)
+	{
+
+		return empty;			
+	}
+
+	Path* back=paths[rand()%paths.size()];
+//	paths.clear();
+	return paths;
+}
 
 
+
+vector <Path*> Controller::getBackUpPathVector(Path* primary, int rate)
+{
+	vector <Path*> empty;
+	// check for NULL condition
+	int overlap=1;
+	Path* back=NULL;
+	int index=0;
+	vector <Path*> backups;
+
+	if(sharing && end_to_end)
+	{
+		for (int j=0;j<all_pairs.size();j++)
+		{
+			Path* p1=primary;
+			Pair* curPair=all_pairs[j];
+			Path* otherPrimary=curPair->primary;
+			Path* otherBack=curPair->back;
+			if(otherBack!=NULL){
+				if( !otherBack->isValid(rate/4)) //divided by 2 
+					continue;
+			}
+			else{
+				cout<<"@mochi:continuing getBackUpPath, this shouldn't happen "<<endl;
+				continue;
+			}
+			vector<Switch*> primaryLinks=p1->switches;
+			vector<Switch*> otherPrimaryLinks=otherPrimary->switches;
+			vector<Switch*> otherBackLinks=otherBack->switches;
+			int commonPrimary=getCommonCount(primaryLinks,otherPrimaryLinks);
+			int commonBack=getCommonCount(primaryLinks,otherBackLinks);
+			if(commonPrimary==0 && commonBack==0)
+			{
+				if(notIn(paths_to_be_shared,otherBack))
+				{
+					continue;						
+				}
+
+				flows_on_share++;
+//				back=otherBack;
+				backups.push_back(otherBack);
+				if(backups.size() > 4)
+					continue;
+				else
+					break;
+				
+			}
+		}	
+	}
+
+	overlap=10*k;
+
+	if(backups.size()>0)
+	{
+		int index=0;
+		for(int j=0;j<backups.size();j++)
+		{
+			for(int i=0;i<paths_to_be_shared.size();i++)
+			{
+				if(paths_to_be_shared[i]==backups[j])
+				{
+					index=i;
+					break;
+				}
+			}
+			paths_to_be_shared.erase(paths_to_be_shared.begin()+index);
+			all_pairs.push_back(new Pair(primary,backups[j]));
+
+		}
+	}
+	if(backups.size() < 4)
+	{
+
+		if(end_to_end)
+		{
+			int srcTor=primary->getSrcPod();
+			int dstTor=primary->getDstPod();
+			if(sharing)
+				backups=getReplicatedPathVector(srcTor,dstTor,rate/4);
+			else{
+				back=getReplicatedPath(srcTor,dstTor,rate);				
+			}
+			if(back==NULL || backups.size()==0)
+				return empty;	
+			int limit=0;
+			if(backups.size()>4)
+				limit = 4;
+			else
+				limit=backups.size();
+			
+			for(int i=0;i<limit;i++)
+				all_pairs.push_back(new Pair(primary,backups[i]));
+
+			
+			if(sharing)
+			{
+				for(int i=0;i<limit;i++)
+					paths_to_be_shared.push_back(backups[i]);
+			}
+
+		}
+		
+		if(tor_to_tor)
+		{
+			overlap=10*k;
+			vector<Switch*> links=primary->switches;
+        	for(int i=0;i<paths.size();i++)
+        	{
+            	Path* cand=paths[i];
+            	vector<Switch*> otherLinks=cand->switches;
+            	int common=getCommonCount(links,otherLinks);
+            	if(common<overlap)
+            	{
+                	back=cand;
+					if( !back->isValid(rate, tor_to_tor)) //divided by 2 
+						continue;
+                	overlap=common;
+            	}
+        	}
+		}
+		
+	}
+	return backups;
+}
+
+
+
+
+// finds disjoint primaries and pairs them
 Path* Controller::getBackUpPath(Path* primary, int rate)
 {
 	// check for NULL condition
@@ -1972,14 +2196,12 @@ Path* Controller::getBackUpPath(Path* primary, int rate)
 				Pair* curPair=all_pairs[j];
 				Path* otherPrimary=curPair->primary;
 				Path* otherBack=curPair->back;
-				//check for BW of otherBack. continue loop of BW not met
-//				check is valid
 				if(otherBack!=NULL){
 					if( !otherBack->isValid(rate/4)) //divided by 2 
 						continue;
 				}
 				else{
-					cout<<"@mochi:contunuing, this shoul,nt happen "<<endl;
+					cout<<"@mochi:continuing getBackUpPath, this shouldn't happen "<<endl;
 					continue;
 				}
 				vector<Switch*> primaryLinks=p1->switches;
@@ -1991,45 +2213,17 @@ Path* Controller::getBackUpPath(Path* primary, int rate)
 				{
 					if(notIn(paths_to_be_shared,otherBack))
 					{
-						// cout<<paths_to_be_shared.size()<<" is the size"<<endl;
 						continue;						
 					}
 
-					// cout<<"found"<<endl;
 					flows_on_share++;
-					// cout<<"yes found"<<endl;
 					back=otherBack;
-					// index=j;
 					break;
 				}
 			}	
 	}
-		// // for(int i=0;i<paths.size();i++)
-		// // {
-		// 	for (int j=0;j<paths_to_be_shared.size();j++)
-		// 	{
-		// 		Path* p1=primary;
-		// 		Path* p2=paths_to_be_shared[j];
-		// // 		if(p2->getSrcPod()==p1->getSrcPod() && p2->getDstPod()==p1->getDstPod() && p1!=p2)
-		// // 		{
-		// 			vector<Switch*> links=p1->switches;
-		// 			vector<Switch*> otherLinks=p2->switches;
-		// 			int common=getCommonCount(links,otherLinks);
-		// 			if(common > overlap)
-		// 			{
-		// 				back=p2;
-		// 				overlap=common;
-		// 				index=j;
-		// 			}
-
-		// 	}	
-		// 	}
-		// // }
-	// }
 
 	overlap=10*k;
-
-	// TODO possible error can occur un tested code added above
 
 	if(back!=NULL)
 	{
@@ -2044,8 +2238,6 @@ Path* Controller::getBackUpPath(Path* primary, int rate)
 		}
 		paths_to_be_shared.erase(paths_to_be_shared.begin()+index);
 		all_pairs.push_back(new Pair(primary,back));
-		// cout<<"+ Sharing Back Up path with: "<<endl;
-		// back->print();
 	}
 	else
 	{
@@ -2069,10 +2261,6 @@ Path* Controller::getBackUpPath(Path* primary, int rate)
 				paths_to_be_shared.push_back(back);
 			}
 
-//			if(back==NULL)
-//			{
-//				int x=1/0;
-//			}
 		}
 		
 		if(tor_to_tor)
