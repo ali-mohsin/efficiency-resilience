@@ -57,7 +57,8 @@ public:
 	void commitPath(Path* p, int back);
 	vector<Flow*> getFlowsOnPrimary();
 	vector<Flow*> getFlowsOnBack();
-
+	// gohar:
+	void addBackFlow(int rate, int dir);
 
 };
 

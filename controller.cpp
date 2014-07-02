@@ -196,8 +196,6 @@ void Controller::checkProb(vector<Switch*> Tors, int prob, float factor)
 
 }
 
-
-
 void Controller::checkProb(vector<Link*> Tors, int prob, float factor)
 {
 
@@ -251,6 +249,7 @@ void Controller::checkProb(vector<Link*> Tors, int prob, float factor)
 
 }
 
+// goahr: what is zero count, one count, two count?
 void Controller::counter(vector<Switch*> Tors)
 {
 	//cout<<"Size of device: " << Tors.size()<<endl;
@@ -711,7 +710,7 @@ void Controller::findFaults()
 					int commit =0;
 					for(int k =0; k<flows_primary[j]->backUpPath.size();k++){
 						if(flows_primary[j]->backUpPath[k]->isValid(flows_primary[j]->rate))
-							commit=flows_primary[j]->commitPath(flows_primary[j]->backUpPath[k],1);
+							commit=flows_primary[j]->commitPathAndReserve(flows_primary[j]->backUpPath[k],1);
 						if(commit)
 							break;
 					}
@@ -772,12 +771,14 @@ void Controller::findFaults()
 							}
 								
 					}	
-					flows_back[j]->antiCommitPath(flows_back[j]->backUpPath[index_of_backupPath]);
+					flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[index_of_backupPath]);
 					int commit=0;
 					for(int k =0; k<flows_back[j]->backUpPath.size();k++)
 					{
-						if(flows_back[j]->backUpPath[k]->isValid(flows_back[j]->rate))
+						if(flows_back[j]->backUpPath[k]->isValid(flows_back[j]->getBackUpRate())) {
+							if (flows_back[j]->backUpPath[k]->isValid(flows_back[j]->getBackUpRate()))
 								commit=flows_back[j]->commitPath(flows_back[j]->backUpPath[k],1);
+						}
 								if(commit)
 									break;
 					}
@@ -832,7 +833,7 @@ void Controller::findFaults()
 					// cout<<"commiting on backup"<<endl;
 					int commit =0;
 					for(int k =0; k<flows_primary[j]->backUpPath.size();k++){
-						if(flows_primary[j]->backUpPath[k]->isValid(flows_primary[j]->rate))
+						if(flows_primary[j]->backUpPath[k]->isValid(flows_primary[j]->getBackUpRate()))
 								commit=flows_primary[j]->commitPath(flows_primary[j]->backUpPath[k],1);
 								if(commit)
 									break;
@@ -892,12 +893,14 @@ void Controller::findFaults()
 						}
 						
 					}	
-					flows_back[j]->antiCommitPath(flows_back[j]->backUpPath[index_of_backupPath]);
+					flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[index_of_backupPath]);
 					int commit=0;
 					for(int k =0; k<flows_back[j]->backUpPath.size();k++)
 					{
-						if(flows_back[j]->backUpPath[k]->isValid(flows_back[j]->rate))
+						if(flows_back[j]->backUpPath[k]->isValid(flows_back[j]->rate)) {
+							if (flows_back[j]->backUpPath[k]->isValid(flows_back[j]->getBackUpRate()))
 								commit=flows_back[j]->commitPath(flows_back[j]->backUpPath[k],1);
+						}
 								if(commit)
 									break;
 						}
@@ -964,8 +967,15 @@ void Controller::revert_to_primary()
 			// 	continue;
 			if(f->primaryPath->isUp())
 			{
-				for(int j =0 ; j < f->backUpPath.size();j++)
-					f->antiCommitPath(f->backUpPath[j]);
+				for (int j =0 ; j < f->backUpPath.size();j++) {
+					int count = 0;
+					if (f->backUpPath[j]->beingUsed == 1) {
+						f->antiCommitPathAndUnreserve(f->backUpPath[j]);
+						count++;
+					}
+					if (count >= 2)
+						int x = 1/0;
+				}
 				bool check=f->commitPath(f->primaryPath,0); //Assumption is that link capacity would not be a bottleneck
 				if(!check)
 				{
@@ -1009,7 +1019,8 @@ void Controller::revert_to_primary()
 				
 				if(index!=-1)
 				{
-					f->commitPath(f->backUpPath[index],1); //Assumption is that link capacity would not be a bottleneck
+					if (f->backUpPath[index]->isValid(f->getBackUpRate()))
+						f->commitPath(f->backUpPath[index],1); //Assumption is that link capacity would not be a bottleneck
 					// cout<<"I am here here----------------------------------------------"<<endl;
 					// cout<<"revert to backup from down: flow id: "<<f->flow_id<<" ";
 					// f->backUpPath->print(); 
@@ -1026,33 +1037,33 @@ void Controller::revert_to_primary()
 
 void Controller::detect_downTime()
 {
-	if(backUp && sharing)
-	{
-		// cout<<"Num of flows on backup are "<<flows_on_back.size()<<endl;
-		for(int i=0;i<flows_on_back.size();i++)
-		{
-			for (int j=i+1;j<flows_on_back.size();j++)
-			{
-				Flow* f1=flows_on_back[i];
-				Flow* f2=flows_on_back[j];
-//Rufy: This looks wrong
-				if(f1!=f2 && f1->backUpPath==f2->backUpPath)// && f1->on_back && f2->on_back)
-				{
-					// f1->backUpPath->print();
-					// f2->backUpPath->print();
-					// cout<<"------------------"<<endl;
-					downTime+=1;
-					backup+=1;
-				}
-			}
-		}
-	}
+	
+	downTime+=flows_down.size();
+	
+//	if(backUp && sharing)
+//	{
+////		// cout<<"Num of flows on backup are "<<flows_on_back.size()<<endl;
+//		for(int i=0;i<flows_on_back.size();i++)
+//		{
+//			for (int j=i+1;j<flows_on_back.size();j++)
+//			{
+//				Flow* f1=flows_on_back[i];
+//				Flow* f2=flows_on_back[j];
+////Rufy: This looks wrong
+//				if(f1!=f2 && f1->backUpPath==f2->backUpPath)// && f1->on_back && f2->on_back)
+//				{
+//					
+//					downTime+=1;
+//					backup+=1;
+//					
+//				}
+//			}
+//		}
+// }
 
 
 	// cout<<"downtime+= "<<flows_down.size() <<endl;
 
-	downTime+=flows_down.size();
-	
 }
 
 int Controller::getTTR(Switch* curSwitch)
@@ -1932,12 +1943,13 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 		}
 
 		backups=getBackUpPathVector(primary,rate);
+		cout << "backups size is " << backups.size() << endl;
  		// cout<<"Backup Path is: "<<endl;
  		// back->print();
  		if(backups.size()==0)
  		{
  //			int x=1/0;
-		//	cout<<"Backup Bandwidth not available"<<endl;
+		// cout<<"Backup Bandwidth not available"<<endl;
 			return 0;
 		}
 
@@ -1960,6 +1972,7 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 	if(flowNumber%1000==0)
 		cout<<flowNumber<<" is the num of flows committed"<<endl;
 	paths.clear();
+	// cout << "Flows generated ";
 	return 1;
 }
 
@@ -2093,7 +2106,7 @@ vector <Path*> Controller::getBackUpPathVector(Path* primary, int rate)
 				flows_on_share++;
 //				back=otherBack;
 				backups.push_back(otherBack);
-				if(backups.size() > 4)
+				if(backups.size() <= 4)
 					continue;
 				else
 					break;
@@ -2134,8 +2147,8 @@ vector <Path*> Controller::getBackUpPathVector(Path* primary, int rate)
 			else{
 				back=getReplicatedPath(srcTor,dstTor,rate);				
 			}
-			if(back==NULL || backups.size()==0)
-				return empty;	
+			if(backups.size()==0)
+				return empty;
 			int limit=0;
 			if(backups.size()>4)
 				limit = 4;
@@ -2176,9 +2189,6 @@ vector <Path*> Controller::getBackUpPathVector(Path* primary, int rate)
 	}
 	return backups;
 }
-
-
-
 
 // finds disjoint primaries and pairs them
 Path* Controller::getBackUpPath(Path* primary, int rate)

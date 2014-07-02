@@ -16,6 +16,7 @@ public:
 	string label;
 
 	double rate;
+	int factor;
 	int size;
 	double startTime;
 	double activeTime;
@@ -39,6 +40,9 @@ public:
 	void setDone(bool);
 	bool getDone();
 	void activateFlow(double curTime);
+	bool commitPathAndReserve(Path* path,int beingUsed);
+	void antiCommitPathAndUnreserve(Path* path);
+	double getBackUpRate();
 };
 
 #endif /* FLOW_H */

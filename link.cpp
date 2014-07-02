@@ -155,6 +155,21 @@ void Link::addBackFlow(Flow* f,int rate, int dir, int  back, int tor2tor)
 
 }
 
+// this function does not push back flow again
+void Link::addBackFlow(int rate, int dir)
+{
+	if(dir==1)
+	{
+		backup_up+=rate;
+		available_cap_up-=rate;
+	}
+	else
+	{
+		backup_down+=rate;
+		available_cap_down-=rate;
+	}
+}
+
 
 vector<Flow*> Link::getFlowsOnPrimary()
 {
@@ -182,7 +197,6 @@ vector<Flow*> Link::getFlowsOnBack()
 	}
 	return v;
 }
-
 
 // vector<Flow*> Link::getActiveFlows()
 // {

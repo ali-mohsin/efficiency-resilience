@@ -14,6 +14,7 @@ Flow::Flow(Host* src,Host* dst,Path* pp, vector<Path*> bp, int r, int s,int one,
 	oneToOne=one;
 	down=-1;
 	on_back=0;
+	factor = 4;
 
 
 	// if(oneToOne)
@@ -31,7 +32,7 @@ Flow::Flow(Host* src,Host* dst,Path* pp, vector<Path*> bp, int r, int s,int one,
 	}
 
 	if(sharing)
-		rate=rate/4;
+		rate=rate/factor;
 	
 	if(backUpPath.size()!=0)
 	{
@@ -105,8 +106,50 @@ bool Flow::commitPath(Path* path,int beingUsed)
 			backUpPath[i]->beingUsed=1;
 			break;
 
-		}	
+		}
 	}
+	
+	
+	return true;
+}
+
+bool Flow::commitPathAndReserve(Path* path,int beingUsed)
+{
+	
+    if (!path->isUp())
+    {
+     	return false;
+    }
+
+	if(path==primaryPath)
+	{
+		primaryPath->beingUsed=1;
+		on_back=0;
+		if(backUpPath.size()!=0)
+			allBackups=0;
+	}	
+
+	int selected = -1;
+	for(int i=0;i<backUpPath.size();i++){
+		if(path==backUpPath[i])
+		{
+			on_back=1;
+			allBackups=1;
+			primaryPath->beingUsed=0;
+			backUpPath[i]->beingUsed=1;
+			selected = i;
+			break;
+
+		}
+	}
+	
+	if (selected != -1) {
+		int size = backUpPath[selected]->links.size();
+		for (int i = 0; i < size; i++) {			
+			backUpPath[selected]->links[i]->addBackFlow((this->rate)-(this->rate/factor),backUpPath[i]->direction[i]);
+		}
+	}
+	
 	return true;
 }
 
@@ -134,7 +177,21 @@ void Flow::antiCommitPath(Path* path)
 	// }
 }
 
+void Flow::antiCommitPathAndUnreserve(Path* path)
+{
+	
+	path->beingUsed = 0;
 
+	int contains=path->contains(backUpPath);
+	
+	if(contains!=-1)
+		on_back=0; //verify this
+	
+	int size = path->links.size();
+	for (int i = 0; i < size; i++) {			
+		path->links[i]->addBackFlow((this->rate)-(this->rate/factor),path->direction[i]);
+	}
+}
 
 void Flow::setID(int id)
 {
@@ -154,4 +211,10 @@ double Flow::getStart()
 double Flow::getActive()
 {
 	return activeTime;
+}
+
+double Flow::getBackUpRate()
+{
+	// uses factor to update rate
+	return (rate-(rate/factor));
 }
