@@ -56,10 +56,10 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	{
 		createFlows();
 		
-		for (Link* l : all_links) {
-			l->total_cap+=2*increase_by;
-			l->available_cap_down+=increase_by;
-			l->available_cap_up+=increase_by;
+		for (int i =0; i<all_links.size();i++) {
+			all_links[i]->total_cap+=2*increase_by;
+			all_links[i]->available_cap_down+=increase_by;
+			all_links[i]->available_cap_up+=increase_by;
 		}
 		
 	}
