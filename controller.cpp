@@ -49,9 +49,19 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	failures=0;
 	totalTime=runFor;
 	assignResilience();
+	
+	int increase_by = 20; // increase capacities of links by this num
+	
 	if(makeFlows)
 	{
 		createFlows();
+		
+		for (Link* l : all_links) {
+			l->total_cap+=2*increase_by;
+			l->available_cap_down+=increase_by;
+			l->available_cap_up+=increase_by;
+		}
+		
 	}
 
 
@@ -249,7 +259,6 @@ void Controller::checkProb(vector<Link*> Tors, int prob, float factor)
 
 }
 
-// goahr: what is zero count, one count, two count?
 void Controller::counter(vector<Switch*> Tors)
 {
 	//cout<<"Size of device: " << Tors.size()<<endl;
@@ -1943,7 +1952,6 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 		}
 
 		backups=getBackUpPathVector(primary,rate);
-		cout << "backups size is " << backups.size() << endl;
  		// cout<<"Backup Path is: "<<endl;
  		// back->print();
  		if(backups.size()==0)
@@ -2036,6 +2044,7 @@ Path* Controller::getReplicatedPath(int src, int dst, int rate)
 vector <Path*> Controller::getReplicatedPathVector(int src, int dst, int rate)
 {
 	vector <Path*> empty;
+	
 	int srcPod=src;
 	int dstPod=dst;
 	while(srcPod==src || dstPod==dst || srcPod==dstPod)
@@ -2055,13 +2064,28 @@ vector <Path*> Controller::getReplicatedPathVector(int src, int dst, int rate)
 	filterPaths(rate,dest);
 	if(paths.size()==0)
 	{
-
 		return empty;			
 	}
 
 	Path* back=paths[rand()%paths.size()];
+	
+	// fix this
+	vector<Path*> fourPaths;
+	for (int i=0; i < 4; i++) { // 4 is hardcoded here, can be changed
+		
+		if(paths.size()==0)
+		{
+			return fourPaths;	
+		}
+		
+		int randNum = rand()%paths.size();
+		Path* p1 = paths[randNum];
+		fourPaths.push_back(p1);
+		paths.erase(paths.begin() + randNum);
+	}
+	
 //	paths.clear();
-	return paths;
+	return fourPaths;
 }
 
 
