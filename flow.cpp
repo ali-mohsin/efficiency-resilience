@@ -129,9 +129,11 @@ bool Flow::commitPathAndReserve(Path* path,int beingUsed)
 	
 	if (backUpPath.size() > 1) {
 		cout << "error = backup path size greater than 1" << endl;
+		cout << "backup path size is " << backUpPath.size() << endl;
 		return false;
 	}
 	
+	// gohar: need to make fixes here, try clearing backuppath vector
 	int selected = -1;
 	for(int i=0;i<backUpPath.size();i++){
 		if(path==backUpPath[i])
@@ -147,10 +149,13 @@ bool Flow::commitPathAndReserve(Path* path,int beingUsed)
 	}
 	
 	if (selected != -1) {
+		cout << "selected = " << selected << endl;
 		int size = backUpPath[selected]->links.size();
 		for (int i = 0; i < size; i++) {			
-			backUpPath[selected]->links[i]->addBackFlow(this->rate,backUpPath[i]->direction[i]);
+			backUpPath[selected]->links[i]->addBackFlow(this->rate,backUpPath[selected]->direction[i]);
 		}
+	} else {
+		cout << "selected = " << selected << endl;
 	}
 	
 	return true;
@@ -224,8 +229,11 @@ void Flow::removeBackUpFlow() {
 	
 	if (check1 == 1 && check2 == 1)
 		cout << "flow removed successfully" << endl;
-	else
+	else {
 		cout << "error in removing flow" << endl;
+		cout << "backup path size is " << backUpPath.size() << endl;
+		cout << "check1 is " << check1 << " check2 is " << check2 << endl;
+	}
 }
 
 void Flow::setID(int id)

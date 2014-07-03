@@ -113,7 +113,8 @@ bool Controller::makeBackUp(Flow* flow) { 
 				
 	for(int i=0;i<backUpPath->links.size();i++)             
 		backUpPath->links[i]->addBackFlow(flow,flow->rate,backUpPath->direction[i],0, 0); 
-				
+	
+	//gohar: check here
 	flow->backUpPath.push_back(backUpPath);
 		return true;
 }
@@ -170,7 +171,7 @@ void Controller::createFlows()
 	}
 
 	cout<<"Flows generated "<<total_flows<<endl;
-	int x = 1/0;
+	// int x = 1/0;
 }
 
 void Controller::checkProb(vector<Switch*> Tors, int prob, float factor)
@@ -211,7 +212,6 @@ void Controller::checkProb(vector<Switch*> Tors, int prob, float factor)
 		Tors.erase(Tors.begin()+index);
 		counter++;
 	}
-
 
 	counter=0;
 	while(counter<a_size && Tors.size()!=0)
@@ -737,14 +737,13 @@ void Controller::findFaults()
 //major implementation
 					int commit =0;
 					
-					
 					bool check = makeBackUp(flows_primary[j]);
 					if (check) {
 						commit=flows_primary[j]->commitPathAndReserve(flows_primary[j]->backUpPath[0],1);
 						if (commit != 1)
 							cout << "error = backup path down" << endl; // might need to fix
 					} else {
-						cout << "backup path not found" << endl;
+						//cout << "backup path not found" << endl;
 					}
 					
 					//for(int k =0; k<flows_primary[j]->backUpPath.size();k++){
