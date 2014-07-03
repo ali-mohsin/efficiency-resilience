@@ -100,20 +100,23 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 
 //gohar
 bool Controller::makeBackUp(Flow* flow) { 
-			    Path* primaryPath = flow->primaryPath; 
-			    int src = primaryPath->getSrcHost(); 
-			    int dest = primaryPath->getDestHost(); 
-			    Path* backUpPath = getReplicatedPath(src, dest, flow->rate);
+	Path* primaryPath = flow->primaryPath; 
+	int src = primaryPath->getSrcHost(); 
+	int dest = primaryPath->getDestHost(); 
+	Path* backUpPath = getReplicatedPath(src, dest, flow->rate, primaryPath);
 				
-				for(int i=0;i<backUpPath->switches.size();i++)             
-					backUpPath->switches[i]->addBackFlow(flow);
-				
-				for(int i=0;i<backUpPath->links.size();i++)             
-					backUpPath->links[i]->addBackFlow(flow,flow->rate,backUpPath->direction[i],0, 0); 
-				
-				return true; // gohar: NEEDS TO BE FIXED
-}
+	if (!backUpPath)
+		return false;
 					
+	for(int i=0;i<backUpPath->switches.size();i++)             
+		backUpPath->switches[i]->addBackFlow(flow);
+				
+	for(int i=0;i<backUpPath->links.size();i++)             
+		backUpPath->links[i]->addBackFlow(flow,flow->rate,backUpPath->direction[i],0, 0); 
+				
+	flow->backUpPath.push_back(backUpPath);
+		return true;
+}
 
 vector<float> Controller::getAllocation(int p)
 {
@@ -733,12 +736,25 @@ void Controller::findFaults()
 					// cout<<"commiting on backup"<<endl;
 //major implementation
 					int commit =0;
-					for(int k =0; k<flows_primary[j]->backUpPath.size();k++){
-						if(flows_primary[j]->backUpPath[k]->isValid(flows_primary[j]->rate))
-							commit=flows_primary[j]->commitPathAndReserve(flows_primary[j]->backUpPath[k],1);
-						if(commit)
-							break;
+					
+					
+					bool check = makeBackUp(flows_primary[j]);
+					if (check) {
+						commit=flows_primary[j]->commitPathAndReserve(flows_primary[j]->backUpPath[0],1);
+						if (commit != 1)
+							cout << "error = backup path down" << endl; // might need to fix
+					} else {
+						cout << "backup path not found" << endl;
 					}
+					
+					//for(int k =0; k<flows_primary[j]->backUpPath.size();k++){
+					//	if(flows_primary[j]->backUpPath[k]->isValid(flows_primary[j]->rate)) {
+					//		
+					//		commit=flows_primary[j]->commitPathAndReserve(flows_primary[j]->backUpPath[k],1);
+					//	}
+					//	if(commit)
+					//		break;
+					//}
 					
 					// cout<<"Primary Down: flow id: "<<flows_primary[j]->flow_id<<" ";
 					// flows_primary[j]->primaryPath->print();
@@ -781,33 +797,51 @@ void Controller::findFaults()
 			{
 				for(int j=0;j<flows_back.size();j++)
 				{
-					int index_of_backupPath=0;
-					for(int l=0;l<flows_back[j]->backUpPath.size();l++)
-					{
-							vector<Switch*> switches=flows_back[j]->backUpPath[l]->getSwitches();
-							for(int m=0;m<switches.size();m++)
-							{
-								if(switches[m]==prone_switches[i])
-								{
-									index_of_backupPath=l;
-									break;
-								}
-									
-							}
-								
-					}	
-					flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[index_of_backupPath]);
-					int commit=0;
-					for(int k =0; k<flows_back[j]->backUpPath.size();k++)
-					{
-						if(flows_back[j]->backUpPath[k]->isValid(flows_back[j]->getBackUpRate())) {
-							if (flows_back[j]->backUpPath[k]->isValid(flows_back[j]->getBackUpRate()))
-								commit=flows_back[j]->commitPath(flows_back[j]->backUpPath[k],1);
-						}
-								if(commit)
-									break;
+					//int index_of_backupPath=0;
+					//for(int l=0;l<flows_back[j]->backUpPath.size();l++)
+					//{
+					//		vector<Switch*> switches=flows_back[j]->backUpPath[l]->getSwitches();
+					//		for(int m=0;m<switches.size();m++)
+					//		{
+					//			if(switches[m]==prone_switches[i])
+					//			{
+					//				index_of_backupPath=l;
+					//				break;
+					//			}
+					//				
+					//		}
+					//			
+					//}
+					
+					flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[0]);
+					
+					if (flows_back[j]->backUpPath.size() != 0)
+						cout << "error = backup path size not 0" << endl;
+					
+					
+					bool check = makeBackUp(flows_back[j]);
+					if (check) {
+						int commit=flows_back[j]->commitPathAndReserve(flows_back[j]->backUpPath[0],1);
+						if (commit != 1)
+							cout << "error = backup path down" << endl; // might need to fix
+					} else {
+						cout << "backup path not found" << endl;
 					}
-					if(!commit)
+					
+					
+					
+					//int commit=0;
+					//for(int k =0; k<flows_back[j]->backUpPath.size();k++)
+					//{
+					//	if(flows_back[j]->backUpPath[k]->isValid(flows_back[j]->getBackUpRate())) {
+					//		if (flows_back[j]->backUpPath[k]->isValid(flows_back[j]->getBackUpRate()))
+					//			commit=flows_back[j]->commitPath(flows_back[j]->backUpPath[k],1);
+					//	}
+					//			if(commit)
+					//				break;
+					//}
+					
+					if(!check)
 						flows_down.push_back(flows_back[j]);
 				}				
 			}
@@ -856,13 +890,24 @@ void Controller::findFaults()
 				if(backUp)
 				{
 					// cout<<"commiting on backup"<<endl;
-					int commit =0;
-					for(int k =0; k<flows_primary[j]->backUpPath.size();k++){
-						if(flows_primary[j]->backUpPath[k]->isValid(flows_primary[j]->getBackUpRate()))
-								commit=flows_primary[j]->commitPath(flows_primary[j]->backUpPath[k],1);
-								if(commit)
-									break;
-						}
+					
+					bool check = makeBackUp(flows_primary[j]);
+					int commit = 0;
+					if (check) {
+						commit=flows_primary[j]->commitPathAndReserve(flows_primary[j]->backUpPath[0],1);
+						if (commit != 1)
+							cout << "error = backup path down" << endl; // might need to fix
+					} else {
+						cout << "backup path not found" << endl;
+					}
+					
+					//int commit =0;
+					//for(int k =0; k<flows_primary[j]->backUpPath.size();k++){
+					//	if(flows_primary[j]->backUpPath[k]->isValid(flows_primary[j]->getBackUpRate()))
+					//			commit=flows_primary[j]->commitPath(flows_primary[j]->backUpPath[k],1);
+					//			if(commit)
+					//				break;
+					//	}
 
 					if(commit)
 					{
@@ -903,32 +948,49 @@ void Controller::findFaults()
 			{
 				for(int j=0;j<flows_back.size();j++)
 				{
-					int index_of_backupPath=0;
-					for(int l=0;l<flows_back[j]->backUpPath.size();l++)
-					{
-						vector<Switch*> switches=flows_back[j]->backUpPath[l]->getSwitches();
-						for(int m=0;m<switches.size();m++)
-						{
-							if(switches[m]==prone_switches[i])
-							{
-								index_of_backupPath=l;
-								break;
-							}
-							
-						}
-						
-					}	
-					flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[index_of_backupPath]);
-					int commit=0;
-					for(int k =0; k<flows_back[j]->backUpPath.size();k++)
-					{
-						if(flows_back[j]->backUpPath[k]->isValid(flows_back[j]->rate)) {
-							if (flows_back[j]->backUpPath[k]->isValid(flows_back[j]->getBackUpRate()))
-								commit=flows_back[j]->commitPath(flows_back[j]->backUpPath[k],1);
-						}
-								if(commit)
-									break;
-						}
+					
+					//int index_of_backupPath=0;
+					//for(int l=0;l<flows_back[j]->backUpPath.size();l++)
+					//{
+					//	vector<Switch*> switches=flows_back[j]->backUpPath[l]->getSwitches();
+					//	for(int m=0;m<switches.size();m++)
+					//	{
+					//		if(switches[m]==prone_switches[i])
+					//		{
+					//			index_of_backupPath=l;
+					//			break;
+					//		}
+					//		
+					//	}
+					//	
+					//}
+					
+					flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[0]);
+					
+					if (flows_back[j]->backUpPath.size() != 0)
+						cout << "error = backup path size not 0" << endl;
+					
+					
+					bool check = makeBackUp(flows_back[j]);
+					int commit = 0;
+					if (check) {
+						commit=flows_back[j]->commitPathAndReserve(flows_back[j]->backUpPath[0],1);
+						if (commit != 1)
+							cout << "error = backup path down" << endl; // might need to fix
+					} else {
+						cout << "backup path not found" << endl;
+					}
+					
+					//int commit=0;
+					//for(int k =0; k<flows_back[j]->backUpPath.size();k++)
+					//{
+					//	if(flows_back[j]->backUpPath[k]->isValid(flows_back[j]->rate)) {
+					//		if (flows_back[j]->backUpPath[k]->isValid(flows_back[j]->getBackUpRate()))
+					//			commit=flows_back[j]->commitPath(flows_back[j]->backUpPath[k],1);
+					//	}
+					//			if(commit)
+					//				break;
+					//	}
 						if(!commit)
 								flows_down.push_back(flows_back[j]);
 				}	
@@ -1960,28 +2022,28 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 
 
 
-	if(backUp)
-	{
-		if(end_to_end)
-		{
-			paths.clear();
-		}
+//	if(backUp)
+//	{
+//		if(end_to_end)
+//		{
+//			paths.clear();
+//		}
 
-		backups=getBackUpPathVector(primary,rate);
- 		// cout<<"Backup Path is: "<<endl;
- 		// back->print();
- 		if(backups.size()==0)
- 		{
- //			int x=1/0;
-		// cout<<"Backup Bandwidth not available"<<endl;
-			return 0;
-		}
+//		backups=getBackUpPathVector(primary,rate);
+ //		// cout<<"Backup Path is: "<<endl;
+ //		// back->print();
+ //		if(backups.size()==0)
+ //		{
+ ////			int x=1/0;
+//		// cout<<"Backup Bandwidth not available"<<endl;
+//			return 0;
+//		}
 
- 		// if(sharing)
- 		// {
- 		// 	paths_to_be_shared.push_back(back);
- 		// }
-	}
+ //		// if(sharing)
+ //		// {
+ //		// 	paths_to_be_shared.push_back(back);
+ //		// }
+//	}
 
 
 	// TODO fix the error of multiple ppl sharing one pathF
@@ -2009,6 +2071,22 @@ int getCommonCount(vector<Switch*> a,vector<Switch*> b)
 		for(int j=i+1;j<b.size();j++)
 		{
 			Switch* bCand=b[i];
+			if(aCand==bCand)
+				count++;
+		}
+	}
+	return count;
+}
+
+int getCommonCount(vector<Link*> a,vector<Link*> b)
+{
+	int count=0;
+	for(int i=0;i<a.size();i++)
+	{
+		Link* aCand=a[i];
+		for(int j=i+1;j<b.size();j++)
+		{
+			Link* bCand=b[i];
 			if(aCand==bCand)
 				count++;
 		}
@@ -2049,14 +2127,64 @@ Path* Controller::getReplicatedPath(int src, int dst, int rate)
 	filterPaths(rate,dest);
 		if(paths.size()==0)
 		{
-
 			return 0;			
 		}
 
 	Path* back=paths[rand()%paths.size()];
+	
+	
+	
 	paths.clear();
 	return back;
 }
+
+Path* Controller::getReplicatedPath(int src, int dst, int rate, Path* primary_path)
+{
+	int srcPod=src;
+	int dstPod=dst;
+	while(srcPod==src || dstPod==dst || srcPod==dstPod)
+	{
+		srcPod=rand()%k;
+		dstPod=rand()%k;
+	}
+
+	vector<Switch*> switches;
+	vector<Link*> links;
+	vector<bool> directions;
+	// cout<<"src: "<<srcPod<<" dst: "<<dstPod<<endl;
+	Host* source=getHostInTor(srcPod);
+	Host* dest= getHostInTor(dstPod);
+
+	bool intraRack = getPaths(source, dest, switches, links, directions, 1);
+	filterPaths(rate,dest);
+	if(paths.size()==0)
+	{
+
+		return 0;			
+	}
+
+	//Path* back=paths[rand()%paths.size()];
+	
+	// gohar
+	Path* back = NULL;
+	int highestCount = 0;
+	
+	for (int i = 0; i < paths.size(); i++) {
+		if (!paths[i]->isUp())
+			continue;
+		
+		int tempCount = getCommonCount(paths[i]->links, primary_path->links);
+		if (tempCount > highestCount) {
+			highestCount = tempCount;
+			back = paths[i];
+		}
+	}
+	
+	paths.clear();
+	return back;
+}
+
+
 vector <Path*> Controller::getReplicatedPathVector(int src, int dst, int rate)
 {
 	vector <Path*> empty;

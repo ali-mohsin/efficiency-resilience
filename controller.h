@@ -120,6 +120,7 @@ public:
 	
 	// gohar
 	bool makeBackUp(Flow* flow);
+	Path* getReplicatedPath(int src, int dst, int rate, Path* primary_path);
 };
 
 #endif /* CONTROLLER_H */

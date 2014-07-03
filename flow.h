@@ -43,6 +43,9 @@ public:
 	bool commitPathAndReserve(Path* path,int beingUsed);
 	void antiCommitPathAndUnreserve(Path* path);
 	double getBackUpRate();
+	
+	//gohar
+	void removeBackUpFlow();
 };
 
 #endif /* FLOW_H */

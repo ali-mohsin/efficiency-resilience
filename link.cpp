@@ -139,9 +139,7 @@ void Link::addBackFlow(Flow* f,int rate, int dir, int  back, int tor2tor)
 	//cout<<"Im here to add flow with directions as back= "<<back<<" and dir= "<<dir<<endl;
 	if(tor2tor && this->label=="Tor")
 		return;
-
-	flows_back.push_back(f);
-	num_flows++;
+	
 	if(dir==1)
 	{
 			backup_up+=rate;
