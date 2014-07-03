@@ -117,7 +117,9 @@ public:
 	Switch* getTorFromAnotherPod(int pod);
 
 	void assignResilience();
-
+	
+	// gohar
+	bool makeBackUp(Flow* flow);
 };
 
 #endif /* CONTROLLER_H */

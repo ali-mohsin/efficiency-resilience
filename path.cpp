@@ -128,6 +128,18 @@
 	{
 		return switches[0]->getPodID();
 	}
+	
+	// gohar
+	int Path::getSrcHost()
+	{
+		return switches[0]->getDeviceID();
+	}
+	
+	// gohar
+	int Path::getDestHost()
+	{
+		return switches[switches.size()-1]->getDeviceID();
+	}
 
 	int Path::getDstPod()
 	{

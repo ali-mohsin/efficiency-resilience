@@ -31,6 +31,10 @@ public:
 	bool has(Switch* link);
 	int getSrcPod();
 	int getDstPod();
+	
+	// gohar
+	int getDestHost();
+	int getSrcHost();
 };
 
 #endif /* FLOW_H */

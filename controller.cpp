@@ -98,6 +98,22 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	//cout<<"Flows on share are: "<<flows_on_share<<" out of "<<all_flows.size()<<endl;
 }
 
+//gohar
+bool Controller::makeBackUp(Flow* flow) { 
+			    Path* primaryPath = flow->primaryPath; 
+			    int src = primaryPath->getSrcHost(); 
+			    int dest = primaryPath->getDestHost(); 
+			    Path* backUpPath = getReplicatedPath(src, dest, flow->rate);
+				
+				for(int i=0;i<backUpPath->switches.size();i++)             
+					backUpPath->switches[i]->addBackFlow(flow);
+				
+				for(int i=0;i<backUpPath->links.size();i++)             
+					backUpPath->links[i]->addBackFlow(flow,flow->rate,backUpPath->direction[i],0, 0); 
+				
+				return true; // gohar: NEEDS TO BE FIXED
+}
+					
 
 vector<float> Controller::getAllocation(int p)
 {
