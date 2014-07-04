@@ -41,7 +41,7 @@ public:
 	bool getDone();
 	void activateFlow(double curTime);
 	bool commitPathAndReserve(Path* path,int beingUsed);
-	void antiCommitPathAndUnreserve(Path* path);
+	int antiCommitPathAndUnreserve(Path* path);
 	double getBackUpRate();
 	
 	//gohar

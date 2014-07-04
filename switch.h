@@ -5,6 +5,7 @@
 #include "link.h"
 #include "flow.h"
 #include "device.h"
+#include "flowdata.h"
 #include <cstdlib>
 
 
@@ -23,7 +24,9 @@ public:
 	vector<Flow*> back_flows;
 	int failAt;
 	int resilience; // 0 = no fail, 1 = single failure, 2 = multi-failure
-
+	
+	//gohar
+	//vector<FlowData> flowData;
 
 	Switch(int pid, int did, string label, int l,int num):Device(new Address(pid, did),label)
 	{

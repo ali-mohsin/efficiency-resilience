@@ -150,7 +150,8 @@ bool Flow::commitPathAndReserve(Path* path,int rate)
 	
 	if (selected != -1) {
 		cout << "selected = " << selected << endl;	
-		for (int i = 0; i < backUpPath[selected]->links.size(); i++) {			
+		for (int i = 0; i < backUpPath[selected]->links.size(); i++) {
+			backUpPath[selected]->links[i]->addFlowDataEntry(flow_id, rate);
 			backUpPath[selected]->links[i]->addBackFlow(rate,backUpPath[selected]->direction[i]);
 		}
 		for (int i = 0; i < backUpPath[selected]->switches.size(); i++) {			
@@ -187,7 +188,7 @@ void Flow::antiCommitPath(Path* path)
 	// }
 }
 
-void Flow::antiCommitPathAndUnreserve(Path* path)
+int Flow::antiCommitPathAndUnreserve(Path* path)
 {
 	
 	path->beingUsed = 0;
@@ -198,10 +199,24 @@ void Flow::antiCommitPathAndUnreserve(Path* path)
 		on_back=0; //verify this
 	
 	int size = path->links.size();
-	for (int i = 0; i < size; i++)
-		path->links[i]->addBackFlow(-this->rate,path->direction[i]);
+	
+	int rate_return = 0;
+	
+	for (int j = 0; j < path->links[0]->flowData.size(); j++) {
+		if (path->links[0]->flowData[j].flow_id == flow_id) {
+			rate_return = path->links[0]->flowData[j].rate;
+		}
+	}
+	
+	for (int i = 0; i < size; i++) {
+		path->links[i]->addBackFlow(-rate_return,path->direction[i]);		
+	}
 	
 	removeBackUpFlow();
+	if (rate_return == 0) {
+		cout << "rate return is 0" << endl;
+	}
+	return rate_return;
 }
 
 //gohar

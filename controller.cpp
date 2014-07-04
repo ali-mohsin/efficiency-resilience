@@ -99,11 +99,11 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 }
 
 //gohar
-bool Controller::makeBackUp(Flow* flow) { 
+bool Controller::makeBackUp(Flow* flow, int rate) { 
 	Path* primaryPath = flow->primaryPath; 
 	int src = primaryPath->getSrcHost(); 
 	int dest = primaryPath->getDestHost(); 
-	SprayData* sprayData = getSprayPath(src, dest, flow->rate, primaryPath);
+	SprayData* sprayData = getSprayPath(src, dest, rate, primaryPath);
 				
 	if (!sprayData)
 		return false;
@@ -739,7 +739,7 @@ void Controller::findFaults()
 					// cout<<"commiting on backup"<<endl;
 //major implementation
 					
-					bool check = makeBackUp(flows_primary[j]);
+					bool check = makeBackUp(flows_primary[j], flows_primary[j]->rate);
 					if (check) {
 						//cout << "backup found" << endl;
 					} else {
@@ -812,12 +812,12 @@ void Controller::findFaults()
 								
 					}
 					
-					flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[index_of_backupPath]);
+					int anti_rate = flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[index_of_backupPath]);
 					
 					if (flows_back[j]->backUpPath.size() != 0)
 						cout << "error = backup path size not 0" << endl;
 					
-					bool check = makeBackUp(flows_back[j]);
+					bool check = makeBackUp(flows_back[j], anti_rate);
 					if (check) {
 						//cout << "backup found" << endl;
 					} else {
@@ -884,7 +884,7 @@ void Controller::findFaults()
 				{
 					// cout<<"commiting on backup"<<endl;
 					
-					bool check = makeBackUp(flows_primary[j]);
+					bool check = makeBackUp(flows_primary[j], flows_primary[j]->rate);
 					if (check) {
 						//cout << "backup found" << endl;
 					} else {
@@ -955,13 +955,13 @@ void Controller::findFaults()
 					//	
 					//}
 					
-					flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[0]);
+					int anti_rate = flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[0]);
 					
 					if (flows_back[j]->backUpPath.size() != 0)
 						cout << "error = backup path size not 0" << endl;
 					
 					
-					bool check = makeBackUp(flows_back[j]);
+					bool check = makeBackUp(flows_back[j], anti_rate);
 					if (check) {
 						//cout << "backup found" << endl;
 					} else {
@@ -1061,9 +1061,9 @@ void Controller::revert_to_primary()
 			}
 		}
 	}
-
-
-
+	
+	// gohar
+	// check again for backup paths here, backup path can be up
 	if(revert)
 	{
 		for (int i=0;i<flows_down.size();i++)

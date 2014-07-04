@@ -12,6 +12,7 @@ class Path;
 #include "device.h"
 #include "host.h"
 #include "switch.h"
+#include "flowdata.h"
 
 class Link
 {
@@ -33,7 +34,8 @@ public:
 	int old_status;
 	int failAt;
 	int resilience; // 0 = no fail, 1 = single failure, 2 = multi-failure
-
+	//gohar
+	vector<FlowData> flowData;
 
 	Link(int id,int cap,string l);
 	int reserve_BW_up(int bw);
@@ -59,7 +61,7 @@ public:
 	vector<Flow*> getFlowsOnBack();
 	// gohar:
 	void addBackFlow(int rate, int dir);
-
+	void addFlowDataEntry(int f_id, int r);
 };
 
 #endif /* LINK_H */

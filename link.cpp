@@ -196,6 +196,13 @@ vector<Flow*> Link::getFlowsOnBack()
 	return v;
 }
 
+void Link::addFlowDataEntry(int f_id, int r) {
+	FlowData f;
+	f.flow_id = f_id;
+	f.rate = r;
+	flowData.push_back(f);
+}
+
 // vector<Flow*> Link::getActiveFlows()
 // {
 // 	vector<Flow*> v;
