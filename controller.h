@@ -9,6 +9,7 @@
 #include "topology.h"
 #include "group.h"
 #include "pair.h"
+#include "spraydata.h"
 //this is to control the whole thing...includes a UI function
 class Flow;
 
@@ -120,7 +121,7 @@ public:
 	
 	// gohar
 	bool makeBackUp(Flow* flow);
-	Path* getReplicatedPath(int src, int dst, int rate, Path* primary_path);
+	SprayData* getSprayPath(int src, int dst, int rate, Path* primary_path);
 };
 
 #endif /* CONTROLLER_H */

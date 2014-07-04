@@ -103,20 +103,23 @@ bool Controller::makeBackUp(Flow* flow) { 
 	Path* primaryPath = flow->primaryPath; 
 	int src = primaryPath->getSrcHost(); 
 	int dest = primaryPath->getDestHost(); 
-	Path* backUpPath = getReplicatedPath(src, dest, flow->rate, primaryPath);
+	SprayData* sprayData = getSprayPath(src, dest, flow->rate, primaryPath);
 				
-	if (!backUpPath)
+	if (!sprayData)
 		return false;
 					
-	for(int i=0;i<backUpPath->switches.size();i++)             
-		backUpPath->switches[i]->addBackFlow(flow);
-				
-	for(int i=0;i<backUpPath->links.size();i++)             
-		backUpPath->links[i]->addBackFlow(flow,flow->rate,backUpPath->direction[i],0, 0); 
+	//for(int i=0;i<backUpPath->switches.size();i++)             
+	//	backUpPath->switches[i]->addBackFlow(flow);
+	//			
+	//for(int i=0;i<backUpPath->links.size();i++)             
+	//	backUpPath->links[i]->addBackFlow(flow,flow->rate,backUpPath->direction[i],0, 0); 
 	
-	//gohar: check here
-	flow->backUpPath.push_back(backUpPath);
-		return true;
+	for (int i = 0; i < sprayData->paths.size(); i++) {
+		flow->backUpPath.push_back(sprayData->paths[i]);
+		flow->commitPathAndReserve(sprayData->paths[i], sprayData->toReserve[i]);
+	}
+	
+	return true;
 }
 
 vector<float> Controller::getAllocation(int p)
@@ -735,15 +738,12 @@ void Controller::findFaults()
 				{
 					// cout<<"commiting on backup"<<endl;
 //major implementation
-					int commit =0;
 					
 					bool check = makeBackUp(flows_primary[j]);
 					if (check) {
-						commit=flows_primary[j]->commitPathAndReserve(flows_primary[j]->backUpPath[0],1);
-						if (commit != 1)
-							cout << "error = backup path down" << endl; // might need to fix
+						//cout << "backup found" << endl;
 					} else {
-						//cout << "backup path not found" << endl;
+						cout << "backup path not found" << endl;
 					}
 					
 					//for(int k =0; k<flows_primary[j]->backUpPath.size();k++){
@@ -758,7 +758,7 @@ void Controller::findFaults()
 					// cout<<"Primary Down: flow id: "<<flows_primary[j]->flow_id<<" ";
 					// flows_primary[j]->primaryPath->print();
 
-					if(commit)
+					if(check)
 					{
 						// cout<<"Going To Backup: flow id : "<< flows_primary[j]->flow_id<<" ";
 						// flows_primary[j]->backUpPath->print();
@@ -796,38 +796,34 @@ void Controller::findFaults()
 			{
 				for(int j=0;j<flows_back.size();j++)
 				{
-					//int index_of_backupPath=0;
-					//for(int l=0;l<flows_back[j]->backUpPath.size();l++)
-					//{
-					//		vector<Switch*> switches=flows_back[j]->backUpPath[l]->getSwitches();
-					//		for(int m=0;m<switches.size();m++)
-					//		{
-					//			if(switches[m]==prone_switches[i])
-					//			{
-					//				index_of_backupPath=l;
-					//				break;
-					//			}
-					//				
-					//		}
-					//			
-					//}
+					int index_of_backupPath=0;
+					for(int l=0;l<flows_back[j]->backUpPath.size();l++)
+					{
+							vector<Switch*> switches=flows_back[j]->backUpPath[l]->getSwitches();
+							for(int m=0;m<switches.size();m++)
+							{
+								if(switches[m]==prone_switches[i])
+								{
+									index_of_backupPath=l;
+									break;
+								}
+									
+							}
+								
+					}
 					
-					flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[0]);
+					flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[index_of_backupPath]);
 					
 					if (flows_back[j]->backUpPath.size() != 0)
 						cout << "error = backup path size not 0" << endl;
 					
-					
 					bool check = makeBackUp(flows_back[j]);
 					if (check) {
-						int commit=flows_back[j]->commitPathAndReserve(flows_back[j]->backUpPath[0],1);
-						if (commit != 1)
-							cout << "error = backup path down" << endl; // might need to fix
+						//cout << "backup found" << endl;
 					} else {
+						flows_down.push_back(flows_back[j]);
 						cout << "backup path not found" << endl;
 					}
-					
-					
 					
 					//int commit=0;
 					//for(int k =0; k<flows_back[j]->backUpPath.size();k++)
@@ -840,8 +836,6 @@ void Controller::findFaults()
 					//				break;
 					//}
 					
-					if(!check)
-						flows_down.push_back(flows_back[j]);
 				}				
 			}
 
@@ -891,11 +885,8 @@ void Controller::findFaults()
 					// cout<<"commiting on backup"<<endl;
 					
 					bool check = makeBackUp(flows_primary[j]);
-					int commit = 0;
 					if (check) {
-						commit=flows_primary[j]->commitPathAndReserve(flows_primary[j]->backUpPath[0],1);
-						if (commit != 1)
-							cout << "error = backup path down" << endl; // might need to fix
+						//cout << "backup found" << endl;
 					} else {
 						cout << "backup path not found" << endl;
 					}
@@ -908,7 +899,7 @@ void Controller::findFaults()
 					//				break;
 					//	}
 
-					if(commit)
+					if(check)
 					{
 						// cout<<"Going To Backup: flow id : "<< flows_primary[j]->flow_id<<" ";
 						// flows_primary[j]->backUpPath->print();
@@ -971,13 +962,11 @@ void Controller::findFaults()
 					
 					
 					bool check = makeBackUp(flows_back[j]);
-					int commit = 0;
 					if (check) {
-						commit=flows_back[j]->commitPathAndReserve(flows_back[j]->backUpPath[0],1);
-						if (commit != 1)
-							cout << "error = backup path down" << endl; // might need to fix
+						//cout << "backup found" << endl;
 					} else {
 						cout << "backup path not found" << endl;
+						flows_down.push_back(flows_back[j]);
 					}
 					
 					//int commit=0;
@@ -990,8 +979,7 @@ void Controller::findFaults()
 					//			if(commit)
 					//				break;
 					//	}
-						if(!commit)
-								flows_down.push_back(flows_back[j]);
+								
 				}	
 			}
 		
@@ -2137,7 +2125,7 @@ Path* Controller::getReplicatedPath(int src, int dst, int rate)
 	return back;
 }
 
-Path* Controller::getReplicatedPath(int src, int dst, int rate, Path* primary_path)
+SprayData* Controller::getSprayPath(int src, int dst, int rate, Path* primary_path)
 {
 	int srcPod=src;
 	int dstPod=dst;
@@ -2155,32 +2143,47 @@ Path* Controller::getReplicatedPath(int src, int dst, int rate, Path* primary_pa
 	Host* dest= getHostInTor(dstPod);
 
 	bool intraRack = getPaths(source, dest, switches, links, directions, 1);
-	filterPaths(rate,dest);
+	//filterPaths(rate,dest);
+	
 	if(paths.size()==0)
-	{
+		return NULL;
 
-		return 0;			
-	}
-
-	//Path* back=paths[rand()%paths.size()];
+	//Path* back = NULL;
+	//int highestCount = 0;
 	
-	// gohar
-	Path* back = NULL;
-	int highestCount = 0;
+	int sent = 0;
+	vector<int> toReserve;
 	
-	for (int i = 0; i < paths.size(); i++) {
-		if (!paths[i]->isUp())
-			continue;
-		
-		int tempCount = getCommonCount(paths[i]->links, primary_path->links);
-		if (tempCount > highestCount) {
-			highestCount = tempCount;
-			back = paths[i];
+	for (int i = 0; i < paths.size(); i++)
+		toReserve.push_back(0);
+	
+	while (sent != rate) {	
+		for (int i = 0; i < paths.size(); i++) {
+			if (paths[i]->isValid(1) && paths[i]->isUp() && sent != rate) {
+				toReserve[i]++;
+				sent++;
+			}
 		}
 	}
 	
+	SprayData* sprayData = new SprayData();
+	sprayData->toReserve = toReserve;
+	sprayData->paths = paths;
+	
+	// find highest matching/overlapping path
+	//for (int i = 0; i < paths.size(); i++) {
+	//	if (!paths[i]->isUp())
+	//		continue;
+	//	
+	//	int tempCount = getCommonCount(paths[i]->links, primary_path->links);
+	//	if (tempCount > highestCount) {
+	//		highestCount = tempCount;
+	//		back = paths[i];
+	//	}
+	//}
+	
 	paths.clear();
-	return back;
+	return sprayData;
 }
 
 

@@ -110,9 +110,9 @@ bool Flow::commitPath(Path* path,int beingUsed)
 	return true;
 }
 
-bool Flow::commitPathAndReserve(Path* path,int beingUsed)
+bool Flow::commitPathAndReserve(Path* path,int rate)
 {
-	
+	int beingUsed = 1;
     if (!path->isUp())
     {
 		cout << "error = path down" << endl;
@@ -149,10 +149,12 @@ bool Flow::commitPathAndReserve(Path* path,int beingUsed)
 	}
 	
 	if (selected != -1) {
-		cout << "selected = " << selected << endl;
-		int size = backUpPath[selected]->links.size();
-		for (int i = 0; i < size; i++) {			
-			backUpPath[selected]->links[i]->addBackFlow(this->rate,backUpPath[selected]->direction[i]);
+		cout << "selected = " << selected << endl;	
+		for (int i = 0; i < backUpPath[selected]->links.size(); i++) {			
+			backUpPath[selected]->links[i]->addBackFlow(rate,backUpPath[selected]->direction[i]);
+		}
+		for (int i = 0; i < backUpPath[selected]->switches.size(); i++) {			
+			backUpPath[selected]->switches[i]->addBackFlow(this);
 		}
 	} else {
 		cout << "selected = " << selected << endl;
