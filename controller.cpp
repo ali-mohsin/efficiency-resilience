@@ -805,25 +805,24 @@ void Controller::findFaults()
 								if(switches[m]==prone_switches[i])
 								{
 									index_of_backupPath=l;
-									break;
+									//break;
+									int anti_rate = flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[index_of_backupPath]);
+									
+									bool check = makeBackUp(flows_back[j], anti_rate);
+									if (check) {
+										//cout << "backup found" << endl;
+									} else {
+										flows_down.push_back(flows_back[j]);
+										cout << "backup path not found" << endl;
+										break;
+									}
 								}
 									
 							}
 								
 					}
 					
-					int anti_rate = flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[index_of_backupPath]);
 					
-					if (flows_back[j]->backUpPath.size() != 0)
-						cout << "error = backup path size not 0" << endl;
-					
-					bool check = makeBackUp(flows_back[j], anti_rate);
-					if (check) {
-						//cout << "backup found" << endl;
-					} else {
-						flows_down.push_back(flows_back[j]);
-						cout << "backup path not found" << endl;
-					}
 					
 					//int commit=0;
 					//for(int k =0; k<flows_back[j]->backUpPath.size();k++)
@@ -939,35 +938,36 @@ void Controller::findFaults()
 				for(int j=0;j<flows_back.size();j++)
 				{
 					
-					//int index_of_backupPath=0;
-					//for(int l=0;l<flows_back[j]->backUpPath.size();l++)
-					//{
-					//	vector<Switch*> switches=flows_back[j]->backUpPath[l]->getSwitches();
-					//	for(int m=0;m<switches.size();m++)
-					//	{
-					//		if(switches[m]==prone_switches[i])
-					//		{
-					//			index_of_backupPath=l;
-					//			break;
-					//		}
-					//		
-					//	}
-					//	
-					//}
-					
-					int anti_rate = flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[0]);
-					
-					if (flows_back[j]->backUpPath.size() != 0)
-						cout << "error = backup path size not 0" << endl;
-					
-					
-					bool check = makeBackUp(flows_back[j], anti_rate);
-					if (check) {
-						//cout << "backup found" << endl;
-					} else {
-						cout << "backup path not found" << endl;
-						flows_down.push_back(flows_back[j]);
+					int index_of_backupPath=0;
+					for(int l=0;l<flows_back[j]->backUpPath.size();l++)
+					{
+						vector<Link*> links=flows_back[j]->backUpPath[l]->links;
+						for(int m=0;m<links.size();m++)
+						{
+							if(links[m]==prone_links[i])
+							{
+								index_of_backupPath=l;
+								//break;
+								int anti_rate = flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[0]);
+								
+								//if (flows_back[j]->backUpPath.size() != 0)
+								//	cout << "error = backup path size not 0" << endl;
+								
+								bool check = makeBackUp(flows_back[j], anti_rate);
+								if (check) {
+									//cout << "backup found" << endl;
+								} else {
+									cout << "backup path not found" << endl;
+									flows_down.push_back(flows_back[j]);
+									break;
+								}
+							}
+							
+						}
+						
 					}
+					
+					
 					
 					//int commit=0;
 					//for(int k =0; k<flows_back[j]->backUpPath.size();k++)

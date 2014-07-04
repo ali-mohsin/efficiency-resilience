@@ -127,11 +127,11 @@ bool Flow::commitPathAndReserve(Path* path,int rate)
 			allBackups=0;
 	}	
 	
-	if (backUpPath.size() > 1) {
-		cout << "error = backup path size greater than 1" << endl;
-		cout << "backup path size is " << backUpPath.size() << endl;
-		return false;
-	}
+	//if (backUpPath.size() > 1) {
+	//	cout << "error = backup path size greater than 1" << endl;
+	//	cout << "backup path size is " << backUpPath.size() << endl;
+	//	return false;
+	//}
 	
 	// gohar: need to make fixes here, try clearing backuppath vector
 	int selected = -1;
@@ -144,7 +144,6 @@ bool Flow::commitPathAndReserve(Path* path,int rate)
 			backUpPath[i]->beingUsed=1;
 			selected = i;
 			break;
-
 		}
 	}
 	
