@@ -767,10 +767,21 @@ void Controller::findFaults()
 							{
 								if(switches[m]==prone_switches[i])
 								{
+									bool found = false;
+									for (int n = 0; n < switches[m]->back_flows.size(); n++) {
+										if (switches[m]->back_flows[n] == flows_back[j])
+											found = true;
+									}
+									if (!found) {
+										cout << "multiple calls" << endl;
+										continue;
+									}
+									
 									index_of_backupPath=l;
 									//break;
+									cout << "ANTICOMMIT CALLED BY flow " << flows_back[j]->flow_id << endl;
 									int anti_rate = flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[index_of_backupPath]);
-									
+									cout << "anti_rate is " << anti_rate << endl;
 									bool check = makeBackUp(flows_back[j], anti_rate);
 									if (check) {
 										//cout << "backup found" << endl;
@@ -885,9 +896,18 @@ void Controller::findFaults()
 
 			if(backUp)
 			{
+				// debugging
+				int cc = 0;
+				for(int j=0;j<flows_back.size();j++) {
+					if (flows_back[j]->flow_id == 20)
+						cc++;
+				}
+				if (cc > 1)
+					cout << "COUNT VALUE IS " << cc << " for link " << prone_links[i]->link_id << endl;
+				// end debugging
+				
 				for(int j=0;j<flows_back.size();j++)
 				{
-					
 					int index_of_backupPath=0;
 					for(int l=0;l<flows_back[j]->backUpPath.size();l++)
 					{
@@ -897,7 +917,16 @@ void Controller::findFaults()
 							if(links[m]==prone_links[i])
 							{
 								index_of_backupPath=l;
+								bool found = false;
+								for (int n = 0; n < links[m]->flows_back.size(); n++) {
+									if (links[m]->flows_back[n] == flows_back[j])
+										found = true;
+								}
+								if (!found)
+									continue;
+								
 								//break;
+								cout << "ANTICOMMIT CALLED links BY flow " << flows_back[j]->flow_id << endl;
 								int anti_rate = flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[0]);
 								
 								//if (flows_back[j]->backUpPath.size() != 0)
@@ -2105,6 +2134,7 @@ SprayData* Controller::getSprayPath(int src, int dst, int rate, Path* primary_pa
 		{
 			sprayData->toReserve.erase(sprayData->toReserve.begin()+i);
 			sprayData->paths.erase(sprayData->paths.begin()+i);
+			i--;
 		}
 		
 		

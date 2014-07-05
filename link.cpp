@@ -220,8 +220,10 @@ void Link::addFlowDataEntry(int f_id, int r, Flow* flow,Path* path) {
 void Link::removeFlowDataEntry(int f_id,Path* path) {
 	for(int i=0;i<flowData.size();i++)
 	{
-		if(flowData[i].flow_id==f_id && flowData[i].path==path)
+		if(flowData[i].flow_id==f_id && flowData[i].path==path) {
 			flowData.erase(flowData.begin()+i);
+			i--;
+		}
 	}
 
 	

@@ -153,7 +153,7 @@ bool Flow::commitPathAndReserve(Path* path,int rate)
 		for (int i = 0; i < backUpPath[selected]->links.size(); i++) {
 			backUpPath[selected]->links[i]->addFlowDataEntry(flow_id, rate,this,path);
 			//we are not pushing back flow here. why?. I have done this in addFlowDataentry
-			backUpPath[selected]->links[i]->addBackFlow(rate,backUpPath[selected]->direction[i]); //check direction 
+			backUpPath[selected]->links[i]->addBackFlow(rate,backUpPath[selected]->direction[i]); //check direction
 		}
 		for (int i = 0; i < backUpPath[selected]->switches.size(); i++) {			
 			backUpPath[selected]->switches[i]->addBackFlow(this);
@@ -200,7 +200,6 @@ int Flow::antiCommitPathAndUnreserve(Path* path)
 		on_back=0; //verify this
 	
 	int size = path->links.size();
-	
 	int rate_return = 0;
 	
 	for (int j = 0; j < path->links[0]->flowData.size(); j++) {
@@ -213,6 +212,7 @@ int Flow::antiCommitPathAndUnreserve(Path* path)
 		path->links[i]->addBackFlow(-rate_return,path->direction[i]);		
 	}
 	
+	cout << flow_id << " is calling removebackupflow" << endl;
 	removeBackUpFlow(path);
 	if (rate_return == 0) {
 		cout << "rate return is 0" << endl;
