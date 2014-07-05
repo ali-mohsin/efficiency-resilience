@@ -202,9 +202,12 @@ int Flow::antiCommitPathAndUnreserve(Path* path)
 	int size = path->links.size();
 	int rate_return = 0;
 	
-	for (int j = 0; j < path->links[0]->flowData.size(); j++) {
-		if (path->links[0]->flowData[j].flow_id == flow_id && path->links[0]->flowData[j].path == path) {
-			rate_return = path->links[0]->flowData[j].rate;
+	// outer for-loop added for debugging 
+	for (int i = 0; i < path->links.size(); i++) {
+		for (int j = 0; j < path->links[i]->flowData.size(); j++) {
+			if (path->links[i]->flowData[j].flow_id == flow_id && path->links[i]->flowData[j].path == path) {
+				rate_return = path->links[i]->flowData[j].rate;
+			}
 		}
 	}
 	

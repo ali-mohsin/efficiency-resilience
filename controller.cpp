@@ -101,7 +101,7 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 //gohar
 bool Controller::makeBackUp(Flow* flow, int rate){
 	cout<<"Call to makeBackup by Flow_ID "<<flow->flow_id<<endl;
-  Path* primaryPath = flow->primaryPath;
+	Path* primaryPath = flow->primaryPath;
 	int src = primaryPath->getSrcHost();
 	int dest = primaryPath->getDestHost();
 	cout<<" Requested bandwidth "<<rate<<endl;
@@ -773,13 +773,15 @@ void Controller::findFaults()
 											found = true;
 									}
 									if (!found) {
-										cout << "multiple calls" << endl;
+										//cout << "multiple calls" << endl;
 										continue;
+									} else {
+										cout << "found" << endl;
 									}
 									
 									index_of_backupPath=l;
 									//break;
-									cout << "ANTICOMMIT CALLED BY flow " << flows_back[j]->flow_id << endl;
+									cout << "ANTICOMMIT CALLED switches BY flow " << flows_back[j]->flow_id << endl;
 									int anti_rate = flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[index_of_backupPath]);
 									cout << "anti_rate is " << anti_rate << endl;
 									bool check = makeBackUp(flows_back[j], anti_rate);
@@ -924,10 +926,12 @@ void Controller::findFaults()
 								}
 								if (!found)
 									continue;
+								else
+									cout << "found" << endl;
 								
 								//break;
 								cout << "ANTICOMMIT CALLED links BY flow " << flows_back[j]->flow_id << endl;
-								int anti_rate = flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[0]);
+								int anti_rate = flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[l]); // changed to l, was 0
 								
 								//if (flows_back[j]->backUpPath.size() != 0)
 								//	cout << "error = backup path size not 0" << endl;
@@ -2107,7 +2111,7 @@ SprayData* Controller::getSprayPath(int src, int dst, int rate, Path* primary_pa
 
 	//No preference is being given so far on paths, should there be any preference?
 	
-	while (sent != rate+1) {	
+	while (sent != rate+1) {
 		int check=0;
 		for (int i = 0; i < paths.size(); i++) {
 			if (paths[i]->isValid(sent) && paths[i]->isUp() && sent != rate+1) {
@@ -2119,6 +2123,8 @@ SprayData* Controller::getSprayPath(int src, int dst, int rate, Path* primary_pa
 		if(!check){
 			cout<<"BW not available"<<endl;
 			return NULL;
+		} else {
+			cout << "sent" << endl;
 		}
 	}
 	
