@@ -151,9 +151,9 @@ bool Flow::commitPathAndReserve(Path* path,int rate)
 	if (selected != -1) {
 		cout << "selected = " << selected << endl;	
 		for (int i = 0; i < backUpPath[selected]->links.size(); i++) {
-			backUpPath[selected]->links[i]->addFlowDataEntry(flow_id, rate,this);
-			//we are not pushing back flow here. why?
-			backUpPath[selected]->links[i]->addBackFlow(rate,backUpPath[selected]->direction[i],this); 
+			backUpPath[selected]->links[i]->addFlowDataEntry(flow_id, rate,this,path);
+			//we are not pushing back flow here. why?. I have done this in addFlowDataentry
+			backUpPath[selected]->links[i]->addBackFlow(rate,backUpPath[selected]->direction[i]); //check direction 
 		}
 		for (int i = 0; i < backUpPath[selected]->switches.size(); i++) {			
 			backUpPath[selected]->switches[i]->addBackFlow(this);
@@ -204,7 +204,7 @@ int Flow::antiCommitPathAndUnreserve(Path* path)
 	int rate_return = 0;
 	
 	for (int j = 0; j < path->links[0]->flowData.size(); j++) {
-		if (path->links[0]->flowData[j].flow_id == flow_id) {
+		if (path->links[0]->flowData[j].flow_id == flow_id && path->links[0]->flowData[j].path == path) {
 			rate_return = path->links[0]->flowData[j].rate;
 		}
 	}
@@ -213,7 +213,7 @@ int Flow::antiCommitPathAndUnreserve(Path* path)
 		path->links[i]->addBackFlow(-rate_return,path->direction[i]);		
 	}
 	
-	removeBackUpFlow();
+	removeBackUpFlow(path);
 	if (rate_return == 0) {
 		cout << "rate return is 0" << endl;
 	}
@@ -222,25 +222,28 @@ int Flow::antiCommitPathAndUnreserve(Path* path)
 
 //gohar
 // can also implement this by passing Path* passed to the above function
-void Flow::removeBackUpFlow() {
+void Flow::removeBackUpFlow(Path* path) {
 	
 	int check1 = 0;
 	int check2 = 0;
 	
-	for (int i = 0; i < backUpPath[0]->switches.size(); i++) {
-		for (int j = 0; j < backUpPath[0]->switches[i]->back_flows.size(); j++) {
-			if (backUpPath[0]->switches[i]->back_flows[j] == this) {
-				(backUpPath[0]->switches[i]->back_flows).erase(backUpPath[0]->switches[i]->back_flows.begin()+j);
+	for (int i = 0; i < path->switches.size(); i++) {
+		for (int j = 0; j < path->switches[i]->back_flows.size(); j++) {
+			if (path->switches[i]->back_flows[j] == this) {
+				(path->switches[i]->back_flows).erase(path->switches[i]->back_flows.begin()+j);
 				check1 = 1;
+				break;
 			}
 		}
 	}
 	
-	for (int i = 0; i < backUpPath[0]->links.size(); i++) {
-		for (int j = 0; j < backUpPath[0]->links[i]->flows_back.size(); j++) {
-			if (backUpPath[0]->links[i]->flows_back[j] == this) {
-				(backUpPath[0]->links[i]->flows_back).erase(backUpPath[0]->links[i]->flows_back.begin()+j);
+	for (int i = 0; i < path->links.size(); i++) {
+		for (int j = 0; j < path->links[i]->flows_back.size(); j++) {
+			if (path->links[i]->flows_back[j] == this) {
+				(path->links[i]->flows_back).erase(path->links[i]->flows_back.begin()+j);
+				path->links[i]->removeFlowDataEntry(this->flow_id, path);
 				check2 = 1;
+				break;
 			}
 		}
 	}

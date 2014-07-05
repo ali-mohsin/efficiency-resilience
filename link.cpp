@@ -199,23 +199,33 @@ vector<Flow*> Link::getFlowsOnBack()
 	return v;
 }
 
-void Link::addFlowDataEntry(int f_id, int r, Flow* f) {
+void Link::addFlowDataEntry(int f_id, int r, Flow* flow,Path* path) {
 	FlowData f;
 	f.flow_id = f_id;
 	f.rate = r;
+	f.path=path;
 	flowData.push_back(f);
 	int check=0;
-	for(int i=0; i<flow_back.size();i++)
-	{
-		if(flow_back[i]==f)
-			check=1;
-	}
+	//for(int i=0; i<flow_back.size();i++)
+	//{
+	//	if(flow_back[i]==f)
+	//		check=1;
+	//}
 
-	if(!check)
-		flows_back.push_back(f);
+	//if(!check)
+		flows_back.push_back(flow);
 	
 }
 
+void Link::removeFlowDataEntry(int f_id,Path* path) {
+	for(int i=0;i<flowData.size();i++)
+	{
+		if(flowData[i].flow_id==f_id && flowData[i].path==path)
+			flowData.erase(flowData.begin()+i);
+	}
+
+	
+}
 // vector<Flow*> Link::getActiveFlows()
 // {
 // 	vector<Flow*> v;

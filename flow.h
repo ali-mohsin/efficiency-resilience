@@ -45,7 +45,7 @@ public:
 	double getBackUpRate();
 	
 	//gohar
-	void removeBackUpFlow();
+	void removeBackUpFlow(Path* path);
 };
 
 #endif /* FLOW_H */

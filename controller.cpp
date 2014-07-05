@@ -118,7 +118,7 @@ bool Controller::makeBackUp(Flow* flow, int rate){
 	
 	for (int i = 0; i < sprayData->paths.size(); i++) {
 		flow->backUpPath.push_back(sprayData->paths[i]);
-		flow->commitPathAndReserve(sprayData->paths[i], sprayData->toReserve[i]);
+		flow->commitPathAndReserve(sprayData->paths[i], sprayData->toReserve[i]);	
 	}
 // We are not pushing back flow, I have added push_back wali line again	
 	return true;
@@ -716,11 +716,6 @@ void Controller::findFaults()
 		{
 			vector<Flow*> flows_primary=prone_switches[i]->getFlowsOnPrimary();
 			vector<Flow*> flows_back=prone_switches[i]->getFlowsOnBack();
-			// cout<<flows_back.size()<<" are the flows on back"<<endl;
-			// if(duplicateIn(flows_primary) || duplicateIn(flows_back))
-			// {
-			// 	int x=1/0;
-			// }
 
 			if(flows_primary.size()>0 || flows_back.size()>0)
 			{
@@ -738,51 +733,17 @@ void Controller::findFaults()
 				flows_primary[j]->antiCommitPath(flows_primary[j]->primaryPath);
 				if(backUp)
 				{
-					// cout<<"commiting on backup"<<endl;
-//major implementation
-					
+				
 					bool check = makeBackUp(flows_primary[j], flows_primary[j]->rate);
 					if (check) {
+						flows_on_back.push_back(flows_primary[j]);
 						//cout << "backup found" << endl;
 					} else {
-						cout << "backup path not found" << endl;
-					}
-					
-					//for(int k =0; k<flows_primary[j]->backUpPath.size();k++){
-					//	if(flows_primary[j]->backUpPath[k]->isValid(flows_primary[j]->rate)) {
-					//		
-					//		commit=flows_primary[j]->commitPathAndReserve(flows_primary[j]->backUpPath[k],1);
-					//	}
-					//	if(commit)
-					//		break;
-					//}
-					
-					// cout<<"Primary Down: flow id: "<<flows_primary[j]->flow_id<<" ";
-					// flows_primary[j]->primaryPath->print();
-
-					if(check)
-					{
-						// cout<<"Going To Backup: flow id : "<< flows_primary[j]->flow_id<<" ";
-						// flows_primary[j]->backUpPath->print();
-						flows_on_back.push_back(flows_primary[j]);
-						// cout<<"But Commit success, put on backup flows"<<endl;
-					}
-					else
-					{
-						// cout<<"Going Down the Backup is already down: flow id: "<<flows_primary[j]->flow_id<<" ";
-						// flows_primary[j]->backUpPath->print();
-						// if(!notIn(flows_down,flows_primary[j]))
-						// {
-						// 	int x=1/0;
-						// }
-						
-						
-						//add code here too
 						flows_down.push_back(flows_primary[j]);
 
-						// cout<<"And Commit Failed, put on down flows"<<endl;
-						
+						cout << "backup path not found" << endl;
 					}
+
 				}
 				else
 				{
@@ -823,19 +784,6 @@ void Controller::findFaults()
 							}
 								
 					}
-					
-					
-					
-					//int commit=0;
-					//for(int k =0; k<flows_back[j]->backUpPath.size();k++)
-					//{
-					//	if(flows_back[j]->backUpPath[k]->isValid(flows_back[j]->getBackUpRate())) {
-					//		if (flows_back[j]->backUpPath[k]->isValid(flows_back[j]->getBackUpRate()))
-					//			commit=flows_back[j]->commitPath(flows_back[j]->backUpPath[k],1);
-					//	}
-					//			if(commit)
-					//				break;
-					//}
 					
 				}				
 			}
@@ -994,41 +942,23 @@ void Controller::findFaults()
 
 void Controller::revert_to_primary()
 {
-	//////startTimer();
 	bool revert=false;
 	for(int i=0;i<critical_switches.size();i++)
 	{
 		if(critical_switches[i]->status >= 0)
 		{
-			//cout<<downTime<<" is the new downtime"<<endl;
-			//cout<<backup<<" is the new down due to sharing"<<endl;
-			//cout<<"+ Critical Switch Back with ID :"<<critical_switches[i]->toString()<<endl;
 			critical_switches.erase(critical_switches.begin()+i);
 			i--;
 			revert=true;
-			// if(duplicateIn(critical_switches))
-			// {
-			// 	//cout<<"++++++++ ERROR, DUPLICATES IN CRITICAL SWITCHES"<<endl;
-			// }
 		}
 	}
-	//////stopTimer("for switches to revert");
-	//////startTimer();
 
 	for(int i=0;i<critical_links.size();i++)
 	{
 		if(critical_links[i]->status >= 0)
 		{
-			//cout<<downTime<<" is the new downtime"<<endl;
-			//cout<<backup<<" is the new down due to sharing"<<endl;
-
-			//cout<<"+ Critical Link Back with ID :"<<critical_links[i]->link_id<<endl;
 			critical_links.erase(critical_links.begin()+i);
 			i--;
-			// if(duplicateIn(critical_links))
-			// {
-			// 	cout<<"++++++++ ERROR, DUPLICATES IN CRITICAL LINKS"<<endl;
-			// }
 			revert=true;
 		}
 	}
@@ -1044,13 +974,11 @@ void Controller::revert_to_primary()
 			if(f->primaryPath->isUp())
 			{
 				for (int j =0 ; j < f->backUpPath.size();j++) {
-					int count = 0;
-					if (f->backUpPath[j]->beingUsed == 1) {
+//					int count = 0;
+	//				if (f->backUpPath[j]->beingUsed == 1) {
 						f->antiCommitPathAndUnreserve(f->backUpPath[j]);
-						count++;
+//						count++;
 					}
-					if (count >= 2)
-						int x = 1/0;
 				}
 				bool check=f->commitPath(f->primaryPath,0); //Assumption is that link capacity would not be a bottleneck
 				if(!check)
@@ -1062,17 +990,15 @@ void Controller::revert_to_primary()
 				// cout<<"-- Num of flows on backup are: "<<flows_on_back.size()<<endl;
 			}
 		}
-	}
+	
 	
 	// gohar
-	// check again for backup paths here, backup path can be up
+	// check again for backup paths here, backup path can be up.Done now :)
 	if(revert)
 	{
 		for (int i=0;i<flows_down.size();i++)
 		{
 			Flow* f=flows_down[i];
-			// if(f->down!=1)
-			// 	continue;
 			bool check=f->primaryPath->isUp();
 			if(check)
 			{
@@ -1087,30 +1013,19 @@ void Controller::revert_to_primary()
 
 			if(backUp)
 			{
-				int index=-1;
-				for(int j =0; j < f->backUpPath.size();j++){
-						if(f->backUpPath[j]->isUp())
-							index=j;
-				}
+				check=makeBackUp(flows_down[i], flows_down[i]->rate);
 				
-				if(index!=-1)
+				if(check)
 				{
-					if (f->backUpPath[index]->isValid(f->getBackUpRate()))
-						f->commitPath(f->backUpPath[index],1); //Assumption is that link capacity would not be a bottleneck
-					// cout<<"I am here here----------------------------------------------"<<endl;
-					// cout<<"revert to backup from down: flow id: "<<f->flow_id<<" ";
-					// f->backUpPath->print(); 
 					flows_down.erase(flows_down.begin()+i);
 					i--;
-
 					flows_on_back.push_back(f);
-					// cout<<"-- Num of flows down: "<<flows_down.size()<<endl;
 				}
 			}
 		}
 	}
-}
 
+}
 void Controller::detect_downTime()
 {
 	
