@@ -115,12 +115,13 @@ bool Flow::commitPathAndReserve(Path* path,int rate)
 	int beingUsed = 1;
     if (!path->isUp())
     {
-		cout << "error = path down" << endl;
+		cout << "error = path down, this should never happen. we checked isUp before" << endl;
      	return false;
     }
 
 	if(path==primaryPath)
 	{
+		cout<<"Shoudnt never happen, we are calling for backflows only"<<endl;
 		primaryPath->beingUsed=1;
 		on_back=0;
 		if(backUpPath.size()!=0)
@@ -150,14 +151,15 @@ bool Flow::commitPathAndReserve(Path* path,int rate)
 	if (selected != -1) {
 		cout << "selected = " << selected << endl;	
 		for (int i = 0; i < backUpPath[selected]->links.size(); i++) {
-			backUpPath[selected]->links[i]->addFlowDataEntry(flow_id, rate);
-			backUpPath[selected]->links[i]->addBackFlow(rate,backUpPath[selected]->direction[i]);
+			backUpPath[selected]->links[i]->addFlowDataEntry(flow_id, rate,this);
+			//we are not pushing back flow here. why?
+			backUpPath[selected]->links[i]->addBackFlow(rate,backUpPath[selected]->direction[i],this); 
 		}
 		for (int i = 0; i < backUpPath[selected]->switches.size(); i++) {			
 			backUpPath[selected]->switches[i]->addBackFlow(this);
 		}
 	} else {
-		cout << "selected = " << selected << endl;
+		cout << "This should never happen, selected = " << selected << endl;
 	}
 	
 	return true;

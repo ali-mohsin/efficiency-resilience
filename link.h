@@ -60,8 +60,8 @@ public:
 	vector<Flow*> getFlowsOnPrimary();
 	vector<Flow*> getFlowsOnBack();
 	// gohar:
-	void addBackFlow(int rate, int dir);
-	void addFlowDataEntry(int f_id, int r);
+	void addBackFlow(int rate, int dir, Flow* f);
+	void addFlowDataEntry(int f_id, int r, Flow* f);
 };
 
 #endif /* LINK_H */

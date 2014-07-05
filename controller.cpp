@@ -99,12 +99,14 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 }
 
 //gohar
-bool Controller::makeBackUp(Flow* flow, int rate) { 
-	Path* primaryPath = flow->primaryPath; 
-	int src = primaryPath->getSrcHost(); 
-	int dest = primaryPath->getDestHost(); 
-	SprayData* sprayData = getSprayPath(src, dest, rate, primaryPath);
-				
+bool Controller::makeBackUp(Flow* flow, int rate){
+	cout<<"Call to makeBackup by Flow_ID "<<flow->flow_id<<endl;
+  Path* primaryPath = flow->primaryPath;
+	int src = primaryPath->getSrcHost();
+	int dest = primaryPath->getDestHost();
+	cout<<" Requested bandwidth "<<rate<<endl;
+	SprayData* sprayData = getSprayPath(src, dest, rate, primaryPath);
+	
 	if (!sprayData)
 		return false;
 					
@@ -118,7 +120,7 @@ bool Controller::makeBackUp(Flow* flow, int rate) { 
 		flow->backUpPath.push_back(sprayData->paths[i]);
 		flow->commitPathAndReserve(sprayData->paths[i], sprayData->toReserve[i]);
 	}
-	
+// We are not pushing back flow, I have added push_back wali line again	
 	return true;
 }
 
@@ -2138,53 +2140,73 @@ SprayData* Controller::getSprayPath(int src, int dst, int rate, Path* primary_pa
 	vector<Switch*> switches;
 	vector<Link*> links;
 	vector<bool> directions;
-	// cout<<"src: "<<srcPod<<" dst: "<<dstPod<<endl;
 	Host* source=getHostInTor(srcPod);
 	Host* dest= getHostInTor(dstPod);
 
 	bool intraRack = getPaths(source, dest, switches, links, directions, 1);
 	//filterPaths(rate,dest);
 	
-	if(paths.size()==0)
+	if(paths.size()==0){
+		cout<<"this should'nt happen, path.size==0"<<endl;
 		return NULL;
+		
+	}
 
 	//Path* back = NULL;
 	//int highestCount = 0;
 	
-	int sent = 0;
+	int sent = 1;
 	vector<int> toReserve;
 	
 	for (int i = 0; i < paths.size(); i++)
 		toReserve.push_back(0);
+
+	//No preference is being given so far on paths, should there be any preference?
 	
-	while (sent != rate) {	
+	while (sent != rate+1) {	
+		int check=0;
 		for (int i = 0; i < paths.size(); i++) {
-			if (paths[i]->isValid(1) && paths[i]->isUp() && sent != rate) {
-				toReserve[i]++;
+			if (paths[i]->isValid(sent) && paths[i]->isUp() && sent != rate+1) {
+				toReserve[i]=sent; // we are checking only and not reserving bw
 				sent++;
+				check=1;
 			}
+		}
+		if(!check){
+			cout<<"BW not available"<<endl;
+			return NULL;
 		}
 	}
 	
 	SprayData* sprayData = new SprayData();
 	sprayData->toReserve = toReserve;
 	sprayData->paths = paths;
+	// removing paths with zero BW available
 	
-	// find highest matching/overlapping path
-	//for (int i = 0; i < paths.size(); i++) {
-	//	if (!paths[i]->isUp())
-	//		continue;
-	//	
-	//	int tempCount = getCommonCount(paths[i]->links, primary_path->links);
-	//	if (tempCount > highestCount) {
-	//		highestCount = tempCount;
-	//		back = paths[i];
-	//	}
-	//}
+	//No preference is being given so far on paths, should there be any preference?
+	for(int i=0; i<sprayData->toReserve.size();i++)
+	{
+		if(sprayData->toReserve[i]==0)
+		{
+			sprayData->toReserve.erase(sprayData->toReserve.begin()+i);
+			sprayData->paths.erase(sprayData->paths.begin()+i);
+		}
+		
+		
+	}
 	
+
 	paths.clear();
+	
+	cout<<"Going out spray data"<<endl;
+	cout<<"BW reserved in "<<sprayData->paths.size()<<" paths"<<endl;
+	for(int i=0; i<sprayData->toReserve.size();i++)
+	{
+		cout<<sprayData->toReserve[i]<<" , ";
+	}
 	return sprayData;
-}
+
+} 
 
 
 vector <Path*> Controller::getReplicatedPathVector(int src, int dst, int rate)

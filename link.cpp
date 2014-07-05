@@ -156,6 +156,8 @@ void Link::addBackFlow(Flow* f,int rate, int dir, int  back, int tor2tor)
 // this function does not push back flow again
 void Link::addBackFlow(int rate, int dir)
 {
+
+		
 	if(dir==1)
 	{
 		backup_up+=rate;
@@ -169,6 +171,7 @@ void Link::addBackFlow(int rate, int dir)
 }
 
 
+
 vector<Flow*> Link::getFlowsOnPrimary()
 {
 	vector<Flow*> v;
@@ -180,7 +183,7 @@ vector<Flow*> Link::getFlowsOnPrimary()
 	return v;
 }
 
-
+//potential bug, what if multiple flows are passing through same link?
 vector<Flow*> Link::getFlowsOnBack()
 {
 	vector<Flow*> v;
@@ -196,11 +199,21 @@ vector<Flow*> Link::getFlowsOnBack()
 	return v;
 }
 
-void Link::addFlowDataEntry(int f_id, int r) {
+void Link::addFlowDataEntry(int f_id, int r, Flow* f) {
 	FlowData f;
 	f.flow_id = f_id;
 	f.rate = r;
 	flowData.push_back(f);
+	int check=0;
+	for(int i=0; i<flow_back.size();i++)
+	{
+		if(flow_back[i]==f)
+			check=1;
+	}
+
+	if(!check)
+		flows_back.push_back(f);
+	
 }
 
 // vector<Flow*> Link::getActiveFlows()
