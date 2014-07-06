@@ -115,12 +115,13 @@ bool Controller::makeBackUp(Flow* flow, int rate){
 	//			
 	//for(int i=0;i<backUpPath->links.size();i++)             
 	//	backUpPath->links[i]->addBackFlow(flow,flow->rate,backUpPath->direction[i],0, 0); 
-	cout<<" Success, new backup path size is "<<flow->backUpPath.size()<<endl;
 	for (int i = 0; i < sprayData->paths.size(); i++) {
 		flow->backUpPath.push_back(sprayData->paths[i]);
 		flow->commitPathAndReserve(sprayData->paths[i], sprayData->toReserve[i]);	
 	}
-// We are not pushing back flow, I have added push_back wali line again	
+	cout<<" Success, new backup path size is "<<flow->backUpPath.size()<<endl;
+
+	// We are not pushing back flow, I have added push_back wali line again	
 	return true;
 }
 
