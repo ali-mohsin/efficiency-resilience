@@ -115,7 +115,7 @@ bool Controller::makeBackUp(Flow* flow, int rate){
 	//			
 	//for(int i=0;i<backUpPath->links.size();i++)             
 	//	backUpPath->links[i]->addBackFlow(flow,flow->rate,backUpPath->direction[i],0, 0); 
-	
+	cout<<" Success, new backup path size is "<<flow->backUpPath.size()<<endl;
 	for (int i = 0; i < sprayData->paths.size(); i++) {
 		flow->backUpPath.push_back(sprayData->paths[i]);
 		flow->commitPathAndReserve(sprayData->paths[i], sprayData->toReserve[i]);	
@@ -1021,7 +1021,7 @@ void Controller::revert_to_primary()
 						f->antiCommitPathAndUnreserve(f->backUpPath[j]);
 //						count++;
 					}
-				
+				cout<<"Flow "<<f->flow_id<<" is up. Backup size is "<<f->backUpPath.size()<<endl;
 				bool check=f->commitPath(f->primaryPath,0); //Assumption is that link capacity would not be a bottleneck
 				if(!check)
 				{

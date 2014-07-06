@@ -149,7 +149,7 @@ bool Flow::commitPathAndReserve(Path* path,int rate)
 	}
 	
 	if (selected != -1) {
-		cout << "selected = " << selected << endl;	
+//		cout << "selected = " << selected << endl;	
 		for (int i = 0; i < backUpPath[selected]->links.size(); i++) {
 			backUpPath[selected]->links[i]->addFlowDataEntry(flow_id, rate,this,path);
 			//we are not pushing back flow here. why?. I have done this in addFlowDataentry
