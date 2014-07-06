@@ -251,8 +251,15 @@ void Flow::removeBackUpFlow(Path* path) {
 		}
 	}
 	
-	if (check1 == 1 && check2 == 1)
+	if (check1 == 1 && check2 == 1) {
 		cout << "flow removed successfully" << endl;
+		for (int i = 0; i < backUpPath.size(); i++) {
+			if (backUpPath[i] == path) {
+				backUpPath.erase(backUpPath.begin()+i);
+				i--;
+			}
+		}
+	}
 	else {
 		cout << "error in removing flow" << endl;
 		cout << "backup path size is " << backUpPath.size() << endl;

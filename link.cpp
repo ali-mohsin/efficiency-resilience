@@ -225,8 +225,6 @@ void Link::removeFlowDataEntry(int f_id,Path* path) {
 			i--;
 		}
 	}
-
-	
 }
 // vector<Flow*> Link::getActiveFlows()
 // {

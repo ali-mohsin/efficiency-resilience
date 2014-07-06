@@ -1,0 +1,92 @@
+Link Core 4223 Down curTime: 100 downFor: -123 resLevel: 1
+Group with leader: Link with id: 4841 has become failure prone
+Link Core 4223 Up curTime 300 upFor: 10
+Link Tor 3502 Down curTime: 300 downFor: -88 resLevel: 1
+Link Core 4841 Down curTime: 300 downFor: -622 resLevel: 2
+Link Tor 3502 Up curTime 400 upFor: 10
+Link Aggr 3622 Down curTime: 400 downFor: -181 resLevel: 1
+Link Aggr 3622 Up curTime 600 upFor: 10
+Link Aggr 3679 Down curTime: 600 downFor: -134 resLevel: 1
+Link Aggr 3679 Up curTime 800 upFor: 10
+Link Aggr 1433 Down curTime: 800 downFor: -286 resLevel: 1
+Link Aggr 412 Down curTime: 1000 downFor: -265 resLevel: 1
+Link Tor 3180 Down curTime: 1200 downFor: -199 resLevel: 1
+Link Tor 3180 Up curTime 1400 upFor: 10
+Link Tor 959 Down curTime: 1500 downFor: -241 resLevel: 1
+Link Tor 959 Up curTime 1800 upFor: 10
+Link Tor 1973 Down curTime: 1800 downFor: -343 resLevel: 1
+Link Tor 2392 Down curTime: 2000 downFor: -177 resLevel: 1
+Link Tor 2392 Up curTime 2200 upFor: 10
+Link Tor 1973 Up curTime 2400 upFor: 10
+Link Aggr 2275 Down curTime: 2400 downFor: -259 resLevel: 1
+Link Tor 1984 Down curTime: 2700 downFor: -217 resLevel: 1
+Link Tor 1984 Up curTime 3000 upFor: 10
+Link Tor 303 Down curTime: 3000 downFor: -194 resLevel: 1
+Link Tor 3165 Down curTime: 3100 downFor: -363176 resLevel: 1
+Switch Core [0,-1,14] Down curTime: 3500 downFor: -114 resLevel: 1
+Switch Core [0,-1,14] Up curTime: 3700 upFor: 10
+Switch with id: [1,17,4] has become failure prone
+Switch Aggr [1,17,4] Down curTime: 4100 downFor: -380 resLevel: 2
+Link Tor 1178 Down curTime: 4100 downFor: -28832 resLevel: 1
+Switch Aggr [1,17,4] Up curTime: 4500 upFor: 65924
+Link Tor 3793 Down curTime: 5000 downFor: -73110 resLevel: 1
+Switch with id: [1,19,2] has become failure prone
+Switch Aggr [1,19,2] Down curTime: 7200 downFor: -1569 resLevel: 2
+Switch Tor [2,1,0] Down curTime: 7300 downFor: -4924 resLevel: 1
+Link Tor 3112 Down curTime: 7600 downFor: -276 resLevel: 1
+Link Tor 3112 Up curTime 7900 upFor: 10
+Switch Tor [2,1,0] Up curTime: 12300 upFor: 10
+Switch with id: [2,5,9] has become failure prone
+Switch Tor [2,5,9] Down curTime: 12800 downFor: -128 resLevel: 2
+Switch with id: [1,9,7] has become failure prone
+Switch Tor [2,5,9] Up curTime: 13000 upFor: 42320
+Switch Aggr [1,9,7] Down curTime: 13000 downFor: -253 resLevel: 2
+Switch Aggr [1,9,7] Up curTime: 13300 upFor: 34014
+Switch with id: [1,19,5] has become failure prone
+Switch Aggr [1,19,5] Down curTime: 13600 downFor: -187 resLevel: 2
+Switch Aggr [1,19,5] Up curTime: 13800 upFor: 1942913
+Switch Aggr [1,19,2] Up curTime: 14500 upFor: 942781
+Switch Aggr [1,10,9] Down curTime: 14500 downFor: -280 resLevel: 1
+Switch Aggr [1,10,9] Up curTime: 14800 upFor: 10
+Switch Aggr [1,10,8] Down curTime: 14800 downFor: -7121 resLevel: 1
+Switch with id: [1,12,6] has become failure prone
+Switch Aggr [1,12,6] Down curTime: 15000 downFor: -271 resLevel: 2
+Switch Aggr [1,12,6] Up curTime: 15300 upFor: 149
+Switch Aggr [1,12,6] Down curTime: 15500 downFor: -345 resLevel: 2
+Switch with id: [1,2,4] has become failure prone
+Switch Aggr [1,12,6] Up curTime: 15900 upFor: 171808
+Switch Aggr [1,2,4] Down curTime: 15900 downFor: -139 resLevel: 2
+Switch Aggr [1,2,4] Up curTime: 16100 upFor: 46
+Switch Aggr [1,2,4] Down curTime: 16200 downFor: -256 resLevel: 2
+Switch Aggr [1,2,4] Up curTime: 16500 upFor: 2253099
+Link Tor 197 Down curTime: 17300 downFor: -381 resLevel: 1
+Link Tor 197 Up curTime 17700 upFor: 10
+Link Tor 3370 Down curTime: 17700 downFor: -276 resLevel: 1
+Switch Aggr [1,4,7] Down curTime: 17800 downFor: -355 resLevel: 1
+Link Tor 3370 Up curTime 18000 upFor: 10
+Link Tor 3533 Down curTime: 18000 downFor: -113 resLevel: 1
+Switch Aggr [1,4,7] Up curTime: 18200 upFor: 10
+Link Tor 3533 Up curTime 18200 upFor: 10
+Switch Tor [2,4,4] Down curTime: 18300 downFor: -364 resLevel: 1
+Switch Tor [2,4,4] Up curTime: 18700 upFor: 10
+Switch Tor [2,5,6] Down curTime: 19200 downFor: -2976 resLevel: 1
+Switch Tor [2,10,0] Down curTime: 21000 downFor: -181 resLevel: 1
+Switch Tor [2,10,0] Up curTime: 21200 upFor: 10
+Switch with id: [1,2,7] has become failure prone
+Switch Tor [2,5,6] Up curTime: 22400 upFor: 10
+Switch Aggr [1,2,7] Down curTime: 22400 downFor: -513 resLevel: 2
+Link Tor 2515 Down curTime: 22600 downFor: -308 resLevel: 1
+Link Tor 2515 Up curTime 22900 upFor: 10
+Switch Aggr [1,9,1] Up curTime: 23800 upFor: 96835
+Switch Aggr [1,1,2] Down curTime: 23800 downFor: -397 resLevel: 2
+Switch with id: [1,9,6] has become failure prone
+Switch Aggr [1,2,7] Up curTime: 23000 upFor: 432156
+Switch Aggr [1,11,4] Down curTime: 23000 downFor: -370 resLevel: 1
+Switch Aggr [1,11,4] Up curTime: 23400 upFor: 10
+Switch Aggr [1,4,9] Down curTime: 23400 downFor: -384 resLevel: 1
+Switch Aggr [1,4,9] Up curTime: 23800 upFor: 10
+Switch Aggr [1,15,4] Down curTime: 23800 downFor: -494 resLevel: 1
+Switch Aggr [1,15,4] Up curTime: 24300 upFor: 10
+Switch Aggr [1,1,2] Up curTime: 24200 upFor: 61241
+Switch Aggr [1,9,6] Down curTime: 24200 downFor: -494 resLevel: 2
+Switch with id: [1,11,2] has become failure prone

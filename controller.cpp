@@ -50,7 +50,7 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	totalTime=runFor;
 	assignResilience();
 	
-	int increase_by = 20; // increase capacities of links by this num
+	int increase_by = 100; // increase capacities of links by this num
 	
 	if(makeFlows)
 	{
@@ -1018,9 +1018,9 @@ void Controller::revert_to_primary()
 				for (int j =0 ; j < f->backUpPath.size();j++) {
 //					int count = 0;
 	//				if (f->backUpPath[j]->beingUsed == 1) {
-						f->antiCommitPathAndUnreserve(f->backUpPath[j]);
+					f->antiCommitPathAndUnreserve(f->backUpPath[j]);
 //						count++;
-					}
+				}
 				cout<<"Flow "<<f->flow_id<<" is up. Backup size is "<<f->backUpPath.size()<<endl;
 				bool check=f->commitPath(f->primaryPath,0); //Assumption is that link capacity would not be a bottleneck
 				if(!check)
