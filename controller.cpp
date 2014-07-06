@@ -603,6 +603,27 @@ bool Controller::duplicateIn(vector<Link*> v)
 
 
 
+bool notIn(vector<PodPair*> v,PodPair* e)
+{
+	for (int i=0;i<v.size();i++)
+	{
+		if(e==v[i])
+			return false;
+	}
+	return true;
+}
+
+
+bool notIn(vector<TorPair*> v,TorPair* e)
+{
+	for (int i=0;i<v.size();i++)
+	{
+		if(e==v[i])
+			return false;
+	}
+	return true;
+}
+
 
 bool notIn(vector<HostPair*> v,HostPair* e)
 {
@@ -1541,8 +1562,8 @@ void Controller::getIntraPodPaths(Switch* src, Switch* dst, Link* destLink, vect
 		int x=1/0;
 	vector<Link*> poolToVisit;
 	int size=paths.size();
-	if(size>5)
-		return;
+	// if(size>5)
+	// 	return;
 
 	if(src==NULL || dst==NULL)
 	{
@@ -1560,8 +1581,8 @@ void Controller::getIntraPodPaths(Switch* src, Switch* dst, Link* destLink, vect
 	}
 	for(int i=0;i<poolToVisit.size();i++)
 	{
-		// int index=rand()%poolToVisit.size();
-		Link* curLink=poolToVisit[i];
+		int index=rand()%poolToVisit.size();
+		Link* curLink=poolToVisit[index];
 		if(curLink->label=="Tor")
 			continue;
 		Switch* curDst=curLink->getOtherNode(src);
@@ -1830,6 +1851,7 @@ void Controller::logFailures(int time)
 	}
 }
 
+
 bool Controller::getPaths(Host* source, Host* dest, vector<Switch*> switches,vector<Link*> links, vector<bool> directions, int dir)
 {
 	switches.push_back(source->getTor());
@@ -1848,6 +1870,7 @@ bool Controller::getPaths(Host* source, Host* dest, vector<Switch*> switches,vec
 		Path* p= new Path(switches,links,directions);
 		paths.push_back(p);
 		intraRack = true;
+		return intraRack;
 	}
 	else if(src->getPodID() == dst->getPodID())		// the end hosts are in the same pod
 	{
@@ -2033,13 +2056,13 @@ int Controller::alloc(int v,int b,Host* h,Switch* s)
 {
 	if(h!=NULL)
 	{
-		h->mark(v);
-
+		// h->mark(v);
+		// cout<<v<<" hosts found at "<<h->toString()<<endl;
 		for(int i=0;i<v;i++)
 			tenant_vms.push_back(h);
 
-		if(v>0)
-			//cout<<"I have reserved "<<v<<" Vms on one host"<<endl;
+		// if(v>0)
+		// 	// cout<<"I have reserved "<<v<<" Vms on one host"<<endl;
 		return v;
 	}
 	else
@@ -2068,6 +2091,242 @@ int Controller::alloc(int v,int b,Host* h,Switch* s)
 	}
 }
 
+
+int Controller::vmCount(Link* l,int level,vector<Host*> hosts, int dir)
+{
+	int podId;
+
+	cout<<"level: "<<level<<endl;
+	if(level==0)
+	{
+		podId=l->down_switch->getPodID();
+
+	int left=0;
+	int right=0;
+	for(int i=0;i<hosts.size();i++)
+	{
+		if(hosts[i]->getPodID()==podId)
+			left++;
+		else
+			right++;
+	}
+
+	if(dir==0)
+		return left;
+	else
+		return right;
+
+	}
+
+	if(level==1)
+	{
+		Switch* t1=l->down_switch;
+		int left=0;
+		int right=0;
+		for(int i=0;i<hosts.size();i++)
+		{
+			if(hosts[i]->getTor()==t1)
+				left++;
+			else
+				right++;
+		}
+
+		if(dir==0)
+			return left;
+		else
+			return right;
+
+	}
+
+}
+
+
+bool Controller::checkPath(Path* p,vector<Host*> hosts,int bw,int level,vector<Link*> cLinks, vector<int> cBws,vector<PodPair*> ppairs,vector<TorPair*> tpairs)
+{
+	// cout<<"\t\t Will now check one of the paths"<<endl;
+	vector<Link*> commitedLinks;
+	vector<int> commitedBw;
+	vector<Link*> links=p->links;
+	// cout<<"\t\t "<<links.size()<<" is the size of links on path"<<endl;
+	Link* l1=links[0];
+	Link* l2=links[links.size()-1];
+
+
+	if(links[0]->available_cap_up < bw || links[0]->available_cap_down < bw  || links[links.size()-1]->available_cap_up < bw || links[links.size()-1]->available_cap_down < bw)
+	{
+		// cout<<"required: "<<bw<<endl;;
+		// cout<<p<<endl;
+		// cout<<l1->link_id<<endl;
+		// cout<<l2->link_id<<endl;
+		// cout<<l1->available_cap_up<<" is the up cap on l1"<<endl;	
+		// cout<<l1->available_cap_down<<" is the down cap on l1"<<endl;	
+		// cout<<l2->available_cap_up<<" is the up cap on l2"<<endl;	
+		// cout<<l2->available_cap_down<<" is the down cap on l2"<<endl;	
+
+		cout<<"\t\t Not enough bw on trunk"<<endl;
+		return 0;		
+	}
+	else
+	{
+		commitedLinks.push_back(l1);
+		commitedLinks.push_back(l2);
+		commitedBw.push_back(bw);
+		commitedBw.push_back(bw);
+	}
+
+	if(level!=2)
+	{
+		int left=0;
+		int right=0;
+		int mid=links.size()/2;
+		left=vmCount(links[mid],level,hosts,1);
+		right=vmCount(links[mid],level,hosts,0);
+		cout<<"\t\tLeft count: "<<left<<endl;
+		cout<<"\t\tRight count: "<<right<<endl;
+
+		int minim=min(left,right);
+		int reqBw=minim*bw;
+		cout<<"\t\t bw req: "<<reqBw<<endl;
+
+		TorPair* tp=NULL;
+		PodPair* pp=NULL;
+
+		vector<Switch*> s=p->switches;
+		int check=0;
+
+		if(level==1)
+		{
+			tp=new TorPair(s[0],s[s.size()-1]);
+			if(notIn(all_tor_pairs,tp) && notIn(tpairs,tp))
+				check=1;
+		}
+		else
+		{
+			pp=new PodPair(s[0]->getPodID(),s[s.size()-1]->getPodID());
+			if(notIn(all_pod_pairs,pp) && notIn(ppairs,pp))
+				check=1;
+		}
+
+
+		if(check)
+		{
+			for(int i=1;i<links.size()-1;i++)
+			{
+				if(links[i]->available_cap_up < reqBw || links[i]->available_cap_down < reqBw)
+				{
+					cout<<"\t\tNot enough reqBw on link"<<endl;
+					return 0;
+				}
+				else
+				{
+					Link* l=links[i];
+					commitedLinks.push_back(l);
+					commitedBw.push_back(reqBw);
+				}
+			}	
+		}
+	}	
+	
+	// cout<<"\t\tPushing in the commited links"<<endl;
+	for(int i=0;i<commitedLinks.size();i++)
+	{
+		cLinks.push_back(commitedLinks[i]);
+		cBws.push_back(commitedBw[i]);
+	}
+
+	return 1;
+}
+
+bool Controller::checkBW(vector<Host*> hosts,int bw)
+{
+	cout<<"\tWill now check bw"<<endl;
+	vector<Link*> cLinks;
+	vector<int> cBws;
+	vector<TorPair*> torPairs;
+	vector<PodPair*> podPairs;
+	vector<Switch*> s;
+	vector<Link*> l;
+	vector<bool> in;
+	int level;
+
+	for(int i=0;i<hosts.size();i++)
+	{
+		for(int j=i+1;j<hosts.size();j++)
+		{
+			if(hosts[i]!=hosts[j])
+			{
+				Switch* t1=hosts[i]->getTor();
+				Switch* t2=hosts[j]->getTor();
+				int srcID=hosts[i]->getPodID();	
+				int dstID=hosts[j]->getPodID();	
+				getPaths(hosts[i],hosts[j],s,l,in,1);
+				if(t1==t2)
+					level=2;
+				else if(srcID==dstID)
+					level==1;
+				else 
+					level=0;
+
+				int check=0;
+
+				// cout<<"\t checking bw "<<hosts[i]->toString()<< " to "<<hosts[j]->toString()<<endl;
+				for(int x=0;x<paths.size();x++)
+				{
+					// paths[x]->print();
+					check=checkPath(paths[x],hosts,bw,level,cLinks,cBws,podPairs,torPairs);
+					if(check==1)
+					{
+						paths.clear();
+						break;	
+					}
+				}
+ 				paths.clear();
+ 				s.clear();
+ 				l.clear();
+ 				in.clear();
+ 				if(check==0)
+ 					return 0;
+
+ 				if(level==2)
+ 				{
+ 					torPairs.push_back(new TorPair(t1,t2));
+ 					torPairs.push_back(new TorPair(t2,t1));
+
+ 				}
+
+ 				if(level==1)
+ 				{
+ 					podPairs.push_back(new PodPair(srcID,dstID));
+ 					podPairs.push_back(new PodPair(dstID,srcID));
+ 				}
+			}
+		}
+	}	
+
+	cout<<"\t\t\tbw satisfied, commiting"<<endl;
+	for(int i=0;i<cLinks.size();i++)
+	{
+		cLinks[i]->available_cap_up-=cBws[i];
+		cLinks[i]->available_cap_down-=cBws[i];
+	}
+
+	for(int i=0;i<podPairs.size();i++)
+	{
+		all_pod_pairs.push_back(podPairs[i]);
+	}
+
+	for(int i=0;i<torPairs.size();i++)
+	{
+		all_tor_pairs.push_back(torPairs[i]);
+	}
+
+	for(int i=0;i<hosts.size();i++)
+	{
+		hosts[i]->mark(1);
+	}
+	return 1;
+}
+
 vector<Host*> Controller::octopus(int v, int b)
 {
 	int done=false;
@@ -2075,6 +2334,8 @@ vector<Host*> Controller::octopus(int v, int b)
 	vector<Switch*> Tors=getAllTors();
 	vector<Switch*> Aggrs=getAllAggrs();
 	vector<Switch*> Cores=all_cores;
+	all_tor_pairs.clear();
+	all_pod_pairs.clear();
 	tenant_vms.clear();
 	while(level<=3)
 	{
@@ -2091,7 +2352,7 @@ vector<Host*> Controller::octopus(int v, int b)
 					curLevel=0;
 
 					// BEWARE, LEVEL 0 ONES ARE NOT BEING ALLOCATED
-					//alloc(v,b,all_hosts[i],NULL);
+					// alloc(v,b,all_hosts[i],NULL);
 					return tenant_vms;
 				}
 			}
@@ -2104,10 +2365,17 @@ vector<Host*> Controller::octopus(int v, int b)
 				int Mv=TorCount(Tors[i]);
 				if(v<=Mv)
 				{
-					//cout<<"Found at level 1"<<endl;
+					cout<<"Found at level 1 "<<Tors[i]->toString()<<endl;
 					ones++;
 					curLevel=1;
 					alloc(v,b,NULL,Tors[i]);
+					int commit=checkBW(tenant_vms,b);
+					if(commit==0)
+					{
+						cout<<"Could not allocated enough bw"<<endl;
+						tenant_vms.clear();
+						continue;
+					}
 					return tenant_vms;
 				}
 			}
@@ -2120,11 +2388,19 @@ vector<Host*> Controller::octopus(int v, int b)
 				int Mv=aggrCount(Aggrs[i]);
 				if(v<=Mv)
 				{
-					//cout<<"Found at level 2"<<endl;
+					cout<<"Found at level 2"<<endl;
 					twos++;
 					curLevel=2;					
 
 					alloc(v,b,NULL,Aggrs[i]);
+					int commit=checkBW(tenant_vms,b);
+					if(commit==0)
+					{
+						cout<<"Could not allocated enough bw"<<endl;
+						tenant_vms.clear();
+
+						continue;
+					}
 					return tenant_vms;
 				}
 			}
@@ -2138,11 +2414,19 @@ vector<Host*> Controller::octopus(int v, int b)
 				int Mv=coreCount(Cores[i]);
 				if(v<=Mv)
 				{
-					//cout<<"Found at level 3"<<endl;
+					cout<<"Found at level 3"<<endl;
 					threes++;
 					curLevel=3;					
 
 					alloc(v,b,NULL,Cores[i]);
+					int commit=checkBW(tenant_vms,b);
+					if(commit==0)
+					{
+						cout<<"Could not allocated enough bw"<<endl;
+						tenant_vms.clear();
+
+						continue;
+					}
 					return tenant_vms;
 				}
 			}
@@ -2158,8 +2442,8 @@ vector<Host*> Controller::octopus(int v, int b)
 bool Controller::instantiateTenant(int vms, int bw)	//rate in MBps, size in MB
 {
 	// if 'intraRack' is true, then there will be no backup path, only 1 path
-	//cout<<"VMs required: "<<vms<<endl;
-	//cout<<"BW required: "<<bw<<endl;
+	cout<<"VMs required: "<<vms<<endl;
+	cout<<"BW required: "<<bw<<endl;
 	vector<Host*> hosts; 
 	hosts=octopus(vms,bw);
 	if(hosts.size()==0)

@@ -11,6 +11,7 @@
 #include "pair.h"
 #include "tenant.h"
 #include "hostpair.h"
+#include "pairs.h"
 //this is to control the whole thing...includes a UI function
 class Flow;
 
@@ -58,6 +59,8 @@ public:
 	int failures;
 	bool backUp;
 	int sharing;
+	vector<PodPair*> all_pod_pairs;
+	vector<TorPair*> all_tor_pairs;
 	vector<Host*> tenant_vms;
 
 	vector<int> violations;
@@ -84,8 +87,11 @@ public:
 //	void goToCore(Path* path,Switch** tempSwitch);
 //	void goToPod(Path* path, Host* dst, Switch** tempSwitch);
 	void filterPaths(int rate,Host* dst);
+	int vmCount(Link*, int, vector<Host*>, int);
 	void commitFlow(Flow* flow);
+	bool checkPath(Path*, std::vector<Host*>, int, int, std::vector<Link*>, std::vector<int>, std::vector<PodPair*>, std::vector<TorPair*>);
 	Path* getBackUpPath(Path* primary,int rate);
+	bool checkBW(std::vector<Host*>, int);
 	void revert_to_primary();
 	Path* getReplicatedPath(int src, int dst, int rate);
 	long int getTime();
