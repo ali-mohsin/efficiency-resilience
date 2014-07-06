@@ -166,6 +166,8 @@ void Controller::createFlows()
 				Host* end=otherTor->down_links[rand()%curSwitch->down_links.size()]->host;
 				// //cout<<"Flow started from "<<curSwitch->toString()<<" to "<<otherTor->toString()<<endl;
 				total_flows+=instantiateFlow(start,end,100,10,0);
+				if (flowNumber > 17000)
+					break;
 
 			}	
 		}
@@ -761,7 +763,8 @@ void Controller::findFaults()
 				{
 					int index_of_backupPath=0;
 					for(int l=0;l<flows_back[j]->backUpPath.size();l++)
-					{
+					{	
+							int fail=0;
 							vector<Switch*> switches=flows_back[j]->backUpPath[l]->getSwitches();
 							for(int m=0;m<switches.size();m++)
 							{
@@ -784,10 +787,13 @@ void Controller::findFaults()
 									cout << "ANTICOMMIT CALLED switches BY flow " << flows_back[j]->flow_id << endl;
 									int anti_rate = flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[index_of_backupPath]);
 									cout << "anti_rate is " << anti_rate << endl;
+									if(anti_rate == 0)
+										cout<<"****Anti rate is zero, check ooper for dups***"<<endl;
 									bool check = makeBackUp(flows_back[j], anti_rate);
 									if (check) {
 										//cout << "backup found" << endl;
 									} else {
+										fail =1;
 										flows_down.push_back(flows_back[j]);
 										cout << "backup path not found" << endl;
 										break;
@@ -795,7 +801,10 @@ void Controller::findFaults()
 								}
 									
 							}
-								
+							if (fail){
+								cout<<flows_back[j]->flow_id<<" is down "<<endl;
+								break;
+							}
 					}
 					
 				}				
@@ -1012,7 +1021,7 @@ void Controller::revert_to_primary()
 						f->antiCommitPathAndUnreserve(f->backUpPath[j]);
 //						count++;
 					}
-				}
+				
 				bool check=f->commitPath(f->primaryPath,0); //Assumption is that link capacity would not be a bottleneck
 				if(!check)
 				{
@@ -1020,7 +1029,8 @@ void Controller::revert_to_primary()
 				}
 				flows_on_back.erase(flows_on_back.begin()+i);
 				i--;
-				// cout<<"-- Num of flows on backup are: "<<flows_on_back.size()<<endl;
+				
+			}// cout<<"-- Num of flows on backup are: "<<flows_on_back.size()<<endl;
 			}
 		}
 	
@@ -2110,21 +2120,22 @@ SprayData* Controller::getSprayPath(int src, int dst, int rate, Path* primary_pa
 		toReserve.push_back(0);
 
 	//No preference is being given so far on paths, should there be any preference?
-	
-	while (sent != rate+1) {
+	int reserved = 1;
+	while (reserved != rate+1) {
 		int check=0;
 		for (int i = 0; i < paths.size(); i++) {
-			if (paths[i]->isValid(sent) && paths[i]->isUp() && sent != rate+1) {
+			if (paths[i]->isValid(sent) && paths[i]->isUp() && reserved != rate+1) {
 				toReserve[i]=sent; // we are checking only and not reserving bw
-				sent++;
 				check=1;
+				reserved+=sent;
 			}
 		}
 		if(!check){
 			cout<<"BW not available"<<endl;
 			return NULL;
 		} else {
-			cout << "sent" << endl;
+			sent++;
+//			cout << "sent" << endl;
 		}
 	}
 	
