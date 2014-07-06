@@ -90,3 +90,6 @@ Switch Aggr [1,15,4] Up curTime: 24300 upFor: 10
 Switch Aggr [1,1,2] Up curTime: 24200 upFor: 61241
 Switch Aggr [1,9,6] Down curTime: 24200 downFor: -494 resLevel: 2
 Switch with id: [1,11,2] has become failure prone
+Switch Aggr [1,14,7] Down curTime: 24400 downFor: -299 resLevel: 1
+Switch Aggr [1,14,7] Up curTime: 24700 upFor: 10
+Switch with id: [2,14,7] has become failure prone
