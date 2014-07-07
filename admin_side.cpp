@@ -79,7 +79,7 @@
 	}
 
 	cout<<dc->all_tenants.size()<<" was the number of accomodated tenants"<<endl;
-	cout<<100-100*(downTime/(float(dc->all_tenants.size())*runs))<<" Was the Availability"<<endl;
+	cout<<100-100*(dc->downTime/(float(dc->tenant_flows.size())*runs))<<" Was the Availability"<<endl;
 	cout<<"Downtime due to level 1: "<<one<<endl;
 	cout<<"Downtime due to level 2: "<<two<<endl;
 	cout<<"Downtime due to level 3: "<<three<<endl;

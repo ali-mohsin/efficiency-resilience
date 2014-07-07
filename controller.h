@@ -36,6 +36,7 @@ public:
 	vector<Pair*> all_pairs;
 	vector<Tenant*> all_tenants;
 	vector<HostPair*> all_host_pairs;
+	vector<Link*> usedLinks;
 	int flows_on_share;
 	int ones;
 	int twos;
@@ -62,17 +63,27 @@ public:
 	vector<PodPair*> all_pod_pairs;
 	vector<TorPair*> all_tor_pairs;
 	vector<Host*> tenant_vms;
+	vector<TenantFlow*> tenant_flows;
+	vector<Link*> cLinks;
+	vector<int> cBws;
 
 	vector<int> violations;
 	void createFlows();
 	Host* getHostInTor(int id);
+	vector<Switch*> getAggrSwitches(int pod);
 
 	void logFailures(int time);
 	Topology* createTopology(int,int,int);				//to create topology
 	void assignPaths();
 	int alloc(int v,int b,Host* h,Switch* s);
 	vector<Host*> octopus(int v, int b);
-	int computeMx(Switch*);
+	int computeMx(Switch*,int);
+	int computeMx(Link* l,int bw);
+	int TorCount(Switch* d,int bw);
+	int aggrCount(Switch* d,int bw);
+	int coreCount(Switch* d,int bw);
+
+
 
 	void autofail(int);									//primary + backups
 	Flow* instantiateFlow(Host* source, Host* dest, double rate, int size,double);	//rate in MBps, size in MB
@@ -87,9 +98,10 @@ public:
 //	void goToCore(Path* path,Switch** tempSwitch);
 //	void goToPod(Path* path, Host* dst, Switch** tempSwitch);
 	void filterPaths(int rate,Host* dst);
+	Path* chooseBest(int,int);
 	int vmCount(Link*, int, vector<Host*>, int);
 	void commitFlow(Flow* flow);
-	bool checkPath(Path*, std::vector<Host*>, int, int, std::vector<Link*>, std::vector<int>, std::vector<PodPair*>, std::vector<TorPair*>);
+	bool checkPath(Path*, std::vector<Host*>, int, int, std::vector<PodPair*>, std::vector<TorPair*>);
 	Path* getBackUpPath(Path* primary,int rate);
 	bool checkBW(std::vector<Host*>, int);
 	void revert_to_primary();

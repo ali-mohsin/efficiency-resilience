@@ -1,3 +1,6 @@
+
+
+
 #include "link.h"
 
 Link::Link(int id,int cap,string l)
@@ -123,14 +126,14 @@ void Link::addPrimaryFlow(Flow* f,int rate, int dir, int  back)
 	//cout<<"Im here to add flow with directions as back= "<<back<<" and dir= "<<dir<<endl;
 	flows_primary.push_back(f);
 	num_flows++;
-	if(dir==1)
-	{
-			available_cap_up-=rate;
-	}
-	else
-	{
-			available_cap_down-=rate;
-	}
+	// if(dir==1)
+	// {
+	// 		available_cap_up-=rate;
+	// }
+	// else
+	// {
+	// 		available_cap_down-=rate;
+	// }
 
 }
 
@@ -142,16 +145,16 @@ void Link::addBackFlow(Flow* f,int rate, int dir, int  back, int tor2tor)
 
 	flows_back.push_back(f);
 	num_flows++;
-	if(dir==1)
-	{
-			backup_up+=rate;
-			available_cap_up-=rate;
-	}
-	else
-	{
-			backup_down+=rate;
-			available_cap_down-=rate;
-	}
+	// if(dir==1)
+	// {
+	// 		backup_up+=rate;
+	// 		available_cap_up-=rate;
+	// }
+	// else
+	// {
+	// 		backup_down+=rate;
+	// 		available_cap_down-=rate;
+	// }
 
 }
 
