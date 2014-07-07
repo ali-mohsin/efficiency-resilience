@@ -994,7 +994,10 @@ void Controller::detect_downTime(int factor)
 		for(int i=0;i<tenant_flows.size();i++)
 		{
 			if(tenant_flows[i]->isDown())
+			{
 				downTime+=factor;
+				tenant_flows[i]->downTime+=factor;
+			}
 		}
 		return;
 	}
@@ -1542,6 +1545,12 @@ void Controller::autofail(int curSec)
 
 	if(curSec==0)
 	{
+
+		for(int i=0;i<tenant_flows.size();i++)
+		{
+			cout<<"tf size : "<<tenant_flows[i]->links_pairs.size()<<endl;
+			cout<<"tf size s: "<<tenant_flows[i]->switches.size()<<endl;
+		}
 		cout<<"Ones: "<<ones<<endl;
 		cout<<"twos: "<<twos<<endl;
 		cout<<"threes: "<<threes<<endl;

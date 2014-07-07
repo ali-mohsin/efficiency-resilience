@@ -59,10 +59,11 @@ public:
 
 	vector<LinkPair*> links_pairs;
 	vector<SwitchPair*> switches;
+	int downTime;
 
 	TenantFlow()
 	{
-
+		downTime=0;
 	}
 
 	bool notIn(vector<Switch*> v,Switch* e)
@@ -87,6 +88,8 @@ public:
 		SwitchPair* sp=new SwitchPair(s1,s2);
 
 		switches.push_back(sp);
+		if(s1!=s2)
+			int x=1/0;
 
 	}
 
@@ -96,14 +99,21 @@ public:
 		{
 			LinkPair* lp=links_pairs[i];
 			if(lp->primary->status < 0 && lp->back->status < 0)
-				return true;
+			{
+				// cout<<"Link "<<lp->primary->link_id<<" label: "<<lp->primary->label<<" is down"<<endl;
+
+				return true;				
+			}
 		}
 
 		for(int i=0;i<switches.size();i++)
 		{
 			SwitchPair* lp=switches[i];
 			if(lp->primary->status < 0 && lp->back->status < 0)
+			{
+				// cout<<"Switch "<<lp->primary->toString()<<" is down"<<endl;
 				return true;
+			}	
 		}
 		return false;
 	}

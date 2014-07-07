@@ -67,16 +67,13 @@
 	int two=0;
 	int three=0;
 	int vms;
-	for(int i=0;i<dc->all_tenants.size();i++)
+	for(int i=0;i<dc->tenant_flows.size();i++)
 	{
-		if(dc->all_tenants[i]->level==1)
-			one+=dc->all_tenants[i]->downTime;
-		if(dc->all_tenants[i]->level==2)
-			two+=dc->all_tenants[i]->downTime;
-		if(dc->all_tenants[i]->level==3)
-			three+=dc->all_tenants[i]->downTime;
-		downTime+=dc->all_tenants[i]->downTime;
+		cout<<"links: "<<dc->tenant_flows[i]->links_pairs.size()<<" dt: "<<dc->tenant_flows[i]->downTime<<endl;
 	}
+
+	cout<<"Total Dt: "<<dc->downTime<<endl;
+	cout<<"Total flows: "<<dc->tenant_flows.size()<<endl;
 
 	cout<<dc->all_tenants.size()<<" was the number of accomodated tenants"<<endl;
 	cout<<100-100*(dc->downTime/(float(dc->tenant_flows.size())*runs))<<" Was the Availability"<<endl;
