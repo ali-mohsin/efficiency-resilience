@@ -650,19 +650,21 @@ bool Controller::duplicateIn(vector<Switch*> v)
 }
 
 
-bool Controller::duplicateIn(vector<Link*> v)
+
+int Controller::countDuplicateIn(vector<Flow*> v)
 {
+	int count=0;
 	for(int i=0;i<v.size();i++)
 	{
 		for(int j=i+1;j<v.size();j++)
 		{
 			if(v[i]==v[j])
 			{
-				return true;
+				count++;
 			}
 		}
 	}
-	return false;
+	return count;
 }
 
 
@@ -788,8 +790,10 @@ void Controller::findFaults()
 									cout << "ANTICOMMIT CALLED switches BY flow " << flows_back[j]->flow_id << endl;
 									int anti_rate = flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[index_of_backupPath]);
 									cout << "anti_rate is " << anti_rate << endl;
-									if(anti_rate == 0)
+									if(anti_rate == 0){
 										cout<<"****Anti rate is zero, check ooper for dups***"<<endl;
+										continue;
+									}
 									bool check = makeBackUp(flows_back[j], anti_rate);
 									if (check) {
 										//cout << "backup found" << endl;
@@ -804,6 +808,8 @@ void Controller::findFaults()
 							}
 							if (fail){
 								cout<<flows_back[j]->flow_id<<" is down "<<endl;
+								for(int o =0; o<flows_back[j]->backUpPath.size();o++)
+									flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[o]);
 								break;
 							}
 					}
@@ -922,7 +928,7 @@ void Controller::findFaults()
 				{
 					int index_of_backupPath=0;
 					for(int l=0;l<flows_back[j]->backUpPath.size();l++)
-					{
+					{	int fail =0;
 						vector<Link*> links=flows_back[j]->backUpPath[l]->links;
 						for(int m=0;m<links.size();m++)
 						{
@@ -942,14 +948,16 @@ void Controller::findFaults()
 								//break;
 								cout << "ANTICOMMIT CALLED links BY flow " << flows_back[j]->flow_id << endl;
 								int anti_rate = flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[l]); // changed to l, was 0
-								
-								//if (flows_back[j]->backUpPath.size() != 0)
-								//	cout << "error = backup path size not 0" << endl;
+								if(anti_rate == 0){
+									cout<<"****Anti rate is zero, check ooper for dups***"<<endl;
+									continue;
+								}
 								
 								bool check = makeBackUp(flows_back[j], anti_rate);
 								if (check) {
 									//cout << "backup found" << endl;
 								} else {
+									fail = 1;
 									cout << "backup path not found" << endl;
 									flows_down.push_back(flows_back[j]);
 									break;
@@ -957,21 +965,16 @@ void Controller::findFaults()
 							}
 							
 						}
-						
+							if(fail)
+							{
+								cout<<flows_back[j]->flow_id<<" is down "<<endl;
+								for(int o =0; o<flows_back[j]->backUpPath.size();o++)
+									flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[o]);
+								
+								break;
+							}
 					}
 					
-					
-					
-					//int commit=0;
-					//for(int k =0; k<flows_back[j]->backUpPath.size();k++)
-					//{
-					//	if(flows_back[j]->backUpPath[k]->isValid(flows_back[j]->rate)) {
-					//		if (flows_back[j]->backUpPath[k]->isValid(flows_back[j]->getBackUpRate()))
-					//			commit=flows_back[j]->commitPath(flows_back[j]->backUpPath[k],1);
-					//	}
-					//			if(commit)
-					//				break;
-					//	}
 								
 				}	
 			}
@@ -1072,8 +1075,11 @@ void Controller::revert_to_primary()
 }
 void Controller::detect_downTime()
 {
-	
-	downTime+=flows_down.size();
+	int count=countDuplicateIn(flows_down);
+	if(count > 0)
+		cout<<"*** Duplicates found in flows were "<<count<<endl;
+	//	cout<<"intense panga"<<endl;
+	downTime+=flows_down.size()-count;
 	
 //	if(backUp && sharing)
 //	{

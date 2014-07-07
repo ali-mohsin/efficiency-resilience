@@ -108,6 +108,7 @@ public:
 	vector<Link*> getAllTorLinks(); 	
 	bool duplicateIn(vector<Switch*> v);
 	bool duplicateIn(vector<Link*> v);
+	int countDuplicateIn(vector<Flow*> v);
 	bool duplicateIn(vector<Flow*> v);
 
 
@@ -118,7 +119,7 @@ public:
 	Switch* getTorFromAnotherPod(int pod);
 
 	void assignResilience();
-	
+
 	// gohar
 	bool makeBackUp(Flow* flow, int rate);
 	SprayData* getSprayPath(int src, int dst, int rate, Path* primary_path);
