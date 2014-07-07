@@ -2265,7 +2265,7 @@ vector <Path*> Controller::getReplicatedPathVector(int src, int dst, int rate)
 
 
 
-Srvector <Path*> Controller::getBackUpPathVector(Path* primary, int rate)
+vector <Path*> Controller::getBackUpPathVector(Path* primary, int rate)
 {
 	vector <Path*> empty;
 	// check for NULL condition
