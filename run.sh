@@ -2,7 +2,6 @@ clear
 rm flows.txt
 rm logs.txt
 rm ./admin
-python tenant.py
 python parser.py
 
 cat admin_side.cpp >> main.cpp

@@ -1595,6 +1595,8 @@ void Controller::autofail(int curSec)
 		}
 
 		cout<<"VMs left: "<<used<<endl;
+
+		cout<<"Tenants Accomodated: "<<tenant_flows.size()<<endl;
 	}
 	int factor=10;
 
@@ -2510,7 +2512,7 @@ bool Controller::checkBW(vector<Host*> hosts,int bw)
 			int right=vmCount(l,1,hosts,1);
 			int mini=min(left,right);
 			int reqBw=mini*bw;
-			cout<<"------+------ Creating flow from "<<t1->toString()<<" to aggr with bw "<<reqBw<<endl;
+			// cout<<"------+------ Creating flow from "<<t1->toString()<<" to aggr with bw "<<reqBw<<endl;
 			int num=mini;
 			vector<Link*> links=t1->up_links;
 			int count=0;
@@ -2934,6 +2936,24 @@ bool Controller::instantiateTenant(int vms, int bw)	//rate in MBps, size in MB
 	// if 'intraRack' is true, then there will be no backup path, only 1 path
 	cout<<"VMs required: "<<vms<<endl;
 	cout<<"BW required: "<<bw<<endl;
+	vector<Link*> Tors=getAllTorLinks();
+	int check=0;
+	for(int i=0;i<Tors.size();i++)
+	{
+		int vms=Tors[i]->host->availableVMs();
+		int bw=Tors[i]->available_cap_up;
+		if(vms > 1 && bw > .05*1024)
+		{
+			cout<<"vms: "<<vms<<" bw: "<<bw<<endl;
+			check=1;
+			break;
+		}
+	}
+
+	if(check==0)
+	{
+		int x=1/0;
+	}
 	vector<Host*> hosts; 
 	hosts=octopus(vms,bw);
 	// if(hosts.size()==0)
