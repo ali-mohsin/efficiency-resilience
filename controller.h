@@ -128,7 +128,7 @@ public:
 
 	// gohar
 	bool makeBackUp(Flow* flow, int rate);
-	SprayData* getSprayPath(int src, int dst, int rate, Path* primary_path);
+	SprayData* getSprayPath(Host* src, Host* dst, int rate, Path* primary_path);
 	
 };
 

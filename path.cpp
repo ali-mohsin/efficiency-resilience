@@ -124,21 +124,21 @@
 
 
 
-	 Path::getSrcPod()
+	int Path::getSrcPod()
 	{
 		return switches[0]->getPodID();
 	}
 	
 	// gohar
-	Switch* Path::getSrcHost()
+	Host* Path::getSrcHost()
 	{
-		return switches[0];
+		return links[0]->host;
 	}
 	
 	// gohar
-	Switch* Path::getDestHost()
+	Host* Path::getDestHost()
 	{
-		return switches[switches.size()-1];
+		return links[links.size()-1]->host;
 	}
 
 	int Path::getDstPod()

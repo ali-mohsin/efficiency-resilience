@@ -1,6 +1,6 @@
 class PathsData {
 	public:
-		int src;
-		int dest;
+		Host* src;
+		Host* dest;
 		vector<Path*> paths;
 };

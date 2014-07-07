@@ -102,8 +102,8 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 bool Controller::makeBackUp(Flow* flow, int rate){
 	cout<<"Call to makeBackup by Flow_ID "<<flow->flow_id<<endl;
 	Path* primaryPath = flow->primaryPath;
-	Switch* src = primaryPath->getSrcHost();
-	Switch* dest = primaryPath->getDestHost();
+	Host* src = primaryPath->getSrcHost();
+	Host* dest = primaryPath->getDestHost();
 	cout<<" Requested bandwidth "<<rate<<endl;
 	
 	SprayData* sprayData = getSprayPath(src, dest, rate, primaryPath);
@@ -2108,10 +2108,10 @@ Path* Controller::getReplicatedPath(int src, int dst, int rate)
 	return back;
 }
 
-SprayData* Controller::getSprayPath(int src, int dst, int rate, Path* primary_path)
+SprayData* Controller::getSprayPath(Host* src, Host* dst, int rate, Path* primary_path)
 {
-	int srcPod=src;
-	int dstPod=dst;
+	//int srcPod=src;
+	//int dstPod=dst;
 /*	while(srcPod==src || dstPod==dst || srcPod==dstPod)
 	{
 		srcPod=rand()%k;
@@ -2138,7 +2138,7 @@ SprayData* Controller::getSprayPath(int src, int dst, int rate, Path* primary_pa
 	}
 	
 	if (!found) {
-		bool intraRack = getPaths(source, dest, switches, links, directions, 1);
+		bool intraRack = getPaths(src, dst, switches, links, directions, 1);
 		PathsData p;
 		p.src = src;
 		p.dest = dst;
@@ -2151,7 +2151,7 @@ SprayData* Controller::getSprayPath(int src, int dst, int rate, Path* primary_pa
 		int x=1/0;
 		return NULL;	
 	}
-	if(source->getPodID() == dest->getPodID())
+	if(src->getPodID() == dst->getPodID())
 		cout<<" Same pod: Size of backup paths vector is "<<paths.size()<<endl;	
 	else
 		cout<<" Different pod: Size of backup paths vector is "<<paths.size()<<endl;	
@@ -2265,7 +2265,7 @@ vector <Path*> Controller::getReplicatedPathVector(int src, int dst, int rate)
 
 
 
-vector <Path*> Controller::getBackUpPathVector(Path* primary, int rate)
+Srvector <Path*> Controller::getBackUpPathVector(Path* primary, int rate)
 {
 	vector <Path*> empty;
 	// check for NULL condition
