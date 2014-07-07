@@ -661,6 +661,9 @@ int Controller::countDuplicateIn(vector<Flow*> v)
 		{
 			if(v[i]==v[j])
 			{
+				v.erase(v.begin()+j);
+				//i--;
+				j--;
 				count++;
 			}
 		}
@@ -1077,10 +1080,10 @@ void Controller::revert_to_primary()
 }
 void Controller::detect_downTime()
 {
-	int count=countDuplicateIn(flows_down);
-	if(count > 0)
+	int count = countDuplicateIn(flows_down);
+	if (count > 0)
 		cout<<"*** Duplicates found in flows were "<<count<<endl;
-	//	cout<<"intense panga"<<endl;
+		//cout<<"intense panga"<<endl;
 	downTime+=flows_down.size()-count;
 	
 //	if(backUp && sharing)
@@ -2177,7 +2180,6 @@ SprayData* Controller::getSprayPath(int src, int dst, int rate, Path* primary_pa
 			sprayData->paths.erase(sprayData->paths.begin()+i);
 			i--;
 		}
-		
 		
 	}
 	
