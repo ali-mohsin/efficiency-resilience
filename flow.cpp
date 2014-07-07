@@ -215,7 +215,7 @@ int Flow::antiCommitPathAndUnreserve(Path* path)
 		path->links[i]->addBackFlow(-rate_return,path->direction[i]);		
 	}
 	
-	cout << flow_id << " is calling removebackupflow" << endl;
+	cout << flow_id << " is calling removebackupflow. Rate removed is " <<rate_return<<endl;
 	removeBackUpFlow(path);
 	if (rate_return == 0) {
 		cout << "rate return is 0" << endl;

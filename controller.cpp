@@ -102,8 +102,8 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 bool Controller::makeBackUp(Flow* flow, int rate){
 	cout<<"Call to makeBackup by Flow_ID "<<flow->flow_id<<endl;
 	Path* primaryPath = flow->primaryPath;
-	int src = primaryPath->getSrcHost();
-	int dest = primaryPath->getDestHost();
+	Switch* src = primaryPath->getSrcHost();
+	Switch* dest = primaryPath->getDestHost();
 	cout<<" Requested bandwidth "<<rate<<endl;
 	
 	SprayData* sprayData = getSprayPath(src, dest, rate, primaryPath);
@@ -723,6 +723,8 @@ void Controller::findFaults()
 	{
 		if( prone_switches[i]->getStatus() < 0 )
 		{
+			if(prone_switches[i]->status==2)
+				cout<<"Tor switch is down"<<endl;
 			vector<Flow*> flows_primary=prone_switches[i]->getFlowsOnPrimary();
 			vector<Flow*> flows_back=prone_switches[i]->getFlowsOnBack();
 
@@ -750,7 +752,7 @@ void Controller::findFaults()
 					} else {
 						flows_down.push_back(flows_primary[j]);
 
-						cout << "backup path not found" << endl;
+						cout << "Flow "<<flows_primary[j]->flow_id<<" is down. Primary didn't find any backup" << endl;
 					}
 
 				}
@@ -758,7 +760,7 @@ void Controller::findFaults()
 				{
 					// if(!notIn(flows_down,flows_primary[j]))
 					// {
-					// 	int x=1/0;
+					 	int x=1/0;
 					// }
 					flows_down.push_back(flows_primary[j]);
 				}
@@ -803,8 +805,8 @@ void Controller::findFaults()
 										//cout << "backup found" << endl;
 									} else {
 										fail =1;
+										cout << "Flow "<<flows_back[j]->flow_id<<" is down. Backup path was not found" << endl;
 										flows_down.push_back(flows_back[j]);
-										cout << "backup path not found" << endl;
 										break;
 									}
 								}
@@ -830,7 +832,9 @@ void Controller::findFaults()
 	for(int i=0; i<len; i++)
 	{
 		if( prone_links[i]->getStatus() < 0 )
-		{
+		{	
+			if(prone_links[i]->label=="Tor")
+				cout<<"Tor link is down"<<endl;
 			vector<Flow*> flows_primary=prone_links[i]->getFlowsOnPrimary();
 			vector<Flow*> flows_back=prone_links[i]->getFlowsOnBack();
 
@@ -886,6 +890,7 @@ void Controller::findFaults()
 						// cout<<"Going To Backup: flow id : "<< flows_primary[j]->flow_id<<" ";
 						// flows_primary[j]->backUpPath->print();
 						flows_on_back.push_back(flows_primary[j]);
+//						cout << "Flow "<<flows_primary[j]->flow_id<<" is down. Primary didn't find any backup" << endl;
 
 						 // cout<<"Commit success, put on backup flows"<<endl;
 					}
@@ -953,7 +958,7 @@ void Controller::findFaults()
 								cout << "ANTICOMMIT CALLED links BY flow " << flows_back[j]->flow_id << endl;
 								int anti_rate = flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[l]); // changed to l, was 0
 								if(anti_rate == 0){
-									cout<<"****Anti rate is zero, check ooper for dups***"<<endl;
+//									cout<<"****Anti rate is zero, check ooper for dups***"<<endl;
 									continue;
 								}
 								
@@ -962,7 +967,7 @@ void Controller::findFaults()
 									//cout << "backup found" << endl;
 								} else {
 									fail = 1;
-									cout << "backup path not found" << endl;
+									cout << "Flow "<<flows_back[j]->flow_id<<" is down. Backup path was not found" << endl;
 									flows_down.push_back(flows_back[j]);
 									break;
 								}
@@ -1030,6 +1035,12 @@ void Controller::revert_to_primary()
 //						count++;
 				}
 				cout<<"Flow "<<f->flow_id<<" is up. Backup size is "<<f->backUpPath.size()<<endl;
+				if(f->backUpPath.size() > 0)
+				{
+					
+					
+					
+				}
 				bool check=f->commitPath(f->primaryPath,0); //Assumption is that link capacity would not be a bottleneck
 				if(!check)
 				{
@@ -1080,11 +1091,11 @@ void Controller::revert_to_primary()
 }
 void Controller::detect_downTime()
 {
-	int count = countDuplicateIn(flows_down);
-	if (count > 0)
-		cout<<"*** Duplicates found in flows were "<<count<<endl;
+	int count = countDuplicateIn(flows_down); // it also removes
+//	if (count > 0)
+//		cout<<"*** Duplicates found in flows were "<<count<<endl;
 		//cout<<"intense panga"<<endl;
-	downTime+=flows_down.size()-count;
+	downTime+=flows_down.size();
 	
 //	if(backUp && sharing)
 //	{
@@ -2101,7 +2112,7 @@ SprayData* Controller::getSprayPath(int src, int dst, int rate, Path* primary_pa
 {
 	int srcPod=src;
 	int dstPod=dst;
-	while(srcPod==src || dstPod==dst || srcPod==dstPod)
+/*	while(srcPod==src || dstPod==dst || srcPod==dstPod)
 	{
 		srcPod=rand()%k;
 		dstPod=rand()%k;
@@ -2112,8 +2123,11 @@ SprayData* Controller::getSprayPath(int src, int dst, int rate, Path* primary_pa
 	vector<bool> directions;
 	Host* source=getHostInTor(srcPod);
 	Host* dest= getHostInTor(dstPod);
-
+*/
 	//filterPaths(rate,dest);
+	vector<Switch*> switches;
+	vector<Link*> links;
+	vector<bool> directions;
 	
 	bool found = false;
 	for (int i = 0; i < pathsData.size(); i++) {
@@ -2134,9 +2148,14 @@ SprayData* Controller::getSprayPath(int src, int dst, int rate, Path* primary_pa
 	
 	if(paths.size()==0){
 		cout<<"this should'nt happen, path.size==0"<<endl;
+		int x=1/0;
 		return NULL;	
 	}
-
+	if(source->getPodID() == dest->getPodID())
+		cout<<" Same pod: Size of backup paths vector is "<<paths.size()<<endl;	
+	else
+		cout<<" Different pod: Size of backup paths vector is "<<paths.size()<<endl;	
+		
 	//Path* back = NULL;
 	//int highestCount = 0;
 	

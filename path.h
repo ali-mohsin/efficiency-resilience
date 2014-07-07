@@ -33,8 +33,8 @@ public:
 	int getDstPod();
 	
 	// gohar
-	int getDestHost();
-	int getSrcHost();
+	Switch* getDestHost();
+	Switch* getSrcHost();
 };
 
 #endif /* FLOW_H */
