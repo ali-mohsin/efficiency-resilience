@@ -105,8 +105,9 @@ bool Controller::makeBackUp(Flow* flow, int rate){
 	int src = primaryPath->getSrcHost();
 	int dest = primaryPath->getDestHost();
 	cout<<" Requested bandwidth "<<rate<<endl;
-	SprayData* sprayData = getSprayPath(src, dest, rate, primaryPath);
 	
+	SprayData* sprayData = getSprayPath(src, dest, rate, primaryPath);
+
 	if (!sprayData)
 		return false;
 					
@@ -1060,6 +1061,7 @@ void Controller::revert_to_primary()
 
 			if(backUp)
 			{
+				
 				check=makeBackUp(flows_down[i], flows_down[i]->rate);
 				
 				if(check)
@@ -2108,13 +2110,28 @@ SprayData* Controller::getSprayPath(int src, int dst, int rate, Path* primary_pa
 	Host* source=getHostInTor(srcPod);
 	Host* dest= getHostInTor(dstPod);
 
-	bool intraRack = getPaths(source, dest, switches, links, directions, 1);
 	//filterPaths(rate,dest);
+	
+	bool found = false;
+	for (int i = 0; i < pathsData.size(); i++) {
+		if (pathsData[i].src == src && pathsData[i].dest == dst) {
+			paths = pathsData[i].paths;
+			found = true;
+		}
+	}
+	
+	if (!found) {
+		bool intraRack = getPaths(source, dest, switches, links, directions, 1);
+		PathsData p;
+		p.src = src;
+		p.dest = dst;
+		p.paths = paths;
+		pathsData.push_back(p);
+	}
 	
 	if(paths.size()==0){
 		cout<<"this should'nt happen, path.size==0"<<endl;
-		return NULL;
-		
+		return NULL;	
 	}
 
 	//Path* back = NULL;

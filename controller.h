@@ -10,6 +10,8 @@
 #include "group.h"
 #include "pair.h"
 #include "spraydata.h"
+#include "paths_data.h"
+
 //this is to control the whole thing...includes a UI function
 class Flow;
 
@@ -53,6 +55,10 @@ public:
 	int sharing;
 
 	vector<int> violations;
+	
+	//gohar
+	vector<PathsData> pathsData;
+	
 	void createFlows();
 	Host* getHostInTor(int id);
 
@@ -123,6 +129,7 @@ public:
 	// gohar
 	bool makeBackUp(Flow* flow, int rate);
 	SprayData* getSprayPath(int src, int dst, int rate, Path* primary_path);
+	
 };
 
 #endif /* CONTROLLER_H */
