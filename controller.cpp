@@ -833,8 +833,8 @@ void Controller::findFaults()
 	{
 		if( prone_links[i]->getStatus() < 0 )
 		{	
-			if(prone_links[i]->label=="Tor")
-				cout<<"Tor link is down"<<endl;
+			//if(prone_links[i]->label=="Tor")
+				//cout<<"Tor link is down"<<endl;
 			vector<Flow*> flows_primary=prone_links[i]->getFlowsOnPrimary();
 			vector<Flow*> flows_back=prone_links[i]->getFlowsOnBack();
 
@@ -2166,23 +2166,28 @@ SprayData* Controller::getSprayPath(Host* src, Host* dst, int rate, Path* primar
 		toReserve.push_back(0);
 
 	//No preference is being given so far on paths, should there be any preference?
-	int reserved = 1;
-	while (reserved != rate+1) {
+	int reserved = 0;
+	cout << "***" << endl;
+	while (reserved < rate) {
 		int check=0;
 		for (int i = 0; i < paths.size(); i++) {
-			if (paths[i]->isValid(sent) && paths[i]->isUp() && reserved != rate+1) {
+			if (paths[i]->isValid(sent) && paths[i]->isUp() && reserved < rate) {
 				toReserve[i]=sent; // we are checking only and not reserving bw
 				check=1;
-				reserved+=sent;
+				//reserved = reserved - (sent - 1);
+				//reserved+=sent;
+				reserved++;
 			}
 		}
-		if(!check){
+		if(!check && reserved < rate){
 			cout<<"BW not available"<<endl;
 			return NULL;
 		} else {
 			sent++;
 //			cout << "sent" << endl;
 		}
+		cout << "***reserved: " << reserved << endl;
+		cout << "***total: " << rate << endl;
 	}
 	
 	SprayData* sprayData = new SprayData();
