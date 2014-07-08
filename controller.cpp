@@ -50,10 +50,17 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	totalTime=runFor;
 	assignResilience();
 	
-	int increase_by = 100; // increase capacities of links by this num
+	int increase_by = 512*1000; // increase capacities of links by this num
+	int primary = 512*1000;
 	
 	if(makeFlows)
 	{
+		for (int i =0; i<all_links.size();i++) {
+			all_links[i]->total_cap = 2*primary;
+			all_links[i]->available_cap_down = primary;
+			all_links[i]->available_cap_up = primary;
+		}
+		
 		createFlows();
 		
 		for (int i =0; i<all_links.size();i++) {
@@ -167,9 +174,9 @@ void Controller::createFlows()
 				Host* start=curSwitch->down_links[rand()%curSwitch->down_links.size()]->host;
 				Host* end=otherTor->down_links[rand()%curSwitch->down_links.size()]->host;
 				// //cout<<"Flow started from "<<curSwitch->toString()<<" to "<<otherTor->toString()<<endl;
-				total_flows+=instantiateFlow(start,end,100,10,0);
-				if (flowNumber > 17000)
-					break;
+				total_flows+=instantiateFlow(start,end,100000,10,0);
+				//if (flowNumber > 17000)
+					//break;
 
 			}	
 		}
@@ -1600,7 +1607,10 @@ void Controller::autofail(int curSec)
 	// startTimer();
 	detect_downTime();
 	// stopTimer("detect_downTime");
-
+	
+	if(curSec%100000==0)
+		cout << "*ELAPSED*" << curSec << endl;
+	
 	if(curSec%10==0)
 	{
 
