@@ -50,8 +50,8 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	totalTime=runFor;
 	assignResilience();
 	
-	int increase_by = 512; // increase capacities of links by this num
-	int primary = 512;
+	int increase_by = 307.2; // increase capacities of links by this num
+	int primary = 716.8;
 	
 	if(makeFlows)
 	{
