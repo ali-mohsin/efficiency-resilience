@@ -78,7 +78,7 @@ void Flow::setDone(bool d)
 
 bool Flow::commitPath(Path* path,int beingUsed)
 {
-	// cout<<"+ commitPath";
+	// //cout<<"+ commitPath";
 	// path->print();
 
     if (!path->isUp())
@@ -115,13 +115,13 @@ bool Flow::commitPathAndReserve(Path* path,int rate)
 	int beingUsed = 1;
     if (!path->isUp())
     {
-		cout << "error = path down, this should never happen. we checked isUp before" << endl;
+		//cout << "error = path down, this should never happen. we checked isUp before" << endl;
      	return false;
     }
 
 	if(path==primaryPath)
 	{
-		cout<<"Shoudnt never happen, we are calling for backflows only"<<endl;
+		//cout<<"Shoudnt never happen, we are calling for backflows only"<<endl;
 		primaryPath->beingUsed=1;
 		on_back=0;
 		if(backUpPath.size()!=0)
@@ -129,8 +129,8 @@ bool Flow::commitPathAndReserve(Path* path,int rate)
 	}	
 	
 	//if (backUpPath.size() > 1) {
-	//	cout << "error = backup path size greater than 1" << endl;
-	//	cout << "backup path size is " << backUpPath.size() << endl;
+	//	//cout << "error = backup path size greater than 1" << endl;
+	//	//cout << "backup path size is " << backUpPath.size() << endl;
 	//	return false;
 	//}
 	
@@ -149,7 +149,7 @@ bool Flow::commitPathAndReserve(Path* path,int rate)
 	}
 	
 	if (selected != -1) {
-//		cout << "selected = " << selected << endl;	
+//		//cout << "selected = " << selected << endl;	
 		for (int i = 0; i < backUpPath[selected]->links.size(); i++) {
 			backUpPath[selected]->links[i]->addFlowDataEntry(flow_id, rate,this,path);
 			//we are not pushing back flow here. why?. I have done this in addFlowDataentry
@@ -159,7 +159,7 @@ bool Flow::commitPathAndReserve(Path* path,int rate)
 			backUpPath[selected]->switches[i]->addBackFlow(this);
 		}
 	} else {
-		cout << "This should never happen, selected = " << selected << endl;
+		//cout << "This should never happen, selected = " << selected << endl;
 	}
 	
 	return true;
@@ -169,7 +169,7 @@ bool Flow::commitPathAndReserve(Path* path,int rate)
 
 void Flow::antiCommitPath(Path* path)
 {
-	// cout<<"+ antiCommitPath ";
+	// //cout<<"+ antiCommitPath ";
 	// path->print();
 
 	path->beingUsed = 0;
@@ -215,10 +215,10 @@ int Flow::antiCommitPathAndUnreserve(Path* path)
 		path->links[i]->addBackFlow(-rate_return,path->direction[i]);		
 	}
 	
-	cout << flow_id << " is calling removebackupflow. Rate removed is " <<rate_return<<endl;
+	//cout << flow_id << " is calling removebackupflow. Rate removed is " <<rate_return<<endl;
 	removeBackUpFlow(path);
 	if (rate_return == 0) {
-		cout << "rate return is 0" << endl;
+		//cout << "rate return is 0" << endl;
 	}
 	return rate_return;
 }
@@ -252,7 +252,7 @@ void Flow::removeBackUpFlow(Path* path) {
 	}
 	
 	if (check1 == 1 && check2 == 1) {
-		cout << "flow removed successfully" << endl;
+		//cout << "flow removed successfully" << endl;
 		for (int i = 0; i < backUpPath.size(); i++) {
 			if (backUpPath[i] == path) {
 				backUpPath.erase(backUpPath.begin()+i);
@@ -261,9 +261,9 @@ void Flow::removeBackUpFlow(Path* path) {
 		}
 	}
 	else {
-		cout << "error in removing flow" << endl;
-		cout << "backup path size is " << backUpPath.size() << endl;
-		cout << "check1 is " << check1 << " check2 is " << check2 << endl;
+		//cout << "error in removing flow" << endl;
+		//cout << "backup path size is " << backUpPath.size() << endl;
+		//cout << "check1 is " << check1 << " check2 is " << check2 << endl;
 	}
 }
 
