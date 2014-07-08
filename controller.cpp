@@ -50,8 +50,8 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	totalTime=runFor;
 	assignResilience();
 	
-	int increase_by = 512*1000; // increase capacities of links by this num
-	int primary = 512*1000;
+	int increase_by = 512; // increase capacities of links by this num
+	int primary = 512;
 	
 	if(makeFlows)
 	{
@@ -174,7 +174,7 @@ void Controller::createFlows()
 				Host* start=curSwitch->down_links[rand()%curSwitch->down_links.size()]->host;
 				Host* end=otherTor->down_links[rand()%curSwitch->down_links.size()]->host;
 				// //cout<<"Flow started from "<<curSwitch->toString()<<" to "<<otherTor->toString()<<endl;
-				total_flows+=instantiateFlow(start,end,100000,10,0);
+				total_flows+=instantiateFlow(start,end,100,10,0);
 				//if (flowNumber > 17000)
 					//break;
 
