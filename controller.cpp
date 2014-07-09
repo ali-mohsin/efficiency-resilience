@@ -23,20 +23,27 @@ Topology* Controller::createTopology(int tor,int aggr,int core)
  		// tree->printTopology();
 }
 
-Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int runFor,int makeFlows,int octo)
+Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int runFor,int makeFlows,int octo,float seedV)
 {
+	entertainRequest = true;
 	ones=0;
 	twos=0;
 	threes=0;
 	downTime=0;
 	flows_on_share=0;
-	srand(time(0));
+	srand(seedV);
 	k=kay;
 	torCap=tor;
 	aggrCap=aggr;
 	coreCap=core;
 	flowNumber = 0;
 	createTopology(tor,aggr,core);
+	totalAccepted = 0;
+	ofstream fout;
+	fout.open("new_script.ns");
+	fout<<"#define FatTree -k 40 -reduncancy t2t -sharing no -oct yes -repeatForAll  -algo default -torLinks 1G -aggrLinks 1G -coreLinks 1G -failures enable -runFor 30000000 -seed "<<seedV<<"\n";
+	fout.close();
+
 	backUp=back;
 	oct=octo;
 	tor_to_tor=0;
@@ -100,7 +107,7 @@ void Controller::createFlows()
 				Switch* otherTor=getTorFromAnotherPod(pod);
 				Host* start=curSwitch->down_links[rand()%curSwitch->down_links.size()]->host;
 				Host* end=otherTor->down_links[rand()%curSwitch->down_links.size()]->host;
-				// ////cout<<"Flow started from "<<curSwitch->toString()<<" to "<<otherTor->toString()<<endl;
+				// //////cout<<"Flow started from "<<curSwitch->toString()<<" to "<<otherTor->toString()<<endl;
 				instantiateFlow(start,end,100,10,0);
 
 			}	
@@ -111,7 +118,7 @@ void Controller::createFlows()
 		// }
 	}
 
-	//cout<<"Flows generated "<<total_flows<<endl;
+	////cout<<"Flows generated "<<total_flows<<endl;
 	int x = 1/0;
 }
 
@@ -129,7 +136,7 @@ void Controller::checkProb(vector<Switch*> Tors, int prob, float factor)
 	while(counter<c_size)
 	{
 		int failAt=rand()%totalTime;
-		////cout<<failAt<<",";
+		//////cout<<failAt<<",";
 		int index=rand()%Tors.size();
 		Switch* curSwitch=Tors[index];
 		prone_switches.push_back(curSwitch);
@@ -143,7 +150,7 @@ void Controller::checkProb(vector<Switch*> Tors, int prob, float factor)
 	while(counter<b_size)
 	{
 		int failAt=rand()%totalTime;
-		////cout<<failAt<<",";
+		//////cout<<failAt<<",";
 		int index=rand()%Tors.size();
 		Switch* curSwitch=Tors[index];
 		Tors[index]->resilience=1;
@@ -183,7 +190,7 @@ void Controller::checkProb(vector<Link*> Tors, int prob, float factor)
 	while(counter<c_size)
 	{
 		int failAt=rand()%totalTime;
-		////cout<<failAt<<",";
+		//////cout<<failAt<<",";
 		int index=rand()%Tors.size();
 		Link* curSwitch=Tors[index];
 		Tors[index]->resilience=2;
@@ -197,7 +204,7 @@ void Controller::checkProb(vector<Link*> Tors, int prob, float factor)
 	while(counter<b_size)
 	{
 		int failAt=rand()%totalTime;
-		////cout<<failAt<<",";
+		//////cout<<failAt<<",";
 
 		int index=rand()%Tors.size();
 		Link* curSwitch=Tors[index];
@@ -224,7 +231,7 @@ void Controller::checkProb(vector<Link*> Tors, int prob, float factor)
 
 void Controller::counter(vector<Switch*> Tors)
 {
-	////cout<<"Size of device: " << Tors.size()<<endl;
+	//////cout<<"Size of device: " << Tors.size()<<endl;
 	int zero_count=0;
 	int one_count=0;
 	int two_count=0;
@@ -239,9 +246,9 @@ void Controller::counter(vector<Switch*> Tors)
 	}
 
 	int sum=Tors.size();
-	////cout<< "zero_count ratio: " << (float)zero_count/(float)sum <<endl;
-	////cout<< "one_count ratio: " << (float)one_count/(float)sum <<endl;
-	////cout<< "two_count ratio: " << (float)two_count/(float)sum <<endl;
+	//////cout<< "zero_count ratio: " << (float)zero_count/(float)sum <<endl;
+	//////cout<< "one_count ratio: " << (float)one_count/(float)sum <<endl;
+	//////cout<< "two_count ratio: " << (float)two_count/(float)sum <<endl;
 	float one=(float)one_count/(float)sum;
 	float two=(float)two_count/(float)sum;
 	float diff= one -two;
@@ -269,9 +276,9 @@ void Controller::counter(vector<Link*> Tors){
 	}
 
 	int sum=Tors.size();
-	////cout<< "zero_count ratio: " << (float)zero_count/(float)sum <<endl;
-	////cout<< "one_count ratio: " << (float)one_count/(float)sum <<endl;
-	////cout<< "two_count ratio: " << (float)two_count/(float)sum <<endl;
+	//////cout<< "zero_count ratio: " << (float)zero_count/(float)sum <<endl;
+	//////cout<< "one_count ratio: " << (float)one_count/(float)sum <<endl;
+	//////cout<< "two_count ratio: " << (float)two_count/(float)sum <<endl;
 
 }
 
@@ -331,7 +338,7 @@ void Controller::assignResilience()
 		total++;
 	}
 
-	////cout<<"num of singles: "<<total<<endl;
+	//////cout<<"num of singles: "<<total<<endl;
 	total=0;
 	while(doubles>0)
 	{
@@ -351,7 +358,7 @@ void Controller::assignResilience()
 	}
 
 
-	////cout<<"num of doubles: "<<total*2<<endl;
+	//////cout<<"num of doubles: "<<total*2<<endl;
 	total=0;
 
 	while(triples>0)
@@ -376,7 +383,7 @@ void Controller::assignResilience()
 	}
 
 
-	////cout<<"num of triples: "<<total*3<<endl;
+	//////cout<<"num of triples: "<<total*3<<endl;
 	total=0;
 	while(tetra>0)
 	{
@@ -412,22 +419,22 @@ void Controller::assignResilience()
 	}
 
 
-	////cout<<"num of tetra: "<<total*4<<endl;
+	//////cout<<"num of tetra: "<<total*4<<endl;
 	total=0;
-	////cout<<"Total left: "<<prone_copy.size()<<endl;
-	////cout<<count<<" "<<singles<<" "<<doubles<<" "<<triples<<" "<<tetra<<endl;
+	//////cout<<"Total left: "<<prone_copy.size()<<endl;
+	//////cout<<count<<" "<<singles<<" "<<doubles<<" "<<triples<<" "<<tetra<<endl;
 //***Printing for debugging purposes
-	////cout<< "TORs" <<endl;
+	//////cout<< "TORs" <<endl;
 	counter(Tors);
-	////cout<< "Aggr" <<endl;
+	//////cout<< "Aggr" <<endl;
 	counter(Aggrs);
-	////cout<< "Cores" <<endl;
+	//////cout<< "Cores" <<endl;
 	counter(Cores);
-	////cout<< "TorsL" <<endl;
+	//////cout<< "TorsL" <<endl;
 	counter(TorsL);
-	////cout<< "AggrsL" <<endl;
+	//////cout<< "AggrsL" <<endl;
 	counter(AggrsL);
-	////cout<< "CoresL" <<endl;
+	//////cout<< "CoresL" <<endl;
 	counter(CoresL);
 
 }
@@ -466,7 +473,7 @@ vector<Switch*> Controller::getAllCores()
 		if(all_switches[i]->level == 0)
 		{
 			cores.push_back(all_switches[i]);
-			// ////cout<< "I'm  meeting" << endl;
+			// //////cout<< "I'm  meeting" << endl;
 		}
 	}
 	return cores;
@@ -532,7 +539,7 @@ vector<Flow*> Controller::getCommonFlows(vector<Flow*> u,vector<Flow*> d)
 			arr[h]+=1;
 		}
 		// if(val>2)
-		// 	//cout<<"ERROR,Collision-------------------------"<<endl;
+		// 	////cout<<"ERROR,Collision-------------------------"<<endl;
 	}
 	return flows;
 
@@ -717,7 +724,7 @@ void Controller::findFaults()
 		{
 			vector<Flow*> flows_primary=prone_switches[i]->getFlowsOnPrimary();
 			vector<Flow*> flows_back=prone_switches[i]->getFlowsOnBack();
-			// //cout<<flows_back.size()<<" are the flows on back"<<endl;
+			// ////cout<<flows_back.size()<<" are the flows on back"<<endl;
 			// if(duplicateIn(flows_primary) || duplicateIn(flows_back))
 			// {
 			// 	int x=1/0;
@@ -728,33 +735,33 @@ void Controller::findFaults()
 
 				if(notIn(critical_switches,prone_switches[i]))
 				{
-					////cout <<"+ Critical Switch Failed with ID: "<<prone_switches[i]->toString()<<" For "<<prone_switches[i]->status<<endl;
+					//////cout <<"+ Critical Switch Failed with ID: "<<prone_switches[i]->toString()<<" For "<<prone_switches[i]->status<<endl;
 					critical_switches.push_back(prone_switches[i]);					
 				}
  			}
 
 			for(int j=0;j<flows_primary.size();j++)
 			{
-				// //cout<<"anti commiting 2"<<endl;
+				// ////cout<<"anti commiting 2"<<endl;
 				flows_primary[j]->antiCommitPath(flows_primary[j]->primaryPath);
 				if(backUp)
 				{
-					// //cout<<"commiting on backup"<<endl;
+					// ////cout<<"commiting on backup"<<endl;
 
 					int commit=flows_primary[j]->commitPath(flows_primary[j]->backUpPath,1);
-					// //cout<<"Primary Down: flow id: "<<flows_primary[j]->flow_id<<" ";
+					// ////cout<<"Primary Down: flow id: "<<flows_primary[j]->flow_id<<" ";
 					// flows_primary[j]->primaryPath->print();
 
 					if(commit)
 					{
-						// //cout<<"Going To Backup: flow id : "<< flows_primary[j]->flow_id<<" ";
+						// ////cout<<"Going To Backup: flow id : "<< flows_primary[j]->flow_id<<" ";
 						// flows_primary[j]->backUpPath->print();
 						flows_on_back.push_back(flows_primary[j]);
-						// //cout<<"But Commit success, put on backup flows"<<endl;
+						// ////cout<<"But Commit success, put on backup flows"<<endl;
 					}
 					else
 					{
-						// //cout<<"Going Down the Backup is already down: flow id: "<<flows_primary[j]->flow_id<<" ";
+						// ////cout<<"Going Down the Backup is already down: flow id: "<<flows_primary[j]->flow_id<<" ";
 						// flows_primary[j]->backUpPath->print();
 						// if(!notIn(flows_down,flows_primary[j]))
 						// {
@@ -762,7 +769,7 @@ void Controller::findFaults()
 						// }
 						flows_down.push_back(flows_primary[j]);
 
-						// //cout<<"And Commit Failed, put on down flows"<<endl;
+						// ////cout<<"And Commit Failed, put on down flows"<<endl;
 						
 					}
 				}
@@ -810,7 +817,7 @@ void Controller::findFaults()
 
 				if(notIn(critical_links,prone_links[i]))
 				{
-					////cout <<"+ Critical Link Failed with ID: "<<prone_links[i]->link_id<<" For "<<prone_links[i]->status<<" Seconds "<<endl;
+					//////cout <<"+ Critical Link Failed with ID: "<<prone_links[i]->link_id<<" For "<<prone_links[i]->status<<" Seconds "<<endl;
 					critical_links.push_back(prone_links[i]);
 				}
 				else
@@ -821,27 +828,27 @@ void Controller::findFaults()
 
 			for(int j=0;j<flows_primary.size();j++)
 			{
-				// //cout<<"anti commiting 2"<<endl;
+				// ////cout<<"anti commiting 2"<<endl;
 				flows_primary[j]->antiCommitPath(flows_primary[j]->primaryPath);
-				// //cout<<"Primary Down: flow id: "<<flows_primary[j]->flow_id<<" ";
+				// ////cout<<"Primary Down: flow id: "<<flows_primary[j]->flow_id<<" ";
 				// flows_primary[j]->primaryPath->print();
-				// //cout<<"culprit is: "<<prone_links[i]->link_id<<endl;
+				// ////cout<<"culprit is: "<<prone_links[i]->link_id<<endl;
 				if(backUp)
 				{
-					// //cout<<"commiting on backup"<<endl;
+					// ////cout<<"commiting on backup"<<endl;
 					int commit=flows_primary[j]->commitPath(flows_primary[j]->backUpPath,1);
 
 					if(commit)
 					{
-						// //cout<<"Going To Backup: flow id : "<< flows_primary[j]->flow_id<<" ";
+						// ////cout<<"Going To Backup: flow id : "<< flows_primary[j]->flow_id<<" ";
 						// flows_primary[j]->backUpPath->print();
 						flows_on_back.push_back(flows_primary[j]);
 
-						 // //cout<<"Commit success, put on backup flows"<<endl;
+						 // ////cout<<"Commit success, put on backup flows"<<endl;
 					}
 					else
 					{
-						// //cout<<"Going Down the Backup is already down: flow id: "<<flows_primary[j]->flow_id<<" ";
+						// ////cout<<"Going Down the Backup is already down: flow id: "<<flows_primary[j]->flow_id<<" ";
 						// flows_primary[j]->backUpPath->print();
 
 						// if(!notIn(flows_down,flows_primary[j]))
@@ -853,10 +860,10 @@ void Controller::findFaults()
 						// }
 
 						flows_down.push_back(flows_primary[j]);
-						// //cout<<"Mayday: "<<endl;
+						// ////cout<<"Mayday: "<<endl;
 						// flows_primary[j]->primaryPath->print();
 						// flows_primary[j]->backUpPath->print();
-						 // //cout<<"Commit Failed, put on down flows"<<endl;
+						 // ////cout<<"Commit Failed, put on down flows"<<endl;
 					}
 				}
 				else
@@ -878,7 +885,7 @@ void Controller::findFaults()
 		}
 	}
 
-	// //cout<<"Num of flows down: "<<flows_down.size()<<endl;
+	// ////cout<<"Num of flows down: "<<flows_down.size()<<endl;
 }
 
 
@@ -890,15 +897,15 @@ void Controller::revert_to_primary()
 	{
 		if(critical_switches[i]->status >= 0)
 		{
-			////cout<<downTime<<" is the new downtime"<<endl;
-			////cout<<backup<<" is the new down due to sharing"<<endl;
-			////cout<<"+ Critical Switch Back with ID :"<<critical_switches[i]->toString()<<endl;
+			//////cout<<downTime<<" is the new downtime"<<endl;
+			//////cout<<backup<<" is the new down due to sharing"<<endl;
+			//////cout<<"+ Critical Switch Back with ID :"<<critical_switches[i]->toString()<<endl;
 			critical_switches.erase(critical_switches.begin()+i);
 			i--;
 			revert=true;
 			// if(duplicateIn(critical_switches))
 			// {
-			// 	////cout<<"++++++++ ERROR, DUPLICATES IN CRITICAL SWITCHES"<<endl;
+			// 	//////cout<<"++++++++ ERROR, DUPLICATES IN CRITICAL SWITCHES"<<endl;
 			// }
 		}
 	}
@@ -909,15 +916,15 @@ void Controller::revert_to_primary()
 	{
 		if(critical_links[i]->status >= 0)
 		{
-			////cout<<downTime<<" is the new downtime"<<endl;
-			////cout<<backup<<" is the new down due to sharing"<<endl;
+			//////cout<<downTime<<" is the new downtime"<<endl;
+			//////cout<<backup<<" is the new down due to sharing"<<endl;
 
-			////cout<<"+ Critical Link Back with ID :"<<critical_links[i]->link_id<<endl;
+			//////cout<<"+ Critical Link Back with ID :"<<critical_links[i]->link_id<<endl;
 			critical_links.erase(critical_links.begin()+i);
 			i--;
 			// if(duplicateIn(critical_links))
 			// {
-			// 	//cout<<"++++++++ ERROR, DUPLICATES IN CRITICAL LINKS"<<endl;
+			// 	////cout<<"++++++++ ERROR, DUPLICATES IN CRITICAL LINKS"<<endl;
 			// }
 			revert=true;
 		}
@@ -941,7 +948,7 @@ void Controller::revert_to_primary()
 				}
 				flows_on_back.erase(flows_on_back.begin()+i);
 				i--;
-				// //cout<<"-- Num of flows on backup are: "<<flows_on_back.size()<<endl;
+				// ////cout<<"-- Num of flows on backup are: "<<flows_on_back.size()<<endl;
 			}
 		}
 	}
@@ -961,9 +968,9 @@ void Controller::revert_to_primary()
 				f->commitPath(f->primaryPath,0); //Assumption is that link capacity would not be a bottleneck
 				flows_down.erase(flows_down.begin()+i);
 				i--;
-				// //cout<<"revert to primary from down: flow_id: "<<f->flow_id<<" ";
+				// ////cout<<"revert to primary from down: flow_id: "<<f->flow_id<<" ";
 				// f->primaryPath->print(); 
-				// //cout<<"-- Num of flows down: "<<flows_down.size()<<endl;
+				// ////cout<<"-- Num of flows down: "<<flows_down.size()<<endl;
 				continue;
 			}
 
@@ -973,14 +980,14 @@ void Controller::revert_to_primary()
 				if(check)
 				{
 					f->commitPath(f->backUpPath,1); //Assumption is that link capacity would not be a bottleneck
-					// //cout<<"I am here here----------------------------------------------"<<endl;
-					// //cout<<"revert to backup from down: flow id: "<<f->flow_id<<" ";
+					// ////cout<<"I am here here----------------------------------------------"<<endl;
+					// ////cout<<"revert to backup from down: flow id: "<<f->flow_id<<" ";
 					// f->backUpPath->print(); 
 					flows_down.erase(flows_down.begin()+i);
 					i--;
 
 					flows_on_back.push_back(f);
-					// //cout<<"-- Num of flows down: "<<flows_down.size()<<endl;
+					// ////cout<<"-- Num of flows down: "<<flows_down.size()<<endl;
 				}
 			}
 		}
@@ -1004,7 +1011,7 @@ void Controller::detect_downTime(int factor)
 
 	if(backUp && sharing)
 	{
-		// //cout<<"Num of flows on backup are "<<flows_on_back.size()<<endl;
+		// ////cout<<"Num of flows on backup are "<<flows_on_back.size()<<endl;
 		for(int i=0;i<flows_on_back.size();i++)
 		{
 			for (int j=i+1;j<flows_on_back.size();j++)
@@ -1015,7 +1022,7 @@ void Controller::detect_downTime(int factor)
 				{
 					// f1->backUpPath->print();
 					// f2->backUpPath->print();
-					// //cout<<"------------------"<<endl;
+					// ////cout<<"------------------"<<endl;
 					downTime+=1;
 					backup+=1;
 				}
@@ -1060,11 +1067,11 @@ void Controller::detect_downTime(int factor)
 	// else
 		downTime+=flows_down.size()*factor;
 
-	// //cout<<"downtime+= "<<flows_down.size() <<endl;
+	// ////cout<<"downtime+= "<<flows_down.size() <<endl;
 
 	// for(int i=0;i<flows_down.size();i++)
 	// {
-	// 	// //cout<<"flow in down's var down is"<<flows_down[i]->down<<endl;
+	// 	// ////cout<<"flow in down's var down is"<<flows_down[i]->down<<endl;
 	// 	// if(flows_down[i]->down)
 	// 	// {
 	// 		downTime+=1;
@@ -1443,7 +1450,7 @@ void Controller::updateStatus(int curSec, int factor)
 
 		if(curSwitch->resilience==1 && curSwitch->status == 0 &&  curSwitch->failAt<curSec)
 		{
-			// //cout<<"++ Failed at res=1"<<endl;
+			// ////cout<<"++ Failed at res=1"<<endl;
 			curSwitch->status=-getTTR(curSwitch);
 			return;
 		}
@@ -1479,7 +1486,7 @@ void Controller::updateStatus(int curSec, int factor)
 
 void Controller::updateStatusLink(int curSec, int factor)
 {
-	// //cout<<"CurSec: "<<curSec<<endl;
+	// ////cout<<"CurSec: "<<curSec<<endl;
 	for(int i=0;i<all_groups.size();i++)
 	{
 		Group* curGroup=all_groups[i];
@@ -1499,14 +1506,14 @@ void Controller::updateStatusLink(int curSec, int factor)
 
 		// if(curGroup->resilience==1 && curGroup->status == 0 &&  curGroup->failAt<curSec)
 		// {
-		// 	//cout<<"Scheduled to fail at: "<<curGroup->failAt<<endl;
+		// 	////cout<<"Scheduled to fail at: "<<curGroup->failAt<<endl;
 		// 	int x=1/0;
 		// }
 
 
 		if(curGroup->resilience==1 && curGroup->getStatus() == 0 &&  curGroup->getFailAt() < curSec)
 		{
-			// //cout<<"++ Failed at res=1"<<endl;
+			// ////cout<<"++ Failed at res=1"<<endl;
 			curGroup->setStatus(-getTTR(curGroup->leader));
 			// int x=1/0;
 			return;
@@ -1546,66 +1553,66 @@ void Controller::autofail(int curSec)
 	if(curSec==0)
 	{
 
-		for(int i=0;i<tenant_flows.size();i++)
-		{
-			cout<<"tf size : "<<tenant_flows[i]->links_pairs.size()<<endl;
-			cout<<"tf size s: "<<tenant_flows[i]->switches.size()<<endl;
-		}
-		cout<<"Ones: "<<ones<<endl;
-		cout<<"twos: "<<twos<<endl;
-		cout<<"threes: "<<threes<<endl;
+//		for(int i=0;i<tenant_flows.size();i++)
+//		{
+//			//cout<<"tf size : "<<tenant_flows[i]->links_pairs.size()<<endl;
+//			//cout<<"tf size s: "<<tenant_flows[i]->switches.size()<<endl;
+//		}
+		cout<<"Tenants: "<<tenant_flows.size()<<"\n";
+		cout<<"Within Racks: "<<ones<<"\n";
+		cout<<"Within Pods: "<<twos<<"\n";
+		cout<<"Inter Pod: "<<threes<<"\n";
 
 		vector<Link*> t=getAllTorLinks();
 		vector<Link*> a=getAllAggrLinks();
 		vector<Link*> c=getAllCoreLinks();
 
-		double used=0;
-		double total=0;
+		// double used=0;
+		// double total=0;
 
-		for(int i=0;i<t.size();i++)
-		{
-			used+=1024-t[i]->available_cap_down;
+		// for(int i=0;i<t.size();i++)
+		// {
+		// 	used+=1024-t[i]->available_cap_down;
 
-			total+=1024;
-		}
+		// 	total+=1024;
+		// }
 
-		cout<<"Tor util: "<<used*100/total<<endl;
-		used=0;
-		total=0;
+		// //cout<<"Tor util: "<<used*100/total<<endl;
+		// used=0;
+		// total=0;
 
-		for(int i=0;i<a.size();i++)
-		{
-			used+=1024-a[i]->available_cap_down;
-			total+=1024;
-		}
+		// for(int i=0;i<a.size();i++)
+		// {
+		// 	used+=1024-a[i]->available_cap_down;
+		// 	total+=1024;
+		// }
 
-		cout<<"Aggr util: "<<used*100/total<<endl;
+		// //cout<<"Aggr util: "<<used*100/total<<endl;
 
-		used=0;
-		total=0;
-		for(int i=0;i<c.size();i++)
-		{
-			used+=1024-c[i]->available_cap_down;
-			total+=1024;
-		}
+		// used=0;
+		// total=0;
+		// for(int i=0;i<c.size();i++)
+		// {
+		// 	used+=1024-c[i]->available_cap_down;
+		// 	total+=1024;
+		// }
 
-		cout<<"Core util: "<<used*100/total<<endl;
-		// cout<<
+		// //cout<<"Core util: "<<used*100/total<<endl;
 
-		used=0;
+		int unused = 0;
 		for(int i=0;i<all_hosts.size();i++)
 		{
 			int use=all_hosts[i]->availableVMs();
-			used+=use;
+			unused+=use;
 			// if(use!=0)
 			// {
-			// 	cout<<all_hosts[i]->link->available_cap_down<<" was left behind but "<<use<<" vms were unused"<<endl;
+			// 	//cout<<all_hosts[i]->link->available_cap_down<<" was left behind but "<<use<<" vms were unused"<<endl;
 			// }
 		}
 
-		cout<<"VMs left: "<<used<<endl;
+		cout<<"VMs left: "<<unused<<endl;
 
-		cout<<"Tenants Accomodated: "<<tenant_flows.size()<<endl;
+		// //cout<<"Tenants Accomodated: "<<tenant_flows.size()<<endl;
 	}
 	int factor=10;
 
@@ -1651,7 +1658,7 @@ void Controller::autofail(int curSec)
 
 void Controller::getIntraPodPaths(Switch* src, Switch* dst, Link* destLink, vector<Switch*> switches,vector<Link*> links, vector<bool> directions, int dir)
 {
-	// //cout<<paths.size()<<" is the num of paths found "<<endl;
+	// ////cout<<paths.size()<<" is the num of paths found "<<endl;
 	if(src->level==0)
 		int x=1/0;
 	vector<Link*> poolToVisit;
@@ -1661,7 +1668,7 @@ void Controller::getIntraPodPaths(Switch* src, Switch* dst, Link* destLink, vect
 
 	if(src==NULL || dst==NULL)
 	{
-		//cout<<"moving back; base case"<<endl;
+		////cout<<"moving back; base case"<<endl;
 		return;
 	}
 
@@ -1689,7 +1696,7 @@ void Controller::getIntraPodPaths(Switch* src, Switch* dst, Link* destLink, vect
 		}
 		if(curDst->num_ports==0)
 		{
-			//cout<<"culprit link: "<<curLink->label<<endl;
+			////cout<<"culprit link: "<<curLink->label<<endl;
 		}
 
 		if(dir==0 && src->level==1)
@@ -1734,7 +1741,7 @@ void Controller::getIntraPodPaths(Switch* src, Switch* dst, Link* destLink, vect
 
 void Controller::getInterPodPaths(Switch* src, Switch* dst, Link* destLink, vector<Switch*> switches,vector<Link*> links, vector<bool> directions, int dir)
 {
-	// //cout<<paths.size()<<" is the num of paths found "<<endl;
+	// ////cout<<paths.size()<<" is the num of paths found "<<endl;
 	vector<Link*> poolToVisit;
 	int size=paths.size();
 	if(size>5)
@@ -1742,29 +1749,29 @@ void Controller::getInterPodPaths(Switch* src, Switch* dst, Link* destLink, vect
 
 	if(src==NULL || dst==NULL)
 	{
-		//cout<<"moving back; base case"<<endl;
+		////cout<<"moving back; base case"<<endl;
 		return;
 	}
 
-	////cout<<"SRC: "<<src->toString()<<"\nDST: "<< dst->toString()<<endl; 
+	//////cout<<"SRC: "<<src->toString()<<"\nDST: "<< dst->toString()<<endl; 
 
 	if(dir==1 && src->level!=0)
 	{
-		// //cout<<src->toString()<<endl;
-			// //cout<<src->level<<endl;			
-			// //cout<<src->num_ports<<" are the ports"<<endl;			
+		// ////cout<<src->toString()<<endl;
+			// ////cout<<src->level<<endl;			
+			// ////cout<<src->num_ports<<" are the ports"<<endl;			
 			poolToVisit=src->up_links;
 	}
 	else
 	{
-		// //cout<<src->level<<endl;			
-		// //cout<<src->down_links.size()<<endl;	
+		// ////cout<<src->level<<endl;			
+		// ////cout<<src->down_links.size()<<endl;	
 		// if(src->down_links.size()>k*k/4)
 		// {
-		// 	//cout<<"ALARM"<<endl;
+		// 	////cout<<"ALARM"<<endl;
 		// 	return;
 		// }		
-		// //cout<<src->num_ports<<" are the ports"<<endl;			
+		// ////cout<<src->num_ports<<" are the ports"<<endl;			
 
 		poolToVisit=src->down_links;
 	}
@@ -1785,7 +1792,7 @@ void Controller::getInterPodPaths(Switch* src, Switch* dst, Link* destLink, vect
 		}
 		if(curDst->num_ports==0)
 		{
-			//cout<<"culprit link: "<<curLink->label<<endl;
+			////cout<<"culprit link: "<<curLink->label<<endl;
 		}
 
 		if(dir==0 && src->level==0)
@@ -1813,10 +1820,10 @@ void Controller::getInterPodPaths(Switch* src, Switch* dst, Link* destLink, vect
 			Path* p= new Path(switches,links,directions);
 			paths.push_back(p);
 			// p->print();
-			// //cout<<"found path"<<endl;
+			// ////cout<<"found path"<<endl;
 		}
-		// //cout<<"calling rec"<<endl;
-		// //cout<<curDst->level<<" is the next level"<<endl;
+		// ////cout<<"calling rec"<<endl;
+		// ////cout<<curDst->level<<" is the next level"<<endl;
 		getInterPodPaths(curDst,dst,destLink,switches,links,directions,dir);
 		links.pop_back();
 		directions.pop_back();
@@ -1980,8 +1987,8 @@ bool Controller::getPaths(Host* source, Host* dest, vector<Switch*> switches,vec
 		getIntraPodPaths(src, dst, destLink, switches, links, directions,1);
 		if(paths.size()==0)
 		{
-			//cout<<src->toString()<<endl;
-			//cout<<dst->toString()<<endl;
+			////cout<<src->toString()<<endl;
+			////cout<<dst->toString()<<endl;
 			int x=1/0;
 		}	
 	}
@@ -2000,9 +2007,9 @@ Flow* Controller::instantiateFlow(Host* source, Host* dest, double rate, int siz
 	vector<Link*> links;
 	vector<bool> directions;
 	paths.clear();
-	// cout<<"will find path from "<<source->toString()<<" to "<<dest->toString()<<endl;
+	// //cout<<"will find path from "<<source->toString()<<" to "<<dest->toString()<<endl;
 	bool intraRack = getPaths(source, dest, switches, links, directions, 1);
-	// cout<<paths.size()<<endl;
+	// //cout<<paths.size()<<endl;
 	if(oct)
 	{
 		if(source==dest)
@@ -2026,16 +2033,16 @@ Flow* Controller::instantiateFlow(Host* source, Host* dest, double rate, int siz
 	{
 		paths.clear();
 		int x=1/0;
-//		//cout<<"ERROR: Request could not be entertained with Rate: "<<rate<<" Size: "<<size<<", Not enough Bandwith remaining on Candidate Paths"<<endl;
+//		////cout<<"ERROR: Request could not be entertained with Rate: "<<rate<<" Size: "<<size<<", Not enough Bandwith remaining on Candidate Paths"<<endl;
 
 		return 0;
 	}
 
-//	//cout << "Request Entertained: Rate: "<<rate<<" Size: "<<size<<endl;
+//	////cout << "Request Entertained: Rate: "<<rate<<" Size: "<<size<<endl;
 	int ind=rand()%paths.size();
 	Path* primary=paths[ind];
 	paths.erase(paths.begin()+ind);
-	// //cout<<"Primary Path is: "<<endl;
+	// ////cout<<"Primary Path is: "<<endl;
 	// primary->print();
 	Path* back=NULL;
 
@@ -2051,12 +2058,12 @@ Flow* Controller::instantiateFlow(Host* source, Host* dest, double rate, int siz
 		}
 
 		back=getBackUpPath(primary,rate);
- 		// //cout<<"Backup Path is: "<<endl;
+ 		// ////cout<<"Backup Path is: "<<endl;
  		// back->print();
  		if(!back)
  		{
  //			int x=1/0;
-		//	//cout<<"Backup Bandwidth not available"<<endl;
+		//	////cout<<"Backup Bandwidth not available"<<endl;
 			return 0;
 		}
 
@@ -2073,12 +2080,12 @@ Flow* Controller::instantiateFlow(Host* source, Host* dest, double rate, int siz
 	// 	back->print();
 
 	Flow* flow= new Flow(source,dest,primary,back,rate,size,oneToOne,sTime,sharing,tor_to_tor);
-	// //cout<<"Flow created"<<endl;
+	// ////cout<<"Flow created"<<endl;
 	flow->setID(flowNumber);
 	all_flows.push_back(flow);
 	flowNumber++;
 	if(flowNumber%100000==0)
-		cout<<flowNumber<<" is the num of flows committed"<<endl;
+		//cout<<flowNumber<<" is the num of flows committed"<<endl;
 	paths.clear();
 	return flow;
 }
@@ -2093,6 +2100,8 @@ int min(int a,int b)
 
 int Controller::computeMx(Link* l,int bw)
 {
+	if(backUp)
+		bw=2*bw;
 	int res_up=l->available_cap_up;
 	int res_down=l->available_cap_up;
 	int mini=min(res_up,res_down);
@@ -2135,7 +2144,7 @@ int Controller::TorCount(Switch* d,int bw)
 int Controller::aggrCount(Switch* d,int bw)
 {
 	int count=0;
-	// //cout<<"My level is "<<d->level<<endl;
+	// ////cout<<"My level is "<<d->level<<endl;
 	for(int i=0;i<d->down_links.size();i++)
 	{
 		Switch* sw=d->down_links[i]->down_switch;
@@ -2147,14 +2156,14 @@ int Controller::aggrCount(Switch* d,int bw)
 
 int Controller::coreCount(Switch* d,int bw)
 {
-	// //cout<<"My level is "<<d->level<<endl;
+	// ////cout<<"My level is "<<d->level<<endl;
 	int count=0;
-	// //cout<<d->down_links.size()<<" is the size"<<endl;
-	// //cout<<d->toString()<<endl;
+	// ////cout<<d->down_links.size()<<" is the size"<<endl;
+	// ////cout<<d->toString()<<endl;
 	for(int i=0;i<d->down_links.size();i++)
 	{
 		Switch* sw=d->down_links[i]->down_switch;
-		// //cout<<"My level is "<<sw->level<<endl;
+		// ////cout<<"My level is "<<sw->level<<endl;
 
 		count+=aggrCount(sw,bw);
 	}
@@ -2173,12 +2182,12 @@ int Controller::alloc(int v,int b,Host* h,Switch* s)
 		int cap=mini/b;
 		int allocate=min(cap,v);
 		// h->mark(v);
-		// cout<<v<<" hosts found at "<<h->toString()<<endl;
+		// //cout<<v<<" hosts found at "<<h->toString()<<endl;
 		for(int i=0;i<allocate;i++)
 			tenant_vms.push_back(h);
 
 		// if(allocate>0)
-		// 	cout<<"I have reserved "<<allocate<<" Vms on host in "<<h->getTor()->toString()<<endl;
+		// //cout<<"I have reserved "<<allocate<<" Vms on host in "<<h->getTor()->toString()<<endl;
 
 		return allocate;
 	}
@@ -2194,7 +2203,7 @@ int Controller::alloc(int v,int b,Host* h,Switch* s)
 				// int Mw=curLink->host->availableVMs();
 				int Mw=computeMx(curLink,b);
 				count+=alloc(min(v-count,Mw),b,curLink->host,NULL);
-				// cout<<"Total allocation: "<<count<<endl;				
+				// //cout<<"Total allocation: "<<count<<endl;				
 
 			}
 			else
@@ -2202,7 +2211,7 @@ int Controller::alloc(int v,int b,Host* h,Switch* s)
 				Switch* sw=curLink->down_switch;
 				int Mw=computeMx(sw,b);
 				count+=alloc(min(v-count,Mw),b,NULL,sw);
-				// cout<<"Total allocation: "<<count<<endl;				
+				// //cout<<"Total allocation: "<<count<<endl;				
 
 			}
 		}
@@ -2217,7 +2226,7 @@ int Controller::vmCount(Link* l,int level,vector<Host*> hosts, int dir)
 {
 	int podId;
 
-	// cout<<"level: "<<level<<endl;
+	// //cout<<"level: "<<level<<endl;
 	if(level==0)
 	{
 		podId=l->down_switch->getPodID();
@@ -2285,7 +2294,7 @@ int Controller::vmCount(Link* l,int level,vector<Host*> hosts, int dir)
 
 // bool Controller::checkPath(Path* p,vector<Host*> hosts,int bw,int level,vector<PodPair*> ppairs,vector<TorPair*> tpairs)
 // {
-// 	// cout<<"\t\t Will now check one of the paths"<<endl;
+// 	// //cout<<"\t\t Will now check one of the paths"<<endl;
 // 	vector<Link*> commitedLinks;
 // 	vector<int> commitedBw;
 // 	vector<Link*> links=p->links;
@@ -2306,12 +2315,12 @@ int Controller::vmCount(Link* l,int level,vector<Host*> hosts, int dir)
 // 		left=vmCount(links[i],level,hosts,1);
 // 		// TODO add level=2 for vm count
 // 		right=vmCount(links[i],level,hosts,0);
-// 		cout<<"\t\tLeft count: "<<left<<endl;
-// 		cout<<"\t\tRight count: "<<right<<endl;
+// 		//cout<<"\t\tLeft count: "<<left<<endl;
+// 		//cout<<"\t\tRight count: "<<right<<endl;
 
 // 		int minim=min(left,right);
 // 		int reqBw=minim*bw;
-// 		cout<<"\t\t bw req: "<<reqBw<<endl;
+// 		//cout<<"\t\t bw req: "<<reqBw<<endl;
 
 // 		TorPair* tp=NULL;
 // 		PodPair* pp=NULL;
@@ -2387,7 +2396,7 @@ int Controller::vmCount(Link* l,int level,vector<Host*> hosts, int dir)
 // 			{
 // 				if(links[i]->available_cap_up < reqBw || links[i]->available_cap_down < reqBw)
 // 				{
-// 					cout<<"\t\tNot enough reqBw on link"<<endl;
+// 					//cout<<"\t\tNot enough reqBw on link"<<endl;
 // 					return 0;
 // 				}
 // 				else
@@ -2400,14 +2409,14 @@ int Controller::vmCount(Link* l,int level,vector<Host*> hosts, int dir)
 // 		}
 	
 // 	}
-// 	// cout<<"\t\tPushing in the commited links"<<endl;
+// 	// //cout<<"\t\tPushing in the commited links"<<endl;
 // 	for(int i=0;i<commitedLinks.size();i++)
 // 	{
 // 		cLinks.push_back(commitedLinks[i]);
 // 		cBws.push_back(commitedBw[i]);
 // 	}
 
-// 	// cout<<"size of clinks : "<<cLinks.size()<<endl;
+// 	// //cout<<"size of clinks : "<<cLinks.size()<<endl;
 // 	return 1;
 // }
 
@@ -2454,7 +2463,7 @@ vector<Switch*> Controller::getAggrSwitches(int pod)
 
 bool Controller::checkBW(vector<Host*> hosts,int bw)
 {
-	// cout<<"\tWill now check bw"<<endl;
+	// //cout<<"\tWill now check bw"<<endl;
 	// vector<TorPair*> torPairs;
 	// vector<PodPair*> podPairs;
 	vector<Link*> links;
@@ -2521,7 +2530,7 @@ bool Controller::checkBW(vector<Host*> hosts,int bw)
 			int right=vmCount(l,1,hosts,1);
 			int mini=min(left,right);
 			int reqBw=mini*bw;
-			// cout<<"------+------ Creating flow from "<<t1->toString()<<" to aggr with bw "<<reqBw<<endl;
+			// //cout<<"------+------ Creating flow from "<<t1->toString()<<" to aggr with bw "<<reqBw<<endl;
 			int num=mini;
 			vector<Link*> links=t1->up_links;
 			int count=0;
@@ -2539,12 +2548,13 @@ bool Controller::checkBW(vector<Host*> hosts,int bw)
 				count+=assign;
 				cLinks.push_back(l);
 				cBws.push_back(assign*bw);
-				// cout<<"reserving on primary"<<assign*bw<<" on link: "<<l->link_id<<endl;
+				//cout<<"reserving on primary"<<bw<<" on link: "<<l->link_id<<" times: "<<assign<<endl;
 			}
 
 			if(count!=num)
 			{
-				cout<<"Was able to assign only primary "<<count<<" Tor Flows instead of "<<num<<endl;
+				cout<<"Tor "<<endl;	
+				//cout<<"Was able to assign only primary "<<count<<" Tor Flows instead of "<<num<<endl;
 				return 0;
 			}
 
@@ -2586,13 +2596,15 @@ bool Controller::checkBW(vector<Host*> hosts,int bw)
 					cBws.push_back(assign*bw);
 					backAggr.push_back(l);
 					back.push_back(l);
+					//cout<<"reserving on back"<<bw<<" on link: "<<l->link_id<<" times: "<<assign<<endl;
 	
-					// cout<<"reserving on back "<<assign*bw<<" on link: "<<l->link_id<<endl;
+					// //cout<<"reserving on back "<<assign*bw<<" on link: "<<l->link_id<<endl;
 				}
 
 				if(count!=num)
 				{
-					cout<<"Was able to assign only backup "<<count<<" Tor Flows instead of "<<num<<endl;
+					cout<<"Core "<<endl;
+					//cout<<"Was able to assign only backup "<<count<<" Tor Flows instead of "<<num<<endl;
 					return 0;
 				}
 			}
@@ -2619,7 +2631,7 @@ bool Controller::checkBW(vector<Host*> hosts,int bw)
 			int right=vmCount(l,0,hosts,1);
 			int mini=min(left,right);
 			int reqBw=mini*bw;
-			// cout<<"+++++++++++ Creating flow from pod: primary "<<Pods[i]<<" to Core with bw "<<reqBw<<endl;
+			// //cout<<"+++++++++++ Creating flow from pod: primary "<<Pods[i]<<" to Core with bw "<<reqBw<<endl;
 			int num=mini;
 			// vector<Link*> links=t1->up_links;
 			int count=0;
@@ -2636,12 +2648,12 @@ bool Controller::checkBW(vector<Host*> hosts,int bw)
 				count+=assign;
 				cLinks.push_back(l);
 				cBws.push_back(assign*bw);
-				// cout<<"reserving on primary"<<assign*bw<<" on link: "<<l->link_id<<endl;
+				// //cout<<"reserving on primary"<<assign*bw<<" on link: "<<l->link_id<<endl;
 			}
 
 			if(count!=num)
 			{
-				cout<<"Was able to assign only primary "<<count<<" core flows instead of "<<num<<endl;
+				//cout<<"Was able to assign only primary "<<count<<" core flows instead of "<<num<<endl;
 				int x=1/0;
 				return 0;
 			}
@@ -2659,7 +2671,7 @@ bool Controller::checkBW(vector<Host*> hosts,int bw)
 						{
 							bwres=cBws[x];
 							break;
-						}	
+						}
 					}
 					int up=l->available_cap_up-bwres;
 					int down=l->available_cap_down-bwres;
@@ -2676,12 +2688,12 @@ bool Controller::checkBW(vector<Host*> hosts,int bw)
 					cBws.push_back(assign*bw);
 					backCore.push_back(l);
 					back.push_back(l);
-					// cout<<"reserving on back"<<assign*bw<<" on link: "<<l->link_id<<endl;
+					// //cout<<"reserving on back"<<assign*bw<<" on link: "<<l->link_id<<endl;
 				}
 
 				if(count!=num)
 				{
-					cout<<"Was able to assign only  back"<<count<<" Core  Flows instead of "<<num<<endl;
+					//cout<<"Was able to assign only  back"<<count<<" Core  Flows instead of "<<num<<endl;
 					int x=1/0;
 					return 0;
 				}
@@ -2698,8 +2710,8 @@ bool Controller::checkBW(vector<Host*> hosts,int bw)
 	}
 
 
-	// cout<<"\t\t\tbw satisfied, commiting"<<endl;
-	// cout<<cLinks.size()<<" size of clinks"<<endl;
+	// //cout<<"\t\t\tbw satisfied, commiting"<<endl;
+	// //cout<<cLinks.size()<<" size of clinks"<<endl;
 	TenantFlow* tf=new TenantFlow();
 	tenant_flows.push_back(tf);
 	for(int i=0;i<cLinks.size();i++)
@@ -2737,8 +2749,8 @@ bool Controller::checkBW(vector<Host*> hosts,int bw)
 		}
 	}
 
-// cout<<cLinks.size()<<" is the clinks size"<<endl;
-// cout<<tf->links_pairs.size()<<" is the link pair size"<<endl;
+// //cout<<cLinks.size()<<" is the clinks size"<<endl;
+// //cout<<tf->links_pairs.size()<<" is the link pair size"<<endl;
 
 
 
@@ -2773,7 +2785,7 @@ bool Controller::checkBW(vector<Host*> hosts,int bw)
 
 	// 			int check=0;
 
-	// 			// cout<<"\t checking bw "<<hosts[i]->toString()<< " to "<<hosts[j]->toString()<<endl;
+	// 			// //cout<<"\t checking bw "<<hosts[i]->toString()<< " to "<<hosts[j]->toString()<<endl;
 	// 				// for(int x=0;x<paths.size();x++)
 	// 				// {
 	// 					// paths[x]->print();
@@ -2841,23 +2853,25 @@ vector<Host*> Controller::octopus(int v, int b)
 	while(level<=3)
 	{
 		//traverse through all hosts
-		if(level==0)
-		{
-			for(int i=0;i<all_hosts.size();i++)
-			{
-				int Mv=all_hosts[i]->availableVMs();
-				// //cout<<"Avail Mv: "<<Mv<<endl;
-				if(v<=Mv)
-				{
-					// //cout<<"Found at level 0"<<endl;
-					curLevel=0;
+		// if(level==0)
+		// {
+		// 	for(int i=0;i<all_hosts.size();i++)
+		// 	{
+		// 		int Mv=all_hosts[i]->availableVMs();
+		// 		// ////cout<<"Avail Mv: "<<Mv<<endl;
+		// 		// //cout<<"v: "<<v<<endl;
+		// 		// //cout<<"Mv: "<<Mv<<endl;
+		// 		if(v<=Mv)
+		// 		{
+		// 			//cout<<"Found at level 0"<<endl;
+		// 			curLevel=0;
 
-					// BEWARE, LEVEL 0 ONES ARE NOT BEING ALLOCATED
-					// alloc(v,b,all_hosts[i],NULL);
-					return tenant_vms;
-				}
-			}
-		}
+		// 			// BEWARE, LEVEL 0 ONES ARE NOT BEING ALLOCATED
+		// 			// alloc(v,b,all_hosts[i],NULL);
+		// 			return tenant_vms;
+		// 		}
+		// 	}
+		// }
 
 		if(level==1)
 		{
@@ -2866,13 +2880,13 @@ vector<Host*> Controller::octopus(int v, int b)
 				int Mv=TorCount(Tors[i],b);
 				if(v<=Mv)
 				{
-					cout<<"Found at level 1 "<<Tors[i]->toString()<<endl;
+					//cout<<"Found at level 1 "<<Tors[i]->toString()<<endl;
 					curLevel=1;
 					alloc(v,b,NULL,Tors[i]);
 					int commit=checkBW(tenant_vms,b);
 					if(commit==0)
 					{
-						cout<<"Could not allocated enough bw"<<endl;
+//						//cout<<"Could not allocated enough bw"<<endl;
 						tenant_vms.clear();
 						continue;
 					}
@@ -2889,14 +2903,14 @@ vector<Host*> Controller::octopus(int v, int b)
 				int Mv=aggrCount(Aggrs[i],b);
 				if(v<=Mv)
 				{
-					cout<<"Found at level 2"<<endl;
+					//cout<<"Found at level 2"<<endl;
 					curLevel=2;					
 
 					alloc(v,b,NULL,Aggrs[i]);
 					int commit=checkBW(tenant_vms,b);
 					if(commit==0)
 					{
-						cout<<"Could not allocated enough bw"<<endl;
+						// //cout<<"Could not allocated enough bw"<<endl;
 						tenant_vms.clear();
 
 						continue;
@@ -2915,14 +2929,14 @@ vector<Host*> Controller::octopus(int v, int b)
 				int Mv=coreCount(Cores[i],b);
 				if(v<=Mv)
 				{
-					cout<<"Found at level 3"<<endl;
+					//cout<<"Found at level 3"<<endl;
 					curLevel=3;					
 
 					alloc(v,b,NULL,Cores[i]);
 					int commit=checkBW(tenant_vms,b);
 					if(commit==0)
 					{
-						cout<<"Could not allocated enough bw"<<endl;
+//						//cout<<"Could not allocated enough bw"<<endl;
 						tenant_vms.clear();
 
 						continue;
@@ -2936,35 +2950,52 @@ vector<Host*> Controller::octopus(int v, int b)
 
 	level++;
 	}
-	cout<<"no more"<<endl;
+//	//cout<<"no more"<<endl;
 	return tenant_vms;
 }
 
 bool Controller::instantiateTenant(int vms, int bw)	//rate in MBps, size in MB
 {
 	// if 'intraRack' is true, then there will be no backup path, only 1 path
+	if(!entertainRequest)
+	{
+		return false;
+	}
 	cout<<"VMs required: "<<vms<<endl;
 	cout<<"BW required: "<<bw<<endl;
 	vector<Link*> Tors=getAllTorLinks();
-	int check=0;
-	for(int i=0;i<Tors.size();i++)
-	{
-		int vms=Tors[i]->host->availableVMs();
-		int bw=Tors[i]->available_cap_up;
-		if(vms > 1 && bw > .05*1024)
-		{
-			cout<<"vms: "<<vms<<" bw: "<<bw<<endl;
-			check=1;
-			break;
-		}
-	}
+//	int check=0;
+//	for(int i=0;i<Tors.size();i++)
+//	{
+//		int vms=Tors[i]->host->availableVMs();
+//		int bw=Tors[i]->available_cap_up;
+//		if(vms > 1 && bw > 0.10*1024)
+//		{
+//			//cout<<"vms: "<<vms<<" bw: "<<bw<<endl;
+//			check=1;
+//			break;
+//		}
+//	}
 
-	if(check==0)
-	{
-		int x=1/0;
-	}
+//	if(check==0)
+//	{
+//		int x=1/0;
+//	}
 	vector<Host*> hosts; 
 	hosts=octopus(vms,bw);
+
+	if(hosts.size() > 1)
+	{
+		totalAccepted++;
+		ofstream fout;
+		fout.open("new_script.ns", ios::app);
+		fout<<"#define Tenant -vm "<<vms<<" -bw "<<bw<<"\n";
+		fout.close();
+	}
+	else if(hosts.size() == 0)
+	{
+		entertainRequest = false;
+	}
 	// if(hosts.size()==0)
 	// 	return false;
 	// vector<Flow*> flows;
@@ -2973,7 +3004,7 @@ bool Controller::instantiateTenant(int vms, int bw)	//rate in MBps, size in MB
 
 	// for(int i=0;i<hosts.size();i++)
 	// {
-	// 	//cout<<hosts[i]->getTor()->toString()<<endl;
+	// 	////cout<<hosts[i]->getTor()->toString()<<endl;
 	// }
 
 	
@@ -3017,7 +3048,7 @@ bool Controller::instantiateTenant(int vms, int bw)	//rate in MBps, size in MB
 		// 	vector<bool> directions;
 		// 	bool intraRack = getPaths(source, dest, switches, links, directions, 1);
 
-		// 	// //cout<<paths.size()<<" is the num of paths"<<endl;
+		// 	// ////cout<<paths.size()<<" is the num of paths"<<endl;
 		// 	filterPaths(rate,dest);
 		// 	// check for only one path..n
 			
@@ -3029,16 +3060,16 @@ bool Controller::instantiateTenant(int vms, int bw)	//rate in MBps, size in MB
 		// 	if(!intraRack && paths.size()<1)
 		// 	{
 		// 		paths.clear();
-		// //		//cout<<"ERROR: Request could not be entertained with Rate: "<<rate<<" Size: "<<size<<", Not enough Bandwith remaining on Candidate Paths"<<endl;
+		// //		////cout<<"ERROR: Request could not be entertained with Rate: "<<rate<<" Size: "<<size<<", Not enough Bandwith remaining on Candidate Paths"<<endl;
 
 		// 		return 0;
 		// 	}
 
-		// //	//cout << "Request Entertained: Rate: "<<rate<<" Size: "<<size<<endl;
+		// //	////cout << "Request Entertained: Rate: "<<rate<<" Size: "<<size<<endl;
 		// 	int ind=rand()%paths.size();
 		// 	Path* primary=paths[ind];
 		// 	paths.erase(paths.begin()+ind);
-		// 	// //cout<<"Primary Path is: "<<endl;
+		// 	// ////cout<<"Primary Path is: "<<endl;
 		// 	// primary->print();
 		// 	Path* back=NULL;
 
@@ -3052,12 +3083,12 @@ bool Controller::instantiateTenant(int vms, int bw)	//rate in MBps, size in MB
 		// 		}
 
 		// 		back=getBackUpPath(primary,rate);
-		//  		// //cout<<"Backup Path is: "<<endl;
+		//  		// ////cout<<"Backup Path is: "<<endl;
 		//  		// back->print();
 		//  		if(!back)
 		//  		{
 		//  //			int x=1/0;
-		// 		//	//cout<<"Backup Bandwidth not available"<<endl;
+		// 		//	////cout<<"Backup Bandwidth not available"<<endl;
 		// 			return 0;
 		// 		}
 
@@ -3078,7 +3109,7 @@ bool Controller::instantiateTenant(int vms, int bw)	//rate in MBps, size in MB
 		// 	all_flows.push_back(flow);
 		// 	flowNumber++;
 		// 	if(flowNumber%1000==0)
-		// 		//cout<<flowNumber<<" is the num of flows committed"<<endl;
+		// 		////cout<<flowNumber<<" is the num of flows committed"<<endl;
 		// 	paths.clear();
 	return 1;
 }
@@ -3125,7 +3156,7 @@ Path* Controller::getReplicatedPath(int src, int dst, int rate)
 	vector<Switch*> switches;
 	vector<Link*> links;
 	vector<bool> directions;
-	// //cout<<"src: "<<srcPod<<" dst: "<<dstPod<<endl;
+	// ////cout<<"src: "<<srcPod<<" dst: "<<dstPod<<endl;
 	Host* source=getHostInTor(srcPod);
 	Host* dest= getHostInTor(dstPod);
 
@@ -3164,7 +3195,7 @@ Path* Controller::getBackUpPath(Path* primary, int rate)
 						continue;
 				}
 				else{
-					//cout<<"@mochi:contunuing, this shoul,nt happen "<<endl;
+					////cout<<"@mochi:contunuing, this shoul,nt happen "<<endl;
 					continue;
 				}
 				vector<Switch*> primaryLinks=p1->switches;
@@ -3176,13 +3207,13 @@ Path* Controller::getBackUpPath(Path* primary, int rate)
 				{
 					if(notIn(paths_to_be_shared,otherBack))
 					{
-						// //cout<<paths_to_be_shared.size()<<" is the size"<<endl;
+						// ////cout<<paths_to_be_shared.size()<<" is the size"<<endl;
 						continue;						
 					}
 
-					// //cout<<"found"<<endl;
+					// ////cout<<"found"<<endl;
 					flows_on_share++;
-					// //cout<<"yes found"<<endl;
+					// ////cout<<"yes found"<<endl;
 					back=otherBack;
 					// index=j;
 					break;
@@ -3229,7 +3260,7 @@ Path* Controller::getBackUpPath(Path* primary, int rate)
 		}
 		paths_to_be_shared.erase(paths_to_be_shared.begin()+index);
 		all_pairs.push_back(new Pair(primary,back));
-		// //cout<<"+ Sharing Back Up path with: "<<endl;
+		// ////cout<<"+ Sharing Back Up path with: "<<endl;
 		// back->print();
 	}
 	else

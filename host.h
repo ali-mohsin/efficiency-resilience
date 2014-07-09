@@ -21,7 +21,7 @@ public:
 	{
 		link=NULL;
 		isHost=1;
-		for(int i=0;i<8;i++)
+		for(int i=0;i<4;i++)
 		{
 			all_vms.push_back(new VM());
 		}

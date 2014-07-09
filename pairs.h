@@ -88,9 +88,6 @@ public:
 		SwitchPair* sp=new SwitchPair(s1,s2);
 
 		switches.push_back(sp);
-		if(s1!=s2)
-			int x=1/0;
-
 	}
 
 	bool isDown()

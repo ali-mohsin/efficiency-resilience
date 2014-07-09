@@ -40,6 +40,8 @@ with open('script.ns','rb') as fin:
         if(header=="#define"):
             identifier=row[1]
 
+            seed="0"
+
             if(identifier=="Tenant"):
                 vms=int(find(row,"-vm"))
                 bw=int(find(row,"-bw"))
@@ -62,6 +64,7 @@ with open('script.ns','rb') as fin:
                 coreCap=bw2int(find(row,"-coreLinks"))
                 fail=find(row,"-failures")
                 red=find(row,"-reduncancy")
+                seed=find(row,"-seed")
                 if(fail=="enable"):
                     code.append("\tint failures=1;\n")
                 else:
@@ -83,11 +86,11 @@ with open('script.ns','rb') as fin:
  
 
                 if(algo=="default" and auto=='yes'):
-                    line= "\tdc= new Controller("+k+","+torCap+","+aggrCap+","+coreCap+",oneToOne,sharing,"+runFor+",1,0);"
+                    line= "\tdc= new Controller("+k+","+torCap+","+aggrCap+","+coreCap+",oneToOne,sharing,"+runFor+",0,1,"+seed+");"
                     code.append(line)
                     auto=1
                 elif(algo=='default' and octa=="yes"):
-                    line= "\tdc= new Controller("+k+","+torCap+","+aggrCap+","+coreCap+",oneToOne,sharing,"+runFor+",0,1);"
+                    line= "\tdc= new Controller("+k+","+torCap+","+aggrCap+","+coreCap+",oneToOne,sharing,"+runFor+",0,1,"+seed+");"
                     code.append(line)
                     auto=0
                     

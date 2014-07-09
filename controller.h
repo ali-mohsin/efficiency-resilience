@@ -37,6 +37,7 @@ public:
 	vector<Tenant*> all_tenants;
 	vector<HostPair*> all_host_pairs;
 	vector<Link*> usedLinks;
+	bool entertainRequest;
 	int flows_on_share;
 	int ones;
 	int twos;
@@ -44,6 +45,7 @@ public:
 	int tor_to_tor;	
 	int end_to_end;
 	int curLevel;
+	int totalAccepted;
 
 	double downTime;
 	int torCap;
@@ -91,7 +93,7 @@ public:
 	void findFaults();
 	Path* getPathRandom(Host* source, Host* dest);
 	void getAllPaths(Switch* src,Switch* dst, vector<Switch*> switches,vector<Link*> links, vector<bool> direction, int dir);
-	Controller(int kay,int,int,int,int,int,int,int,int);
+	Controller(int kay,int,int,int,int,int,int,int,int,float);
 	int commitPath(Path* path, int dur,int rate, int size);
 //	void antiCommitPath();
 //	void goToSwitch(Path* path, Switch* dst, Switch** tempSwitch);

@@ -21,10 +21,6 @@
 	{
 		for(int i=0; i<runs; i++)
 		{
-			if (i%100000==0)
-				cout<<i<<"th run"<<endl;
-			
-
 			dc->autofail(i);
 			// seconds_run++;
 			// if( (seconds_run % inter_ping_time) == 0 )
@@ -67,19 +63,21 @@
 	int two=0;
 	int three=0;
 	int vms;
-	for(int i=0;i<dc->tenant_flows.size();i++)
-	{
-		cout<<"links: "<<dc->tenant_flows[i]->links_pairs.size()<<" dt: "<<dc->tenant_flows[i]->downTime<<endl;
-	}
+	// for(int i=0;i<dc->tenant_flows.size();i++)
+	// {
+	// 	cout<<"links: "<<dc->tenant_flows[i]->links_pairs.size()<<" dt: "<<dc->tenant_flows[i]->downTime<<endl;
+	// }
 
-	cout<<"Total Dt: "<<dc->downTime<<endl;
-	cout<<"Total flows: "<<dc->tenant_flows.size()<<endl;
+	// cout<<"Total Dt: "<<dc->downTime<<endl;
+	// cout<<"Total flows: "<<dc->tenant_flows.size()<<endl;
 
-	cout<<dc->all_tenants.size()<<" was the number of accomodated tenants"<<endl;
-	cout<<100-100*(dc->downTime/(float(dc->tenant_flows.size())*runs))<<" Was the Availability"<<endl;
-	cout<<"Downtime due to level 1: "<<one<<endl;
-	cout<<"Downtime due to level 2: "<<two<<endl;
-	cout<<"Downtime due to level 3: "<<three<<endl;
+	// cout<<dc->all_tenants.size()<<" was the number of accomodated tenants"<<endl;
+	cout<<"Availability: "<<100-100*(dc->downTime/(float(dc->tenant_flows.size())*runs))<<"\n";
+	// cout<<"Downtime due to level 1: "<<one<<endl;
+	// cout<<"Downtime due to level 2: "<<two<<endl;
+	// cout<<"Downtime due to level 3: "<<three<<endl;
+
+	// cout<<"Total accepted: "<<dc->totalAccepted<<endl;
 		// cout<<100-100*(dc->downTime/(float(dc->all_flows.size())*runs))<<" Was the Availability"<<endl;
 
 

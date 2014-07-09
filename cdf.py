@@ -45,7 +45,7 @@ def extract_dt(device,cat,rms):
     return down_arr
 
 
-def plot_cdf(down_arr,labels):
+def plot_cdf(down_arr,labels,markers,colors):
     down_arr.sort()
     arr=[0]*(max(down_arr)+1)
     count=len(down_arr)
@@ -58,7 +58,7 @@ def plot_cdf(down_arr,labels):
     ax = plt.subplot(111)
     ax.set_xscale("log", nonposx='clip')
     ax.set_ylim([0,1])
-    plt.plot(arr,label=labels)
+    plt.plot(arr,label=labels,marker=markers, color=colors)
 
 
 with open(sys.argv[2],'rb') as fin:
@@ -88,7 +88,7 @@ if(dev=='Switch'):
 
 d1=extract_dt(dev,'Tor',rms)
 d2=extract_dt(dev,'Aggr',rms)
-plot_cdf(d1,"Tor "+dev)
-plot_cdf(d2,"Aggr "+dev)
+plot_cdf(d1,"Tor "+dev,markers[0],colors[0])
+plot_cdf(d2,"Aggr "+dev,markers[0],colors[0])
 plt.legend(loc=2)
 plt.show()
