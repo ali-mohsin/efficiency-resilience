@@ -820,7 +820,8 @@ void Controller::findFaults()
 //										cout<<"****Anti rate is zero, check ooper for dups***"<<endl;
 										continue;
 									}
-									bool check = makeBackUp(flows_back[j], anti_rate);
+									//bool check = makeBackUp(flows_back[j], anti_rate);
+									bool check = false; // not even checking for backups
 									if (check) {
 										//cout << "backup found" << endl;
 									} else {
@@ -1008,7 +1009,8 @@ void Controller::findFaults()
 									continue;
 								}
 								
-								bool check = makeBackUp(flows_back[j], anti_rate);
+								//bool check = makeBackUp(flows_back[j], anti_rate);
+								bool check = false; // not even checking for backups
 								if (check) {
 									//cout << "backup found" << endl;
 								} else {
@@ -2302,6 +2304,7 @@ SprayData* Controller::getSprayPath(Host* src, Host* dst, int rate, Path* primar
 		}
 	}
 	
+	selectedPath.clear();
 	paths.clear();	
 //	cout<<"Going out spray data"<<endl;
 //	cout<<"BW reserved in "<<sprayData->paths.size()<<" paths"<<endl;
