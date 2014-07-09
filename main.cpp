@@ -9,8 +9,8 @@ int main (int argc, char *argv[])
 
 	int sharing=1;
 
-	dc= new Controller(20,1024,1024,1024,oneToOne,sharing,31536000,1);
-int runFor=31536000;
+	dc= new Controller(20,1024,1024,1024,oneToOne,sharing,91536000,1);
+int runFor=91536000;
 
 
 	//Main tasks that this code does is that iterate for run number of times and after every ping interval which represents 1 sec, dump the data, 

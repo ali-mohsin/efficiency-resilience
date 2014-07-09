@@ -50,7 +50,7 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	totalTime=runFor;
 	assignResilience();
 	
-	int increase_by = 407.2; // increase capacities of links by this num
+	int increase_by = 1000000; // increase capacities of links by this num
 	int primary = 616.8;
 	
 	if(makeFlows)
@@ -84,23 +84,29 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	// cout<<"]"<<endl;
 
 	// int x=1/0;
-	// for(int i=0;i<all_links.size();i++)
-	// {
-	// 	cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_primary.size()<<" Flows passing through"<<endl;
+	 for(int i=0;i<all_links.size();i++)
+	 {
+	 	cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_primary.size()<<" Flows passing through"<<endl;
 	// 	cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_back.size()<<" Flows passing through"<<endl;
 
-	// 	// if(all_links[i]->flows_primary.size()==0 && all_links[i]->flows_back.size()==0)
-	// 	// {
-	// 	// 	int x=1/0;
-	// 	// 	// //cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_primary.size()<<" Flows passing through"<<endl;
-	// 	// 	// //cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_back.size()<<" Flows passing through"<<endl;
-	// 	// }
+	 	 if(all_links[i]->flows_primary.size()==0 && all_links[i]->flows_back.size()==0)
+	 	 {
+	 	 	int x=1/0;
+			cout << "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" << endl;
+			cout << endl;
+			cout << endl;
+			cout << endl;
+			cout << endl;
+			cout << endl;
+	 	 	 //cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_primary.size()<<" Flows passing through"<<endl;
+	 	// 	// //cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_back.size()<<" Flows passing through"<<endl;
+	 	 }
 	// 	// else
 	// 	// {
 	// 	// 	// //cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows.size()<<" Flows passing through"<<endl;
 	// 	// 	int x=1/0;
 	// 	// }
-	// }++
+	}
 
 	//cout<<"Flows on share are: "<<flows_on_share<<" out of "<<all_flows.size()<<endl;
 }
@@ -730,8 +736,8 @@ void Controller::findFaults()
 	{
 		if( prone_switches[i]->getStatus() < 0 )
 		{
-//			if(prone_switches[i]->status==2)
-//				cout<<"Tor switch is down"<<endl;
+			if(prone_switches[i]->status==2)
+				cout<<"Tor switch is down"<<endl;
 			vector<Flow*> flows_primary=prone_switches[i]->getFlowsOnPrimary();
 			vector<Flow*> flows_back=prone_switches[i]->getFlowsOnBack();
 
@@ -753,6 +759,11 @@ void Controller::findFaults()
 				{
 				
 					bool check = makeBackUp(flows_primary[j], flows_primary[j]->rate);
+					
+					if(prone_switches[i]->status==2) {
+						cout << "** tor link down **" << endl;
+					}
+					
 					if (check) {
 						flows_on_back.push_back(flows_primary[j]);
 						//cout << "backup found" << endl;
@@ -842,6 +853,7 @@ void Controller::findFaults()
 
 
 		}
+		
 	}
 	//************For Links******************//
 
@@ -850,8 +862,8 @@ void Controller::findFaults()
 	{
 		if( prone_links[i]->getStatus() < 0 )
 		{	
-			//if(prone_links[i]->label=="Tor")
-				//cout<<"Tor link is down"<<endl;
+			if(prone_links[i]->label=="Tor")
+				cout<<"Tor link is down"<<endl;
 			vector<Flow*> flows_primary=prone_links[i]->getFlowsOnPrimary();
 			vector<Flow*> flows_back=prone_links[i]->getFlowsOnBack();
 
@@ -872,9 +884,15 @@ void Controller::findFaults()
 				}
 				else
 				{
+					if(prone_links[i]->label=="Tor")
+						cout<<"**ABCDEFGH TOR**"<<endl;
 					continue;
 				}
- 			}
+ 			} else {
+				if(prone_links[i]->label=="Tor")
+					cout<<"**WEIRD THING**"<<endl;
+				int x = 1/0;
+			}
 
 			for(int j=0;j<flows_primary.size();j++)
 			{
@@ -888,6 +906,11 @@ void Controller::findFaults()
 					// cout<<"commiting on backup"<<endl;
 					
 					bool check = makeBackUp(flows_primary[j], flows_primary[j]->rate);
+					
+					if(prone_links[i]->label=="Tor") {
+						cout<<"**XYZ TOR**"<<endl;
+					}
+					
 					if (check) {
 						//cout << "backup found" << endl;
 					} 
@@ -2216,17 +2239,31 @@ SprayData* Controller::getSprayPath(Host* src, Host* dst, int rate, Path* primar
 	
 	int sent = 1;
 	vector<int> toReserve;
-	
-	for (int i = 0; i < paths.size(); i++)
-		toReserve.push_back(0);
 
 	//No preference is being given so far on paths, should there be any preference?
 	int reserved = 0;
 //	cout << "***" << endl;
+
+	for (int i = 0; i < paths.size(); i++) {		
+		if (!paths[i]->isUp()) {
+			paths.erase(paths.begin()+i);
+			i--;
+		}
+	}
+	
+	if (paths.size() == 0) {
+		cout << "all paths are down" << endl;
+		return NULL;
+	}
+	
+	
+	for (int i = 0; i < paths.size(); i++)
+		toReserve.push_back(0);
+	
 	while (reserved < rate) {
 		int check=0;
 		for (int i = 0; i < paths.size(); i++) {
-			if (paths[i]->isValid(sent) && paths[i]->isUp() && reserved < rate) {
+			if (paths[i]->isValid(sent) && reserved < rate) {
 				toReserve[i]=sent; // we are checking only and not reserving bw
 				check=1;
 				//reserved = reserved - (sent - 1);
@@ -2235,7 +2272,7 @@ SprayData* Controller::getSprayPath(Host* src, Host* dst, int rate, Path* primar
 			}
 		}
 		if(!check && reserved < rate){
-//			cout<<"BW not available"<<endl;
+			cout<<"BW not available"<<endl;
 			return NULL;
 		} else {
 			sent++;
