@@ -51,7 +51,7 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	assignResilience();
 	
 	int increase_by = 1000000; // increase capacities of links by this num
-	int primary = 616.8;
+	int primary = 614.4;
 	
 	if(makeFlows)
 	{
@@ -92,12 +92,7 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	 	 if(all_links[i]->flows_primary.size()==0 && all_links[i]->flows_back.size()==0)
 	 	 {
 	 	 	int x=1/0;
-			cout << "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" << endl;
-			cout << endl;
-			cout << endl;
-			cout << endl;
-			cout << endl;
-			cout << endl;
+			
 	 	 	 //cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_primary.size()<<" Flows passing through"<<endl;
 	 	// 	// //cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_back.size()<<" Flows passing through"<<endl;
 	 	 }
@@ -736,8 +731,12 @@ void Controller::findFaults()
 	{
 		if( prone_switches[i]->getStatus() < 0 )
 		{
-			if(prone_switches[i]->status==2)
-				cout<<"Tor switch is down"<<endl;
+			if(prone_switches[i]->level==2) {
+				prone_switches[i]->status=100;
+				continue;
+			}
+			//	cout<<"Tor switch is down"<<endl;
+			
 			vector<Flow*> flows_primary=prone_switches[i]->getFlowsOnPrimary();
 			vector<Flow*> flows_back=prone_switches[i]->getFlowsOnBack();
 
@@ -760,9 +759,9 @@ void Controller::findFaults()
 				
 					bool check = makeBackUp(flows_primary[j], flows_primary[j]->rate);
 					
-					if(prone_switches[i]->status==2) {
-						cout << "** tor link down **" << endl;
-					}
+					//if(prone_switches[i]->status==2) {
+					//	cout << "** tor link down **" << endl;
+					//}
 					
 					if (check) {
 						flows_on_back.push_back(flows_primary[j]);
@@ -795,7 +794,7 @@ void Controller::findFaults()
 				{
 					int index_of_backupPath=0;
 					for(int l=0;l<flows_back[j]->backUpPath.size();l++)
-					{	
+					{
 							int fail=0;
 							vector<Switch*> switches=flows_back[j]->backUpPath[l]->getSwitches();
 							for(int m=0;m<switches.size();m++)
@@ -862,8 +861,12 @@ void Controller::findFaults()
 	{
 		if( prone_links[i]->getStatus() < 0 )
 		{	
-			if(prone_links[i]->label=="Tor")
-				cout<<"Tor link is down"<<endl;
+			if(prone_links[i]->label=="Tor") {
+				prone_links[i]->status=100;
+				continue;
+			}
+			//	cout<<"Tor link is down"<<endl;
+			
 			vector<Flow*> flows_primary=prone_links[i]->getFlowsOnPrimary();
 			vector<Flow*> flows_back=prone_links[i]->getFlowsOnBack();
 
@@ -884,14 +887,14 @@ void Controller::findFaults()
 				}
 				else
 				{
-					if(prone_links[i]->label=="Tor")
-						cout<<"**ABCDEFGH TOR**"<<endl;
+					//if(prone_links[i]->label=="Tor")
+					//	cout<<"**ABCDEFGH TOR**"<<endl;
 					continue;
 				}
  			} else {
-				if(prone_links[i]->label=="Tor")
-					cout<<"**WEIRD THING**"<<endl;
-				int x = 1/0;
+				//if(prone_links[i]->label=="Tor")
+				//	cout<<"**WEIRD THING**"<<endl;
+				//int x = 1/0;
 			}
 
 			for(int j=0;j<flows_primary.size();j++)
@@ -907,9 +910,9 @@ void Controller::findFaults()
 					
 					bool check = makeBackUp(flows_primary[j], flows_primary[j]->rate);
 					
-					if(prone_links[i]->label=="Tor") {
-						cout<<"**XYZ TOR**"<<endl;
-					}
+					//if(prone_links[i]->label=="Tor") {
+					//	cout<<"**XYZ TOR**"<<endl;
+					//}
 					
 					if (check) {
 						//cout << "backup found" << endl;
