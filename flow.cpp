@@ -215,7 +215,7 @@ int Flow::antiCommitPathAndUnreserve(Path* path)
 		path->links[i]->addBackFlow(-rate_return,path->direction[i]);		
 	}
 	
-	cout << flow_id << " is calling removebackupflow. Rate removed is " <<rate_return<<endl;
+//	cout << flow_id << " is calling removebackupflow. Rate removed is " <<rate_return<<endl;
 	removeBackUpFlow(path);
 	if (rate_return == 0) {
 		cout << "rate return is 0" << endl;
@@ -252,7 +252,7 @@ void Flow::removeBackUpFlow(Path* path) {
 	}
 	
 	if (check1 == 1 && check2 == 1) {
-		cout << "flow removed successfully" << endl;
+//		cout << "flow removed successfully" << endl;
 		for (int i = 0; i < backUpPath.size(); i++) {
 			if (backUpPath[i] == path) {
 				backUpPath.erase(backUpPath.begin()+i);
@@ -292,3 +292,13 @@ double Flow::getBackUpRate()
 	// uses factor to update rate
 	return (rate-(rate/factor));
 }
+
+int Flow::contains(vector<Flow*> pathVec)
+{
+	for(int i =0; i<pathVec.size();i++)
+	{
+		if(pathVec[i]==this)
+			return i;
+	}
+	return -1;
+}	

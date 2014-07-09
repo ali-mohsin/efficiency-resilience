@@ -43,6 +43,7 @@ public:
 	bool commitPathAndReserve(Path* path,int beingUsed);
 	int antiCommitPathAndUnreserve(Path* path);
 	double getBackUpRate();
+	int contains(vector<Flow*> pathVec);
 	
 	//gohar
 	void removeBackUpFlow(Path* path);

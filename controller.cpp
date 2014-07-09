@@ -41,7 +41,7 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 		tor_to_tor=1;
 	if(back==2)
 		end_to_end=1;
-
+	total_flows=0;
 	sharing = share;
 	backup=0;
 	// TODO seperate variable for backup
@@ -50,8 +50,8 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	totalTime=runFor;
 	assignResilience();
 	
-	int increase_by = 307.2; // increase capacities of links by this num
-	int primary = 716.8;
+	int increase_by = 407.2; // increase capacities of links by this num
+	int primary = 616.8;
 	
 	if(makeFlows)
 	{
@@ -107,11 +107,11 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 
 //gohar
 bool Controller::makeBackUp(Flow* flow, int rate){
-	cout<<"Call to makeBackup by Flow_ID "<<flow->flow_id<<endl;
+//	cout<<"Call to makeBackup by Flow_ID "<<flow->flow_id<<endl;
 	Path* primaryPath = flow->primaryPath;
 	Host* src = primaryPath->getSrcHost();
 	Host* dest = primaryPath->getDestHost();
-	cout<<" Requested bandwidth "<<rate<<endl;
+//	cout<<" Requested bandwidth "<<rate<<endl;
 	
 	SprayData* sprayData = getSprayPath(src, dest, rate, primaryPath);
 
@@ -127,7 +127,7 @@ bool Controller::makeBackUp(Flow* flow, int rate){
 		flow->backUpPath.push_back(sprayData->paths[i]);
 		flow->commitPathAndReserve(sprayData->paths[i], sprayData->toReserve[i]);	
 	}
-	cout<<" Success, new backup path size is "<<flow->backUpPath.size()<<endl;
+	//cout<<" Success, new backup path size is "<<flow->backUpPath.size()<<endl;
 
 	// We are not pushing back flow, I have added push_back wali line again	
 	return true;
@@ -161,7 +161,7 @@ void Controller::createFlows()
 	int factor=8; // ihave temporarily disabled this
 	if(end_to_end)
 		factor=16;
-	int total_flows=0;
+	
 	for (int i=0;i<all_switches.size();i++)
 	{
 		Switch* curSwitch=all_switches[i];
@@ -186,7 +186,7 @@ void Controller::createFlows()
 		// }
 	}
 
-	cout<<"Flows generated "<<total_flows<<endl;
+//	cout<<"Flows generated "<<total_flows<<endl;
 	// int x = 1/0;
 }
 
@@ -730,8 +730,8 @@ void Controller::findFaults()
 	{
 		if( prone_switches[i]->getStatus() < 0 )
 		{
-			if(prone_switches[i]->status==2)
-				cout<<"Tor switch is down"<<endl;
+//			if(prone_switches[i]->status==2)
+//				cout<<"Tor switch is down"<<endl;
 			vector<Flow*> flows_primary=prone_switches[i]->getFlowsOnPrimary();
 			vector<Flow*> flows_back=prone_switches[i]->getFlowsOnBack();
 
@@ -757,9 +757,14 @@ void Controller::findFaults()
 						flows_on_back.push_back(flows_primary[j]);
 						//cout << "backup found" << endl;
 					} else {
+						//if(flows_primary[j]->contains(flows_down)!=-1)
+						//{
+						//		cout<<"Warning this shouldnot happend"<<endl;
+						//		continue;
+						//}
 						flows_down.push_back(flows_primary[j]);
 
-						cout << "Flow "<<flows_primary[j]->flow_id<<" is down. Primary didn't find any backup" << endl;
+//						cout << "Flow "<<flows_primary[j]->flow_id<<" is down. Primary didn't find any backup" << endl;
 					}
 
 				}
@@ -794,17 +799,15 @@ void Controller::findFaults()
 									if (!found) {
 										//cout << "multiple calls" << endl;
 										continue;
-									} else {
-										cout << "found" << endl;
-									}
+									} 
 									
 									index_of_backupPath=l;
 									//break;
-									cout << "ANTICOMMIT CALLED switches BY flow " << flows_back[j]->flow_id << endl;
+									//cout << "ANTICOMMIT CALLED switches BY flow " << flows_back[j]->flow_id << endl;
 									int anti_rate = flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[index_of_backupPath]);
-									cout << "anti_rate is " << anti_rate << endl;
+//									cout << "anti_rate is " << anti_rate << endl;
 									if(anti_rate == 0){
-										cout<<"****Anti rate is zero, check ooper for dups***"<<endl;
+//										cout<<"****Anti rate is zero, check ooper for dups***"<<endl;
 										continue;
 									}
 									bool check = makeBackUp(flows_back[j], anti_rate);
@@ -812,7 +815,14 @@ void Controller::findFaults()
 										//cout << "backup found" << endl;
 									} else {
 										fail =1;
-										cout << "Flow "<<flows_back[j]->flow_id<<" is down. Backup path was not found" << endl;
+//										cout << "Flow "<<flows_back[j]->flow_id<<" is down. Backup path was not found" << endl;
+										if(flows_back[j]->contains(flows_down)!=-1)
+										{
+											cout<<"dups"<<endl;
+
+											continue;
+										}
+
 										flows_down.push_back(flows_back[j]);
 										break;
 									}
@@ -820,7 +830,7 @@ void Controller::findFaults()
 									
 							}
 							if (fail){
-								cout<<flows_back[j]->flow_id<<" is down "<<endl;
+//								cout<<flows_back[j]->flow_id<<" is down "<<endl;
 								for(int o =0; o<flows_back[j]->backUpPath.size();o++)
 									flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[o]);
 								break;
@@ -880,9 +890,7 @@ void Controller::findFaults()
 					bool check = makeBackUp(flows_primary[j], flows_primary[j]->rate);
 					if (check) {
 						//cout << "backup found" << endl;
-					} else {
-						cout << "backup path not found" << endl;
-					}
+					} 
 					
 					//int commit =0;
 					//for(int k =0; k<flows_primary[j]->backUpPath.size();k++){
@@ -913,6 +921,11 @@ void Controller::findFaults()
 						// 	// flows_primary[j]->backUpPath->print();
 						// 	int x=1/0;
 						// }
+					//	if(flows_primary[j]->contains(flows_down)!=-1)
+					//{
+					//	cout<<"warninnggg"<<endl;
+					//	continue;
+					//}
 
 						flows_down.push_back(flows_primary[j]);
 						// cout<<"Mayday: "<<endl;
@@ -937,7 +950,7 @@ void Controller::findFaults()
 						cc++;
 				}
 				if (cc > 1)
-					cout << "COUNT VALUE IS " << cc << " for link " << prone_links[i]->link_id << endl;
+					///cout << "COUNT VALUE IS " << cc << " for link " << prone_links[i]->link_id << endl;
 				// end debugging
 				
 				for(int j=0;j<flows_back.size();j++)
@@ -962,7 +975,7 @@ void Controller::findFaults()
 									cout << "found" << endl;
 								
 								//break;
-								cout << "ANTICOMMIT CALLED links BY flow " << flows_back[j]->flow_id << endl;
+						//		cout << "ANTICOMMIT CALLED links BY flow " << flows_back[j]->flow_id << endl;
 								int anti_rate = flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[l]); // changed to l, was 0
 								if(anti_rate == 0){
 //									cout<<"****Anti rate is zero, check ooper for dups***"<<endl;
@@ -974,7 +987,13 @@ void Controller::findFaults()
 									//cout << "backup found" << endl;
 								} else {
 									fail = 1;
-									cout << "Flow "<<flows_back[j]->flow_id<<" is down. Backup path was not found" << endl;
+									if(flows_back[j]->contains(flows_down)!=-1)
+								{
+									cout<<"dups"<<endl;
+									continue;
+								}
+
+									//			cout << "Flow "<<flows_back[j]->flow_id<<" is down. Backup path was not found" << endl;
 									flows_down.push_back(flows_back[j]);
 									break;
 								}
@@ -1041,13 +1060,35 @@ void Controller::revert_to_primary()
 					f->antiCommitPathAndUnreserve(f->backUpPath[j]);
 //						count++;
 				}
-				cout<<"Flow "<<f->flow_id<<" is up. Backup size is "<<f->backUpPath.size()<<endl;
-				if(f->backUpPath.size() > 0)
+	//			cout<<"Flow "<<f->flow_id<<" is up. Backup size is "<<f->backUpPath.size()<<endl;
+				for(int m =0; m<prone_links.size();m++)
 				{
-					
-					
+//					vector<Flow*> flows_back=prone_links[m]->flows_back();
+					for(int mm=0;mm<prone_links[m]->flows_back.size();mm++)
+					{
+						if(prone_links[m]->flows_back[mm]==f){
+//							cout<<"prob detected links"<<endl;
+							prone_links[m]->flows_back.erase(prone_links[m]->flows_back.begin()+mm);
+							mm--;
+						}
+					}
+						
+				}
+				for(int m =0; m<prone_switches.size();m++)
+				{
+//					vector<Flow*> flows_back=prone_switches[m]->getFlowsOnBack();
+					for(int mm=0;mm<prone_switches[m]->back_flows.size();mm++)
+					{
+						if(prone_switches[m]->back_flows[mm]==f){
+//							cout<<"prob detected links"<<endl;
+							prone_switches[m]->back_flows.erase(prone_switches[m]->back_flows.begin()+mm);
+							mm--;
+						}
+					}
 					
 				}
+				f->backUpPath.clear();
+
 				bool check=f->commitPath(f->primaryPath,0); //Assumption is that link capacity would not be a bottleneck
 				if(!check)
 				{
@@ -1098,9 +1139,9 @@ void Controller::revert_to_primary()
 }
 void Controller::detect_downTime()
 {
-	int count = countDuplicateIn(flows_down); // it also removes
-//	if (count > 0)
-//		cout<<"*** Duplicates found in flows were "<<count<<endl;
+	//int count = countDuplicateIn(flows_down); // it also removes
+	//if (count > 0)
+	//	cout<<"*** Duplicates found in flows were "<<count<<endl;
 		//cout<<"intense panga"<<endl;
 	downTime+=flows_down.size();
 	
@@ -1608,8 +1649,16 @@ void Controller::autofail(int curSec)
 	detect_downTime();
 	// stopTimer("detect_downTime");
 	
-	if(curSec%100000==0)
+	if(curSec%100000==0){
 		cout << "*ELAPSED*" << curSec << endl;
+//		 float dt=( float)downTime;
+//		long int tt=(long int)(total_flows*curSec);
+//		long double tf = (long double) tf;
+//		cout<<"downTime "<<dt<<endl;
+//		cout<<"d total_flows "<<tf<<endl;
+
+//		cout<<100-100*(dt/tf)<<" Was the Availability"<<endl;
+	}
 	
 	if(curSec%10==0)
 	{
@@ -2161,10 +2210,6 @@ SprayData* Controller::getSprayPath(Host* src, Host* dst, int rate, Path* primar
 		int x=1/0;
 		return NULL;	
 	}
-	if(src->getPodID() == dst->getPodID())
-		cout<<" Same pod: Size of backup paths vector is "<<paths.size()<<endl;	
-	else
-		cout<<" Different pod: Size of backup paths vector is "<<paths.size()<<endl;	
 		
 	//Path* back = NULL;
 	//int highestCount = 0;
@@ -2177,7 +2222,7 @@ SprayData* Controller::getSprayPath(Host* src, Host* dst, int rate, Path* primar
 
 	//No preference is being given so far on paths, should there be any preference?
 	int reserved = 0;
-	cout << "***" << endl;
+//	cout << "***" << endl;
 	while (reserved < rate) {
 		int check=0;
 		for (int i = 0; i < paths.size(); i++) {
@@ -2190,14 +2235,12 @@ SprayData* Controller::getSprayPath(Host* src, Host* dst, int rate, Path* primar
 			}
 		}
 		if(!check && reserved < rate){
-			cout<<"BW not available"<<endl;
+//			cout<<"BW not available"<<endl;
 			return NULL;
 		} else {
 			sent++;
 //			cout << "sent" << endl;
 		}
-		cout << "***reserved: " << reserved << endl;
-		cout << "***total: " << rate << endl;
 	}
 	
 	SprayData* sprayData = new SprayData();
@@ -2220,12 +2263,8 @@ SprayData* Controller::getSprayPath(Host* src, Host* dst, int rate, Path* primar
 
 	paths.clear();
 	
-	cout<<"Going out spray data"<<endl;
-	cout<<"BW reserved in "<<sprayData->paths.size()<<" paths"<<endl;
-	for(int i=0; i<sprayData->toReserve.size();i++)
-	{
-		cout<<sprayData->toReserve[i]<<" , ";
-	}
+//	cout<<"Going out spray data"<<endl;
+//	cout<<"BW reserved in "<<sprayData->paths.size()<<" paths"<<endl;
 	return sprayData;
 
 } 
