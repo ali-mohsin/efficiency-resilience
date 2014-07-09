@@ -2259,19 +2259,22 @@ SprayData* Controller::getSprayPath(Host* src, Host* dst, int rate, Path* primar
 		return NULL;
 	}
 	
+	//for (int i = 0; i < paths.size(); i++)
+	//	toReserve.push_back(0);
 	
-	for (int i = 0; i < paths.size(); i++)
-		toReserve.push_back(0);
+	vector<Path*> selectedPath;
 	
 	while (reserved < rate) {
 		int check=0;
 		for (int i = 0; i < paths.size(); i++) {
-			if (paths[i]->isValid(sent) && reserved < rate) {
-				toReserve[i]=sent; // we are checking only and not reserving bw
+			if (paths[i]->isValid(rate) && reserved < rate) {
+				toReserve.push_back(rate);// we are checking only and not reserving bw
 				check=1;
+				selectedPath.push_back(paths[i]);
+				reserved = rate;
+				break;
 				//reserved = reserved - (sent - 1);
 				//reserved+=sent;
-				reserved++;
 			}
 		}
 		if(!check && reserved < rate){
@@ -2285,7 +2288,7 @@ SprayData* Controller::getSprayPath(Host* src, Host* dst, int rate, Path* primar
 	
 	SprayData* sprayData = new SprayData();
 	sprayData->toReserve = toReserve;
-	sprayData->paths = paths;
+	sprayData->paths = selectedPath;
 	// removing paths with zero BW available
 	
 	//No preference is being given so far on paths, should there be any preference?
@@ -2297,18 +2300,13 @@ SprayData* Controller::getSprayPath(Host* src, Host* dst, int rate, Path* primar
 			sprayData->paths.erase(sprayData->paths.begin()+i);
 			i--;
 		}
-		
 	}
 	
-
-	paths.clear();
-	
+	paths.clear();	
 //	cout<<"Going out spray data"<<endl;
 //	cout<<"BW reserved in "<<sprayData->paths.size()<<" paths"<<endl;
 	return sprayData;
-
-} 
-
+}
 
 vector <Path*> Controller::getReplicatedPathVector(int src, int dst, int rate)
 {
