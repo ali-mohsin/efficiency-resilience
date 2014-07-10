@@ -18,6 +18,7 @@ class Flow;
 class Controller
 {
 public:
+	int downs;
 	int total_flows;
 	vector<Switch*> all_cores;
 	vector<Switch*> all_switches;

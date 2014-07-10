@@ -36,8 +36,10 @@
 	{
 		for(int i=0;i<switches.size();i++)
 		{
-			if(switches[i]->status < 0 && switches[i]->level != 2) {
+//			if(switches[i]->status < 0 && switches[i]->level != 2) {
+			if(switches[i]->status < 0 ) {
 				// for debugging of tors
+
 				//cout << "False returned" << endl;
 				return false;
 			}
@@ -45,7 +47,9 @@
 
 		for(int i=0;i<links.size();i++)
 		{
-			if(links[i]->status < 0 && links[i]->label != "Tor") {
+//			if(links[i]->status < 0 && links[i]->label != "Tor") {
+			if(links[i]->status < 0 ) {
+
 				// for debugging of tors
 				//cout << "False returned" << endl;
 				return false;
