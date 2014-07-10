@@ -50,7 +50,7 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	totalTime=runFor;
 	assignResilience();
 	
-	int increase_by = 1000000; // increase capacities of links by this num
+	int increase_by = 200; // increase capacities of links by this num
 	int primary = 614.4;
 	
 	if(makeFlows)
@@ -187,14 +187,12 @@ void Controller::createFlows()
 		// }
 	}
 
-//	cout<<"Flows generated "<<total_flows<<endl;
+	//	cout<<"Flows generated "<<total_flows<<endl;
 	// int x = 1/0;
 }
 
 void Controller::checkProb(vector<Switch*> Tors, int prob, float factor)
 {
-
-
 	float pb=float(prob)/float(1000);
 	int a_size=(Tors.size()*(1-pb));
 	int b_size=ceil(Tors.size()*(pb/2));
@@ -244,8 +242,6 @@ void Controller::checkProb(vector<Switch*> Tors, int prob, float factor)
 
 void Controller::checkProb(vector<Link*> Tors, int prob, float factor)
 {
-
-
 	float pb=float(prob)/float(1000);
 	int a_size=(Tors.size()*(1-pb));
 	int b_size=ceil(Tors.size()*(pb/2));
@@ -420,10 +416,8 @@ void Controller::assignResilience()
 		prone_copy.erase(prone_copy.begin()+index);
 		doubles--;
 		total++;
-
 	}
-
-
+	
 	//cout<<"num of doubles: "<<total*2<<endl;
 	total=0;
 
@@ -447,7 +441,6 @@ void Controller::assignResilience()
 		triples--;	
 		total++;
 	}
-
 
 	//cout<<"num of triples: "<<total*3<<endl;
 	total=0;
@@ -504,8 +497,6 @@ void Controller::assignResilience()
 	counter(CoresL);
 
 }
-
-
 
 vector<Switch*> Controller::getAllTors()
 {
@@ -733,7 +724,7 @@ void Controller::findFaults()
 		{
 			if(prone_switches[i]->level==2) {
 				prone_switches[i]->status=100;
-				continue;
+				//continue;
 			}
 			//	cout<<"Tor switch is down"<<endl;
 			
@@ -756,9 +747,12 @@ void Controller::findFaults()
 				flows_primary[j]->antiCommitPath(flows_primary[j]->primaryPath);
 				if(backUp)
 				{
-				
-					bool check = makeBackUp(flows_primary[j], flows_primary[j]->rate);
-					
+					//bool check = makeBackUp(flows_primary[j], flows_primary[j]->rate);
+					bool check = false;
+					if (flows_primary[j]->backUpPath.size() == 0) { // not yet on backup
+						flows_primary[j]->backUpPath = flows_primary[j]->potentialBackUpPath;
+						check = true;
+					}
 					//if(prone_switches[i]->status==2) {
 					//	cout << "** tor link down **" << endl;
 					//}
@@ -773,10 +767,8 @@ void Controller::findFaults()
 						//		continue;
 						//}
 						flows_down.push_back(flows_primary[j]);
-
 //						cout << "Flow "<<flows_primary[j]->flow_id<<" is down. Primary didn't find any backup" << endl;
 					}
-
 				}
 				else
 				{
@@ -830,7 +822,6 @@ void Controller::findFaults()
 										if(flows_back[j]->contains(flows_down)!=-1)
 										{
 											cout<<"dups"<<endl;
-
 											continue;
 										}
 
@@ -864,7 +855,7 @@ void Controller::findFaults()
 		{	
 			if(prone_links[i]->label=="Tor") {
 				prone_links[i]->status=100;
-				continue;
+				//continue;
 			}
 			//	cout<<"Tor link is down"<<endl;
 			
@@ -909,7 +900,13 @@ void Controller::findFaults()
 				{
 					// cout<<"commiting on backup"<<endl;
 					
-					bool check = makeBackUp(flows_primary[j], flows_primary[j]->rate);
+					//bool check = makeBackUp(flows_primary[j], flows_primary[j]->rate);
+					
+					bool check = false;
+					if (flows_primary[j]->backUpPath.size() == 0) {
+						flows_primary[j]->backUpPath = flows_primary[j]->potentialBackUpPath;
+						check = true;
+					}
 					
 					//if(prone_links[i]->label=="Tor") {
 					//	cout<<"**XYZ TOR**"<<endl;
@@ -929,7 +926,7 @@ void Controller::findFaults()
 
 					if(check)
 					{
-						// cout<<"Going To Backup: flow id : "<< flows_primary[j]->flow_id<<" ";
+						 //cout<<"Going To Backup: flow id : "<< flows_primary[j]->flow_id<<" ";
 						// flows_primary[j]->backUpPath->print();
 						flows_on_back.push_back(flows_primary[j]);
 //						cout << "Flow "<<flows_primary[j]->flow_id<<" is down. Primary didn't find any backup" << endl;
@@ -1011,6 +1008,9 @@ void Controller::findFaults()
 								
 								//bool check = makeBackUp(flows_back[j], anti_rate);
 								bool check = false; // not even checking for backups
+								vector<Path*> newVector;
+								flows_back[j]->backUpPath = newVector;
+								
 								if (check) {
 									//cout << "backup found" << endl;
 								} else {
@@ -1086,6 +1086,8 @@ void Controller::revert_to_primary()
 //					int count = 0;
 	//				if (f->backUpPath[j]->beingUsed == 1) {
 					f->antiCommitPathAndUnreserve(f->backUpPath[j]);
+					vector<Path*> newVector;
+					f->backUpPath = newVector;
 //						count++;
 				}
 	//			cout<<"Flow "<<f->flow_id<<" is up. Backup size is "<<f->backUpPath.size()<<endl;
@@ -1152,7 +1154,9 @@ void Controller::revert_to_primary()
 			if(backUp)
 			{
 				
-				check=makeBackUp(flows_down[i], flows_down[i]->rate);
+				vector<Path*> newVector;
+				f->backUpPath = newVector;
+				check = true;
 				
 				if(check)
 				{
@@ -2043,81 +2047,6 @@ bool Controller::getPaths(Host* source, Host* dest, vector<Switch*> switches,vec
 	return intraRack;
 }
 
-bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size,double sTime)	//rate in MBps, size in MB
-{
-	// if 'intraRack' is true, then there will be no backup path, only 1 path
-	vector<Switch*> switches;
-	vector<Link*> links;
-	vector<bool> directions;
-	bool intraRack = getPaths(source, dest, switches, links, directions, 1);
-
-	// cout<<paths.size()<<" is the num of paths"<<endl;
-	filterPaths(rate,dest);
-	// check for only one path..n
-	
-	 if(intraRack && paths.size()!=1)
- 	 {
- 		int x=1/0;
- 	 	return 0;
- 	 }
-	if(!intraRack && paths.size()<1)
-	{
-		paths.clear();
-//		cout<<"ERROR: Request could not be entertained with Rate: "<<rate<<" Size: "<<size<<", Not enough Bandwith remaining on Candidate Paths"<<endl;
-
-		return 0;
-	}
-
-//	cout << "Request Entertained: Rate: "<<rate<<" Size: "<<size<<endl;
-	int ind=rand()%paths.size();
-	Path* primary=paths[ind];
-	paths.erase(paths.begin()+ind);
-	// cout<<"Primary Path is: "<<endl;
-	// primary->print();
-	Path* back=NULL;
-	vector<Path*> backups;
-
-
-
-//	if(backUp)
-//	{
-//		if(end_to_end)
-//		{
-//			paths.clear();
-//		}
-
-//		backups=getBackUpPathVector(primary,rate);
- //		// cout<<"Backup Path is: "<<endl;
- //		// back->print();
- //		if(backups.size()==0)
- //		{
- ////			int x=1/0;
-//		// cout<<"Backup Bandwidth not available"<<endl;
-//			return 0;
-//		}
-
- //		// if(sharing)
- //		// {
- //		// 	paths_to_be_shared.push_back(back);
- //		// }
-//	}
-
-
-	// TODO fix the error of multiple ppl sharing one pathF
-
-	// if(duplicateIn(back->links))
-	// 	back->print();
-
-	Flow* flow= new Flow(source,dest,primary,backups,rate,size,oneToOne,sTime,sharing,tor_to_tor);
-	flow->setID(flowNumber);
-	all_flows.push_back(flow);
-	flowNumber++;
-	if(flowNumber%1000==0)
-		cout<<flowNumber<<" is the num of flows committed"<<endl;
-	paths.clear();
-	// cout << "Flows generated ";
-	return 1;
-}
 
 int getCommonCount(vector<Switch*> a,vector<Switch*> b)
 {
@@ -2149,6 +2078,93 @@ int getCommonCount(vector<Link*> a,vector<Link*> b)
 		}
 	}
 	return count;
+}
+
+bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size,double sTime)	//rate in MBps, size in MB
+{
+	// if 'intraRack' is true, then there will be no backup path, only 1 path
+	vector<Switch*> switches;
+	vector<Link*> links;
+	vector<bool> directions;
+	bool intraRack = getPaths(source, dest, switches, links, directions, 1);
+
+	// cout<<paths.size()<<" is the num of paths"<<endl;
+	filterPaths(rate,dest);
+	// check for only one path..n
+	
+	if(intraRack && paths.size()!=1)
+ 	{
+ 		int x=1/0;
+		return 0;
+ 	}
+	if(!intraRack && paths.size()<1)
+	{
+		paths.clear();
+//		cout<<"ERROR: Request could not be entertained with Rate: "<<rate<<" Size: "<<size<<", Not enough Bandwith remaining on Candidate Paths"<<endl;
+
+		return 0;
+	}
+
+//	cout << "Request Entertained: Rate: "<<rate<<" Size: "<<size<<endl;
+	int ind=rand()%paths.size();
+	Path* primary=paths[ind];
+	paths.erase(paths.begin()+ind);
+	
+	if (paths.size() < 2) {
+		return 0;
+	}
+	
+	// cout<<"Primary Path is: "<<endl;
+	// primary->print();
+	Path* back=NULL;
+	vector<Path*> backups;
+
+//	if(backUp)
+
+//	{
+//		if(end_to_end)
+//		{
+//			paths.clear();
+//		}
+
+//		backups=getBackUpPathVector(primary,rate);
+ //		// cout<<"Backup Path is: "<<endl;
+ //		// back->print();
+ //		if(backups.size()==0)
+ //		{
+ ////			int x=1/0;
+//		// cout<<"Backup Bandwidth not available"<<endl;
+//			return 0;
+//		}
+
+ //		// if(sharing)
+ //		// {
+ //		// 	paths_to_be_shared.push_back(back);
+ //		// }
+//	}
+
+
+	// TODO fix the error of multiple ppl sharing one pathF
+
+	// if(duplicateIn(back->links))
+	// 	back->print();
+
+	Flow* flow= new Flow(source,dest,primary,backups,rate,size,oneToOne,sTime,sharing,tor_to_tor);
+	flow->setID(flowNumber);
+	all_flows.push_back(flow);
+	for (int i = 0; i < paths.size(); i++) {
+		if (getCommonCount(paths[i]->links, primary->links) == 0 && getCommonCount(paths[i]->switches, primary->switches) == 0) {
+			flow->potentialBackUpPath.push_back(paths[i]);
+			paths.erase(paths.begin()+i);
+			break;
+		}
+	}
+	flowNumber++;
+	if(flowNumber%1000==0)
+		cout<<flowNumber<<" is the num of flows committed"<<endl;
+	paths.clear();
+	// cout << "Flows generated ";
+	return 1;
 }
 
 Host* Controller::getHostInTor(int id)
@@ -2238,7 +2254,7 @@ SprayData* Controller::getSprayPath(Host* src, Host* dst, int rate, Path* primar
 		int x=1/0;
 		return NULL;	
 	}
-		
+	
 	//Path* back = NULL;
 	//int highestCount = 0;
 	
@@ -2262,15 +2278,15 @@ SprayData* Controller::getSprayPath(Host* src, Host* dst, int rate, Path* primar
 	}
 	
 	//for (int i = 0; i < paths.size(); i++)
-	//	toReserve.push_back(0);
+	//toReserve.push_back(0);
 	
 	vector<Path*> selectedPath;
 	
 	while (reserved < rate) {
 		int check=0;
 		for (int i = 0; i < paths.size(); i++) {
-			if (paths[i]->isValid(rate) && reserved < rate) {
-				toReserve.push_back(rate);// we are checking only and not reserving bw
+			if (paths[i]->isValid(rate) && reserved < rate && getCommonCount(paths[i]->links, primary_path->links) == 0 && getCommonCount(paths[i]->switches, primary_path->switches) == 0) {
+				toReserve.push_back(rate); // we are checking only and not reserving bw
 				check=1;
 				selectedPath.push_back(paths[i]);
 				reserved = rate;
