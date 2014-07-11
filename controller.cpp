@@ -769,6 +769,7 @@ bool Controller::checkDowns(Flow* flow) {
 	if (flow->primaryPath->isUp()) {
 		return true;
 	}
+	cout<<"Flow is down"<<endl;
 	return false;
 }
 
@@ -795,7 +796,7 @@ void Controller::findFaults(int curSec)
  			}
 
 			if(prone_switches[i]->level==2) {
-				//cout<<"Tor switch is down with resilence: "<<prone_switches[i]->resilience<<" Status: "<<prone_switches[i]->status<<" At: "<<curSec<<endl;
+				cout<<"Tor switch is down with resilence: "<<prone_switches[i]->resilience<<" Status: "<<prone_switches[i]->status<<" At: "<<curSec<<endl;
 			}
 
 			for(int j=0;j<flows_primary.size();j++)
@@ -816,7 +817,7 @@ void Controller::findFaults(int curSec)
 
 //						cout << "Flow "<<flows_primary[j]->flow_id<<" is down/pri. Culprit switch is " << prone_switches[i]->toString()<<endl;
 						if(prone_switches[i]->level==2) {
-//							cout<<"Tor XYZ1"<<endl;
+							cout<<"Dow due to TOR"<<endl;
 						}
 
 					}
@@ -876,12 +877,12 @@ void Controller::findFaults(int curSec)
 										{
 //											cout<<"dups"<<endl;
 
-											continue;
+//											continue;
 										}
 //										cout << "Flow "<<flows_back[j]->flow_id<<" is down/bak. Culprit switch is " << prone_switches[i]->toString()<<endl;
 										flows_down.push_back(flows_back[j]);
 										if(prone_switches[i]->level==2) {
-//											cout<<"Tor sXYZ"<<endl;
+											cout<<"Down due to /tor"<<endl;
 										}
 
 										break;
@@ -911,7 +912,7 @@ void Controller::findFaults(int curSec)
 	{
 		if( prone_links[i]->getStatus() < 0 )
 		{	
-			//	cout<<"Tor link is down"<<endl;
+				//cout<<"Tor link is down"<<endl;
 			
 			vector<Flow*> flows_primary=prone_links[i]->getFlowsOnPrimary();
 			vector<Flow*> flows_back=prone_links[i]->getFlowsOnBack();
@@ -944,7 +945,7 @@ void Controller::findFaults(int curSec)
 			}
 
 			if(prone_links[i]->label=="Tor") {
-				//cout<<"Tor link "<<prone_links[i]->link_id<<" is down with resilience: "<<prone_links[i]->resilience<<" Status: "<<prone_links[i]->status<<" At: "<<curSec<<endl;
+				cout<<"Tor link "<<prone_links[i]->link_id<<" is down with resilience: "<<prone_links[i]->resilience<<" Status: "<<prone_links[i]->status<<" At: "<<curSec<<endl;
 			}
 
 			for(int j=0;j<flows_primary.size();j++)
@@ -963,7 +964,7 @@ void Controller::findFaults(int curSec)
 					} else {
 						flows_down.push_back(flows_primary[j]);
 						if(prone_links[i]->label=="Tor") {
-//							cout<<"1xyz Tor"<<endl;
+							cout<<"DOWN"<<endl;
 						}
 					}
 				}
@@ -972,7 +973,7 @@ void Controller::findFaults(int curSec)
 //					cout << "Flow "<<flows_primary[j]->flow_id<<" is down/pri. Culprit links is " << prone_links[i]->link_id<<endl;
 					flows_down.push_back(flows_primary[j]);
 					if(prone_links[i]->label=="Tor") {
-//						cout<<"1xyz Tor"<<endl;
+						cout<<"DOWN"<<endl;
 					}
 
 				}
@@ -1022,18 +1023,19 @@ void Controller::findFaults(int curSec)
 								
 								if (checkDowns(flows_back[j])) {
 									//flows_on_back.push_back(flows_back[j]);
-								} else {
+								} else 
+								{
 									fail = 1;
 									if(flows_back[j]->contains(flows_down)!=-1)
-								{
+									{
 	//								cout<<"dups"<<endl;
-									continue;
-								}
+	//								continue;
+									}
 
 //								cout << "Flow "<<flows_back[j]->flow_id<<" is down/bak. Culprit links is " << prone_links[i]->link_id<<endl;
 									flows_down.push_back(flows_back[j]);
 									if(prone_links[i]->label=="Tor") {
-//										cout<<"1xyz Tor"<<endl;
+										cout<<"DOWN"<<endl;
 									}
 
 									break;
@@ -1046,8 +1048,8 @@ void Controller::findFaults(int curSec)
 //								cout << "Flow "<<flows_down[j]->flow_id<<" is down/bak. Culprit links is " << prone_links[i]<<endl;
 
 //								cout<<flows_back[j]->flow_id<<" is down "<<endl;
-								for(int o =0; o<flows_back[j]->backUpPath.size();o++)
-									flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[o]);
+//								for(int o =0; o<flows_back[j]->backUpPath.size();o++)
+//									flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[o]);
 								
 								break;
 							}
