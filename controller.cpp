@@ -51,7 +51,7 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	assignResilience();
 	
 	int increase_by = 1000000; // increase capacities of links by this num
-	int primary = 614.4;
+	int primary = 1024;
 	
 	if(makeFlows)
 	{
@@ -813,13 +813,14 @@ void Controller::findFaults(int curSec)
 						//		continue;
 						//}
 						
-						flows_down.push_back(flows_primary[j]);
-
+						if(notIn(flows_down,flows_primary[j])) {
+							flows_down.push_back(flows_primary[j]);
+						}
+						
 //						cout << "Flow "<<flows_primary[j]->flow_id<<" is down/pri. Culprit switch is " << prone_switches[i]->toString()<<endl;
 						if(prone_switches[i]->level==2) {
 							cout<<"Dow due to TOR"<<endl;
 						}
-
 					}
 
 				}
@@ -829,7 +830,9 @@ void Controller::findFaults(int curSec)
 					// {
 					 	int x=1/0;
 					// }
-					flows_down.push_back(flows_primary[j]);
+						if(notIn(flows_down,flows_primary[j])) {
+							flows_down.push_back(flows_primary[j]);
+						}
 				}
 			}
 
@@ -880,7 +883,9 @@ void Controller::findFaults(int curSec)
 //											continue;
 										}
 //										cout << "Flow "<<flows_back[j]->flow_id<<" is down/bak. Culprit switch is " << prone_switches[i]->toString()<<endl;
-										flows_down.push_back(flows_back[j]);
+										if(notIn(flows_down,flows_back[j])) {
+											flows_down.push_back(flows_back[j]);
+										}
 										if(prone_switches[i]->level==2) {
 											cout<<"Down due to /tor"<<endl;
 										}
@@ -962,7 +967,9 @@ void Controller::findFaults(int curSec)
 					if (checkDowns(flows_primary[j])) {
 						//flows_on_back.push_back(flows_primary[j]);
 					} else {
-						flows_down.push_back(flows_primary[j]);
+						if(notIn(flows_down,flows_primary[j])) {
+							flows_down.push_back(flows_primary[j]);
+						}
 						if(prone_links[i]->label=="Tor") {
 							cout<<"DOWN"<<endl;
 						}
@@ -971,7 +978,9 @@ void Controller::findFaults(int curSec)
 				else
 				{
 //					cout << "Flow "<<flows_primary[j]->flow_id<<" is down/pri. Culprit links is " << prone_links[i]->link_id<<endl;
-					flows_down.push_back(flows_primary[j]);
+					if(notIn(flows_down,flows_primary[j])) {
+						flows_down.push_back(flows_primary[j]);
+					}
 					if(prone_links[i]->label=="Tor") {
 						cout<<"DOWN"<<endl;
 					}
@@ -1198,9 +1207,7 @@ void Controller::revert_to_primary()
 }
 void Controller::detect_downTime()
 {
-
 	downTime+=flows_down.size();
-	
 
 }
 
@@ -2122,7 +2129,7 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 
 	//gohar	
 	int counter = 0;
-	int num_of_backups = 2;
+	int num_of_backups = 5;
 	
 	for (int i = 0; i < paths.size(); i++) {
 		//getCommonCount(paths[i]->switches, primary->switches) == 2 && 
