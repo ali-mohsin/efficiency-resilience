@@ -86,7 +86,7 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	// int x=1/0;
 	 for(int i=0;i<all_links.size();i++)
 	 {
-	 	cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_primary.size()<<" Flows passing through"<<endl;
+//	 	cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_primary.size()<<" Flows passing through"<<endl;
 	// 	cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_back.size()<<" Flows passing through"<<endl;
 
 	 	 if(all_links[i]->flows_primary.size()==0 && all_links[i]->flows_back.size()==0)
@@ -104,7 +104,7 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	}
 	for(int i=0;i<all_switches.size();i++)
 	{
-	 	cout<<"Switch with ID: "<<all_switches[i]->toString()<<" has "<<all_switches[i]->primary_flows.size()<<" Flows passing through"<<endl;
+//	 	cout<<"Switch with ID: "<<all_switches[i]->toString()<<" has "<<all_switches[i]->primary_flows.size()<<" Flows passing through"<<endl;
 		
 		
 	}
@@ -123,8 +123,9 @@ bool Controller::makeBackUp(Flow* flow, int rate){
 	
 	SprayData* sprayData = getSprayPath(src, dest, rate, primaryPath);
 
-	if (!sprayData)
+	if (!sprayData){
 		return false;
+	}
 					
 	//for(int i=0;i<backUpPath->switches.size();i++)             
 	//	backUpPath->switches[i]->addBackFlow(flow);
@@ -140,6 +141,36 @@ bool Controller::makeBackUp(Flow* flow, int rate){
 	// We are not pushing back flow, I have added push_back wali line again	
 	return true;
 }
+
+
+bool Controller::makeBackUpTorToTor(Flow* flow, int rate, vector<Path*> backups){
+//	cout<<"Call to makeBackup by Flow_ID "<<flow->flow_id<<endl;
+	Path* primaryPath = flow->primaryPath;
+	Host* src = primaryPath->getSrcHost();
+	Host* dest = primaryPath->getDestHost();
+//	cout<<" Requested bandwidth "<<rate<<endl;
+	
+	//SprayData* sprayData = getSprayPath(src, dest, rate, primaryPath);
+
+	//if (!sprayData){
+		//return false;
+	//}
+	
+	//for(int i=0;i<backUpPath->switches.size();i++)             
+	//	backUpPath->switches[i]->addBackFlow(flow);
+	//			
+	//for(int i=0;i<backUpPath->links.size();i++)             
+	//	backUpPath->links[i]->addBackFlow(flow,flow->rate,backUpPath->direction[i],0, 0); 
+	for (int i = 0; i < backups.size(); i++) {
+		flow->backUpPath.push_back(backups[i]);
+		flow->commitPathAndReserve(backups[i], rate);	
+	}
+	//cout<<" Success, new backup path size is "<<flow->backUpPath.size()<<endl;
+
+	// We are not pushing back flow, I have added push_back wali line again	
+	return true;
+}
+
 
 vector<float> Controller::getAllocation(int p)
 {
@@ -729,8 +760,19 @@ bool notIn(vector<Path*> v,Path* e)
 	return true;
 }
 
+bool Controller::checkDowns(Flow* flow) {
+	for (int i = 0; i < flow->backUpPath.size(); i++) {
+		if (flow->backUpPath[i]->isUp()) {
+			return true;
+		}
+	}
+	if (flow->primaryPath->isUp()) {
+		return true;
+	}
+	return false;
+}
 
-void Controller::findFaults()
+void Controller::findFaults(int curSec)
 {
 	//////startTimer();
 	int len = prone_switches.size();
@@ -753,7 +795,7 @@ void Controller::findFaults()
  			}
 
 			if(prone_switches[i]->level==2) {
-				cout<<"Tor switch is down with resilence "<<prone_switches[i]->resilience<<endl;
+				cout<<"Tor switch is down with resilence: "<<prone_switches[i]->resilience<<" Status: "<<prone_switches[i]->status<<" At: "<<curSec<<endl;
 			}
 
 			for(int j=0;j<flows_primary.size();j++)
@@ -763,15 +805,14 @@ void Controller::findFaults()
 				if(backUp)
 				{
 				
-					bool check = makeBackUp(flows_primary[j], flows_primary[j]->rate);
+					//bool check = makeBackUp(flows_primary[j], flows_primary[j]->rate);
 					
 					//if(prone_switches[i]->status==2) {
 					//	cout << "** tor link down **" << endl;
 					//}
 					
-					if (check) {
+					if (checkDowns(flows_primary[j])) {
 						flows_on_back.push_back(flows_primary[j]);
-						//cout << "backup found" << endl;
 					} else {
 						//if(flows_primary[j]->contains(flows_down)!=-1)
 						//{
@@ -781,9 +822,9 @@ void Controller::findFaults()
 						
 						flows_down.push_back(flows_primary[j]);
 
-						cout << "Flow "<<flows_primary[j]->flow_id<<" is down/pri. Culprit switch is " << prone_switches[i]->toString()<<endl;
+//						cout << "Flow "<<flows_primary[j]->flow_id<<" is down/pri. Culprit switch is " << prone_switches[i]->toString()<<endl;
 						if(prone_switches[i]->level==2) {
-							cout<<"Tor XYZ1"<<endl;
+//							cout<<"Tor XYZ1"<<endl;
 						}
 
 					}
@@ -825,15 +866,15 @@ void Controller::findFaults()
 									index_of_backupPath=l;
 									//break;
 									//cout << "ANTICOMMIT CALLED switches BY flow " << flows_back[j]->flow_id << endl;
-									int anti_rate = flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[index_of_backupPath]);
+									//int anti_rate = flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[index_of_backupPath]);
 //									cout << "anti_rate is " << anti_rate << endl;
-									if(anti_rate == 0){
+									//if(anti_rate == 0){
 //										cout<<"****Anti rate is zero, check ooper for dups***"<<endl;
-										continue;
-									}
-									bool check = makeBackUp(flows_back[j], anti_rate);
-									if (check) {
-										//cout << "backup found" << endl;
+										//continue;
+									//}
+									//bool check = makeBackUp(flows_back[j], anti_rate);
+									if (checkDowns(flows_primary[j])) {
+										flows_on_back.push_back(flows_primary[j]);
 									} else {
 										fail =1;
 //										cout << "Flow "<<flows_back[j]->flow_id<<" is down. Backup path was not found" << endl;
@@ -843,10 +884,10 @@ void Controller::findFaults()
 
 											continue;
 										}
-										cout << "Flow "<<flows_back[j]->flow_id<<" is down/bak. Culprit switch is " << prone_switches[i]->toString()<<endl;
+//										cout << "Flow "<<flows_back[j]->flow_id<<" is down/bak. Culprit switch is " << prone_switches[i]->toString()<<endl;
 										flows_down.push_back(flows_back[j]);
 										if(prone_switches[i]->level==2) {
-											cout<<"Tor sXYZ"<<endl;
+//											cout<<"Tor sXYZ"<<endl;
 										}
 
 										break;
@@ -909,7 +950,7 @@ void Controller::findFaults()
 			}
 
 			if(prone_links[i]->label=="Tor") {
-				cout<<"Tor link "<<prone_links[i]->link_id<<" is down with resilience "<<prone_links[i]->resilience<<endl;
+				cout<<"Tor link "<<prone_links[i]->link_id<<" is down with resilience: "<<prone_links[i]->resilience<<" Status: "<<prone_links[i]->status<<" At: "<<curSec<<endl;
 			}
 
 			for(int j=0;j<flows_primary.size();j++)
@@ -923,68 +964,21 @@ void Controller::findFaults()
 				{
 					// cout<<"commiting on backup"<<endl;
 					
-					bool check = makeBackUp(flows_primary[j], flows_primary[j]->rate);
-					
-					//if(prone_links[i]->label=="Tor") {
-					//	cout<<"**XYZ TOR**"<<endl;
-					//}
-					
-					if (check) {
-						//cout << "backup found" << endl;
-					} 
-					
-					//int commit =0;
-					//for(int k =0; k<flows_primary[j]->backUpPath.size();k++){
-					//	if(flows_primary[j]->backUpPath[k]->isValid(flows_primary[j]->getBackUpRate()))
-					//			commit=flows_primary[j]->commitPath(flows_primary[j]->backUpPath[k],1);
-					//			if(commit)
-					//				break;
-					//	}
-
-					if(check)
-					{
-						// cout<<"Going To Backup: flow id : "<< flows_primary[j]->flow_id<<" ";
-						// flows_primary[j]->backUpPath->print();
+					if (checkDowns(flows_primary[j])) {
 						flows_on_back.push_back(flows_primary[j]);
-//						cout << "Flow "<<flows_primary[j]->flow_id<<" is down. Primary didn't find any backup" << endl;
-
-						 // cout<<"Commit success, put on backup flows"<<endl;
-					}
-					else
-					{
-						// cout<<"Going Down the Backup is already down: flow id: "<<flows_primary[j]->flow_id<<" ";
-						// flows_primary[j]->backUpPath->print();
-
-						// if(!notIn(flows_down,flows_primary[j]))
-						// {
-
-						// 	// flows_primary[j]->primaryPath->print();
-						// 	// flows_primary[j]->backUpPath->print();
-						// 	int x=1/0;
-						// }
-					//	if(flows_primary[j]->contains(flows_down)!=-1)
-					//{
-					//	cout<<"warninnggg"<<endl;
-					//	continue;
-					//}
-						cout << "Flow "<<flows_primary[j]->flow_id<<" is down/pri. Culprit links is " << prone_links[i]->link_id<<endl;
+					} else {
 						flows_down.push_back(flows_primary[j]);
 						if(prone_links[i]->label=="Tor") {
-							cout<<"1xyz Tor"<<endl;
+//							cout<<"1xyz Tor"<<endl;
 						}
-
-						// cout<<"Mayday: "<<endl;
-						// flows_primary[j]->primaryPath->print();
-						// flows_primary[j]->backUpPath->print();
-						 // cout<<"Commit Failed, put on down flows"<<endl;
 					}
 				}
 				else
 				{
-					cout << "Flow "<<flows_primary[j]->flow_id<<" is down/pri. Culprit links is " << prone_links[i]->link_id<<endl;
+//					cout << "Flow "<<flows_primary[j]->flow_id<<" is down/pri. Culprit links is " << prone_links[i]->link_id<<endl;
 					flows_down.push_back(flows_primary[j]);
 					if(prone_links[i]->label=="Tor") {
-						cout<<"1xyz Tor"<<endl;
+//						cout<<"1xyz Tor"<<endl;
 					}
 
 				}
@@ -1044,10 +1038,10 @@ void Controller::findFaults()
 									continue;
 								}
 
-								cout << "Flow "<<flows_back[j]->flow_id<<" is down/bak. Culprit links is " << prone_links[i]->link_id<<endl;
+//								cout << "Flow "<<flows_back[j]->flow_id<<" is down/bak. Culprit links is " << prone_links[i]->link_id<<endl;
 									flows_down.push_back(flows_back[j]);
 									if(prone_links[i]->label=="Tor") {
-										cout<<"1xyz Tor"<<endl;
+//										cout<<"1xyz Tor"<<endl;
 									}
 
 									break;
@@ -1084,7 +1078,7 @@ void Controller::revert_to_primary()
 	{
 		if(critical_switches[i]->status >= 0)
 		{
-			cout<<"Critical Switch "<<critical_switches[i]->toString()<<" is up"<<endl;
+//			cout<<"Critical Switch "<<critical_switches[i]->toString()<<" is up"<<endl;
 			critical_switches.erase(critical_switches.begin()+i);
 			i--;
 			revert=true;
@@ -1095,7 +1089,7 @@ void Controller::revert_to_primary()
 	{
 		if(critical_links[i]->status >= 0)
 		{
-			cout<<"Critical link "<<critical_links[i]->link_id<<" is up"<<endl;
+//			cout<<"Critical link "<<critical_links[i]->link_id<<" is up"<<endl;
 			critical_links.erase(critical_links.begin()+i);
 			i--;
 			revert=true;
@@ -1168,7 +1162,7 @@ void Controller::revert_to_primary()
 	// check again for backup paths here, backup path can be up.Done now :)
 	if(revert)
 	{
-		cout<<"up: Num of flows down: "<<flows_down.size()<<endl;
+//		cout<<"up: Num of flows down: "<<flows_down.size()<<endl;
 
 		for (int i=0;i<flows_down.size();i++)
 		{
@@ -1176,7 +1170,7 @@ void Controller::revert_to_primary()
 			bool check=f->primaryPath->isUp();
 			if(check)
 			{
-				cout<<"Flow "<<f->flow_id<<" is up. Put on Pri "<<endl;
+//				cout<<"Flow "<<f->flow_id<<" is up. Put on Pri "<<endl;
 				f->commitPath(f->primaryPath,0); //Assumption is that link capacity would not be a bottleneck
 				flows_down.erase(flows_down.begin()+i);
 				i--;
@@ -1194,14 +1188,14 @@ void Controller::revert_to_primary()
 				if(check)
 				{
 
-					cout<<"Flow "<<f->flow_id<<" is up. Put on bak "<<endl;
+//					cout<<"Flow "<<f->flow_id<<" is up. Put on bak "<<endl;
 					flows_down.erase(flows_down.begin()+i);
 					i--;
 					flows_on_back.push_back(f);
 				}
 			}
 		}
-		cout<<"leaving: Num of flows down: "<<flows_down.size()<<endl;
+//		cout<<"leaving: Num of flows down: "<<flows_down.size()<<endl;
 
 	}
 
@@ -1722,7 +1716,7 @@ void Controller::autofail(int curSec)
 		// stopTimer("revert_to_primary");
 
 		// startTimer();
-		findFaults();
+		findFaults(curSec);
 		// stopTimer("find faults");
 
 		// startTimer();
@@ -1743,7 +1737,7 @@ void Controller::getIntraPodPaths(Switch* src, Switch* dst, Link* destLink, vect
 
 	if(src==NULL || dst==NULL)
 	{
-		cout<<"moving back; base case"<<endl;
+//		cout<<"moving back; base case"<<endl;
 		return;
 	}
 
@@ -1770,7 +1764,7 @@ void Controller::getIntraPodPaths(Switch* src, Switch* dst, Link* destLink, vect
 		}
 		if(curDst->num_ports==0)
 		{
-			cout<<"culprit link: "<<curLink->label<<endl;
+//			cout<<"culprit link: "<<curLink->label<<endl;
 		}
 
 		if(dir==0 && src->level==1)
@@ -1823,7 +1817,7 @@ void Controller::getInterPodPaths(Switch* src, Switch* dst, Link* destLink, vect
 
 	if(src==NULL || dst==NULL)
 	{
-		cout<<"moving back; base case"<<endl;
+//		cout<<"moving back; base case"<<endl;
 		return;
 	}
 
@@ -1866,7 +1860,7 @@ void Controller::getInterPodPaths(Switch* src, Switch* dst, Link* destLink, vect
 		}
 		if(curDst->num_ports==0)
 		{
-			cout<<"culprit link: "<<curLink->label<<endl;
+//			cout<<"culprit link: "<<curLink->label<<endl;
 		}
 
 		if(dir==0 && src->level==0)
@@ -2057,82 +2051,6 @@ bool Controller::getPaths(Host* source, Host* dest, vector<Switch*> switches,vec
 	return intraRack;
 }
 
-bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size,double sTime)	//rate in MBps, size in MB
-{
-	// if 'intraRack' is true, then there will be no backup path, only 1 path
-	vector<Switch*> switches;
-	vector<Link*> links;
-	vector<bool> directions;
-	bool intraRack = getPaths(source, dest, switches, links, directions, 1);
-
-	// cout<<paths.size()<<" is the num of paths"<<endl;
-	filterPaths(rate,dest);
-	// check for only one path..n
-	
-	 if(intraRack && paths.size()!=1)
- 	 {
- 		int x=1/0;
- 	 	return 0;
- 	 }
-	if(!intraRack && paths.size()<1)
-	{
-		paths.clear();
-//		cout<<"ERROR: Request could not be entertained with Rate: "<<rate<<" Size: "<<size<<", Not enough Bandwith remaining on Candidate Paths"<<endl;
-
-		return 0;
-	}
-
-//	cout << "Request Entertained: Rate: "<<rate<<" Size: "<<size<<endl;
-	int ind=rand()%paths.size();
-	Path* primary=paths[ind];
-	paths.erase(paths.begin()+ind);
-	// cout<<"Primary Path is: "<<endl;
-	// primary->print();
-	Path* back=NULL;
-	vector<Path*> backups;
-
-
-
-//	if(backUp)
-//	{
-//		if(end_to_end)
-//		{
-//			paths.clear();
-//		}
-
-//		backups=getBackUpPathVector(primary,rate);
- //		// cout<<"Backup Path is: "<<endl;
- //		// back->print();
- //		if(backups.size()==0)
- //		{
- ////			int x=1/0;
-//		// cout<<"Backup Bandwidth not available"<<endl;
-//			return 0;
-//		}
-
- //		// if(sharing)
- //		// {
- //		// 	paths_to_be_shared.push_back(back);
- //		// }
-//	}
-
-
-	// TODO fix the error of multiple ppl sharing one pathF
-
-	// if(duplicateIn(back->links))
-	// 	back->print();
-
-	Flow* flow= new Flow(source,dest,primary,backups,rate,size,oneToOne,sTime,sharing,tor_to_tor);
-	flow->setID(flowNumber);
-	all_flows.push_back(flow);
-	flowNumber++;
-	if(flowNumber%1000==0)
-		cout<<flowNumber<<" is the num of flows committed"<<endl;
-	paths.clear();
-	// cout << "Flows generated ";
-	return 1;
-}
-
 int getCommonCount(vector<Switch*> a,vector<Switch*> b)
 {
 	int count=0;
@@ -2164,6 +2082,112 @@ int getCommonCount(vector<Link*> a,vector<Link*> b)
 	}
 	return count;
 }
+
+bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size,double sTime)	//rate in MBps, size in MB
+{
+	// if 'intraRack' is true, then there will be no backup path, only 1 path
+	vector<Switch*> switches;
+	vector<Link*> links;
+	vector<bool> directions;
+	bool intraRack = getPaths(source, dest, switches, links, directions, 1);
+
+	// cout<<paths.size()<<" is the num of paths"<<endl;
+	filterPaths(rate,dest);
+	
+	
+	
+	// check for only one path..n
+	//
+	//for loop to n
+	//modified spray path
+	 if(intraRack && paths.size()!=1)
+ 	 {
+ 		int x=1/0;
+ 	 	return 0;
+ 	 }
+	if(!intraRack && paths.size()<1)
+	{
+		paths.clear();
+//		cout<<"ERROR: Request could not be entertained with Rate: "<<rate<<" Size: "<<size<<", Not enough Bandwith remaining on Candidate Paths"<<endl;
+
+		return 0;
+	}
+
+//	cout << "Request Entertained: Rate: "<<rate<<" Size: "<<size<<endl;
+	int ind=rand()%paths.size();
+	Path* primary=paths[ind];
+	paths.erase(paths.begin()+ind);
+	
+	vector<Path*> backups;
+	Flow* flow= new Flow(source,dest,primary,backups,rate,size,oneToOne,sTime,sharing,tor_to_tor);
+	flow->setID(flowNumber);
+	all_flows.push_back(flow);
+	flowNumber++;
+	if(flowNumber%1000==0){
+		cout<<flowNumber<<" is the num of flows committed"<<endl;
+	}
+	
+	
+	//gohar
+	
+	int counter = 0;
+	int num_of_backups = 2;
+	for (int i = 0; i < paths.size(); i++) {
+		if (getCommonCount(paths[i]->switches, primary->switches) == 0 && getCommonCount(paths[i]->links, primary->links) == 0 && paths[i]->isValid(rate)) {
+			if (counter < num_of_backups) {
+				backups.push_back(paths[i]);
+				counter++;
+			}
+		}
+	}
+	
+	if (counter != num_of_backups) {
+		cout << "enough backups not found" << endl;
+		return NULL;
+	}
+	
+	makeBackUpTorToTor(flow, rate, backups);
+	
+	// cout<<"Primary Path is: "<<endl;
+	// primary->print();
+	Path* back=NULL;
+
+
+//	if(backUp)
+//	{
+//		if(end_to_end)
+//		{
+//			paths.clear();
+//		}
+
+//		backups=getBackUpPathVector(primary,rate);
+ //		// cout<<"Backup Path is: "<<endl;
+ //		// back->print();
+ //		if(backups.size()==0)
+ //		{
+ ////			int x=1/0;
+//		// cout<<"Backup Bandwidth not available"<<endl;
+//			return 0;
+//		}
+
+ //		// if(sharing)
+ //		// {
+ //		// 	paths_to_be_shared.push_back(back);
+ //		// }
+//	}
+
+
+	// TODO fix the error of multiple ppl sharing one pathF
+
+	// if(duplicateIn(back->links))
+	// 	back->print();
+
+	
+	paths.clear();
+	// cout << "Flows generated ";
+	return 1;
+}
+
 
 Host* Controller::getHostInTor(int id)
 {
@@ -2248,7 +2272,7 @@ SprayData* Controller::getSprayPath(Host* src, Host* dst, int rate, Path* primar
 	}
 	
 	if(paths.size()==0){
-		cout<<"this should'nt happen, path.size==0"<<endl;
+//		cout<<"this should'nt happen, path.size==0"<<endl;
 		int x=1/0;
 		return NULL;	
 	}
@@ -2271,7 +2295,7 @@ SprayData* Controller::getSprayPath(Host* src, Host* dst, int rate, Path* primar
 	}
 	
 	if (paths.size() == 0) {
-		cout << "all paths are down" << endl;
+//		cout << "all paths are down" << endl;
 		return NULL;
 	}
 	
@@ -2291,7 +2315,9 @@ SprayData* Controller::getSprayPath(Host* src, Host* dst, int rate, Path* primar
 			}
 		}
 		if(!check && reserved < rate){
-			cout<<"BW not available"<<endl;
+			paths.clear();
+
+//			cout<<"BW not available"<<endl;
 			return NULL;
 		} else {
 			sent++;

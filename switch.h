@@ -60,6 +60,8 @@ public:
 	vector<Link*> getTORs();
 	vector<Flow*> getFlowsOnPrimary();
 	vector<Flow*> getFlowsOnBack();
+	void addFlowDataEntry(Flow* flow);
+
 
 	
 

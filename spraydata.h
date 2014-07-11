@@ -3,9 +3,9 @@
 
 class SprayData
 {
-public:
-	vector<int> toReserve;
-	vector<Path*> paths;
+	public:
+		vector<int> toReserve;
+		vector<Path*> paths;
 };
 
 

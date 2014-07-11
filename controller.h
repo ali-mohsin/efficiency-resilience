@@ -69,7 +69,7 @@ public:
 	void assignPaths();
 	void autofail(int);									//primary + backups
 	bool instantiateFlow(Host* source, Host* dest, double rate, int size,double);	//rate in MBps, size in MB
-	void findFaults();
+	void findFaults(int curSec);
 	Path* getPathRandom(Host* source, Host* dest);
 	void getAllPaths(Switch* src,Switch* dst, vector<Switch*> switches,vector<Link*> links, vector<bool> direction, int dir);
 	Controller(int kay,int,int,int,int,int,int,int);
@@ -131,7 +131,8 @@ public:
 	// gohar
 	bool makeBackUp(Flow* flow, int rate);
 	SprayData* getSprayPath(Host* src, Host* dst, int rate, Path* primary_path);
-	
+	bool makeBackUpTorToTor(Flow* flow, int rate, vector<Path*> backups);
+	bool checkDowns(Flow* flow);
 };
 
 #endif /* CONTROLLER_H */

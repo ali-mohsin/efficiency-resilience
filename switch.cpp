@@ -192,7 +192,6 @@ string Switch::toString()
 	return "["+s + ","+ Device::toString();//+"\t\t------------------------------------------\n";
 }
 
-
 void Switch::addPrimaryFlow(Flow* flow)
 {
 	primary_flows.push_back(flow);

@@ -187,7 +187,7 @@ void storeFailure(int pid, int level, int did, float fTime)
 	failed.push_back(false);
 	failComplete.push_back(0.0);
 }
-
+/*
 void * pingFaults(void * args)
 {
 	struct timespec time1, time2;
@@ -234,3 +234,4 @@ void * pingFaults(void * args)
 	}
 
 }
+*/
