@@ -157,6 +157,7 @@ bool Flow::commitPathAndReserve(Path* path,int rate)
 		}
 		for (int i = 0; i < backUpPath[selected]->switches.size(); i++) {			
 			backUpPath[selected]->switches[i]->addBackFlow(this);
+			backUpPath[selected]->switches[i]->addFlowDataEntry(flow_id, rate,this,path);
 		}
 	} else {
 		cout << "This should never happen, selected = " << selected << endl;

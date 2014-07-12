@@ -125,11 +125,19 @@ void Link::addPrimaryFlow(Flow* f,int rate, int dir, int  back)
 	num_flows++;
 	if(dir==1)
 	{
+		if (available_cap_up-rate >= 0) {
 			available_cap_up-=rate;
+		} else {
+			cout << "@@ ERROR @@" << endl;
+		}
 	}
 	else
 	{
+		if (available_cap_down-rate >= 0) {
 			available_cap_down-=rate;
+		} else {
+			cout << "@@ ERROR @@" << endl;
+		}
 	}
 
 }
@@ -142,13 +150,21 @@ void Link::addBackFlow(Flow* f,int rate, int dir, int  back, int tor2tor)
 	
 	if(dir==1)
 	{
-			backup_up+=rate;
-			available_cap_up-=rate;
+			if (available_cap_up-rate >= 0) {
+					available_cap_up-=rate;
+					backup_up+=rate;
+			} else {
+				cout << "@@ ERROR @@" << endl;
+			}
 	}
 	else
 	{
-			backup_down+=rate;
-			available_cap_down-=rate;
+			if (available_cap_down-rate >= 0) {
+				available_cap_down-=rate;
+				backup_down+=rate;
+			} else {
+				cout << "@@ ERROR @@" << endl;
+			}
 	}
 
 }
@@ -160,13 +176,21 @@ void Link::addBackFlow(int rate, int dir)
 		
 	if(dir==1)
 	{
-		backup_up+=rate;
-		available_cap_up-=rate;
+		if (available_cap_up-rate >= 0) {
+			available_cap_up-=rate;
+			backup_up+=rate;
+		} else {
+			cout << "@@ ERROR @@" << endl;
+		}
 	}
 	else
 	{
-		backup_down+=rate;
-		available_cap_down-=rate;
+		if (available_cap_down-rate >= 0) {
+			available_cap_down-=rate;
+			backup_down+=rate;
+		} else {
+			cout << "@@ ERROR @@" << endl;
+		}
 	}
 }
 

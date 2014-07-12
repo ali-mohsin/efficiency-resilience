@@ -26,7 +26,7 @@ public:
 	int resilience; // 0 = no fail, 1 = single failure, 2 = multi-failure
 	
 	//gohar
-	//vector<FlowData> flowData;
+	vector<FlowData> flowData;
 
 	Switch(int pid, int did, string label, int l,int num):Device(new Address(pid, did),label)
 	{
@@ -60,7 +60,8 @@ public:
 	vector<Link*> getTORs();
 	vector<Flow*> getFlowsOnPrimary();
 	vector<Flow*> getFlowsOnBack();
-
+	
+	void addFlowDataEntry(int f_id, int r, Flow* f, Path* path);
 	
 
 };

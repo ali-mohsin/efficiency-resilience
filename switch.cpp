@@ -227,3 +227,21 @@ float Switch::get_ratio(int p)
 // 		}
 // 	}
 // }
+
+void Switch::addFlowDataEntry(int f_id, int r, Flow* flow,Path* path) {
+	FlowData f;
+	f.flow_id = f_id;
+	f.rate = r;
+	f.path=path;
+	flowData.push_back(f);
+	int check=0;
+	//for(int i=0; i<flow_back.size();i++)
+	//{
+	//	if(flow_back[i]==f)
+	//		check=1;
+	//}
+
+	//if(!check)
+	back_flows.push_back(flow);
+	
+}

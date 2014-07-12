@@ -50,13 +50,13 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	totalTime=runFor;
 	assignResilience();
 	
-	int increase_by = 1000000; // increase capacities of links by this num
-	int primary = 614.4;
+	int increase_by = 100; // increase capacities of links by this num
+	int primary = 1000-increase_by;
 	
 	if(makeFlows)
 	{
 		for (int i =0; i<all_links.size();i++) {
-			all_links[i]->total_cap = 2*primary;
+			all_links[i]->total_cap = (2*primary);
 			all_links[i]->available_cap_down = primary;
 			all_links[i]->available_cap_up = primary;
 		}
@@ -64,7 +64,7 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 		createFlows();
 		
 		for (int i =0; i<all_links.size();i++) {
-			all_links[i]->total_cap+=2*increase_by;
+			all_links[i]->total_cap+= (2*increase_by);
 			all_links[i]->available_cap_down+=increase_by;
 			all_links[i]->available_cap_up+=increase_by;
 		}
@@ -132,8 +132,27 @@ bool Controller::makeBackUp(Flow* flow, int rate){
 	//for(int i=0;i<backUpPath->links.size();i++)             
 	//	backUpPath->links[i]->addBackFlow(flow,flow->rate,backUpPath->direction[i],0, 0); 
 	for (int i = 0; i < sprayData->paths.size(); i++) {
+		
+		//gohar
+		// DEBUGGING STUFF COMMENTED
+		//cout << "Before commiting, Path " << sprayData->paths[i]->pathID << " has available bandwidth: " << endl;
+		//for (int j = 0; j < sprayData->paths[i]->links.size(); j++) {
+		//	cout << "Link " << sprayData->paths[i]->links[j]->link_id << " has available (up) " << sprayData->paths[i]->links[j]->available_cap_up << endl;
+		//	cout << "Link " << sprayData->paths[i]->links[j]->link_id << " has available (down) " << sprayData->paths[i]->links[j]->available_cap_down << endl;
+		//}
+		
 		flow->backUpPath.push_back(sprayData->paths[i]);
-		flow->commitPathAndReserve(sprayData->paths[i], sprayData->toReserve[i]);	
+		flow->commitPathAndReserve(sprayData->paths[i], sprayData->toReserve[i]);
+		
+		//gohar
+		// DEBUGGING STUFF COMMENTED
+		//cout << "After commiting, Path " << sprayData->paths[i]->pathID << " has available bandwidth: " << endl;
+		//for (int j = 0; j < sprayData->paths[i]->links.size(); j++) {
+		//	cout << "Link " << sprayData->paths[i]->links[j]->link_id << " has available (up) " << sprayData->paths[i]->links[j]->available_cap_up << endl;
+		//	cout << "Link " << sprayData->paths[i]->links[j]->link_id << " has available (down) " << sprayData->paths[i]->links[j]->available_cap_down << endl;
+		//}
+		//cout << "**" << endl;
+		
 	}
 	//cout<<" Success, new backup path size is "<<flow->backUpPath.size()<<endl;
 
@@ -751,7 +770,7 @@ void Controller::findFaults()
 					critical_switches.push_back(prone_switches[i]);					
 				}
  			}
-
+			
 			if(prone_switches[i]->level==2) {
 				cout<<"Tor switch is down with resilence "<<prone_switches[i]->resilience<<endl;
 			}
@@ -2282,6 +2301,10 @@ SprayData* Controller::getSprayPath(Host* src, Host* dst, int rate, Path* primar
 	while (reserved < rate) {
 		int check=0;
 		for (int i = 0; i < paths.size(); i++) {
+			
+			if (reserved >= rate)
+				break;
+			
 			if (paths[i]->isValid(sent) && reserved < rate) {
 				toReserve[i]=sent; // we are checking only and not reserving bw
 				check=1;
@@ -2289,9 +2312,24 @@ SprayData* Controller::getSprayPath(Host* src, Host* dst, int rate, Path* primar
 				//reserved+=sent;
 				reserved++;
 			}
+			
+			
 		}
 		if(!check && reserved < rate){
 			cout<<"BW not available"<<endl;
+			
+			//gohar
+			//DEBUGGING CODE BELOW
+			for (int i = 0; i < paths.size(); i++) {
+				cout << "~~" << endl;
+				cout << "BW (requested) = " << rate << ", not enough on Path " << paths[i]->pathID << endl;
+				for (int j = 0; j < paths[i]->links.size(); j++) {
+					cout << "Link " << paths[i]->links[j]->link_id << " has available (up) BW " << paths[i]->links[j]->available_cap_up << endl;
+					cout << "Link " << paths[i]->links[j]->link_id << " has available (down) BW " << paths[i]->links[j]->available_cap_down << endl;
+				}
+				cout << "~~" << endl;
+			}
+			
 			return NULL;
 		} else {
 			sent++;
