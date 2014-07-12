@@ -50,7 +50,7 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	totalTime=runFor;
 	assignResilience();
 	
-	int increase_by = 1000000; // increase capacities of links by this num
+	int increase_by = 0; // increase capacities of links by this num
 	int primary = 1024;
 	
 	if(makeFlows)
@@ -86,12 +86,12 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	// int x=1/0;
 	 for(int i=0;i<all_links.size();i++)
 	 {
-//	 	cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_primary.size()<<" Flows passing through"<<endl;
-	// 	cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_back.size()<<" Flows passing through"<<endl;
+	 	cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_primary.size()<<" Flows passing through"<<endl;
+	 	cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_back.size()<<" Flows passing through"<<endl;
 
 	 	 if(all_links[i]->flows_primary.size()==0 && all_links[i]->flows_back.size()==0)
 	 	 {
-	 	 	int x=1/0;
+//	 	 	int x=1/0;
 			
 	 	 	 //cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_primary.size()<<" Flows passing through"<<endl;
 	 	// 	// //cout<<"Link with ID: "<<all_links[i]->link_id<<" has "<<all_links[i]->flows_back.size()<<" Flows passing through"<<endl;
@@ -104,7 +104,7 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	}
 	for(int i=0;i<all_switches.size();i++)
 	{
-//	 	cout<<"Switch with ID: "<<all_switches[i]->toString()<<" has "<<all_switches[i]->primary_flows.size()<<" Flows passing through"<<endl;
+	 	cout<<"Switch with ID: "<<all_switches[i]->toString()<<" has "<<all_switches[i]->primary_flows.size()<<" Flows passing through"<<endl;
 		
 		
 	}
@@ -669,7 +669,7 @@ bool Controller::duplicateIn(vector<Flow*> v)
 {
 	for(int i=0;i<v.size();i++)
 	{
-		for(int j=i+1;j<v.size();j++)
+		for(int j=i+1;j<v.size()-1;j++)
 		{
 			if(v[i]==v[j])
 			{
@@ -761,39 +761,50 @@ bool notIn(vector<Path*> v,Path* e)
 }
 
 bool Controller::checkDowns(Flow* flow) {
+	if (flow->primaryPath->isUp()) {
+		return true;
+	}
 	for (int i = 0; i < flow->backUpPath.size(); i++) {
 		if (flow->backUpPath[i]->isUp()) {
 			return true;
 		}
 	}
-	if (flow->primaryPath->isUp()) {
-		return true;
-	}
+
 	cout<<"Flow is down"<<endl;
 	return false;
 }
 
 void Controller::findFaults(int curSec)
 {
-	//////startTimer();
 	int len = prone_switches.size();
 	for(int i=0; i<len; i++)
 	{
 		if( prone_switches[i]->getStatus() < 0 )
 		{
 			
-			vector<Flow*> flows_primary=prone_switches[i]->getFlowsOnPrimary();
-			vector<Flow*> flows_back=prone_switches[i]->getFlowsOnBack();
+			vector<Flow*> flows_primary=prone_switches[i]->primary_flows;
+			vector<Flow*> flows_back=prone_switches[i]->back_flows;
 
 			if(flows_primary.size()>0 || flows_back.size()>0)
 			{
 
 				if(notIn(critical_switches,prone_switches[i]))
 				{
-					//cout <<"+ Critical Switch Failed with ID: "<<prone_switches[i]->toString()<<" For "<<prone_switches[i]->status<<endl;
 					critical_switches.push_back(prone_switches[i]);					
 				}
+				else
+				{
+					continue;
+				}
+				
  			}
+			cout<<"Size of vector is "<<flows_primary.size()<<" for link "<<prone_switches[i]->toString()<<endl;
+
+			if(duplicateIn(flows_primary)){
+				cout<<"Duplicates found"<<endl;
+				int x =1/0;
+			}
+			cout<<"out"<<endl;
 
 			if(prone_switches[i]->level==2) {
 				cout<<"Tor switch is down with resilence: "<<prone_switches[i]->resilience<<" Status: "<<prone_switches[i]->status<<" At: "<<curSec<<endl;
@@ -803,109 +814,50 @@ void Controller::findFaults(int curSec)
 			{
 				if(backUp)
 				{
+					if(prone_switches[i]->level==2) {
+						cout<<"Checking for flow "<<flows_primary[j]->flow_id<<endl;
+					}
 					
 					if (checkDowns(flows_primary[j])) {
 						//flows_on_back.push_back(flows_primary[j]);
-					} else {
-						//if(flows_primary[j]->contains(flows_down)!=-1)
-						//{
-						//		cout<<"Warning this shouldnot happend"<<endl;
-						//		continue;
-						//}
+					} else
+					{
 						
 						if(notIn(flows_down,flows_primary[j])) {
 							flows_down.push_back(flows_primary[j]);
+							cout << "Flow "<<flows_primary[j]->flow_id<<" is down/pri. Culprit switch is " << prone_switches[i]->toString()<<endl;
+							
 						}
 						
-//						cout << "Flow "<<flows_primary[j]->flow_id<<" is down/pri. Culprit switch is " << prone_switches[i]->toString()<<endl;
 						if(prone_switches[i]->level==2) {
 							cout<<"Dow due to TOR"<<endl;
 						}
 					}
 
 				}
-				else
-				{
-					// if(!notIn(flows_down,flows_primary[j]))
-					// {
-					 	int x=1/0;
-					// }
-						if(notIn(flows_down,flows_primary[j])) {
-							flows_down.push_back(flows_primary[j]);
-						}
-				}
+
 			}
 
-			if(backUp)	
-			{
+			if(backUp){
 				for(int j=0;j<flows_back.size();j++)
 				{
-					int index_of_backupPath=0;
-					for(int l=0;l<flows_back[j]->backUpPath.size();l++)
+					if(prone_switches[i]->level==2) {
+						cout<<"Checking for flow "<<flows_back[j]->flow_id<<endl;
+					}
+					
+					if (!checkDowns(flows_back[j])) 
 					{
-							int fail=0;
-							vector<Switch*> switches=flows_back[j]->backUpPath[l]->getSwitches();
-							for(int m=0;m<switches.size();m++)
-							{
-								if(switches[m]==prone_switches[i])
-								{
-									bool found = false;
-									for (int n = 0; n < switches[m]->back_flows.size(); n++) {
-										if (switches[m]->back_flows[n] == flows_back[j])
-											found = true;
-									}
-									if (!found) {
-										//cout << "multiple calls" << endl;
-										continue;
-									} 
-									
-									index_of_backupPath=l;
-									//break;
-									//cout << "ANTICOMMIT CALLED switches BY flow " << flows_back[j]->flow_id << endl;
-									//int anti_rate = flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[index_of_backupPath]);
-//									cout << "anti_rate is " << anti_rate << endl;
-									//if(anti_rate == 0){
-//										cout<<"****Anti rate is zero, check ooper for dups***"<<endl;
-										//continue;
-									//}
-									//bool check = makeBackUp(flows_back[j], anti_rate);
-									
-									
-									if (checkDowns(flows_back[j])) {
-										//flows_on_back.push_back(flows_back[j]);
-									} else {
-										fail =1;
-//										cout << "Flow "<<flows_back[j]->flow_id<<" is down. Backup path was not found" << endl;
-										if(flows_back[j]->contains(flows_down)!=-1)
-										{
-//											cout<<"dups"<<endl;
+						if(notIn(flows_down,flows_back[j])) {
+							flows_down.push_back(flows_back[j]);
+							cout << "Flow "<<flows_back[j]->flow_id<<" is down/pri. Culprit switch is " << prone_switches[i]->toString()<<endl;
 
-//											continue;
-										}
-//										cout << "Flow "<<flows_back[j]->flow_id<<" is down/bak. Culprit switch is " << prone_switches[i]->toString()<<endl;
-										if(notIn(flows_down,flows_back[j])) {
-											flows_down.push_back(flows_back[j]);
-										}
-										if(prone_switches[i]->level==2) {
-											cout<<"Down due to /tor"<<endl;
-										}
-
-										break;
-									}
-								}
-									
-							}
-							if (fail){
-//								cout<<flows_back[j]->flow_id<<" is down "<<endl;
-								for(int o =0; o<flows_back[j]->backUpPath.size();o++)
-									flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[o]);
-								break;
-							}
+						}
+						
 					}
 					
 				}				
 			}
-
+			
 
 		}
 		
@@ -917,37 +869,30 @@ void Controller::findFaults(int curSec)
 	{
 		if( prone_links[i]->getStatus() < 0 )
 		{	
-				//cout<<"Tor link is down"<<endl;
-			
-			vector<Flow*> flows_primary=prone_links[i]->getFlowsOnPrimary();
-			vector<Flow*> flows_back=prone_links[i]->getFlowsOnBack();
-
-
-			// if(duplicateIn(flows_primary) || duplicateIn(flows_back))
-			// {
-			// 	int x=1/0;
-			// }
-
+			vector<Flow*> flows_primary=prone_links[i]->flows_primary;
+			vector<Flow*> flows_back=prone_links[i]->flows_back;
 
 			if(flows_primary.size()>0 || flows_back.size()>0)
 			{
 
 				if(notIn(critical_links,prone_links[i]))
 				{
-					//cout <<"+ Critical Link Failed with ID: "<<prone_links[i]->link_id<<" For "<<prone_links[i]->status<<" Seconds "<<endl;
 					critical_links.push_back(prone_links[i]);
 				}
 				else
 				{
-					//if(prone_links[i]->label=="Tor")
-					//	cout<<"**ABCDEFGH TOR**"<<endl;
 					continue;
 				}
- 			} else {
-				//if(prone_links[i]->label=="Tor")
-				//	cout<<"**WEIRD THING**"<<endl;
-				//int x = 1/0;
+ 			} 
+
+			cout<<"Size of vector is "<<flows_primary.size()<<" for link "<<prone_links[i]->link_id<<endl;
+			if(duplicateIn(flows_primary))
+			{
+				cout<<"Duplicates found"<<endl;
+				int x =1/0;
+
 			}
+			cout<<"out"<<endl;
 
 			if(prone_links[i]->label=="Tor") {
 				cout<<"Tor link "<<prone_links[i]->link_id<<" is down with resilience: "<<prone_links[i]->resilience<<" Status: "<<prone_links[i]->status<<" At: "<<curSec<<endl;
@@ -955,115 +900,47 @@ void Controller::findFaults(int curSec)
 
 			for(int j=0;j<flows_primary.size();j++)
 			{
-				// cout<<"anti commiting 2"<<endl;
-				flows_primary[j]->antiCommitPath(flows_primary[j]->primaryPath);
-				// cout<<"Primary Down: flow id: "<<flows_primary[j]->flow_id<<" ";
-				// flows_primary[j]->primaryPath->print();
-				// cout<<"culprit is: "<<prone_links[i]->link_id<<endl;
 				if(backUp)
 				{
-					// cout<<"commiting on backup"<<endl;
+					if(prone_links[i]->label=="Tor") {
+						cout<<"Checking for flow "<<flows_primary[j]->flow_id<<endl;
+					}
 					
 					if (checkDowns(flows_primary[j])) {
 						//flows_on_back.push_back(flows_primary[j]);
 					} else {
 						if(notIn(flows_down,flows_primary[j])) {
 							flows_down.push_back(flows_primary[j]);
+							cout << "Flow "<<flows_primary[j]->flow_id<<" is down/pri. Culprit links is " << prone_links[i]->link_id<<endl;
+
 						}
 						if(prone_links[i]->label=="Tor") {
 							cout<<"DOWN"<<endl;
 						}
 					}
 				}
-				else
-				{
-//					cout << "Flow "<<flows_primary[j]->flow_id<<" is down/pri. Culprit links is " << prone_links[i]->link_id<<endl;
-					if(notIn(flows_down,flows_primary[j])) {
-						flows_down.push_back(flows_primary[j]);
-					}
-					if(prone_links[i]->label=="Tor") {
-						cout<<"DOWN"<<endl;
-					}
 
-				}
 			}
 
 
 			if(backUp)
 			{
-				// debugging
-				//int cc = 0;
-				//for(int j=0;j<flows_back.size();j++) {
-				//	if (flows_back[j]->flow_id == 20)
-				//		cc++;
-				//}
-//				if (cc > 1)
-					///cout << "COUNT VALUE IS " << cc << " for link " << prone_links[i]->link_id << endl;
-				// end debugging
 				
 				for(int j=0;j<flows_back.size();j++)
 				{
-					int index_of_backupPath=0;
-					for(int l=0;l<flows_back[j]->backUpPath.size();l++)
-					{	int fail =0;
-						vector<Link*> links=flows_back[j]->backUpPath[l]->links;
-						for(int m=0;m<links.size();m++)
-						{
-							if(links[m]==prone_links[i])
-							{
-								index_of_backupPath=l;
-								bool found = false;
-								for (int n = 0; n < links[m]->flows_back.size(); n++) {
-									if (links[m]->flows_back[n] == flows_back[j])
-										found = true;
-								}
-								if (!found)
-									continue;
-	//							else
-//									cout << "found" << endl;
-								
-								//break;
-						//		cout << "ANTICOMMIT CALLED links BY flow " << flows_back[j]->flow_id << endl;
-								int anti_rate = flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[l]); // changed to l, was 0
-								if(anti_rate == 0){
-//									cout<<"****Anti rate is zero, check ooper for dups***"<<endl;
-									continue;
-								}
-								
-								if (checkDowns(flows_back[j])) {
-									//flows_on_back.push_back(flows_back[j]);
-								} else 
-								{
-									fail = 1;
-									if(flows_back[j]->contains(flows_down)!=-1)
-									{
-	//								cout<<"dups"<<endl;
-	//								continue;
-									}
-
-//								cout << "Flow "<<flows_back[j]->flow_id<<" is down/bak. Culprit links is " << prone_links[i]->link_id<<endl;
-									flows_down.push_back(flows_back[j]);
-									if(prone_links[i]->label=="Tor") {
-										cout<<"DOWN"<<endl;
-									}
-
-									break;
-								}
-							}
-							
-						}
-							if(fail)
-							{
-//								cout << "Flow "<<flows_down[j]->flow_id<<" is down/bak. Culprit links is " << prone_links[i]<<endl;
-
-//								cout<<flows_back[j]->flow_id<<" is down "<<endl;
-//								for(int o =0; o<flows_back[j]->backUpPath.size();o++)
-//									flows_back[j]->antiCommitPathAndUnreserve(flows_back[j]->backUpPath[o]);
-								
-								break;
-							}
+					if(prone_links[i]->label=="Tor") {
+						cout<<"Checking for flow "<<flows_back[j]->flow_id<<endl;
 					}
+					if (!checkDowns(flows_back[j])) 
+					{
+						if(notIn(flows_down,flows_back[j])) {
+							flows_down.push_back(flows_back[j]);
+							cout << "Flow "<<flows_back[j]->flow_id<<" is down/bak. Culprit links is " << prone_links[i]->link_id<<endl;
+						}
 					
+					
+					}
+	
 								
 				}	
 			}
@@ -1099,69 +976,6 @@ void Controller::revert_to_primary()
 		}
 	}
 
-	//////stopTimer("for links to revert");
-/*	if(backUp && revert)
-	{
-
-		for (int i=0;i<flows_on_back.size();i++)
-		{
-			Flow* f=flows_on_back[i];
-			// if(f->down!=1)
-			// 	continue;
-			if(f->primaryPath->isUp())
-			{
-				for (int j =0 ; j < f->backUpPath.size();j++) {
-//					int count = 0;
-	//				if (f->backUpPath[j]->beingUsed == 1) {
-					f->antiCommitPathAndUnreserve(f->backUpPath[j]);
-//						count++;
-				}
-//				cout<<"Flow "<<f->flow_id<<" is up. Put on Pri "<<endl;
-
-				//				cout<<"Flow "<<f->flow_id<<" sent to primary. "<<endl;
-				for(int m =0; m<prone_links.size();m++)
-				{
-//					vector<Flow*> flows_back=prone_links[m]->flows_back();
-					for(int mm=0;mm<prone_links[m]->flows_back.size();mm++)
-					{
-						if(prone_links[m]->flows_back[mm]==f){
-//							cout<<"prob detected links"<<endl;
-							prone_links[m]->flows_back.erase(prone_links[m]->flows_back.begin()+mm);
-							mm--;
-						}
-					}
-						
-				}
-				for(int m =0; m<prone_switches.size();m++)
-				{
-//					vector<Flow*> flows_back=prone_switches[m]->getFlowsOnBack();
-					for(int mm=0;mm<prone_switches[m]->back_flows.size();mm++)
-					{
-						if(prone_switches[m]->back_flows[mm]==f){
-//							cout<<"prob detected links"<<endl;
-							prone_switches[m]->back_flows.erase(prone_switches[m]->back_flows.begin()+mm);
-							mm--;
-						}
-					}
-					
-				}
-				f->backUpPath.clear();
-
-				bool check=f->commitPath(f->primaryPath,0); //Assumption is that link capacity would not be a bottleneck
-				if(!check)
-				{
-					int x=1/0;
-				}
-				flows_on_back.erase(flows_on_back.begin()+i);
-				i--;
-				
-			}// cout<<"-- Num of flows on backup are: "<<flows_on_back.size()<<endl;
-			}
-
-	}
-	
-	*/
-	// gohar
 	// check again for backup paths here, backup path can be up.Done now :)
 	if(revert)
 	{
@@ -1183,23 +997,7 @@ void Controller::revert_to_primary()
 				continue;
 			}
 
-/*			if(backUp)
-			{
-				
-				check=makeBackUp(flows_down[i], flows_down[i]->rate);
-				
-				if(check)
-				{
 
-//					cout<<"Flow "<<f->flow_id<<" is up. Put on bak "<<endl;
-					flows_down.erase(flows_down.begin()+i);
-					i--;
-					flows_on_back.push_back(f);
-				}
-			}
-		}
-		*/
-//		cout<<"leaving: Num of flows down: "<<flows_down.size()<<endl;
 
 		}
 	}
@@ -2129,7 +1927,7 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 
 	//gohar	
 	int counter = 0;
-	int num_of_backups = 5;
+	int num_of_backups = 0;
 	
 	for (int i = 0; i < paths.size(); i++) {
 		//getCommonCount(paths[i]->switches, primary->switches) == 2 && 
@@ -2143,6 +1941,7 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 	
 	if (counter != num_of_backups) {
 		paths.clear();
+//		cout<<" Path not found "<<endl;
 		return NULL;
 	}
 	
