@@ -133,6 +133,7 @@ public:
 	SprayData* getSprayPath(Host* src, Host* dst, int rate, Path* primary_path);
 	bool makeBackUpTorToTor(Flow* flow, int rate, vector<Path*> backups);
 	bool checkDowns(Flow* flow);
+	vector<Switch*> getDiffSwitches(Switch* src, Switch* dest);
 };
 
 #endif /* CONTROLLER_H */

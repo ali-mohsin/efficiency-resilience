@@ -195,6 +195,17 @@ Switch* Controller::getTorFromAnotherPod(int pod)
 	return curSwitch;
 }
 
+vector<Switch*> Controller::getDiffSwitches(Switch* src, Switch* dest)
+{
+	vector<Switch*> switches;
+	for (int i = 0; i < all_switches.size(); i++) {
+		if (all_switches[i] != src && all_switches[i] != dest) {
+			switches.push_back(all_switches[i]);
+		}
+	}
+	return switches;
+}
+
 void Controller::createFlows()
 {
 	int factor=8; // ihave temporarily disabled this
