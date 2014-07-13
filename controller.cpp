@@ -781,7 +781,7 @@ bool Controller::checkDowns(Flow* flow) {
 		}
 	}
 
-	cout<<"Flow is down"<<endl;
+	cout<<"Flow is down. All " << flow->backUpPath.size() << " paths are down." <<endl;
 	return false;
 }
 
@@ -1972,17 +1972,31 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 		}
 	}
 	
+	if (backups.size() == 0)
+		cout << "@@ ERROR @@ -- no backups" << endl;
+	//else
+	//	cout << "num of backups for flow is " << backups.size() << endl;
+	
 	Flow* flow= new Flow(source,dest,primary,backups,rate,size,oneToOne,sTime,sharing,tor_to_tor);
+	
+	//constructor is not making backup paths vector, so this line is needed. CHECK.
+	flow->backUpPath = backups;
+	
 	flow->setID(flowNumber);
 	all_flows.push_back(flow);
 	flowNumber++;
 	if(flowNumber%1000==0){
 		cout<<flowNumber<<" is the num of flows committed"<<endl;
 	}
+	
+	if (flow->backUpPath.size() == 0)
+		cout << "Flow has no backups" << endl;
+	//else
+	//	cout << "xxxx" << endl;
+	
 	// cout<<"Primary Path is: "<<endl;
 	// primary->print();
 	Path* back=NULL;
-
 
 //	if(backUp)
 //	{
@@ -2016,7 +2030,7 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 	
 	paths.clear();
 	// cout << "Flows generated ";
-	cout << ".";
+	//cout << ".";
 	return 1;
 }
 
