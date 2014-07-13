@@ -1899,11 +1899,9 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 	vector<Link*> links;
 	vector<bool> directions;
 	bool intraRack = getPaths(source, dest, switches, links, directions, 1);
-
-	// cout<<paths.size()<<" is the num of paths"<<endl;
 	filterPaths(rate,dest);
 	
-	
+	// cout<<paths.size()<<" is the num of paths"<<endl;
 	
 	// check for only one path..n
 	//
@@ -1914,6 +1912,13 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
  		int x=1/0;
  	 	return 0;
  	 }
+	 
+	 vector<Switch*> diffSwitches = getDiffSwitches(source->getTor(), dest->getTor());
+	 
+	 if (diffSwitches.size() == 0)
+		 cout << "something is wrong" << endl;
+
+	 
 	if(!intraRack && paths.size()<1)
 	{
 		paths.clear();
@@ -1928,6 +1933,45 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 	paths.erase(paths.begin()+ind);
 	
 	vector<Path*> backups;
+	
+	
+	while (diffSwitches.size() != 0) {
+		int num1 = rand()%diffSwitches.size();
+		vector<Link*> linksOfSwitch = diffSwitches[num1]->getDownLinks();
+		
+		Host* hostSource = linksOfSwitch[rand()%linksOfSwitch.size()]->host;
+		diffSwitches.erase(diffSwitches.begin()+num1);
+		
+		num1 = rand()%diffSwitches.size();
+		
+		vector<Link*> linksOfSwitch2 = diffSwitches[num1]->getDownLinks();
+		
+		Host* hostDest = linksOfSwitch2[rand()%linksOfSwitch2.size()]->host;
+		diffSwitches.erase(diffSwitches.begin()+num1);
+		
+		paths.clear();
+		
+		if (!hostSource) {
+			continue;
+		}
+		
+		if (!hostDest) {
+			continue;
+		}
+		
+		vector<Switch*> switches1;
+		vector<Link*> links1;
+		vector<bool> directions1;
+		bool intraRack2 = getPaths(hostSource, hostDest, switches1, links1, directions1, 1);
+		
+		filterPaths(rate,hostDest);
+		
+		if (paths.size() != 0) {
+			backups.push_back(paths[rand()%paths.size()]);
+			break;
+		}
+	}
+	
 	Flow* flow= new Flow(source,dest,primary,backups,rate,size,oneToOne,sTime,sharing,tor_to_tor);
 	flow->setID(flowNumber);
 	all_flows.push_back(flow);
@@ -1935,29 +1979,6 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 	if(flowNumber%1000==0){
 		cout<<flowNumber<<" is the num of flows committed"<<endl;
 	}
-
-	//gohar	
-	int counter = 0;
-	int num_of_backups = 0;
-	
-	for (int i = 0; i < paths.size(); i++) {
-		//getCommonCount(paths[i]->switches, primary->switches) == 2 && 
-		if (getCommonCount(paths[i]->links, primary->links) == 2 && paths[i]->isValid(rate)) {
-			if (counter < num_of_backups) {
-				backups.push_back(paths[i]);
-				counter++;
-			}
-		}
-	}
-	
-	if (counter != num_of_backups) {
-		paths.clear();
-//		cout<<" Path not found "<<endl;
-		return NULL;
-	}
-	
-	makeBackUpTorToTor(flow, rate, backups);
-	
 	// cout<<"Primary Path is: "<<endl;
 	// primary->print();
 	Path* back=NULL;
@@ -1995,6 +2016,7 @@ bool Controller::instantiateFlow(Host* source, Host* dest, double rate, int size
 	
 	paths.clear();
 	// cout << "Flows generated ";
+	cout << ".";
 	return 1;
 }
 
