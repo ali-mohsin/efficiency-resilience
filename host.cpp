@@ -62,3 +62,17 @@ void Host::mark(int num)
 			return;
 	}
 }
+
+void Host::unmark(int num)
+{
+	for(int i=0;i<all_vms.size();i++)
+	{
+		if(all_vms[i]->marked)
+		{
+			all_vms[i]->unmark();
+			num--;			
+		}
+		if(num==0)
+			return;
+	}
+}

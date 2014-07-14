@@ -11,7 +11,7 @@
 #include "pair.h"
 #include "tenant.h"
 #include "hostpair.h"
-#include "pairs.h"
+#include "tenant_flow.h"
 //this is to control the whole thing...includes a UI function
 class Flow;
 
@@ -81,7 +81,7 @@ public:
 	void assignPaths();
 	int alloc(int v,int b,Host* h,Switch* s,int);
 	int my_alloc(int v,int b,Host* h,Switch* s);
-	TenantFlow* octopus(int v, int b);
+	TenantFlow* octopus(int v, int b,TenantFlow*);
 	int computeMx(Switch*,int);
 	int computeMx(Link* l,int bw);
 	int TorCount(Switch* d,int bw);

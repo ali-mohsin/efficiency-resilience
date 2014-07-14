@@ -33,6 +33,7 @@ public:
 	Link* getLink();
 	int availableVMs();
 	void mark(int);
+	void unmark(int);
 	vector<VM*> all_vms;
 };
 

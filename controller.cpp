@@ -42,7 +42,7 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	totalAccepted = 0;
 	ofstream fout;
 	fout.open("new_script.ns");
-	fout<<"#define FatTree -k 40 -reduncancy t2t -sharing no -oct yes -repeatForAll  -algo default -torLinks 1G -aggrLinks 1G -coreLinks 1G -failures enable -runFor 30000000 -seed "<<seedV<<"\n";
+	fout<<"#define FatTree -k 40 -reduncancy e2e -sharing no -oct yes -repeatForAll  -algo default -torLinks 1G -aggrLinks 1G -coreLinks 1G -failures enable -runFor 30000000 -seed "<<seedV<<"\n";
 	fout.close();
 
 	backUp=back;
@@ -2765,8 +2765,7 @@ TenantFlow* Controller::checkBW(vector<Host*> hosts,int bw)
 
 	// //cout<<"\t\t\tbw satisfied, commiting"<<endl;
 	// //cout<<cLinks.size()<<" size of clinks"<<endl;
-	TenantFlow* tf=new TenantFlow();
-	tenant_flows.push_back(tf);
+	TenantFlow* tf=new TenantFlow(hosts);
 	for(int i=0;i<cLinks.size();i++)
 	{
 		cLinks[i]->available_cap_up-=cBws[i];
@@ -2783,7 +2782,7 @@ TenantFlow* Controller::checkBW(vector<Host*> hosts,int bw)
 		{
 			LinkPair* lp= new LinkPair(cLinks[i],cLinks[i]);
 			// cout<<"link id: "<<cLinks[i]->link_id<<" switch id: "<<cLinks[i]->up_switch->toString()<<endl;
-			tf->insert(lp);
+			tf->insert(lp,cBws[i]);
 		}
 		else
 		{
@@ -2799,13 +2798,13 @@ TenantFlow* Controller::checkBW(vector<Host*> hosts,int bw)
 				 backCore.pop_back();
 			}
 			LinkPair* lp= new LinkPair(cLinks[i],back);
-			tf->insert(lp);
+			tf->insert(lp,cBws[i]);
 		}
 	}
 	return tf;
 }
 
-TenantFlow* Controller::octopus(int v, int b)
+TenantFlow* Controller::octopus(int v, int b, TenantFlow* primary)
 {
 	int done=false;
 	int level=0;
@@ -2843,6 +2842,8 @@ TenantFlow* Controller::octopus(int v, int b)
 		{
 			for(int i=0;i<Tors.size();i++)
 			{
+				if(primary && primary->root==Tors[i])
+					continue;
 				int Mv=TorCount(Tors[i],b);
 				if(v<=Mv)
 				{
@@ -2866,6 +2867,7 @@ TenantFlow* Controller::octopus(int v, int b)
 						continue;
 					}
 					ones++;
+					tf->root=Tors[i];
 					return tf;
 				}
 			}
@@ -2875,6 +2877,8 @@ TenantFlow* Controller::octopus(int v, int b)
 		{
 			for(int i=0;i<Aggrs.size();i+=k/2-1)
 			{
+				if(primary && primary->root==Aggrs[i])
+					continue;
 				int Mv=aggrCount(Aggrs[i],b);
 				if(v<=Mv)
 				{
@@ -2891,6 +2895,7 @@ TenantFlow* Controller::octopus(int v, int b)
 						continue;
 					}
 					twos++;
+					tf->root=Aggrs[i];
 					return tf;
 				}
 			}
@@ -2901,6 +2906,9 @@ TenantFlow* Controller::octopus(int v, int b)
 		{
 			for(int i=0;i<Cores.size();i+=Cores.size())
 			{
+				if(primary && primary->root==Cores[i])
+					continue;
+
 				int Mv=coreCount(Cores[i],b);
 				if(v<=Mv)
 				{
@@ -2917,6 +2925,7 @@ TenantFlow* Controller::octopus(int v, int b)
 						continue;
 					}
 					threes++;
+					tf->root=Cores[i];
 					return tf;
 				}
 			}
@@ -2964,10 +2973,33 @@ bool Controller::instantiateTenant(int vms, int bw)	//rate in MBps, size in MB
 	}
 
 	TenantFlow* tf;
-	tf=octopus(vms,bw);
+	tf=octopus(vms,bw,NULL);
+	if(tf==NULL)
+		return 0;
+	// for(int i=0;i<tf->raw_links.size();i++)
+	// {
+	// 	cout<<tf->raw_links[i]->link_id<<" has reserved "<<tf->bws[i]<<endl;
+	// }
+	// cout<<"----------------------------"<<endl;
 
-	if(tf!=NULL)
+	if(end_to_end)
 	{
+		TenantFlow* backup;
+		backup=octopus(vms,bw,tf);
+		if(backup==NULL)
+			tf->destroy();
+		else
+		{
+			tf->backup=backup;
+			tenant_flows.push_back(tf);
+			totalAccepted++;
+			totalDemand = totalDemand + (vms * bw);
+		}
+	}
+
+	if(!end_to_end && tf!=NULL)
+	{
+		tenant_flows.push_back(tf);
 		totalAccepted++;
 		totalDemand = totalDemand + (vms * bw);
 	}

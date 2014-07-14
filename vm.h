@@ -10,6 +10,12 @@ public:
 		marked=true;
 	}
 
+	void unmark()
+	{
+		marked=false;
+	}
+
+
 	VM()
 	{
 		marked=false;
