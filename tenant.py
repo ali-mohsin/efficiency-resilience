@@ -12,6 +12,7 @@ with open('script.ns','w') as fout:
 
 	vm_mean = float(sys.argv[1])
 	bw_mean = float(sys.argv[2])
+	# multiplier = float(sys.argv[3])
 
 	# print vm_mean
 	# print bw_mean
@@ -21,16 +22,8 @@ with open('script.ns','w') as fout:
 			num=int(random.expovariate(1/vm_mean))
 			bw=int(random.expovariate(1/bw_mean))
 			
-			if bw<1000:
+			if (bw>0 and bw<=1000) and (num>4):
 				break
-
-		if(num<2):
-			num=2
-		if(bw<1):
-			bw=1
-		
-		if(num > 150 or bw > 500):
-			continue
 
 		vms.append(num)
 		bws.append(bw)

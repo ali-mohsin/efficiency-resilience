@@ -22,6 +22,7 @@
 		for(int i=0; i<runs; i++)
 		{
 			dc->autofail(i);
+
 			// seconds_run++;
 			// if( (seconds_run % inter_ping_time) == 0 )
 			// {

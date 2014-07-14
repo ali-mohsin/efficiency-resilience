@@ -25,7 +25,6 @@ Topology* Controller::createTopology(int tor,int aggr,int core)
 
 Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int runFor,int makeFlows,int octo,float seedV)
 {
-	entertainRequest = true;
 	ones=0;
 	twos=0;
 	threes=0;
@@ -38,6 +37,8 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	coreCap=core;
 	flowNumber = 0;
 	createTopology(tor,aggr,core);
+	entertainRequest = true;
+	totalDemand = 0;
 	totalAccepted = 0;
 	ofstream fout;
 	fout.open("new_script.ns");
@@ -1562,6 +1563,7 @@ void Controller::autofail(int curSec)
 		cout<<"Within Racks: "<<ones<<"\n";
 		cout<<"Within Pods: "<<twos<<"\n";
 		cout<<"Inter Pod: "<<threes<<"\n";
+		cout<<"TotalDemand: "<<totalDemand<<"\n";
 
 		vector<Link*> t=getAllTorLinks();
 		vector<Link*> a=getAllAggrLinks();
@@ -2100,8 +2102,8 @@ int min(int a,int b)
 
 int Controller::computeMx(Link* l,int bw)
 {
-	if(backUp)
-		bw=2*bw;
+	// if(backUp)
+	// 	bw=2*bw;
 	int res_up=l->available_cap_up;
 	int res_down=l->available_cap_up;
 	int mini=min(res_up,res_down);
@@ -2170,9 +2172,55 @@ int Controller::coreCount(Switch* d,int bw)
 	return count;	
 }
 
-
-int Controller::alloc(int v,int b,Host* h,Switch* s)
+int getUniqueTors(vector<Host*> vms)
 {
+	vector<Switch*> t;
+	for(int i=0;i<vms.size();i++)
+	{
+		Switch* s=vms[i]->getTor();
+		if(notIn(t,s))
+			t.push_back(s);
+	}
+	return t.size();
+}
+
+Host* Controller::getHost(Switch* t,int b)
+{
+	for(int i=0;i<t->down_links.size();i++)
+	{
+		Host* h=t->down_links[i]->host;
+		// cout<<"Tor: "<<h->getTor()->toString()<<" vm: "<<h->availableVMs()<<endl;
+		if(h->availableVMs()>0)
+		{
+			return h;
+		}
+	}
+	return NULL;
+}
+
+Host* Controller::getHostInPod(int pod,string tor,int b)
+{
+	vector<Switch*> tors = getAllTors();
+	for(int i=0;i<tors.size();i++)
+	{
+		int id=tors[i]->getPodID();
+		if(pod==id)
+		{
+			string t1=tors[i]->toString();
+			if(t1!=tor)
+			{
+				Host* h=getHost(tors[i],b);
+				if(h!=NULL)
+					return h;
+			}
+		}
+	}
+	return NULL;
+}
+
+int Controller::alloc(int v,int b,Host* h,Switch* s,int req)
+{
+	int check=0;
 	if(h!=NULL)
 	{
 		Link* l=h->link;
@@ -2183,13 +2231,35 @@ int Controller::alloc(int v,int b,Host* h,Switch* s)
 		int allocate=min(cap,v);
 		// h->mark(v);
 		// //cout<<v<<" hosts found at "<<h->toString()<<endl;
+		int tors=getUniqueTors(tenant_vms);
+		if(tors==1 && allocate + tenant_vms.size() >= req)
+		{
+			// cout<<"Im in allocate: "<<allocate<<endl;
+			Host* h1=getHostInPod(h->getPodID(),h->getTor()->toString(),b);
+			int checker=1;
+			if(h1==NULL)
+			{
+				checker=0;
+			}
+
+			if(checker)
+			{
+				allocate--;
+				tenant_vms.push_back(h1);
+				// cout<<"I have reserved 1 VM on "<<h1->getTor()->toString()<<endl;			
+				check=1;
+			}
+			
+		}
+
 		for(int i=0;i<allocate;i++)
 			tenant_vms.push_back(h);
 
-		// if(allocate>0)
-		// //cout<<"I have reserved "<<allocate<<" Vms on host in "<<h->getTor()->toString()<<endl;
 
-		return allocate;
+		// if(allocate>0)
+		// 	cout<<"I have reserved "<<allocate<<" Vms on host in "<<h->getTor()->toString()<<endl;
+
+		return allocate+check;
 	}
 	else
 	{
@@ -2202,7 +2272,7 @@ int Controller::alloc(int v,int b,Host* h,Switch* s)
 			{
 				// int Mw=curLink->host->availableVMs();
 				int Mw=computeMx(curLink,b);
-				count+=alloc(min(v-count,Mw),b,curLink->host,NULL);
+				count+=alloc(min(v-count,Mw),b,curLink->host,NULL,req);
 				// //cout<<"Total allocation: "<<count<<endl;				
 
 			}
@@ -2210,7 +2280,7 @@ int Controller::alloc(int v,int b,Host* h,Switch* s)
 			{
 				Switch* sw=curLink->down_switch;
 				int Mw=computeMx(sw,b);
-				count+=alloc(min(v-count,Mw),b,NULL,sw);
+				count+=alloc(min(v-count,Mw),b,NULL,sw,req);
 				// //cout<<"Total allocation: "<<count<<endl;				
 
 			}
@@ -2553,7 +2623,7 @@ bool Controller::checkBW(vector<Host*> hosts,int bw)
 
 			if(count!=num)
 			{
-				cout<<"Tor "<<endl;	
+				// cout<<"Tor "<<endl;	
 				//cout<<"Was able to assign only primary "<<count<<" Tor Flows instead of "<<num<<endl;
 				return 0;
 			}
@@ -2603,7 +2673,7 @@ bool Controller::checkBW(vector<Host*> hosts,int bw)
 
 				if(count!=num)
 				{
-					cout<<"Core "<<endl;
+					// cout<<"Core "<<endl;
 					//cout<<"Was able to assign only backup "<<count<<" Tor Flows instead of "<<num<<endl;
 					return 0;
 				}
@@ -2729,6 +2799,7 @@ bool Controller::checkBW(vector<Host*> hosts,int bw)
 		if(!backUp)
 		{
 			LinkPair* lp= new LinkPair(cLinks[i],cLinks[i]);
+			// cout<<"link id: "<<cLinks[i]->link_id<<" switch id: "<<cLinks[i]->up_switch->toString()<<endl;
 			tf->insert(lp);
 		}
 		else
@@ -2748,6 +2819,7 @@ bool Controller::checkBW(vector<Host*> hosts,int bw)
 			tf->insert(lp);
 		}
 	}
+	// cout<<"xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"<<endl;
 
 // //cout<<cLinks.size()<<" is the clinks size"<<endl;
 // //cout<<tf->links_pairs.size()<<" is the link pair size"<<endl;
@@ -2850,6 +2922,9 @@ vector<Host*> Controller::octopus(int v, int b)
 	all_tor_pairs.clear();
 	all_pod_pairs.clear();
 	tenant_vms.clear();
+	int within_tor=0;
+	int within_tor_tor=0;
+
 	while(level<=3)
 	{
 		//traverse through all hosts
@@ -2880,17 +2955,47 @@ vector<Host*> Controller::octopus(int v, int b)
 				int Mv=TorCount(Tors[i],b);
 				if(v<=Mv)
 				{
-					//cout<<"Found at level 1 "<<Tors[i]->toString()<<endl;
+					within_tor=1;
+					// cout<<"changed within_tor back to 1"<<endl;
+
+					// cout<<"Found at level 1 "<<Tors[i]->toString()<<" value of within_tor_tor "<<within_tor_tor<<endl;
+					int pod=Tors[i]->getPodID();
+					int check=0;
+					for(int j=0;j<Tors.size() && j!=i;j++)
+					{
+						int id=Tors[j]->getPodID();
+						if(id==pod)
+						{
+							int c=TorCount(Tors[j],b);
+							if(c > 0)
+							{
+								check=1;
+								// cout<<"bw available at: "<<Tors[j]->toString()<<endl;								
+							}
+						}
+					}
+					if(check==0 && within_tor_tor==0)
+					{
+						// cout<<"bw not available on other tor"<<endl;
+						// cout<<"changed within_tor back to 0"<<endl;
+						// within_tor=0;
+						continue;						
+					}
 					curLevel=1;
-					alloc(v,b,NULL,Tors[i]);
+					alloc(v,b,NULL,Tors[i],v);
 					int commit=checkBW(tenant_vms,b);
 					if(commit==0)
 					{
-//						//cout<<"Could not allocated enough bw"<<endl;
+						// cout<<"Could not allocated enough bw"<<endl;
 						tenant_vms.clear();
+						// cout<<"changed within_tor back to 0"<<endl;
+						within_tor=0;
 						continue;
 					}
-					ones++;
+					if(within_tor_tor==1)
+						ones++;
+					else
+						twos++;
 					return tenant_vms;
 				}
 			}
@@ -2898,15 +3003,22 @@ vector<Host*> Controller::octopus(int v, int b)
 
 		if(level==2)
 		{
-			for(int i=0;i<Aggrs.size();i++)
+			if(within_tor)
+			{
+				// cout<<" came to level 2 but sent back"<<endl;
+				within_tor_tor=1;
+				level--;
+				continue;
+			}
+			for(int i=0;i<Aggrs.size();i+=k/2-1)
 			{
 				int Mv=aggrCount(Aggrs[i],b);
 				if(v<=Mv)
 				{
-					//cout<<"Found at level 2"<<endl;
+					// cout<<"Found at level 2     i: "<<i<<endl;
 					curLevel=2;					
 
-					alloc(v,b,NULL,Aggrs[i]);
+					alloc(v,b,NULL,Aggrs[i],v);
 					int commit=checkBW(tenant_vms,b);
 					if(commit==0)
 					{
@@ -2924,15 +3036,15 @@ vector<Host*> Controller::octopus(int v, int b)
 
 		if(level==3)
 		{
-			for(int i=0;i<Cores.size();i++)
+			for(int i=0;i<Cores.size();i+=Cores.size())
 			{
 				int Mv=coreCount(Cores[i],b);
 				if(v<=Mv)
 				{
-					//cout<<"Found at level 3"<<endl;
+					// cout<<"Found at level 3    	   i= "<<i<<endl;
 					curLevel=3;					
 
-					alloc(v,b,NULL,Cores[i]);
+					alloc(v,b,NULL,Cores[i],v);
 					int commit=checkBW(tenant_vms,b);
 					if(commit==0)
 					{
@@ -2956,46 +3068,51 @@ vector<Host*> Controller::octopus(int v, int b)
 
 bool Controller::instantiateTenant(int vms, int bw)	//rate in MBps, size in MB
 {
+	ofstream fout;
+	fout.open("new_script.ns", ios::app);
+	fout<<"#define Tenant -vm "<<vms<<" -bw "<<bw<<"\n";
+	fout.close();
+
 	// if 'intraRack' is true, then there will be no backup path, only 1 path
 	if(!entertainRequest)
 	{
 		return false;
 	}
-	cout<<"VMs required: "<<vms<<endl;
-	cout<<"BW required: "<<bw<<endl;
+	// cout<<"VMs required: "<<vms<<endl;
+	// cout<<"BW required: "<<bw<<endl;
+	// cout<<"Accomodated: "<<tenant_flows.size()<<endl;
 	vector<Link*> Tors=getAllTorLinks();
-//	int check=0;
-//	for(int i=0;i<Tors.size();i++)
-//	{
-//		int vms=Tors[i]->host->availableVMs();
-//		int bw=Tors[i]->available_cap_up;
-//		if(vms > 1 && bw > 0.10*1024)
-//		{
-//			//cout<<"vms: "<<vms<<" bw: "<<bw<<endl;
-//			check=1;
-//			break;
-//		}
-//	}
-
-//	if(check==0)
-//	{
-//		int x=1/0;
-//	}
-	vector<Host*> hosts; 
-	hosts=octopus(vms,bw);
-
-	if(hosts.size() > 1)
+	int check=0;
+	for(int i=0;i<Tors.size();i++)
 	{
-		totalAccepted++;
-		ofstream fout;
-		fout.open("new_script.ns", ios::app);
-		fout<<"#define Tenant -vm "<<vms<<" -bw "<<bw<<"\n";
-		fout.close();
+		int vms=Tors[i]->host->availableVMs();
+		int bw=Tors[i]->available_cap_up;
+		if(vms > 1 && bw > 0.20*1024)
+		{
+			//cout<<"vms: "<<vms<<" bw: "<<bw<<endl;
+			check=1;
+			break;
+		}
 	}
-	else if(hosts.size() == 0)
+
+	if(check==0)
 	{
 		entertainRequest = false;
+		// int x=1/0;
 	}
+
+	vector<Host*> hosts;
+	hosts=octopus(vms,bw);
+
+	if(hosts.size() > 0)
+	{
+		totalAccepted++;
+		totalDemand = totalDemand + (vms * bw);
+	}
+	// else if(hosts.size() == 0)
+	// {
+	// 	entertainRequest = false;
+	// }
 	// if(hosts.size()==0)
 	// 	return false;
 	// vector<Flow*> flows;

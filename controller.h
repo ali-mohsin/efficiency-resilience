@@ -38,6 +38,7 @@ public:
 	vector<HostPair*> all_host_pairs;
 	vector<Link*> usedLinks;
 	bool entertainRequest;
+	int totalDemand;
 	int flows_on_share;
 	int ones;
 	int twos;
@@ -65,6 +66,7 @@ public:
 	vector<PodPair*> all_pod_pairs;
 	vector<TorPair*> all_tor_pairs;
 	vector<Host*> tenant_vms;
+	vector<Host*> my_vms;
 	vector<TenantFlow*> tenant_flows;
 	vector<Link*> cLinks;
 	vector<int> cBws;
@@ -77,13 +79,17 @@ public:
 	void logFailures(int time);
 	Topology* createTopology(int,int,int);				//to create topology
 	void assignPaths();
-	int alloc(int v,int b,Host* h,Switch* s);
+	int alloc(int v,int b,Host* h,Switch* s,int);
+	int my_alloc(int v,int b,Host* h,Switch* s);
 	vector<Host*> octopus(int v, int b);
 	int computeMx(Switch*,int);
 	int computeMx(Link* l,int bw);
 	int TorCount(Switch* d,int bw);
 	int aggrCount(Switch* d,int bw);
 	int coreCount(Switch* d,int bw);
+	Host* getHostInPod(int pod,string tor,int);
+	Host* getHost(Switch* t,int);
+
 
 
 
