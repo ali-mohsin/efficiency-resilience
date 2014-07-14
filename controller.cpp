@@ -2904,7 +2904,7 @@ TenantFlow* Controller::octopus(int v, int b, TenantFlow* primary)
 
 		if(level==3)
 		{
-			for(int i=0;i<Cores.size();i+=Cores.size())
+			for(int i=0;i<Cores.size();i+=Cores.size()/2)
 			{
 				if(primary && primary->root==Cores[i])
 					continue;
@@ -2951,7 +2951,7 @@ bool Controller::instantiateTenant(int vms, int bw)	//rate in MBps, size in MB
 	}
 	// cout<<"VMs required: "<<vms<<endl;
 	// cout<<"BW required: "<<bw<<endl;
-	cout<<"Accomodated: "<<tenant_flows.size()<<endl;
+	// cout<<"Accomodated: "<<tenant_flows.size()<<endl;
 	vector<Link*> Tors=getAllTorLinks();
 	int check=0;
 	for(int i=0;i<Tors.size();i++)
@@ -2978,8 +2978,14 @@ bool Controller::instantiateTenant(int vms, int bw)	//rate in MBps, size in MB
 		return 0;
 	// for(int i=0;i<tf->raw_links.size();i++)
 	// {
-	// 	cout<<tf->raw_links[i]->link_id<<" has reserved "<<tf->bws[i]<<endl;
+	// 	cout<<tf->raw_links[i]->link_id<<" label: "<<tf->raw_links[i]->label<<" has reserved "<<tf->bws[i]<<" res: "<<tf->raw_links[i]->resilience<<endl;
 	// }
+
+	// for(int i=0;i<tf->raw_switches.size();i++)
+	// {
+	// 	cout<<tf->raw_switches[i]->toString()<<" level: "<<tf->raw_switches[i]->level<<" res: "<<tf->raw_switches[i]->resilience<<endl;
+	// }
+
 	// cout<<"----------------------------"<<endl;
 
 	if(end_to_end)

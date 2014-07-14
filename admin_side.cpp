@@ -24,7 +24,12 @@
 			dc->autofail(i);
 
 			if(i%100000==0)
+			{
+				cout<<"downTime: "<<dc->downTime<<" flows: "<<dc->tenant_flows.size()<<endl;
 				cout<<i<<" th run"<<endl;
+				cout<<"Availability: "<<100-100*(dc->downTime/(float(dc->tenant_flows.size())*i))<<"\n";
+
+			}
 			// seconds_run++;
 			// if( (seconds_run % inter_ping_time) == 0 )
 			// {
@@ -75,6 +80,7 @@
 	// cout<<"Total flows: "<<dc->tenant_flows.size()<<endl;
 
 	// cout<<dc->all_tenants.size()<<" was the number of accomodated tenants"<<endl;
+	cout<<"downTime: "<<dc->downTime<<" flows: "<<dc->tenant_flows.size()<<endl;
 	cout<<"Availability: "<<100-100*(dc->downTime/(float(dc->tenant_flows.size())*runs))<<"\n";
 	// cout<<"Downtime due to level 1: "<<one<<endl;
 	// cout<<"Downtime due to level 2: "<<two<<endl;

@@ -79,7 +79,7 @@ public:
 
 		Link* l=lp->primary;
 		Link* l1=lp->back;
-
+		// cout<<"link: "<<l->link_id<<" came in"<<endl;
 		if(!notIn(raw_links,l))
 			return;
 
@@ -93,6 +93,8 @@ public:
 
 		Switch* s1=l->up_switch;
 		Switch* s2=l1->up_switch;
+		// cout<<"switch: "<<s1->toString()<<" should be pushed in"<<endl;
+
 
 		if(!notIn(raw_switches,s1))
 			return;

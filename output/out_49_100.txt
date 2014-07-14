@@ -1,0 +1,97 @@
+Settings
+VM = 49, BW = 100
+
+1 ================================
+Without Replication
+Tenants: 1192
+Within Racks: 903
+Within Pods: 285
+Inter Pod: 4
+TotalDemand: 6218138
+VMs left: 2
+Availability: 99.7903
+
+With 1:1 Replication
+Tenants: 573
+Within Racks: 863
+Within Pods: 284
+Inter Pod: 5
+TotalDemand: 3058858
+VMs left: 42
+Availability: 99.9999
+
+2 ================================
+Without Replication
+Tenants: 1226
+Within Racks: 938
+Within Pods: 285
+Inter Pod: 3
+TotalDemand: 6717495
+VMs left: 45
+Availability: 99.76
+
+With 1:1 Replication
+Tenants: 619
+Within Racks: 958
+Within Pods: 280
+Inter Pod: 5
+TotalDemand: 3338878
+VMs left: 154
+Availability: 99.9999
+
+3 ================================
+Without Replication
+Tenants: 1188
+Within Racks: 912
+Within Pods: 271
+Inter Pod: 5
+TotalDemand: 6401506
+VMs left: 9
+Availability: 99.7881
+
+With 1:1 Replication
+Tenants: 589
+Within Racks: 902
+Within Pods: 275
+Inter Pod: 4
+TotalDemand: 3062795
+VMs left: 145
+Availability: 99.9999
+
+4 ================================
+Without Replication
+Tenants: 1204
+Within Racks: 918
+Within Pods: 283
+Inter Pod: 3
+TotalDemand: 6511347
+VMs left: 85
+Availability: 99.7299
+
+With 1:1 Replication
+Tenants: 588
+Within Racks: 884
+Within Pods: 293
+Inter Pod: 5
+TotalDemand: 3429430
+VMs left: 266
+Availability: 99.9968
+
+5 ================================
+Without Replication
+Tenants: 1237
+Within Racks: 966
+Within Pods: 267
+Inter Pod: 4
+TotalDemand: 6500975
+VMs left: 24
+Availability: 99.7968
+
+With 1:1 Replication
+Tenants: 625
+Within Racks: 980
+Within Pods: 267
+Inter Pod: 6
+TotalDemand: 3058993
+VMs left: 50
+Availability: 100

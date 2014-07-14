@@ -17,7 +17,7 @@ with open('script.ns','w') as fout:
 	# print vm_mean
 	# print bw_mean
 
-	for i in range(0,1800):
+	for i in range(0,3000):
 		while True:
 			num=int(random.expovariate(1/vm_mean))
 			bw=int(random.expovariate(1/bw_mean))
