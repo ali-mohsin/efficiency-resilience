@@ -23,13 +23,13 @@
 		{
 			dc->autofail(i);
 
-			if(i%100000==0)
-			{
-				cout<<"downTime: "<<dc->downTime<<" flows: "<<dc->tenant_flows.size()<<endl;
-				cout<<i<<" th run"<<endl;
-				cout<<"Availability: "<<100-100*(dc->downTime/(float(dc->tenant_flows.size())*i))<<"\n";
+			// if(i%100000==0)
+			// {
+			// 	cout<<"downTime: "<<dc->downTime<<" flows: "<<dc->tenant_flows.size()<<endl;
+			// 	cout<<i<<" th run"<<endl;
+			// 	cout<<"Availability: "<<100-100*(dc->downTime/(float(dc->tenant_flows.size())*i))<<"\n";
 
-			}
+			// }
 			// seconds_run++;
 			// if( (seconds_run % inter_ping_time) == 0 )
 			// {

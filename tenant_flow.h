@@ -39,6 +39,7 @@ public:
 	vector<int> bws;
 	vector<Host*> vms;
 	TenantFlow* backup;
+	TenantFlow* back_backup;
 	Switch* root;
 	int downTime;
 
@@ -137,13 +138,17 @@ public:
 		return backup->isPrimaryDown();
 	}
 
+	bool isBackBackDown()
+	{
+		return back_backup->isPrimaryDown();
+	}
 
 	bool isDown()
 	{
 		if(backup==NULL)
 			return isPrimaryDown();
 		else
-			return isPrimaryDown() && isBackupDown();
+			return isPrimaryDown() && isBackupDown() && isBackBackDown();
 	}
 
 	bool notIn(vector<Link*> v,Link* e)

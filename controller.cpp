@@ -2992,11 +2992,29 @@ bool Controller::instantiateTenant(int vms, int bw)	//rate in MBps, size in MB
 	{
 		TenantFlow* backup;
 		backup=octopus(vms,bw,tf);
+
 		if(backup==NULL)
+		{
 			tf->destroy();
+			return NULL;
+		}
+
+
+		TenantFlow* back_backup;
+		back_backup=octopus(vms,bw,backup);
+
+
+
+		if(back_backup==NULL)
+		{
+			tf->destroy();
+			backup->destroy();
+			return NULL;
+		}
 		else
 		{
 			tf->backup=backup;
+			tf->back_backup=back_backup;
 			tenant_flows.push_back(tf);
 			totalAccepted++;
 			totalDemand = totalDemand + (vms * bw);
