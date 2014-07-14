@@ -23,6 +23,8 @@
 		{
 			dc->autofail(i);
 
+			if(i%100000==0)
+				cout<<i<<" th run"<<endl;
 			// seconds_run++;
 			// if( (seconds_run % inter_ping_time) == 0 )
 			// {

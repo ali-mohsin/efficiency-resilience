@@ -59,6 +59,8 @@ public:
 
 	vector<LinkPair*> links_pairs;
 	vector<SwitchPair*> switches;
+	vector<Switch*> raw_switches;
+	vector<Link*> raw_links;
 	int downTime;
 
 	TenantFlow()
@@ -78,16 +80,28 @@ public:
 
 	void insert(LinkPair* lp)
 	{
-		links_pairs.push_back(lp);
+
 		Link* l=lp->primary;
 		Link* l1=lp->back;
+
+		if(!notIn(raw_links,l))
+			return;
+
+		if(l->resilience > 0 || l1->resilience>0)
+		{
+			links_pairs.push_back(lp);
+		}
 
 		Switch* s1=l->up_switch;
 		Switch* s2=l1->up_switch;
 
+		if(!notIn(raw_switches,s1))
+			return;
+		
 		SwitchPair* sp=new SwitchPair(s1,s2);
 
-		switches.push_back(sp);
+		if(s1->resilience > 0 || s2->resilience>0)
+			switches.push_back(sp);
 	}
 
 	bool isDown()
@@ -114,6 +128,17 @@ public:
 		}
 		return false;
 	}
+
+	bool notIn(vector<Link*> v,Link* e)
+	{
+		for (int i=0;i<v.size();i++)
+		{
+			if(e==v[i])
+				return false;
+		}
+		return true;
+	}
+
 };
 
 #endif /* GROUP_H */

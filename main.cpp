@@ -5,7 +5,7 @@ int main (int argc, char *argv[])
 
 	int failures=1;
 
-	int oneToOne=1;
+	int oneToOne=0;
 
 	int sharing=0;
 
@@ -2536,6 +2536,8 @@ dc->instantiateTenant(6,147);
 		{
 			dc->autofail(i);
 
+			if(i%100000==0)
+				cout<<i<<" th run"<<endl;
 			// seconds_run++;
 			// if( (seconds_run % inter_ping_time) == 0 )
 			// {

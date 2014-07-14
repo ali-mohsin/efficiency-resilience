@@ -1637,12 +1637,14 @@ void Controller::autofail(int curSec)
 
 	if(curSec%100==0)
 	{
+		// startTimer();
+
 		detect_downTime(100);
 
-		// startTimer()
+		// stopTimer("detect_downTime");
+
 		if(!oct)
 			revert_to_primary();
-		// stopTimer("revert_to_primary");
 
 		// startTimer();
 		if(!oct)
@@ -2231,25 +2233,6 @@ int Controller::alloc(int v,int b,Host* h,Switch* s,int req)
 		int allocate=min(cap,v);
 		// h->mark(v);
 		// //cout<<v<<" hosts found at "<<h->toString()<<endl;
-		int tors=getUniqueTors(tenant_vms);
-		if(tors==1 && allocate + tenant_vms.size() >= req)
-		{
-			// cout<<"Im in allocate: "<<allocate<<endl;
-			Host* h1=getHostInPod(h->getPodID(),h->getTor()->toString(),b);
-			int checker=1;
-			if(h1==NULL)
-			{
-				checker=0;
-			}
-
-			if(checker)
-			{
-				allocate--;
-				tenant_vms.push_back(h1);
-				// cout<<"I have reserved 1 VM on "<<h1->getTor()->toString()<<endl;			
-				check=1;
-			}
-			
 		}
 
 		for(int i=0;i<allocate;i++)
@@ -2259,7 +2242,7 @@ int Controller::alloc(int v,int b,Host* h,Switch* s,int req)
 		// if(allocate>0)
 		// 	cout<<"I have reserved "<<allocate<<" Vms on host in "<<h->getTor()->toString()<<endl;
 
-		return allocate+check;
+		return allocate;
 	}
 	else
 	{
@@ -2955,31 +2938,14 @@ vector<Host*> Controller::octopus(int v, int b)
 				int Mv=TorCount(Tors[i],b);
 				if(v<=Mv)
 				{
-					within_tor=1;
-					// cout<<"changed within_tor back to 1"<<endl;
-
-					// cout<<"Found at level 1 "<<Tors[i]->toString()<<" value of within_tor_tor "<<within_tor_tor<<endl;
 					int pod=Tors[i]->getPodID();
-					int check=0;
 					for(int j=0;j<Tors.size() && j!=i;j++)
 					{
 						int id=Tors[j]->getPodID();
 						if(id==pod)
 						{
 							int c=TorCount(Tors[j],b);
-							if(c > 0)
-							{
-								check=1;
-								// cout<<"bw available at: "<<Tors[j]->toString()<<endl;								
-							}
 						}
-					}
-					if(check==0 && within_tor_tor==0)
-					{
-						// cout<<"bw not available on other tor"<<endl;
-						// cout<<"changed within_tor back to 0"<<endl;
-						// within_tor=0;
-						continue;						
 					}
 					curLevel=1;
 					alloc(v,b,NULL,Tors[i],v);
@@ -2989,13 +2955,9 @@ vector<Host*> Controller::octopus(int v, int b)
 						// cout<<"Could not allocated enough bw"<<endl;
 						tenant_vms.clear();
 						// cout<<"changed within_tor back to 0"<<endl;
-						within_tor=0;
 						continue;
 					}
-					if(within_tor_tor==1)
-						ones++;
-					else
-						twos++;
+					ones++;
 					return tenant_vms;
 				}
 			}
@@ -3003,13 +2965,6 @@ vector<Host*> Controller::octopus(int v, int b)
 
 		if(level==2)
 		{
-			if(within_tor)
-			{
-				// cout<<" came to level 2 but sent back"<<endl;
-				within_tor_tor=1;
-				level--;
-				continue;
-			}
 			for(int i=0;i<Aggrs.size();i+=k/2-1)
 			{
 				int Mv=aggrCount(Aggrs[i],b);
@@ -3080,7 +3035,7 @@ bool Controller::instantiateTenant(int vms, int bw)	//rate in MBps, size in MB
 	}
 	// cout<<"VMs required: "<<vms<<endl;
 	// cout<<"BW required: "<<bw<<endl;
-	// cout<<"Accomodated: "<<tenant_flows.size()<<endl;
+	cout<<"Accomodated: "<<tenant_flows.size()<<endl;
 	vector<Link*> Tors=getAllTorLinks();
 	int check=0;
 	for(int i=0;i<Tors.size();i++)
