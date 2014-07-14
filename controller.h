@@ -81,7 +81,7 @@ public:
 	void assignPaths();
 	int alloc(int v,int b,Host* h,Switch* s,int);
 	int my_alloc(int v,int b,Host* h,Switch* s);
-	vector<Host*> octopus(int v, int b);
+	TenantFlow* octopus(int v, int b);
 	int computeMx(Switch*,int);
 	int computeMx(Link* l,int bw);
 	int TorCount(Switch* d,int bw);
@@ -111,7 +111,7 @@ public:
 	void commitFlow(Flow* flow);
 	bool checkPath(Path*, std::vector<Host*>, int, int, std::vector<PodPair*>, std::vector<TorPair*>);
 	Path* getBackUpPath(Path* primary,int rate);
-	bool checkBW(std::vector<Host*>, int);
+	TenantFlow* checkBW(std::vector<Host*>, int);
 	void revert_to_primary();
 	Path* getReplicatedPath(int src, int dst, int rate);
 	long int getTime();

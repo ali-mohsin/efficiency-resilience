@@ -2233,7 +2233,7 @@ int Controller::alloc(int v,int b,Host* h,Switch* s,int req)
 		int allocate=min(cap,v);
 		// h->mark(v);
 		// //cout<<v<<" hosts found at "<<h->toString()<<endl;
-		}
+		// }
 
 		for(int i=0;i<allocate;i++)
 			tenant_vms.push_back(h);
@@ -2514,7 +2514,7 @@ vector<Switch*> Controller::getAggrSwitches(int pod)
 	return v;
 }
 
-bool Controller::checkBW(vector<Host*> hosts,int bw)
+TenantFlow* Controller::checkBW(vector<Host*> hosts,int bw)
 {
 	// //cout<<"\tWill now check bw"<<endl;
 	// vector<TorPair*> torPairs;
@@ -2552,7 +2552,7 @@ bool Controller::checkBW(vector<Host*> hosts,int bw)
 		int reqBw=mini*bw;
 		
 		if(l->available_cap_up < reqBw || l->available_cap_down < reqBw)
-			return 0;
+			return NULL;
 
 		cLinks.push_back(l);
 		cBws.push_back(reqBw);
@@ -2608,10 +2608,10 @@ bool Controller::checkBW(vector<Host*> hosts,int bw)
 			{
 				// cout<<"Tor "<<endl;	
 				//cout<<"Was able to assign only primary "<<count<<" Tor Flows instead of "<<num<<endl;
-				return 0;
+				return NULL;
 			}
 
-			if(backUp)
+			if(tor_to_tor)
 			{
 				count=0;
 
@@ -2658,7 +2658,7 @@ bool Controller::checkBW(vector<Host*> hosts,int bw)
 				{
 					// cout<<"Core "<<endl;
 					//cout<<"Was able to assign only backup "<<count<<" Tor Flows instead of "<<num<<endl;
-					return 0;
+					return NULL;
 				}
 			}
 		}
@@ -2708,10 +2708,10 @@ bool Controller::checkBW(vector<Host*> hosts,int bw)
 			{
 				//cout<<"Was able to assign only primary "<<count<<" core flows instead of "<<num<<endl;
 				int x=1/0;
-				return 0;
+				return NULL;
 			}
 
-			if(backUp)
+			if(tor_to_tor)
 			{
 				int count=0;
 				for(int j=links.size()-1;j>-1;j--)
@@ -2748,7 +2748,7 @@ bool Controller::checkBW(vector<Host*> hosts,int bw)
 				{
 					//cout<<"Was able to assign only  back"<<count<<" Core  Flows instead of "<<num<<endl;
 					int x=1/0;
-					return 0;
+					return NULL;
 				}
 			}
 		}
@@ -2779,7 +2779,7 @@ bool Controller::checkBW(vector<Host*> hosts,int bw)
 		if(!notIn(back,cLinks[i]))
 			continue;
 
-		if(!backUp)
+		if(!tor_to_tor)
 		{
 			LinkPair* lp= new LinkPair(cLinks[i],cLinks[i]);
 			// cout<<"link id: "<<cLinks[i]->link_id<<" switch id: "<<cLinks[i]->up_switch->toString()<<endl;
@@ -2802,100 +2802,10 @@ bool Controller::checkBW(vector<Host*> hosts,int bw)
 			tf->insert(lp);
 		}
 	}
-	// cout<<"xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"<<endl;
-
-// //cout<<cLinks.size()<<" is the clinks size"<<endl;
-// //cout<<tf->links_pairs.size()<<" is the link pair size"<<endl;
-
-
-
-	// for(int i=0;i<hosts.size();i++)
-	// {
-	// }
-	// 	for(int j=i+1;j<hosts.size();j++)
-	// 	{
-	// 		if(hosts[i]!=hosts[j])
-	// 		{
-	// 			Switch* t1=hosts[i]->getTor();
-	// 			Switch* t2=hosts[j]->getTor();
-	// 			int srcID=hosts[i]->getPodID();	
-	// 			int dstID=hosts[j]->getPodID();	
-	// 			getPaths(hosts[i],hosts[j],s,l,in,1);
-	// 			Link* l;
-	// 			if(t1==t2)
-	// 			{
-	// 				level=2;
-	// 				continue;					
-	// 			}
-	// 			else if(srcID==dstID)
-	// 			{
-	// 				level=1;
-	// 				l=paths[0]->links[1];
-	// 			}
-	// 			else 
-	// 			{
-	// 				level=0;			
-	// 				l=paths[0]->links[2];
-	// 			}
-
-	// 			int check=0;
-
-	// 			// //cout<<"\t checking bw "<<hosts[i]->toString()<< " to "<<hosts[j]->toString()<<endl;
-	// 				// for(int x=0;x<paths.size();x++)
-	// 				// {
-	// 					// paths[x]->print();
-	// 			int left=vmCount(l,level,hosts,0);
-	// 			int right=vmCount(l,level,hosts,1);
-	// 			int mini=min(left,right);
-	// 			int reqBw=mini*bw;
-	// 			Path* bp=chooseBest(level,reqBw);
-	// 			check=checkPath(bp,hosts,bw,level,podPairs,torPairs);
-	// 					// if(check==1)
-	// 					// {
-	// 						// paths.clear();
-	// 						// break;	
-	// 					// }
-	// 				// }
-
-	//  				paths.clear();
-	//  				s.clear();
-	//  				l.clear();
-	//  				in.clear();
-	//  				if(check==0)
-	//  					return 0;
-
-	//  				if(level==2)
-	//  				{
-	//  					torPairs.push_back(new TorPair(t1,t2));
-	//  					torPairs.push_back(new TorPair(t2,t1));
-
-	//  				}
-
-	//  				if(level==1)
-	//  				{
-	//  					podPairs.push_back(new PodPair(srcID,dstID));
-	//  					podPairs.push_back(new PodPair(dstID,srcID));
-	//  				}						
-	// 			}
-	// 	}
-	// }	
-
-
-	// // for(int i=0;i<podPairs.size();i++)
-	// // {
-	// // 	all_pod_pairs.push_back(podPairs[i]);
-	// // }
-
-	// // for(int i=0;i<torPairs.size();i++)
-	// // {
-	// // 	all_tor_pairs.push_back(torPairs[i]);
-	// // }
-
-
-	return 1;
+	return tf;
 }
 
-vector<Host*> Controller::octopus(int v, int b)
+TenantFlow* Controller::octopus(int v, int b)
 {
 	int done=false;
 	int level=0;
@@ -2905,8 +2815,6 @@ vector<Host*> Controller::octopus(int v, int b)
 	all_tor_pairs.clear();
 	all_pod_pairs.clear();
 	tenant_vms.clear();
-	int within_tor=0;
-	int within_tor_tor=0;
 
 	while(level<=3)
 	{
@@ -2949,8 +2857,8 @@ vector<Host*> Controller::octopus(int v, int b)
 					}
 					curLevel=1;
 					alloc(v,b,NULL,Tors[i],v);
-					int commit=checkBW(tenant_vms,b);
-					if(commit==0)
+					TenantFlow* tf=checkBW(tenant_vms,b);
+					if(tf==NULL)
 					{
 						// cout<<"Could not allocated enough bw"<<endl;
 						tenant_vms.clear();
@@ -2958,7 +2866,7 @@ vector<Host*> Controller::octopus(int v, int b)
 						continue;
 					}
 					ones++;
-					return tenant_vms;
+					return tf;
 				}
 			}
 		}
@@ -2974,16 +2882,16 @@ vector<Host*> Controller::octopus(int v, int b)
 					curLevel=2;					
 
 					alloc(v,b,NULL,Aggrs[i],v);
-					int commit=checkBW(tenant_vms,b);
-					if(commit==0)
+					TenantFlow* tf=checkBW(tenant_vms,b);
+					if(tf==NULL)
 					{
-						// //cout<<"Could not allocated enough bw"<<endl;
+						// cout<<"Could not allocated enough bw"<<endl;
 						tenant_vms.clear();
-
+						// cout<<"changed within_tor back to 0"<<endl;
 						continue;
 					}
 					twos++;
-					return tenant_vms;
+					return tf;
 				}
 			}
 		}
@@ -3000,17 +2908,16 @@ vector<Host*> Controller::octopus(int v, int b)
 					curLevel=3;					
 
 					alloc(v,b,NULL,Cores[i],v);
-					int commit=checkBW(tenant_vms,b);
-					if(commit==0)
+					TenantFlow* tf=checkBW(tenant_vms,b);
+					if(tf==NULL)
 					{
-//						//cout<<"Could not allocated enough bw"<<endl;
+						// cout<<"Could not allocated enough bw"<<endl;
 						tenant_vms.clear();
-
+						// cout<<"changed within_tor back to 0"<<endl;
 						continue;
 					}
 					threes++;
-
-					return tenant_vms;
+					return tf;
 				}
 			}
 		}
@@ -3018,7 +2925,7 @@ vector<Host*> Controller::octopus(int v, int b)
 	level++;
 	}
 //	//cout<<"no more"<<endl;
-	return tenant_vms;
+	return NULL;
 }
 
 bool Controller::instantiateTenant(int vms, int bw)	//rate in MBps, size in MB
@@ -3056,10 +2963,10 @@ bool Controller::instantiateTenant(int vms, int bw)	//rate in MBps, size in MB
 		// int x=1/0;
 	}
 
-	vector<Host*> hosts;
-	hosts=octopus(vms,bw);
+	TenantFlow* tf;
+	tf=octopus(vms,bw);
 
-	if(hosts.size() > 0)
+	if(tf!=NULL)
 	{
 		totalAccepted++;
 		totalDemand = totalDemand + (vms * bw);
