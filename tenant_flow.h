@@ -41,12 +41,16 @@ public:
 	TenantFlow* backup;
 	Switch* root;
 	int downTime;
+	int bw;
+	int vm;
 
-	TenantFlow(vector<Host*> hosts)
+	TenantFlow(vector<Host*> hosts,int v,int b)
 	{
 		backup=NULL;
 		downTime=0;
 		vms=hosts;
+		vm=v;
+		bw=b;
 	}
 
 	bool notIn(vector<Switch*> v,Switch* e)
@@ -63,15 +67,14 @@ public:
 	{
 		for(int i=0;i<raw_links.size();i++)
 		{
-			raw_links[i]->available_cap_up-=bws[i];
-			raw_links[i]->available_cap_down-=bws[i];
+			raw_links[i]->available_cap_up+=bws[i];
+			raw_links[i]->available_cap_down+=bws[i];
 		}
 
 		for(int i=0;i<vms.size();i++)
 		{
 			vms[i]->unmark(1);
 		}
-
 	}
 
 	void insert(LinkPair* lp, int bw)

@@ -77,6 +77,9 @@ with open('script.ns','rb') as fin:
                     code.append("\tint oneToOne=2;\n")
                 elif (red=="none"):
                     code.append("\tint oneToOne=0;\n")
+                elif (red=="p2p"):
+                    code.append("\tint oneToOne=3;\n")
+
 
 
                 if(sharing=="yes"):

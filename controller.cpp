@@ -25,6 +25,7 @@ Topology* Controller::createTopology(int tor,int aggr,int core)
 
 Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int runFor,int makeFlows,int octo,float seedV)
 {
+	shared=1;
 	ones=0;
 	twos=0;
 	threes=0;
@@ -49,10 +50,13 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	oct=octo;
 	tor_to_tor=0;
 	end_to_end=0;
+	pool_to_pool=0;	
 	if(back==1)
 		tor_to_tor=1;
 	if(back==2)
 		end_to_end=1;
+	if(back==3)
+		pool_to_pool=1;
 
 	sharing = share;
 	backup=0;
@@ -663,6 +667,16 @@ bool notIn(vector<HostPair*> v,HostPair* e)
 	return true;
 }
 
+bool notIn(vector<TenantFlow*> v,TenantFlow* e)
+{
+	for (int i=0;i<v.size();i++)
+	{
+		if(e==v[i])
+			return false;
+	}
+	return true;
+}
+
 bool notIn(vector<Tenant*> v,Tenant* e)
 {
 	for (int i=0;i<v.size();i++)
@@ -893,6 +907,29 @@ void Controller::findFaults()
 void Controller::revert_to_primary()
 {
 	//////startTimer();
+
+
+	if(pool_to_pool)
+	{
+		vector<TenantFlow*> flows_recovered;
+		for(int i=0;i<on_back.size();i++)
+		{
+			TenantFlow* tf=on_back[i];
+			if(!tf->isPrimaryDown())
+			{
+				if(tf->backup)
+				{
+					tf->backup->destroy();
+					tf->backup=NULL;
+					cout<<on_back[i]<<" moving back to primary"<<endl;
+				}
+				on_back.erase(on_back.begin()+i);
+				i--;
+			}
+		}
+		return;
+	}
+
 	bool revert=false;
 	for(int i=0;i<critical_switches.size();i++)
 	{
@@ -997,12 +1034,65 @@ void Controller::revert_to_primary()
 
 void Controller::detect_downTime(int factor)
 {
+	if(oct && pool_to_pool)
+	{
+
+		if(on_back.size()>0)
+			cout<<"Flows on back: "<<on_back.size()<<endl;
+
+
+		for(int i=0;i<on_back.size();i++)
+		{
+			TenantFlow* tf=on_back[i];
+			if(tf->isDown())
+			{
+				cout<<"primary pod: "<<tf->root->getPodID()<<endl;
+				if(tf->backup)
+					cout<<"backup pod: "<<tf->backup->root->getPodID()<<endl;
+				else
+					cout<<"NULL backup"<<endl;
+
+				downTime+=factor;
+				// cout<<" I on back and now down also "<<tf<<endl;
+			}
+		}
+
+		for(int i=0;i<tenant_flows.size();i++)
+		{
+			if(tenant_flows[i]->isDown() && notIn(on_back,tenant_flows[i]))
+			{
+				// cout<<tenant_flows[i]<<" is being pushed to back up"<<endl;
+				TenantFlow* tfb=octopus(tenant_flows[i]->vm,tenant_flows[i]->bw,tenant_flows[i],k-shared,k);
+				if(tfb)
+				{
+					// cout<<tenant_flows[i] << " found its back up"<<endl;
+					tenant_flows[i]->backup=tfb;
+				}
+				else
+				{
+					cout<<tenant_flows[i] << " could NOT find its back up"<<endl;
+					downTime+=factor;
+				}
+				// get backup tenant here
+				on_back.push_back(tenant_flows[i]);
+				cout<<tenant_flows[i]<<" shifting to its backup"<<endl;
+				// push it into on_back here
+				// downTime+=factor;
+				// tenant_flows[i]->downTime+=factor;
+			}
+		}
+		return;
+	}
+
+
 	if(oct)
 	{
 		for(int i=0;i<tenant_flows.size();i++)
 		{
 			if(tenant_flows[i]->isDown())
 			{
+				// get backup tenant here
+				// push it into on_back here
 				downTime+=factor;
 				tenant_flows[i]->downTime+=factor;
 			}
@@ -1550,7 +1640,7 @@ void Controller::updateStatusLink(int curSec, int factor)
 void Controller::autofail(int curSec)
 {
 	// This function needs to be rewritten, from insights from philipa gill
-
+	// cout<<pool_to_pool<<endl;
 	if(curSec==0)
 	{
 
@@ -1568,38 +1658,6 @@ void Controller::autofail(int curSec)
 		vector<Link*> t=getAllTorLinks();
 		vector<Link*> a=getAllAggrLinks();
 		vector<Link*> c=getAllCoreLinks();
-
-		// double used=0;
-		// double total=0;
-
-		// for(int i=0;i<t.size();i++)
-		// {
-		// 	used+=1024-t[i]->available_cap_down;
-
-		// 	total+=1024;
-		// }
-
-		// //cout<<"Tor util: "<<used*100/total<<endl;
-		// used=0;
-		// total=0;
-
-		// for(int i=0;i<a.size();i++)
-		// {
-		// 	used+=1024-a[i]->available_cap_down;
-		// 	total+=1024;
-		// }
-
-		// //cout<<"Aggr util: "<<used*100/total<<endl;
-
-		// used=0;
-		// total=0;
-		// for(int i=0;i<c.size();i++)
-		// {
-		// 	used+=1024-c[i]->available_cap_down;
-		// 	total+=1024;
-		// }
-
-		// //cout<<"Core util: "<<used*100/total<<endl;
 
 		int unused = 0;
 		for(int i=0;i<all_hosts.size();i++)
@@ -1643,8 +1701,8 @@ void Controller::autofail(int curSec)
 
 		// stopTimer("detect_downTime");
 
-		if(!oct)
-			revert_to_primary();
+		// if(!oct)
+		revert_to_primary();
 
 		// startTimer();
 		if(!oct)
@@ -2220,7 +2278,7 @@ Host* Controller::getHostInPod(int pod,string tor,int b)
 	return NULL;
 }
 
-int Controller::alloc(int v,int b,Host* h,Switch* s,int req)
+int Controller::alloc(int v,int b,Host* h,Switch* s,int req,int start, int end)
 {
 	int check=0;
 	if(h!=NULL)
@@ -2250,22 +2308,26 @@ int Controller::alloc(int v,int b,Host* h,Switch* s,int req)
 		vector<Device*> sub_trees;
 		for(int i=0;i<s->down_links.size();i++)
 		{
-			Link* curLink=s->down_links[i];
-			if(curLink->host)
+			if((s->getPodID() >= start && s->getPodID() < end) || s->getPodID()==-1)
 			{
-				// int Mw=curLink->host->availableVMs();
-				int Mw=computeMx(curLink,b);
-				count+=alloc(min(v-count,Mw),b,curLink->host,NULL,req);
-				// //cout<<"Total allocation: "<<count<<endl;				
+				Link* curLink=s->down_links[i];
+				if(curLink->host)
+				{
+					// int Mw=curLink->host->availableVMs();
+					int Mw=computeMx(curLink,b);
+					count+=alloc(min(v-count,Mw),b,curLink->host,NULL,req,start,end);
+					// //cout<<"Total allocation: "<<count<<endl;				
 
-			}
-			else
-			{
-				Switch* sw=curLink->down_switch;
-				int Mw=computeMx(sw,b);
-				count+=alloc(min(v-count,Mw),b,NULL,sw,req);
-				// //cout<<"Total allocation: "<<count<<endl;				
-
+				}
+				else
+				{
+					Switch* sw=curLink->down_switch;
+					if(sw->getPodID() >=start && s->getPodID() < end)
+					{
+						int Mw=computeMx(sw,b);
+						count+=alloc(min(v-count,Mw),b,NULL,sw,req,start,end);	
+					}
+				}
 			}
 		}
 
@@ -2519,6 +2581,8 @@ TenantFlow* Controller::checkBW(vector<Host*> hosts,int bw)
 	// //cout<<"\tWill now check bw"<<endl;
 	// vector<TorPair*> torPairs;
 	// vector<PodPair*> podPairs;
+	if(hosts.size()==0)
+		return NULL;
 	vector<Link*> links;
 	cLinks.clear();
 	cBws.clear();
@@ -2765,7 +2829,7 @@ TenantFlow* Controller::checkBW(vector<Host*> hosts,int bw)
 
 	// //cout<<"\t\t\tbw satisfied, commiting"<<endl;
 	// //cout<<cLinks.size()<<" size of clinks"<<endl;
-	TenantFlow* tf=new TenantFlow(hosts);
+	TenantFlow* tf=new TenantFlow(hosts,hosts.size(),bw);
 	for(int i=0;i<cLinks.size();i++)
 	{
 		cLinks[i]->available_cap_up-=cBws[i];
@@ -2804,10 +2868,12 @@ TenantFlow* Controller::checkBW(vector<Host*> hosts,int bw)
 	return tf;
 }
 
-TenantFlow* Controller::octopus(int v, int b, TenantFlow* primary)
+TenantFlow* Controller::octopus(int v, int b, TenantFlow* primary,int start,int end)
 {
 	int done=false;
 	int level=0;
+	// cout<<"starting at: "<<start<<endl;
+	// cout<<"ending at: "<<end<<endl;
 	vector<Switch*> Tors=getAllTors();
 	vector<Switch*> Aggrs=getAllAggrs();
 	vector<Switch*> Cores=all_cores;
@@ -2842,61 +2908,70 @@ TenantFlow* Controller::octopus(int v, int b, TenantFlow* primary)
 		{
 			for(int i=0;i<Tors.size();i++)
 			{
-				if(primary && primary->root==Tors[i])
-					continue;
-				int Mv=TorCount(Tors[i],b);
-				if(v<=Mv)
+				if(Tors[i]->getPodID() >= start && Tors[i]->getPodID() < end)
 				{
-					int pod=Tors[i]->getPodID();
-					for(int j=0;j<Tors.size() && j!=i;j++)
-					{
-						int id=Tors[j]->getPodID();
-						if(id==pod)
-						{
-							int c=TorCount(Tors[j],b);
-						}
-					}
-					curLevel=1;
-					alloc(v,b,NULL,Tors[i],v);
-					TenantFlow* tf=checkBW(tenant_vms,b);
-					if(tf==NULL)
-					{
-						// cout<<"Could not allocated enough bw"<<endl;
-						tenant_vms.clear();
-						// cout<<"changed within_tor back to 0"<<endl;
+					// if(start!=0)
+					// 	cout<<Tors[i]->getPodID()<<" is the pod"<<endl;
+
+					if(primary && primary->root==Tors[i])
 						continue;
+					
+					int Mv=TorCount(Tors[i],b);
+					if(v<=Mv)
+					{
+						// if(start==k-shared)
+						// {
+						// 	cout<<"Found at tor level"<<endl;
+						// }
+
+						alloc(v,b,NULL,Tors[i],v,start,end);
+						TenantFlow* tf=checkBW(tenant_vms,b);
+						if(tf==NULL )
+						{
+							// cout<<"Could not allocated enough bw"<<endl;
+							tenant_vms.clear();
+							// cout<<"changed within_tor back to 0"<<endl;
+							continue;
+						}
+						ones++;
+						tf->root=Tors[i];
+						// if(start==k-shared)
+						// {
+						// 	cout<<"assigned at tor level"<<endl;
+						// }
+						return tf;
 					}
-					ones++;
-					tf->root=Tors[i];
-					return tf;
 				}
 			}
 		}
 
 		if(level==2)
 		{
-			for(int i=0;i<Aggrs.size();i+=k/2-1)
+			for(int i=0;i<Aggrs.size() ;i+=k/2-1)
 			{
-				if(primary && primary->root==Aggrs[i])
-					continue;
-				int Mv=aggrCount(Aggrs[i],b);
-				if(v<=Mv)
+				if( Aggrs[i]->getPodID() >= start && Aggrs[i]->getPodID() < end)
 				{
-					// cout<<"Found at level 2     i: "<<i<<endl;
-					curLevel=2;					
-
-					alloc(v,b,NULL,Aggrs[i],v);
-					TenantFlow* tf=checkBW(tenant_vms,b);
-					if(tf==NULL)
-					{
-						// cout<<"Could not allocated enough bw"<<endl;
-						tenant_vms.clear();
-						// cout<<"changed within_tor back to 0"<<endl;
+					if(primary && primary->root==Aggrs[i])
 						continue;
+					int Mv=aggrCount(Aggrs[i],b);
+					if(v<=Mv)
+					{
+						// cout<<"Found at level 2     i: "<<i<<endl;
+						curLevel=2;					
+
+						alloc(v,b,NULL,Aggrs[i],v,start,end);
+						TenantFlow* tf=checkBW(tenant_vms,b);
+						if(tf==NULL)
+						{
+							// cout<<"Could not allocated enough bw"<<endl;
+							tenant_vms.clear();
+							// cout<<"changed within_tor back to 0"<<endl;
+							continue;
+						}
+						twos++;
+						tf->root=Aggrs[i];
+						return tf;
 					}
-					twos++;
-					tf->root=Aggrs[i];
-					return tf;
 				}
 			}
 		}
@@ -2915,7 +2990,7 @@ TenantFlow* Controller::octopus(int v, int b, TenantFlow* primary)
 					// cout<<"Found at level 3    	   i= "<<i<<endl;
 					curLevel=3;					
 
-					alloc(v,b,NULL,Cores[i],v);
+					alloc(v,b,NULL,Cores[i],v,start,end);
 					TenantFlow* tf=checkBW(tenant_vms,b);
 					if(tf==NULL)
 					{
@@ -2924,16 +2999,16 @@ TenantFlow* Controller::octopus(int v, int b, TenantFlow* primary)
 						// cout<<"changed within_tor back to 0"<<endl;
 						continue;
 					}
+					// cout<<"allocated at level 3"<<endl;
+					// cout<<tenant_vms.size()<<" num allocated"<<endl; 
 					threes++;
 					tf->root=Cores[i];
 					return tf;
 				}
 			}
 		}
-
 	level++;
 	}
-//	//cout<<"no more"<<endl;
 	return NULL;
 }
 
@@ -2973,7 +3048,7 @@ bool Controller::instantiateTenant(int vms, int bw)	//rate in MBps, size in MB
 	}
 
 	TenantFlow* tf;
-	tf=octopus(vms,bw,NULL);
+	tf=octopus(vms,bw,NULL,0,k-shared);
 	if(tf==NULL)
 		return 0;
 	// for(int i=0;i<tf->raw_links.size();i++)
@@ -2991,7 +3066,7 @@ bool Controller::instantiateTenant(int vms, int bw)	//rate in MBps, size in MB
 	if(end_to_end)
 	{
 		TenantFlow* backup;
-		backup=octopus(vms,bw,tf);
+		backup=octopus(vms,bw,tf,k-shared,k);
 		if(backup==NULL)
 			tf->destroy();
 		else

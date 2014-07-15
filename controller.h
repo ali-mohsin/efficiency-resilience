@@ -37,6 +37,8 @@ public:
 	vector<Tenant*> all_tenants;
 	vector<HostPair*> all_host_pairs;
 	vector<Link*> usedLinks;
+	vector<TenantFlow*> on_back;
+	int shared;
 	bool entertainRequest;
 	int totalDemand;
 	int flows_on_share;
@@ -47,6 +49,7 @@ public:
 	int end_to_end;
 	int curLevel;
 	int totalAccepted;
+	int pool_to_pool;
 
 	double downTime;
 	int torCap;
@@ -79,9 +82,9 @@ public:
 	void logFailures(int time);
 	Topology* createTopology(int,int,int);				//to create topology
 	void assignPaths();
-	int alloc(int v,int b,Host* h,Switch* s,int);
+	int alloc(int v,int b,Host* h,Switch* s,int,int,int);
 	int my_alloc(int v,int b,Host* h,Switch* s);
-	TenantFlow* octopus(int v, int b,TenantFlow*);
+	TenantFlow* octopus(int v, int b,TenantFlow*,int,int);
 	int computeMx(Switch*,int);
 	int computeMx(Link* l,int bw);
 	int TorCount(Switch* d,int bw);

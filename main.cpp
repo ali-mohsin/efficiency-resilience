@@ -5,7 +5,7 @@ int main (int argc, char *argv[])
 
 	int failures=1;
 
-	int oneToOne=0;
+	int oneToOne=3;
 
 	int sharing=0;
 
