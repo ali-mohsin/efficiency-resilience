@@ -1,4 +1,4 @@
-#define FatTree -k 40 -reduncancy p2p -sharing no -oct yes -repeatForAll -algo default -torLinks 1G -aggrLinks 1G -coreLinks 1G -failures enable -runFor 30000000 -seed 0.7736
+#define FatTree -k 8 -reduncancy p2p -sharing no -oct yes -repeatForAll -algo default -torLinks 1G -aggrLinks 1G -coreLinks 1G -failures enable -runFor 30000000 -seed 0.7736
 #define Tenant -vm 13 -bw 91
 #define Tenant -vm 43 -bw 149
 #define Tenant -vm 153 -bw 19

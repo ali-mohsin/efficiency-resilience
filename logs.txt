@@ -15722,3 +15722,11 @@ Switch with id: [1,5,12] has become failure prone
 Switch with id: [2,39,0] has become failure prone
 Group with leader: Link with id: 37165 has become failure prone
 Group with leader: Link with id: 36758 has become failure prone
+Switch with id: [2,3,0] has become failure prone
+Switch with id: [0,-1,0] has become failure prone
+Switch with id: [1,1,1] has become failure prone
+Group with leader: Link with id: 7 has become failure prone
+Switch with id: [2,3,0] has become failure prone
+Switch with id: [0,-1,0] has become failure prone
+Switch with id: [1,1,1] has become failure prone
+Group with leader: Link with id: 7 has become failure prone

@@ -5,10 +5,13 @@ void Host::connectToSwitch(Switch* dev,Link* link)
 	assert(link->host!=this);
 	assert(link->up_switch != dev || link->down_switch!=dev);
 	assert(dev->down_links.size() < dev->num_ports);
-	assert(this->link==NULL);
+	assert(this->link==NULL || this->otherLink==NULL);
 	link->host=this;
 	link->up_switch=dev;
-	this->link=link;
+	if(this->link==NULL)	
+		this->link=link;
+	else
+		this->otherLink=link;
 	dev->down_links.push_back(link);
 }
 

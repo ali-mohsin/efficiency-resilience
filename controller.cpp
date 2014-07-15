@@ -15,16 +15,19 @@ class Topology;
 Topology* Controller::createTopology(int tor,int aggr,int core)
 {
 	Topology* tree = new Topology(k,tor,aggr,core);
-	tree->createFatTree();
+	cout<<"starting to create tree"<<endl;
+	tree->createMusaTree();
 	all_cores = tree->getCores();
 	all_switches = tree->getSwitches();
 	all_hosts = tree->getHosts();
 	all_links = tree->getLinks();
- 		// tree->printTopology();
+ 	tree->printTopology();
+ 	cout<<"Topo created"<<endl;
 }
 
 Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int runFor,int makeFlows,int octo,float seedV)
 {
+
 	shared=1;
 	ones=0;
 	twos=0;
@@ -37,7 +40,11 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	aggrCap=aggr;
 	coreCap=core;
 	flowNumber = 0;
+	cout<<"will create topo"<<endl;
 	createTopology(tor,aggr,core);
+
+	cout<<"topo created"<<endl;
+
 	entertainRequest = true;
 	totalDemand = 0;
 	totalAccepted = 0;

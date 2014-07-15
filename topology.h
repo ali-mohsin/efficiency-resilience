@@ -9,6 +9,9 @@
 #include "link.h"
 #include "switch.h"
 #include "host.h"
+#include "subpod.h"
+
+
 /* This class creates a topology, primarily fat tree using the basic building blocks of switches, links and hosts. */
 
 class Topology
@@ -51,6 +54,12 @@ class Topology
 		vector<Switch*> createPod(int id); // constructs a pod (specific to fat-tree) and returns the vector containing pointers to the aggregation level switches
 		void createFatTree(); // constructs the fat tree using the value of k initialized by the constructor
 		void printTopology(); // prints out the network devices and hosts in a depth-first manner
+
+		Pod* createMusaPod(int podId);
+		void createMusaTree();
+		Subpod* createSubPod(int);
+
+
 
 		//getter functions
 		vector<Switch*> getCores();
