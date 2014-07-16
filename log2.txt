@@ -1,6 +1,8 @@
-Tenants: 1150
-Within Racks: 921
-Within Pods: 228
+Tenants: 1233
+Within Racks: 985
+Within Pods: 247
 Inter Pod: 1
-TotalDemand: 5571811
-VMs left: 1968
+TotalDemand: 5941006
+VMs left: 2022
+downTime: 2.72775e+07 flows: 1233
+Availability: 99.9263
