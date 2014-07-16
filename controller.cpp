@@ -21,7 +21,7 @@ Topology* Controller::createTopology(int tor,int aggr,int core)
 	all_switches = tree->getSwitches();
 	all_hosts = tree->getHosts();
 	all_links = tree->getLinks();
- 	tree->printTopology();
+ 	// tree->printTopology();
  	cout<<"Topo created"<<endl;
 }
 
@@ -2203,22 +2203,39 @@ int Controller::computeMx(Switch* d,int bw)
 int Controller::TorCount(Switch* d,int bw)
 {
 	int count=0;
+	// cout<<d->toString()<<" was the level label: "<<d->label<<endl;
 	for(int i=0;i<d->down_links.size();i++)
 	{
+		// cout<<"tor link: "<<i<<endl;
+		// if(d->level > 2)
+		// 	continue;
 		count+=computeMx(d->down_links[i],bw);
 	}
+	// cout<<"tor count: "<<count<<" Tor: "<<d->toString()<<endl;
+
 	return count;
 }
 
 int Controller::aggrCount(Switch* d,int bw)
 {
 	int count=0;
+	// cout<<d->toString()<<" was the aggr level"<<endl;
 	// ////cout<<"My level is "<<d->level<<endl;
 	for(int i=0;i<d->down_links.size();i++)
 	{
+
+		// cout<<d->down_links[i]->link_id<<" was the link id label: "<<d->down_links[i]->label<<endl;
 		Switch* sw=d->down_links[i]->down_switch;
-		count+=TorCount(sw,bw);
+		// if(sw==NULL)
+		// {
+		// 	cout<<"MAYDAY"<<endl;
+		// }
+		if(d->down_links[i]->host)
+			count+=computeMx(d->down_links[i],bw);
+		else
+			count+=TorCount(sw,bw);
 	}
+	// cout<<"aggr count: "<<count<<endl;
 	return count;
 }
 
@@ -2233,8 +2250,10 @@ int Controller::coreCount(Switch* d,int bw)
 	{
 		Switch* sw=d->down_links[i]->down_switch;
 		// ////cout<<"My level is "<<sw->level<<endl;
-
-		count+=aggrCount(sw,bw);
+		if(sw->level==2)
+			count+=TorCount(sw,bw);
+		else
+			count+=aggrCount(sw,bw);
 	}
 	return count;	
 }
@@ -2591,6 +2610,7 @@ TenantFlow* Controller::checkBW(vector<Host*> hosts,int bw)
 	if(hosts.size()==0)
 		return NULL;
 	vector<Link*> links;
+	vector<Link*> torBacks;
 	cLinks.clear();
 	cBws.clear();
 	int level;
@@ -2624,6 +2644,19 @@ TenantFlow* Controller::checkBW(vector<Host*> hosts,int bw)
 		
 		if(l->available_cap_up < reqBw || l->available_cap_down < reqBw)
 			return NULL;
+
+
+		if(tor_to_tor)	
+		{
+			Link* l1=all_hosts[i]->otherLink;
+			if(l1->available_cap_up < reqBw || l1->available_cap_down < reqBw)
+				return NULL;
+
+			torBacks.push_back(l1);
+
+		}
+		
+
 
 		cLinks.push_back(l);
 		cBws.push_back(reqBw);
@@ -2837,10 +2870,16 @@ TenantFlow* Controller::checkBW(vector<Host*> hosts,int bw)
 	// //cout<<"\t\t\tbw satisfied, commiting"<<endl;
 	// //cout<<cLinks.size()<<" size of clinks"<<endl;
 	TenantFlow* tf=new TenantFlow(hosts,hosts.size(),bw);
+
 	for(int i=0;i<cLinks.size();i++)
 	{
 		cLinks[i]->available_cap_up-=cBws[i];
 		cLinks[i]->available_cap_down-=cBws[i];
+		if(cLinks[i]->label=="Tor" && tor_to_tor)
+		{
+			torBacks[i]->available_cap_up-=cBws[i];
+			torBacks[i]->available_cap_down-=cBws[i];
+		}
 	}
 
 
@@ -2868,6 +2907,11 @@ TenantFlow* Controller::checkBW(vector<Host*> hosts,int bw)
 				 back=backCore.back();
 				 backCore.pop_back();
 			}
+			if(cLinks[i]->label=="Tor")
+			{
+				back=torBacks[i];
+			}
+			
 			LinkPair* lp= new LinkPair(cLinks[i],back);
 			tf->insert(lp,cBws[i]);
 		}
