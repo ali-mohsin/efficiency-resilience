@@ -2514,6 +2514,18 @@ vector<Switch*> Controller::getAggrSwitches(int pod)
 	return v;
 }
 
+Link* getOtherBack(vector<Link*> cLinks,Link* back, Link* index)
+{
+	for(int i=0;i<cLinks.size();i++)
+	{
+		if(cLinks[i]->label=="Aggr" && cLinks[i]!=back && cLinks[i]!=index)
+			return cLinks[i];
+	}
+
+	return NULL;
+}
+
+
 TenantFlow* Controller::checkBW(vector<Host*> hosts,int bw)
 {
 	// //cout<<"\tWill now check bw"<<endl;
@@ -2653,14 +2665,66 @@ TenantFlow* Controller::checkBW(vector<Host*> hosts,int bw)
 	
 					// //cout<<"reserving on back "<<assign*bw<<" on link: "<<l->link_id<<endl;
 				}
-
 				if(count!=num)
 				{
-					// cout<<"Core "<<endl;
-					//cout<<"Was able to assign only backup "<<count<<" Tor Flows instead of "<<num<<endl;
+					// cout<<"Tor "<<endl;	
+					//cout<<"Was able to assign only primary "<<count<<" Tor Flows instead of "<<num<<endl;
 					return NULL;
 				}
 			}
+
+			if(tor_to_tor)
+			{
+				count=0;
+
+				for(int j=links.size()-1;j>-1;j--)
+				{
+					Link* l=links[j];
+					int bwres=0;
+					for(int x=0;x<cLinks.size();x++)
+					{
+						if(cLinks[x]==links[j])
+						{
+							bwres=cBws[x];
+							break;
+						}	
+					}
+					int up=l->available_cap_up-bwres;
+					int down=l->available_cap_down-bwres;
+					int min_bw=min(up,down);
+					int avail=min_bw/bw;
+					int assign=min(avail,num-count);
+					if(assign<0)
+						int x=1/0;
+
+					if(bw<0)
+						int x=1/0;
+					
+					if(assign*bw<0)
+						int x=1/0;
+
+					if(assign==0)
+						continue;
+
+					count+=assign;
+					cLinks.push_back(l);
+					cBws.push_back(assign*bw);
+					backAggr.push_back(l);
+					back.push_back(l);
+					//cout<<"reserving on back"<<bw<<" on link: "<<l->link_id<<" times: "<<assign<<endl;
+	
+					// //cout<<"reserving on back "<<assign*bw<<" on link: "<<l->link_id<<endl;
+				}
+				if(count!=num)
+				{
+					// cout<<"Tor "<<endl;	
+					//cout<<"Was able to assign only primary "<<count<<" Tor Flows instead of "<<num<<endl;
+					return NULL;
+				}
+			}
+
+
+			
 		}
 	}
 
@@ -2751,6 +2815,49 @@ TenantFlow* Controller::checkBW(vector<Host*> hosts,int bw)
 					return NULL;
 				}
 			}
+
+						if(tor_to_tor)
+			{
+				int count=0;
+				for(int j=links.size()-1;j>-1;j--)
+				{
+					Link* l=links[j];
+					int bwres=0;
+					for(int x=0;x<cLinks.size();x++)
+					{
+						if(cLinks[x]==links[j])
+						{
+							bwres=cBws[x];
+							break;
+						}
+					}
+					int up=l->available_cap_up-bwres;
+					int down=l->available_cap_down-bwres;
+					int min_bw=min(up,down);
+					int avail=min_bw/bw;
+					int assign=min(avail,num-count);
+					if(assign<0)
+						int x=1/0;
+
+					if(assign==0)
+						continue;
+					count+=assign;
+					cLinks.push_back(l);
+					cBws.push_back(assign*bw);
+					backCore.push_back(l);
+					back.push_back(l);
+					// //cout<<"reserving on back"<<assign*bw<<" on link: "<<l->link_id<<endl;
+				}
+
+				if(count!=num)
+				{
+					//cout<<"Was able to assign only  back"<<count<<" Core  Flows instead of "<<num<<endl;
+					int x=1/0;
+					return NULL;
+				}
+			}
+
+			
 		}
 	}
 
@@ -2765,6 +2872,7 @@ TenantFlow* Controller::checkBW(vector<Host*> hosts,int bw)
 
 	// //cout<<"\t\t\tbw satisfied, commiting"<<endl;
 	// //cout<<cLinks.size()<<" size of clinks"<<endl;
+	// cout<<"backaggr size: "<<backAggr.size()<<endl;
 	TenantFlow* tf=new TenantFlow(hosts);
 	for(int i=0;i<cLinks.size();i++)
 	{
@@ -2780,24 +2888,36 @@ TenantFlow* Controller::checkBW(vector<Host*> hosts,int bw)
 
 		if(!tor_to_tor)
 		{
-			LinkPair* lp= new LinkPair(cLinks[i],cLinks[i]);
+			LinkPair* lp= new LinkPair(cLinks[i],cLinks[i],cLinks[i]);
 			// cout<<"link id: "<<cLinks[i]->link_id<<" switch id: "<<cLinks[i]->up_switch->toString()<<endl;
 			tf->insert(lp,cBws[i]);
 		}
 		else
 		{
 			Link* back=cLinks[i];
+			Link* otherBack=cLinks[i];
 			if(cLinks[i]->label=="Aggr")
 			{
-				 back=backAggr.back();
+				back=backAggr.back();
+				 // if(backAggr.size()>1)	
+				otherBack=getOtherBack(cLinks,back,cLinks[i]);
+				if(otherBack==NULL)
+					 otherBack=backAggr[rand()%(backAggr.size())];
+				 // // else
+					//  otherBack=backAggr[rand()%backAggr.size()];
+
 				 backAggr.pop_back();
 			}
 			if(cLinks[i]->label=="Core")
 			{
 				 back=backCore.back();
+				 otherBack=backCore[rand()%backCore.size()];
 				 backCore.pop_back();
 			}
-			LinkPair* lp= new LinkPair(cLinks[i],back);
+			if(otherBack==NULL)
+				int x=1/0;
+
+			LinkPair* lp= new LinkPair(cLinks[i],back,otherBack);
 			tf->insert(lp,cBws[i]);
 		}
 	}

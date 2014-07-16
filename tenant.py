@@ -8,7 +8,7 @@ with open('script.ns','w') as fout:
 	randValue = 1000000 * randValue
 	ranValue = int(randValue)
 	randValue = float(ranValue)/1000000
-	fout.write("#define FatTree -k 40 -reduncancy none -sharing no -oct yes -repeatForAll -algo default -torLinks 1G -aggrLinks 1G -coreLinks 1G -failures enable -runFor 30000000 -seed " + str(randValue) +"\n")
+	fout.write("#define FatTree -k 40 -reduncancy t2t -sharing no -oct yes -repeatForAll -algo default -torLinks 1G -aggrLinks 1G -coreLinks 1G -failures enable -runFor 30000000 -seed " + str(randValue) +"\n")
 
 	vm_mean = float(sys.argv[1])
 	bw_mean = float(sys.argv[2])
@@ -17,7 +17,7 @@ with open('script.ns','w') as fout:
 	# print vm_mean
 	# print bw_mean
 
-	for i in range(0,3000):
+	for i in range(0,2000):
 		while True:
 			num=int(random.expovariate(1/vm_mean))
 			bw=int(random.expovariate(1/bw_mean))

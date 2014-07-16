@@ -6,11 +6,13 @@ class LinkPair
 public:
 	Link* primary;
 	Link* back;
+	Link* otherBack;
 
-	LinkPair(Link* p,Link* b)
+	LinkPair(Link* p,Link* b,Link* bb)
 	{
 		primary=p;
 		back=b;
+		otherBack=bb;
 	}
 };
 
@@ -20,11 +22,13 @@ class SwitchPair
 public:
 	Switch* primary;
 	Switch* back;
+	Switch* otherBack;
 
-	SwitchPair(Switch* p,Switch* b)
+	SwitchPair(Switch* p,Switch* b,Switch* bb)
 	{
 		primary=p;
 		back=b;
+		otherBack=bb;
 	}
 };
 
@@ -80,6 +84,7 @@ public:
 
 		Link* l=lp->primary;
 		Link* l1=lp->back;
+		Link* l2=lp->otherBack;
 		// cout<<"link: "<<l->link_id<<" came in"<<endl;
 		if(!notIn(raw_links,l))
 			return;
@@ -94,6 +99,9 @@ public:
 
 		Switch* s1=l->up_switch;
 		Switch* s2=l1->up_switch;
+		if(l2==NULL)
+			int x=1/0;
+		Switch* s3=l2->up_switch;
 		// cout<<"switch: "<<s1->toString()<<" should be pushed in"<<endl;
 
 
@@ -102,7 +110,7 @@ public:
 		
 		raw_switches.push_back(s1);
 
-		SwitchPair* sp=new SwitchPair(s1,s2);
+		SwitchPair* sp=new SwitchPair(s1,s2,s3);
 
 		if(s1->resilience > 0 || s2->resilience>0)
 			switches.push_back(sp);
@@ -113,10 +121,9 @@ public:
 		for(int i=0;i<links_pairs.size();i++)
 		{
 			LinkPair* lp=links_pairs[i];
-			if(lp->primary->status < 0 && lp->back->status < 0)
+			if(lp->primary->status < 0 && lp->back->status < 0 && lp->otherBack->status < 0)
 			{
 				// cout<<"Link "<<lp->primary->link_id<<" label: "<<lp->primary->label<<" is down"<<endl;
-
 				return true;				
 			}
 		}
@@ -124,7 +131,7 @@ public:
 		for(int i=0;i<switches.size();i++)
 		{
 			SwitchPair* lp=switches[i];
-			if(lp->primary->status < 0 && lp->back->status < 0)
+			if(lp->primary->status < 0 && lp->back->status < 0 && lp->otherBack->status < 0)
 			{
 				// cout<<"Switch "<<lp->primary->toString()<<" is down"<<endl;
 				return true;

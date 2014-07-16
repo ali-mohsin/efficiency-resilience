@@ -1,0 +1,107 @@
+Settings
+VM = 49, BW = 100
+
+1 ================================
+Without Replication
+Tenants: 1245
+Within Racks: 969
+Within Pods: 274
+Inter Pod: 2
+TotalDemand: 6075443
+VMs left: 2070
+downTime: 2.35062e+08 flows: 1245
+Availability: 99.3707
+
+With 1:1 Replication
+Tenants: 1141
+Within Racks: 891
+Within Pods: 249
+Inter Pod: 1
+TotalDemand: 5596425
+VMs left: 2018
+downTime: 700000 flows: 1141
+Availability: 99.998
+
+2 ================================
+Without Replication
+Tenants: 1250
+Within Racks: 989
+Within Pods: 260
+Inter Pod: 1
+TotalDemand: 5932043
+VMs left: 2033
+downTime: 2.34328e+08 flows: 1250
+Availability: 99.3751
+
+With 1:1 Replication
+Tenants: 1162
+Within Racks: 917
+Within Pods: 243
+Inter Pod: 2
+TotalDemand: 5673888
+VMs left: 2018
+downTime: 115000 flows: 1162
+Availability: 99.9997
+
+3 ================================
+Without Replication
+Tenants: 1215
+Within Racks: 959
+Within Pods: 253
+Inter Pod: 3
+TotalDemand: 6111696
+VMs left: 2021
+downTime: 2.22006e+08 flows: 1215
+Availability: 99.3909
+
+With 1:1 Replication
+Tenants: 1100
+Within Racks: 862
+Within Pods: 237
+Inter Pod: 1
+TotalDemand: 5766005
+VMs left: 2020
+downTime: 60800 flows: 1100
+Availability: 99.9998
+
+4 ================================
+Without Replication
+Tenants: 1170
+Within Racks: 897
+Within Pods: 272
+Inter Pod: 1
+TotalDemand: 6224753
+VMs left: 2051
+downTime: 2.90492e+08 flows: 1170
+Availability: 99.1724
+
+With 1:1 Replication
+Tenants: 1077
+Within Racks: 818
+Within Pods: 254
+Inter Pod: 5
+TotalDemand: 5757864
+VMs left: 1966
+downTime: 4.5137e+06 flows: 1077
+Availability: 99.986
+
+5 ================================
+Without Replication
+Tenants: 1200
+Within Racks: 923
+Within Pods: 276
+Inter Pod: 1
+TotalDemand: 6157365
+VMs left: 2003
+downTime: 2.33183e+08 flows: 1200
+Availability: 99.3523
+
+With 1:1 Replication
+Tenants: 1109
+Within Racks: 851
+Within Pods: 257
+Inter Pod: 1
+TotalDemand: 5817436
+VMs left: 2042
+downTime: 689200 flows: 1109
+Availability: 99.9979

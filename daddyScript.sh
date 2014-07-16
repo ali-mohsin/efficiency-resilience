@@ -1,10 +1,10 @@
 #!/bin/bash
 
-runs=5
+runs=1
 
 for vm in 49
 do
-	for bw in 100
+	for bw in 100 200 300 400
 	do
 		echo "Settings"
 		echo "VM = "$vm", BW = "$bw
@@ -38,7 +38,7 @@ do
 			g++ -w -o admin main.cpp controller.cpp flow.cpp host.cpp link.cpp path.cpp switch.cpp topology.cpp -pthread
 			echo "Started simulation - with 1:1 replication...please wait..."
 			echo "With 1:1 Replication" >> $outFile
-			./admin 5025 >> $outFile
+#			./admin 5025 >> $outFile
 		done
 
 		echo "Results in: "$outFile
