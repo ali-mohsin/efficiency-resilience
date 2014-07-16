@@ -1,0 +1,2850 @@
+1000 is the num of flows committed
+2000 is the num of flows committed
+3000 is the num of flows committed
+4000 is the num of flows committed
+5000 is the num of flows committed
+6000 is the num of flows committed
+7000 is the num of flows committed
+8000 is the num of flows committed
+9000 is the num of flows committed
+10000 is the num of flows committed
+11000 is the num of flows committed
+12000 is the num of flows committed
+Flows generated 12490
+*ELAPSED*0
+*ELAPSED*100000
+*ELAPSED*200000
+*ELAPSED*300000
+*ELAPSED*400000
+*ELAPSED*500000
+*ELAPSED*600000
+*ELAPSED*700000
+*ELAPSED*800000
+*ELAPSED*900000
+*ELAPSED*1000000
+*ELAPSED*1100000
+*ELAPSED*1200000
+*ELAPSED*1300000
+*ELAPSED*1400000
+*ELAPSED*1500000
+*ELAPSED*1600000
+*ELAPSED*1700000
+*ELAPSED*1800000
+*ELAPSED*1900000
+*ELAPSED*2000000
+*ELAPSED*2100000
+*ELAPSED*2200000
+*ELAPSED*2300000
+*ELAPSED*2400000
+*ELAPSED*2500000
+*ELAPSED*2600000
+*ELAPSED*2700000
+*ELAPSED*2800000
+*ELAPSED*2900000
+*ELAPSED*3000000
+*ELAPSED*3100000
+*ELAPSED*3200000
+*ELAPSED*3300000
+*ELAPSED*3400000
+*ELAPSED*3500000
+*ELAPSED*3600000
+*ELAPSED*3700000
+*ELAPSED*3800000
+*ELAPSED*3900000
+*ELAPSED*4000000
+*ELAPSED*4100000
+*ELAPSED*4200000
+*ELAPSED*4300000
+*ELAPSED*4400000
+*ELAPSED*4500000
+*ELAPSED*4600000
+*ELAPSED*4700000
+*ELAPSED*4800000
+*ELAPSED*4900000
+*ELAPSED*5000000
+*ELAPSED*5100000
+*ELAPSED*5200000
+*ELAPSED*5300000
+*ELAPSED*5400000
+*ELAPSED*5500000
+*ELAPSED*5600000
+*ELAPSED*5700000
+*ELAPSED*5800000
+*ELAPSED*5900000
+*ELAPSED*6000000
+*ELAPSED*6100000
+*ELAPSED*6200000
+*ELAPSED*6300000
+*ELAPSED*6400000
+*ELAPSED*6500000
+*ELAPSED*6600000
+*ELAPSED*6700000
+*ELAPSED*6800000
+*ELAPSED*6900000
+*ELAPSED*7000000
+*ELAPSED*7100000
+*ELAPSED*7200000
+*ELAPSED*7300000
+*ELAPSED*7400000
+*ELAPSED*7500000
+*ELAPSED*7600000
+*ELAPSED*7700000
+*ELAPSED*7800000
+*ELAPSED*7900000
+*ELAPSED*8000000
+*ELAPSED*8100000
+*ELAPSED*8200000
+*ELAPSED*8300000
+*ELAPSED*8400000
+*ELAPSED*8500000
+*ELAPSED*8600000
+*ELAPSED*8700000
+*ELAPSED*8800000
+*ELAPSED*8900000
+*ELAPSED*9000000
+*ELAPSED*9100000
+*ELAPSED*9200000
+*ELAPSED*9300000
+*ELAPSED*9400000
+*ELAPSED*9500000
+*ELAPSED*9600000
+*ELAPSED*9700000
+*ELAPSED*9800000
+*ELAPSED*9900000
+*ELAPSED*10000000
+*ELAPSED*10100000
+*ELAPSED*10200000
+*ELAPSED*10300000
+*ELAPSED*10400000
+*ELAPSED*10500000
+*ELAPSED*10600000
+*ELAPSED*10700000
+*ELAPSED*10800000
+*ELAPSED*10900000
+*ELAPSED*11000000
+*ELAPSED*11100000
+*ELAPSED*11200000
+*ELAPSED*11300000
+*ELAPSED*11400000
+*ELAPSED*11500000
+fail
+95.5565 Was the Availability
+4 Up curTime 394300 upFor: 16883
+Group with leader: Link with id: 5735 has become failure prone
+Link Core 5735 Down curTime: 401000 downFor: -291 resLevel: 2
+Link Core 5735 Up curTime 401300 upFor: 713909
+Link Aggr 274 Down curTime: 411600 downFor: -50 resLevel: 2
+Link Aggr 274 Up curTime 411700 upFor: 1190
+Link Aggr 274 Down curTime: 412900 downFor: -214 resLevel: 2
+Link Aggr 274 Up curTime 413200 upFor: 995
+Link Aggr 274 Down curTime: 414200 downFor: -663 resLevel: 2
+Link Aggr 274 Up curTime 414900 upFor: 303
+Link Aggr 274 Down curTime: 415200 downFor: -290 resLevel: 2
+Link Aggr 274 Up curTime 415500 upFor: 3937802
+Link Core 5469 Down curTime: 443300 downFor: -755 resLevel: 1
+Link Core 5469 Up curTime 444100 upFor: 10
+Link Aggr 2204 Down curTime: 451500 downFor: -90 resLevel: 1
+Link Aggr 2204 Up curTime 451600 upFor: 10
+Link Core 5774 Down curTime: 475400 downFor: -286 resLevel: 1
+Link Core 5774 Up curTime 475700 upFor: 10
+Group with leader: Link with id: 5439 has become failure prone
+Link Core 4702 Down curTime: 479300 downFor: -243 resLevel: 2
+Link Core 5439 Down curTime: 479300 downFor: -243 resLevel: 2
+Link Core 5380 Down curTime: 479300 downFor: -243 resLevel: 2
+Link Core 4702 Up curTime 479600 upFor: 217
+Link Core 5439 Up curTime 479600 upFor: 217
+Link Core 5380 Up curTime 479600 upFor: 217
+Link Core 4702 Down curTime: 479900 downFor: -856 resLevel: 2
+Link Core 5439 Down curTime: 479900 downFor: -856 resLevel: 2
+Link Core 5380 Down curTime: 479900 downFor: -856 resLevel: 2
+Link Core 4702 Up curTime 480800 upFor: 955
+Link Core 5439 Up curTime 480800 upFor: 955
+Link Core 5380 Up curTime 480800 upFor: 955
+Link Core 4702 Down curTime: 481800 downFor: -245 resLevel: 2
+Link Core 5439 Down curTime: 481800 downFor: -245 resLevel: 2
+Link Core 5380 Down curTime: 481800 downFor: -245 resLevel: 2
+Link Core 4702 Up curTime 482100 upFor: 386
+Link Core 5439 Up curTime 482100 upFor: 386
+Link Core 5380 Up curTime 482100 upFor: 386
+Link Core 4702 Down curTime: 482500 downFor: -185 resLevel: 2
+Link Core 5439 Down curTime: 482500 downFor: -185 resLevel: 2
+Link Core 5380 Down curTime: 482500 downFor: -185 resLevel: 2
+Link Core 4702 Up curTime 482700 upFor: 2155
+Link Core 5439 Up curTime 482700 upFor: 2155
+Link Core 5380 Up curTime 482700 upFor: 2155
+Link Core 4702 Down curTime: 484900 downFor: -244 resLevel: 2
+Link Core 5439 Down curTime: 484900 downFor: -244 resLevel: 2
+Link Core 5380 Down curTime: 484900 downFor: -244 resLevel: 2
+Link Core 4702 Up curTime 485200 upFor: 635619
+Link Core 5439 Up curTime 485200 upFor: 635619
+Link Core 5380 Up curTime 485200 upFor: 635619
+Group with leader: Link with id: 5048 has become failure prone
+Link Core 5048 Down curTime: 501900 downFor: -156 resLevel: 2
+Link Core 5048 Up curTime 502100 upFor: 66351
+Link Aggr 1691 Down curTime: 515600 downFor: -60652 resLevel: 1
+Link Aggr 1691 Up curTime 576300 upFor: 10
+Link Tor 3580 Down curTime: 611700 downFor: -255 resLevel: 1
+Link Tor 3580 Up curTime 612000 upFor: 10
+Group with leader: Link with id: 2940 has become failure prone
+Link Tor 2940 Down curTime: 626500 downFor: -246 resLevel: 2
+Link Tor 2940 Up curTime 626800 upFor: 216
+Link Tor 2940 Down curTime: 627100 downFor: -219 resLevel: 2
+Link Tor 2940 Up curTime 627400 upFor: 1462
+Link Tor 2940 Down curTime: 628900 downFor: -841 resLevel: 2
+Link Tor 757 Down curTime: 629300 downFor: -151 resLevel: 1
+Link Tor 757 Up curTime 629500 upFor: 10
+Link Core 5048 Down curTime: 629600 downFor: -271 resLevel: 2
+Link Core 5048 Up curTime 629900 upFor: 920528
+Link Tor 2940 Up curTime 630200 upFor: 96
+Link Tor 2940 Down curTime: 630300 downFor: -182 resLevel: 2
+Link Tor 2940 Up curTime 630500 upFor: 38005
+Link Tor 2940 Down curTime: 668500 downFor: -244 resLevel: 2
+Link Tor 2940 Up curTime 668800 upFor: 72
+Link Tor 2940 Down curTime: 668900 downFor: -193 resLevel: 2
+Link Tor 2940 Up curTime 669100 upFor: 118
+Link Tor 2940 Down curTime: 669300 downFor: -184 resLevel: 2
+Link Tor 2940 Up curTime 669500 upFor: 644
+Link Tor 2940 Down curTime: 670200 downFor: -102 resLevel: 2
+Link Tor 2940 Up curTime 670300 upFor: 79511
+Link Core 5675 Down curTime: 671700 downFor: -148 resLevel: 1
+Link Core 5675 Up curTime 671900 upFor: 10
+Link Core 5209 Down curTime: 675500 downFor: -183 resLevel: 1
+Link Core 5209 Up curTime 675700 upFor: 10
+Group with leader: Link with id: 2985 has become failure prone
+Link Tor 2985 Down curTime: 682200 downFor: -1011 resLevel: 2
+Link Tor 2985 Up curTime 683300 upFor: 6523569
+Link Core 4801 Down curTime: 714600 downFor: -111 resLevel: 1
+Link Core 4801 Up curTime 714800 upFor: 10
+Group with leader: Link with id: 2390 has become failure prone
+Link Tor 2390 Down curTime: 723200 downFor: -359 resLevel: 2
+Link Tor 2390 Up curTime 723600 upFor: 194
+Link Tor 2390 Down curTime: 723800 downFor: -277 resLevel: 2
+Link Tor 2390 Up curTime 724100 upFor: 38176
+Group with leader: Link with id: 1286 has become failure prone
+Link Aggr 1286 Down curTime: 728100 downFor: -805 resLevel: 2
+Link Aggr 1286 Up curTime 728900 upFor: 348
+Link Aggr 1286 Down curTime: 729300 downFor: -171 resLevel: 2
+Link Aggr 1286 Up curTime 729500 upFor: 270404
+Link Tor 2940 Down curTime: 750500 downFor: -116 resLevel: 2
+Link Tor 2940 Up curTime 750700 upFor: 3189
+Link Tor 2940 Down curTime: 753900 downFor: -262 resLevel: 2
+Link Core 5821 Down curTime: 754100 downFor: -3073 resLevel: 1
+Link Core 5821 Up curTime 757200 upFor: 10
+Group with leader: Link with id: 1255 has become failure prone
+Link Tor 2940 Up curTime 757400 upFor: 90
+Link Aggr 1255 Down curTime: 757400 downFor: -22 resLevel: 2
+Link Aggr 1255 Up curTime 757500 upFor: 1126
+Link Tor 2940 Down curTime: 757500 downFor: -375 resLevel: 2
+Link Tor 2940 Up curTime 757900 upFor: 99
+Link Tor 2940 Down curTime: 758000 downFor: -354 resLevel: 2
+Link Tor 2940 Up curTime 758400 upFor: 892
+Link Tor 2940 Down curTime: 759300 downFor: -160 resLevel: 2
+Link Tor 2940 Up curTime 759500 upFor: 1306
+Link Aggr 1255 Down curTime: 759600 downFor: -53 resLevel: 2
+Link Aggr 1255 Up curTime 759700 upFor: 1281285
+Link Tor 2940 Down curTime: 760800 downFor: -223 resLevel: 2
+Link Tor 2940 Up curTime 761100 upFor: 565799
+Link Tor 2390 Down curTime: 767000 downFor: -225 resLevel: 2
+Link Tor 2390 Up curTime 767300 upFor: 2332
+Link Tor 2390 Down curTime: 769700 downFor: -98 resLevel: 2
+Link Tor 2390 Up curTime 769800 upFor: 2318
+Link Tor 2390 Down curTime: 772200 downFor: -190 resLevel: 2
+Link Tor 2390 Up curTime 772400 upFor: 219061
+Group with leader: Link with id: 3205 has become failure prone
+Link Aggr 3205 Down curTime: 951500 downFor: -139 resLevel: 2
+Link Aggr 3205 Up curTime 951700 upFor: 426
+Link Aggr 3205 Down curTime: 952200 downFor: -133 resLevel: 2
+Link Aggr 3205 Up curTime 952400 upFor: 148968
+Link Tor 1739 Down curTime: 960900 downFor: -239 resLevel: 1
+Link Tor 1739 Up curTime 961200 upFor: 10
+Link Core 5385 Down curTime: 967400 downFor: -2695 resLevel: 1
+Link Core 5385 Up curTime 970100 upFor: 10
+Link Tor 2390 Down curTime: 994600 downFor: -53 resLevel: 2
+Link Tor 2390 Up curTime 994700 upFor: 234
+Link Tor 2390 Down curTime: 995000 downFor: -155 resLevel: 2
+Link Tor 2390 Up curTime 995200 upFor: 13427
+Switch Core [0,-1,11] Down curTime: 1006000 downFor: -139 resLevel: 1
+Link Tor 1359 Down curTime: 1006100 downFor: -347 resLevel: 1
+Switch Core [0,-1,11] Up curTime: 1006200 upFor: 10
+Link Tor 1359 Up curTime 1006500 upFor: 10
+Link Tor 2390 Down curTime: 1009000 downFor: -251 resLevel: 2
+Link Tor 2390 Up curTime 1009300 upFor: 199
+Link Tor 2390 Down curTime: 1009500 downFor: -90 resLevel: 2
+Link Tor 2390 Up curTime 1009600 upFor: 3568
+Link Aggr 1286 Down curTime: 1009900 downFor: -96 resLevel: 2
+Link Aggr 1286 Up curTime 1010000 upFor: 936
+Link Aggr 1286 Down curTime: 1011000 downFor: -285 resLevel: 2
+Link Aggr 1286 Up curTime 1011300 upFor: 3206934
+Link Aggr 1437 Down curTime: 1012300 downFor: -103 resLevel: 1
+Link Aggr 1437 Up curTime 1012400 upFor: 10
+Link Aggr 2463 Down curTime: 1013300 downFor: -364 resLevel: 1
+Link Aggr 2463 Up curTime 1013700 upFor: 10
+Link Tor 2390 Down curTime: 1013700 downFor: -266 resLevel: 2
+Link Tor 2390 Up curTime 1014000 upFor: 4673623
+Link Tor 1123 Down curTime: 1059600 downFor: -341 resLevel: 1
+Link Tor 1123 Up curTime 1060000 upFor: 10
+Group with leader: Link with id: 4748 has become failure prone
+Link Core 4748 Down curTime: 1086100 downFor: -3100 resLevel: 2
+Link Aggr 1086 Down curTime: 1088700 downFor: -232 resLevel: 1
+Link Aggr 1086 Up curTime 1089000 upFor: 10
+Link Core 4748 Up curTime 1089500 upFor: 80538
+Link Aggr 3205 Down curTime: 1107000 downFor: -63 resLevel: 2
+Link Aggr 3205 Up curTime 1107100 upFor: 1476
+Link Aggr 3205 Down curTime: 1108600 downFor: -438 resLevel: 2
+Link Aggr 3205 Up curTime 1109100 upFor: 2230
+Link Aggr 3205 Down curTime: 1111400 downFor: -58 resLevel: 2
+Link Aggr 3205 Up curTime 1111500 upFor: 6098453
+Group with leader: Link with id: 2885 has become failure prone
+Link Aggr 2885 Down curTime: 1162700 downFor: -223 resLevel: 2
+Link Core 5270 Down curTime: 1162700 downFor: -223 resLevel: 2
+Link Aggr 2885 Up curTime 1163000 upFor: 3037026
+Link Core 5270 Up curTime 1163000 upFor: 3037026
+Link Core 4748 Down curTime: 1170800 downFor: -203 resLevel: 2
+Link Core 4748 Up curTime 1171000 upFor: 32661
+Link Core 5735 Down curTime: 1185900 downFor: -211 resLevel: 2
+Link Core 5735 Up curTime 1186200 upFor: 82295
+Link Core 4748 Down curTime: 1204000 downFor: -221 resLevel: 2
+Link Core 4748 Up curTime 1204300 upFor: 216
+Link Core 4748 Down curTime: 1204600 downFor: -38 resLevel: 2
+Link Core 4748 Up curTime 1204700 upFor: 7250046
+Link Core 4702 Down curTime: 1205600 downFor: -234 resLevel: 2
+Link Core 5439 Down curTime: 1205600 downFor: -234 resLevel: 2
+Link Core 5380 Down curTime: 1205600 downFor: -234 resLevel: 2
+Link Core 4702 Up curTime 1205900 upFor: 4417222
+Link Core 5439 Up curTime 1205900 upFor: 4417222
+Link Core 5380 Up curTime 1205900 upFor: 4417222
+Group with leader: Link with id: 4178 has become failure prone
+Link Core 4178 Down curTime: 1244200 downFor: -339 resLevel: 2
+Link Core 4178 Up curTime 1244600 upFor: 41290
+Link Core 5735 Down curTime: 1268500 downFor: -339 resLevel: 2
+Link Core 5735 Up curTime 1268900 upFor: 135
+Link Core 5735 Down curTime: 1269100 downFor: -185 resLevel: 2
+Link Core 5735 Up curTime 1269300 upFor: 221
+Link Core 5735 Down curTime: 1269600 downFor: -879 resLevel: 2
+Link Core 5735 Up curTime 1270500 upFor: 163
+Link Core 5735 Down curTime: 1270700 downFor: -123 resLevel: 2
+Link Core 5735 Up curTime 1270900 upFor: 791003
+Link Core 4686 Down curTime: 1286600 downFor: -263 resLevel: 1
+Link Core 4686 Up curTime 1286900 upFor: 10
+Link Core 4178 Down curTime: 1287900 downFor: -264 resLevel: 2
+Link Core 4178 Up curTime 1288200 upFor: 134
+Link Core 4178 Down curTime: 1288400 downFor: -68 resLevel: 2
+Link Core 4178 Up curTime 1288500 upFor: 796010
+Switch Aggr [1,12,9] Down curTime: 1303600 downFor: -129 resLevel: 1
+Switch Aggr [1,12,9] Up curTime: 1303800 upFor: 10
+Group with leader: Link with id: 406 has become failure prone
+Link Aggr 406 Down curTime: 1314100 downFor: -268 resLevel: 2
+Link Aggr 406 Up curTime 1314400 upFor: 11581
+Link Aggr 406 Down curTime: 1326000 downFor: -368 resLevel: 2
+Link Aggr 406 Up curTime 1326400 upFor: 46629
+Link Tor 2940 Down curTime: 1333700 downFor: -253 resLevel: 2
+Link Tor 2940 Up curTime 1334000 upFor: 824
+Link Tor 2940 Down curTime: 1334900 downFor: -289 resLevel: 2
+Link Tor 2940 Up curTime 1335200 upFor: 37954
+Link Tor 2940 Down curTime: 1373200 downFor: -3097 resLevel: 2
+Link Tor 2940 Up curTime 1376300 upFor: 102
+Link Tor 2940 Down curTime: 1376400 downFor: -61999 resLevel: 2
+Group with leader: Link with id: 3876 has become failure prone
+Link Aggr 3876 Down curTime: 1401600 downFor: -253 resLevel: 2
+Link Aggr 3876 Up curTime 1401900 upFor: 900
+Link Aggr 3876 Down curTime: 1402800 downFor: -329 resLevel: 2
+Link Aggr 3876 Up curTime 1403200 upFor: 187
+Link Aggr 3876 Down curTime: 1403400 downFor: -238 resLevel: 2
+Link Aggr 3876 Up curTime 1403700 upFor: 1649549
+Link Tor 2940 Up curTime 1439300 upFor: 2716
+Link Aggr 406 Down curTime: 1439700 downFor: -76 resLevel: 2
+Link Aggr 406 Up curTime 1439800 upFor: 2272
+Link Tor 2940 Down curTime: 1442100 downFor: -60 resLevel: 2
+Link Tor 2940 Up curTime 1442200 upFor: 79833
+Link Aggr 406 Down curTime: 1442300 downFor: -65 resLevel: 2
+Link Aggr 406 Up curTime 1442400 upFor: 417635
+Link Tor 2940 Down curTime: 1522100 downFor: -224 resLevel: 2
+Link Tor 2940 Up curTime 1522400 upFor: 27508
+Link Core 5724 Down curTime: 1541300 downFor: -232 resLevel: 1
+Link Core 5724 Up curTime 1541600 upFor: 10
+Link Tor 3911 Down curTime: 1544400 downFor: -82 resLevel: 1
+Link Tor 3911 Up curTime 1544500 upFor: 10
+Link Tor 2940 Down curTime: 1550400 downFor: -290 resLevel: 2
+Link Tor 2940 Up curTime 1550700 upFor: 203
+Link Tor 2940 Down curTime: 1550900 downFor: -730 resLevel: 2
+Link Tor 2940 Up curTime 1551700 upFor: 2258
+Link Tor 2940 Down curTime: 1554000 downFor: -213 resLevel: 2
+Link Tor 2940 Up curTime 1554300 upFor: 2376
+Group with leader: Link with id: 4415 has become failure prone
+Link Core 4415 Down curTime: 1556200 downFor: -121 resLevel: 2
+Link Core 4415 Up curTime 1556400 upFor: 3339
+Link Tor 2940 Down curTime: 1556700 downFor: -367 resLevel: 2
+Link Tor 2940 Up curTime 1557100 upFor: 102
+Link Tor 2940 Down curTime: 1557200 downFor: -2839 resLevel: 2
+Link Tor 2940 Up curTime 1560100 upFor: 4699650
+Link Core 5048 Down curTime: 1561500 downFor: -163 resLevel: 2
+Link Core 5048 Up curTime 1561700 upFor: 1993
+Link Core 4415 Down curTime: 1563200 downFor: -179 resLevel: 2
+Link Core 4415 Up curTime 1563400 upFor: 210
+Link Core 5048 Down curTime: 1563700 downFor: -264 resLevel: 2
+Link Core 4415 Down curTime: 1563700 downFor: -295 resLevel: 2
+Link Core 5048 Up curTime 1564000 upFor: 7718
+Link Core 4415 Up curTime 1564300 upFor: 1331283
+Link Core 5048 Down curTime: 1571800 downFor: -28 resLevel: 2
+Link Core 5048 Up curTime 1571900 upFor: 871029
+Group with leader: Link with id: 5227 has become failure prone
+Link Core 5227 Down curTime: 1588600 downFor: -171 resLevel: 2
+Link Core 5227 Up curTime 1588800 upFor: 2010390
+Link Aggr 465 Down curTime: 1598100 downFor: -208 resLevel: 1
+Link Aggr 465 Up curTime 1598300 upFor: 10
+Link Aggr 3472 Down curTime: 1604300 downFor: -160 resLevel: 1
+Link Aggr 3472 Up curTime 1604500 upFor: 10
+Link Core 4839 Down curTime: 1630500 downFor: -636 resLevel: 1
+Link Core 4839 Up curTime 1631200 upFor: 10
+Link Core 4974 Down curTime: 1667400 downFor: -128 resLevel: 1
+Link Core 4974 Up curTime 1667600 upFor: 10
+Link Core 5897 Down curTime: 1673100 downFor: -176 resLevel: 1
+Link Core 5897 Up curTime 1673300 upFor: 10
+Group with leader: Link with id: 1657 has become failure prone
+Link Aggr 1657 Down curTime: 1717100 downFor: -107 resLevel: 2
+Link Aggr 1657 Up curTime 1717200 upFor: 16527
+Group with leader: Link with id: 4372 has become failure prone
+Link Core 4372 Down curTime: 1730700 downFor: -1439 resLevel: 2
+Link Core 4372 Up curTime 1732200 upFor: 2775
+Link Aggr 1657 Down curTime: 1733800 downFor: -146 resLevel: 2
+Link Aggr 1657 Up curTime 1734000 upFor: 1814
+Link Core 4372 Down curTime: 1735200 downFor: -281 resLevel: 2
+Link Core 4372 Up curTime 1735500 upFor: 22707
+Link Aggr 1657 Down curTime: 1735900 downFor: -140 resLevel: 2
+Link Aggr 1657 Up curTime 1736100 upFor: 579177
+Link Core 4372 Down curTime: 1758500 downFor: -217 resLevel: 2
+Link Core 4372 Up curTime 1758800 upFor: 76
+Link Core 4372 Down curTime: 1758900 downFor: -135 resLevel: 2
+Link Core 4372 Up curTime 1759100 upFor: 1983
+Link Core 4372 Down curTime: 1761100 downFor: -272 resLevel: 2
+Link Core 4372 Up curTime 1761400 upFor: 969726
+Link Core 4557 Down curTime: 1819000 downFor: -261 resLevel: 1
+Link Core 4557 Up curTime 1819300 upFor: 10
+Link Aggr 406 Down curTime: 1869200 downFor: -98 resLevel: 2
+Link Aggr 406 Up curTime 1869300 upFor: 29720
+Group with leader: Link with id: 4981 has become failure prone
+Link Core 4981 Down curTime: 1870100 downFor: -109 resLevel: 2
+Link Core 4981 Up curTime 1870200 upFor: 8004309
+Link Aggr 406 Down curTime: 1899300 downFor: -95 resLevel: 2
+Link Aggr 406 Up curTime 1899400 upFor: 181
+Link Aggr 406 Down curTime: 1899600 downFor: -184 resLevel: 2
+Link Aggr 406 Up curTime 1899800 upFor: 1632299
+Link Aggr 2229 Down curTime: 1924100 downFor: -748 resLevel: 1
+Link Aggr 2229 Up curTime 1924900 upFor: 10
+Switch with id: [1,10,9] has become failure prone
+Switch Aggr [1,10,9] Down curTime: 1926600 downFor: -299 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 1926900 upFor: 75882
+Group with leader: Link with id: 4078 has become failure prone
+Link Core 4078 Down curTime: 1942500 downFor: -150 resLevel: 2
+Link Core 4078 Up curTime 1942700 upFor: 22626
+Link Core 5936 Down curTime: 1947000 downFor: -141 resLevel: 1
+Link Core 5936 Up curTime 1947200 upFor: 10
+Link Core 4078 Down curTime: 1965600 downFor: -154 resLevel: 2
+Link Core 4078 Up curTime 1965800 upFor: 198
+Link Core 4078 Down curTime: 1966000 downFor: -274 resLevel: 2
+Link Core 4078 Up curTime 1966300 upFor: 17621
+Link Core 4078 Down curTime: 1984000 downFor: -2714 resLevel: 2
+Link Core 4078 Up curTime 1986800 upFor: 9198916
+Switch Aggr [1,10,9] Down curTime: 2002800 downFor: -530 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 2003400 upFor: 239040
+Link Core 4608 Down curTime: 2050200 downFor: -207 resLevel: 1
+Link Core 4608 Up curTime 2050400 upFor: 10
+Link Core 5319 Down curTime: 2060900 downFor: -229 resLevel: 1
+Link Core 5319 Up curTime 2061200 upFor: 10
+Link Core 5735 Down curTime: 2066000 downFor: -80483 resLevel: 2
+Link Aggr 412 Down curTime: 2094500 downFor: -191 resLevel: 1
+Link Aggr 412 Up curTime 2094700 upFor: 10
+Group with leader: Link with id: 4830 has become failure prone
+Link Core 4830 Down curTime: 2112600 downFor: -178 resLevel: 2
+Link Core 4830 Up curTime 2112800 upFor: 4477891
+Group with leader: Link with id: 2554 has become failure prone
+Link Core 5735 Up curTime 2147000 upFor: 61310
+Link Tor 2554 Down curTime: 2147000 downFor: -85128 resLevel: 2
+Switch with id: [1,19,1] has become failure prone
+Switch Aggr [1,19,1] Down curTime: 2159100 downFor: -45 resLevel: 2
+Switch Aggr [1,19,1] Up curTime: 2159200 upFor: 1277343
+Link Core 5735 Down curTime: 2208400 downFor: -94 resLevel: 2
+Link Core 5735 Up curTime 2208500 upFor: 841317
+Link Tor 2554 Up curTime 2232300 upFor: 160619
+Group with leader: Link with id: 2025 has become failure prone
+Link Aggr 2025 Down curTime: 2232400 downFor: -43 resLevel: 2
+Link Aggr 2025 Up curTime 2232500 upFor: 208
+Link Aggr 2025 Down curTime: 2232700 downFor: -884 resLevel: 2
+Link Aggr 2025 Up curTime 2233600 upFor: 374
+Link Aggr 2025 Down curTime: 2234000 downFor: -294 resLevel: 2
+Link Aggr 2025 Up curTime 2234300 upFor: 315
+Link Aggr 2025 Down curTime: 2234700 downFor: -638 resLevel: 2
+Link Aggr 2025 Up curTime 2235400 upFor: 162
+Link Aggr 2025 Down curTime: 2235600 downFor: -179 resLevel: 2
+Link Aggr 2025 Up curTime 2235800 upFor: 195
+Link Aggr 2025 Down curTime: 2236000 downFor: -255 resLevel: 2
+Link Core 5940 Down curTime: 2236100 downFor: -803 resLevel: 1
+Link Core 5940 Up curTime 2236900 upFor: 10
+Link Aggr 2025 Up curTime 2237200 upFor: 1159
+Link Core 4455 Down curTime: 2237400 downFor: -130 resLevel: 1
+Link Core 4455 Up curTime 2237600 upFor: 10
+Link Aggr 2025 Down curTime: 2238600 downFor: -186757 resLevel: 2
+Link Core 5665 Down curTime: 2240000 downFor: -276 resLevel: 1
+Link Core 5665 Up curTime 2240300 upFor: 10
+Switch Aggr [1,10,9] Down curTime: 2242500 downFor: -1805 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 2244300 upFor: 375626
+Group with leader: Link with id: 3302 has become failure prone
+Link Tor 3302 Down curTime: 2252600 downFor: -113 resLevel: 2
+Link Tor 3302 Up curTime 2252800 upFor: 895
+Link Tor 3302 Down curTime: 2253700 downFor: -156 resLevel: 2
+Link Tor 3302 Up curTime 2253900 upFor: 32188
+Link Tor 2939 Down curTime: 2264700 downFor: -110 resLevel: 1
+Link Tor 2939 Up curTime 2264900 upFor: 10
+Group with leader: Link with id: 3471 has become failure prone
+Link Aggr 3471 Down curTime: 2269800 downFor: -331 resLevel: 2
+Link Aggr 3471 Up curTime 2270200 upFor: 228912
+Link Tor 3302 Down curTime: 2286300 downFor: -115 resLevel: 2
+Link Tor 3302 Up curTime 2286500 upFor: 58
+Link Tor 3302 Down curTime: 2286600 downFor: -173 resLevel: 2
+Link Tor 3302 Up curTime 2286800 upFor: 180
+Link Tor 3302 Down curTime: 2287000 downFor: -232 resLevel: 2
+Link Tor 3302 Up curTime 2287300 upFor: 583277
+Link Core 4034 Down curTime: 2308000 downFor: -353 resLevel: 1
+Link Core 4034 Up curTime 2308400 upFor: 10
+Link Aggr 3845 Down curTime: 2345700 downFor: -242 resLevel: 1
+Link Aggr 3845 Up curTime 2346000 upFor: 10
+Link Aggr 815 Down curTime: 2370100 downFor: -193 resLevel: 1
+Link Aggr 815 Up curTime 2370300 upFor: 10
+Link Core 4714 Down curTime: 2382700 downFor: -137 resLevel: 1
+Link Core 4714 Up curTime 2382900 upFor: 10
+Link Tor 2554 Down curTime: 2396900 downFor: -90 resLevel: 2
+Link Tor 2554 Up curTime 2397000 upFor: 862
+Link Tor 2554 Down curTime: 2397900 downFor: -163 resLevel: 2
+Link Tor 2554 Up curTime 2398100 upFor: 6057917
+Group with leader: Link with id: 3311 has become failure prone
+Link Aggr 2025 Up curTime 2428600 upFor: 72
+Link Tor 3311 Down curTime: 2428600 downFor: -110 resLevel: 2
+Link Aggr 2025 Down curTime: 2428700 downFor: -120 resLevel: 2
+Link Tor 3311 Up curTime 2428900 upFor: 3326155
+Link Aggr 2025 Up curTime 2428900 upFor: 303
+Link Aggr 2025 Down curTime: 2429200 downFor: -299 resLevel: 2
+Link Aggr 2025 Up curTime 2429500 upFor: 415
+Link Aggr 2025 Down curTime: 2430000 downFor: -135 resLevel: 2
+Link Aggr 2025 Up curTime 2430200 upFor: 5601492
+Link Aggr 1657 Down curTime: 2488000 downFor: -201 resLevel: 2
+Link Aggr 1657 Up curTime 2488200 upFor: 118
+Link Aggr 1657 Down curTime: 2488400 downFor: -133 resLevel: 2
+Link Aggr 1657 Up curTime 2488600 upFor: 21721
+Link Tor 1196 Down curTime: 2494500 downFor: -5932 resLevel: 1
+Group with leader: Link with id: 4987 has become failure prone
+Link Tor 1196 Up curTime 2500500 upFor: 10
+Link Core 4987 Down curTime: 2500500 downFor: -125 resLevel: 2
+Link Core 4987 Up curTime 2500700 upFor: 953418
+Link Aggr 1255 Down curTime: 2505100 downFor: -79 resLevel: 2
+Link Aggr 1255 Up curTime 2505200 upFor: 1782838
+Link Aggr 3471 Down curTime: 2506900 downFor: -182 resLevel: 2
+Link Aggr 3471 Up curTime 2507100 upFor: 2726
+Link Aggr 3471 Down curTime: 2509900 downFor: -271 resLevel: 2
+Link Aggr 3471 Up curTime 2510200 upFor: 313
+Link Aggr 3471 Down curTime: 2510600 downFor: -253 resLevel: 2
+Link Aggr 3471 Up curTime 2510900 upFor: 1435347
+Link Aggr 1657 Down curTime: 2517300 downFor: -260 resLevel: 2
+Link Aggr 1657 Up curTime 2517600 upFor: 416488
+Link Tor 724 Down curTime: 2529800 downFor: -2398 resLevel: 1
+Link Tor 724 Up curTime 2532200 upFor: 10
+Link Core 4178 Down curTime: 2538400 downFor: -101 resLevel: 2
+Link Core 5048 Down curTime: 2538500 downFor: -25392 resLevel: 2
+Link Core 5048 Up curTime 2563900 upFor: 113
+Link Core 4178 Up curTime 2564000 upFor: 99
+Link Core 5048 Down curTime: 2564100 downFor: -131 resLevel: 2
+Link Core 5048 Up curTime 2564300 upFor: 85
+Link Core 4178 Down curTime: 2564400 downFor: -2745 resLevel: 2
+Link Core 5048 Down curTime: 2564400 downFor: -338 resLevel: 2
+Link Core 5048 Up curTime 2564800 upFor: 73
+Link Core 5048 Down curTime: 2564900 downFor: -266 resLevel: 2
+Link Core 5048 Up curTime 2565200 upFor: 1738
+Link Core 5048 Down curTime: 2567000 downFor: -42 resLevel: 2
+Link Core 5048 Up curTime 2567100 upFor: 93
+Link Core 5048 Down curTime: 2567200 downFor: -157024 resLevel: 2
+Link Core 4458 Down curTime: 2588800 downFor: -281 resLevel: 1
+Link Core 4458 Up curTime 2589100 upFor: 10
+Link Tor 2132 Down curTime: 2593500 downFor: -135 resLevel: 1
+Link Tor 2132 Up curTime 2593700 upFor: 10
+Switch Aggr [1,10,9] Down curTime: 2620000 downFor: -200 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 2620200 upFor: 67010
+Link Core 4793 Down curTime: 2627600 downFor: -74 resLevel: 1
+Link Core 4793 Up curTime 2627700 upFor: 10
+Switch Aggr [1,10,9] Down curTime: 2687300 downFor: -431 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 2687800 upFor: 2165893
+Link Aggr 1603 Down curTime: 2709300 downFor: -157 resLevel: 1
+Link Aggr 1603 Up curTime 2709500 upFor: 10
+Link Core 5048 Up curTime 2725100 upFor: 208
+Link Core 5048 Down curTime: 2725300 downFor: -258 resLevel: 2
+Link Core 5048 Up curTime 2725600 upFor: 12796
+Group with leader: Link with id: 4160 has become failure prone
+Link Core 4178 Up curTime 2726000 upFor: 771
+Link Aggr 1214 Down curTime: 2726000 downFor: -181 resLevel: 2
+Link Core 4160 Down curTime: 2726000 downFor: -181 resLevel: 2
+Group with leader: Link with id: 5806 has become failure prone
+Link Aggr 1214 Up curTime 2726200 upFor: 211
+Link Core 4160 Up curTime 2726200 upFor: 211
+Link Tor 1582 Down curTime: 2726200 downFor: -3057 resLevel: 2
+Link Tor 3905 Down curTime: 2726200 downFor: -3057 resLevel: 2
+Link Aggr 1038 Down curTime: 2726200 downFor: -3057 resLevel: 2
+Link Core 5806 Down curTime: 2726200 downFor: -3057 resLevel: 2
+Link Aggr 1214 Down curTime: 2726500 downFor: -287 resLevel: 2
+Link Core 4160 Down curTime: 2726500 downFor: -287 resLevel: 2
+Link Core 4178 Down curTime: 2726800 downFor: -101 resLevel: 2
+Link Core 4178 Up curTime 2726900 upFor: 763
+Link Aggr 1214 Up curTime 2727000 upFor: 763062
+Link Core 4160 Up curTime 2727000 upFor: 763062
+Link Core 4178 Down curTime: 2727700 downFor: -227 resLevel: 2
+Link Core 4178 Up curTime 2728000 upFor: 3087
+Group with leader: Link with id: 2962 has become failure prone
+Link Tor 2962 Down curTime: 2728300 downFor: -132 resLevel: 2
+Link Tor 2962 Up curTime 2728500 upFor: 395946
+Link Tor 1582 Up curTime 2730200 upFor: 727760
+Link Tor 3905 Up curTime 2730200 upFor: 727760
+Link Aggr 1038 Up curTime 2730200 upFor: 727760
+Link Core 5806 Up curTime 2730200 upFor: 727760
+Link Core 4178 Down curTime: 2731300 downFor: -204 resLevel: 2
+Link Core 4178 Up curTime 2731500 upFor: 2912
+Link Core 4178 Down curTime: 2734500 downFor: -63 resLevel: 2
+Link Core 4178 Up curTime 2734600 upFor: 246
+Link Core 4178 Down curTime: 2734900 downFor: -3212 resLevel: 2
+Link Core 4178 Up curTime 2738200 upFor: 742549
+Link Core 5048 Down curTime: 2738400 downFor: -1424 resLevel: 2
+Group with leader: Link with id: 3268 has become failure prone
+Link Core 5048 Up curTime 2739900 upFor: 7894314
+Link Aggr 3268 Down curTime: 2739900 downFor: -164 resLevel: 2
+Link Aggr 3268 Up curTime 2740100 upFor: 45826
+Link Core 4496 Down curTime: 2744100 downFor: -582 resLevel: 1
+Link Core 4496 Up curTime 2744700 upFor: 10
+Link Aggr 645 Down curTime: 2757800 downFor: -231 resLevel: 1
+Link Aggr 645 Up curTime 2758100 upFor: 10
+Link Aggr 3268 Down curTime: 2786900 downFor: -215 resLevel: 2
+Link Aggr 3268 Up curTime 2787200 upFor: 193526
+Link Aggr 3650 Down curTime: 2802800 downFor: -111 resLevel: 1
+Link Aggr 3650 Up curTime 2803000 upFor: 10
+Link Tor 1734 Down curTime: 2819500 downFor: -199 resLevel: 1
+Link Tor 1734 Up curTime 2819700 upFor: 10
+Link Core 4229 Down curTime: 2820700 downFor: -324 resLevel: 1
+Link Core 4229 Up curTime 2821100 upFor: 10
+Group with leader: Link with id: 5820 has become failure prone
+Link Core 5820 Down curTime: 2837900 downFor: -45696 resLevel: 2
+Link Aggr 72 Down curTime: 2840000 downFor: -27 resLevel: 1
+Link Aggr 72 Up curTime 2840100 upFor: 10
+Link Core 5253 Down curTime: 2841300 downFor: -277 resLevel: 1
+Link Core 5253 Up curTime 2841600 upFor: 10
+Group with leader: Link with id: 3858 has become failure prone
+Link Aggr 3858 Down curTime: 2858600 downFor: -310 resLevel: 2
+Link Aggr 3858 Up curTime 2859000 upFor: 1892272
+Link Aggr 3871 Down curTime: 2880300 downFor: -121 resLevel: 1
+Link Aggr 3871 Up curTime 2880500 upFor: 10
+Link Core 5820 Up curTime 2884500 upFor: 607
+Group with leader: Link with id: 444 has become failure prone
+Link Tor 2159 Down curTime: 2884600 downFor: -256 resLevel: 2
+Link Aggr 444 Down curTime: 2884600 downFor: -256 resLevel: 2
+Link Core 4225 Down curTime: 2884600 downFor: -256 resLevel: 2
+Link Tor 2159 Up curTime 2884900 upFor: 505317
+Link Aggr 444 Up curTime 2884900 upFor: 505317
+Link Core 4225 Up curTime 2884900 upFor: 505317
+Link Core 5820 Down curTime: 2885100 downFor: -220 resLevel: 2
+Link Core 5820 Up curTime 2885400 upFor: 63
+Link Core 5820 Down curTime: 2885500 downFor: -131 resLevel: 2
+Link Core 5820 Up curTime 2885700 upFor: 262
+Link Core 5820 Down curTime: 2886000 downFor: -222 resLevel: 2
+Link Core 5820 Up curTime 2886300 upFor: 47
+Link Core 5820 Down curTime: 2886400 downFor: -210 resLevel: 2
+Link Core 5820 Up curTime 2886700 upFor: 79356
+Link Core 5397 Down curTime: 2900000 downFor: -319 resLevel: 1
+Link Core 5397 Up curTime 2900400 upFor: 10
+Group with leader: Link with id: 2161 has become failure prone
+Link Tor 2161 Down curTime: 2906800 downFor: -227 resLevel: 2
+Link Tor 2161 Up curTime 2907100 upFor: 1253
+Link Tor 2161 Down curTime: 2908400 downFor: -272 resLevel: 2
+Link Tor 2161 Up curTime 2908700 upFor: 255
+Link Tor 2161 Down curTime: 2909000 downFor: -150 resLevel: 2
+Link Tor 2161 Up curTime 2909200 upFor: 712
+Link Tor 2161 Down curTime: 2910000 downFor: -320721 resLevel: 2
+Link Tor 956 Down curTime: 2951700 downFor: -251020 resLevel: 1
+Switch with id: [1,9,8] has become failure prone
+Switch Aggr [1,9,8] Down curTime: 3160900 downFor: -306 resLevel: 2
+Switch Aggr [1,9,8] Up curTime: 3161200 upFor: 280
+Switch Aggr [1,9,8] Down curTime: 3161500 downFor: -1967 resLevel: 2
+Switch Aggr [1,9,8] Up curTime: 3163500 upFor: 120
+Switch Aggr [1,9,8] Down curTime: 3163700 downFor: -46 resLevel: 2
+Switch Aggr [1,9,8] Up curTime: 3163800 upFor: 210
+Switch Aggr [1,9,8] Down curTime: 3164100 downFor: -373 resLevel: 2
+Switch Aggr [1,9,8] Up curTime: 3164500 upFor: 54040
+Link Tor 956 Up curTime 3202800 upFor: 10
+Link Tor 1905 Down curTime: 3202800 downFor: -118 resLevel: 1
+Link Tor 1905 Up curTime 3203000 upFor: 10
+Link Tor 1180 Down curTime: 3203000 downFor: -182 resLevel: 1
+Link Tor 1180 Up curTime 3203200 upFor: 10
+Link Aggr 96 Down curTime: 3203200 downFor: -229 resLevel: 1
+Link Aggr 96 Up curTime 3203500 upFor: 10
+Link Aggr 2449 Down curTime: 3203500 downFor: -422 resLevel: 1
+Link Aggr 2449 Up curTime 3204000 upFor: 10
+Link Aggr 2240 Down curTime: 3204000 downFor: -88 resLevel: 1
+Link Aggr 2240 Up curTime 3204100 upFor: 10
+Link Core 5032 Down curTime: 3204100 downFor: -205 resLevel: 1
+Link Core 5032 Up curTime 3204300 upFor: 10
+Group with leader: Link with id: 1010 has become failure prone
+Link Aggr 1010 Down curTime: 3204400 downFor: -114 resLevel: 2
+Group with leader: Link with id: 1057 has become failure prone
+Link Aggr 1010 Up curTime 3204600 upFor: 842
+Link Aggr 1057 Down curTime: 3204600 downFor: -134 resLevel: 2
+Link Aggr 1057 Up curTime 3204800 upFor: 53
+Link Aggr 1057 Down curTime: 3204900 downFor: -204 resLevel: 2
+Link Aggr 1057 Up curTime 3205100 upFor: 612798
+Link Aggr 1010 Down curTime: 3205500 downFor: -57 resLevel: 2
+Link Aggr 1010 Up curTime 3205600 upFor: 169199
+Switch Aggr [1,9,8] Down curTime: 3218600 downFor: -306 resLevel: 2
+Switch Aggr [1,9,8] Up curTime: 3218900 upFor: 185440
+Link Core 5820 Down curTime: 3219100 downFor: -213 resLevel: 2
+Link Core 5820 Up curTime 3219400 upFor: 4260603
+Link Tor 1334 Down curTime: 3228400 downFor: -225 resLevel: 1
+Link Tor 1334 Up curTime 3228700 upFor: 10
+Link Tor 2523 Down curTime: 3252800 downFor: -284 resLevel: 1
+Link Tor 2523 Up curTime 3253100 upFor: 10
+Link Aggr 3268 Down curTime: 3283300 downFor: -256 resLevel: 2
+Link Aggr 3268 Up curTime 3283600 upFor: 672
+Link Aggr 3268 Down curTime: 3284300 downFor: -112 resLevel: 2
+Link Aggr 3268 Up curTime 3284500 upFor: 1001
+Link Aggr 3268 Down curTime: 3285500 downFor: -265 resLevel: 2
+Link Aggr 3268 Up curTime 3285800 upFor: 24793
+Group with leader: Link with id: 1362 has become failure prone
+Link Tor 1362 Down curTime: 3287600 downFor: -337 resLevel: 2
+Link Tor 1362 Up curTime 3288000 upFor: 1513
+Link Tor 1362 Down curTime: 3289600 downFor: -257 resLevel: 2
+Link Tor 1362 Up curTime 3289900 upFor: 120265
+Link Aggr 3268 Down curTime: 3311400 downFor: -35 resLevel: 2
+Link Aggr 3268 Up curTime 3311500 upFor: 123
+Link Aggr 3268 Down curTime: 3311700 downFor: -80 resLevel: 2
+Link Aggr 3268 Up curTime 3311800 upFor: 3097
+Link Aggr 3268 Down curTime: 3314900 downFor: -181 resLevel: 2
+Link Aggr 3268 Up curTime 3315100 upFor: 385999
+Link Core 5735 Down curTime: 3317600 downFor: -3742 resLevel: 2
+Link Core 5735 Up curTime 3321400 upFor: 45546
+Link Tor 3302 Down curTime: 3326700 downFor: -795 resLevel: 2
+Link Tor 3302 Up curTime 3327500 upFor: 2652
+Link Tor 3302 Down curTime: 3330200 downFor: -283 resLevel: 2
+Link Tor 3302 Up curTime 3330500 upFor: 4290878
+Link Core 5735 Down curTime: 3367000 downFor: -54 resLevel: 2
+Link Core 5735 Up curTime 3367100 upFor: 766482
+Link Aggr 1010 Down curTime: 3381400 downFor: -140 resLevel: 2
+Link Aggr 1010 Up curTime 3381600 upFor: 1036
+Link Aggr 1010 Down curTime: 3382700 downFor: -76584 resLevel: 2
+Switch with id: [0,-1,81] has become failure prone
+Switch Core [0,-1,81] Down curTime: 3393100 downFor: -257 resLevel: 2
+Switch Aggr [1,9,8] Down curTime: 3404400 downFor: -8456 resLevel: 2
+Switch Aggr [1,9,8] Up curTime: 3412900 upFor: 31247
+Link Tor 1362 Down curTime: 3414100 downFor: -252 resLevel: 2
+Link Tor 1362 Up curTime 3414400 upFor: 2462
+Link Tor 1362 Down curTime: 3416900 downFor: -127 resLevel: 2
+Link Tor 1362 Up curTime 3417100 upFor: 218000
+Link Core 4426 Down curTime: 3417100 downFor: -314 resLevel: 1
+Link Core 4426 Up curTime 3417500 upFor: 10
+Link Aggr 1657 Down curTime: 3432200 downFor: -207 resLevel: 2
+Link Aggr 1657 Up curTime 3432400 upFor: 38279
+Link Core 4415 Down curTime: 3437300 downFor: -196 resLevel: 2
+Link Core 4415 Up curTime 3437500 upFor: 1984686
+Switch Aggr [1,19,1] Down curTime: 3439200 downFor: -489 resLevel: 2
+Switch Aggr [1,19,1] Up curTime: 3439700 upFor: 3565
+Switch Aggr [1,19,1] Down curTime: 3443300 downFor: -2392 resLevel: 2
+Switch Aggr [1,19,1] Up curTime: 3445700 upFor: 170
+Switch Aggr [1,19,1] Down curTime: 3445900 downFor: -94 resLevel: 2
+Switch Aggr [1,19,1] Up curTime: 3446000 upFor: 990947
+Switch Aggr [1,9,8] Down curTime: 3447200 downFor: -422 resLevel: 2
+Switch Aggr [1,9,8] Up curTime: 3447700 upFor: 148
+Switch Aggr [1,9,8] Down curTime: 3447900 downFor: -1250 resLevel: 2
+Switch Aggr [1,9,8] Up curTime: 3449200 upFor: 1537013
+Link Aggr 1010 Up curTime 3460600 upFor: 780
+Link Aggr 1010 Down curTime: 3461400 downFor: -187 resLevel: 2
+Link Aggr 1010 Up curTime 3461600 upFor: 2685
+Link Aggr 1010 Down curTime: 3464300 downFor: -165 resLevel: 2
+Link Aggr 1010 Up curTime 3464500 upFor: 1961
+Link Aggr 1010 Down curTime: 3466500 downFor: -252 resLevel: 2
+Link Aggr 1010 Up curTime 3466800 upFor: 292
+Link Aggr 1010 Down curTime: 3467100 downFor: -194 resLevel: 2
+Link Aggr 1010 Up curTime 3467300 upFor: 549
+Group with leader: Link with id: 4925 has become failure prone
+Link Core 4925 Down curTime: 3467400 downFor: -279 resLevel: 2
+Link Core 4925 Up curTime 3467700 upFor: 678
+Link Aggr 1010 Down curTime: 3468200 downFor: -194 resLevel: 2
+Link Core 4925 Down curTime: 3468400 downFor: -222 resLevel: 2
+Link Aggr 1010 Up curTime 3468700 upFor: 434347
+Link Core 4925 Up curTime 3468700 upFor: 17600
+Link Aggr 1657 Down curTime: 3471500 downFor: -128331 resLevel: 2
+Link Core 4925 Down curTime: 3486300 downFor: -223 resLevel: 2
+Link Core 4925 Up curTime 3486600 upFor: 77663
+Link Aggr 695 Down curTime: 3496500 downFor: -289 resLevel: 1
+Link Aggr 695 Up curTime 3496800 upFor: 10
+Group with leader: Link with id: 828 has become failure prone
+Link Aggr 828 Down curTime: 3515500 downFor: -123 resLevel: 2
+Link Aggr 828 Up curTime 3515700 upFor: 456
+Link Aggr 828 Down curTime: 3516200 downFor: -110 resLevel: 2
+Link Aggr 828 Up curTime 3516400 upFor: 73756
+Link Core 5438 Down curTime: 3523400 downFor: -193 resLevel: 1
+Link Core 5438 Up curTime 3523600 upFor: 10
+Group with leader: Link with id: 1988 has become failure prone
+Link Tor 1988 Down curTime: 3535600 downFor: -207 resLevel: 2
+Link Tor 1988 Up curTime 3535800 upFor: 2635
+Link Tor 1988 Down curTime: 3538500 downFor: -101 resLevel: 2
+Link Tor 1988 Up curTime 3538600 upFor: 5643165
+Switch with id: [1,17,6] has become failure prone
+Switch Aggr [1,17,6] Down curTime: 3539100 downFor: -455 resLevel: 2
+Switch Aggr [1,17,6] Up curTime: 3539600 upFor: 191
+Switch Aggr [1,17,6] Down curTime: 3539800 downFor: -320 resLevel: 2
+Switch Aggr [1,17,6] Up curTime: 3540200 upFor: 75075
+Link Core 4925 Down curTime: 3565600 downFor: -190 resLevel: 2
+Link Core 4925 Up curTime 3565800 upFor: 8254809
+Link Aggr 828 Down curTime: 3590900 downFor: -304 resLevel: 2
+Link Aggr 828 Up curTime 3591200 upFor: 481804
+Link Aggr 3876 Down curTime: 3596400 downFor: -161 resLevel: 2
+Link Aggr 3876 Up curTime 3596600 upFor: 901
+Link Aggr 3876 Down curTime: 3597500 downFor: -259 resLevel: 2
+Link Aggr 3876 Up curTime 3597800 upFor: 2761
+Link Aggr 3233 Down curTime: 3598300 downFor: -257 resLevel: 1
+Link Aggr 3233 Up curTime 3598600 upFor: 10
+Link Aggr 3876 Down curTime: 3600900 downFor: -201 resLevel: 2
+Link Aggr 3876 Up curTime 3601100 upFor: 338146
+Link Aggr 1657 Up curTime 3603000 upFor: 182
+Link Aggr 1657 Down curTime: 3603200 downFor: -190 resLevel: 2
+Link Aggr 1657 Up curTime 3603400 upFor: 2091
+Link Aggr 1657 Down curTime: 3605500 downFor: -233 resLevel: 2
+Link Aggr 1657 Up curTime 3605800 upFor: 180
+Link Aggr 1657 Down curTime: 3606000 downFor: -92 resLevel: 2
+Link Aggr 1657 Up curTime 3606100 upFor: 253755
+Switch Aggr [1,17,6] Down curTime: 3615300 downFor: -509 resLevel: 2
+Switch Aggr [1,17,6] Up curTime: 3615800 upFor: 82496
+Switch Core [0,-1,81] Up curTime: 3633200 upFor: 283
+Switch Core [0,-1,81] Down curTime: 3633500 downFor: -119 resLevel: 2
+Switch Core [0,-1,81] Up curTime: 3633700 upFor: 444
+Switch Core [0,-1,81] Down curTime: 3634200 downFor: -830 resLevel: 2
+Switch Core [0,-1,81] Up curTime: 3635100 upFor: 8741579
+Link Tor 1362 Down curTime: 3637100 downFor: -139 resLevel: 2
+Link Tor 1362 Up curTime 3637300 upFor: 2603
+Link Core 4409 Down curTime: 3638500 downFor: -254 resLevel: 1
+Link Core 4409 Up curTime 3638800 upFor: 10
+Link Tor 1362 Down curTime: 3640300 downFor: -148 resLevel: 2
+Link Tor 1362 Up curTime 3640500 upFor: 289
+Link Tor 1362 Down curTime: 3640800 downFor: -137 resLevel: 2
+Link Tor 1362 Up curTime 3641000 upFor: 1704
+Link Tor 1362 Down curTime: 3642700 downFor: -255 resLevel: 2
+Link Tor 1362 Up curTime 3643000 upFor: 86
+Link Tor 1362 Down curTime: 3643100 downFor: -333 resLevel: 2
+Link Tor 1362 Up curTime 3643500 upFor: 676
+Link Tor 1362 Down curTime: 3644200 downFor: -263 resLevel: 2
+Link Tor 1362 Up curTime 3644500 upFor: 727544
+Link Tor 2962 Down curTime: 3650400 downFor: -214 resLevel: 2
+Link Tor 2962 Up curTime 3650700 upFor: 841
+Link Tor 2962 Down curTime: 3651600 downFor: -691 resLevel: 2
+Link Tor 2962 Up curTime 3652300 upFor: 1524
+Link Tor 2962 Down curTime: 3653900 downFor: -194 resLevel: 2
+Link Tor 2962 Up curTime 3654100 upFor: 5061
+Link Tor 2962 Down curTime: 3659200 downFor: -177 resLevel: 2
+Link Tor 2962 Up curTime 3659400 upFor: 483836
+Link Core 4888 Down curTime: 3665700 downFor: -3221 resLevel: 1
+Link Core 5677 Down curTime: 3667200 downFor: -356 resLevel: 1
+Link Core 5677 Up curTime 3667600 upFor: 10
+Link Core 4888 Up curTime 3669300 upFor: 10
+Link Aggr 2257 Down curTime: 3678200 downFor: -223 resLevel: 1
+Link Aggr 2257 Up curTime 3678500 upFor: 10
+Group with leader: Link with id: 3980 has become failure prone
+Link Tor 3980 Down curTime: 3694200 downFor: -169 resLevel: 2
+Link Tor 3980 Up curTime 3694400 upFor: 29872
+Switch Aggr [1,17,6] Down curTime: 3698300 downFor: -387 resLevel: 2
+Switch Aggr [1,17,6] Up curTime: 3698700 upFor: 948290
+Group with leader: Link with id: 4546 has become failure prone
+Link Tor 2161 Up curTime 3711100 upFor: 2186
+Link Core 4546 Down curTime: 3711100 downFor: -166 resLevel: 2
+Group with leader: Link with id: 4845 has become failure prone
+Link Core 4546 Up curTime 3711300 upFor: 2050
+Link Aggr 93 Down curTime: 3711300 downFor: -244 resLevel: 2
+Link Core 4845 Down curTime: 3711300 downFor: -244 resLevel: 2
+Group with leader: Link with id: 3604 has become failure prone
+Link Aggr 93 Up curTime 3711600 upFor: 1355
+Link Core 4845 Up curTime 3711600 upFor: 1355
+Link Aggr 3604 Down curTime: 3711600 downFor: -1641 resLevel: 2
+Link Core 5261 Down curTime: 3711600 downFor: -1641 resLevel: 2
+Link Aggr 93 Down curTime: 3713000 downFor: -212 resLevel: 2
+Link Core 4845 Down curTime: 3713000 downFor: -212 resLevel: 2
+Link Aggr 93 Up curTime 3713300 upFor: 15808
+Link Core 4845 Up curTime 3713300 upFor: 15808
+Link Tor 2161 Down curTime: 3713300 downFor: -256 resLevel: 2
+Link Tor 2161 Up curTime 3713600 upFor: 247
+Link Core 4546 Down curTime: 3713700 downFor: -164 resLevel: 2
+Link Tor 2161 Down curTime: 3713900 downFor: -144 resLevel: 2
+Link Core 4546 Up curTime 3714100 upFor: 654119
+Link Tor 2161 Up curTime 3714100 upFor: 2341344
+Group with leader: Link with id: 5020 has become failure prone
+Link Aggr 3604 Up curTime 3714300 upFor: 238
+Link Core 5261 Up curTime 3714300 upFor: 238
+Link Tor 368 Down curTime: 3714300 downFor: -668 resLevel: 2
+Link Core 5020 Down curTime: 3714300 downFor: -668 resLevel: 2
+Link Core 5691 Down curTime: 3714300 downFor: -668 resLevel: 2
+Link Aggr 3604 Down curTime: 3714600 downFor: -158 resLevel: 2
+Link Core 5261 Down curTime: 3714600 downFor: -158 resLevel: 2
+Link Aggr 3604 Up curTime 3714800 upFor: 6633637
+Link Core 5261 Up curTime 3714800 upFor: 6633637
+Link Tor 368 Up curTime 3715200 upFor: 2332
+Link Core 5020 Up curTime 3715200 upFor: 2332
+Link Core 5691 Up curTime 3715200 upFor: 2332
+Link Tor 368 Down curTime: 3717600 downFor: -120 resLevel: 2
+Link Core 5020 Down curTime: 3717600 downFor: -120 resLevel: 2
+Link Core 5691 Down curTime: 3717600 downFor: -120 resLevel: 2
+Link Tor 368 Up curTime 3717800 upFor: 92
+Link Core 5020 Up curTime 3717800 upFor: 92
+Link Core 5691 Up curTime 3717800 upFor: 92
+Link Tor 368 Down curTime: 3717900 downFor: -32356 resLevel: 2
+Link Core 5020 Down curTime: 3717900 downFor: -32356 resLevel: 2
+Link Core 5691 Down curTime: 3717900 downFor: -32356 resLevel: 2
+Link Tor 3980 Down curTime: 3724300 downFor: -261 resLevel: 2
+Link Tor 3980 Up curTime 3724600 upFor: 2631
+Link Tor 3980 Down curTime: 3727300 downFor: -559 resLevel: 2
+Link Tor 3980 Up curTime 3727900 upFor: 11174
+Link Aggr 93 Down curTime: 3730700 downFor: -248 resLevel: 2
+Link Core 4845 Down curTime: 3730700 downFor: -248 resLevel: 2
+Link Aggr 93 Up curTime 3731000 upFor: 8703628
+Link Core 4845 Up curTime 3731000 upFor: 8703628
+Link Aggr 2689 Down curTime: 3732600 downFor: -66 resLevel: 1
+Link Aggr 2689 Up curTime 3732700 upFor: 10
+Group with leader: Link with id: 4203 has become failure prone
+Link Core 4203 Down curTime: 3738700 downFor: -66386 resLevel: 2
+Link Tor 3980 Down curTime: 3739200 downFor: -376 resLevel: 2
+Link Tor 3980 Up curTime 3739600 upFor: 2206
+Link Tor 3980 Down curTime: 3741800 downFor: -211 resLevel: 2
+Link Tor 3980 Up curTime 3742100 upFor: 412
+Link Tor 3980 Down curTime: 3742600 downFor: -180 resLevel: 2
+Link Tor 3980 Up curTime 3742800 upFor: 156
+Link Tor 3980 Down curTime: 3743000 downFor: -196 resLevel: 2
+Link Tor 3980 Up curTime 3743200 upFor: 2428
+Link Tor 3980 Down curTime: 3745700 downFor: -199 resLevel: 2
+Link Tor 3980 Up curTime 3745900 upFor: 223
+Link Tor 3980 Down curTime: 3746200 downFor: -201 resLevel: 2
+Link Tor 3980 Up curTime 3746400 upFor: 121
+Link Tor 3980 Down curTime: 3746600 downFor: -640 resLevel: 2
+Link Tor 3980 Up curTime 3747300 upFor: 1443
+Link Tor 3980 Down curTime: 3748800 downFor: -228 resLevel: 2
+Link Tor 3980 Up curTime 3749100 upFor: 5806393
+Group with leader: Link with id: 5582 has become failure prone
+Link Core 5582 Down curTime: 3758800 downFor: -96 resLevel: 2
+Link Core 5582 Up curTime 3758900 upFor: 1391
+Link Core 5582 Down curTime: 3760300 downFor: -251 resLevel: 2
+Link Core 5582 Up curTime 3760600 upFor: 112
+Link Core 5582 Down curTime: 3760800 downFor: -250 resLevel: 2
+Link Core 5582 Up curTime 3761100 upFor: 3027
+Link Core 5582 Down curTime: 3764200 downFor: -171 resLevel: 2
+Link Core 5582 Up curTime 3764400 upFor: 89
+Link Core 5582 Down curTime: 3764500 downFor: -163 resLevel: 2
+Link Core 5582 Up curTime 3764700 upFor: 128
+Link Core 5582 Down curTime: 3764900 downFor: -181 resLevel: 2
+Link Core 5582 Up curTime 3765100 upFor: 62621
+Group with leader: Link with id: 4260 has become failure prone
+Link Core 4260 Down curTime: 3770800 downFor: -109 resLevel: 2
+Link Core 4260 Up curTime 3770900 upFor: 6094503
+Group with leader: Link with id: 1652 has become failure prone
+Link Aggr 1652 Down curTime: 3778300 downFor: -309 resLevel: 2
+Link Aggr 1652 Up curTime 3778600 upFor: 436221
+Link Aggr 3407 Down curTime: 3800100 downFor: -195 resLevel: 1
+Link Aggr 3407 Up curTime 3800300 upFor: 10
+Link Core 4203 Up curTime 3810000 upFor: 115
+Link Core 4203 Down curTime: 3810200 downFor: -100 resLevel: 2
+Link Core 4203 Up curTime 3810300 upFor: 110
+Link Core 4203 Down curTime: 3810500 downFor: -288 resLevel: 2
+Link Core 4203 Up curTime 3810800 upFor: 809481
+Link Tor 368 Up curTime 3823400 upFor: 1430354
+Link Core 5020 Up curTime 3823400 upFor: 1430354
+Link Core 5691 Up curTime 3823400 upFor: 1430354
+Link Core 5582 Down curTime: 3828500 downFor: -307 resLevel: 2
+Link Core 5582 Up curTime 3828800 upFor: 917521
+Link Aggr 2603 Down curTime: 3845100 downFor: -218 resLevel: 1
+Link Aggr 2603 Up curTime 3845400 upFor: 10
+Link Aggr 1657 Down curTime: 3870400 downFor: -842 resLevel: 2
+Link Aggr 1657 Up curTime 3871300 upFor: 827
+Link Aggr 1657 Down curTime: 3872200 downFor: -180 resLevel: 2
+Link Core 5681 Down curTime: 3872400 downFor: -107 resLevel: 1
+Link Core 5681 Up curTime 3872500 upFor: 10
+Link Aggr 1657 Up curTime 3872600 upFor: 226
+Link Aggr 1657 Down curTime: 3872900 downFor: -213 resLevel: 2
+Link Aggr 1657 Up curTime 3873200 upFor: 7353
+Link Aggr 1657 Down curTime: 3880600 downFor: -51 resLevel: 2
+Link Aggr 1657 Up curTime 3880700 upFor: 233438
+Link Core 5577 Down curTime: 3906800 downFor: -226 resLevel: 1
+Link Core 5577 Up curTime 3907100 upFor: 10
+Group with leader: Link with id: 951 has become failure prone
+Link Tor 951 Down curTime: 3920100 downFor: -331 resLevel: 2
+Link Tor 951 Up curTime 3920500 upFor: 6108379
+Link Aggr 3268 Down curTime: 3932800 downFor: -1532 resLevel: 2
+Link Aggr 3268 Up curTime 3934400 upFor: 1199
+Link Aggr 3268 Down curTime: 3935600 downFor: -172 resLevel: 2
+Link Aggr 3268 Up curTime 3935800 upFor: 1135
+Link Aggr 3268 Down curTime: 3937000 downFor: -218 resLevel: 2
+Link Aggr 3268 Up curTime 3937300 upFor: 2609
+Link Aggr 3268 Down curTime: 3939900 downFor: -130 resLevel: 2
+Link Aggr 3268 Up curTime 3940100 upFor: 343115
+Link Aggr 3876 Down curTime: 3944600 downFor: -766 resLevel: 2
+Link Aggr 3876 Up curTime 3945400 upFor: 260
+Link Aggr 3876 Down curTime: 3945700 downFor: -1795 resLevel: 2
+Link Aggr 3876 Up curTime 3947500 upFor: 853
+Link Aggr 3876 Down curTime: 3948400 downFor: -234 resLevel: 2
+Link Aggr 3876 Up curTime 3948700 upFor: 142
+Link Aggr 3876 Down curTime: 3948900 downFor: -144 resLevel: 2
+Link Aggr 3876 Up curTime 3949100 upFor: 1150
+Link Aggr 3876 Down curTime: 3950300 downFor: -196 resLevel: 2
+Link Aggr 3876 Up curTime 3950500 upFor: 646
+Link Aggr 3876 Down curTime: 3951200 downFor: -171 resLevel: 2
+Link Aggr 3876 Up curTime 3951400 upFor: 553
+Switch Aggr [1,3,3] Down curTime: 3951500 downFor: -326 resLevel: 1
+Switch Aggr [1,3,3] Up curTime: 3951900 upFor: 10
+Link Aggr 3876 Down curTime: 3952000 downFor: -136 resLevel: 2
+Link Aggr 3876 Up curTime 3952200 upFor: 202
+Link Aggr 3876 Down curTime: 3952400 downFor: -147 resLevel: 2
+Link Aggr 3876 Up curTime 3952600 upFor: 1578
+Link Aggr 3876 Down curTime: 3954200 downFor: -255 resLevel: 2
+Link Aggr 3876 Up curTime 3954500 upFor: 428755
+Link Core 4787 Down curTime: 3989100 downFor: -111 resLevel: 1
+Link Core 4787 Up curTime 3989300 upFor: 10
+Link Aggr 2210 Down curTime: 4027000 downFor: -319 resLevel: 1
+Link Aggr 2210 Up curTime 4027400 upFor: 10
+Link Core 4412 Down curTime: 4033300 downFor: -296 resLevel: 1
+Link Core 4412 Up curTime 4033600 upFor: 10
+Group with leader: Link with id: 5663 has become failure prone
+Link Core 5663 Down curTime: 4035400 downFor: -163 resLevel: 2
+Link Core 5663 Up curTime 4035600 upFor: 23968
+Link Tor 2710 Down curTime: 4042300 downFor: -123 resLevel: 1
+Link Tor 2710 Up curTime 4042500 upFor: 10
+Link Aggr 1010 Down curTime: 4053400 downFor: -299 resLevel: 2
+Link Aggr 1010 Up curTime 4053700 upFor: 287550
+Link Core 5663 Down curTime: 4059800 downFor: -116 resLevel: 2
+Link Core 5663 Up curTime 4060000 upFor: 179
+Link Core 5663 Down curTime: 4060200 downFor: -503 resLevel: 2
+Link Core 5663 Up curTime 4060700 upFor: 4741118
+Link Aggr 828 Down curTime: 4091400 downFor: -147 resLevel: 2
+Link Aggr 828 Up curTime 4091600 upFor: 399667
+Link Aggr 1657 Down curTime: 4121100 downFor: -255063 resLevel: 2
+Link Tor 2574 Down curTime: 4123900 downFor: -59 resLevel: 1
+Link Tor 2574 Up curTime 4124000 upFor: 10
+Link Core 5501 Down curTime: 4126400 downFor: -245 resLevel: 1
+Link Core 5501 Up curTime 4126700 upFor: 10
+Link Core 5735 Down curTime: 4141500 downFor: -285 resLevel: 2
+Link Core 5735 Up curTime 4141800 upFor: 2580510
+Link Core 5227 Down curTime: 4163200 downFor: -90 resLevel: 2
+Link Core 5227 Up curTime 4163300 upFor: 2303819
+Link Tor 2179 Down curTime: 4195400 downFor: -96 resLevel: 1
+Link Tor 2179 Up curTime 4195500 upFor: 10
+Link Aggr 1652 Down curTime: 4221900 downFor: -347 resLevel: 2
+Link Aggr 1652 Up curTime 4222300 upFor: 704
+Link Aggr 1652 Down curTime: 4223000 downFor: -299 resLevel: 2
+Link Aggr 1652 Up curTime 4223300 upFor: 581
+Link Aggr 1652 Down curTime: 4223900 downFor: -789 resLevel: 2
+Link Aggr 1652 Up curTime 4224700 upFor: 440
+Link Aggr 1652 Down curTime: 4225200 downFor: -183 resLevel: 2
+Link Aggr 1652 Up curTime 4225400 upFor: 860
+Link Aggr 1652 Down curTime: 4226300 downFor: -270 resLevel: 2
+Link Aggr 1652 Up curTime 4226600 upFor: 5286565
+Link Tor 1367 Down curTime: 4235300 downFor: -521 resLevel: 1
+Link Tor 1367 Up curTime 4235900 upFor: 10
+Link Core 4224 Down curTime: 4252900 downFor: -230 resLevel: 1
+Link Core 4224 Up curTime 4253200 upFor: 10
+Link Core 5903 Down curTime: 4258500 downFor: -208 resLevel: 1
+Link Core 5903 Up curTime 4258700 upFor: 10
+Group with leader: Link with id: 4765 has become failure prone
+Link Core 4765 Down curTime: 4269300 downFor: -86 resLevel: 2
+Link Core 4765 Up curTime 4269400 upFor: 228
+Link Core 4765 Down curTime: 4269700 downFor: -157 resLevel: 2
+Link Core 4765 Up curTime 4269900 upFor: 44668
+Group with leader: Link with id: 3422 has become failure prone
+Link Aggr 3422 Down curTime: 4290200 downFor: -4627 resLevel: 2
+Link Aggr 3422 Up curTime 4294900 upFor: 408153
+Link Core 5893 Down curTime: 4312700 downFor: -131 resLevel: 1
+Link Core 5893 Up curTime 4312900 upFor: 10
+Link Core 4765 Down curTime: 4314800 downFor: -252 resLevel: 2
+Link Core 4765 Up curTime 4315100 upFor: 716493
+Link Tor 316 Down curTime: 4346200 downFor: -252 resLevel: 1
+Link Tor 316 Up curTime 4346500 upFor: 10
+Group with leader: Link with id: 4252 has become failure prone
+Link Core 4252 Down curTime: 4348700 downFor: -223 resLevel: 2
+Link Core 4252 Up curTime 4349000 upFor: 44835
+Link Tor 1362 Down curTime: 4385500 downFor: -81 resLevel: 2
+Link Tor 1362 Up curTime 4385600 upFor: 2750
+Link Aggr 1657 Up curTime 4386600 upFor: 399
+Group with leader: Link with id: 2211 has become failure prone
+Link Aggr 2211 Down curTime: 4386700 downFor: -57753 resLevel: 2
+Link Aggr 3876 Down curTime: 4386800 downFor: -798 resLevel: 2
+Link Aggr 3876 Up curTime 4387600 upFor: 4796426
+Link Aggr 1657 Down curTime: 4387800 downFor: -195 resLevel: 2
+Link Aggr 1657 Up curTime 4388000 upFor: 769
+Link Aggr 1657 Down curTime: 4388800 downFor: -125 resLevel: 2
+Link Aggr 1657 Up curTime 4389000 upFor: 37426
+Link Tor 1362 Down curTime: 4389200 downFor: -66 resLevel: 2
+Link Tor 1362 Up curTime 4389300 upFor: 599
+Link Tor 1362 Down curTime: 4389900 downFor: -263 resLevel: 2
+Link Tor 1362 Up curTime 4390200 upFor: 6333781
+Link Core 4252 Down curTime: 4395200 downFor: -116 resLevel: 2
+Link Core 4252 Up curTime 4395400 upFor: 122
+Link Core 4252 Down curTime: 4395600 downFor: -195 resLevel: 2
+Link Core 4252 Up curTime 4395800 upFor: 2940385
+Link Core 4211 Down curTime: 4399900 downFor: -37 resLevel: 1
+Link Core 4211 Up curTime 4400000 upFor: 10
+Switch with id: [1,1,3] has become failure prone
+Switch Aggr [1,1,3] Down curTime: 4423200 downFor: -319 resLevel: 2
+Switch Aggr [1,1,3] Up curTime: 4423600 upFor: 287777
+Link Aggr 1657 Down curTime: 4427400 downFor: -61 resLevel: 2
+Link Aggr 1657 Up curTime 4427500 upFor: 9656
+Link Aggr 1657 Down curTime: 4437200 downFor: -248 resLevel: 2
+Link Aggr 1657 Up curTime 4437500 upFor: 44
+Link Aggr 1657 Down curTime: 4437600 downFor: -338 resLevel: 2
+Link Aggr 1657 Up curTime 4438000 upFor: 320483
+Switch Aggr [1,19,1] Down curTime: 4438800 downFor: -124 resLevel: 2
+Switch Aggr [1,19,1] Up curTime: 4439000 upFor: 31
+Switch Aggr [1,19,1] Down curTime: 4439100 downFor: -575 resLevel: 2
+Switch Aggr [1,19,1] Up curTime: 4439700 upFor: 283162
+Group with leader: Link with id: 1680 has become failure prone
+Link Aggr 2211 Up curTime 4447400 upFor: 1052593
+Link Aggr 1680 Down curTime: 4447400 downFor: -581964 resLevel: 2
+Link Core 5520 Down curTime: 4447400 downFor: -581964 resLevel: 2
+Link Core 4987 Down curTime: 4454600 downFor: -96 resLevel: 2
+Link Core 4987 Up curTime 4454700 upFor: 65268
+Link Aggr 1057 Down curTime: 4456100 downFor: -200 resLevel: 2
+Link Aggr 1057 Up curTime 4456300 upFor: 1752
+Link Aggr 1057 Down curTime: 4458100 downFor: -125 resLevel: 2
+Link Aggr 1057 Up curTime 4458300 upFor: 1616
+Link Aggr 1057 Down curTime: 4460000 downFor: -171 resLevel: 2
+Link Aggr 1057 Up curTime 4460200 upFor: 1689
+Link Aggr 1057 Down curTime: 4461900 downFor: -816 resLevel: 2
+Link Aggr 1057 Up curTime 4462800 upFor: 35073
+Link Aggr 3471 Down curTime: 4474600 downFor: -188 resLevel: 2
+Link Aggr 3471 Up curTime 4474800 upFor: 6397
+Link Aggr 3471 Down curTime: 4481200 downFor: -299 resLevel: 2
+Link Aggr 3471 Up curTime 4481500 upFor: 1599
+Link Aggr 3471 Down curTime: 4483100 downFor: -95 resLevel: 2
+Link Aggr 3471 Up curTime 4483200 upFor: 346
+Link Aggr 3471 Down curTime: 4483600 downFor: -252 resLevel: 2
+Link Aggr 3471 Up curTime 4483900 upFor: 816604
+Link Aggr 1057 Down curTime: 4498800 downFor: -263 resLevel: 2
+Link Aggr 1057 Up curTime 4499100 upFor: 190
+Link Aggr 1057 Down curTime: 4499300 downFor: -35746 resLevel: 2
+Link Aggr 828 Down curTime: 4504400 downFor: -144 resLevel: 2
+Link Aggr 828 Up curTime 4504600 upFor: 32767
+Group with leader: Link with id: 1866 has become failure prone
+Link Aggr 1866 Down curTime: 4513300 downFor: -64 resLevel: 2
+Link Aggr 1866 Up curTime 4513400 upFor: 28382
+Link Core 4987 Down curTime: 4521200 downFor: -505859 resLevel: 2
+Link Aggr 828 Down curTime: 4537500 downFor: -214 resLevel: 2
+Link Aggr 828 Up curTime 4537800 upFor: 3252
+Link Aggr 828 Down curTime: 4541100 downFor: -1762 resLevel: 2
+Link Aggr 1866 Down curTime: 4541800 downFor: -233 resLevel: 2
+Link Aggr 1866 Up curTime 4542100 upFor: 45073
+Link Aggr 828 Up curTime 4543200 upFor: 139
+Link Aggr 828 Down curTime: 4543400 downFor: -286 resLevel: 2
+Link Aggr 828 Up curTime 4543700 upFor: 178240
+Link Tor 2551 Down curTime: 4586800 downFor: -326 resLevel: 1
+Link Tor 2551 Up curTime 4587200 upFor: 10
+Link Aggr 1866 Down curTime: 4587600 downFor: -193 resLevel: 2
+Link Aggr 1866 Up curTime 4587800 upFor: 149
+Link Aggr 1866 Down curTime: 4588000 downFor: -266 resLevel: 2
+Link Aggr 1866 Up curTime 4588300 upFor: 716472
+Link Aggr 1010 Down curTime: 4615400 downFor: -258 resLevel: 2
+Link Aggr 1010 Up curTime 4615700 upFor: 64
+Link Aggr 1010 Down curTime: 4615800 downFor: -259 resLevel: 2
+Link Aggr 1010 Up curTime 4616100 upFor: 648
+Link Aggr 1010 Down curTime: 4616800 downFor: -136 resLevel: 2
+Link Aggr 1010 Up curTime 4617000 upFor: 216
+Link Aggr 1010 Down curTime: 4617300 downFor: -196 resLevel: 2
+Link Aggr 1010 Up curTime 4617500 upFor: 915
+Link Aggr 1010 Down curTime: 4618500 downFor: -33 resLevel: 2
+Link Aggr 1010 Up curTime 4618600 upFor: 15756
+Link Tor 309 Down curTime: 4627200 downFor: -190 resLevel: 1
+Link Tor 309 Up curTime 4627400 upFor: 10
+Link Aggr 1010 Down curTime: 4634700 downFor: -232 resLevel: 2
+Link Aggr 1010 Up curTime 4635000 upFor: 40733
+Switch Aggr [1,17,6] Down curTime: 4647000 downFor: -2467 resLevel: 2
+Switch Aggr [1,17,6] Up curTime: 4649500 upFor: 244
+Switch Aggr [1,17,6] Down curTime: 4649800 downFor: -220 resLevel: 2
+Switch Aggr [1,17,6] Up curTime: 4650100 upFor: 2118171
+Link Tor 3193 Down curTime: 4665900 downFor: -221 resLevel: 1
+Link Tor 3193 Up curTime 4666200 upFor: 10
+Group with leader: Link with id: 5242 has become failure prone
+Link Core 5242 Down curTime: 4671200 downFor: -118 resLevel: 2
+Link Core 5242 Up curTime 4671400 upFor: 2515450
+Link Aggr 1010 Down curTime: 4676300 downFor: -191 resLevel: 2
+Link Aggr 1010 Up curTime 4676500 upFor: 6191263
+Link Aggr 3422 Down curTime: 4706500 downFor: -131 resLevel: 2
+Link Aggr 3422 Up curTime 4706700 upFor: 2372
+Link Aggr 3422 Down curTime: 4709100 downFor: -98 resLevel: 2
+Link Aggr 3422 Up curTime 4709200 upFor: 3000089
+Switch Aggr [1,1,3] Down curTime: 4715000 downFor: -287 resLevel: 2
+Switch Aggr [1,1,3] Up curTime: 4715300 upFor: 59695
+Link Aggr 828 Down curTime: 4724000 downFor: -501 resLevel: 2
+Link Aggr 828 Up curTime 4724500 upFor: 3104
+Switch Aggr [1,19,1] Down curTime: 4725700 downFor: -537 resLevel: 2
+Switch Aggr [1,19,1] Up curTime: 4726300 upFor: 503
+Switch Aggr [1,19,1] Down curTime: 4726800 downFor: -435 resLevel: 2
+Switch Aggr [1,19,1] Up curTime: 4727300 upFor: 19488
+Link Aggr 828 Down curTime: 4727600 downFor: -385 resLevel: 2
+Link Aggr 828 Up curTime 4728000 upFor: 139
+Link Aggr 828 Down curTime: 4728200 downFor: -824 resLevel: 2
+Link Aggr 828 Up curTime 4729100 upFor: 237
+Link Aggr 828 Down curTime: 4729400 downFor: -116 resLevel: 2
+Link Aggr 828 Up curTime 4729600 upFor: 2408
+Link Aggr 828 Down curTime: 4732000 downFor: -514 resLevel: 2
+Link Aggr 828 Up curTime 4732600 upFor: 52
+Link Aggr 828 Down curTime: 4732700 downFor: -2723 resLevel: 2
+Link Aggr 828 Up curTime 4735500 upFor: 3052
+Link Aggr 828 Down curTime: 4738600 downFor: -347 resLevel: 2
+Link Aggr 828 Up curTime 4739000 upFor: 1296418
+Switch Aggr [1,19,1] Down curTime: 4746800 downFor: -258 resLevel: 2
+Switch Aggr [1,19,1] Up curTime: 4747100 upFor: 776692
+Group with leader: Link with id: 5714 has become failure prone
+Link Core 5714 Down curTime: 4754000 downFor: -78 resLevel: 2
+Link Core 5714 Up curTime 4754100 upFor: 144
+Link Core 5714 Down curTime: 4754300 downFor: -538 resLevel: 2
+Link Core 5714 Up curTime 4754900 upFor: 2955139
+Link Core 5569 Down curTime: 4761600 downFor: -1823 resLevel: 1
+Link Core 5569 Up curTime 4763500 upFor: 10
+Link Aggr 1657 Down curTime: 4772700 downFor: -2970 resLevel: 2
+Link Aggr 1657 Up curTime 4775700 upFor: 472
+Link Aggr 1657 Down curTime: 4776200 downFor: -300 resLevel: 2
+Switch Aggr [1,1,3] Down curTime: 4776400 downFor: -199 resLevel: 2
+Link Aggr 1657 Up curTime 4776500 upFor: 13034
+Switch Aggr [1,1,3] Up curTime: 4776600 upFor: 166
+Switch Aggr [1,1,3] Down curTime: 4776800 downFor: -408 resLevel: 2
+Switch Aggr [1,1,3] Up curTime: 4777200 upFor: 2249968
+Link Aggr 1657 Down curTime: 4789600 downFor: -210 resLevel: 2
+Link Aggr 1657 Up curTime 4789900 upFor: 145
+Link Aggr 1657 Down curTime: 4790100 downFor: -191 resLevel: 2
+Link Aggr 1657 Up curTime 4790300 upFor: 450
+Link Aggr 1657 Down curTime: 4790800 downFor: -2818 resLevel: 2
+Link Aggr 1657 Up curTime 4793700 upFor: 406983
+Switch Aggr [1,10,9] Down curTime: 4858300 downFor: -245 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 4858600 upFor: 50325
+Link Aggr 1286 Down curTime: 4868700 downFor: -265 resLevel: 2
+Link Aggr 1286 Up curTime 4869000 upFor: 1604572
+Switch Aggr [1,10,9] Down curTime: 4909000 downFor: -464 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 4909500 upFor: 54534
+Group with leader: Link with id: 1164 has become failure prone
+Link Tor 1164 Down curTime: 4918200 downFor: -2477 resLevel: 2
+Link Tor 1164 Up curTime 4920700 upFor: 999
+Link Tor 1164 Down curTime: 4921700 downFor: -368 resLevel: 2
+Link Tor 1164 Up curTime 4922100 upFor: 1127
+Link Tor 1164 Down curTime: 4923300 downFor: -902 resLevel: 2
+Link Tor 1164 Up curTime 4924200 upFor: 129
+Link Tor 1164 Down curTime: 4924400 downFor: -147 resLevel: 2
+Link Tor 1164 Up curTime 4924600 upFor: 2258
+Link Tor 1164 Down curTime: 4926900 downFor: -201 resLevel: 2
+Link Tor 1164 Up curTime 4927100 upFor: 5304960
+Switch Aggr [1,10,9] Down curTime: 4964100 downFor: -394 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 4964500 upFor: 3454
+Switch Aggr [1,10,9] Down curTime: 4968000 downFor: -320 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 4968400 upFor: 2512245
+Switch Aggr [1,9,8] Down curTime: 4994600 downFor: -400 resLevel: 2
+Switch Aggr [1,9,8] Up curTime: 4995000 upFor: 109
+Switch Aggr [1,9,8] Down curTime: 4995100 downFor: -345 resLevel: 2
+Switch Aggr [1,9,8] Up curTime: 4995500 upFor: 3037
+Switch Aggr [1,9,8] Down curTime: 4998600 downFor: -1772 resLevel: 2
+Switch Aggr [1,9,8] Up curTime: 5000400 upFor: 75597
+Link Aggr 3858 Down curTime: 5027800 downFor: -135 resLevel: 2
+Link Aggr 3858 Up curTime 5028000 upFor: 55
+Link Aggr 3858 Down curTime: 5028100 downFor: -81 resLevel: 2
+Link Aggr 3858 Up curTime 5028200 upFor: 2234
+Link Aggr 3858 Down curTime: 5030500 downFor: -243 resLevel: 2
+Link Aggr 3858 Up curTime 5030800 upFor: 231
+Link Aggr 3858 Down curTime: 5031100 downFor: -228 resLevel: 2
+Link Aggr 3858 Up curTime 5031400 upFor: 1036
+Link Aggr 3858 Down curTime: 5032500 downFor: -48 resLevel: 2
+Link Aggr 3858 Up curTime 5032600 upFor: 1856
+Link Aggr 3858 Down curTime: 5034500 downFor: -73256 resLevel: 2
+Switch Aggr [1,9,8] Down curTime: 5076000 downFor: -397 resLevel: 2
+Switch Aggr [1,9,8] Up curTime: 5076400 upFor: 567705
+Link Aggr 3858 Up curTime 5107800 upFor: 171840
+Link Core 4765 Down curTime: 5110100 downFor: -71 resLevel: 2
+Link Core 4765 Up curTime 5110200 upFor: 80632
+Link Core 5582 Down curTime: 5125700 downFor: -77 resLevel: 2
+Link Core 5582 Up curTime 5125800 upFor: 1933559
+Link Core 4987 Up curTime 5127600 upFor: 8565086
+Group with leader: Link with id: 3551 has become failure prone
+Link Aggr 1057 Up curTime 5141800 upFor: 188
+Link Tor 3551 Down curTime: 5141800 downFor: -196 resLevel: 2
+Link Aggr 1057 Down curTime: 5142000 downFor: -154 resLevel: 2
+Group with leader: Link with id: 3795 has become failure prone
+Link Tor 3551 Up curTime 5142200 upFor: 614
+Link Aggr 1057 Up curTime 5142200 upFor: 76
+Link Tor 3795 Down curTime: 5142200 downFor: -197 resLevel: 2
+Link Aggr 1057 Down curTime: 5142300 downFor: -306 resLevel: 2
+Link Aggr 1057 Up curTime 5142600 upFor: 5570189
+Group with leader: Link with id: 5246 has become failure prone
+Link Tor 3795 Up curTime 5142800 upFor: 1632
+Link Core 5246 Down curTime: 5142800 downFor: -60 resLevel: 2
+Link Core 5246 Up curTime 5142900 upFor: 1983
+Link Tor 3551 Down curTime: 5143200 downFor: -239 resLevel: 2
+Link Tor 3551 Up curTime 5143500 upFor: 585627
+Group with leader: Link with id: 4373 has become failure prone
+Link Core 4373 Down curTime: 5144100 downFor: -126 resLevel: 2
+Link Core 4373 Up curTime 5144300 upFor: 3286
+Link Tor 3795 Down curTime: 5144900 downFor: -250 resLevel: 2
+Link Tor 3795 Up curTime 5145200 upFor: 4281550
+Link Core 5246 Down curTime: 5145600 downFor: -161 resLevel: 2
+Link Core 5246 Up curTime 5145800 upFor: 14923
+Link Core 4373 Down curTime: 5147600 downFor: -3426 resLevel: 2
+Link Core 4373 Up curTime 5151100 upFor: 184
+Link Core 4373 Down curTime: 5151300 downFor: -158 resLevel: 2
+Link Core 4373 Up curTime 5151500 upFor: 2195346
+Link Core 5246 Down curTime: 5164400 downFor: -359 resLevel: 2
+Link Core 5246 Up curTime 5164800 upFor: 1225852
+Link Tor 2962 Down curTime: 5169900 downFor: -219 resLevel: 2
+Link Tor 2962 Up curTime 5170200 upFor: 543479
+Group with leader: Link with id: 3900 has become failure prone
+Link Tor 3900 Down curTime: 5170400 downFor: -548 resLevel: 2
+Link Tor 3900 Up curTime 5171000 upFor: 89
+Link Tor 3900 Down curTime: 5171100 downFor: -173 resLevel: 2
+Link Tor 3900 Up curTime 5171300 upFor: 48585
+Group with leader: Link with id: 1940 has become failure prone
+Link Tor 1940 Down curTime: 5187600 downFor: -213 resLevel: 2
+Link Tor 1940 Up curTime 5187900 upFor: 3453
+Link Tor 1940 Down curTime: 5191400 downFor: -809 resLevel: 2
+Link Core 4765 Down curTime: 5191600 downFor: -285 resLevel: 2
+Link Core 4765 Up curTime 5191900 upFor: 5426272
+Link Tor 1940 Up curTime 5192500 upFor: 590455
+Group with leader: Link with id: 5029 has become failure prone
+Link Core 5029 Down curTime: 5217400 downFor: -307 resLevel: 2
+Link Core 5029 Up curTime 5217700 upFor: 65554
+Link Core 4372 Down curTime: 5219000 downFor: -252 resLevel: 2
+Link Core 4372 Up curTime 5219300 upFor: 135
+Link Core 4372 Down curTime: 5219500 downFor: -246 resLevel: 2
+Link Core 4372 Up curTime 5219800 upFor: 2382916
+Link Tor 3900 Down curTime: 5220300 downFor: -259 resLevel: 2
+Link Tor 3900 Up curTime 5220600 upFor: 5393059
+Link Aggr 3268 Down curTime: 5230500 downFor: -351 resLevel: 2
+Link Aggr 3268 Up curTime 5230900 upFor: 1675970
+Group with leader: Link with id: 840 has become failure prone
+Link Aggr 840 Down curTime: 5277000 downFor: -303 resLevel: 2
+Link Aggr 840 Up curTime 5277300 upFor: 159
+Link Aggr 840 Down curTime: 5277500 downFor: -128 resLevel: 2
+Link Aggr 840 Up curTime 5277700 upFor: 963509
+Link Aggr 3858 Down curTime: 5281700 downFor: -20 resLevel: 2
+Link Aggr 3858 Up curTime 5281800 upFor: 173431
+Link Core 5029 Down curTime: 5283300 downFor: -3079 resLevel: 2
+Link Core 5029 Up curTime 5286400 upFor: 859
+Link Core 5029 Down curTime: 5287300 downFor: -198 resLevel: 2
+Link Core 5029 Up curTime 5287500 upFor: 775782
+Link Aggr 1657 Down curTime: 5290300 downFor: -306 resLevel: 2
+Link Aggr 1657 Up curTime 5290600 upFor: 3470
+Link Aggr 1657 Down curTime: 5294100 downFor: -250 resLevel: 2
+Link Aggr 1657 Up curTime 5294400 upFor: 144
+Link Aggr 1657 Down curTime: 5294600 downFor: -225 resLevel: 2
+Link Aggr 1657 Up curTime 5294900 upFor: 53
+Link Aggr 1657 Down curTime: 5295000 downFor: -173 resLevel: 2
+Link Aggr 1657 Up curTime 5295200 upFor: 1040
+Link Aggr 1657 Down curTime: 5296300 downFor: -72 resLevel: 2
+Link Aggr 1657 Up curTime 5296400 upFor: 2275
+Link Aggr 1657 Down curTime: 5298700 downFor: -74 resLevel: 2
+Link Aggr 1657 Up curTime 5298800 upFor: 237406
+Link Aggr 3207 Down curTime: 5311000 downFor: -270 resLevel: 1
+Link Aggr 3207 Up curTime 5311300 upFor: 10
+Link Tor 370 Down curTime: 5352600 downFor: -171 resLevel: 1
+Link Tor 370 Up curTime 5352800 upFor: 10
+Group with leader: Link with id: 3088 has become failure prone
+Link Aggr 3088 Down curTime: 5383600 downFor: -2123 resLevel: 2
+Link Aggr 3088 Up curTime 5385800 upFor: 871437
+Link Aggr 3471 Down curTime: 5395000 downFor: -254 resLevel: 2
+Link Aggr 3471 Up curTime 5395300 upFor: 1413717
+Link Aggr 1866 Down curTime: 5397900 downFor: -253 resLevel: 2
+Link Aggr 1866 Up curTime 5398200 upFor: 591668
+Link Core 4178 Down curTime: 5408500 downFor: -500320 resLevel: 2
+Link Core 4546 Down curTime: 5441500 downFor: -90 resLevel: 2
+Link Core 4546 Up curTime 5441600 upFor: 190
+Link Core 4546 Down curTime: 5441800 downFor: -287 resLevel: 2
+Link Core 4546 Up curTime 5442100 upFor: 2045
+Link Core 4546 Down curTime: 5444200 downFor: -306 resLevel: 2
+Link Core 4546 Up curTime 5444500 upFor: 57257
+Link Core 4415 Down curTime: 5444800 downFor: -807 resLevel: 2
+Link Core 4415 Up curTime 5445600 upFor: 226
+Link Core 4415 Down curTime: 5445900 downFor: -9429 resLevel: 2
+Link Core 4415 Up curTime 5455400 upFor: 4739446
+Link Aggr 3858 Down curTime: 5469500 downFor: -196 resLevel: 2
+Link Core 4844 Down curTime: 5469600 downFor: -189 resLevel: 1
+Link Core 4844 Up curTime 5469800 upFor: 10
+Link Aggr 3858 Up curTime 5470000 upFor: 6799279
+Link Core 4546 Down curTime: 5512700 downFor: -69 resLevel: 2
+Link Core 4546 Up curTime 5512800 upFor: 5667649
+Link Tor 2546 Down curTime: 5515700 downFor: -349 resLevel: 1
+Link Tor 2546 Up curTime 5516100 upFor: 10
+Group with leader: Link with id: 3988 has become failure prone
+Link Tor 3988 Down curTime: 5522900 downFor: -31874 resLevel: 2
+Switch Aggr [1,19,1] Down curTime: 5525500 downFor: -427 resLevel: 2
+Switch Aggr [1,19,1] Up curTime: 5526000 upFor: 7401
+Switch Aggr [1,19,1] Down curTime: 5533400 downFor: -529 resLevel: 2
+Switch Aggr [1,19,1] Up curTime: 5534000 upFor: 513885
+Link Tor 3988 Up curTime 5554800 upFor: 2427
+Link Tor 3988 Down curTime: 5557300 downFor: -243 resLevel: 2
+Link Tor 3988 Up curTime 5557600 upFor: 660
+Link Tor 3988 Down curTime: 5558300 downFor: -183 resLevel: 2
+Link Tor 3988 Up curTime 5558500 upFor: 181
+Link Tor 3988 Down curTime: 5558700 downFor: -1440 resLevel: 2
+Link Tor 3988 Up curTime 5560200 upFor: 84
+Link Tor 3988 Down curTime: 5560300 downFor: -167 resLevel: 2
+Link Tor 3988 Up curTime 5560500 upFor: 101388
+Link Aggr 1657 Down curTime: 5584900 downFor: -180 resLevel: 2
+Link Aggr 1657 Up curTime 5585100 upFor: 527957
+Link Core 4203 Down curTime: 5627400 downFor: -369 resLevel: 2
+Link Core 4203 Up curTime 5627800 upFor: 6834809
+Link Aggr 406 Down curTime: 5632100 downFor: -80 resLevel: 2
+Link Aggr 406 Up curTime 5632200 upFor: 507899
+Switch Aggr [1,9,8] Down curTime: 5645100 downFor: -311 resLevel: 2
+Switch Aggr [1,9,8] Up curTime: 5645500 upFor: 1121356
+Group with leader: Link with id: 4450 has become failure prone
+Link Core 4450 Down curTime: 5648900 downFor: -168 resLevel: 2
+Link Core 4450 Up curTime 5649100 upFor: 167
+Link Core 4450 Down curTime: 5649300 downFor: -214 resLevel: 2
+Link Core 4450 Up curTime 5649600 upFor: 17556
+Link Tor 3988 Down curTime: 5662400 downFor: -161 resLevel: 2
+Link Tor 3988 Up curTime 5662600 upFor: 2029
+Link Tor 3988 Down curTime: 5664700 downFor: -86 resLevel: 2
+Link Tor 3988 Up curTime 5664800 upFor: 1027
+Link Tor 3988 Down curTime: 5665900 downFor: -91 resLevel: 2
+Link Tor 3988 Up curTime 5666000 upFor: 413887
+Group with leader: Link with id: 2049 has become failure prone
+Link Aggr 2049 Down curTime: 5666400 downFor: -285 resLevel: 2
+Link Aggr 2049 Up curTime 5666700 upFor: 187
+Link Aggr 2049 Down curTime: 5666900 downFor: -821 resLevel: 2
+Link Aggr 2049 Up curTime 5667800 upFor: 820656
+Link Core 4450 Down curTime: 5668300 downFor: -280 resLevel: 2
+Link Core 4450 Up curTime 5668600 upFor: 53808
+Group with leader: Link with id: 5058 has become failure prone
+Link Core 5058 Down curTime: 5679200 downFor: -252 resLevel: 2
+Link Core 5058 Up curTime 5679500 upFor: 946349
+Group with leader: Link with id: 70 has become failure prone
+Link Aggr 70 Down curTime: 5716800 downFor: -219 resLevel: 2
+Link Aggr 70 Up curTime 5717100 upFor: 1401
+Link Aggr 70 Down curTime: 5718500 downFor: -201 resLevel: 2
+Link Aggr 70 Up curTime 5718700 upFor: 19123
+Link Core 4450 Down curTime: 5723200 downFor: -241 resLevel: 2
+Link Core 4450 Up curTime 5723500 upFor: 593
+Link Core 4450 Down curTime: 5724100 downFor: -429 resLevel: 2
+Link Core 4450 Up curTime 5724600 upFor: 3199
+Link Core 4450 Down curTime: 5727800 downFor: -82275 resLevel: 2
+Link Aggr 70 Down curTime: 5737900 downFor: -565 resLevel: 2
+Link Aggr 70 Up curTime 5738500 upFor: 83
+Link Aggr 70 Down curTime: 5738600 downFor: -22689 resLevel: 2
+Link Aggr 70 Up curTime 5761300 upFor: 1839
+Link Aggr 70 Down curTime: 5763200 downFor: -161 resLevel: 2
+Link Aggr 70 Up curTime 5763400 upFor: 2737
+Link Aggr 70 Down curTime: 5766200 downFor: -2327 resLevel: 2
+Link Aggr 70 Up curTime 5768600 upFor: 314850
+Switch Aggr [1,9,1] Down curTime: 5809700 downFor: -349 resLevel: 1
+Switch Aggr [1,9,1] Up curTime: 5810100 upFor: 10
+Link Core 5355 Down curTime: 5815100 downFor: -191 resLevel: 1
+Link Core 5355 Up curTime 5815300 upFor: 10
+Link Tor 1940 Down curTime: 5827200 downFor: -2648 resLevel: 2
+Link Tor 1940 Up curTime 5829900 upFor: 1667
+Link Tor 1940 Down curTime: 5831600 downFor: -277 resLevel: 2
+Link Tor 1940 Up curTime 5831900 upFor: 3181
+Link Tor 1940 Down curTime: 5835100 downFor: -197 resLevel: 2
+Link Tor 1940 Up curTime 5835300 upFor: 2299
+Link Tor 1940 Down curTime: 5837600 downFor: -696 resLevel: 2
+Link Tor 1940 Up curTime 5838300 upFor: 768765
+Link Core 4450 Up curTime 5840200 upFor: 960270
+Link Core 4483 Down curTime: 5860400 downFor: -2191 resLevel: 1
+Link Core 4483 Up curTime 5862600 upFor: 10
+Link Core 5043 Down curTime: 5877600 downFor: -304 resLevel: 1
+Link Core 5043 Up curTime 5877900 upFor: 10
+Link Tor 2962 Down curTime: 5890500 downFor: -240 resLevel: 2
+Link Tor 2962 Up curTime 5890800 upFor: 907
+Link Tor 2962 Down curTime: 5891700 downFor: -316574 resLevel: 2
+Link Tor 2512 Down curTime: 5922200 downFor: -203 resLevel: 1
+Link Tor 2512 Up curTime 5922400 upFor: 10
+Link Core 4968 Down curTime: 6003600 downFor: -214 resLevel: 1
+Link Core 4968 Up curTime 6003900 upFor: 10
+Link Aggr 1866 Down curTime: 6036200 downFor: -65 resLevel: 2
+Link Aggr 1866 Up curTime 6036300 upFor: 6611079
+Switch Aggr [1,19,1] Down curTime: 6047900 downFor: -361 resLevel: 2
+Switch Aggr [1,19,1] Up curTime: 6048300 upFor: 40111
+Link Core 5029 Down curTime: 6067700 downFor: -269 resLevel: 2
+Link Core 5029 Up curTime 6068000 upFor: 189
+Link Core 5029 Down curTime: 6068200 downFor: -91 resLevel: 2
+Link Core 5029 Up curTime 6068300 upFor: 277
+Link Core 5029 Down curTime: 6068600 downFor: -149 resLevel: 2
+Link Core 5029 Up curTime 6068800 upFor: 81990
+Group with leader: Link with id: 188 has become failure prone
+Link Tor 188 Down curTime: 6076900 downFor: -192 resLevel: 2
+Link Tor 188 Up curTime 6077100 upFor: 264
+Link Tor 188 Down curTime: 6077400 downFor: -242 resLevel: 2
+Link Tor 188 Up curTime 6077700 upFor: 2074
+Link Tor 188 Down curTime: 6079800 downFor: -233 resLevel: 2
+Link Tor 188 Up curTime 6080100 upFor: 178
+Link Tor 188 Down curTime: 6080300 downFor: -236 resLevel: 2
+Link Tor 188 Up curTime 6080600 upFor: 913641
+Link Aggr 70 Down curTime: 6088400 downFor: -232 resLevel: 2
+Switch Aggr [1,19,1] Down curTime: 6088500 downFor: -3257 resLevel: 2
+Link Aggr 70 Up curTime 6088700 upFor: 3038
+Group with leader: Link with id: 5882 has become failure prone
+Link Core 5882 Down curTime: 6088900 downFor: -263 resLevel: 2
+Link Core 5882 Up curTime 6089200 upFor: 83798
+Switch Aggr [1,19,1] Up curTime: 6091800 upFor: 1126709
+Link Aggr 70 Down curTime: 6091800 downFor: -191 resLevel: 2
+Link Aggr 70 Up curTime 6092000 upFor: 1629656
+Group with leader: Link with id: 537 has become failure prone
+Link Tor 537 Down curTime: 6111200 downFor: -2348 resLevel: 2
+Link Tor 537 Up curTime 6113600 upFor: 2640
+Link Tor 537 Down curTime: 6116300 downFor: -42 resLevel: 2
+Link Tor 537 Up curTime 6116400 upFor: 349
+Link Tor 537 Down curTime: 6116800 downFor: -539 resLevel: 2
+Link Tor 537 Up curTime 6117400 upFor: 2082
+Link Tor 537 Down curTime: 6119500 downFor: -1178 resLevel: 2
+Link Tor 537 Up curTime 6120700 upFor: 1162
+Link Tor 537 Down curTime: 6121900 downFor: -2954 resLevel: 2
+Link Tor 537 Up curTime 6124900 upFor: 943
+Link Tor 537 Down curTime: 6125900 downFor: -41 resLevel: 2
+Link Tor 537 Up curTime 6126000 upFor: 2551
+Link Tor 537 Down curTime: 6128600 downFor: -73 resLevel: 2
+Link Tor 537 Up curTime 6128700 upFor: 3067
+Link Tor 537 Down curTime: 6131800 downFor: -311 resLevel: 2
+Link Tor 537 Up curTime 6132200 upFor: 1431717
+Link Core 5029 Down curTime: 6150800 downFor: -466 resLevel: 2
+Link Core 5029 Up curTime 6151300 upFor: 257
+Link Core 5029 Down curTime: 6151600 downFor: -220 resLevel: 2
+Link Core 5029 Up curTime 6151900 upFor: 112
+Link Core 5029 Down curTime: 6152100 downFor: -885 resLevel: 2
+Link Core 5029 Up curTime 6153000 upFor: 45153
+Link Core 5882 Down curTime: 6175000 downFor: -247 resLevel: 2
+Link Core 5882 Up curTime 6175300 upFor: 50
+Link Core 5882 Down curTime: 6175400 downFor: -163 resLevel: 2
+Link Core 5882 Up curTime 6175600 upFor: 252
+Link Core 5882 Down curTime: 6175900 downFor: -195 resLevel: 2
+Link Core 5882 Up curTime 6176100 upFor: 118
+Link Core 5882 Down curTime: 6176300 downFor: -175 resLevel: 2
+Link Core 5882 Up curTime 6176500 upFor: 820656
+Link Aggr 1257 Down curTime: 6187900 downFor: -212 resLevel: 1
+Link Aggr 1257 Up curTime 6188200 upFor: 10
+Link Core 5029 Down curTime: 6198400 downFor: -285 resLevel: 2
+Link Core 5029 Up curTime 6198700 upFor: 230
+Link Core 5029 Down curTime: 6199000 downFor: -300 resLevel: 2
+Link Core 5029 Up curTime 6199300 upFor: 4539011
+Link Tor 1506 Down curTime: 6199900 downFor: -76 resLevel: 1
+Link Tor 1506 Up curTime 6200000 upFor: 10
+Link Tor 3988 Down curTime: 6212400 downFor: -170 resLevel: 2
+Link Tor 3988 Up curTime 6212600 upFor: 2172
+Link Tor 3988 Down curTime: 6214800 downFor: -264 resLevel: 2
+Link Tor 3988 Up curTime 6215100 upFor: 91
+Link Tor 3988 Down curTime: 6215200 downFor: -288 resLevel: 2
+Link Tor 3988 Up curTime 6215500 upFor: 878
+Link Tor 3988 Down curTime: 6216400 downFor: -211 resLevel: 2
+Link Tor 3988 Up curTime 6216700 upFor: 597102
+Link Tor 2962 Up curTime 6224000 upFor: 605
+Link Tor 2962 Down curTime: 6224600 downFor: -286 resLevel: 2
+Link Tor 2962 Up curTime 6224900 upFor: 48709
+Link Tor 2537 Down curTime: 6238200 downFor: -160 resLevel: 1
+Link Tor 2537 Up curTime 6238400 upFor: 10
+Link Tor 3551 Down curTime: 6243000 downFor: -932 resLevel: 2
+Link Tor 3551 Up curTime 6244000 upFor: 611
+Link Tor 3551 Down curTime: 6244700 downFor: -38 resLevel: 2
+Link Tor 3551 Up curTime 6244800 upFor: 1981
+Link Tor 3551 Down curTime: 6246800 downFor: -173 resLevel: 2
+Link Tor 3551 Up curTime 6247000 upFor: 146
+Link Tor 3551 Down curTime: 6247200 downFor: -283 resLevel: 2
+Link Tor 3551 Up curTime 6247500 upFor: 186
+Link Tor 3551 Down curTime: 6247700 downFor: -180 resLevel: 2
+Link Aggr 1657 Down curTime: 6247900 downFor: -229 resLevel: 2
+Link Tor 3551 Up curTime 6248200 upFor: 715
+Link Aggr 1657 Up curTime 6248200 upFor: 7628
+Link Core 5394 Down curTime: 6248500 downFor: -260 resLevel: 1
+Link Core 5394 Up curTime 6248800 upFor: 10
+Link Tor 3551 Down curTime: 6249300 downFor: -252 resLevel: 2
+Link Tor 3551 Up curTime 6249600 upFor: 2040
+Link Tor 3551 Down curTime: 6251700 downFor: -367 resLevel: 2
+Link Tor 3551 Up curTime 6252100 upFor: 629
+Link Tor 3551 Down curTime: 6252800 downFor: -217 resLevel: 2
+Link Tor 3551 Up curTime 6253100 upFor: 194
+Link Tor 3551 Down curTime: 6253300 downFor: -99 resLevel: 2
+Link Tor 3551 Up curTime 6253400 upFor: 2399
+Link Tor 3551 Down curTime: 6255800 downFor: -329 resLevel: 2
+Link Tor 3551 Up curTime 6256200 upFor: 867591
+Link Aggr 1657 Down curTime: 6256200 downFor: -264 resLevel: 2
+Link Aggr 1657 Up curTime 6256500 upFor: 1699
+Link Aggr 1657 Down curTime: 6258200 downFor: -198 resLevel: 2
+Link Aggr 1657 Up curTime 6258400 upFor: 402
+Link Aggr 1657 Down curTime: 6258800 downFor: -106 resLevel: 2
+Link Aggr 1657 Up curTime 6258900 upFor: 979
+Link Aggr 1657 Down curTime: 6259900 downFor: -869 resLevel: 2
+Link Aggr 1657 Up curTime 6260800 upFor: 39197
+Link Aggr 840 Down curTime: 6263200 downFor: -143 resLevel: 2
+Link Aggr 840 Up curTime 6263400 upFor: 939
+Link Aggr 840 Down curTime: 6264400 downFor: -226 resLevel: 2
+Link Aggr 840 Up curTime 6264700 upFor: 482
+Link Aggr 840 Down curTime: 6265200 downFor: -481 resLevel: 2
+Link Aggr 840 Up curTime 6265700 upFor: 428
+Link Aggr 840 Down curTime: 6266200 downFor: -33 resLevel: 2
+Link Aggr 840 Up curTime 6266300 upFor: 547182
+Link Aggr 877 Down curTime: 6274100 downFor: -158 resLevel: 1
+Link Aggr 877 Up curTime 6274300 upFor: 10
+Link Tor 2962 Down curTime: 6277400 downFor: -120 resLevel: 2
+Link Tor 2962 Up curTime 6277600 upFor: 78
+Link Tor 2962 Down curTime: 6277700 downFor: -204 resLevel: 2
+Link Tor 2962 Up curTime 6277900 upFor: 442720
+Link Aggr 406 Down curTime: 6278400 downFor: -75 resLevel: 2
+Link Aggr 406 Up curTime 6278500 upFor: 893
+Link Aggr 406 Down curTime: 6279400 downFor: -376 resLevel: 2
+Link Aggr 406 Up curTime 6279800 upFor: 732
+Link Aggr 406 Down curTime: 6280600 downFor: -73 resLevel: 2
+Link Aggr 406 Up curTime 6280700 upFor: 1421
+Link Aggr 406 Down curTime: 6282200 downFor: -68 resLevel: 2
+Link Aggr 406 Up curTime 6282300 upFor: 688716
+Link Aggr 1657 Down curTime: 6301400 downFor: -173 resLevel: 2
+Link Aggr 1657 Up curTime 6301600 upFor: 278
+Link Aggr 1657 Down curTime: 6301900 downFor: -400 resLevel: 2
+Link Aggr 1657 Up curTime 6302300 upFor: 3017
+Link Aggr 1657 Down curTime: 6305400 downFor: -236 resLevel: 2
+Link Aggr 1657 Up curTime 6305700 upFor: 676
+Link Aggr 1657 Down curTime: 6306400 downFor: -361 resLevel: 2
+Link Aggr 1657 Up curTime 6306800 upFor: 1785
+Link Aggr 2211 Down curTime: 6308200 downFor: -329 resLevel: 2
+Link Aggr 2211 Up curTime 6308600 upFor: 131
+Link Aggr 1657 Down curTime: 6308600 downFor: -144 resLevel: 2
+Link Aggr 1657 Up curTime 6308800 upFor: 1765
+Link Aggr 2211 Down curTime: 6308900 downFor: -340 resLevel: 2
+Link Aggr 2211 Up curTime 6309300 upFor: 404342
+Link Aggr 828 Down curTime: 6310500 downFor: -1708 resLevel: 2
+Link Aggr 828 Up curTime 6312200 upFor: 127
+Link Aggr 1657 Down curTime: 6312400 downFor: -100 resLevel: 2
+Link Aggr 828 Down curTime: 6312400 downFor: -129 resLevel: 2
+Link Aggr 828 Up curTime 6312600 upFor: 2248
+Link Aggr 1657 Up curTime 6312700 upFor: 2334
+Link Aggr 828 Down curTime: 6314900 downFor: -294 resLevel: 2
+Link Aggr 828 Up curTime 6315200 upFor: 138
+Link Aggr 828 Down curTime: 6315400 downFor: -114 resLevel: 2
+Link Aggr 828 Up curTime 6315600 upFor: 564
+Link Aggr 1657 Down curTime: 6315600 downFor: -83 resLevel: 2
+Link Aggr 1657 Up curTime 6315700 upFor: 2998
+Link Aggr 828 Down curTime: 6316200 downFor: -122 resLevel: 2
+Link Aggr 828 Up curTime 6316400 upFor: 1801
+Link Aggr 828 Down curTime: 6318200 downFor: -288 resLevel: 2
+Link Aggr 828 Up curTime 6318500 upFor: 183
+Link Aggr 828 Down curTime: 6318700 downFor: -895 resLevel: 2
+Link Aggr 828 Up curTime 6319600 upFor: 924
+Link Aggr 1657 Down curTime: 6320100 downFor: -82 resLevel: 2
+Link Aggr 1657 Up curTime 6320200 upFor: 494072
+Link Aggr 828 Down curTime: 6320600 downFor: -313696 resLevel: 2
+Group with leader: Link with id: 1380 has become failure prone
+Link Tor 1380 Down curTime: 6372200 downFor: -243 resLevel: 2
+Link Tor 1380 Up curTime 6372500 upFor: 113
+Link Tor 1380 Down curTime: 6372700 downFor: -242 resLevel: 2
+Link Tor 1380 Up curTime 6373000 upFor: 1482770
+Link Core 4303 Down curTime: 6410000 downFor: -92 resLevel: 1
+Link Core 4303 Up curTime 6410100 upFor: 10
+Link Tor 2390 Down curTime: 6426600 downFor: -222 resLevel: 2
+Link Tor 2390 Up curTime 6426900 upFor: 18638
+Link Tor 2390 Down curTime: 6445600 downFor: -517342 resLevel: 2
+Link Core 5402 Down curTime: 6469900 downFor: -132 resLevel: 1
+Link Core 5402 Up curTime 6470100 upFor: 10
+Link Tor 2919 Down curTime: 6548500 downFor: -144 resLevel: 1
+Link Tor 2919 Up curTime 6548700 upFor: 10
+Link Tor 156 Down curTime: 6722200 downFor: -103 resLevel: 1
+Link Tor 156 Up curTime 6722300 upFor: 10
+Link Core 5735 Down curTime: 6733400 downFor: -3223 resLevel: 2
+Link Core 5735 Up curTime 6736700 upFor: 38715
+Switch Aggr [1,17,6] Down curTime: 6768300 downFor: -191 resLevel: 2
+Switch Aggr [1,17,6] Up curTime: 6768500 upFor: 11502
+Switch Aggr [1,9,8] Down curTime: 6770800 downFor: -488 resLevel: 2
+Switch Aggr [1,9,8] Up curTime: 6771300 upFor: 2438
+Switch Aggr [1,9,8] Down curTime: 6773800 downFor: -436 resLevel: 2
+Switch Aggr [1,9,8] Up curTime: 6774300 upFor: 34551
+Link Core 5735 Down curTime: 6775500 downFor: -192 resLevel: 2
+Link Core 5735 Up curTime 6775700 upFor: 3187
+Link Aggr 3005 Down curTime: 6776800 downFor: -134 resLevel: 1
+Link Aggr 3005 Up curTime 6777000 upFor: 10
+Link Core 5735 Down curTime: 6779100 downFor: -649 resLevel: 2
+Link Core 5735 Up curTime 6779800 upFor: 53198
+Switch Aggr [1,17,6] Down curTime: 6780000 downFor: -514 resLevel: 2
+Switch Aggr [1,17,6] Up curTime: 6780600 upFor: 59743
+Link Tor 3356 Down curTime: 6807000 downFor: -263 resLevel: 1
+Link Tor 3356 Up curTime 6807300 upFor: 10
+Switch Aggr [1,9,8] Down curTime: 6809400 downFor: -447 resLevel: 2
+Switch Aggr [1,9,8] Up curTime: 6809900 upFor: 132533
+Link Aggr 840 Down curTime: 6819100 downFor: -322 resLevel: 2
+Link Aggr 840 Up curTime 6819500 upFor: 49
+Link Aggr 840 Down curTime: 6819600 downFor: -791 resLevel: 2
+Link Aggr 840 Up curTime 6820400 upFor: 503
+Link Aggr 840 Down curTime: 6820900 downFor: -132 resLevel: 2
+Link Aggr 840 Up curTime 6821100 upFor: 459
+Link Aggr 840 Down curTime: 6821600 downFor: -112 resLevel: 2
+Link Aggr 840 Up curTime 6821800 upFor: 630
+Link Aggr 840 Down curTime: 6822500 downFor: -189 resLevel: 2
+Link Aggr 840 Up curTime 6822700 upFor: 1521748
+Link Aggr 86 Down curTime: 6823800 downFor: -210 resLevel: 1
+Link Aggr 86 Up curTime 6824100 upFor: 10
+Link Core 5735 Down curTime: 6833500 downFor: -74461 resLevel: 2
+Switch Aggr [1,17,6] Down curTime: 6840400 downFor: -1112 resLevel: 2
+Switch Aggr [1,17,6] Up curTime: 6841600 upFor: 22378
+Link Core 4361 Down curTime: 6852600 downFor: -81 resLevel: 1
+Link Core 4361 Up curTime 6852700 upFor: 10
+Link Core 4811 Down curTime: 6854700 downFor: -100 resLevel: 1
+Link Core 4811 Up curTime 6854800 upFor: 10
+Switch Aggr [1,17,6] Down curTime: 6864000 downFor: -469 resLevel: 2
+Switch Aggr [1,17,6] Up curTime: 6864500 upFor: 650250
+Link Core 5664 Down curTime: 6874800 downFor: -86 resLevel: 1
+Link Core 5664 Up curTime 6874900 upFor: 10
+Link Tor 2348 Down curTime: 6878100 downFor: -74 resLevel: 1
+Link Tor 2348 Up curTime 6878200 upFor: 10
+Link Core 4830 Down curTime: 6878600 downFor: -65 resLevel: 2
+Link Core 4830 Up curTime 6878700 upFor: 178
+Link Core 4830 Down curTime: 6878900 downFor: -524203 resLevel: 2
+Switch Aggr [1,9,8] Down curTime: 6944100 downFor: -2437 resLevel: 2
+Switch Aggr [1,9,8] Up curTime: 6946600 upFor: 3081760
+Link Core 5173 Down curTime: 6973200 downFor: -234 resLevel: 1
+Link Core 5173 Up curTime 6973500 upFor: 10
+Switch Aggr [1,1,3] Down curTime: 7043200 downFor: -417 resLevel: 2
+Switch Aggr [1,1,3] Up curTime: 7043700 upFor: 342579
+Link Core 5259 Down curTime: 7103000 downFor: -206 resLevel: 1
+Link Core 5259 Up curTime 7103200 upFor: 10
+Link Core 4395 Down curTime: 7140700 downFor: -141 resLevel: 1
+Link Core 4395 Up curTime 7140900 upFor: 10
+Link Core 5281 Down curTime: 7151100 downFor: -226 resLevel: 1
+Link Core 5281 Up curTime 7151400 upFor: 10
+Link Core 5674 Down curTime: 7154400 downFor: -67 resLevel: 1
+Link Core 5674 Up curTime 7154500 upFor: 10
+Link Aggr 2485 Down curTime: 7218100 downFor: -189 resLevel: 1
+Link Aggr 2485 Up curTime 7218300 upFor: 10
+Switch Aggr [1,19,1] Down curTime: 7220900 downFor: -281 resLevel: 2
+Switch Aggr [1,19,1] Up curTime: 7221200 upFor: 74343
+Switch Aggr [1,19,1] Down curTime: 7295600 downFor: -241 resLevel: 2
+Switch Aggr [1,19,1] Up curTime: 7295900 upFor: 70269
+Link Core 5368 Down curTime: 7300300 downFor: -359 resLevel: 1
+Link Core 5368 Up curTime 7300700 upFor: 10
+Link Tor 1116 Down curTime: 7311800 downFor: -60 resLevel: 1
+Link Tor 1116 Up curTime 7311900 upFor: 10
+Link Aggr 262 Down curTime: 7317000 downFor: -254 resLevel: 1
+Link Aggr 262 Up curTime 7317300 upFor: 10
+Link Tor 788 Down curTime: 7348500 downFor: -211 resLevel: 1
+Link Tor 788 Up curTime 7348800 upFor: 10
+Switch Aggr [1,19,1] Down curTime: 7366200 downFor: -984 resLevel: 2
+Switch Aggr [1,19,1] Up curTime: 7367200 upFor: 86293
+Link Aggr 3023 Down curTime: 7370700 downFor: -3498 resLevel: 1
+Link Aggr 3023 Up curTime 7374200 upFor: 10
+Switch Aggr [1,1,3] Down curTime: 7387900 downFor: -2312 resLevel: 2
+Switch Aggr [1,1,3] Up curTime: 7390300 upFor: 62
+Switch Aggr [1,1,3] Down curTime: 7390400 downFor: -289 resLevel: 2
+Switch Aggr [1,1,3] Up curTime: 7390700 upFor: 91
+Switch Aggr [1,1,3] Down curTime: 7390800 downFor: -349 resLevel: 2
+Switch Aggr [1,1,3] Up curTime: 7391200 upFor: 66506
+Link Core 4830 Up curTime 7409200 upFor: 18097
+Link Core 5211 Down curTime: 7423600 downFor: -202 resLevel: 1
+Link Core 5211 Up curTime 7423800 upFor: 10
+Link Core 4830 Down curTime: 7427600 downFor: -281 resLevel: 2
+Link Core 4830 Up curTime 7427900 upFor: 47753
+Group with leader: Link with id: 3418 has become failure prone
+Link Core 5735 Up curTime 7439500 upFor: 671921
+Link Aggr 3418 Down curTime: 7439500 downFor: -123 resLevel: 2
+Group with leader: Link with id: 4035 has become failure prone
+Link Aggr 3418 Up curTime 7439700 upFor: 2038
+Link Core 4035 Down curTime: 7439700 downFor: -193 resLevel: 2
+Group with leader: Link with id: 5074 has become failure prone
+Link Core 4035 Up curTime 7439900 upFor: 1955874
+Link Core 5074 Down curTime: 7439900 downFor: -313 resLevel: 2
+Link Core 5074 Up curTime 7440300 upFor: 2608
+Link Aggr 3418 Down curTime: 7441800 downFor: -133 resLevel: 2
+Link Aggr 3418 Up curTime 7442000 upFor: 728492
+Link Core 5074 Down curTime: 7443100 downFor: -235 resLevel: 2
+Link Core 5074 Up curTime 7443400 upFor: 612207
+Link Tor 2940 Down curTime: 7444100 downFor: -66 resLevel: 2
+Link Tor 2940 Up curTime 7444200 upFor: 203
+Link Tor 2940 Down curTime: 7444400 downFor: -307 resLevel: 2
+Link Tor 2940 Up curTime 7444700 upFor: 2774871
+Switch Aggr [1,19,1] Down curTime: 7453500 downFor: -534 resLevel: 2
+Switch Aggr [1,19,1] Up curTime: 7454100 upFor: 57
+Switch Aggr [1,19,1] Down curTime: 7454200 downFor: -289 resLevel: 2
+Switch Aggr [1,19,1] Up curTime: 7454500 upFor: 2673357
+Switch Aggr [1,1,3] Down curTime: 7458600 downFor: -485 resLevel: 2
+Switch Aggr [1,1,3] Up curTime: 7459100 upFor: 1803
+Switch Aggr [1,1,3] Down curTime: 7460900 downFor: -414 resLevel: 2
+Switch Aggr [1,1,3] Up curTime: 7461400 upFor: 341746
+Link Core 4830 Down curTime: 7475700 downFor: -75 resLevel: 2
+Link Core 4830 Up curTime 7475800 upFor: 462
+Link Core 4830 Down curTime: 7476300 downFor: -341 resLevel: 2
+Link Core 4830 Up curTime 7476700 upFor: 3168
+Link Core 4830 Down curTime: 7479900 downFor: -233 resLevel: 2
+Link Core 4830 Up curTime 7480200 upFor: 640594
+Switch Aggr [1,10,9] Down curTime: 7483100 downFor: -436 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 7483600 upFor: 312
+Switch Aggr [1,10,9] Down curTime: 7484000 downFor: -2622 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 7486700 upFor: 46815
+Switch Aggr [1,17,6] Down curTime: 7514800 downFor: -3008 resLevel: 2
+Switch Aggr [1,17,6] Up curTime: 7517800 upFor: 3145
+Switch Aggr [1,17,6] Down curTime: 7521000 downFor: -421 resLevel: 2
+Switch Aggr [1,17,6] Up curTime: 7521500 upFor: 216
+Switch Aggr [1,17,6] Down curTime: 7521800 downFor: -230 resLevel: 2
+Switch Aggr [1,17,6] Up curTime: 7522100 upFor: 1673861
+Link Aggr 1430 Down curTime: 7532800 downFor: -198 resLevel: 1
+Link Aggr 1430 Up curTime 7533000 upFor: 10
+Switch Aggr [1,10,9] Down curTime: 7537400 downFor: -280 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 7537700 upFor: 2148
+Switch Aggr [1,10,9] Down curTime: 7539900 downFor: -2721 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 7542700 upFor: 37184
+Group with leader: Link with id: 602 has become failure prone
+Link Aggr 602 Down curTime: 7544200 downFor: -25961 resLevel: 2
+Link Aggr 602 Up curTime 7570200 upFor: 484686
+Switch Aggr [1,10,9] Down curTime: 7579900 downFor: -365 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 7580300 upFor: 80046
+Group with leader: Link with id: 5869 has become failure prone
+Link Tor 2390 Up curTime 7604800 upFor: 882
+Link Core 5869 Down curTime: 7604800 downFor: -258 resLevel: 2
+Group with leader: Link with id: 1754 has become failure prone
+Link Core 5869 Up curTime 7605100 upFor: 1043792
+Link Tor 1754 Down curTime: 7605100 downFor: -222 resLevel: 2
+Group with leader: Link with id: 2759 has become failure prone
+Link Tor 1754 Up curTime 7605400 upFor: 595
+Link Tor 2759 Down curTime: 7605400 downFor: -213 resLevel: 2
+Group with leader: Link with id: 2155 has become failure prone
+Link Tor 2759 Up curTime 7605700 upFor: 390
+Link Tor 2155 Down curTime: 7605700 downFor: -252 resLevel: 2
+Link Tor 2390 Down curTime: 7605700 downFor: -179 resLevel: 2
+Link Tor 2390 Up curTime 7605900 upFor: 3486
+Link Tor 2155 Up curTime 7606200 upFor: 183
+Link Tor 1754 Down curTime: 7606200 downFor: -339 resLevel: 2
+Link Tor 1754 Up curTime 7606600 upFor: 749
+Link Tor 2759 Down curTime: 7606700 downFor: -176 resLevel: 2
+Link Tor 2759 Up curTime 7606900 upFor: 109
+Link Tor 2759 Down curTime: 7607000 downFor: -605 resLevel: 2
+Link Tor 2155 Down curTime: 7607000 downFor: -226 resLevel: 2
+Link Tor 1754 Down curTime: 7607400 downFor: -225 resLevel: 2
+Link Tor 1754 Up curTime 7607700 upFor: 816
+Link Tor 2759 Up curTime 7607900 upFor: 830450
+Link Tor 2155 Up curTime 7608100 upFor: 941
+Link Tor 1754 Down curTime: 7608600 downFor: -585 resLevel: 2
+Link Tor 1754 Up curTime 7609200 upFor: 105
+Link Tor 1754 Down curTime: 7609300 downFor: -186 resLevel: 2
+Link Tor 2390 Down curTime: 7609400 downFor: -96 resLevel: 2
+Link Tor 2390 Up curTime 7609500 upFor: 2908
+Link Tor 1754 Up curTime 7609600 upFor: 217
+Link Tor 1754 Down curTime: 7609900 downFor: -89 resLevel: 2
+Link Tor 1754 Up curTime 7610000 upFor: 3303
+Link Tor 2155 Down curTime: 7610200 downFor: -124 resLevel: 2
+Link Tor 2155 Up curTime 7610400 upFor: 87
+Link Tor 2155 Down curTime: 7610500 downFor: -411 resLevel: 2
+Link Tor 2155 Up curTime 7611000 upFor: 200
+Link Tor 2155 Down curTime: 7611200 downFor: -347 resLevel: 2
+Link Tor 2155 Up curTime 7611600 upFor: 698
+Link Tor 2155 Down curTime: 7612300 downFor: -151 resLevel: 2
+Link Tor 2390 Down curTime: 7612400 downFor: -124 resLevel: 2
+Link Tor 2155 Up curTime 7612600 upFor: 914
+Link Tor 2390 Up curTime 7612600 upFor: 11939
+Link Tor 1754 Down curTime: 7613500 downFor: -858 resLevel: 2
+Link Tor 188 Down curTime: 7614000 downFor: -150 resLevel: 2
+Link Tor 188 Up curTime 7614200 upFor: 187
+Link Tor 188 Down curTime: 7614400 downFor: -231 resLevel: 2
+Link Tor 188 Up curTime 7614700 upFor: 1384
+Link Tor 1754 Up curTime 7614800 upFor: 208
+Link Tor 2155 Down curTime: 7614900 downFor: -59 resLevel: 2
+Link Tor 2155 Up curTime 7615000 upFor: 418263
+Link Tor 1754 Down curTime: 7615000 downFor: -393 resLevel: 2
+Link Tor 1754 Up curTime 7615400 upFor: 531
+Link Tor 1754 Down curTime: 7616000 downFor: -2603 resLevel: 2
+Link Tor 188 Down curTime: 7616100 downFor: -398385 resLevel: 2
+Link Core 4022 Down curTime: 7629600 downFor: -911 resLevel: 1
+Link Core 4022 Up curTime 7630600 upFor: 10
+Link Tor 372 Down curTime: 7632500 downFor: -194 resLevel: 1
+Link Tor 372 Up curTime 7632700 upFor: 10
+Switch Aggr [1,10,9] Down curTime: 7660400 downFor: -447 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 7660900 upFor: 4380
+Switch Aggr [1,0,7] Down curTime: 7660900 downFor: -265 resLevel: 1
+Switch Aggr [1,0,7] Up curTime: 7661200 upFor: 10
+Switch Aggr [1,10,9] Down curTime: 7665300 downFor: -397 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 7665700 upFor: 267
+Switch Aggr [1,10,9] Down curTime: 7666000 downFor: -424 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 7666500 upFor: 1197972
+Link Core 5843 Down curTime: 7710900 downFor: -233 resLevel: 1
+Link Core 5843 Up curTime 7711200 upFor: 10
+Link Core 4979 Down curTime: 7763000 downFor: -159 resLevel: 1
+Link Core 4979 Up curTime 7763200 upFor: 10
+Switch with id: [1,4,3] has become failure prone
+Switch Aggr [1,4,3] Down curTime: 7779200 downFor: -307 resLevel: 2
+Switch Aggr [1,4,3] Up curTime: 7779500 upFor: 637423
+Link Core 4615 Down curTime: 7789500 downFor: -349 resLevel: 1
+Link Core 4615 Up curTime 7789900 upFor: 10
+Link Aggr 1240 Down curTime: 7807600 downFor: -259 resLevel: 1
+Link Aggr 1240 Up curTime 7807900 upFor: 10
+Switch Aggr [1,1,3] Down curTime: 7815500 downFor: -290 resLevel: 2
+Switch Aggr [1,1,3] Up curTime: 7815800 upFor: 2825790
+Switch with id: [1,8,0] has become failure prone
+Switch Aggr [1,8,0] Down curTime: 7914200 downFor: -386 resLevel: 2
+Switch Aggr [1,8,0] Up curTime: 7914600 upFor: 264
+Switch Aggr [1,8,0] Down curTime: 7914900 downFor: -917 resLevel: 2
+Switch Aggr [1,8,0] Up curTime: 7915900 upFor: 31517
+Link Core 4024 Down curTime: 7946700 downFor: -142 resLevel: 1
+Link Core 4024 Up curTime 7946900 upFor: 10
+Switch Aggr [1,8,0] Down curTime: 7947500 downFor: -426 resLevel: 2
+Switch Aggr [1,8,0] Up curTime: 7948000 upFor: 188
+Switch Aggr [1,8,0] Down curTime: 7948200 downFor: -297 resLevel: 2
+Switch Aggr [1,8,0] Up curTime: 7948500 upFor: 5828
+Switch Aggr [1,8,0] Down curTime: 7954400 downFor: -167 resLevel: 2
+Switch Aggr [1,8,0] Up curTime: 7954600 upFor: 3092
+Switch Aggr [1,8,0] Down curTime: 7957700 downFor: -304 resLevel: 2
+Switch Aggr [1,8,0] Up curTime: 7958000 upFor: 69570
+Link Aggr 3074 Down curTime: 7975700 downFor: -80 resLevel: 1
+Link Aggr 3074 Up curTime 7975800 upFor: 10
+Link Tor 188 Up curTime 8017100 upFor: 119
+Link Tor 188 Down curTime: 8017300 downFor: -201 resLevel: 2
+Link Tor 188 Up curTime 8017500 upFor: 1439
+Link Tor 188 Down curTime: 8019000 downFor: -316 resLevel: 2
+Link Tor 188 Up curTime 8019400 upFor: 791
+Link Tor 188 Down curTime: 8020200 downFor: -1522 resLevel: 2
+Link Tor 1754 Up curTime 8021800 upFor: 1407659
+Link Tor 188 Up curTime 8021800 upFor: 1156036
+Switch Aggr [1,8,0] Down curTime: 8027600 downFor: -309 resLevel: 2
+Switch Aggr [1,8,0] Up curTime: 8027900 upFor: 60757
+Link Tor 2390 Down curTime: 8028200 downFor: -805 resLevel: 2
+Link Tor 2390 Up curTime 8029000 upFor: 1772
+Link Tor 324 Down curTime: 8030000 downFor: -246 resLevel: 1
+Link Tor 324 Up curTime 8030300 upFor: 10
+Link Tor 2390 Down curTime: 8031100 downFor: -2353 resLevel: 2
+Link Tor 2390 Up curTime 8033500 upFor: 152
+Link Tor 2390 Down curTime: 8033700 downFor: -941 resLevel: 2
+Link Tor 2390 Up curTime 8034700 upFor: 2347
+Link Tor 2390 Down curTime: 8037100 downFor: -226 resLevel: 2
+Link Tor 2390 Up curTime 8037400 upFor: 2047
+Link Tor 2390 Down curTime: 8039500 downFor: -165 resLevel: 2
+Link Tor 2390 Up curTime 8039700 upFor: 47166
+Link Core 5240 Down curTime: 8042500 downFor: -186 resLevel: 1
+Link Core 5240 Up curTime 8042700 upFor: 10
+Link Tor 2390 Down curTime: 8087200 downFor: -86 resLevel: 2
+Link Tor 2390 Up curTime 8087300 upFor: 1189
+Link Tor 2390 Down curTime: 8088500 downFor: -243 resLevel: 2
+Switch Aggr [1,8,0] Down curTime: 8088700 downFor: -143 resLevel: 2
+Link Tor 2390 Up curTime 8088800 upFor: 386041
+Switch Aggr [1,8,0] Up curTime: 8088900 upFor: 70
+Switch Aggr [1,8,0] Down curTime: 8089000 downFor: -328 resLevel: 2
+Switch Aggr [1,8,0] Up curTime: 8089400 upFor: 2237408
+Link Core 4657 Down curTime: 8097000 downFor: -293 resLevel: 1
+Link Core 4657 Up curTime 8097300 upFor: 10
+Link Aggr 2049 Down curTime: 8105000 downFor: -349 resLevel: 2
+Link Aggr 2049 Up curTime 8105400 upFor: 656
+Link Aggr 2049 Down curTime: 8106100 downFor: -154 resLevel: 2
+Link Aggr 2049 Up curTime 8106300 upFor: 3738059
+Link Core 5735 Down curTime: 8116000 downFor: -174 resLevel: 2
+Link Core 5735 Up curTime 8116200 upFor: 5193824
+Link Core 4830 Down curTime: 8124600 downFor: -184 resLevel: 2
+Link Core 4830 Up curTime 8124800 upFor: 135185
+Group with leader: Link with id: 5583 has become failure prone
+Link Core 5583 Down curTime: 8146100 downFor: -112 resLevel: 2
+Link Core 5583 Up curTime 8146300 upFor: 2447
+Link Core 5583 Down curTime: 8148800 downFor: -312 resLevel: 2
+Link Core 5583 Up curTime 8149200 upFor: 497891
+Link Aggr 3418 Down curTime: 8176000 downFor: -695 resLevel: 2
+Link Aggr 3418 Up curTime 8176700 upFor: 3210
+Link Aggr 1286 Down curTime: 8177500 downFor: -273 resLevel: 2
+Link Aggr 1286 Up curTime 8177800 upFor: 2222
+Link Aggr 3225 Down curTime: 8179200 downFor: -623 resLevel: 1
+Link Aggr 3225 Up curTime 8179900 upFor: 10
+Link Aggr 3418 Down curTime: 8180600 downFor: -347 resLevel: 2
+Link Aggr 3418 Up curTime 8181000 upFor: 204
+Link Aggr 1286 Down curTime: 8181100 downFor: -282 resLevel: 2
+Link Aggr 3418 Down curTime: 8181200 downFor: -263 resLevel: 2
+Link Aggr 3418 Up curTime 8181500 upFor: 81484
+Link Aggr 1286 Up curTime 8181700 upFor: 183
+Link Aggr 1286 Down curTime: 8181900 downFor: -697 resLevel: 2
+Link Aggr 1286 Up curTime 8182600 upFor: 195
+Link Aggr 1286 Down curTime: 8182800 downFor: -214 resLevel: 2
+Link Aggr 1286 Up curTime 8183100 upFor: 3249
+Link Aggr 1286 Down curTime: 8186400 downFor: -114 resLevel: 2
+Link Aggr 1286 Up curTime 8186600 upFor: 65
+Link Aggr 1286 Down curTime: 8186700 downFor: -131 resLevel: 2
+Link Aggr 1286 Up curTime 8186900 upFor: 31019
+Link Tor 1940 Down curTime: 8202600 downFor: -211 resLevel: 2
+Link Tor 1940 Up curTime 8202900 upFor: 1541843
+Link Aggr 1286 Down curTime: 8218000 downFor: -164 resLevel: 2
+Link Aggr 1286 Up curTime 8218200 upFor: 1440568
+Link Core 5227 Down curTime: 8218300 downFor: -213 resLevel: 2
+Link Core 5227 Up curTime 8218600 upFor: 2590
+Group with leader: Link with id: 4061 has become failure prone
+Link Aggr 828 Up curTime 8220000 upFor: 481557
+Link Core 4061 Down curTime: 8220000 downFor: -178 resLevel: 2
+Group with leader: Link with id: 3251 has become failure prone
+Link Core 4061 Up curTime 8220200 upFor: 2904884
+Link Aggr 3251 Down curTime: 8220200 downFor: -224 resLevel: 2
+Group with leader: Link with id: 5554 has become failure prone
+Link Aggr 3251 Up curTime 8220500 upFor: 17885
+Link Core 5554 Down curTime: 8220500 downFor: -190 resLevel: 2
+Group with leader: Link with id: 143 has become failure prone
+Link Core 5554 Up curTime 8220700 upFor: 2999
+Link Tor 143 Down curTime: 8220700 downFor: -775 resLevel: 2
+Link Core 5227 Down curTime: 8221200 downFor: -120 resLevel: 2
+Link Core 5227 Up curTime 8221400 upFor: 130
+Link Core 5227 Down curTime: 8221600 downFor: -188 resLevel: 2
+Link Core 5227 Up curTime 8221800 upFor: 620224
+Group with leader: Link with id: 4689 has become failure prone
+Link Tor 143 Up curTime 8221900 upFor: 299548
+Link Core 4689 Down curTime: 8221900 downFor: -317 resLevel: 2
+Group with leader: Link with id: 3403 has become failure prone
+Link Core 4689 Up curTime 8222300 upFor: 3264
+Link Aggr 3403 Down curTime: 8222300 downFor: -304 resLevel: 2
+Link Aggr 3403 Up curTime 8222600 upFor: 1143
+Group with leader: Link with id: 4598 has become failure prone
+Link Core 4598 Down curTime: 8222700 downFor: -335 resLevel: 2
+Link Core 4598 Up curTime 8223100 upFor: 1909913
+Link Aggr 3403 Down curTime: 8223800 downFor: -3037 resLevel: 2
+Link Core 5554 Down curTime: 8224100 downFor: -145 resLevel: 2
+Link Core 5554 Up curTime 8224300 upFor: 982
+Link Core 5554 Down curTime: 8225300 downFor: -54587 resLevel: 2
+Link Tor 177 Down curTime: 8228700 downFor: -240 resLevel: 1
+Link Tor 177 Up curTime 8229000 upFor: 10
+Link Aggr 3251 Down curTime: 8239100 downFor: -80 resLevel: 2
+Link Aggr 3251 Up curTime 8239200 upFor: 31090
+Link Core 5058 Down curTime: 8260600 downFor: -1810 resLevel: 2
+Link Core 4830 Down curTime: 8261000 downFor: -259 resLevel: 2
+Link Core 4830 Up curTime 8261300 upFor: 2397
+Link Aggr 1416 Down curTime: 8261300 downFor: -174 resLevel: 1
+Link Aggr 1416 Up curTime 8261500 upFor: 10
+Link Core 5058 Up curTime 8263000 upFor: 38149
+Link Aggr 3418 Down curTime: 8263800 downFor: -93 resLevel: 2
+Link Core 4830 Down curTime: 8263900 downFor: -743 resLevel: 2
+Link Aggr 3418 Up curTime 8264700 upFor: 272118
+Link Core 4830 Up curTime 8264700 upFor: 2955
+Group with leader: Link with id: 3571 has become failure prone
+Link Tor 3571 Down curTime: 8266500 downFor: -63 resLevel: 2
+Link Tor 3571 Up curTime 8266600 upFor: 149
+Link Tor 3571 Down curTime: 8266800 downFor: -151 resLevel: 2
+Link Tor 3571 Up curTime 8267000 upFor: 4992873
+Link Core 4830 Down curTime: 8267700 downFor: -124 resLevel: 2
+Link Core 4830 Up curTime 8267900 upFor: 943251
+Link Aggr 3251 Down curTime: 8274200 downFor: -293 resLevel: 2
+Link Aggr 3251 Up curTime 8274500 upFor: 1880612
+Link Core 5554 Up curTime 8284500 upFor: 105
+Link Core 5554 Down curTime: 8284600 downFor: -338 resLevel: 2
+Link Core 5554 Up curTime 8285000 upFor: 76547
+Link Core 4689 Down curTime: 8285300 downFor: -136 resLevel: 2
+Link Core 4689 Up curTime 8285500 upFor: 226
+Link Core 4689 Down curTime: 8285800 downFor: -147 resLevel: 2
+Link Core 4689 Up curTime 8286000 upFor: 461601
+Link Aggr 3403 Up curTime 8287000 upFor: 14603
+Link Aggr 3403 Down curTime: 8301600 downFor: -486426 resLevel: 2
+Link Core 5058 Down curTime: 8302300 downFor: -71 resLevel: 2
+Link Core 5058 Up curTime 8302400 upFor: 2503780
+Link Aggr 3088 Down curTime: 8347500 downFor: -254 resLevel: 2
+Link Aggr 3088 Up curTime 8347800 upFor: 434
+Link Aggr 3088 Down curTime: 8348300 downFor: -326 resLevel: 2
+Link Aggr 3088 Up curTime 8348700 upFor: 82
+Link Aggr 3088 Down curTime: 8348800 downFor: -159 resLevel: 2
+Link Aggr 3088 Up curTime 8349000 upFor: 150
+Link Aggr 3088 Down curTime: 8349200 downFor: -720 resLevel: 2
+Link Aggr 3088 Up curTime 8350000 upFor: 165
+Link Aggr 3088 Down curTime: 8350200 downFor: -134 resLevel: 2
+Link Aggr 3088 Up curTime 8350400 upFor: 6992802
+Link Core 5554 Down curTime: 8363500 downFor: -364 resLevel: 2
+Link Core 5554 Up curTime 8363900 upFor: 3207439
+Link Tor 3988 Down curTime: 8405200 downFor: -820 resLevel: 2
+Link Tor 3988 Up curTime 8406100 upFor: 227230
+Group with leader: Link with id: 3146 has become failure prone
+Link Tor 3146 Down curTime: 8406200 downFor: -831 resLevel: 2
+Link Tor 3146 Up curTime 8407100 upFor: 168
+Link Tor 3146 Down curTime: 8407300 downFor: -241 resLevel: 2
+Link Tor 3146 Up curTime 8407600 upFor: 423
+Link Tor 3146 Down curTime: 8408100 downFor: -107 resLevel: 2
+Link Tor 3146 Up curTime 8408200 upFor: 6805206
+Link Core 4450 Down curTime: 8409000 downFor: -190 resLevel: 2
+Link Core 4450 Up curTime 8409200 upFor: 839659
+Switch Aggr [1,4,3] Down curTime: 8420600 downFor: -5628 resLevel: 2
+Switch Aggr [1,4,3] Up curTime: 8426300 upFor: 20
+Switch Aggr [1,4,3] Down curTime: 8426400 downFor: -283 resLevel: 2
+Switch Aggr [1,4,3] Up curTime: 8426700 upFor: 2731
+Switch Aggr [1,4,3] Down curTime: 8429500 downFor: -230 resLevel: 2
+Switch Aggr [1,4,3] Up curTime: 8429800 upFor: 31128
+Link Tor 2155 Down curTime: 8452100 downFor: -380 resLevel: 2
+Link Tor 2155 Up curTime 8452500 upFor: 1496
+Link Tor 2155 Down curTime: 8454000 downFor: -385 resLevel: 2
+Link Tor 2155 Up curTime 8454400 upFor: 1460
+Link Tor 2155 Down curTime: 8455900 downFor: -289 resLevel: 2
+Link Tor 2155 Up curTime 8456200 upFor: 21664
+Switch Aggr [1,4,3] Down curTime: 8461000 downFor: -323 resLevel: 2
+Switch Aggr [1,4,3] Up curTime: 8461400 upFor: 678616
+Link Aggr 3471 Down curTime: 8462200 downFor: -580 resLevel: 2
+Link Aggr 3471 Up curTime 8462800 upFor: 47035
+Link Aggr 602 Down curTime: 8463800 downFor: -160 resLevel: 2
+Link Aggr 602 Up curTime 8464000 upFor: 361
+Link Aggr 602 Down curTime: 8464400 downFor: -177 resLevel: 2
+Link Aggr 602 Up curTime 8464600 upFor: 223
+Link Aggr 602 Down curTime: 8464900 downFor: -204 resLevel: 2
+Link Aggr 602 Up curTime 8465100 upFor: 3389
+Link Aggr 602 Down curTime: 8468500 downFor: -224 resLevel: 2
+Link Aggr 602 Up curTime 8468800 upFor: 70
+Link Aggr 602 Down curTime: 8468900 downFor: -189 resLevel: 2
+Link Aggr 602 Up curTime 8469100 upFor: 1335274
+Link Tor 2155 Down curTime: 8479100 downFor: -3018 resLevel: 2
+Link Tor 2390 Down curTime: 8480800 downFor: -1962 resLevel: 2
+Link Tor 2390 Up curTime 8482800 upFor: 121
+Link Tor 2390 Down curTime: 8483000 downFor: -45 resLevel: 2
+Link Tor 2390 Up curTime 8483100 upFor: 58
+Link Tor 2390 Down curTime: 8483200 downFor: -211 resLevel: 2
+Link Tor 2390 Up curTime 8483500 upFor: 2218
+Link Tor 2155 Up curTime 8484600 upFor: 880
+Link Tor 2155 Down curTime: 8485500 downFor: -213 resLevel: 2
+Link Tor 2155 Up curTime 8485800 upFor: 1998
+Link Tor 2390 Down curTime: 8485800 downFor: -1545 resLevel: 2
+Link Tor 2390 Up curTime 8487400 upFor: 256
+Link Tor 2390 Down curTime: 8487700 downFor: -214 resLevel: 2
+Link Tor 2390 Up curTime 8488000 upFor: 39057
+Link Tor 2155 Down curTime: 8489600 downFor: -1690 resLevel: 2
+Link Tor 2155 Up curTime 8491300 upFor: 11769
+Link Core 5074 Down curTime: 8493200 downFor: -497372 resLevel: 2
+Link Aggr 1695 Down curTime: 8514500 downFor: -2879 resLevel: 1
+Link Aggr 1695 Up curTime 8517400 upFor: 10
+Link Core 5039 Down curTime: 8518700 downFor: -100 resLevel: 1
+Link Core 5039 Up curTime 8518800 upFor: 10
+Link Aggr 3418 Down curTime: 8540100 downFor: -105 resLevel: 2
+Link Aggr 3418 Up curTime 8540200 upFor: 283
+Link Aggr 3418 Down curTime: 8540500 downFor: -271 resLevel: 2
+Link Aggr 3418 Up curTime 8540800 upFor: 5221485
+Link Tor 1186 Down curTime: 8578600 downFor: -73 resLevel: 1
+Link Tor 1186 Up curTime 8578700 upFor: 10
+Link Core 4957 Down curTime: 8649600 downFor: -576 resLevel: 1
+Link Core 4957 Up curTime 8650200 upFor: 10
+Link Core 5422 Down curTime: 8757300 downFor: -258 resLevel: 1
+Link Core 5422 Up curTime 8757600 upFor: 10
+Link Aggr 215 Down curTime: 8797700 downFor: -221533 resLevel: 1
+Switch Aggr [1,10,9] Down curTime: 8864500 downFor: -483 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 8865000 upFor: 239
+Switch Aggr [1,10,9] Down curTime: 8865300 downFor: -424 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 8865800 upFor: 69722
+Link Tor 3122 Down curTime: 8932600 downFor: -33 resLevel: 1
+Link Tor 3122 Up curTime 8932700 upFor: 10
+Switch Aggr [1,10,9] Down curTime: 8935600 downFor: -297 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 8935900 upFor: 229
+Switch Aggr [1,10,9] Down curTime: 8936200 downFor: -226 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 8936500 upFor: 70
+Switch Aggr [1,10,9] Down curTime: 8936600 downFor: -356 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 8937000 upFor: 10603
+Switch Aggr [1,10,9] Down curTime: 8947600 downFor: -413 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 8948100 upFor: 165
+Switch Aggr [1,10,9] Down curTime: 8948300 downFor: -93 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 8948400 upFor: 512405
+Link Tor 1344 Down curTime: 8990600 downFor: -98 resLevel: 1
+Link Tor 1344 Up curTime 8990700 upFor: 10
+Link Tor 2328 Down curTime: 8994800 downFor: -35 resLevel: 1
+Link Tor 2328 Up curTime 8994900 upFor: 10
+Link Aggr 215 Up curTime 9019700 upFor: 10
+Link Core 4817 Down curTime: 9019700 downFor: -138 resLevel: 1
+Link Core 4817 Up curTime 9019900 upFor: 10
+Link Core 4563 Down curTime: 9019900 downFor: -192 resLevel: 1
+Link Core 4563 Up curTime 9020100 upFor: 10
+Link Core 4286 Down curTime: 9020100 downFor: -283 resLevel: 1
+Group with leader: Link with id: 4497 has become failure prone
+Link Core 4286 Up curTime 9020400 upFor: 10
+Link Core 4497 Down curTime: 9020400 downFor: -286 resLevel: 2
+Link Core 4497 Up curTime 9020700 upFor: 23656
+Link Core 4497 Down curTime: 9044400 downFor: -99 resLevel: 2
+Link Core 4497 Up curTime 9044500 upFor: 52166
+Link Aggr 3637 Down curTime: 9047500 downFor: -444 resLevel: 1
+Link Aggr 3637 Up curTime 9048000 upFor: 10
+Link Tor 2349 Down curTime: 9054600 downFor: -76 resLevel: 1
+Link Tor 2349 Up curTime 9054700 upFor: 10
+Link Tor 311 Down curTime: 9094200 downFor: -317 resLevel: 1
+Link Tor 311 Up curTime 9094600 upFor: 10
+Link Core 4497 Down curTime: 9097700 downFor: -239 resLevel: 2
+Link Core 4497 Up curTime 9098000 upFor: 1382879
+Switch Aggr [1,4,3] Down curTime: 9142600 downFor: -1203 resLevel: 2
+Switch Aggr [1,4,3] Up curTime: 9143800 upFor: 6002
+Switch Aggr [1,4,3] Down curTime: 9149800 downFor: -962 resLevel: 2
+Switch Aggr [1,4,3] Up curTime: 9150800 upFor: 855162
+Link Aggr 840 Down curTime: 9188600 downFor: -266 resLevel: 2
+Link Aggr 840 Up curTime 9188900 upFor: 140
+Link Aggr 840 Down curTime: 9189100 downFor: -1614 resLevel: 2
+Link Aggr 840 Up curTime 9190800 upFor: 3047
+Group with leader: Link with id: 4050 has become failure prone
+Link Core 4050 Down curTime: 9192000 downFor: -131 resLevel: 2
+Link Core 4050 Up curTime 9192200 upFor: 2339
+Link Aggr 840 Down curTime: 9193900 downFor: -185 resLevel: 2
+Link Aggr 840 Up curTime 9194100 upFor: 123505
+Link Core 4050 Down curTime: 9194800 downFor: -89 resLevel: 2
+Link Core 4050 Up curTime 9194900 upFor: 424313
+Switch Aggr [1,17,6] Down curTime: 9196000 downFor: -106 resLevel: 2
+Switch Aggr [1,17,6] Up curTime: 9196100 upFor: 584384
+Link Tor 1597 Down curTime: 9212700 downFor: -323 resLevel: 1
+Link Tor 1597 Up curTime 9213100 upFor: 10
+Link Core 5074 Up curTime 9222300 upFor: 899
+Group with leader: Link with id: 220 has become failure prone
+Link Aggr 220 Down curTime: 9222400 downFor: -194 resLevel: 2
+Group with leader: Link with id: 4406 has become failure prone
+Link Aggr 220 Up curTime 9222600 upFor: 553918
+Link Core 4406 Down curTime: 9222600 downFor: -170 resLevel: 2
+Link Core 4406 Up curTime 9222800 upFor: 76
+Link Core 4406 Down curTime: 9222900 downFor: -134 resLevel: 2
+Link Core 4406 Up curTime 9223100 upFor: 16902
+Link Core 5074 Down curTime: 9223200 downFor: -351 resLevel: 2
+Link Core 5074 Up curTime 9223600 upFor: 1411189
+Link Tor 2155 Down curTime: 9232700 downFor: -147 resLevel: 2
+Link Tor 2155 Up curTime 9232900 upFor: 3291028
+Link Core 4406 Down curTime: 9240600 downFor: -383 resLevel: 2
+Link Core 4406 Up curTime 9241000 upFor: 994392
+Link Aggr 3471 Down curTime: 9250200 downFor: -201 resLevel: 2
+Link Aggr 3471 Up curTime 9250400 upFor: 6106540
+Link Tor 2390 Down curTime: 9256600 downFor: -249 resLevel: 2
+Link Tor 2390 Up curTime 9256900 upFor: 311
+Link Tor 2390 Down curTime: 9257300 downFor: -263 resLevel: 2
+Link Tor 2390 Up curTime 9257600 upFor: 2543
+Link Tor 2390 Down curTime: 9260200 downFor: -403 resLevel: 2
+Link Tor 2390 Up curTime 9260600 upFor: 3259
+Link Aggr 1255 Down curTime: 9262700 downFor: -52 resLevel: 2
+Link Aggr 1255 Up curTime 9262800 upFor: 276
+Link Aggr 1255 Down curTime: 9263100 downFor: -249 resLevel: 2
+Link Aggr 1255 Up curTime 9263400 upFor: 573
+Link Tor 2390 Down curTime: 9263900 downFor: -210 resLevel: 2
+Link Tor 2390 Up curTime 9264200 upFor: 396
+Link Aggr 1255 Down curTime: 9264300 downFor: -143 resLevel: 2
+Link Aggr 1255 Up curTime 9264500 upFor: 2841562
+Link Tor 2390 Down curTime: 9264600 downFor: -269 resLevel: 2
+Link Tor 2390 Up curTime 9264900 upFor: 11370
+Link Tor 2390 Down curTime: 9276300 downFor: -162 resLevel: 2
+Link Tor 2390 Up curTime 9276500 upFor: 2463467
+Link Aggr 840 Down curTime: 9318000 downFor: -130 resLevel: 2
+Link Aggr 840 Up curTime 9318200 upFor: 609
+Link Aggr 840 Down curTime: 9318800 downFor: -295 resLevel: 2
+Link Aggr 840 Up curTime 9319100 upFor: 397
+Link Aggr 840 Down curTime: 9319500 downFor: -360 resLevel: 2
+Link Aggr 840 Up curTime 9319900 upFor: 382
+Link Aggr 840 Down curTime: 9320300 downFor: -390 resLevel: 2
+Link Aggr 840 Up curTime 9320700 upFor: 149
+Link Aggr 840 Down curTime: 9320900 downFor: -2074 resLevel: 2
+Link Aggr 840 Up curTime 9323000 upFor: 6095657
+Link Core 5882 Down curTime: 9323800 downFor: -296 resLevel: 2
+Link Core 5882 Up curTime 9324100 upFor: 943077
+Link Tor 143 Down curTime: 9332700 downFor: -263 resLevel: 2
+Link Tor 143 Up curTime 9333000 upFor: 1090
+Link Tor 143 Down curTime: 9334100 downFor: -611 resLevel: 2
+Link Tor 143 Up curTime 9334800 upFor: 617807
+Link Tor 3988 Down curTime: 9381400 downFor: -238 resLevel: 2
+Link Tor 3988 Up curTime 9381700 upFor: 1078
+Link Tor 3988 Down curTime: 9382800 downFor: -229 resLevel: 2
+Link Tor 3988 Up curTime 9383100 upFor: 3444
+Link Tor 3988 Down curTime: 9386600 downFor: -229 resLevel: 2
+Link Tor 3988 Up curTime 9386900 upFor: 5317604
+Link Core 5656 Down curTime: 9387800 downFor: -104 resLevel: 1
+Link Core 5656 Up curTime 9387900 upFor: 10
+Link Aggr 2254 Down curTime: 9391200 downFor: -311 resLevel: 1
+Link Aggr 2254 Up curTime 9391600 upFor: 10
+Group with leader: Link with id: 5276 has become failure prone
+Link Core 5276 Down curTime: 9399100 downFor: -1932 resLevel: 2
+Link Core 5276 Up curTime 9401100 upFor: 820561
+Link Core 5583 Down curTime: 9408300 downFor: -51 resLevel: 2
+Link Core 5583 Up curTime 9408400 upFor: 154
+Link Core 5583 Down curTime: 9408600 downFor: -206 resLevel: 2
+Link Core 5583 Up curTime 9408800 upFor: 1095
+Link Core 5583 Down curTime: 9409900 downFor: -233 resLevel: 2
+Link Core 5583 Up curTime 9410200 upFor: 749117
+Link Tor 188 Down curTime: 9417800 downFor: -48344 resLevel: 2
+Link Tor 166 Down curTime: 9427500 downFor: -287 resLevel: 1
+Link Tor 166 Up curTime 9427800 upFor: 10
+Link Core 4830 Down curTime: 9440200 downFor: -112 resLevel: 2
+Link Core 4830 Up curTime 9440400 upFor: 3211
+Link Core 4830 Down curTime: 9443700 downFor: -157 resLevel: 2
+Link Core 4830 Up curTime 9443900 upFor: 94
+Link Core 4830 Down curTime: 9444000 downFor: -227 resLevel: 2
+Link Core 4830 Up curTime 9444300 upFor: 7264607
+Switch Aggr [1,10,9] Down curTime: 9461000 downFor: -463 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 9461500 upFor: 104
+Switch Aggr [1,10,9] Down curTime: 9461600 downFor: -675 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 9462300 upFor: 75404
+Link Tor 188 Up curTime 9467200 upFor: 145
+Link Tor 188 Down curTime: 9467400 downFor: -167 resLevel: 2
+Link Tor 188 Up curTime 9467600 upFor: 216
+Link Tor 188 Down curTime: 9467900 downFor: -1566 resLevel: 2
+Link Tor 188 Up curTime 9469500 upFor: 1891
+Link Tor 188 Down curTime: 9471400 downFor: -284 resLevel: 2
+Link Tor 188 Up curTime 9471700 upFor: 381138
+Link Aggr 2211 Down curTime: 9485100 downFor: -176 resLevel: 2
+Link Aggr 2211 Up curTime 9485300 upFor: 856
+Link Aggr 2211 Down curTime: 9486200 downFor: -209 resLevel: 2
+Link Aggr 2211 Up curTime 9486400 upFor: 3553
+Link Aggr 2211 Down curTime: 9490000 downFor: -37195 resLevel: 2
+Link Aggr 828 Down curTime: 9510500 downFor: -205 resLevel: 2
+Link Aggr 828 Up curTime 9510700 upFor: 2458
+Link Aggr 828 Down curTime: 9513200 downFor: -219 resLevel: 2
+Link Aggr 828 Up curTime 9513500 upFor: 4089949
+Group with leader: Link with id: 4535 has become failure prone
+Link Core 4535 Down curTime: 9520900 downFor: -207 resLevel: 2
+Link Core 4535 Up curTime 9521100 upFor: 2285
+Link Core 4535 Down curTime: 9523400 downFor: -158 resLevel: 2
+Link Core 4535 Up curTime 9523600 upFor: 42574
+Link Aggr 1657 Down curTime: 9525000 downFor: -66195 resLevel: 2
+Group with leader: Link with id: 945 has become failure prone
+Link Tor 945 Down curTime: 9533300 downFor: -162 resLevel: 2
+Link Tor 945 Up curTime 9533500 upFor: 2721219
+Switch Aggr [1,10,9] Down curTime: 9537700 downFor: -499 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 9538200 upFor: 132
+Switch Aggr [1,10,9] Down curTime: 9538400 downFor: -452 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 9538900 upFor: 1754996
+Link Tor 713 Down curTime: 9542600 downFor: -240 resLevel: 1
+Link Tor 713 Up curTime 9542900 upFor: 10
+Link Aggr 2053 Down curTime: 9550200 downFor: -1903 resLevel: 1
+Link Aggr 2053 Up curTime 9552100 upFor: 10
+Group with leader: Link with id: 5530 has become failure prone
+Link Core 5530 Down curTime: 9575600 downFor: -173 resLevel: 2
+Link Core 5530 Up curTime 9575800 upFor: 82846
+Link Aggr 1657 Up curTime 9594000 upFor: 2395
+Link Aggr 1657 Down curTime: 9596400 downFor: -245 resLevel: 2
+Link Aggr 1657 Up curTime 9596700 upFor: 323
+Link Aggr 1657 Down curTime: 9597100 downFor: -602336 resLevel: 2
+Link Core 5227 Down curTime: 9649300 downFor: -33 resLevel: 2
+Link Core 5227 Up curTime 9649400 upFor: 628939
+Link Tor 2759 Down curTime: 9654400 downFor: -167 resLevel: 2
+Link Tor 2759 Up curTime 9654600 upFor: 187138
+Link Core 5530 Down curTime: 9658700 downFor: -183 resLevel: 2
+Link Core 5530 Up curTime 9658900 upFor: 4657520
+Link Core 4050 Down curTime: 9677700 downFor: -541 resLevel: 2
+Link Core 4050 Up curTime 9678300 upFor: 48
+Link Core 4050 Down curTime: 9678400 downFor: -92 resLevel: 2
+Link Core 4050 Up curTime 9678500 upFor: 801187
+Link Core 5242 Down curTime: 9691500 downFor: -2271 resLevel: 2
+Link Core 5242 Up curTime 9693800 upFor: 728873
+Link Core 4597 Down curTime: 9736600 downFor: -318 resLevel: 1
+Link Core 4597 Up curTime 9737000 upFor: 10
+Switch Aggr [1,17,6] Down curTime: 9780500 downFor: -493 resLevel: 2
+Switch Aggr [1,17,6] Up curTime: 9781000 upFor: 29224
+Link Core 5052 Down curTime: 9795300 downFor: -181 resLevel: 1
+Link Core 5052 Up curTime 9795500 upFor: 10
+Switch Aggr [1,2,5] Down curTime: 9798800 downFor: -369 resLevel: 1
+Switch Aggr [1,2,5] Up curTime: 9799200 upFor: 10
+Group with leader: Link with id: 3106 has become failure prone
+Link Tor 3106 Down curTime: 9803400 downFor: -137 resLevel: 2
+Link Tor 3106 Up curTime 9803600 upFor: 1050
+Link Tor 3106 Down curTime: 9804700 downFor: -24691 resLevel: 2
+Switch Aggr [1,17,6] Down curTime: 9810300 downFor: -406 resLevel: 2
+Switch Aggr [1,17,6] Up curTime: 9810700 upFor: 41014
+Link Core 4373 Down curTime: 9812500 downFor: -267 resLevel: 2
+Link Core 4373 Up curTime 9812800 upFor: 657
+Link Core 4373 Down curTime: 9813500 downFor: -114 resLevel: 2
+Link Core 4373 Up curTime 9813700 upFor: 7205805
+Link Tor 3106 Up curTime 9829900 upFor: 431
+Link Tor 3106 Down curTime: 9830400 downFor: -318 resLevel: 2
+Link Tor 3106 Up curTime 9830800 upFor: 1812
+Link Tor 3106 Down curTime: 9832700 downFor: -104 resLevel: 2
+Link Tor 3106 Up curTime 9832800 upFor: 766641
+Link Tor 2759 Down curTime: 9845700 downFor: -160 resLevel: 2
+Link Tor 2759 Up curTime 9845900 upFor: 85798
+Switch Aggr [1,17,6] Down curTime: 9851800 downFor: -36 resLevel: 2
+Switch Aggr [1,17,6] Up curTime: 9851900 upFor: 40
+Switch Aggr [1,17,6] Down curTime: 9852000 downFor: -310 resLevel: 2
+Switch Aggr [1,17,6] Up curTime: 9852400 upFor: 93
+Switch Aggr [1,17,6] Down curTime: 9852500 downFor: -418 resLevel: 2
+Switch Aggr [1,17,6] Up curTime: 9853000 upFor: 49958
+Link Tor 188 Down curTime: 9856200 downFor: -190 resLevel: 2
+Link Tor 188 Up curTime 9856400 upFor: 1823
+Link Tor 188 Down curTime: 9858300 downFor: -510 resLevel: 2
+Link Tor 188 Up curTime 9858900 upFor: 161
+Link Tor 188 Down curTime: 9859100 downFor: -177 resLevel: 2
+Link Tor 188 Up curTime 9859300 upFor: 188
+Link Tor 188 Down curTime: 9859500 downFor: -128 resLevel: 2
+Link Tor 188 Up curTime 9859700 upFor: 33686
+Link Core 5869 Down curTime: 9860800 downFor: -126 resLevel: 2
+Link Core 5869 Up curTime 9861000 upFor: 67298
+Link Tor 188 Down curTime: 9893400 downFor: -174 resLevel: 2
+Link Tor 188 Up curTime 9893600 upFor: 3409
+Link Tor 188 Down curTime: 9897000 downFor: -211 resLevel: 2
+Link Tor 188 Up curTime 9897300 upFor: 773
+Link Tor 188 Down curTime: 9898100 downFor: -160 resLevel: 2
+Link Tor 188 Up curTime 9898300 upFor: 15894
+Link Aggr 12 Down curTime: 9899000 downFor: -251 resLevel: 1
+Link Aggr 12 Up curTime 9899300 upFor: 10
+Switch Aggr [1,17,6] Down curTime: 9903000 downFor: -446 resLevel: 2
+Switch Aggr [1,17,6] Up curTime: 9903500 upFor: 958404
+Link Tor 188 Down curTime: 9914500 downFor: -344 resLevel: 2
+Link Tor 188 Up curTime 9914900 upFor: 40971
+Link Core 4252 Down curTime: 9917600 downFor: -2899 resLevel: 2
+Link Core 4252 Up curTime 9920500 upFor: 55446
+Link Core 4416 Down curTime: 9924300 downFor: -346 resLevel: 1
+Link Core 4416 Up curTime 9924700 upFor: 10
+Link Core 5869 Down curTime: 9930000 downFor: -199 resLevel: 2
+Link Core 5869 Up curTime 9930200 upFor: 3136322
+Link Tor 2759 Down curTime: 9934900 downFor: -61094 resLevel: 2
+Link Tor 188 Down curTime: 9956300 downFor: -75 resLevel: 2
+Link Tor 188 Up curTime 9956400 upFor: 341778
+Link Tor 2759 Up curTime 9996100 upFor: 1257
+Link Tor 2759 Down curTime: 9997400 downFor: -74 resLevel: 2
+Link Tor 2759 Up curTime 9997500 upFor: 934
+Link Tor 2759 Down curTime: 9998500 downFor: -185 resLevel: 2
+Link Tor 2759 Up curTime 9998700 upFor: 248
+Link Tor 2759 Down curTime: 9999000 downFor: -78 resLevel: 2
+Link Tor 2759 Up curTime 9999100 upFor: 4219790
+Switch Aggr [1,4,3] Down curTime: 10010700 downFor: -356 resLevel: 2
+Switch Aggr [1,4,3] Up curTime: 10011100 upFor: 66227
+Link Core 5111 Down curTime: 10013300 downFor: -3410 resLevel: 1
+Link Core 5111 Up curTime 10016800 upFor: 10
+Link Core 4831 Down curTime: 10018600 downFor: -595 resLevel: 1
+Link Core 4831 Up curTime 10019200 upFor: 10
+Link Tor 537 Down curTime: 10032900 downFor: -856 resLevel: 2
+Link Tor 537 Up curTime 10033800 upFor: 44781
+Link Core 4252 Down curTime: 10043300 downFor: -295 resLevel: 2
+Link Core 4252 Up curTime 10043600 upFor: 2155
+Link Core 4252 Down curTime: 10045800 downFor: -56 resLevel: 2
+Link Core 4252 Up curTime 10045900 upFor: 3278
+Link Core 4403 Down curTime: 10046300 downFor: -192 resLevel: 1
+Link Core 4403 Up curTime 10046500 upFor: 10
+Link Aggr 3876 Down curTime: 10049000 downFor: -3384 resLevel: 2
+Link Aggr 3876 Up curTime 10052400 upFor: 283978
+Link Core 4252 Down curTime: 10052900 downFor: -158 resLevel: 2
+Link Core 4252 Up curTime 10053100 upFor: 1576
+Link Core 4252 Down curTime: 10054700 downFor: -70 resLevel: 2
+Link Core 4252 Up curTime 10054800 upFor: 20387
+Link Core 4234 Down curTime: 10060100 downFor: -251 resLevel: 1
+Link Core 4234 Up curTime 10060400 upFor: 10
+Switch Aggr [1,9,8] Down curTime: 10063400 downFor: -534 resLevel: 2
+Switch Aggr [1,9,8] Up curTime: 10064000 upFor: 2047065
+Link Core 4252 Down curTime: 10075500 downFor: -91 resLevel: 2
+Link Core 4252 Up curTime 10075600 upFor: 779487
+Switch Aggr [1,4,3] Down curTime: 10077400 downFor: -2064 resLevel: 2
+Switch Aggr [1,4,3] Up curTime: 10079500 upFor: 32266
+Link Tor 537 Down curTime: 10082600 downFor: -90 resLevel: 2
+Link Tor 537 Up curTime 10082700 upFor: 345
+Link Tor 537 Down curTime: 10083100 downFor: -286 resLevel: 2
+Link Tor 537 Up curTime 10083400 upFor: 232248
+Link Aggr 602 Down curTime: 10106500 downFor: -147 resLevel: 2
+Link Aggr 602 Up curTime 10106700 upFor: 105376
+Link Core 4035 Down curTime: 10107400 downFor: -437 resLevel: 2
+Link Core 4035 Up curTime 10107900 upFor: 1683748
+Link Aggr 70 Down curTime: 10108200 downFor: -42 resLevel: 2
+Link Aggr 70 Up curTime 10108300 upFor: 137
+Link Aggr 70 Down curTime: 10108500 downFor: -111 resLevel: 2
+Link Aggr 70 Up curTime 10108700 upFor: 361325
+Switch Aggr [1,4,3] Down curTime: 10111800 downFor: -108 resLevel: 2
+Switch Aggr [1,4,3] Up curTime: 10111900 upFor: 157
+Switch Aggr [1,4,3] Down curTime: 10112100 downFor: -1984 resLevel: 2
+Switch Aggr [1,4,3] Up curTime: 10114100 upFor: 141
+Switch Aggr [1,4,3] Down curTime: 10114300 downFor: -42 resLevel: 2
+Switch Aggr [1,4,3] Up curTime: 10114400 upFor: 658698
+Link Aggr 2081 Down curTime: 10124900 downFor: -200 resLevel: 1
+Link Aggr 2081 Up curTime 10125100 upFor: 10
+Switch Aggr [1,19,1] Down curTime: 10147100 downFor: -867 resLevel: 2
+Switch Aggr [1,19,1] Up curTime: 10148000 upFor: 78123
+Link Core 4450 Down curTime: 10163000 downFor: -93 resLevel: 2
+Link Core 4450 Up curTime 10163100 upFor: 142
+Link Core 4450 Down curTime: 10163300 downFor: -146 resLevel: 2
+Link Core 4450 Up curTime 10163500 upFor: 618
+Link Tor 3302 Down curTime: 10164100 downFor: -99 resLevel: 2
+Link Tor 3302 Up curTime 10164200 upFor: 585
+Link Core 4450 Down curTime: 10164300 downFor: -131 resLevel: 2
+Link Core 4450 Up curTime 10164500 upFor: 8167832
+Link Tor 3302 Down curTime: 10164800 downFor: -80 resLevel: 2
+Link Tor 3302 Up curTime 10164900 upFor: 1162561
+Link Core 5820 Down curTime: 10175600 downFor: -58 resLevel: 2
+Link Core 5820 Up curTime 10175700 upFor: 778219
+Link Core 4798 Down curTime: 10176100 downFor: -107 resLevel: 1
+Link Core 4798 Up curTime 10176200 upFor: 10
+Link Aggr 602 Down curTime: 10213000 downFor: -194 resLevel: 2
+Link Aggr 602 Up curTime 10213200 upFor: 98
+Link Aggr 602 Down curTime: 10213300 downFor: -245 resLevel: 2
+Link Aggr 602 Up curTime 10213600 upFor: 569
+Link Aggr 602 Down curTime: 10214200 downFor: -166 resLevel: 2
+Link Aggr 602 Up curTime 10214400 upFor: 4454926
+Switch Aggr [1,19,1] Down curTime: 10226200 downFor: -257 resLevel: 2
+Switch Aggr [1,19,1] Up curTime: 10226500 upFor: 1755826
+Link Tor 1754 Down curTime: 10254200 downFor: -229 resLevel: 2
+Link Tor 1754 Up curTime 10254500 upFor: 271
+Link Tor 1754 Down curTime: 10254800 downFor: -188 resLevel: 2
+Link Tor 1754 Up curTime 10255000 upFor: 1398338
+Link Tor 188 Down curTime: 10306600 downFor: -59761 resLevel: 2
+Switch Aggr [1,8,0] Down curTime: 10335400 downFor: -101 resLevel: 2
+Switch Aggr [1,8,0] Up curTime: 10335500 upFor: 72387
+Link Aggr 3876 Down curTime: 10337100 downFor: -194 resLevel: 2
+Link Aggr 3876 Up curTime 10337300 upFor: 2634
+Link Tor 2755 Down curTime: 10338900 downFor: -224 resLevel: 1
+Link Tor 2755 Up curTime 10339200 upFor: 10
+Link Aggr 3876 Down curTime: 10340200 downFor: -935 resLevel: 2
+Link Aggr 3876 Up curTime 10341200 upFor: 3176598
+Link Tor 188 Up curTime 10367800 upFor: 457317
+Link Aggr 1657 Up curTime 10372500 upFor: 1449538
+Link Aggr 2211 Up curTime 10372800 upFor: 2223
+Group with leader: Link with id: 2636 has become failure prone
+Link Aggr 2636 Down curTime: 10372900 downFor: -173 resLevel: 2
+Group with leader: Link with id: 3276 has become failure prone
+Link Aggr 2636 Up curTime 10373100 upFor: 556
+Link Aggr 3276 Down curTime: 10373100 downFor: -338 resLevel: 2
+Group with leader: Link with id: 5988 has become failure prone
+Link Aggr 3276 Up curTime 10373500 upFor: 34221
+Link Core 5988 Down curTime: 10373500 downFor: -116 resLevel: 2
+Link Core 5988 Up curTime 10373700 upFor: 9302763
+Link Aggr 2636 Down curTime: 10373700 downFor: -886 resLevel: 2
+Link Aggr 2636 Up curTime 10374600 upFor: 469573
+Link Aggr 2211 Down curTime: 10375100 downFor: -160 resLevel: 2
+Link Aggr 2211 Up curTime 10375300 upFor: 172
+Link Aggr 2211 Down curTime: 10375500 downFor: -236 resLevel: 2
+Link Aggr 2211 Up curTime 10375800 upFor: 867
+Link Aggr 2211 Down curTime: 10376700 downFor: -127 resLevel: 2
+Link Aggr 2211 Up curTime 10376900 upFor: 169814
+Link Aggr 3422 Down curTime: 10377600 downFor: -129 resLevel: 2
+Link Aggr 3422 Up curTime 10377800 upFor: 565680
+Link Tor 537 Down curTime: 10379800 downFor: -250 resLevel: 2
+Link Tor 537 Up curTime 10380100 upFor: 1160
+Link Tor 537 Down curTime: 10381300 downFor: -107 resLevel: 2
+Link Tor 537 Up curTime 10381400 upFor: 138
+Link Tor 537 Down curTime: 10381600 downFor: -174 resLevel: 2
+Link Tor 537 Up curTime 10381800 upFor: 388
+Link Tor 537 Down curTime: 10382200 downFor: -157 resLevel: 2
+Link Tor 537 Up curTime 10382400 upFor: 407
+Link Tor 537 Down curTime: 10382800 downFor: -305 resLevel: 2
+Link Tor 537 Up curTime 10383100 upFor: 920
+Link Tor 537 Down curTime: 10384100 downFor: -398 resLevel: 2
+Link Tor 537 Up curTime 10384500 upFor: 1433
+Link Tor 2962 Down curTime: 10384900 downFor: -155 resLevel: 2
+Link Tor 2962 Up curTime 10385100 upFor: 5609927
+Link Tor 537 Down curTime: 10386000 downFor: -175 resLevel: 2
+Link Tor 1380 Down curTime: 10386100 downFor: -252 resLevel: 2
+Link Tor 1380 Up curTime 10386400 upFor: 820
+Link Tor 537 Up curTime 10386500 upFor: 1732544
+Link Tor 1380 Down curTime: 10387300 downFor: -171 resLevel: 2
+Link Tor 1380 Up curTime 10387500 upFor: 407824
+Link Core 5583 Down curTime: 10389200 downFor: -252 resLevel: 2
+Link Core 5583 Up curTime 10389500 upFor: 70597
+Group with leader: Link with id: 2613 has become failure prone
+Link Aggr 2613 Down curTime: 10391400 downFor: -241 resLevel: 2
+Link Aggr 2613 Up curTime 10391700 upFor: 1287
+Link Aggr 3205 Down curTime: 10392400 downFor: -179 resLevel: 2
+Link Aggr 3205 Up curTime 10392600 upFor: 23923
+Link Aggr 2613 Down curTime: 10393200 downFor: -338 resLevel: 2
+Link Aggr 2613 Up curTime 10393600 upFor: 3341
+Link Aggr 2613 Down curTime: 10397000 downFor: -92 resLevel: 2
+Link Aggr 2613 Up curTime 10397100 upFor: 4060185
+Group with leader: Link with id: 5473 has become failure prone
+Link Core 5473 Down curTime: 10401200 downFor: -206 resLevel: 2
+Link Core 5473 Up curTime 10401400 upFor: 376480
+Switch Aggr [1,8,0] Down curTime: 10407900 downFor: -531 resLevel: 2
+Switch Aggr [1,8,0] Up curTime: 10408500 upFor: 53
+Switch Aggr [1,8,0] Down curTime: 10408600 downFor: -206 resLevel: 2
+Switch Aggr [1,8,0] Up curTime: 10408800 upFor: 123
+Switch Aggr [1,8,0] Down curTime: 10409000 downFor: -70 resLevel: 2
+Switch Aggr [1,8,0] Up curTime: 10409100 upFor: 107
+Switch Aggr [1,8,0] Down curTime: 10409200 downFor: -989 resLevel: 2
+Switch Aggr [1,8,0] Up curTime: 10410200 upFor: 845305
+Link Aggr 3276 Down curTime: 10413400 downFor: -259 resLevel: 2
+Link Aggr 3276 Up curTime 10413700 upFor: 41848
+Link Core 4535 Down curTime: 10415000 downFor: -839 resLevel: 2
+Link Aggr 2000 Down curTime: 10415100 downFor: -45 resLevel: 1
+Link Aggr 2000 Up curTime 10415200 upFor: 10
+Link Core 4535 Up curTime 10416000 upFor: 850625
+Link Aggr 3205 Down curTime: 10416700 downFor: -2087 resLevel: 2
+Link Aggr 3205 Up curTime 10418800 upFor: 237
+Link Aggr 3205 Down curTime: 10419100 downFor: -214 resLevel: 2
+Link Aggr 3205 Up curTime 10419400 upFor: 144
+Link Aggr 3205 Down curTime: 10419600 downFor: -197 resLevel: 2
+Link Aggr 3205 Up curTime 10419800 upFor: 1563969
+Link Core 5276 Down curTime: 10420600 downFor: -474 resLevel: 2
+Link Core 5276 Up curTime 10421100 upFor: 777
+Link Core 5276 Down curTime: 10421900 downFor: -60028 resLevel: 2
+Switch Aggr [1,12,4] Down curTime: 10422300 downFor: -325 resLevel: 1
+Switch Aggr [1,12,4] Up curTime: 10422700 upFor: 10
+Link Aggr 1016 Down curTime: 10447000 downFor: -124 resLevel: 1
+Link Aggr 1016 Up curTime 10447200 upFor: 10
+Link Core 5882 Down curTime: 10466800 downFor: -387 resLevel: 2
+Link Core 5882 Up curTime 10467200 upFor: 1798656
+Link Tor 515 Down curTime: 10469800 downFor: -114 resLevel: 1
+Link Tor 515 Up curTime 10470000 upFor: 10
+Link Tor 2940 Down curTime: 10470500 downFor: -218 resLevel: 2
+Link Tor 2940 Up curTime 10470800 upFor: 73
+Link Tor 2940 Down curTime: 10470900 downFor: -278 resLevel: 2
+Link Tor 2940 Up curTime 10471200 upFor: 544
+Link Tor 2940 Down curTime: 10471800 downFor: -93 resLevel: 2
+Link Tor 2940 Up curTime 10471900 upFor: 219
+Link Tor 2940 Down curTime: 10472200 downFor: -192 resLevel: 2
+Link Tor 2940 Up curTime 10472400 upFor: 3566
+Link Tor 2940 Down curTime: 10476000 downFor: -105 resLevel: 2
+Link Tor 2940 Up curTime 10476100 upFor: 1534738
+Link Core 5276 Up curTime 10483900 upFor: 3133
+Link Core 5276 Down curTime: 10487100 downFor: -215 resLevel: 2
+Link Core 5276 Up curTime 10487400 upFor: 643
+Link Core 5276 Down curTime: 10488100 downFor: -2302 resLevel: 2
+Link Core 5276 Up curTime 10490400 upFor: 25106
+Switch Aggr [1,5,6] Down curTime: 10492000 downFor: -75 resLevel: 1
+Switch Aggr [1,5,6] Up curTime: 10492100 upFor: 10
+Link Core 5242 Down curTime: 10502400 downFor: -177 resLevel: 2
+Link Core 5242 Up curTime 10502600 upFor: 64074
+Link Core 4689 Down curTime: 10514500 downFor: -628 resLevel: 2
+Link Core 4689 Up curTime 10515200 upFor: 1062
+Link Core 5276 Down curTime: 10515800 downFor: -249 resLevel: 2
+Link Core 5276 Up curTime 10516100 upFor: 676320
+Link Core 4689 Down curTime: 10516600 downFor: -582 resLevel: 2
+Link Core 4689 Up curTime 10517200 upFor: 82232
+Link Core 5227 Down curTime: 10518800 downFor: -279 resLevel: 2
+Link Core 5227 Up curTime 10519100 upFor: 108253
+Link Aggr 3276 Down curTime: 10525200 downFor: -105 resLevel: 2
+Link Aggr 3276 Up curTime 10525300 upFor: 338
+Link Aggr 3276 Down curTime: 10525700 downFor: -63709 resLevel: 2
+Link Core 5583 Down curTime: 10529900 downFor: -17 resLevel: 2
+Link Core 5583 Up curTime 10530000 upFor: 2514708
+Link Aggr 70 Down curTime: 10536900 downFor: -225 resLevel: 2
+Link Aggr 70 Up curTime 10537200 upFor: 135646
+Link Aggr 1286 Down curTime: 10539000 downFor: -174 resLevel: 2
+Link Aggr 1286 Up curTime 10539200 upFor: 354025
+Link Core 4050 Down curTime: 10554900 downFor: -248 resLevel: 2
+Link Core 4050 Up curTime 10555200 upFor: 63
+Link Core 4050 Down curTime: 10555300 downFor: -128 resLevel: 2
+Link Core 4050 Up curTime 10555500 upFor: 7516041
+Link Core 5242 Down curTime: 10567400 downFor: -6538 resLevel: 2
+Link Core 5242 Up curTime 10574000 upFor: 44
+Link Core 5242 Down curTime: 10574100 downFor: -126 resLevel: 2
+Link Core 5242 Up curTime 10574300 upFor: 858839
+Link Core 5457 Down curTime: 10577600 downFor: -256 resLevel: 1
+Link Core 5457 Up curTime 10577900 upFor: 10
+Link Aggr 3276 Up curTime 10597500 upFor: 2324462
+Link Core 4497 Down curTime: 10616600 downFor: -173 resLevel: 2
+Link Core 4497 Up curTime 10616800 upFor: 754274
+Link Aggr 2211 Down curTime: 10628700 downFor: -105 resLevel: 2
+Link Aggr 2211 Up curTime 10628800 upFor: 515468
+Group with leader: Link with id: 4356 has become failure prone
+Link Aggr 3403 Up curTime 10632100 upFor: 14133
+Link Core 4356 Down curTime: 10632100 downFor: -105 resLevel: 2
+Link Core 4356 Up curTime 10632200 upFor: 1513208
+Group with leader: Link with id: 2066 has become failure prone
+Link Aggr 2066 Down curTime: 10632300 downFor: -616 resLevel: 2
+Group with leader: Link with id: 1238 has become failure prone
+Link Aggr 2066 Up curTime 10633000 upFor: 24187
+Link Aggr 1238 Down curTime: 10633000 downFor: -48 resLevel: 2
+Link Aggr 1238 Up curTime 10633100 upFor: 1846
+Link Core 5714 Down curTime: 10633700 downFor: -301 resLevel: 2
+Link Core 5714 Up curTime 10634000 upFor: 1973324
+Link Aggr 1238 Down curTime: 10635300 downFor: -251 resLevel: 2
+Link Core 5227 Down curTime: 10635500 downFor: -382 resLevel: 2
+Link Core 5227 Up curTime 10635900 upFor: 72434
+Link Aggr 1238 Up curTime 10636000 upFor: 577
+Link Aggr 1238 Down curTime: 10636600 downFor: -127 resLevel: 2
+Link Aggr 1238 Up curTime 10636800 upFor: 2606
+Link Aggr 1238 Down curTime: 10639400 downFor: -299 resLevel: 2
+Link Aggr 1238 Up curTime 10639700 upFor: 6283348
+Link Aggr 3403 Down curTime: 10647000 downFor: -190 resLevel: 2
+Link Aggr 3403 Up curTime 10647200 upFor: 453
+Link Aggr 3403 Down curTime: 10647700 downFor: -294 resLevel: 2
+Link Aggr 3403 Up curTime 10648000 upFor: 2006
+Link Aggr 3403 Down curTime: 10650000 downFor: -135 resLevel: 2
+Link Aggr 3403 Up curTime 10650200 upFor: 216810
+Link Aggr 2066 Down curTime: 10658700 downFor: -44 resLevel: 2
+Link Aggr 2066 Up curTime 10658800 upFor: 54
+Link Aggr 2066 Down curTime: 10658900 downFor: -92 resLevel: 2
+Link Aggr 2066 Up curTime 10659000 upFor: 153
+Link Aggr 2066 Down curTime: 10659200 downFor: -498 resLevel: 2
+Link Aggr 2066 Up curTime 10659700 upFor: 3187
+Link Aggr 2066 Down curTime: 10662900 downFor: -3327 resLevel: 2
+Link Aggr 2066 Up curTime 10666300 upFor: 1902029
+Switch Aggr [1,1,3] Down curTime: 10670100 downFor: -492 resLevel: 2
+Switch Aggr [1,1,3] Up curTime: 10670600 upFor: 267
+Switch Aggr [1,1,3] Down curTime: 10670900 downFor: -255 resLevel: 2
+Switch Aggr [1,1,3] Up curTime: 10671200 upFor: 1993978
+Link Core 4689 Down curTime: 10672700 downFor: -463379 resLevel: 2
+Link Aggr 70 Down curTime: 10673800 downFor: -190 resLevel: 2
+Link Aggr 70 Up curTime 10674000 upFor: 3489116
+Link Core 5227 Down curTime: 10708600 downFor: -338 resLevel: 2
+Link Core 5227 Up curTime 10709000 upFor: 3349
+Link Core 5227 Down curTime: 10712400 downFor: -225 resLevel: 2
+Link Core 5227 Up curTime 10712700 upFor: 24506
+Link Core 5227 Down curTime: 10737200 downFor: -2039 resLevel: 2
+Link Core 5227 Up curTime 10739300 upFor: 2273
+Link Core 5227 Down curTime: 10741600 downFor: -183 resLevel: 2
+Link Core 5227 Up curTime 10741800 upFor: 7670581
+Link Core 5928 Down curTime: 10753400 downFor: -125 resLevel: 1
+Link Core 5928 Up curTime 10753600 upFor: 10
+Link Aggr 220 Down curTime: 10768300 downFor: -265 resLevel: 2
+Link Aggr 220 Up curTime 10768600 upFor: 463344
+Link Tor 1940 Down curTime: 10770000 downFor: -340 resLevel: 2
+Link Tor 1940 Up curTime 10770400 upFor: 556
+Link Core 5074 Down curTime: 10770900 downFor: -72 resLevel: 2
+Link Core 5074 Up curTime 10771000 upFor: 2463131
+Link Tor 1940 Down curTime: 10771100 downFor: -940 resLevel: 2
+Link Tor 1940 Up curTime 10772100 upFor: 560620
+Switch Aggr [1,4,3] Down curTime: 10776400 downFor: -154 resLevel: 2
+Switch Aggr [1,4,3] Up curTime: 10776600 upFor: 3421
+Switch Aggr [1,4,3] Down curTime: 10780100 downFor: -3448 resLevel: 2
+Link Aggr 406 Down curTime: 10782300 downFor: -260 resLevel: 2
+Link Aggr 406 Up curTime 10782600 upFor: 136637
+Switch Aggr [1,4,3] Up curTime: 10783600 upFor: 1040335
+Group with leader: Link with id: 4209 has become failure prone
+Link Core 4209 Down curTime: 10788200 downFor: -190 resLevel: 2
+Link Core 4209 Up curTime 10788400 upFor: 214
+Link Core 4209 Down curTime: 10788700 downFor: -111 resLevel: 2
+Link Core 4209 Up curTime 10788900 upFor: 2255
+Link Core 4209 Down curTime: 10791200 downFor: -232 resLevel: 2
+Link Core 4209 Up curTime 10791500 upFor: 51358
+Group with leader: Link with id: 299 has become failure prone
+Link Aggr 299 Down curTime: 10795700 downFor: -216 resLevel: 2
+Link Aggr 299 Up curTime 10796000 upFor: 3240436
+Link Tor 3106 Down curTime: 10820700 downFor: -186 resLevel: 2
+Link Tor 3106 Up curTime 10820900 upFor: 2339055
+Link Tor 188 Down curTime: 10827300 downFor: -88 resLevel: 2
+Link Tor 188 Up curTime 10827400 upFor: 174932
+Group with leader: Link with id: 1535 has become failure prone
+Link Tor 1535 Down curTime: 10830200 downFor: -257 resLevel: 2
+Link Tor 1535 Up curTime 10830500 upFor: 6757805
+Link Core 4472 Down curTime: 10832900 downFor: -71 resLevel: 1
+Link Core 4472 Up curTime 10833000 upFor: 10
+Link Tor 2782 Down curTime: 10833700 downFor: -212 resLevel: 1
+Link Tor 2782 Up curTime 10834000 upFor: 10
+Link Core 4544 Down curTime: 10839000 downFor: -42229 resLevel: 1
+Switch Aggr [1,17,6] Down curTime: 10861900 downFor: -503 resLevel: 2
+Switch Aggr [1,17,6] Up curTime: 10862400 upFor: 9834
+Switch Aggr [1,17,6] Down curTime: 10872300 downFor: -327 resLevel: 2
+Switch Aggr [1,17,6] Up curTime: 10872700 upFor: 11704
+Link Core 4544 Up curTime 10881300 upFor: 10
+Switch Aggr [1,17,6] Down curTime: 10884400 downFor: -1229 resLevel: 2
+Link Core 4695 Down curTime: 10884400 downFor: -163 resLevel: 1
+Link Core 4695 Up curTime 10884600 upFor: 10
+Switch Aggr [1,17,6] Up curTime: 10885700 upFor: 97
+Switch Aggr [1,17,6] Down curTime: 10885800 downFor: -463 resLevel: 2
+Link Core 4209 Down curTime: 10886000 downFor: -3007 resLevel: 2
+Switch Aggr [1,17,6] Up curTime: 10886300 upFor: 1871310
+Link Core 4209 Up curTime 10889000 upFor: 78300
+Link Aggr 3268 Down curTime: 10892300 downFor: -850 resLevel: 2
+Link Aggr 3268 Up curTime 10893200 upFor: 415305
+Link Core 5473 Down curTime: 10908100 downFor: -142 resLevel: 2
+Link Core 5473 Up curTime 10908300 upFor: 24767
+Link Aggr 2688 Down curTime: 10916800 downFor: -739 resLevel: 1
+Link Aggr 2688 Up curTime 10917600 upFor: 10
+Link Tor 1380 Down curTime: 10921200 downFor: -93 resLevel: 2
+Link Tor 1380 Up curTime 10921300 upFor: 1216
+Link Tor 1380 Down curTime: 10922600 downFor: -57107 resLevel: 2
+Link Aggr 1009 Down curTime: 10924000 downFor: -186 resLevel: 1
+Link Aggr 1009 Up curTime 10924200 upFor: 10
+Link Core 4099 Down curTime: 10942000 downFor: -122 resLevel: 1
+Link Core 4099 Up curTime 10942200 upFor: 10
+Link Aggr 1286 Down curTime: 10949600 downFor: -111 resLevel: 2
+Link Aggr 1286 Up curTime 10949800 upFor: 371026
+Link Core 4209 Down curTime: 10968700 downFor: -189 resLevel: 2
+Link Core 4209 Up curTime 10968900 upFor: 73042
+Link Core 4703 Down curTime: 10973700 downFor: -270251 resLevel: 1
+Switch with id: [1,19,4] has become failure prone
+Switch Aggr [1,19,4] Down curTime: 11041200 downFor: -224 resLevel: 2
+Switch Aggr [1,19,4] Up curTime: 11041500 upFor: 2315
+Switch Aggr [1,19,4] Down curTime: 11043900 downFor: -421 resLevel: 2
+Switch Aggr [1,19,4] Up curTime: 11044400 upFor: 618999
+Link Aggr 260 Down curTime: 11102300 downFor: -247 resLevel: 1
+Link Aggr 260 Up curTime 11102600 upFor: 10
+Link Core 4749 Down curTime: 11187900 downFor: -2674 resLevel: 1
+Link Core 4749 Up curTime 11190600 upFor: 10
+Link Aggr 3053 Down curTime: 11212100 downFor: -280 resLevel: 1
+Link Aggr 3053 Up curTime 11212400 upFor: 10
+Group with leader: Link with id: 1577 has become failure prone
+Link Core 4703 Up curTime 11247300 upFor: 10
+Link Tor 1577 Down curTime: 11247300 downFor: -172 resLevel: 2
+Link Tor 1577 Up curTime 11247500 upFor: 1307213
+Group with leader: Link with id: 5719 has become failure prone
+Link Tor 1380 Up curTime 11254500 upFor: 3727944
+Link Core 5719 Down curTime: 11254500 downFor: -150 resLevel: 2
+Group with leader: Link with id: 3535 has become failure prone
+Link Core 5719 Up curTime 11254700 upFor: 2908
+Link Tor 3535 Down curTime: 11254700 downFor: -137 resLevel: 2
+Link Tor 3535 Up curTime 11254900 upFor: 353
+Link Tor 3535 Down curTime: 11255300 downFor: -193 resLevel: 2
+Link Tor 3535 Up curTime 11255500 upFor: 35388
+Link Core 5719 Down curTime: 11257600 downFor: -144 resLevel: 2
+Link Core 5719 Up curTime 11257800 upFor: 1213
+Switch Aggr [1,8,0] Down curTime: 11258900 downFor: -461 resLevel: 2
+Link Core 5719 Down curTime: 11259100 downFor: -86 resLevel: 2
+Link Core 5719 Up curTime 11259200 upFor: 917877
+Switch Aggr [1,8,0] Up curTime: 11259400 upFor: 2673270
+Link Core 5473 Down curTime: 11266900 downFor: -228 resLevel: 2
+Link Core 5473 Up curTime 11267200 upFor: 2596601
+Group with leader: Link with id: 3379 has become failure prone
+Link Tor 3379 Down curTime: 11278900 downFor: -224 resLevel: 2
+Link Tor 3379 Up curTime 11279200 upFor: 64
+Link Tor 3379 Down curTime: 11279300 downFor: -222 resLevel: 2
+Link Tor 3379 Up curTime 11279600 upFor: 40
+Link Tor 3379 Down curTime: 11279700 downFor: -199 resLevel: 2
+Link Tor 3379 Up curTime 11279900 upFor: 3525
+Link Tor 3379 Down curTime: 11283500 downFor: -171 resLevel: 2
+Link Tor 3379 Up curTime 11283700 upFor: 247684
+Link Tor 503 Down curTime: 11284900 downFor: -66 resLevel: 1
+Link Tor 503 Up curTime 11285000 upFor: 10
+Link Tor 3535 Down curTime: 11292400 downFor: -192 resLevel: 2
+Group with leader: Link with id: 3027 has become failure prone
+Link Aggr 3027 Down curTime: 11292600 downFor: -254 resLevel: 2
+Link Aggr 3027 Up curTime 11292900 upFor: 842
+Link Tor 3535 Up curTime 11293000 upFor: 862
+Link Aggr 3027 Down curTime: 11293800 downFor: -200 resLevel: 2
+Link Aggr 3027 Up curTime 11294000 upFor: 6204946
+Link Tor 3535 Down curTime: 11294200 downFor: -69 resLevel: 2
+Link Tor 3535 Up curTime 11294300 upFor: 2223
+Link Tor 3535 Down curTime: 11296600 downFor: -188 resLevel: 2
+Link Tor 3535 Up curTime 11296800 upFor: 47062
+Switch Aggr [1,10,9] Down curTime: 11298900 downFor: -295 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 11299200 upFor: 1890
+Switch Aggr [1,10,9] Down curTime: 11301100 downFor: -124 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 11301300 upFor: 71051
+Link Aggr 406 Down curTime: 11304500 downFor: -222 resLevel: 2
+Link Aggr 406 Up curTime 11304800 upFor: 628142
+Link Core 4209 Down curTime: 11315800 downFor: -512 resLevel: 2
+Link Core 4209 Up curTime 11316400 upFor: 843475
+Link Aggr 2636 Down curTime: 11318600 downFor: -177 resLevel: 2
+Link Aggr 2636 Up curTime 11318800 upFor: 945
+Link Aggr 2636 Down curTime: 11319800 downFor: -216 resLevel: 2
+Link Aggr 2636 Up curTime 11320100 upFor: 856
+Link Tor 188 Down curTime: 11320400 downFor: -3315 resLevel: 2
+Link Tor 188 Up curTime 11323800 upFor: 153
+Link Tor 188 Down curTime: 11324000 downFor: -208 resLevel: 2
+Link Tor 188 Up curTime 11324200 upFor: 1980
+Link Aggr 2636 Down curTime: 11324600 downFor: -3360 resLevel: 2
+Link Tor 188 Down curTime: 11326200 downFor: -165 resLevel: 2
+Link Tor 188 Up curTime 11326400 upFor: 35658
+Link Aggr 2636 Up curTime 11328200 upFor: 701
+Link Aggr 2636 Down curTime: 11328900 downFor: -124 resLevel: 2
+Link Aggr 2636 Up curTime 11329100 upFor: 6600874
+Link Tor 3535 Down curTime: 11348300 downFor: -887 resLevel: 2
+Link Tor 3535 Up curTime 11349200 upFor: 160
+Link Tor 3535 Down curTime: 11349400 downFor: -155 resLevel: 2
+Link Tor 3535 Up curTime 11349600 upFor: 1724
+Link Tor 3535 Down curTime: 11351400 downFor: -186 resLevel: 2
+Link Tor 3535 Up curTime 11351600 upFor: 669
+Link Tor 3535 Down curTime: 11352300 downFor: -452 resLevel: 2
+Link Tor 3535 Up curTime 11352800 upFor: 855
+Link Tor 3535 Down curTime: 11353700 downFor: -205 resLevel: 2
+Link Tor 3535 Up curTime 11353900 upFor: 954577
+Link Core 5582 Down curTime: 11355300 downFor: -57 resLevel: 2
+Link Core 5582 Up curTime 11355400 upFor: 4678
+Link Core 5582 Down curTime: 11360100 downFor: -239 resLevel: 2
+Link Core 5582 Up curTime 11360400 upFor: 4975468
+Link Tor 188 Down curTime: 11362100 downFor: -335 resLevel: 2
+Link Tor 188 Up curTime 11362500 upFor: 169145
+Switch Aggr [1,10,9] Down curTime: 11372400 downFor: -494 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 11372900 upFor: 1976
+Switch Aggr [1,10,9] Down curTime: 11374900 downFor: -110 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 11375100 upFor: 17
+Switch Aggr [1,10,9] Down curTime: 11375200 downFor: -432 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 11375700 upFor: 47550
+Link Core 4415 Down curTime: 11385300 downFor: -306 resLevel: 2
+Link Core 4415 Up curTime 11385600 upFor: 724
+Link Core 4415 Down curTime: 11386400 downFor: -55 resLevel: 2
+Link Core 4415 Up curTime 11386500 upFor: 2428
+Link Core 4415 Down curTime: 11389000 downFor: -351 resLevel: 2
+Link Core 4415 Up curTime 11389400 upFor: 95
+Link Core 4415 Down curTime: 11389500 downFor: -366 resLevel: 2
+Link Core 4415 Up curTime 11389900 upFor: 766607
+Link Core 4252 Down curTime: 11392300 downFor: -818 resLevel: 2
+Link Core 4252 Up curTime 11393200 upFor: 199
+Link Core 4252 Down curTime: 11393400 downFor: -110 resLevel: 2
+Link Core 4252 Up curTime 11393600 upFor: 1627
+Link Core 4252 Down curTime: 11395300 downFor: -225 resLevel: 2
+Link Core 4252 Up curTime 11395600 upFor: 880233
+Link Aggr 3422 Down curTime: 11409100 downFor: -139 resLevel: 2
+Link Aggr 3422 Up curTime 11409300 upFor: 821
+Link Aggr 3422 Down curTime: 11410200 downFor: -176 resLevel: 2
+Link Aggr 3422 Up curTime 11410400 upFor: 15536
+Switch Aggr [1,10,9] Down curTime: 11423300 downFor: -494 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 11423800 upFor: 194
+Switch Aggr [1,10,9] Down curTime: 11424000 downFor: -541 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 11424600 upFor: 62198
+Link Aggr 3422 Down curTime: 11426000 downFor: -79 resLevel: 2
+Link Aggr 3422 Up curTime 11426100 upFor: 115
+Link Aggr 3422 Down curTime: 11426300 downFor: -133 resLevel: 2
+Link Aggr 3422 Up curTime 11426500 upFor: 297990
+Link Tor 143 Down curTime: 11446100 downFor: -1474 resLevel: 2
+Link Tor 143 Up curTime 11447600 upFor: 188
+Link Tor 143 Down curTime: 11447800 downFor: -250 resLevel: 2
+Link Tor 143 Up curTime 11448100 upFor: 480
+Link Tor 143 Down curTime: 11448600 downFor: -98 resLevel: 2
+Link Tor 143 Up curTime 11448700 upFor: 455
+Link Tor 143 Down curTime: 11449200 downFor: -334 resLevel: 2
+Link Tor 143 Up curTime 11449600 upFor: 1293237
+Link Tor 3132 Down curTime: 11471100 downFor: -109 resLevel: 1
+Link Tor 3132 Up curTime 11471200 upFor: 10
+Link Aggr 3234 Down curTime: 11484000 downFor: -219 resLevel: 1
+Link Aggr 3234 Up curTime 11484300 upFor: 10
+Switch Aggr [1,10,9] Down curTime: 11486800 downFor: -244 resLevel: 2
+Switch Aggr [1,10,9] Up curTime: 11487100 upFor: 669407
+Link Core 5820 Down curTime: 11491800 downFor: -131 resLevel: 2
+Link Core 5820 Up curTime 11492000 upFor: 85
+Link Core 5820 Down curTime: 11492100 downFor: -391 resLevel: 2
+Link Core 5820 Up curTime 11492500 upFor: 3139374
+Link Core 5276 Down curTime: 11531200 downFor: -265 resLevel: 2
+Link Core 5276 Up curTime 11531500 upFor: 8832
+Link Tor 188 Down curTime: 11533400 downFor: -299 resLevel: 2
+Link Tor 188 Up curTime 11533700 upFor: 172
+Link Tor 188 Down curTime: 11533900 downFor: -372745 resLevel: 2
