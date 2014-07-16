@@ -236,7 +236,7 @@ void Topology::createMusaTree()
 	for (int i=0;i<k;i++)
 	{
 		allAggrs.clear();
-		cout<<"creating pod"<<i<<endl;
+		// cout<<"creating pod"<<i<<endl;
 		Pod* mp=createMusaPod(podID++);
 		allAggrs = insert(allAggrs,mp->left_sub_pod->alpha_switches);
 		allAggrs = insert(allAggrs,mp->left_sub_pod->beta_switches);
@@ -259,7 +259,7 @@ void Topology::createMusaTree()
 
 	for(int i=0;i<coreSwitches.size();i++)
 	{
-		cout<<"vale of i was " <<i<<endl;
+		// cout<<"vale of i was " <<i<<endl;
 		for(int j=0;j<k;j++)
 		{
 
