@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <string>
 #include "time.h"
+#include <assert.h>
 
 using namespace std;
 
@@ -1098,6 +1099,7 @@ void Controller::detect_downTime(int factor)
 		{
 			if(tenant_flows[i]->isDown())
 			{
+				// cout<<"Tenant flow "<<tenant_flows[i]<< " is down"<<endl;
 				// get backup tenant here
 				// push it into on_back here
 				downTime+=factor;
@@ -2602,13 +2604,42 @@ vector<Switch*> Controller::getAggrSwitches(int pod)
 	return v;
 }
 
-TenantFlow* Controller::checkBW(vector<Host*> hosts,int bw)
+
+int getCommonLinks(vector<Link*> l1, vector<Link*> l2)
+{
+	int count=0;
+	// cout<<"size: "<<l1.size()<<endl;
+	// cout<<"size: "<<l2.size()<<endl;
+	for(int i=0;i<l1.size();i++)
+	{
+		for(int j=0;j<l2.size();j++)
+		{
+			// cout<<"comparing: "<<l1[i]->link_id<<" with "<<l2[j]->link_id<<endl;
+
+			if(l1[i]->link_id==l2[j]->link_id)
+			{
+				// cout<<"matched"<<endl;
+				count++;
+			}
+			else
+			{
+				// cout<<"no match"<<endl;
+			}
+		}
+	}
+	return count;
+}
+
+
+TenantFlow* Controller::checkBW(vector<Host*> hosts,int bw,int isPrimary)
 {
 	// //cout<<"\tWill now check bw"<<endl;
 	// vector<TorPair*> torPairs;
 	// vector<PodPair*> podPairs;
+
 	if(hosts.size()==0)
 		return NULL;
+
 	vector<Link*> links;
 	vector<Link*> torBacks;
 	cLinks.clear();
@@ -2634,9 +2665,13 @@ TenantFlow* Controller::checkBW(vector<Host*> hosts,int bw)
 
 	for(int i=0;i<all_hosts.size();i++)
 	{
-
-
-		Link* l=all_hosts[i]->link;
+		Link* l;
+		if(isPrimary)
+			l=all_hosts[i]->link;
+		else
+			l=all_hosts[i]->otherLink;
+			 
+		assert(all_hosts[i]->link->link_id!=all_hosts[i]->otherLink->link_id);
 		int left=vmCount(l,2,hosts,0);
 		int right=vmCount(l,2,hosts,1);
 		int mini=min(left,right);
@@ -2645,23 +2680,10 @@ TenantFlow* Controller::checkBW(vector<Host*> hosts,int bw)
 		if(l->available_cap_up < reqBw || l->available_cap_down < reqBw)
 			return NULL;
 
-
-		if(tor_to_tor)	
-		{
-			Link* l1=all_hosts[i]->otherLink;
-			if(l1->available_cap_up < reqBw || l1->available_cap_down < reqBw)
-				return NULL;
-
-			torBacks.push_back(l1);
-
-		}
-		
-
-
 		cLinks.push_back(l);
 		cBws.push_back(reqBw);
 
-		Switch* t=all_hosts[i]->getTor();
+		Switch* t=all_hosts[i]->getTor(l);
 		if(notIn(Tors,t))
 			Tors.push_back(t);
 
@@ -2714,57 +2736,6 @@ TenantFlow* Controller::checkBW(vector<Host*> hosts,int bw)
 				//cout<<"Was able to assign only primary "<<count<<" Tor Flows instead of "<<num<<endl;
 				return NULL;
 			}
-
-			if(tor_to_tor)
-			{
-				count=0;
-
-				for(int j=links.size()-1;j>-1;j--)
-				{
-					Link* l=links[j];
-					int bwres=0;
-					for(int x=0;x<cLinks.size();x++)
-					{
-						if(cLinks[x]==links[j])
-						{
-							bwres=cBws[x];
-							break;
-						}	
-					}
-					int up=l->available_cap_up-bwres;
-					int down=l->available_cap_down-bwres;
-					int min_bw=min(up,down);
-					int avail=min_bw/bw;
-					int assign=min(avail,num-count);
-					if(assign<0)
-						int x=1/0;
-
-					if(bw<0)
-						int x=1/0;
-					
-					if(assign*bw<0)
-						int x=1/0;
-
-					if(assign==0)
-						continue;
-
-					count+=assign;
-					cLinks.push_back(l);
-					cBws.push_back(assign*bw);
-					backAggr.push_back(l);
-					back.push_back(l);
-					//cout<<"reserving on back"<<bw<<" on link: "<<l->link_id<<" times: "<<assign<<endl;
-	
-					// //cout<<"reserving on back "<<assign*bw<<" on link: "<<l->link_id<<endl;
-				}
-
-				if(count!=num)
-				{
-					// cout<<"Core "<<endl;
-					//cout<<"Was able to assign only backup "<<count<<" Tor Flows instead of "<<num<<endl;
-					return NULL;
-				}
-			}
 		}
 	}
 
@@ -2814,49 +2785,9 @@ TenantFlow* Controller::checkBW(vector<Host*> hosts,int bw)
 				int x=1/0;
 				return NULL;
 			}
-
-			if(tor_to_tor)
-			{
-				int count=0;
-				for(int j=links.size()-1;j>-1;j--)
-				{
-					Link* l=links[j];
-					int bwres=0;
-					for(int x=0;x<cLinks.size();x++)
-					{
-						if(cLinks[x]==links[j])
-						{
-							bwres=cBws[x];
-							break;
-						}
-					}
-					int up=l->available_cap_up-bwres;
-					int down=l->available_cap_down-bwres;
-					int min_bw=min(up,down);
-					int avail=min_bw/bw;
-					int assign=min(avail,num-count);
-					if(assign<0)
-						int x=1/0;
-
-					if(assign==0)
-						continue;
-					count+=assign;
-					cLinks.push_back(l);
-					cBws.push_back(assign*bw);
-					backCore.push_back(l);
-					back.push_back(l);
-					// //cout<<"reserving on back"<<assign*bw<<" on link: "<<l->link_id<<endl;
-				}
-
-				if(count!=num)
-				{
-					//cout<<"Was able to assign only  back"<<count<<" Core  Flows instead of "<<num<<endl;
-					int x=1/0;
-					return NULL;
-				}
-			}
 		}
 	}
+
 
 
 	// now commiting stuff
@@ -2867,55 +2798,58 @@ TenantFlow* Controller::checkBW(vector<Host*> hosts,int bw)
 	}
 
 
+
 	// //cout<<"\t\t\tbw satisfied, commiting"<<endl;
 	// //cout<<cLinks.size()<<" size of clinks"<<endl;
 	TenantFlow* tf=new TenantFlow(hosts,hosts.size(),bw);
 
+	
 	for(int i=0;i<cLinks.size();i++)
 	{
 		cLinks[i]->available_cap_up-=cBws[i];
 		cLinks[i]->available_cap_down-=cBws[i];
-		if(cLinks[i]->label=="Tor" && tor_to_tor)
-		{
-			torBacks[i]->available_cap_up-=cBws[i];
-			torBacks[i]->available_cap_down-=cBws[i];
-		}
 	}
 
 
 	for(int i=0;i<cLinks.size();i++)
 	{
-		if(!notIn(back,cLinks[i]))
-			continue;
+		LinkPair* lp= new LinkPair(cLinks[i],cLinks[i]);
+		tf->insert(lp,cBws[i]);
+	}
 
-		if(!tor_to_tor)
+
+	if(isPrimary && tor_to_tor)
+	{
+		TenantFlow* btf=checkBW(hosts,bw,0);
+		if(btf==NULL)
 		{
-			LinkPair* lp= new LinkPair(cLinks[i],cLinks[i]);
-			// cout<<"link id: "<<cLinks[i]->link_id<<" switch id: "<<cLinks[i]->up_switch->toString()<<endl;
-			tf->insert(lp,cBws[i]);
+			tf->destroy();
+			return NULL;
 		}
 		else
 		{
-			Link* back=cLinks[i];
-			if(cLinks[i]->label=="Aggr")
+			tf->backup=btf;
+			int common=getCommonLinks(tf->backup->raw_links,tf->raw_links);
+			if(common!=0)
 			{
-				 back=backAggr.back();
-				 backAggr.pop_back();
+				cout<<"MAYDAY"<<endl;
+				tf->destroy();
+				btf->destroy();
+				return NULL;
+				// tf->print();
+
+				// int x=1/0;
 			}
-			if(cLinks[i]->label=="Core")
-			{
-				 back=backCore.back();
-				 backCore.pop_back();
-			}
-			if(cLinks[i]->label=="Tor")
-			{
-				back=torBacks[i];
-			}
-			
-			LinkPair* lp= new LinkPair(cLinks[i],back);
-			tf->insert(lp,cBws[i]);
+			// else
+			// {
+			// 	cout<<"count was "<<common<<endl;
+			// }
 		}
 	}
+
+
+	// tf->print();
+
 	return tf;
 }
 
@@ -2976,7 +2910,7 @@ TenantFlow* Controller::octopus(int v, int b, TenantFlow* primary,int start,int 
 						// }
 
 						alloc(v,b,NULL,Tors[i],v,start,end);
-						TenantFlow* tf=checkBW(tenant_vms,b);
+						TenantFlow* tf=checkBW(tenant_vms,b,1);
 						if(tf==NULL )
 						{
 							// cout<<"Could not allocated enough bw"<<endl;
@@ -3011,7 +2945,7 @@ TenantFlow* Controller::octopus(int v, int b, TenantFlow* primary,int start,int 
 						curLevel=2;					
 
 						alloc(v,b,NULL,Aggrs[i],v,start,end);
-						TenantFlow* tf=checkBW(tenant_vms,b);
+						TenantFlow* tf=checkBW(tenant_vms,b,1);
 						if(tf==NULL)
 						{
 							// cout<<"Could not allocated enough bw"<<endl;
@@ -3042,7 +2976,7 @@ TenantFlow* Controller::octopus(int v, int b, TenantFlow* primary,int start,int 
 					curLevel=3;					
 
 					alloc(v,b,NULL,Cores[i],v,start,end);
-					TenantFlow* tf=checkBW(tenant_vms,b);
+					TenantFlow* tf=checkBW(tenant_vms,b,1);
 					if(tf==NULL)
 					{
 						// cout<<"Could not allocated enough bw"<<endl;
@@ -3100,8 +3034,14 @@ bool Controller::instantiateTenant(int vms, int bw)	//rate in MBps, size in MB
 
 	TenantFlow* tf;
 	tf=octopus(vms,bw,NULL,0,k-shared);
+
 	if(tf==NULL)
 		return 0;
+
+	if(tf->backup==NULL && tor_to_tor)
+	{
+		int x=1/0;
+	}
 	// for(int i=0;i<tf->raw_links.size();i++)
 	// {
 	// 	cout<<tf->raw_links[i]->link_id<<" label: "<<tf->raw_links[i]->label<<" has reserved "<<tf->bws[i]<<" res: "<<tf->raw_links[i]->resilience<<endl;

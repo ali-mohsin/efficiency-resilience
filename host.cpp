@@ -26,6 +26,12 @@ string Host::toString()
 	return Device::toString();
 }
 
+Switch* Host::getTor(Link* l)
+{
+	return l->getUpSwitch();
+}
+
+
 Switch* Host::getTor()
 {
 	return link->getUpSwitch();

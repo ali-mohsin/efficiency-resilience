@@ -114,7 +114,7 @@ public:
 	void commitFlow(Flow* flow);
 	bool checkPath(Path*, std::vector<Host*>, int, int, std::vector<PodPair*>, std::vector<TorPair*>);
 	Path* getBackUpPath(Path* primary,int rate);
-	TenantFlow* checkBW(std::vector<Host*>, int);
+	TenantFlow* checkBW(std::vector<Host*>, int,int);
 	void revert_to_primary();
 	Path* getReplicatedPath(int src, int dst, int rate);
 	long int getTime();

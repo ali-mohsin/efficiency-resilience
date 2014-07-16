@@ -112,10 +112,11 @@ public:
 
 	bool isPrimaryDown()
 	{
+
 		for(int i=0;i<links_pairs.size();i++)
 		{
 			LinkPair* lp=links_pairs[i];
-			if(lp->primary->status < 0 && lp->back->status < 0)
+			if(lp->primary->status < 0)
 			{
 				// cout<<"Link "<<lp->primary->link_id<<" label: "<<lp->primary->label<<" is down"<<endl;
 
@@ -126,7 +127,7 @@ public:
 		for(int i=0;i<switches.size();i++)
 		{
 			SwitchPair* lp=switches[i];
-			if(lp->primary->status < 0 && lp->back->status < 0)
+			if(lp->primary->status < 0)
 			{
 				// cout<<"Switch "<<lp->primary->toString()<<" is down"<<endl;
 				return true;
@@ -137,16 +138,68 @@ public:
 
 	bool isBackupDown()
 	{
+		// cout<<"checking for back"<<endl;
 		return backup->isPrimaryDown();
 	}
 
+
+	void print()
+	{
+		cout<<"----------------------------------"<<endl;
+		cout<<this<<endl;
+		cout<<"Links: "<<endl;
+		for(int i=0;i<raw_links.size();i++)
+		{
+			cout<<raw_links[i]->link_id<<" ";
+		}
+		cout<<endl;
+		cout<<"Switches: "<<endl;
+
+		for(int i=0;i<raw_switches.size();i++)
+		{
+			cout<<raw_switches[i]->toString()<<" ";
+		}
+		cout<<endl;
+
+		if(backup)
+		{
+			cout<<this->backup<<endl;
+			cout<<"backup Links: "<<endl;
+			for(int i=0;i<backup->raw_links.size();i++)
+			{
+				cout<<backup->raw_links[i]->link_id<<" ";
+			}
+			cout<<endl;
+			cout<<"backup Switches: "<<endl;
+
+			for(int i=0;i<backup->raw_switches.size();i++)
+			{
+				cout<<backup->raw_switches[i]->toString()<<" ";
+			}
+			cout<<endl;		}
+		cout<<"----------------------------------"<<endl;
+	}
 
 	bool isDown()
 	{
 		if(backup==NULL)
 			return isPrimaryDown();
 		else
-			return isPrimaryDown() && isBackupDown();
+		{
+			// cout<<"checking for primary"<<endl;
+			if(!isPrimaryDown())
+				return false;
+			// cout<<" primary was down"<<endl;
+
+			if(!isBackupDown())
+			{
+				// cout<<"backup saved the day"<<endl;
+				return false;
+			}
+
+			// cout<<"backup was also down"<<endl;
+			return true;
+		}
 	}
 
 	bool notIn(vector<Link*> v,Link* e)

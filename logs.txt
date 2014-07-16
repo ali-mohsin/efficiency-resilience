@@ -16275,3 +16275,3054 @@ Group with leader: Link with id: 53646 has become failure prone
 Switch with id: [1,5,2] has become failure prone
 Switch with id: [2,39,0] has become failure prone
 Group with leader: Link with id: 50015 has become failure prone
+Group with leader: Link with id: 43885 has become failure prone
+Group with leader: Link with id: 8258 has become failure prone
+Group with leader: Link with id: 47390 has become failure prone
+Group with leader: Link with id: 40333 has become failure prone
+Group with leader: Link with id: 4011 has become failure prone
+Group with leader: Link with id: 41223 has become failure prone
+Group with leader: Link with id: 49807 has become failure prone
+Group with leader: Link with id: 45662 has become failure prone
+Group with leader: Link with id: 3553 has become failure prone
+Group with leader: Link with id: 44905 has become failure prone
+Group with leader: Link with id: 19280 has become failure prone
+Group with leader: Link with id: 9255 has become failure prone
+Group with leader: Link with id: 43713 has become failure prone
+Group with leader: Link with id: 41721 has become failure prone
+Group with leader: Link with id: 25320 has become failure prone
+Group with leader: Link with id: 35390 has become failure prone
+Group with leader: Link with id: 9444 has become failure prone
+Group with leader: Link with id: 28076 has become failure prone
+Group with leader: Link with id: 20313 has become failure prone
+Group with leader: Link with id: 9080 has become failure prone
+Group with leader: Link with id: 22287 has become failure prone
+Group with leader: Link with id: 45324 has become failure prone
+Group with leader: Link with id: 50433 has become failure prone
+Group with leader: Link with id: 44370 has become failure prone
+Group with leader: Link with id: 18437 has become failure prone
+Group with leader: Link with id: 47291 has become failure prone
+Group with leader: Link with id: 22159 has become failure prone
+Group with leader: Link with id: 41499 has become failure prone
+Switch with id: [1,36,3] has become failure prone
+Group with leader: Link with id: 30323 has become failure prone
+Group with leader: Link with id: 34307 has become failure prone
+Group with leader: Link with id: 18556 has become failure prone
+Group with leader: Link with id: 7218 has become failure prone
+Group with leader: Link with id: 41002 has become failure prone
+Group with leader: Link with id: 43890 has become failure prone
+Group with leader: Link with id: 19052 has become failure prone
+Group with leader: Link with id: 44760 has become failure prone
+Group with leader: Link with id: 35321 has become failure prone
+Switch with id: [1,27,4] has become failure prone
+Group with leader: Link with id: 13486 has become failure prone
+Group with leader: Link with id: 51794 has become failure prone
+Group with leader: Link with id: 22104 has become failure prone
+Switch with id: [2,24,4] has become failure prone
+Group with leader: Link with id: 45099 has become failure prone
+Group with leader: Link with id: 12524 has become failure prone
+Switch with id: [1,3,4] has become failure prone
+Group with leader: Link with id: 44577 has become failure prone
+Group with leader: Link with id: 51282 has become failure prone
+Group with leader: Link with id: 49007 has become failure prone
+Group with leader: Link with id: 21130 has become failure prone
+Group with leader: Link with id: 16535 has become failure prone
+Group with leader: Link with id: 31292 has become failure prone
+Group with leader: Link with id: 31340 has become failure prone
+Group with leader: Link with id: 53649 has become failure prone
+Group with leader: Link with id: 45939 has become failure prone
+Group with leader: Link with id: 1266 has become failure prone
+Group with leader: Link with id: 33182 has become failure prone
+Group with leader: Link with id: 18128 has become failure prone
+Group with leader: Link with id: 2312 has become failure prone
+Group with leader: Link with id: 52259 has become failure prone
+Group with leader: Link with id: 45822 has become failure prone
+Group with leader: Link with id: 46373 has become failure prone
+Group with leader: Link with id: 45756 has become failure prone
+Switch with id: [1,17,3] has become failure prone
+Group with leader: Link with id: 42146 has become failure prone
+Group with leader: Link with id: 22526 has become failure prone
+Group with leader: Link with id: 49245 has become failure prone
+Group with leader: Link with id: 49039 has become failure prone
+Group with leader: Link with id: 41352 has become failure prone
+Group with leader: Link with id: 21221 has become failure prone
+Group with leader: Link with id: 51355 has become failure prone
+Group with leader: Link with id: 21439 has become failure prone
+Group with leader: Link with id: 20087 has become failure prone
+Group with leader: Link with id: 8178 has become failure prone
+Group with leader: Link with id: 42592 has become failure prone
+Group with leader: Link with id: 37324 has become failure prone
+Group with leader: Link with id: 21556 has become failure prone
+Switch with id: [2,12,3] has become failure prone
+Group with leader: Link with id: 45379 has become failure prone
+Group with leader: Link with id: 53112 has become failure prone
+Group with leader: Link with id: 54055 has become failure prone
+Group with leader: Link with id: 51376 has become failure prone
+Switch with id: [0,-1,83] has become failure prone
+Switch with id: [2,2,9] has become failure prone
+Switch with id: [2,24,6] has become failure prone
+Group with leader: Link with id: 40858 has become failure prone
+Group with leader: Link with id: 38188 has become failure prone
+Group with leader: Link with id: 11215 has become failure prone
+Switch with id: [1,6,8] has become failure prone
+Switch with id: [1,21,8] has become failure prone
+Switch with id: [0,-1,164] has become failure prone
+Switch with id: [2,2,0] has become failure prone
+Switch with id: [2,12,0] has become failure prone
+Switch with id: [2,23,3] has become failure prone
+Group with leader: Link with id: 52541 has become failure prone
+Group with leader: Link with id: 51831 has become failure prone
+Group with leader: Link with id: 15491 has become failure prone
+Group with leader: Link with id: 52242 has become failure prone
+Group with leader: Link with id: 5049 has become failure prone
+Group with leader: Link with id: 44726 has become failure prone
+Group with leader: Link with id: 37363 has become failure prone
+Group with leader: Link with id: 54330 has become failure prone
+Group with leader: Link with id: 9464 has become failure prone
+Group with leader: Link with id: 42432 has become failure prone
+Group with leader: Link with id: 12015 has become failure prone
+Group with leader: Link with id: 50571 has become failure prone
+Group with leader: Link with id: 49199 has become failure prone
+Group with leader: Link with id: 48139 has become failure prone
+Switch with id: [2,36,2] has become failure prone
+Group with leader: Link with id: 13049 has become failure prone
+Group with leader: Link with id: 39259 has become failure prone
+Group with leader: Link with id: 43628 has become failure prone
+Group with leader: Link with id: 8515 has become failure prone
+Group with leader: Link with id: 24102 has become failure prone
+Group with leader: Link with id: 48896 has become failure prone
+Group with leader: Link with id: 41915 has become failure prone
+Group with leader: Link with id: 55128 has become failure prone
+Group with leader: Link with id: 41218 has become failure prone
+Group with leader: Link with id: 47673 has become failure prone
+Group with leader: Link with id: 41764 has become failure prone
+Group with leader: Link with id: 13586 has become failure prone
+Group with leader: Link with id: 36134 has become failure prone
+Switch with id: [2,39,9] has become failure prone
+Switch with id: [1,1,1] has become failure prone
+Group with leader: Link with id: 3520 has become failure prone
+Group with leader: Link with id: 4046 has become failure prone
+Group with leader: Link with id: 40892 has become failure prone
+Group with leader: Link with id: 16128 has become failure prone
+Switch with id: [2,5,3] has become failure prone
+Group with leader: Link with id: 53738 has become failure prone
+Group with leader: Link with id: 42309 has become failure prone
+Group with leader: Link with id: 52807 has become failure prone
+Group with leader: Link with id: 55567 has become failure prone
+Group with leader: Link with id: 40846 has become failure prone
+Group with leader: Link with id: 45624 has become failure prone
+Group with leader: Link with id: 52060 has become failure prone
+Group with leader: Link with id: 43878 has become failure prone
+Group with leader: Link with id: 45165 has become failure prone
+Group with leader: Link with id: 45852 has become failure prone
+Group with leader: Link with id: 50610 has become failure prone
+Group with leader: Link with id: 26039 has become failure prone
+Group with leader: Link with id: 48736 has become failure prone
+Group with leader: Link with id: 55515 has become failure prone
+Group with leader: Link with id: 46306 has become failure prone
+Group with leader: Link with id: 49736 has become failure prone
+Group with leader: Link with id: 49562 has become failure prone
+Group with leader: Link with id: 43776 has become failure prone
+Group with leader: Link with id: 44272 has become failure prone
+Group with leader: Link with id: 14500 has become failure prone
+Group with leader: Link with id: 45651 has become failure prone
+Group with leader: Link with id: 11188 has become failure prone
+Group with leader: Link with id: 50665 has become failure prone
+Group with leader: Link with id: 45159 has become failure prone
+Group with leader: Link with id: 47625 has become failure prone
+Group with leader: Link with id: 43909 has become failure prone
+Switch with id: [1,2,1] has become failure prone
+Group with leader: Link with id: 21297 has become failure prone
+Group with leader: Link with id: 43620 has become failure prone
+Group with leader: Link with id: 16156 has become failure prone
+Group with leader: Link with id: 42841 has become failure prone
+Group with leader: Link with id: 34351 has become failure prone
+Group with leader: Link with id: 52412 has become failure prone
+Group with leader: Link with id: 3031 has become failure prone
+Group with leader: Link with id: 51473 has become failure prone
+Group with leader: Link with id: 2547 has become failure prone
+Group with leader: Link with id: 49533 has become failure prone
+Group with leader: Link with id: 47660 has become failure prone
+Group with leader: Link with id: 38103 has become failure prone
+Group with leader: Link with id: 49282 has become failure prone
+Group with leader: Link with id: 40465 has become failure prone
+Group with leader: Link with id: 18456 has become failure prone
+Group with leader: Link with id: 18570 has become failure prone
+Group with leader: Link with id: 46174 has become failure prone
+Group with leader: Link with id: 24169 has become failure prone
+Group with leader: Link with id: 47680 has become failure prone
+Group with leader: Link with id: 34411 has become failure prone
+Switch with id: [1,16,1] has become failure prone
+Group with leader: Link with id: 55633 has become failure prone
+Group with leader: Link with id: 21472 has become failure prone
+Group with leader: Link with id: 9556 has become failure prone
+Group with leader: Link with id: 27455 has become failure prone
+Group with leader: Link with id: 55057 has become failure prone
+Group with leader: Link with id: 15231 has become failure prone
+Group with leader: Link with id: 15522 has become failure prone
+Switch with id: [0,-1,93] has become failure prone
+Group with leader: Link with id: 10156 has become failure prone
+Switch with id: [1,18,2] has become failure prone
+Group with leader: Link with id: 35407 has become failure prone
+Group with leader: Link with id: 48396 has become failure prone
+Group with leader: Link with id: 45403 has become failure prone
+Group with leader: Link with id: 39577 has become failure prone
+Group with leader: Link with id: 38508 has become failure prone
+Group with leader: Link with id: 3260 has become failure prone
+Group with leader: Link with id: 48804 has become failure prone
+Group with leader: Link with id: 43824 has become failure prone
+Group with leader: Link with id: 47324 has become failure prone
+Group with leader: Link with id: 50420 has become failure prone
+Group with leader: Link with id: 43885 has become failure prone
+Group with leader: Link with id: 8258 has become failure prone
+Group with leader: Link with id: 47390 has become failure prone
+Group with leader: Link with id: 40333 has become failure prone
+Group with leader: Link with id: 4011 has become failure prone
+Group with leader: Link with id: 41223 has become failure prone
+Group with leader: Link with id: 49807 has become failure prone
+Group with leader: Link with id: 45662 has become failure prone
+Group with leader: Link with id: 3553 has become failure prone
+Group with leader: Link with id: 44905 has become failure prone
+Group with leader: Link with id: 19280 has become failure prone
+Group with leader: Link with id: 9255 has become failure prone
+Group with leader: Link with id: 43713 has become failure prone
+Group with leader: Link with id: 41721 has become failure prone
+Group with leader: Link with id: 25320 has become failure prone
+Group with leader: Link with id: 35390 has become failure prone
+Group with leader: Link with id: 9444 has become failure prone
+Group with leader: Link with id: 28076 has become failure prone
+Group with leader: Link with id: 20313 has become failure prone
+Group with leader: Link with id: 9080 has become failure prone
+Group with leader: Link with id: 22287 has become failure prone
+Group with leader: Link with id: 45324 has become failure prone
+Group with leader: Link with id: 50433 has become failure prone
+Group with leader: Link with id: 44370 has become failure prone
+Group with leader: Link with id: 18437 has become failure prone
+Group with leader: Link with id: 47291 has become failure prone
+Group with leader: Link with id: 22159 has become failure prone
+Group with leader: Link with id: 41499 has become failure prone
+Switch with id: [1,36,3] has become failure prone
+Group with leader: Link with id: 30323 has become failure prone
+Group with leader: Link with id: 34307 has become failure prone
+Group with leader: Link with id: 18556 has become failure prone
+Group with leader: Link with id: 7218 has become failure prone
+Group with leader: Link with id: 41002 has become failure prone
+Group with leader: Link with id: 43890 has become failure prone
+Group with leader: Link with id: 19052 has become failure prone
+Group with leader: Link with id: 44760 has become failure prone
+Group with leader: Link with id: 35321 has become failure prone
+Switch with id: [1,27,4] has become failure prone
+Group with leader: Link with id: 13486 has become failure prone
+Group with leader: Link with id: 51794 has become failure prone
+Group with leader: Link with id: 22104 has become failure prone
+Switch with id: [2,24,4] has become failure prone
+Group with leader: Link with id: 45099 has become failure prone
+Group with leader: Link with id: 12524 has become failure prone
+Switch with id: [1,3,4] has become failure prone
+Group with leader: Link with id: 44577 has become failure prone
+Group with leader: Link with id: 51282 has become failure prone
+Group with leader: Link with id: 49007 has become failure prone
+Group with leader: Link with id: 21130 has become failure prone
+Group with leader: Link with id: 16535 has become failure prone
+Group with leader: Link with id: 31292 has become failure prone
+Group with leader: Link with id: 31340 has become failure prone
+Group with leader: Link with id: 53649 has become failure prone
+Group with leader: Link with id: 45939 has become failure prone
+Group with leader: Link with id: 1266 has become failure prone
+Group with leader: Link with id: 33182 has become failure prone
+Group with leader: Link with id: 18128 has become failure prone
+Group with leader: Link with id: 2312 has become failure prone
+Group with leader: Link with id: 52259 has become failure prone
+Group with leader: Link with id: 45822 has become failure prone
+Group with leader: Link with id: 46373 has become failure prone
+Group with leader: Link with id: 45756 has become failure prone
+Switch with id: [1,17,3] has become failure prone
+Group with leader: Link with id: 42146 has become failure prone
+Group with leader: Link with id: 22526 has become failure prone
+Group with leader: Link with id: 49245 has become failure prone
+Group with leader: Link with id: 49039 has become failure prone
+Group with leader: Link with id: 41352 has become failure prone
+Group with leader: Link with id: 21221 has become failure prone
+Group with leader: Link with id: 51355 has become failure prone
+Group with leader: Link with id: 21439 has become failure prone
+Group with leader: Link with id: 20087 has become failure prone
+Group with leader: Link with id: 8178 has become failure prone
+Group with leader: Link with id: 42592 has become failure prone
+Group with leader: Link with id: 37324 has become failure prone
+Group with leader: Link with id: 21556 has become failure prone
+Switch with id: [2,12,3] has become failure prone
+Group with leader: Link with id: 45379 has become failure prone
+Group with leader: Link with id: 53112 has become failure prone
+Group with leader: Link with id: 54055 has become failure prone
+Group with leader: Link with id: 51376 has become failure prone
+Switch with id: [0,-1,83] has become failure prone
+Switch with id: [2,2,9] has become failure prone
+Switch with id: [2,24,6] has become failure prone
+Group with leader: Link with id: 40858 has become failure prone
+Group with leader: Link with id: 38188 has become failure prone
+Group with leader: Link with id: 11215 has become failure prone
+Switch with id: [1,6,8] has become failure prone
+Switch with id: [1,21,8] has become failure prone
+Switch with id: [0,-1,164] has become failure prone
+Switch with id: [2,2,0] has become failure prone
+Switch with id: [2,12,0] has become failure prone
+Group with leader: Link with id: 43885 has become failure prone
+Group with leader: Link with id: 8258 has become failure prone
+Group with leader: Link with id: 47390 has become failure prone
+Group with leader: Link with id: 40333 has become failure prone
+Group with leader: Link with id: 4011 has become failure prone
+Group with leader: Link with id: 41223 has become failure prone
+Group with leader: Link with id: 49807 has become failure prone
+Group with leader: Link with id: 45662 has become failure prone
+Group with leader: Link with id: 3553 has become failure prone
+Group with leader: Link with id: 44905 has become failure prone
+Group with leader: Link with id: 19280 has become failure prone
+Group with leader: Link with id: 9255 has become failure prone
+Group with leader: Link with id: 43713 has become failure prone
+Group with leader: Link with id: 41721 has become failure prone
+Group with leader: Link with id: 25320 has become failure prone
+Group with leader: Link with id: 35390 has become failure prone
+Group with leader: Link with id: 9444 has become failure prone
+Group with leader: Link with id: 28076 has become failure prone
+Group with leader: Link with id: 20313 has become failure prone
+Group with leader: Link with id: 9080 has become failure prone
+Group with leader: Link with id: 22287 has become failure prone
+Group with leader: Link with id: 45324 has become failure prone
+Group with leader: Link with id: 50433 has become failure prone
+Group with leader: Link with id: 44370 has become failure prone
+Group with leader: Link with id: 18437 has become failure prone
+Group with leader: Link with id: 47291 has become failure prone
+Group with leader: Link with id: 22159 has become failure prone
+Group with leader: Link with id: 41499 has become failure prone
+Switch with id: [1,36,3] has become failure prone
+Group with leader: Link with id: 30323 has become failure prone
+Group with leader: Link with id: 34307 has become failure prone
+Group with leader: Link with id: 18556 has become failure prone
+Group with leader: Link with id: 7218 has become failure prone
+Group with leader: Link with id: 41002 has become failure prone
+Group with leader: Link with id: 43890 has become failure prone
+Group with leader: Link with id: 19052 has become failure prone
+Group with leader: Link with id: 44760 has become failure prone
+Group with leader: Link with id: 35321 has become failure prone
+Switch with id: [1,27,4] has become failure prone
+Group with leader: Link with id: 13486 has become failure prone
+Group with leader: Link with id: 51794 has become failure prone
+Group with leader: Link with id: 22104 has become failure prone
+Switch with id: [2,24,4] has become failure prone
+Group with leader: Link with id: 45099 has become failure prone
+Group with leader: Link with id: 12524 has become failure prone
+Switch with id: [1,3,4] has become failure prone
+Group with leader: Link with id: 44577 has become failure prone
+Group with leader: Link with id: 51282 has become failure prone
+Group with leader: Link with id: 49007 has become failure prone
+Group with leader: Link with id: 21130 has become failure prone
+Group with leader: Link with id: 16535 has become failure prone
+Group with leader: Link with id: 31292 has become failure prone
+Group with leader: Link with id: 31340 has become failure prone
+Group with leader: Link with id: 53649 has become failure prone
+Group with leader: Link with id: 45939 has become failure prone
+Group with leader: Link with id: 1266 has become failure prone
+Group with leader: Link with id: 33182 has become failure prone
+Group with leader: Link with id: 18128 has become failure prone
+Group with leader: Link with id: 2312 has become failure prone
+Group with leader: Link with id: 52259 has become failure prone
+Group with leader: Link with id: 45822 has become failure prone
+Group with leader: Link with id: 46373 has become failure prone
+Group with leader: Link with id: 45756 has become failure prone
+Switch with id: [1,17,3] has become failure prone
+Group with leader: Link with id: 42146 has become failure prone
+Group with leader: Link with id: 22526 has become failure prone
+Group with leader: Link with id: 49245 has become failure prone
+Group with leader: Link with id: 49039 has become failure prone
+Group with leader: Link with id: 41352 has become failure prone
+Group with leader: Link with id: 21221 has become failure prone
+Group with leader: Link with id: 51355 has become failure prone
+Group with leader: Link with id: 21439 has become failure prone
+Group with leader: Link with id: 20087 has become failure prone
+Group with leader: Link with id: 8178 has become failure prone
+Group with leader: Link with id: 42592 has become failure prone
+Group with leader: Link with id: 37324 has become failure prone
+Group with leader: Link with id: 21556 has become failure prone
+Switch with id: [2,12,3] has become failure prone
+Group with leader: Link with id: 45379 has become failure prone
+Group with leader: Link with id: 53112 has become failure prone
+Group with leader: Link with id: 54055 has become failure prone
+Group with leader: Link with id: 51376 has become failure prone
+Switch with id: [0,-1,83] has become failure prone
+Switch with id: [2,2,9] has become failure prone
+Switch with id: [2,24,6] has become failure prone
+Group with leader: Link with id: 40858 has become failure prone
+Group with leader: Link with id: 38188 has become failure prone
+Group with leader: Link with id: 11215 has become failure prone
+Switch with id: [1,6,8] has become failure prone
+Switch with id: [1,21,8] has become failure prone
+Switch with id: [0,-1,164] has become failure prone
+Switch with id: [2,2,0] has become failure prone
+Switch with id: [2,12,0] has become failure prone
+Switch with id: [2,23,3] has become failure prone
+Group with leader: Link with id: 52541 has become failure prone
+Group with leader: Link with id: 51831 has become failure prone
+Group with leader: Link with id: 15491 has become failure prone
+Group with leader: Link with id: 52242 has become failure prone
+Group with leader: Link with id: 5049 has become failure prone
+Group with leader: Link with id: 44726 has become failure prone
+Group with leader: Link with id: 37363 has become failure prone
+Group with leader: Link with id: 54330 has become failure prone
+Group with leader: Link with id: 9464 has become failure prone
+Group with leader: Link with id: 42432 has become failure prone
+Group with leader: Link with id: 12015 has become failure prone
+Group with leader: Link with id: 50571 has become failure prone
+Group with leader: Link with id: 49199 has become failure prone
+Group with leader: Link with id: 48139 has become failure prone
+Switch with id: [2,36,2] has become failure prone
+Group with leader: Link with id: 13049 has become failure prone
+Group with leader: Link with id: 39259 has become failure prone
+Group with leader: Link with id: 43628 has become failure prone
+Group with leader: Link with id: 8515 has become failure prone
+Group with leader: Link with id: 24102 has become failure prone
+Group with leader: Link with id: 48896 has become failure prone
+Group with leader: Link with id: 41915 has become failure prone
+Group with leader: Link with id: 55128 has become failure prone
+Group with leader: Link with id: 41218 has become failure prone
+Group with leader: Link with id: 47673 has become failure prone
+Group with leader: Link with id: 41764 has become failure prone
+Group with leader: Link with id: 13586 has become failure prone
+Group with leader: Link with id: 36134 has become failure prone
+Switch with id: [2,39,9] has become failure prone
+Switch with id: [1,1,1] has become failure prone
+Group with leader: Link with id: 3520 has become failure prone
+Group with leader: Link with id: 4046 has become failure prone
+Group with leader: Link with id: 40892 has become failure prone
+Group with leader: Link with id: 16128 has become failure prone
+Switch with id: [2,5,3] has become failure prone
+Group with leader: Link with id: 53738 has become failure prone
+Group with leader: Link with id: 42309 has become failure prone
+Group with leader: Link with id: 52807 has become failure prone
+Group with leader: Link with id: 55567 has become failure prone
+Group with leader: Link with id: 40846 has become failure prone
+Group with leader: Link with id: 45624 has become failure prone
+Group with leader: Link with id: 52060 has become failure prone
+Group with leader: Link with id: 43878 has become failure prone
+Group with leader: Link with id: 45165 has become failure prone
+Group with leader: Link with id: 45852 has become failure prone
+Group with leader: Link with id: 50610 has become failure prone
+Group with leader: Link with id: 26039 has become failure prone
+Group with leader: Link with id: 48736 has become failure prone
+Group with leader: Link with id: 55515 has become failure prone
+Group with leader: Link with id: 46306 has become failure prone
+Group with leader: Link with id: 49736 has become failure prone
+Group with leader: Link with id: 49562 has become failure prone
+Group with leader: Link with id: 43776 has become failure prone
+Group with leader: Link with id: 44272 has become failure prone
+Group with leader: Link with id: 14500 has become failure prone
+Group with leader: Link with id: 45651 has become failure prone
+Group with leader: Link with id: 11188 has become failure prone
+Group with leader: Link with id: 50665 has become failure prone
+Group with leader: Link with id: 45159 has become failure prone
+Group with leader: Link with id: 47625 has become failure prone
+Group with leader: Link with id: 43909 has become failure prone
+Switch with id: [1,2,1] has become failure prone
+Group with leader: Link with id: 21297 has become failure prone
+Group with leader: Link with id: 43620 has become failure prone
+Group with leader: Link with id: 16156 has become failure prone
+Group with leader: Link with id: 42841 has become failure prone
+Group with leader: Link with id: 34351 has become failure prone
+Group with leader: Link with id: 52412 has become failure prone
+Group with leader: Link with id: 3031 has become failure prone
+Group with leader: Link with id: 51473 has become failure prone
+Group with leader: Link with id: 2547 has become failure prone
+Group with leader: Link with id: 49533 has become failure prone
+Group with leader: Link with id: 47660 has become failure prone
+Group with leader: Link with id: 38103 has become failure prone
+Group with leader: Link with id: 49282 has become failure prone
+Group with leader: Link with id: 40465 has become failure prone
+Group with leader: Link with id: 18456 has become failure prone
+Group with leader: Link with id: 18570 has become failure prone
+Group with leader: Link with id: 46174 has become failure prone
+Group with leader: Link with id: 24169 has become failure prone
+Group with leader: Link with id: 47680 has become failure prone
+Group with leader: Link with id: 34411 has become failure prone
+Switch with id: [1,16,1] has become failure prone
+Group with leader: Link with id: 55633 has become failure prone
+Group with leader: Link with id: 21472 has become failure prone
+Group with leader: Link with id: 9556 has become failure prone
+Group with leader: Link with id: 27455 has become failure prone
+Group with leader: Link with id: 55057 has become failure prone
+Group with leader: Link with id: 15231 has become failure prone
+Group with leader: Link with id: 15522 has become failure prone
+Switch with id: [0,-1,93] has become failure prone
+Group with leader: Link with id: 10156 has become failure prone
+Switch with id: [1,18,2] has become failure prone
+Group with leader: Link with id: 35407 has become failure prone
+Group with leader: Link with id: 48396 has become failure prone
+Group with leader: Link with id: 45403 has become failure prone
+Group with leader: Link with id: 39577 has become failure prone
+Group with leader: Link with id: 38508 has become failure prone
+Group with leader: Link with id: 3260 has become failure prone
+Group with leader: Link with id: 48804 has become failure prone
+Group with leader: Link with id: 43824 has become failure prone
+Group with leader: Link with id: 47324 has become failure prone
+Group with leader: Link with id: 50420 has become failure prone
+Switch with id: [1,11,9] has become failure prone
+Switch with id: [1,20,8] has become failure prone
+Group with leader: Link with id: 52578 has become failure prone
+Group with leader: Link with id: 39028 has become failure prone
+Group with leader: Link with id: 55739 has become failure prone
+Group with leader: Link with id: 31351 has become failure prone
+Switch with id: [1,24,0] has become failure prone
+Switch with id: [1,4,5] has become failure prone
+Switch with id: [1,32,8] has become failure prone
+Switch with id: [2,16,8] has become failure prone
+Switch with id: [2,22,3] has become failure prone
+Group with leader: Link with id: 36448 has become failure prone
+Group with leader: Link with id: 8471 has become failure prone
+Group with leader: Link with id: 40584 has become failure prone
+Group with leader: Link with id: 19334 has become failure prone
+Group with leader: Link with id: 49475 has become failure prone
+Group with leader: Link with id: 49622 has become failure prone
+Group with leader: Link with id: 53120 has become failure prone
+Group with leader: Link with id: 47821 has become failure prone
+Group with leader: Link with id: 37474 has become failure prone
+Switch with id: [1,23,1] has become failure prone
+Group with leader: Link with id: 53538 has become failure prone
+Group with leader: Link with id: 14063 has become failure prone
+Switch with id: [1,36,0] has become failure prone
+Group with leader: Link with id: 35234 has become failure prone
+Group with leader: Link with id: 33225 has become failure prone
+Group with leader: Link with id: 50509 has become failure prone
+Group with leader: Link with id: 1113 has become failure prone
+Group with leader: Link with id: 2464 has become failure prone
+Group with leader: Link with id: 40913 has become failure prone
+Group with leader: Link with id: 3476 has become failure prone
+Group with leader: Link with id: 55212 has become failure prone
+Group with leader: Link with id: 53977 has become failure prone
+Group with leader: Link with id: 32461 has become failure prone
+Group with leader: Link with id: 45110 has become failure prone
+Group with leader: Link with id: 54983 has become failure prone
+Group with leader: Link with id: 53575 has become failure prone
+Group with leader: Link with id: 40449 has become failure prone
+Group with leader: Link with id: 49684 has become failure prone
+Group with leader: Link with id: 47039 has become failure prone
+Group with leader: Link with id: 38041 has become failure prone
+Group with leader: Link with id: 45486 has become failure prone
+Group with leader: Link with id: 26413 has become failure prone
+Group with leader: Link with id: 51082 has become failure prone
+Group with leader: Link with id: 11095 has become failure prone
+Group with leader: Link with id: 19412 has become failure prone
+Group with leader: Link with id: 52737 has become failure prone
+Group with leader: Link with id: 409 has become failure prone
+Group with leader: Link with id: 48815 has become failure prone
+Group with leader: Link with id: 13442 has become failure prone
+Group with leader: Link with id: 48341 has become failure prone
+Group with leader: Link with id: 4387 has become failure prone
+Group with leader: Link with id: 45082 has become failure prone
+Group with leader: Link with id: 53299 has become failure prone
+Group with leader: Link with id: 40351 has become failure prone
+Group with leader: Link with id: 21413 has become failure prone
+Group with leader: Link with id: 51897 has become failure prone
+Group with leader: Link with id: 43421 has become failure prone
+Group with leader: Link with id: 27170 has become failure prone
+Group with leader: Link with id: 46532 has become failure prone
+Group with leader: Link with id: 16458 has become failure prone
+Group with leader: Link with id: 12435 has become failure prone
+Group with leader: Link with id: 52994 has become failure prone
+Group with leader: Link with id: 31047 has become failure prone
+Group with leader: Link with id: 52331 has become failure prone
+Group with leader: Link with id: 44352 has become failure prone
+Group with leader: Link with id: 18358 has become failure prone
+Group with leader: Link with id: 44118 has become failure prone
+Group with leader: Link with id: 41146 has become failure prone
+Group with leader: Link with id: 51394 has become failure prone
+Group with leader: Link with id: 17142 has become failure prone
+Group with leader: Link with id: 48768 has become failure prone
+Group with leader: Link with id: 53598 has become failure prone
+Group with leader: Link with id: 4206 has become failure prone
+Group with leader: Link with id: 49109 has become failure prone
+Group with leader: Link with id: 34544 has become failure prone
+Group with leader: Link with id: 48115 has become failure prone
+Group with leader: Link with id: 39285 has become failure prone
+Group with leader: Link with id: 34070 has become failure prone
+Group with leader: Link with id: 50047 has become failure prone
+Group with leader: Link with id: 46147 has become failure prone
+Group with leader: Link with id: 24064 has become failure prone
+Group with leader: Link with id: 43626 has become failure prone
+Group with leader: Link with id: 49318 has become failure prone
+Group with leader: Link with id: 43949 has become failure prone
+Group with leader: Link with id: 27286 has become failure prone
+Group with leader: Link with id: 30522 has become failure prone
+Group with leader: Link with id: 55187 has become failure prone
+Group with leader: Link with id: 46733 has become failure prone
+Group with leader: Link with id: 54076 has become failure prone
+Group with leader: Link with id: 5151 has become failure prone
+Group with leader: Link with id: 21337 has become failure prone
+Group with leader: Link with id: 35388 has become failure prone
+Switch with id: [1,13,8] has become failure prone
+Group with leader: Link with id: 28513 has become failure prone
+Group with leader: Link with id: 11033 has become failure prone
+Group with leader: Link with id: 50281 has become failure prone
+Group with leader: Link with id: 28181 has become failure prone
+Group with leader: Link with id: 10309 has become failure prone
+Switch with id: [2,26,9] has become failure prone
+Switch with id: [1,1,5] has become failure prone
+Switch with id: [1,28,1] has become failure prone
+Switch with id: [1,23,7] has become failure prone
+Group with leader: Link with id: 36459 has become failure prone
+Group with leader: Link with id: 9150 has become failure prone
+Group with leader: Link with id: 40922 has become failure prone
+Group with leader: Link with id: 24299 has become failure prone
+Group with leader: Link with id: 33345 has become failure prone
+Group with leader: Link with id: 25449 has become failure prone
+Switch with id: [1,8,5] has become failure prone
+Group with leader: Link with id: 11248 has become failure prone
+Group with leader: Link with id: 43200 has become failure prone
+Group with leader: Link with id: 42769 has become failure prone
+Group with leader: Link with id: 35155 has become failure prone
+Switch with id: [2,16,5] has become failure prone
+Group with leader: Link with id: 45019 has become failure prone
+Group with leader: Link with id: 31493 has become failure prone
+Group with leader: Link with id: 40796 has become failure prone
+Group with leader: Link with id: 29591 has become failure prone
+Group with leader: Link with id: 55288 has become failure prone
+Group with leader: Link with id: 17555 has become failure prone
+Group with leader: Link with id: 11029 has become failure prone
+Group with leader: Link with id: 40415 has become failure prone
+Group with leader: Link with id: 9241 has become failure prone
+Group with leader: Link with id: 53385 has become failure prone
+Group with leader: Link with id: 18159 has become failure prone
+Group with leader: Link with id: 37368 has become failure prone
+Group with leader: Link with id: 45050 has become failure prone
+Group with leader: Link with id: 55842 has become failure prone
+Group with leader: Link with id: 41346 has become failure prone
+Group with leader: Link with id: 54400 has become failure prone
+Group with leader: Link with id: 16517 has become failure prone
+Group with leader: Link with id: 33120 has become failure prone
+Group with leader: Link with id: 46214 has become failure prone
+Group with leader: Link with id: 27165 has become failure prone
+Group with leader: Link with id: 1098 has become failure prone
+Group with leader: Link with id: 7011 has become failure prone
+Group with leader: Link with id: 18381 has become failure prone
+Switch with id: [1,24,3] has become failure prone
+Group with leader: Link with id: 52587 has become failure prone
+Group with leader: Link with id: 43541 has become failure prone
+Switch with id: [1,17,9] has become failure prone
+Group with leader: Link with id: 38093 has become failure prone
+Group with leader: Link with id: 45875 has become failure prone
+Group with leader: Link with id: 40561 has become failure prone
+Group with leader: Link with id: 44169 has become failure prone
+Group with leader: Link with id: 53765 has become failure prone
+Switch with id: [1,38,9] has become failure prone
+Switch with id: [2,15,7] has become failure prone
+Group with leader: Link with id: 456 has become failure prone
+Group with leader: Link with id: 43710 has become failure prone
+Group with leader: Link with id: 3532 has become failure prone
+Group with leader: Link with id: 46168 has become failure prone
+Group with leader: Link with id: 53383 has become failure prone
+Group with leader: Link with id: 41934 has become failure prone
+Group with leader: Link with id: 9249 has become failure prone
+Group with leader: Link with id: 28460 has become failure prone
+Group with leader: Link with id: 1385 has become failure prone
+Group with leader: Link with id: 6192 has become failure prone
+Group with leader: Link with id: 44633 has become failure prone
+Group with leader: Link with id: 41636 has become failure prone
+Group with leader: Link with id: 37020 has become failure prone
+Group with leader: Link with id: 13121 has become failure prone
+Group with leader: Link with id: 42828 has become failure prone
+Group with leader: Link with id: 21445 has become failure prone
+Group with leader: Link with id: 5513 has become failure prone
+Switch with id: [1,29,3] has become failure prone
+Group with leader: Link with id: 50243 has become failure prone
+Group with leader: Link with id: 44402 has become failure prone
+Group with leader: Link with id: 15370 has become failure prone
+Switch with id: [1,12,1] has become failure prone
+Switch with id: [1,8,7] has become failure prone
+Group with leader: Link with id: 41649 has become failure prone
+Group with leader: Link with id: 14564 has become failure prone
+Switch with id: [0,-1,271] has become failure prone
+Group with leader: Link with id: 53646 has become failure prone
+Switch with id: [1,5,2] has become failure prone
+Switch with id: [2,39,0] has become failure prone
+Group with leader: Link with id: 50015 has become failure prone
+Group with leader: Link with id: 43885 has become failure prone
+Group with leader: Link with id: 8258 has become failure prone
+Group with leader: Link with id: 47390 has become failure prone
+Group with leader: Link with id: 40333 has become failure prone
+Group with leader: Link with id: 4011 has become failure prone
+Group with leader: Link with id: 41223 has become failure prone
+Group with leader: Link with id: 49807 has become failure prone
+Group with leader: Link with id: 45662 has become failure prone
+Group with leader: Link with id: 3553 has become failure prone
+Group with leader: Link with id: 44905 has become failure prone
+Group with leader: Link with id: 19280 has become failure prone
+Group with leader: Link with id: 9255 has become failure prone
+Group with leader: Link with id: 43713 has become failure prone
+Group with leader: Link with id: 41721 has become failure prone
+Group with leader: Link with id: 25320 has become failure prone
+Group with leader: Link with id: 35390 has become failure prone
+Group with leader: Link with id: 9444 has become failure prone
+Group with leader: Link with id: 28076 has become failure prone
+Group with leader: Link with id: 20313 has become failure prone
+Group with leader: Link with id: 9080 has become failure prone
+Group with leader: Link with id: 22287 has become failure prone
+Group with leader: Link with id: 45324 has become failure prone
+Group with leader: Link with id: 50433 has become failure prone
+Group with leader: Link with id: 44370 has become failure prone
+Group with leader: Link with id: 18437 has become failure prone
+Group with leader: Link with id: 47291 has become failure prone
+Group with leader: Link with id: 22159 has become failure prone
+Group with leader: Link with id: 41499 has become failure prone
+Switch with id: [1,36,3] has become failure prone
+Group with leader: Link with id: 30323 has become failure prone
+Group with leader: Link with id: 34307 has become failure prone
+Group with leader: Link with id: 18556 has become failure prone
+Group with leader: Link with id: 7218 has become failure prone
+Group with leader: Link with id: 41002 has become failure prone
+Group with leader: Link with id: 43890 has become failure prone
+Group with leader: Link with id: 19052 has become failure prone
+Group with leader: Link with id: 44760 has become failure prone
+Group with leader: Link with id: 35321 has become failure prone
+Switch with id: [1,27,4] has become failure prone
+Group with leader: Link with id: 13486 has become failure prone
+Group with leader: Link with id: 51794 has become failure prone
+Group with leader: Link with id: 22104 has become failure prone
+Switch with id: [2,24,4] has become failure prone
+Group with leader: Link with id: 45099 has become failure prone
+Group with leader: Link with id: 12524 has become failure prone
+Switch with id: [1,3,4] has become failure prone
+Group with leader: Link with id: 44577 has become failure prone
+Group with leader: Link with id: 51282 has become failure prone
+Group with leader: Link with id: 49007 has become failure prone
+Group with leader: Link with id: 21130 has become failure prone
+Group with leader: Link with id: 16535 has become failure prone
+Group with leader: Link with id: 31292 has become failure prone
+Group with leader: Link with id: 31340 has become failure prone
+Group with leader: Link with id: 53649 has become failure prone
+Group with leader: Link with id: 45939 has become failure prone
+Group with leader: Link with id: 1266 has become failure prone
+Group with leader: Link with id: 33182 has become failure prone
+Group with leader: Link with id: 18128 has become failure prone
+Group with leader: Link with id: 2312 has become failure prone
+Group with leader: Link with id: 52259 has become failure prone
+Group with leader: Link with id: 45822 has become failure prone
+Group with leader: Link with id: 46373 has become failure prone
+Group with leader: Link with id: 45756 has become failure prone
+Switch with id: [1,17,3] has become failure prone
+Group with leader: Link with id: 42146 has become failure prone
+Group with leader: Link with id: 22526 has become failure prone
+Group with leader: Link with id: 49245 has become failure prone
+Group with leader: Link with id: 49039 has become failure prone
+Group with leader: Link with id: 41352 has become failure prone
+Group with leader: Link with id: 21221 has become failure prone
+Group with leader: Link with id: 51355 has become failure prone
+Group with leader: Link with id: 21439 has become failure prone
+Group with leader: Link with id: 20087 has become failure prone
+Group with leader: Link with id: 8178 has become failure prone
+Group with leader: Link with id: 42592 has become failure prone
+Group with leader: Link with id: 37324 has become failure prone
+Group with leader: Link with id: 21556 has become failure prone
+Switch with id: [2,12,3] has become failure prone
+Group with leader: Link with id: 45379 has become failure prone
+Group with leader: Link with id: 53112 has become failure prone
+Group with leader: Link with id: 54055 has become failure prone
+Group with leader: Link with id: 51376 has become failure prone
+Switch with id: [0,-1,83] has become failure prone
+Switch with id: [2,2,9] has become failure prone
+Switch with id: [2,24,6] has become failure prone
+Group with leader: Link with id: 40858 has become failure prone
+Group with leader: Link with id: 38188 has become failure prone
+Group with leader: Link with id: 11215 has become failure prone
+Switch with id: [1,6,8] has become failure prone
+Switch with id: [1,21,8] has become failure prone
+Switch with id: [0,-1,164] has become failure prone
+Switch with id: [2,2,0] has become failure prone
+Switch with id: [2,12,0] has become failure prone
+Switch with id: [2,23,3] has become failure prone
+Group with leader: Link with id: 52541 has become failure prone
+Group with leader: Link with id: 51831 has become failure prone
+Group with leader: Link with id: 15491 has become failure prone
+Group with leader: Link with id: 52242 has become failure prone
+Group with leader: Link with id: 5049 has become failure prone
+Group with leader: Link with id: 44726 has become failure prone
+Group with leader: Link with id: 37363 has become failure prone
+Group with leader: Link with id: 54330 has become failure prone
+Group with leader: Link with id: 9464 has become failure prone
+Group with leader: Link with id: 42432 has become failure prone
+Group with leader: Link with id: 12015 has become failure prone
+Group with leader: Link with id: 50571 has become failure prone
+Group with leader: Link with id: 49199 has become failure prone
+Group with leader: Link with id: 48139 has become failure prone
+Switch with id: [2,36,2] has become failure prone
+Group with leader: Link with id: 13049 has become failure prone
+Group with leader: Link with id: 39259 has become failure prone
+Group with leader: Link with id: 43628 has become failure prone
+Group with leader: Link with id: 8515 has become failure prone
+Group with leader: Link with id: 24102 has become failure prone
+Group with leader: Link with id: 48896 has become failure prone
+Group with leader: Link with id: 41915 has become failure prone
+Group with leader: Link with id: 55128 has become failure prone
+Group with leader: Link with id: 41218 has become failure prone
+Group with leader: Link with id: 47673 has become failure prone
+Group with leader: Link with id: 41764 has become failure prone
+Group with leader: Link with id: 13586 has become failure prone
+Group with leader: Link with id: 36134 has become failure prone
+Switch with id: [2,39,9] has become failure prone
+Switch with id: [1,1,1] has become failure prone
+Group with leader: Link with id: 3520 has become failure prone
+Group with leader: Link with id: 4046 has become failure prone
+Group with leader: Link with id: 40892 has become failure prone
+Group with leader: Link with id: 16128 has become failure prone
+Switch with id: [2,5,3] has become failure prone
+Group with leader: Link with id: 53738 has become failure prone
+Group with leader: Link with id: 42309 has become failure prone
+Group with leader: Link with id: 52807 has become failure prone
+Group with leader: Link with id: 55567 has become failure prone
+Group with leader: Link with id: 40846 has become failure prone
+Group with leader: Link with id: 45624 has become failure prone
+Group with leader: Link with id: 52060 has become failure prone
+Group with leader: Link with id: 43878 has become failure prone
+Group with leader: Link with id: 45165 has become failure prone
+Group with leader: Link with id: 45852 has become failure prone
+Group with leader: Link with id: 50610 has become failure prone
+Group with leader: Link with id: 26039 has become failure prone
+Group with leader: Link with id: 48736 has become failure prone
+Group with leader: Link with id: 55515 has become failure prone
+Group with leader: Link with id: 46306 has become failure prone
+Group with leader: Link with id: 49736 has become failure prone
+Group with leader: Link with id: 49562 has become failure prone
+Group with leader: Link with id: 43776 has become failure prone
+Group with leader: Link with id: 44272 has become failure prone
+Group with leader: Link with id: 14500 has become failure prone
+Group with leader: Link with id: 45651 has become failure prone
+Group with leader: Link with id: 11188 has become failure prone
+Group with leader: Link with id: 50665 has become failure prone
+Group with leader: Link with id: 43885 has become failure prone
+Group with leader: Link with id: 8258 has become failure prone
+Group with leader: Link with id: 47390 has become failure prone
+Group with leader: Link with id: 40333 has become failure prone
+Group with leader: Link with id: 4011 has become failure prone
+Group with leader: Link with id: 41223 has become failure prone
+Group with leader: Link with id: 49807 has become failure prone
+Group with leader: Link with id: 45662 has become failure prone
+Group with leader: Link with id: 3553 has become failure prone
+Group with leader: Link with id: 44905 has become failure prone
+Group with leader: Link with id: 19280 has become failure prone
+Group with leader: Link with id: 9255 has become failure prone
+Group with leader: Link with id: 43713 has become failure prone
+Group with leader: Link with id: 41721 has become failure prone
+Group with leader: Link with id: 25320 has become failure prone
+Group with leader: Link with id: 35390 has become failure prone
+Group with leader: Link with id: 9444 has become failure prone
+Group with leader: Link with id: 28076 has become failure prone
+Group with leader: Link with id: 20313 has become failure prone
+Group with leader: Link with id: 9080 has become failure prone
+Group with leader: Link with id: 22287 has become failure prone
+Group with leader: Link with id: 45324 has become failure prone
+Group with leader: Link with id: 50433 has become failure prone
+Group with leader: Link with id: 44370 has become failure prone
+Group with leader: Link with id: 18437 has become failure prone
+Group with leader: Link with id: 47291 has become failure prone
+Group with leader: Link with id: 22159 has become failure prone
+Group with leader: Link with id: 41499 has become failure prone
+Switch with id: [1,36,3] has become failure prone
+Group with leader: Link with id: 30323 has become failure prone
+Group with leader: Link with id: 34307 has become failure prone
+Group with leader: Link with id: 18556 has become failure prone
+Group with leader: Link with id: 7218 has become failure prone
+Group with leader: Link with id: 41002 has become failure prone
+Group with leader: Link with id: 43890 has become failure prone
+Group with leader: Link with id: 19052 has become failure prone
+Group with leader: Link with id: 44760 has become failure prone
+Group with leader: Link with id: 35321 has become failure prone
+Switch with id: [1,27,4] has become failure prone
+Group with leader: Link with id: 13486 has become failure prone
+Group with leader: Link with id: 51794 has become failure prone
+Group with leader: Link with id: 43885 has become failure prone
+Group with leader: Link with id: 8258 has become failure prone
+Group with leader: Link with id: 47390 has become failure prone
+Group with leader: Link with id: 40333 has become failure prone
+Group with leader: Link with id: 4011 has become failure prone
+Group with leader: Link with id: 41223 has become failure prone
+Group with leader: Link with id: 49807 has become failure prone
+Group with leader: Link with id: 45662 has become failure prone
+Group with leader: Link with id: 3553 has become failure prone
+Group with leader: Link with id: 44905 has become failure prone
+Group with leader: Link with id: 19280 has become failure prone
+Group with leader: Link with id: 9255 has become failure prone
+Group with leader: Link with id: 43713 has become failure prone
+Group with leader: Link with id: 41721 has become failure prone
+Group with leader: Link with id: 25320 has become failure prone
+Group with leader: Link with id: 35390 has become failure prone
+Group with leader: Link with id: 9444 has become failure prone
+Group with leader: Link with id: 28076 has become failure prone
+Group with leader: Link with id: 20313 has become failure prone
+Group with leader: Link with id: 9080 has become failure prone
+Group with leader: Link with id: 22287 has become failure prone
+Group with leader: Link with id: 45324 has become failure prone
+Group with leader: Link with id: 50433 has become failure prone
+Group with leader: Link with id: 44370 has become failure prone
+Group with leader: Link with id: 18437 has become failure prone
+Group with leader: Link with id: 47291 has become failure prone
+Group with leader: Link with id: 22159 has become failure prone
+Group with leader: Link with id: 41499 has become failure prone
+Switch with id: [1,36,3] has become failure prone
+Group with leader: Link with id: 30323 has become failure prone
+Group with leader: Link with id: 34307 has become failure prone
+Group with leader: Link with id: 43885 has become failure prone
+Group with leader: Link with id: 8258 has become failure prone
+Group with leader: Link with id: 47390 has become failure prone
+Group with leader: Link with id: 40333 has become failure prone
+Group with leader: Link with id: 4011 has become failure prone
+Group with leader: Link with id: 41223 has become failure prone
+Group with leader: Link with id: 49807 has become failure prone
+Group with leader: Link with id: 45662 has become failure prone
+Group with leader: Link with id: 3553 has become failure prone
+Group with leader: Link with id: 44905 has become failure prone
+Group with leader: Link with id: 19280 has become failure prone
+Group with leader: Link with id: 9255 has become failure prone
+Group with leader: Link with id: 43713 has become failure prone
+Group with leader: Link with id: 41721 has become failure prone
+Group with leader: Link with id: 25320 has become failure prone
+Group with leader: Link with id: 35390 has become failure prone
+Group with leader: Link with id: 9444 has become failure prone
+Group with leader: Link with id: 28076 has become failure prone
+Group with leader: Link with id: 20313 has become failure prone
+Group with leader: Link with id: 9080 has become failure prone
+Group with leader: Link with id: 22287 has become failure prone
+Group with leader: Link with id: 45324 has become failure prone
+Group with leader: Link with id: 50433 has become failure prone
+Group with leader: Link with id: 44370 has become failure prone
+Group with leader: Link with id: 18437 has become failure prone
+Group with leader: Link with id: 47291 has become failure prone
+Group with leader: Link with id: 22159 has become failure prone
+Group with leader: Link with id: 41499 has become failure prone
+Switch with id: [1,36,3] has become failure prone
+Group with leader: Link with id: 30323 has become failure prone
+Group with leader: Link with id: 34307 has become failure prone
+Group with leader: Link with id: 43885 has become failure prone
+Group with leader: Link with id: 8258 has become failure prone
+Group with leader: Link with id: 47390 has become failure prone
+Group with leader: Link with id: 40333 has become failure prone
+Group with leader: Link with id: 4011 has become failure prone
+Group with leader: Link with id: 41223 has become failure prone
+Group with leader: Link with id: 49807 has become failure prone
+Group with leader: Link with id: 45662 has become failure prone
+Group with leader: Link with id: 3553 has become failure prone
+Group with leader: Link with id: 44905 has become failure prone
+Group with leader: Link with id: 19280 has become failure prone
+Group with leader: Link with id: 9255 has become failure prone
+Group with leader: Link with id: 43713 has become failure prone
+Group with leader: Link with id: 41721 has become failure prone
+Group with leader: Link with id: 25320 has become failure prone
+Group with leader: Link with id: 35390 has become failure prone
+Group with leader: Link with id: 9444 has become failure prone
+Group with leader: Link with id: 28076 has become failure prone
+Group with leader: Link with id: 20313 has become failure prone
+Group with leader: Link with id: 9080 has become failure prone
+Group with leader: Link with id: 22287 has become failure prone
+Group with leader: Link with id: 45324 has become failure prone
+Group with leader: Link with id: 50433 has become failure prone
+Group with leader: Link with id: 44370 has become failure prone
+Group with leader: Link with id: 18437 has become failure prone
+Group with leader: Link with id: 47291 has become failure prone
+Group with leader: Link with id: 22159 has become failure prone
+Group with leader: Link with id: 41499 has become failure prone
+Switch with id: [1,36,3] has become failure prone
+Group with leader: Link with id: 30323 has become failure prone
+Group with leader: Link with id: 34307 has become failure prone
+Group with leader: Link with id: 18556 has become failure prone
+Group with leader: Link with id: 7218 has become failure prone
+Group with leader: Link with id: 41002 has become failure prone
+Group with leader: Link with id: 43890 has become failure prone
+Group with leader: Link with id: 19052 has become failure prone
+Group with leader: Link with id: 44760 has become failure prone
+Group with leader: Link with id: 35321 has become failure prone
+Switch with id: [1,27,4] has become failure prone
+Group with leader: Link with id: 13486 has become failure prone
+Group with leader: Link with id: 51794 has become failure prone
+Group with leader: Link with id: 22104 has become failure prone
+Switch with id: [2,24,4] has become failure prone
+Group with leader: Link with id: 45099 has become failure prone
+Group with leader: Link with id: 12524 has become failure prone
+Switch with id: [1,3,4] has become failure prone
+Group with leader: Link with id: 44577 has become failure prone
+Group with leader: Link with id: 51282 has become failure prone
+Group with leader: Link with id: 49007 has become failure prone
+Group with leader: Link with id: 21130 has become failure prone
+Group with leader: Link with id: 16535 has become failure prone
+Group with leader: Link with id: 31292 has become failure prone
+Group with leader: Link with id: 31340 has become failure prone
+Group with leader: Link with id: 53649 has become failure prone
+Group with leader: Link with id: 45939 has become failure prone
+Group with leader: Link with id: 1266 has become failure prone
+Group with leader: Link with id: 33182 has become failure prone
+Group with leader: Link with id: 18128 has become failure prone
+Group with leader: Link with id: 2312 has become failure prone
+Group with leader: Link with id: 52259 has become failure prone
+Group with leader: Link with id: 45822 has become failure prone
+Group with leader: Link with id: 46373 has become failure prone
+Group with leader: Link with id: 45756 has become failure prone
+Switch with id: [1,17,3] has become failure prone
+Group with leader: Link with id: 42146 has become failure prone
+Group with leader: Link with id: 22526 has become failure prone
+Group with leader: Link with id: 49245 has become failure prone
+Group with leader: Link with id: 49039 has become failure prone
+Group with leader: Link with id: 41352 has become failure prone
+Group with leader: Link with id: 21221 has become failure prone
+Group with leader: Link with id: 51355 has become failure prone
+Group with leader: Link with id: 21439 has become failure prone
+Group with leader: Link with id: 20087 has become failure prone
+Group with leader: Link with id: 8178 has become failure prone
+Group with leader: Link with id: 42592 has become failure prone
+Group with leader: Link with id: 37324 has become failure prone
+Group with leader: Link with id: 21556 has become failure prone
+Switch with id: [2,12,3] has become failure prone
+Group with leader: Link with id: 45379 has become failure prone
+Group with leader: Link with id: 53112 has become failure prone
+Group with leader: Link with id: 54055 has become failure prone
+Group with leader: Link with id: 51376 has become failure prone
+Switch with id: [0,-1,83] has become failure prone
+Switch with id: [2,2,9] has become failure prone
+Switch with id: [2,24,6] has become failure prone
+Group with leader: Link with id: 40858 has become failure prone
+Group with leader: Link with id: 38188 has become failure prone
+Group with leader: Link with id: 11215 has become failure prone
+Switch with id: [1,6,8] has become failure prone
+Switch with id: [1,21,8] has become failure prone
+Switch with id: [0,-1,164] has become failure prone
+Switch with id: [2,2,0] has become failure prone
+Switch with id: [2,12,0] has become failure prone
+Switch with id: [2,23,3] has become failure prone
+Group with leader: Link with id: 52541 has become failure prone
+Group with leader: Link with id: 51831 has become failure prone
+Group with leader: Link with id: 15491 has become failure prone
+Group with leader: Link with id: 52242 has become failure prone
+Group with leader: Link with id: 5049 has become failure prone
+Group with leader: Link with id: 44726 has become failure prone
+Group with leader: Link with id: 37363 has become failure prone
+Group with leader: Link with id: 54330 has become failure prone
+Group with leader: Link with id: 9464 has become failure prone
+Group with leader: Link with id: 42432 has become failure prone
+Group with leader: Link with id: 12015 has become failure prone
+Group with leader: Link with id: 50571 has become failure prone
+Group with leader: Link with id: 49199 has become failure prone
+Group with leader: Link with id: 48139 has become failure prone
+Switch with id: [2,36,2] has become failure prone
+Group with leader: Link with id: 13049 has become failure prone
+Group with leader: Link with id: 39259 has become failure prone
+Group with leader: Link with id: 43628 has become failure prone
+Group with leader: Link with id: 8515 has become failure prone
+Group with leader: Link with id: 24102 has become failure prone
+Group with leader: Link with id: 48896 has become failure prone
+Group with leader: Link with id: 41915 has become failure prone
+Group with leader: Link with id: 55128 has become failure prone
+Group with leader: Link with id: 41218 has become failure prone
+Group with leader: Link with id: 47673 has become failure prone
+Group with leader: Link with id: 41764 has become failure prone
+Group with leader: Link with id: 13586 has become failure prone
+Group with leader: Link with id: 36134 has become failure prone
+Switch with id: [2,39,9] has become failure prone
+Switch with id: [1,1,1] has become failure prone
+Group with leader: Link with id: 3520 has become failure prone
+Group with leader: Link with id: 4046 has become failure prone
+Group with leader: Link with id: 40892 has become failure prone
+Group with leader: Link with id: 16128 has become failure prone
+Switch with id: [2,5,3] has become failure prone
+Group with leader: Link with id: 53738 has become failure prone
+Group with leader: Link with id: 42309 has become failure prone
+Group with leader: Link with id: 52807 has become failure prone
+Group with leader: Link with id: 55567 has become failure prone
+Group with leader: Link with id: 40846 has become failure prone
+Group with leader: Link with id: 45624 has become failure prone
+Group with leader: Link with id: 52060 has become failure prone
+Group with leader: Link with id: 43878 has become failure prone
+Group with leader: Link with id: 45165 has become failure prone
+Group with leader: Link with id: 45852 has become failure prone
+Group with leader: Link with id: 50610 has become failure prone
+Group with leader: Link with id: 26039 has become failure prone
+Group with leader: Link with id: 48736 has become failure prone
+Group with leader: Link with id: 55515 has become failure prone
+Group with leader: Link with id: 46306 has become failure prone
+Group with leader: Link with id: 49736 has become failure prone
+Group with leader: Link with id: 49562 has become failure prone
+Group with leader: Link with id: 43776 has become failure prone
+Group with leader: Link with id: 44272 has become failure prone
+Group with leader: Link with id: 14500 has become failure prone
+Group with leader: Link with id: 45651 has become failure prone
+Group with leader: Link with id: 11188 has become failure prone
+Group with leader: Link with id: 50665 has become failure prone
+Group with leader: Link with id: 45159 has become failure prone
+Group with leader: Link with id: 47625 has become failure prone
+Group with leader: Link with id: 43909 has become failure prone
+Switch with id: [1,2,1] has become failure prone
+Group with leader: Link with id: 21297 has become failure prone
+Group with leader: Link with id: 43885 has become failure prone
+Group with leader: Link with id: 8258 has become failure prone
+Group with leader: Link with id: 47390 has become failure prone
+Group with leader: Link with id: 40333 has become failure prone
+Group with leader: Link with id: 4011 has become failure prone
+Group with leader: Link with id: 41223 has become failure prone
+Group with leader: Link with id: 49807 has become failure prone
+Group with leader: Link with id: 45662 has become failure prone
+Group with leader: Link with id: 3553 has become failure prone
+Group with leader: Link with id: 44905 has become failure prone
+Group with leader: Link with id: 19280 has become failure prone
+Group with leader: Link with id: 9255 has become failure prone
+Group with leader: Link with id: 43713 has become failure prone
+Group with leader: Link with id: 41721 has become failure prone
+Group with leader: Link with id: 25320 has become failure prone
+Group with leader: Link with id: 35390 has become failure prone
+Group with leader: Link with id: 9444 has become failure prone
+Group with leader: Link with id: 28076 has become failure prone
+Group with leader: Link with id: 20313 has become failure prone
+Group with leader: Link with id: 9080 has become failure prone
+Group with leader: Link with id: 22287 has become failure prone
+Group with leader: Link with id: 45324 has become failure prone
+Group with leader: Link with id: 50433 has become failure prone
+Group with leader: Link with id: 44370 has become failure prone
+Group with leader: Link with id: 18437 has become failure prone
+Group with leader: Link with id: 47291 has become failure prone
+Group with leader: Link with id: 22159 has become failure prone
+Group with leader: Link with id: 41499 has become failure prone
+Switch with id: [1,36,3] has become failure prone
+Group with leader: Link with id: 30323 has become failure prone
+Group with leader: Link with id: 34307 has become failure prone
+Group with leader: Link with id: 18556 has become failure prone
+Group with leader: Link with id: 7218 has become failure prone
+Group with leader: Link with id: 41002 has become failure prone
+Group with leader: Link with id: 43890 has become failure prone
+Group with leader: Link with id: 19052 has become failure prone
+Group with leader: Link with id: 44760 has become failure prone
+Group with leader: Link with id: 35321 has become failure prone
+Switch with id: [1,27,4] has become failure prone
+Group with leader: Link with id: 13486 has become failure prone
+Group with leader: Link with id: 51794 has become failure prone
+Group with leader: Link with id: 22104 has become failure prone
+Switch with id: [2,24,4] has become failure prone
+Group with leader: Link with id: 45099 has become failure prone
+Group with leader: Link with id: 12524 has become failure prone
+Switch with id: [1,3,4] has become failure prone
+Group with leader: Link with id: 44577 has become failure prone
+Group with leader: Link with id: 51282 has become failure prone
+Group with leader: Link with id: 49007 has become failure prone
+Group with leader: Link with id: 21130 has become failure prone
+Group with leader: Link with id: 16535 has become failure prone
+Group with leader: Link with id: 31292 has become failure prone
+Group with leader: Link with id: 31340 has become failure prone
+Group with leader: Link with id: 53649 has become failure prone
+Group with leader: Link with id: 45939 has become failure prone
+Group with leader: Link with id: 1266 has become failure prone
+Group with leader: Link with id: 33182 has become failure prone
+Group with leader: Link with id: 18128 has become failure prone
+Group with leader: Link with id: 2312 has become failure prone
+Group with leader: Link with id: 52259 has become failure prone
+Group with leader: Link with id: 45822 has become failure prone
+Group with leader: Link with id: 46373 has become failure prone
+Group with leader: Link with id: 45756 has become failure prone
+Switch with id: [1,17,3] has become failure prone
+Group with leader: Link with id: 42146 has become failure prone
+Group with leader: Link with id: 22526 has become failure prone
+Group with leader: Link with id: 49245 has become failure prone
+Group with leader: Link with id: 49039 has become failure prone
+Group with leader: Link with id: 41352 has become failure prone
+Group with leader: Link with id: 21221 has become failure prone
+Group with leader: Link with id: 51355 has become failure prone
+Group with leader: Link with id: 21439 has become failure prone
+Group with leader: Link with id: 20087 has become failure prone
+Group with leader: Link with id: 8178 has become failure prone
+Group with leader: Link with id: 42592 has become failure prone
+Group with leader: Link with id: 37324 has become failure prone
+Group with leader: Link with id: 21556 has become failure prone
+Switch with id: [2,12,3] has become failure prone
+Group with leader: Link with id: 45379 has become failure prone
+Group with leader: Link with id: 53112 has become failure prone
+Group with leader: Link with id: 54055 has become failure prone
+Group with leader: Link with id: 51376 has become failure prone
+Switch with id: [0,-1,83] has become failure prone
+Switch with id: [2,2,9] has become failure prone
+Switch with id: [2,24,6] has become failure prone
+Group with leader: Link with id: 40858 has become failure prone
+Group with leader: Link with id: 38188 has become failure prone
+Group with leader: Link with id: 11215 has become failure prone
+Switch with id: [1,6,8] has become failure prone
+Switch with id: [1,21,8] has become failure prone
+Switch with id: [0,-1,164] has become failure prone
+Switch with id: [2,2,0] has become failure prone
+Switch with id: [2,12,0] has become failure prone
+Switch with id: [2,23,3] has become failure prone
+Group with leader: Link with id: 52541 has become failure prone
+Group with leader: Link with id: 51831 has become failure prone
+Group with leader: Link with id: 15491 has become failure prone
+Group with leader: Link with id: 52242 has become failure prone
+Group with leader: Link with id: 5049 has become failure prone
+Group with leader: Link with id: 44726 has become failure prone
+Group with leader: Link with id: 37363 has become failure prone
+Group with leader: Link with id: 54330 has become failure prone
+Group with leader: Link with id: 9464 has become failure prone
+Group with leader: Link with id: 42432 has become failure prone
+Group with leader: Link with id: 12015 has become failure prone
+Group with leader: Link with id: 50571 has become failure prone
+Group with leader: Link with id: 49199 has become failure prone
+Group with leader: Link with id: 48139 has become failure prone
+Switch with id: [2,36,2] has become failure prone
+Group with leader: Link with id: 13049 has become failure prone
+Group with leader: Link with id: 39259 has become failure prone
+Group with leader: Link with id: 43628 has become failure prone
+Group with leader: Link with id: 8515 has become failure prone
+Group with leader: Link with id: 24102 has become failure prone
+Group with leader: Link with id: 48896 has become failure prone
+Group with leader: Link with id: 41915 has become failure prone
+Group with leader: Link with id: 55128 has become failure prone
+Group with leader: Link with id: 41218 has become failure prone
+Group with leader: Link with id: 47673 has become failure prone
+Group with leader: Link with id: 41764 has become failure prone
+Group with leader: Link with id: 13586 has become failure prone
+Group with leader: Link with id: 36134 has become failure prone
+Switch with id: [2,39,9] has become failure prone
+Switch with id: [1,1,1] has become failure prone
+Group with leader: Link with id: 3520 has become failure prone
+Group with leader: Link with id: 4046 has become failure prone
+Group with leader: Link with id: 40892 has become failure prone
+Group with leader: Link with id: 16128 has become failure prone
+Switch with id: [2,5,3] has become failure prone
+Group with leader: Link with id: 53738 has become failure prone
+Group with leader: Link with id: 42309 has become failure prone
+Group with leader: Link with id: 52807 has become failure prone
+Group with leader: Link with id: 55567 has become failure prone
+Group with leader: Link with id: 40846 has become failure prone
+Group with leader: Link with id: 45624 has become failure prone
+Group with leader: Link with id: 52060 has become failure prone
+Group with leader: Link with id: 43878 has become failure prone
+Group with leader: Link with id: 45165 has become failure prone
+Group with leader: Link with id: 45852 has become failure prone
+Group with leader: Link with id: 50610 has become failure prone
+Group with leader: Link with id: 26039 has become failure prone
+Group with leader: Link with id: 48736 has become failure prone
+Group with leader: Link with id: 55515 has become failure prone
+Group with leader: Link with id: 46306 has become failure prone
+Group with leader: Link with id: 49736 has become failure prone
+Group with leader: Link with id: 49562 has become failure prone
+Group with leader: Link with id: 43776 has become failure prone
+Group with leader: Link with id: 44272 has become failure prone
+Group with leader: Link with id: 14500 has become failure prone
+Group with leader: Link with id: 45651 has become failure prone
+Group with leader: Link with id: 11188 has become failure prone
+Group with leader: Link with id: 50665 has become failure prone
+Group with leader: Link with id: 45159 has become failure prone
+Group with leader: Link with id: 47625 has become failure prone
+Group with leader: Link with id: 43909 has become failure prone
+Switch with id: [1,2,1] has become failure prone
+Group with leader: Link with id: 21297 has become failure prone
+Group with leader: Link with id: 43620 has become failure prone
+Group with leader: Link with id: 16156 has become failure prone
+Group with leader: Link with id: 42841 has become failure prone
+Group with leader: Link with id: 34351 has become failure prone
+Group with leader: Link with id: 52412 has become failure prone
+Group with leader: Link with id: 3031 has become failure prone
+Group with leader: Link with id: 1 has become failure prone
+Group with leader: Link with id: 4 has become failure prone
+Switch with id: [0,-1,7] has become failure prone
+Group with leader: Link with id: 341 has become failure prone
+Group with leader: Link with id: 441 has become failure prone
+Switch with id: [2,1,0] has become failure prone
+Switch with id: [1,1,0] has become failure prone
+Group with leader: Link with id: 342 has become failure prone
+Group with leader: Link with id: 349 has become failure prone
+Group with leader: Link with id: 21 has become failure prone
+Group with leader: Link with id: 407 has become failure prone
+Switch with id: [1,5,1] has become failure prone
+Group with leader: Link with id: 429 has become failure prone
+Group with leader: Link with id: 394 has become failure prone
+Group with leader: Link with id: 43885 has become failure prone
+Group with leader: Link with id: 8258 has become failure prone
+Group with leader: Link with id: 47390 has become failure prone
+Group with leader: Link with id: 40333 has become failure prone
+Group with leader: Link with id: 4011 has become failure prone
+Group with leader: Link with id: 41223 has become failure prone
+Group with leader: Link with id: 49807 has become failure prone
+Group with leader: Link with id: 45662 has become failure prone
+Group with leader: Link with id: 3553 has become failure prone
+Group with leader: Link with id: 44905 has become failure prone
+Group with leader: Link with id: 19280 has become failure prone
+Group with leader: Link with id: 9255 has become failure prone
+Group with leader: Link with id: 43713 has become failure prone
+Group with leader: Link with id: 41721 has become failure prone
+Group with leader: Link with id: 25320 has become failure prone
+Group with leader: Link with id: 35390 has become failure prone
+Group with leader: Link with id: 9444 has become failure prone
+Group with leader: Link with id: 28076 has become failure prone
+Group with leader: Link with id: 20313 has become failure prone
+Group with leader: Link with id: 9080 has become failure prone
+Group with leader: Link with id: 22287 has become failure prone
+Group with leader: Link with id: 45324 has become failure prone
+Group with leader: Link with id: 50433 has become failure prone
+Group with leader: Link with id: 44370 has become failure prone
+Group with leader: Link with id: 18437 has become failure prone
+Group with leader: Link with id: 47291 has become failure prone
+Group with leader: Link with id: 22159 has become failure prone
+Group with leader: Link with id: 41499 has become failure prone
+Switch with id: [1,36,3] has become failure prone
+Group with leader: Link with id: 30323 has become failure prone
+Group with leader: Link with id: 34307 has become failure prone
+Group with leader: Link with id: 18556 has become failure prone
+Group with leader: Link with id: 7218 has become failure prone
+Group with leader: Link with id: 41002 has become failure prone
+Group with leader: Link with id: 43890 has become failure prone
+Group with leader: Link with id: 19052 has become failure prone
+Group with leader: Link with id: 44760 has become failure prone
+Group with leader: Link with id: 35321 has become failure prone
+Switch with id: [1,27,4] has become failure prone
+Group with leader: Link with id: 13486 has become failure prone
+Group with leader: Link with id: 51794 has become failure prone
+Group with leader: Link with id: 22104 has become failure prone
+Switch with id: [2,24,4] has become failure prone
+Group with leader: Link with id: 45099 has become failure prone
+Group with leader: Link with id: 12524 has become failure prone
+Switch with id: [1,3,4] has become failure prone
+Group with leader: Link with id: 44577 has become failure prone
+Group with leader: Link with id: 51282 has become failure prone
+Group with leader: Link with id: 49007 has become failure prone
+Group with leader: Link with id: 21130 has become failure prone
+Group with leader: Link with id: 16535 has become failure prone
+Group with leader: Link with id: 31292 has become failure prone
+Group with leader: Link with id: 31340 has become failure prone
+Group with leader: Link with id: 53649 has become failure prone
+Group with leader: Link with id: 45939 has become failure prone
+Group with leader: Link with id: 1266 has become failure prone
+Group with leader: Link with id: 33182 has become failure prone
+Group with leader: Link with id: 18128 has become failure prone
+Group with leader: Link with id: 2312 has become failure prone
+Group with leader: Link with id: 52259 has become failure prone
+Group with leader: Link with id: 45822 has become failure prone
+Group with leader: Link with id: 46373 has become failure prone
+Group with leader: Link with id: 45756 has become failure prone
+Switch with id: [1,17,3] has become failure prone
+Group with leader: Link with id: 42146 has become failure prone
+Group with leader: Link with id: 22526 has become failure prone
+Group with leader: Link with id: 49245 has become failure prone
+Group with leader: Link with id: 49039 has become failure prone
+Group with leader: Link with id: 41352 has become failure prone
+Group with leader: Link with id: 21221 has become failure prone
+Group with leader: Link with id: 51355 has become failure prone
+Group with leader: Link with id: 21439 has become failure prone
+Group with leader: Link with id: 20087 has become failure prone
+Group with leader: Link with id: 8178 has become failure prone
+Group with leader: Link with id: 42592 has become failure prone
+Group with leader: Link with id: 37324 has become failure prone
+Group with leader: Link with id: 21556 has become failure prone
+Switch with id: [2,12,3] has become failure prone
+Group with leader: Link with id: 45379 has become failure prone
+Group with leader: Link with id: 53112 has become failure prone
+Group with leader: Link with id: 54055 has become failure prone
+Group with leader: Link with id: 51376 has become failure prone
+Switch with id: [0,-1,83] has become failure prone
+Switch with id: [2,2,9] has become failure prone
+Switch with id: [2,24,6] has become failure prone
+Group with leader: Link with id: 40858 has become failure prone
+Group with leader: Link with id: 38188 has become failure prone
+Group with leader: Link with id: 11215 has become failure prone
+Switch with id: [1,6,8] has become failure prone
+Switch with id: [1,21,8] has become failure prone
+Switch with id: [0,-1,164] has become failure prone
+Switch with id: [2,2,0] has become failure prone
+Switch with id: [2,12,0] has become failure prone
+Switch with id: [2,23,3] has become failure prone
+Group with leader: Link with id: 52541 has become failure prone
+Group with leader: Link with id: 51831 has become failure prone
+Group with leader: Link with id: 15491 has become failure prone
+Group with leader: Link with id: 52242 has become failure prone
+Group with leader: Link with id: 5049 has become failure prone
+Group with leader: Link with id: 44726 has become failure prone
+Group with leader: Link with id: 37363 has become failure prone
+Group with leader: Link with id: 54330 has become failure prone
+Group with leader: Link with id: 9464 has become failure prone
+Group with leader: Link with id: 42432 has become failure prone
+Group with leader: Link with id: 12015 has become failure prone
+Group with leader: Link with id: 50571 has become failure prone
+Group with leader: Link with id: 49199 has become failure prone
+Group with leader: Link with id: 48139 has become failure prone
+Switch with id: [2,36,2] has become failure prone
+Group with leader: Link with id: 13049 has become failure prone
+Group with leader: Link with id: 39259 has become failure prone
+Group with leader: Link with id: 43628 has become failure prone
+Group with leader: Link with id: 8515 has become failure prone
+Group with leader: Link with id: 24102 has become failure prone
+Group with leader: Link with id: 48896 has become failure prone
+Group with leader: Link with id: 41915 has become failure prone
+Group with leader: Link with id: 55128 has become failure prone
+Group with leader: Link with id: 41218 has become failure prone
+Group with leader: Link with id: 47673 has become failure prone
+Group with leader: Link with id: 41764 has become failure prone
+Group with leader: Link with id: 13586 has become failure prone
+Group with leader: Link with id: 36134 has become failure prone
+Switch with id: [2,39,9] has become failure prone
+Switch with id: [1,1,1] has become failure prone
+Group with leader: Link with id: 3520 has become failure prone
+Group with leader: Link with id: 4046 has become failure prone
+Group with leader: Link with id: 40892 has become failure prone
+Group with leader: Link with id: 16128 has become failure prone
+Switch with id: [2,5,3] has become failure prone
+Group with leader: Link with id: 53738 has become failure prone
+Group with leader: Link with id: 42309 has become failure prone
+Group with leader: Link with id: 52807 has become failure prone
+Group with leader: Link with id: 55567 has become failure prone
+Group with leader: Link with id: 40846 has become failure prone
+Group with leader: Link with id: 45624 has become failure prone
+Group with leader: Link with id: 52060 has become failure prone
+Group with leader: Link with id: 43878 has become failure prone
+Group with leader: Link with id: 45165 has become failure prone
+Group with leader: Link with id: 45852 has become failure prone
+Group with leader: Link with id: 50610 has become failure prone
+Group with leader: Link with id: 26039 has become failure prone
+Group with leader: Link with id: 48736 has become failure prone
+Group with leader: Link with id: 55515 has become failure prone
+Group with leader: Link with id: 46306 has become failure prone
+Group with leader: Link with id: 49736 has become failure prone
+Group with leader: Link with id: 49562 has become failure prone
+Group with leader: Link with id: 43776 has become failure prone
+Group with leader: Link with id: 44272 has become failure prone
+Group with leader: Link with id: 14500 has become failure prone
+Group with leader: Link with id: 45651 has become failure prone
+Group with leader: Link with id: 11188 has become failure prone
+Group with leader: Link with id: 50665 has become failure prone
+Group with leader: Link with id: 45159 has become failure prone
+Group with leader: Link with id: 47625 has become failure prone
+Group with leader: Link with id: 43909 has become failure prone
+Switch with id: [1,2,1] has become failure prone
+Group with leader: Link with id: 21297 has become failure prone
+Group with leader: Link with id: 43620 has become failure prone
+Group with leader: Link with id: 16156 has become failure prone
+Group with leader: Link with id: 42841 has become failure prone
+Group with leader: Link with id: 34351 has become failure prone
+Group with leader: Link with id: 52412 has become failure prone
+Group with leader: Link with id: 3031 has become failure prone
+Group with leader: Link with id: 51473 has become failure prone
+Group with leader: Link with id: 2547 has become failure prone
+Group with leader: Link with id: 49533 has become failure prone
+Group with leader: Link with id: 47660 has become failure prone
+Group with leader: Link with id: 38103 has become failure prone
+Group with leader: Link with id: 49282 has become failure prone
+Group with leader: Link with id: 40465 has become failure prone
+Group with leader: Link with id: 18456 has become failure prone
+Group with leader: Link with id: 18570 has become failure prone
+Group with leader: Link with id: 46174 has become failure prone
+Group with leader: Link with id: 24169 has become failure prone
+Group with leader: Link with id: 47680 has become failure prone
+Group with leader: Link with id: 34411 has become failure prone
+Switch with id: [1,16,1] has become failure prone
+Group with leader: Link with id: 55633 has become failure prone
+Group with leader: Link with id: 21472 has become failure prone
+Group with leader: Link with id: 9556 has become failure prone
+Group with leader: Link with id: 27455 has become failure prone
+Group with leader: Link with id: 55057 has become failure prone
+Group with leader: Link with id: 15231 has become failure prone
+Group with leader: Link with id: 15522 has become failure prone
+Switch with id: [0,-1,93] has become failure prone
+Group with leader: Link with id: 10156 has become failure prone
+Switch with id: [1,18,2] has become failure prone
+Group with leader: Link with id: 35407 has become failure prone
+Group with leader: Link with id: 48396 has become failure prone
+Group with leader: Link with id: 45403 has become failure prone
+Group with leader: Link with id: 39577 has become failure prone
+Group with leader: Link with id: 38508 has become failure prone
+Group with leader: Link with id: 3260 has become failure prone
+Group with leader: Link with id: 48804 has become failure prone
+Group with leader: Link with id: 43824 has become failure prone
+Group with leader: Link with id: 47324 has become failure prone
+Group with leader: Link with id: 50420 has become failure prone
+Switch with id: [1,11,9] has become failure prone
+Switch with id: [1,20,8] has become failure prone
+Group with leader: Link with id: 52578 has become failure prone
+Group with leader: Link with id: 39028 has become failure prone
+Group with leader: Link with id: 55739 has become failure prone
+Group with leader: Link with id: 31351 has become failure prone
+Switch with id: [1,24,0] has become failure prone
+Switch with id: [1,4,5] has become failure prone
+Switch with id: [1,32,8] has become failure prone
+Switch with id: [2,16,8] has become failure prone
+Switch with id: [2,22,3] has become failure prone
+Group with leader: Link with id: 36448 has become failure prone
+Group with leader: Link with id: 8471 has become failure prone
+Group with leader: Link with id: 40584 has become failure prone
+Group with leader: Link with id: 19334 has become failure prone
+Group with leader: Link with id: 49475 has become failure prone
+Group with leader: Link with id: 49622 has become failure prone
+Group with leader: Link with id: 53120 has become failure prone
+Group with leader: Link with id: 47821 has become failure prone
+Group with leader: Link with id: 37474 has become failure prone
+Switch with id: [1,23,1] has become failure prone
+Group with leader: Link with id: 53538 has become failure prone
+Group with leader: Link with id: 14063 has become failure prone
+Switch with id: [1,36,0] has become failure prone
+Group with leader: Link with id: 35234 has become failure prone
+Group with leader: Link with id: 33225 has become failure prone
+Group with leader: Link with id: 50509 has become failure prone
+Group with leader: Link with id: 1113 has become failure prone
+Group with leader: Link with id: 2464 has become failure prone
+Group with leader: Link with id: 40913 has become failure prone
+Group with leader: Link with id: 3476 has become failure prone
+Group with leader: Link with id: 55212 has become failure prone
+Group with leader: Link with id: 53977 has become failure prone
+Group with leader: Link with id: 32461 has become failure prone
+Group with leader: Link with id: 45110 has become failure prone
+Group with leader: Link with id: 54983 has become failure prone
+Group with leader: Link with id: 53575 has become failure prone
+Group with leader: Link with id: 40449 has become failure prone
+Group with leader: Link with id: 49684 has become failure prone
+Group with leader: Link with id: 47039 has become failure prone
+Group with leader: Link with id: 38041 has become failure prone
+Group with leader: Link with id: 45486 has become failure prone
+Group with leader: Link with id: 26413 has become failure prone
+Group with leader: Link with id: 51082 has become failure prone
+Group with leader: Link with id: 11095 has become failure prone
+Group with leader: Link with id: 19412 has become failure prone
+Group with leader: Link with id: 52737 has become failure prone
+Group with leader: Link with id: 409 has become failure prone
+Group with leader: Link with id: 48815 has become failure prone
+Group with leader: Link with id: 13442 has become failure prone
+Group with leader: Link with id: 48341 has become failure prone
+Group with leader: Link with id: 4387 has become failure prone
+Group with leader: Link with id: 45082 has become failure prone
+Group with leader: Link with id: 53299 has become failure prone
+Group with leader: Link with id: 40351 has become failure prone
+Group with leader: Link with id: 21413 has become failure prone
+Group with leader: Link with id: 51897 has become failure prone
+Group with leader: Link with id: 43421 has become failure prone
+Group with leader: Link with id: 27170 has become failure prone
+Group with leader: Link with id: 46532 has become failure prone
+Group with leader: Link with id: 16458 has become failure prone
+Group with leader: Link with id: 12435 has become failure prone
+Group with leader: Link with id: 52994 has become failure prone
+Group with leader: Link with id: 31047 has become failure prone
+Group with leader: Link with id: 52331 has become failure prone
+Group with leader: Link with id: 44352 has become failure prone
+Group with leader: Link with id: 18358 has become failure prone
+Group with leader: Link with id: 44118 has become failure prone
+Group with leader: Link with id: 41146 has become failure prone
+Group with leader: Link with id: 51394 has become failure prone
+Group with leader: Link with id: 17142 has become failure prone
+Group with leader: Link with id: 48768 has become failure prone
+Group with leader: Link with id: 53598 has become failure prone
+Group with leader: Link with id: 4206 has become failure prone
+Group with leader: Link with id: 49109 has become failure prone
+Group with leader: Link with id: 34544 has become failure prone
+Group with leader: Link with id: 48115 has become failure prone
+Group with leader: Link with id: 39285 has become failure prone
+Group with leader: Link with id: 34070 has become failure prone
+Group with leader: Link with id: 50047 has become failure prone
+Group with leader: Link with id: 46147 has become failure prone
+Group with leader: Link with id: 24064 has become failure prone
+Group with leader: Link with id: 43626 has become failure prone
+Group with leader: Link with id: 49318 has become failure prone
+Group with leader: Link with id: 43949 has become failure prone
+Group with leader: Link with id: 27286 has become failure prone
+Group with leader: Link with id: 30522 has become failure prone
+Group with leader: Link with id: 55187 has become failure prone
+Group with leader: Link with id: 46733 has become failure prone
+Group with leader: Link with id: 54076 has become failure prone
+Group with leader: Link with id: 5151 has become failure prone
+Group with leader: Link with id: 21337 has become failure prone
+Group with leader: Link with id: 35388 has become failure prone
+Switch with id: [1,13,8] has become failure prone
+Group with leader: Link with id: 28513 has become failure prone
+Group with leader: Link with id: 11033 has become failure prone
+Group with leader: Link with id: 50281 has become failure prone
+Group with leader: Link with id: 28181 has become failure prone
+Group with leader: Link with id: 10309 has become failure prone
+Switch with id: [2,26,9] has become failure prone
+Switch with id: [1,1,5] has become failure prone
+Switch with id: [1,28,1] has become failure prone
+Switch with id: [1,23,7] has become failure prone
+Group with leader: Link with id: 36459 has become failure prone
+Group with leader: Link with id: 9150 has become failure prone
+Group with leader: Link with id: 40922 has become failure prone
+Group with leader: Link with id: 24299 has become failure prone
+Group with leader: Link with id: 33345 has become failure prone
+Group with leader: Link with id: 25449 has become failure prone
+Switch with id: [1,8,5] has become failure prone
+Group with leader: Link with id: 11248 has become failure prone
+Group with leader: Link with id: 43200 has become failure prone
+Group with leader: Link with id: 42769 has become failure prone
+Group with leader: Link with id: 35155 has become failure prone
+Switch with id: [2,16,5] has become failure prone
+Group with leader: Link with id: 45019 has become failure prone
+Group with leader: Link with id: 31493 has become failure prone
+Group with leader: Link with id: 40796 has become failure prone
+Group with leader: Link with id: 29591 has become failure prone
+Group with leader: Link with id: 55288 has become failure prone
+Group with leader: Link with id: 17555 has become failure prone
+Group with leader: Link with id: 11029 has become failure prone
+Group with leader: Link with id: 40415 has become failure prone
+Group with leader: Link with id: 9241 has become failure prone
+Group with leader: Link with id: 53385 has become failure prone
+Group with leader: Link with id: 18159 has become failure prone
+Group with leader: Link with id: 37368 has become failure prone
+Group with leader: Link with id: 45050 has become failure prone
+Group with leader: Link with id: 55842 has become failure prone
+Group with leader: Link with id: 41346 has become failure prone
+Group with leader: Link with id: 54400 has become failure prone
+Group with leader: Link with id: 16517 has become failure prone
+Group with leader: Link with id: 33120 has become failure prone
+Group with leader: Link with id: 46214 has become failure prone
+Group with leader: Link with id: 27165 has become failure prone
+Group with leader: Link with id: 1098 has become failure prone
+Group with leader: Link with id: 7011 has become failure prone
+Group with leader: Link with id: 18381 has become failure prone
+Switch with id: [1,24,3] has become failure prone
+Group with leader: Link with id: 52587 has become failure prone
+Group with leader: Link with id: 43541 has become failure prone
+Switch with id: [1,17,9] has become failure prone
+Group with leader: Link with id: 38093 has become failure prone
+Group with leader: Link with id: 45875 has become failure prone
+Group with leader: Link with id: 40561 has become failure prone
+Group with leader: Link with id: 44169 has become failure prone
+Group with leader: Link with id: 53765 has become failure prone
+Switch with id: [1,38,9] has become failure prone
+Switch with id: [2,15,7] has become failure prone
+Group with leader: Link with id: 456 has become failure prone
+Group with leader: Link with id: 43710 has become failure prone
+Group with leader: Link with id: 3532 has become failure prone
+Group with leader: Link with id: 46168 has become failure prone
+Group with leader: Link with id: 53383 has become failure prone
+Group with leader: Link with id: 41934 has become failure prone
+Group with leader: Link with id: 9249 has become failure prone
+Group with leader: Link with id: 28460 has become failure prone
+Group with leader: Link with id: 1385 has become failure prone
+Group with leader: Link with id: 6192 has become failure prone
+Group with leader: Link with id: 44633 has become failure prone
+Group with leader: Link with id: 41636 has become failure prone
+Group with leader: Link with id: 37020 has become failure prone
+Group with leader: Link with id: 13121 has become failure prone
+Group with leader: Link with id: 42828 has become failure prone
+Group with leader: Link with id: 21445 has become failure prone
+Group with leader: Link with id: 5513 has become failure prone
+Switch with id: [1,29,3] has become failure prone
+Group with leader: Link with id: 50243 has become failure prone
+Group with leader: Link with id: 44402 has become failure prone
+Group with leader: Link with id: 15370 has become failure prone
+Switch with id: [1,12,1] has become failure prone
+Switch with id: [1,8,7] has become failure prone
+Group with leader: Link with id: 41649 has become failure prone
+Group with leader: Link with id: 14564 has become failure prone
+Switch with id: [0,-1,271] has become failure prone
+Group with leader: Link with id: 53646 has become failure prone
+Switch with id: [1,5,2] has become failure prone
+Switch with id: [2,39,0] has become failure prone
+Group with leader: Link with id: 50015 has become failure prone
+Group with leader: Link with id: 43885 has become failure prone
+Group with leader: Link with id: 8258 has become failure prone
+Group with leader: Link with id: 47390 has become failure prone
+Group with leader: Link with id: 40333 has become failure prone
+Group with leader: Link with id: 4011 has become failure prone
+Group with leader: Link with id: 41223 has become failure prone
+Group with leader: Link with id: 49807 has become failure prone
+Group with leader: Link with id: 45662 has become failure prone
+Group with leader: Link with id: 3553 has become failure prone
+Group with leader: Link with id: 44905 has become failure prone
+Group with leader: Link with id: 19280 has become failure prone
+Group with leader: Link with id: 9255 has become failure prone
+Group with leader: Link with id: 43713 has become failure prone
+Group with leader: Link with id: 41721 has become failure prone
+Group with leader: Link with id: 25320 has become failure prone
+Group with leader: Link with id: 35390 has become failure prone
+Group with leader: Link with id: 9444 has become failure prone
+Group with leader: Link with id: 28076 has become failure prone
+Group with leader: Link with id: 20313 has become failure prone
+Group with leader: Link with id: 9080 has become failure prone
+Group with leader: Link with id: 22287 has become failure prone
+Group with leader: Link with id: 45324 has become failure prone
+Group with leader: Link with id: 50433 has become failure prone
+Group with leader: Link with id: 44370 has become failure prone
+Group with leader: Link with id: 18437 has become failure prone
+Group with leader: Link with id: 47291 has become failure prone
+Group with leader: Link with id: 22159 has become failure prone
+Group with leader: Link with id: 41499 has become failure prone
+Switch with id: [1,36,3] has become failure prone
+Group with leader: Link with id: 30323 has become failure prone
+Group with leader: Link with id: 34307 has become failure prone
+Group with leader: Link with id: 18556 has become failure prone
+Group with leader: Link with id: 7218 has become failure prone
+Group with leader: Link with id: 41002 has become failure prone
+Group with leader: Link with id: 43890 has become failure prone
+Group with leader: Link with id: 19052 has become failure prone
+Group with leader: Link with id: 44760 has become failure prone
+Group with leader: Link with id: 35321 has become failure prone
+Switch with id: [1,27,4] has become failure prone
+Group with leader: Link with id: 13486 has become failure prone
+Group with leader: Link with id: 51794 has become failure prone
+Group with leader: Link with id: 22104 has become failure prone
+Switch with id: [2,24,4] has become failure prone
+Group with leader: Link with id: 45099 has become failure prone
+Group with leader: Link with id: 12524 has become failure prone
+Switch with id: [1,3,4] has become failure prone
+Group with leader: Link with id: 44577 has become failure prone
+Group with leader: Link with id: 51282 has become failure prone
+Group with leader: Link with id: 49007 has become failure prone
+Group with leader: Link with id: 21130 has become failure prone
+Group with leader: Link with id: 16535 has become failure prone
+Group with leader: Link with id: 31292 has become failure prone
+Group with leader: Link with id: 31340 has become failure prone
+Group with leader: Link with id: 53649 has become failure prone
+Group with leader: Link with id: 45939 has become failure prone
+Group with leader: Link with id: 1266 has become failure prone
+Group with leader: Link with id: 33182 has become failure prone
+Group with leader: Link with id: 18128 has become failure prone
+Group with leader: Link with id: 2312 has become failure prone
+Group with leader: Link with id: 52259 has become failure prone
+Group with leader: Link with id: 45822 has become failure prone
+Group with leader: Link with id: 46373 has become failure prone
+Group with leader: Link with id: 45756 has become failure prone
+Switch with id: [1,17,3] has become failure prone
+Group with leader: Link with id: 42146 has become failure prone
+Group with leader: Link with id: 22526 has become failure prone
+Group with leader: Link with id: 49245 has become failure prone
+Group with leader: Link with id: 49039 has become failure prone
+Group with leader: Link with id: 41352 has become failure prone
+Group with leader: Link with id: 21221 has become failure prone
+Group with leader: Link with id: 51355 has become failure prone
+Group with leader: Link with id: 21439 has become failure prone
+Group with leader: Link with id: 20087 has become failure prone
+Group with leader: Link with id: 8178 has become failure prone
+Group with leader: Link with id: 42592 has become failure prone
+Group with leader: Link with id: 37324 has become failure prone
+Group with leader: Link with id: 21556 has become failure prone
+Switch with id: [2,12,3] has become failure prone
+Group with leader: Link with id: 45379 has become failure prone
+Group with leader: Link with id: 53112 has become failure prone
+Group with leader: Link with id: 54055 has become failure prone
+Group with leader: Link with id: 51376 has become failure prone
+Switch with id: [0,-1,83] has become failure prone
+Switch with id: [2,2,9] has become failure prone
+Switch with id: [2,24,6] has become failure prone
+Group with leader: Link with id: 40858 has become failure prone
+Group with leader: Link with id: 38188 has become failure prone
+Group with leader: Link with id: 11215 has become failure prone
+Switch with id: [1,6,8] has become failure prone
+Switch with id: [1,21,8] has become failure prone
+Switch with id: [0,-1,164] has become failure prone
+Switch with id: [2,2,0] has become failure prone
+Switch with id: [2,12,0] has become failure prone
+Switch with id: [2,23,3] has become failure prone
+Group with leader: Link with id: 52541 has become failure prone
+Group with leader: Link with id: 51831 has become failure prone
+Group with leader: Link with id: 15491 has become failure prone
+Group with leader: Link with id: 52242 has become failure prone
+Group with leader: Link with id: 5049 has become failure prone
+Group with leader: Link with id: 44726 has become failure prone
+Group with leader: Link with id: 37363 has become failure prone
+Group with leader: Link with id: 54330 has become failure prone
+Group with leader: Link with id: 9464 has become failure prone
+Group with leader: Link with id: 42432 has become failure prone
+Group with leader: Link with id: 12015 has become failure prone
+Group with leader: Link with id: 50571 has become failure prone
+Group with leader: Link with id: 49199 has become failure prone
+Group with leader: Link with id: 48139 has become failure prone
+Switch with id: [2,36,2] has become failure prone
+Group with leader: Link with id: 13049 has become failure prone
+Group with leader: Link with id: 39259 has become failure prone
+Group with leader: Link with id: 43628 has become failure prone
+Group with leader: Link with id: 8515 has become failure prone
+Group with leader: Link with id: 24102 has become failure prone
+Group with leader: Link with id: 48896 has become failure prone
+Group with leader: Link with id: 41915 has become failure prone
+Group with leader: Link with id: 55128 has become failure prone
+Group with leader: Link with id: 41218 has become failure prone
+Group with leader: Link with id: 47673 has become failure prone
+Group with leader: Link with id: 41764 has become failure prone
+Group with leader: Link with id: 13586 has become failure prone
+Group with leader: Link with id: 36134 has become failure prone
+Switch with id: [2,39,9] has become failure prone
+Switch with id: [1,1,1] has become failure prone
+Group with leader: Link with id: 3520 has become failure prone
+Group with leader: Link with id: 4046 has become failure prone
+Group with leader: Link with id: 40892 has become failure prone
+Group with leader: Link with id: 16128 has become failure prone
+Switch with id: [2,5,3] has become failure prone
+Group with leader: Link with id: 53738 has become failure prone
+Group with leader: Link with id: 42309 has become failure prone
+Group with leader: Link with id: 52807 has become failure prone
+Group with leader: Link with id: 55567 has become failure prone
+Group with leader: Link with id: 40846 has become failure prone
+Group with leader: Link with id: 45624 has become failure prone
+Group with leader: Link with id: 52060 has become failure prone
+Group with leader: Link with id: 43878 has become failure prone
+Group with leader: Link with id: 45165 has become failure prone
+Group with leader: Link with id: 45852 has become failure prone
+Group with leader: Link with id: 50610 has become failure prone
+Group with leader: Link with id: 26039 has become failure prone
+Group with leader: Link with id: 48736 has become failure prone
+Group with leader: Link with id: 55515 has become failure prone
+Group with leader: Link with id: 46306 has become failure prone
+Group with leader: Link with id: 49736 has become failure prone
+Group with leader: Link with id: 49562 has become failure prone
+Group with leader: Link with id: 43776 has become failure prone
+Group with leader: Link with id: 44272 has become failure prone
+Group with leader: Link with id: 14500 has become failure prone
+Group with leader: Link with id: 45651 has become failure prone
+Group with leader: Link with id: 11188 has become failure prone
+Group with leader: Link with id: 50665 has become failure prone
+Group with leader: Link with id: 45159 has become failure prone
+Group with leader: Link with id: 47625 has become failure prone
+Group with leader: Link with id: 43909 has become failure prone
+Switch with id: [1,2,1] has become failure prone
+Group with leader: Link with id: 21297 has become failure prone
+Group with leader: Link with id: 43620 has become failure prone
+Group with leader: Link with id: 16156 has become failure prone
+Group with leader: Link with id: 42841 has become failure prone
+Group with leader: Link with id: 34351 has become failure prone
+Group with leader: Link with id: 52412 has become failure prone
+Group with leader: Link with id: 3031 has become failure prone
+Group with leader: Link with id: 51473 has become failure prone
+Group with leader: Link with id: 2547 has become failure prone
+Group with leader: Link with id: 49533 has become failure prone
+Group with leader: Link with id: 47660 has become failure prone
+Group with leader: Link with id: 38103 has become failure prone
+Group with leader: Link with id: 49282 has become failure prone
+Group with leader: Link with id: 40465 has become failure prone
+Group with leader: Link with id: 18456 has become failure prone
+Group with leader: Link with id: 18570 has become failure prone
+Group with leader: Link with id: 46174 has become failure prone
+Group with leader: Link with id: 24169 has become failure prone
+Group with leader: Link with id: 47680 has become failure prone
+Group with leader: Link with id: 34411 has become failure prone
+Switch with id: [1,16,1] has become failure prone
+Group with leader: Link with id: 55633 has become failure prone
+Group with leader: Link with id: 21472 has become failure prone
+Group with leader: Link with id: 9556 has become failure prone
+Group with leader: Link with id: 27455 has become failure prone
+Group with leader: Link with id: 55057 has become failure prone
+Group with leader: Link with id: 15231 has become failure prone
+Group with leader: Link with id: 15522 has become failure prone
+Switch with id: [0,-1,93] has become failure prone
+Group with leader: Link with id: 10156 has become failure prone
+Switch with id: [1,18,2] has become failure prone
+Group with leader: Link with id: 35407 has become failure prone
+Group with leader: Link with id: 48396 has become failure prone
+Group with leader: Link with id: 45403 has become failure prone
+Group with leader: Link with id: 39577 has become failure prone
+Group with leader: Link with id: 38508 has become failure prone
+Group with leader: Link with id: 3260 has become failure prone
+Group with leader: Link with id: 48804 has become failure prone
+Group with leader: Link with id: 43824 has become failure prone
+Group with leader: Link with id: 47324 has become failure prone
+Group with leader: Link with id: 50420 has become failure prone
+Switch with id: [1,11,9] has become failure prone
+Switch with id: [1,20,8] has become failure prone
+Group with leader: Link with id: 43885 has become failure prone
+Group with leader: Link with id: 8258 has become failure prone
+Group with leader: Link with id: 47390 has become failure prone
+Group with leader: Link with id: 40333 has become failure prone
+Group with leader: Link with id: 4011 has become failure prone
+Group with leader: Link with id: 41223 has become failure prone
+Group with leader: Link with id: 49807 has become failure prone
+Group with leader: Link with id: 45662 has become failure prone
+Group with leader: Link with id: 3553 has become failure prone
+Group with leader: Link with id: 44905 has become failure prone
+Group with leader: Link with id: 19280 has become failure prone
+Group with leader: Link with id: 9255 has become failure prone
+Group with leader: Link with id: 43713 has become failure prone
+Group with leader: Link with id: 41721 has become failure prone
+Group with leader: Link with id: 25320 has become failure prone
+Group with leader: Link with id: 35390 has become failure prone
+Group with leader: Link with id: 9444 has become failure prone
+Group with leader: Link with id: 28076 has become failure prone
+Group with leader: Link with id: 20313 has become failure prone
+Group with leader: Link with id: 9080 has become failure prone
+Group with leader: Link with id: 22287 has become failure prone
+Group with leader: Link with id: 45324 has become failure prone
+Group with leader: Link with id: 50433 has become failure prone
+Group with leader: Link with id: 44370 has become failure prone
+Group with leader: Link with id: 18437 has become failure prone
+Group with leader: Link with id: 47291 has become failure prone
+Group with leader: Link with id: 22159 has become failure prone
+Group with leader: Link with id: 41499 has become failure prone
+Switch with id: [1,36,3] has become failure prone
+Group with leader: Link with id: 30323 has become failure prone
+Group with leader: Link with id: 34307 has become failure prone
+Group with leader: Link with id: 18556 has become failure prone
+Group with leader: Link with id: 7218 has become failure prone
+Group with leader: Link with id: 41002 has become failure prone
+Group with leader: Link with id: 43890 has become failure prone
+Group with leader: Link with id: 19052 has become failure prone
+Group with leader: Link with id: 44760 has become failure prone
+Group with leader: Link with id: 35321 has become failure prone
+Switch with id: [1,27,4] has become failure prone
+Group with leader: Link with id: 13486 has become failure prone
+Group with leader: Link with id: 51794 has become failure prone
+Group with leader: Link with id: 22104 has become failure prone
+Switch with id: [2,24,4] has become failure prone
+Group with leader: Link with id: 45099 has become failure prone
+Group with leader: Link with id: 12524 has become failure prone
+Switch with id: [1,3,4] has become failure prone
+Group with leader: Link with id: 44577 has become failure prone
+Group with leader: Link with id: 51282 has become failure prone
+Group with leader: Link with id: 49007 has become failure prone
+Group with leader: Link with id: 21130 has become failure prone
+Group with leader: Link with id: 16535 has become failure prone
+Group with leader: Link with id: 31292 has become failure prone
+Group with leader: Link with id: 31340 has become failure prone
+Group with leader: Link with id: 53649 has become failure prone
+Group with leader: Link with id: 45939 has become failure prone
+Group with leader: Link with id: 1266 has become failure prone
+Group with leader: Link with id: 33182 has become failure prone
+Group with leader: Link with id: 18128 has become failure prone
+Group with leader: Link with id: 2312 has become failure prone
+Group with leader: Link with id: 52259 has become failure prone
+Group with leader: Link with id: 45822 has become failure prone
+Group with leader: Link with id: 46373 has become failure prone
+Group with leader: Link with id: 45756 has become failure prone
+Switch with id: [1,17,3] has become failure prone
+Group with leader: Link with id: 42146 has become failure prone
+Group with leader: Link with id: 22526 has become failure prone
+Group with leader: Link with id: 49245 has become failure prone
+Group with leader: Link with id: 49039 has become failure prone
+Group with leader: Link with id: 41352 has become failure prone
+Group with leader: Link with id: 21221 has become failure prone
+Group with leader: Link with id: 51355 has become failure prone
+Group with leader: Link with id: 21439 has become failure prone
+Group with leader: Link with id: 20087 has become failure prone
+Group with leader: Link with id: 8178 has become failure prone
+Group with leader: Link with id: 42592 has become failure prone
+Group with leader: Link with id: 37324 has become failure prone
+Group with leader: Link with id: 21556 has become failure prone
+Switch with id: [2,12,3] has become failure prone
+Group with leader: Link with id: 45379 has become failure prone
+Group with leader: Link with id: 53112 has become failure prone
+Group with leader: Link with id: 54055 has become failure prone
+Group with leader: Link with id: 51376 has become failure prone
+Switch with id: [0,-1,83] has become failure prone
+Switch with id: [2,2,9] has become failure prone
+Switch with id: [2,24,6] has become failure prone
+Group with leader: Link with id: 40858 has become failure prone
+Group with leader: Link with id: 38188 has become failure prone
+Group with leader: Link with id: 11215 has become failure prone
+Switch with id: [1,6,8] has become failure prone
+Switch with id: [1,21,8] has become failure prone
+Switch with id: [0,-1,164] has become failure prone
+Switch with id: [2,2,0] has become failure prone
+Switch with id: [2,12,0] has become failure prone
+Switch with id: [2,23,3] has become failure prone
+Group with leader: Link with id: 52541 has become failure prone
+Group with leader: Link with id: 51831 has become failure prone
+Group with leader: Link with id: 15491 has become failure prone
+Group with leader: Link with id: 52242 has become failure prone
+Group with leader: Link with id: 5049 has become failure prone
+Group with leader: Link with id: 44726 has become failure prone
+Group with leader: Link with id: 37363 has become failure prone
+Group with leader: Link with id: 54330 has become failure prone
+Group with leader: Link with id: 9464 has become failure prone
+Group with leader: Link with id: 42432 has become failure prone
+Group with leader: Link with id: 12015 has become failure prone
+Group with leader: Link with id: 50571 has become failure prone
+Group with leader: Link with id: 49199 has become failure prone
+Group with leader: Link with id: 48139 has become failure prone
+Group with leader: Link with id: 43885 has become failure prone
+Group with leader: Link with id: 8258 has become failure prone
+Group with leader: Link with id: 47390 has become failure prone
+Group with leader: Link with id: 40333 has become failure prone
+Group with leader: Link with id: 4011 has become failure prone
+Group with leader: Link with id: 41223 has become failure prone
+Group with leader: Link with id: 49807 has become failure prone
+Group with leader: Link with id: 45662 has become failure prone
+Group with leader: Link with id: 3553 has become failure prone
+Group with leader: Link with id: 44905 has become failure prone
+Group with leader: Link with id: 19280 has become failure prone
+Group with leader: Link with id: 9255 has become failure prone
+Group with leader: Link with id: 43713 has become failure prone
+Group with leader: Link with id: 41721 has become failure prone
+Group with leader: Link with id: 25320 has become failure prone
+Group with leader: Link with id: 35390 has become failure prone
+Group with leader: Link with id: 9444 has become failure prone
+Group with leader: Link with id: 28076 has become failure prone
+Group with leader: Link with id: 20313 has become failure prone
+Group with leader: Link with id: 9080 has become failure prone
+Group with leader: Link with id: 22287 has become failure prone
+Group with leader: Link with id: 45324 has become failure prone
+Group with leader: Link with id: 50433 has become failure prone
+Group with leader: Link with id: 44370 has become failure prone
+Group with leader: Link with id: 18437 has become failure prone
+Group with leader: Link with id: 47291 has become failure prone
+Group with leader: Link with id: 22159 has become failure prone
+Group with leader: Link with id: 41499 has become failure prone
+Switch with id: [1,36,3] has become failure prone
+Group with leader: Link with id: 30323 has become failure prone
+Group with leader: Link with id: 34307 has become failure prone
+Group with leader: Link with id: 18556 has become failure prone
+Group with leader: Link with id: 7218 has become failure prone
+Group with leader: Link with id: 41002 has become failure prone
+Group with leader: Link with id: 43890 has become failure prone
+Group with leader: Link with id: 19052 has become failure prone
+Group with leader: Link with id: 44760 has become failure prone
+Group with leader: Link with id: 35321 has become failure prone
+Switch with id: [1,27,4] has become failure prone
+Group with leader: Link with id: 13486 has become failure prone
+Group with leader: Link with id: 51794 has become failure prone
+Group with leader: Link with id: 22104 has become failure prone
+Switch with id: [2,24,4] has become failure prone
+Group with leader: Link with id: 45099 has become failure prone
+Group with leader: Link with id: 12524 has become failure prone
+Switch with id: [1,3,4] has become failure prone
+Group with leader: Link with id: 44577 has become failure prone
+Group with leader: Link with id: 51282 has become failure prone
+Group with leader: Link with id: 49007 has become failure prone
+Group with leader: Link with id: 21130 has become failure prone
+Group with leader: Link with id: 16535 has become failure prone
+Group with leader: Link with id: 31292 has become failure prone
+Group with leader: Link with id: 31340 has become failure prone
+Group with leader: Link with id: 53649 has become failure prone
+Group with leader: Link with id: 45939 has become failure prone
+Group with leader: Link with id: 1266 has become failure prone
+Group with leader: Link with id: 33182 has become failure prone
+Group with leader: Link with id: 18128 has become failure prone
+Group with leader: Link with id: 2312 has become failure prone
+Group with leader: Link with id: 52259 has become failure prone
+Group with leader: Link with id: 45822 has become failure prone
+Group with leader: Link with id: 46373 has become failure prone
+Group with leader: Link with id: 45756 has become failure prone
+Switch with id: [1,17,3] has become failure prone
+Group with leader: Link with id: 42146 has become failure prone
+Group with leader: Link with id: 22526 has become failure prone
+Group with leader: Link with id: 49245 has become failure prone
+Group with leader: Link with id: 49039 has become failure prone
+Group with leader: Link with id: 41352 has become failure prone
+Group with leader: Link with id: 21221 has become failure prone
+Group with leader: Link with id: 51355 has become failure prone
+Group with leader: Link with id: 21439 has become failure prone
+Group with leader: Link with id: 20087 has become failure prone
+Group with leader: Link with id: 8178 has become failure prone
+Group with leader: Link with id: 42592 has become failure prone
+Group with leader: Link with id: 37324 has become failure prone
+Group with leader: Link with id: 21556 has become failure prone
+Switch with id: [2,12,3] has become failure prone
+Group with leader: Link with id: 45379 has become failure prone
+Group with leader: Link with id: 53112 has become failure prone
+Group with leader: Link with id: 54055 has become failure prone
+Group with leader: Link with id: 51376 has become failure prone
+Switch with id: [0,-1,83] has become failure prone
+Switch with id: [2,2,9] has become failure prone
+Switch with id: [2,24,6] has become failure prone
+Group with leader: Link with id: 40858 has become failure prone
+Group with leader: Link with id: 38188 has become failure prone
+Group with leader: Link with id: 11215 has become failure prone
+Switch with id: [1,6,8] has become failure prone
+Switch with id: [1,21,8] has become failure prone
+Switch with id: [0,-1,164] has become failure prone
+Switch with id: [2,2,0] has become failure prone
+Switch with id: [2,12,0] has become failure prone
+Switch with id: [2,23,3] has become failure prone
+Group with leader: Link with id: 52541 has become failure prone
+Group with leader: Link with id: 51831 has become failure prone
+Group with leader: Link with id: 15491 has become failure prone
+Group with leader: Link with id: 52242 has become failure prone
+Group with leader: Link with id: 5049 has become failure prone
+Group with leader: Link with id: 44726 has become failure prone
+Group with leader: Link with id: 37363 has become failure prone
+Group with leader: Link with id: 54330 has become failure prone
+Group with leader: Link with id: 9464 has become failure prone
+Group with leader: Link with id: 42432 has become failure prone
+Group with leader: Link with id: 12015 has become failure prone
+Group with leader: Link with id: 50571 has become failure prone
+Group with leader: Link with id: 49199 has become failure prone
+Group with leader: Link with id: 48139 has become failure prone
+Switch with id: [2,36,2] has become failure prone
+Group with leader: Link with id: 13049 has become failure prone
+Group with leader: Link with id: 39259 has become failure prone
+Group with leader: Link with id: 43628 has become failure prone
+Group with leader: Link with id: 8515 has become failure prone
+Group with leader: Link with id: 24102 has become failure prone
+Group with leader: Link with id: 48896 has become failure prone
+Group with leader: Link with id: 41915 has become failure prone
+Group with leader: Link with id: 55128 has become failure prone
+Group with leader: Link with id: 41218 has become failure prone
+Group with leader: Link with id: 47673 has become failure prone
+Group with leader: Link with id: 41764 has become failure prone
+Group with leader: Link with id: 13586 has become failure prone
+Group with leader: Link with id: 36134 has become failure prone
+Switch with id: [2,39,9] has become failure prone
+Switch with id: [1,1,1] has become failure prone
+Group with leader: Link with id: 3520 has become failure prone
+Group with leader: Link with id: 4046 has become failure prone
+Group with leader: Link with id: 40892 has become failure prone
+Group with leader: Link with id: 16128 has become failure prone
+Switch with id: [2,5,3] has become failure prone
+Group with leader: Link with id: 53738 has become failure prone
+Group with leader: Link with id: 42309 has become failure prone
+Group with leader: Link with id: 52807 has become failure prone
+Group with leader: Link with id: 55567 has become failure prone
+Group with leader: Link with id: 40846 has become failure prone
+Group with leader: Link with id: 45624 has become failure prone
+Group with leader: Link with id: 52060 has become failure prone
+Group with leader: Link with id: 43878 has become failure prone
+Group with leader: Link with id: 45165 has become failure prone
+Group with leader: Link with id: 45852 has become failure prone
+Group with leader: Link with id: 50610 has become failure prone
+Group with leader: Link with id: 26039 has become failure prone
+Group with leader: Link with id: 48736 has become failure prone
+Group with leader: Link with id: 55515 has become failure prone
+Group with leader: Link with id: 46306 has become failure prone
+Group with leader: Link with id: 49736 has become failure prone
+Group with leader: Link with id: 49562 has become failure prone
+Group with leader: Link with id: 43776 has become failure prone
+Group with leader: Link with id: 44272 has become failure prone
+Group with leader: Link with id: 14500 has become failure prone
+Group with leader: Link with id: 45651 has become failure prone
+Group with leader: Link with id: 11188 has become failure prone
+Group with leader: Link with id: 50665 has become failure prone
+Group with leader: Link with id: 45159 has become failure prone
+Group with leader: Link with id: 47625 has become failure prone
+Group with leader: Link with id: 43909 has become failure prone
+Switch with id: [1,2,1] has become failure prone
+Group with leader: Link with id: 21297 has become failure prone
+Group with leader: Link with id: 43620 has become failure prone
+Group with leader: Link with id: 16156 has become failure prone
+Group with leader: Link with id: 42841 has become failure prone
+Group with leader: Link with id: 34351 has become failure prone
+Group with leader: Link with id: 52412 has become failure prone
+Group with leader: Link with id: 3031 has become failure prone
+Group with leader: Link with id: 51473 has become failure prone
+Group with leader: Link with id: 2547 has become failure prone
+Group with leader: Link with id: 49533 has become failure prone
+Group with leader: Link with id: 47660 has become failure prone
+Group with leader: Link with id: 38103 has become failure prone
+Group with leader: Link with id: 49282 has become failure prone
+Group with leader: Link with id: 40465 has become failure prone
+Group with leader: Link with id: 18456 has become failure prone
+Group with leader: Link with id: 18570 has become failure prone
+Group with leader: Link with id: 46174 has become failure prone
+Group with leader: Link with id: 24169 has become failure prone
+Group with leader: Link with id: 47680 has become failure prone
+Group with leader: Link with id: 34411 has become failure prone
+Switch with id: [1,16,1] has become failure prone
+Group with leader: Link with id: 55633 has become failure prone
+Group with leader: Link with id: 21472 has become failure prone
+Group with leader: Link with id: 9556 has become failure prone
+Group with leader: Link with id: 27455 has become failure prone
+Group with leader: Link with id: 55057 has become failure prone
+Group with leader: Link with id: 15231 has become failure prone
+Group with leader: Link with id: 15522 has become failure prone
+Switch with id: [0,-1,93] has become failure prone
+Group with leader: Link with id: 10156 has become failure prone
+Switch with id: [1,18,2] has become failure prone
+Group with leader: Link with id: 35407 has become failure prone
+Group with leader: Link with id: 48396 has become failure prone
+Group with leader: Link with id: 45403 has become failure prone
+Group with leader: Link with id: 39577 has become failure prone
+Group with leader: Link with id: 38508 has become failure prone
+Group with leader: Link with id: 3260 has become failure prone
+Group with leader: Link with id: 48804 has become failure prone
+Group with leader: Link with id: 43824 has become failure prone
+Group with leader: Link with id: 47324 has become failure prone
+Group with leader: Link with id: 50420 has become failure prone
+Switch with id: [1,11,9] has become failure prone
+Switch with id: [1,20,8] has become failure prone
+Group with leader: Link with id: 52578 has become failure prone
+Group with leader: Link with id: 39028 has become failure prone
+Group with leader: Link with id: 55739 has become failure prone
+Group with leader: Link with id: 31351 has become failure prone
+Switch with id: [1,24,0] has become failure prone
+Switch with id: [1,4,5] has become failure prone
+Switch with id: [1,32,8] has become failure prone
+Switch with id: [2,16,8] has become failure prone
+Switch with id: [2,22,3] has become failure prone
+Group with leader: Link with id: 36448 has become failure prone
+Group with leader: Link with id: 8471 has become failure prone
+Group with leader: Link with id: 40584 has become failure prone
+Group with leader: Link with id: 19334 has become failure prone
+Group with leader: Link with id: 49475 has become failure prone
+Group with leader: Link with id: 49622 has become failure prone
+Group with leader: Link with id: 53120 has become failure prone
+Group with leader: Link with id: 47821 has become failure prone
+Group with leader: Link with id: 37474 has become failure prone
+Switch with id: [1,23,1] has become failure prone
+Group with leader: Link with id: 53538 has become failure prone
+Group with leader: Link with id: 14063 has become failure prone
+Switch with id: [1,36,0] has become failure prone
+Group with leader: Link with id: 35234 has become failure prone
+Group with leader: Link with id: 33225 has become failure prone
+Group with leader: Link with id: 50509 has become failure prone
+Group with leader: Link with id: 1113 has become failure prone
+Group with leader: Link with id: 2464 has become failure prone
+Group with leader: Link with id: 40913 has become failure prone
+Group with leader: Link with id: 3476 has become failure prone
+Group with leader: Link with id: 55212 has become failure prone
+Group with leader: Link with id: 53977 has become failure prone
+Group with leader: Link with id: 32461 has become failure prone
+Group with leader: Link with id: 45110 has become failure prone
+Group with leader: Link with id: 54983 has become failure prone
+Group with leader: Link with id: 53575 has become failure prone
+Group with leader: Link with id: 40449 has become failure prone
+Group with leader: Link with id: 49684 has become failure prone
+Group with leader: Link with id: 47039 has become failure prone
+Group with leader: Link with id: 38041 has become failure prone
+Group with leader: Link with id: 45486 has become failure prone
+Group with leader: Link with id: 26413 has become failure prone
+Group with leader: Link with id: 51082 has become failure prone
+Group with leader: Link with id: 11095 has become failure prone
+Group with leader: Link with id: 19412 has become failure prone
+Group with leader: Link with id: 52737 has become failure prone
+Group with leader: Link with id: 409 has become failure prone
+Group with leader: Link with id: 48815 has become failure prone
+Group with leader: Link with id: 13442 has become failure prone
+Group with leader: Link with id: 48341 has become failure prone
+Group with leader: Link with id: 4387 has become failure prone
+Group with leader: Link with id: 45082 has become failure prone
+Group with leader: Link with id: 53299 has become failure prone
+Group with leader: Link with id: 40351 has become failure prone
+Group with leader: Link with id: 21413 has become failure prone
+Group with leader: Link with id: 51897 has become failure prone
+Group with leader: Link with id: 43421 has become failure prone
+Group with leader: Link with id: 27170 has become failure prone
+Group with leader: Link with id: 46532 has become failure prone
+Group with leader: Link with id: 16458 has become failure prone
+Group with leader: Link with id: 12435 has become failure prone
+Group with leader: Link with id: 52994 has become failure prone
+Group with leader: Link with id: 31047 has become failure prone
+Group with leader: Link with id: 52331 has become failure prone
+Group with leader: Link with id: 44352 has become failure prone
+Group with leader: Link with id: 18358 has become failure prone
+Group with leader: Link with id: 44118 has become failure prone
+Group with leader: Link with id: 41146 has become failure prone
+Group with leader: Link with id: 51394 has become failure prone
+Group with leader: Link with id: 17142 has become failure prone
+Group with leader: Link with id: 48768 has become failure prone
+Group with leader: Link with id: 53598 has become failure prone
+Group with leader: Link with id: 4206 has become failure prone
+Group with leader: Link with id: 49109 has become failure prone
+Group with leader: Link with id: 34544 has become failure prone
+Group with leader: Link with id: 48115 has become failure prone
+Group with leader: Link with id: 39285 has become failure prone
+Group with leader: Link with id: 34070 has become failure prone
+Group with leader: Link with id: 50047 has become failure prone
+Group with leader: Link with id: 46147 has become failure prone
+Group with leader: Link with id: 24064 has become failure prone
+Group with leader: Link with id: 43626 has become failure prone
+Group with leader: Link with id: 49318 has become failure prone
+Group with leader: Link with id: 43949 has become failure prone
+Group with leader: Link with id: 27286 has become failure prone
+Group with leader: Link with id: 30522 has become failure prone
+Group with leader: Link with id: 55187 has become failure prone
+Group with leader: Link with id: 46733 has become failure prone
+Group with leader: Link with id: 54076 has become failure prone
+Group with leader: Link with id: 5151 has become failure prone
+Group with leader: Link with id: 21337 has become failure prone
+Group with leader: Link with id: 35388 has become failure prone
+Switch with id: [1,13,8] has become failure prone
+Group with leader: Link with id: 28513 has become failure prone
+Group with leader: Link with id: 11033 has become failure prone
+Group with leader: Link with id: 50281 has become failure prone
+Group with leader: Link with id: 28181 has become failure prone
+Group with leader: Link with id: 10309 has become failure prone
+Switch with id: [2,26,9] has become failure prone
+Switch with id: [1,1,5] has become failure prone
+Switch with id: [1,28,1] has become failure prone
+Switch with id: [1,23,7] has become failure prone
+Group with leader: Link with id: 36459 has become failure prone
+Group with leader: Link with id: 9150 has become failure prone
+Group with leader: Link with id: 40922 has become failure prone
+Group with leader: Link with id: 24299 has become failure prone
+Group with leader: Link with id: 33345 has become failure prone
+Group with leader: Link with id: 25449 has become failure prone
+Switch with id: [1,8,5] has become failure prone
+Group with leader: Link with id: 11248 has become failure prone
+Group with leader: Link with id: 43200 has become failure prone
+Group with leader: Link with id: 42769 has become failure prone
+Group with leader: Link with id: 35155 has become failure prone
+Switch with id: [2,16,5] has become failure prone
+Group with leader: Link with id: 45019 has become failure prone
+Group with leader: Link with id: 31493 has become failure prone
+Group with leader: Link with id: 40796 has become failure prone
+Group with leader: Link with id: 29591 has become failure prone
+Group with leader: Link with id: 55288 has become failure prone
+Group with leader: Link with id: 17555 has become failure prone
+Group with leader: Link with id: 11029 has become failure prone
+Group with leader: Link with id: 40415 has become failure prone
+Group with leader: Link with id: 9241 has become failure prone
+Group with leader: Link with id: 53385 has become failure prone
+Group with leader: Link with id: 18159 has become failure prone
+Group with leader: Link with id: 37368 has become failure prone
+Group with leader: Link with id: 45050 has become failure prone
+Group with leader: Link with id: 55842 has become failure prone
+Group with leader: Link with id: 41346 has become failure prone
+Group with leader: Link with id: 54400 has become failure prone
+Group with leader: Link with id: 16517 has become failure prone
+Group with leader: Link with id: 33120 has become failure prone
+Group with leader: Link with id: 46214 has become failure prone
+Group with leader: Link with id: 27165 has become failure prone
+Group with leader: Link with id: 1098 has become failure prone
+Group with leader: Link with id: 7011 has become failure prone
+Group with leader: Link with id: 18381 has become failure prone
+Switch with id: [1,24,3] has become failure prone
+Group with leader: Link with id: 52587 has become failure prone
+Group with leader: Link with id: 43541 has become failure prone
+Switch with id: [1,17,9] has become failure prone
+Group with leader: Link with id: 38093 has become failure prone
+Group with leader: Link with id: 45875 has become failure prone
+Group with leader: Link with id: 40561 has become failure prone
+Group with leader: Link with id: 44169 has become failure prone
+Group with leader: Link with id: 53765 has become failure prone
+Switch with id: [1,38,9] has become failure prone
+Switch with id: [2,15,7] has become failure prone
+Group with leader: Link with id: 456 has become failure prone
+Group with leader: Link with id: 43710 has become failure prone
+Group with leader: Link with id: 3532 has become failure prone
+Group with leader: Link with id: 46168 has become failure prone
+Group with leader: Link with id: 53383 has become failure prone
+Group with leader: Link with id: 41934 has become failure prone
+Group with leader: Link with id: 9249 has become failure prone
+Group with leader: Link with id: 28460 has become failure prone
+Group with leader: Link with id: 1385 has become failure prone
+Group with leader: Link with id: 6192 has become failure prone
+Group with leader: Link with id: 44633 has become failure prone
+Group with leader: Link with id: 41636 has become failure prone
+Group with leader: Link with id: 37020 has become failure prone
+Group with leader: Link with id: 13121 has become failure prone
+Group with leader: Link with id: 42828 has become failure prone
+Group with leader: Link with id: 21445 has become failure prone
+Group with leader: Link with id: 5513 has become failure prone
+Switch with id: [1,29,3] has become failure prone
+Group with leader: Link with id: 50243 has become failure prone
+Group with leader: Link with id: 44402 has become failure prone
+Group with leader: Link with id: 15370 has become failure prone
+Switch with id: [1,12,1] has become failure prone
+Switch with id: [1,8,7] has become failure prone
+Group with leader: Link with id: 41649 has become failure prone
+Group with leader: Link with id: 14564 has become failure prone
+Switch with id: [0,-1,271] has become failure prone
+Group with leader: Link with id: 53646 has become failure prone
+Switch with id: [1,5,2] has become failure prone
+Switch with id: [2,39,0] has become failure prone
+Group with leader: Link with id: 50015 has become failure prone
+Group with leader: Link with id: 43885 has become failure prone
+Group with leader: Link with id: 8258 has become failure prone
+Group with leader: Link with id: 47390 has become failure prone
+Group with leader: Link with id: 40333 has become failure prone
+Group with leader: Link with id: 4011 has become failure prone
+Group with leader: Link with id: 41223 has become failure prone
+Group with leader: Link with id: 49807 has become failure prone
+Group with leader: Link with id: 45662 has become failure prone
+Group with leader: Link with id: 3553 has become failure prone
+Group with leader: Link with id: 44905 has become failure prone
+Group with leader: Link with id: 19280 has become failure prone
+Group with leader: Link with id: 9255 has become failure prone
+Group with leader: Link with id: 43713 has become failure prone
+Group with leader: Link with id: 41721 has become failure prone
+Group with leader: Link with id: 25320 has become failure prone
+Group with leader: Link with id: 35390 has become failure prone
+Group with leader: Link with id: 9444 has become failure prone
+Group with leader: Link with id: 28076 has become failure prone
+Group with leader: Link with id: 20313 has become failure prone
+Group with leader: Link with id: 9080 has become failure prone
+Group with leader: Link with id: 22287 has become failure prone
+Group with leader: Link with id: 45324 has become failure prone
+Group with leader: Link with id: 50433 has become failure prone
+Group with leader: Link with id: 44370 has become failure prone
+Group with leader: Link with id: 18437 has become failure prone
+Group with leader: Link with id: 47291 has become failure prone
+Group with leader: Link with id: 22159 has become failure prone
+Group with leader: Link with id: 41499 has become failure prone
+Switch with id: [1,36,3] has become failure prone
+Group with leader: Link with id: 30323 has become failure prone
+Group with leader: Link with id: 34307 has become failure prone
+Group with leader: Link with id: 18556 has become failure prone
+Group with leader: Link with id: 7218 has become failure prone
+Group with leader: Link with id: 41002 has become failure prone
+Group with leader: Link with id: 43890 has become failure prone
+Group with leader: Link with id: 19052 has become failure prone
+Group with leader: Link with id: 44760 has become failure prone
+Group with leader: Link with id: 35321 has become failure prone
+Switch with id: [1,27,4] has become failure prone
+Group with leader: Link with id: 13486 has become failure prone
+Group with leader: Link with id: 51794 has become failure prone
+Group with leader: Link with id: 22104 has become failure prone
+Switch with id: [2,24,4] has become failure prone
+Group with leader: Link with id: 45099 has become failure prone
+Group with leader: Link with id: 12524 has become failure prone
+Switch with id: [1,3,4] has become failure prone
+Group with leader: Link with id: 44577 has become failure prone
+Group with leader: Link with id: 51282 has become failure prone
+Group with leader: Link with id: 49007 has become failure prone
+Group with leader: Link with id: 21130 has become failure prone
+Group with leader: Link with id: 16535 has become failure prone
+Group with leader: Link with id: 31292 has become failure prone
+Group with leader: Link with id: 31340 has become failure prone
+Group with leader: Link with id: 53649 has become failure prone
+Group with leader: Link with id: 45939 has become failure prone
+Group with leader: Link with id: 1266 has become failure prone
+Group with leader: Link with id: 33182 has become failure prone
+Group with leader: Link with id: 18128 has become failure prone
+Group with leader: Link with id: 2312 has become failure prone
+Group with leader: Link with id: 52259 has become failure prone
+Group with leader: Link with id: 45822 has become failure prone
+Group with leader: Link with id: 46373 has become failure prone
+Group with leader: Link with id: 45756 has become failure prone
+Switch with id: [1,17,3] has become failure prone
+Group with leader: Link with id: 42146 has become failure prone
+Group with leader: Link with id: 22526 has become failure prone
+Group with leader: Link with id: 49245 has become failure prone
+Group with leader: Link with id: 49039 has become failure prone
+Group with leader: Link with id: 41352 has become failure prone
+Group with leader: Link with id: 21221 has become failure prone
+Group with leader: Link with id: 51355 has become failure prone
+Group with leader: Link with id: 21439 has become failure prone
+Group with leader: Link with id: 20087 has become failure prone
+Group with leader: Link with id: 8178 has become failure prone
+Group with leader: Link with id: 42592 has become failure prone
+Group with leader: Link with id: 37324 has become failure prone
+Group with leader: Link with id: 21556 has become failure prone
+Switch with id: [2,12,3] has become failure prone
+Group with leader: Link with id: 45379 has become failure prone
+Group with leader: Link with id: 53112 has become failure prone
+Group with leader: Link with id: 54055 has become failure prone
+Group with leader: Link with id: 51376 has become failure prone
+Switch with id: [0,-1,83] has become failure prone
+Switch with id: [2,2,9] has become failure prone
+Switch with id: [2,24,6] has become failure prone
+Group with leader: Link with id: 40858 has become failure prone
+Group with leader: Link with id: 38188 has become failure prone
+Group with leader: Link with id: 11215 has become failure prone
+Switch with id: [1,6,8] has become failure prone
+Switch with id: [1,21,8] has become failure prone
+Switch with id: [0,-1,164] has become failure prone
+Switch with id: [2,2,0] has become failure prone
+Switch with id: [2,12,0] has become failure prone
+Switch with id: [2,23,3] has become failure prone
+Group with leader: Link with id: 52541 has become failure prone
+Group with leader: Link with id: 51831 has become failure prone
+Group with leader: Link with id: 15491 has become failure prone
+Group with leader: Link with id: 52242 has become failure prone
+Group with leader: Link with id: 5049 has become failure prone
+Group with leader: Link with id: 44726 has become failure prone
+Group with leader: Link with id: 37363 has become failure prone
+Group with leader: Link with id: 54330 has become failure prone
+Group with leader: Link with id: 9464 has become failure prone
+Group with leader: Link with id: 42432 has become failure prone
+Group with leader: Link with id: 12015 has become failure prone
+Group with leader: Link with id: 50571 has become failure prone
+Group with leader: Link with id: 49199 has become failure prone
+Group with leader: Link with id: 48139 has become failure prone
+Switch with id: [2,36,2] has become failure prone
+Group with leader: Link with id: 13049 has become failure prone
+Group with leader: Link with id: 39259 has become failure prone
+Group with leader: Link with id: 43628 has become failure prone
+Group with leader: Link with id: 8515 has become failure prone
+Group with leader: Link with id: 24102 has become failure prone
+Group with leader: Link with id: 48896 has become failure prone
+Group with leader: Link with id: 41915 has become failure prone
+Group with leader: Link with id: 55128 has become failure prone
+Group with leader: Link with id: 41218 has become failure prone
+Group with leader: Link with id: 47673 has become failure prone
+Group with leader: Link with id: 41764 has become failure prone
+Group with leader: Link with id: 13586 has become failure prone
+Group with leader: Link with id: 36134 has become failure prone
+Switch with id: [2,39,9] has become failure prone
+Switch with id: [1,1,1] has become failure prone
+Group with leader: Link with id: 3520 has become failure prone
+Group with leader: Link with id: 4046 has become failure prone
+Group with leader: Link with id: 40892 has become failure prone
+Group with leader: Link with id: 16128 has become failure prone
+Switch with id: [2,5,3] has become failure prone
+Group with leader: Link with id: 53738 has become failure prone
+Group with leader: Link with id: 42309 has become failure prone
+Group with leader: Link with id: 52807 has become failure prone
+Group with leader: Link with id: 55567 has become failure prone
+Group with leader: Link with id: 40846 has become failure prone
+Group with leader: Link with id: 45624 has become failure prone
+Group with leader: Link with id: 52060 has become failure prone
+Group with leader: Link with id: 43878 has become failure prone
+Group with leader: Link with id: 45165 has become failure prone
+Group with leader: Link with id: 45852 has become failure prone
+Group with leader: Link with id: 50610 has become failure prone
+Group with leader: Link with id: 26039 has become failure prone
+Group with leader: Link with id: 48736 has become failure prone
+Group with leader: Link with id: 55515 has become failure prone
+Group with leader: Link with id: 46306 has become failure prone
+Group with leader: Link with id: 49736 has become failure prone
+Group with leader: Link with id: 49562 has become failure prone
+Group with leader: Link with id: 43776 has become failure prone
+Group with leader: Link with id: 44272 has become failure prone
+Group with leader: Link with id: 14500 has become failure prone
+Group with leader: Link with id: 45651 has become failure prone
+Group with leader: Link with id: 11188 has become failure prone
+Group with leader: Link with id: 50665 has become failure prone
+Group with leader: Link with id: 45159 has become failure prone
+Group with leader: Link with id: 47625 has become failure prone
+Group with leader: Link with id: 43909 has become failure prone
+Switch with id: [1,2,1] has become failure prone
+Group with leader: Link with id: 21297 has become failure prone
+Group with leader: Link with id: 43620 has become failure prone
+Group with leader: Link with id: 16156 has become failure prone
+Group with leader: Link with id: 42841 has become failure prone
+Group with leader: Link with id: 34351 has become failure prone
+Group with leader: Link with id: 52412 has become failure prone
+Group with leader: Link with id: 3031 has become failure prone
+Group with leader: Link with id: 51473 has become failure prone
+Group with leader: Link with id: 2547 has become failure prone
+Group with leader: Link with id: 49533 has become failure prone
+Group with leader: Link with id: 47660 has become failure prone
+Group with leader: Link with id: 38103 has become failure prone
+Group with leader: Link with id: 49282 has become failure prone
+Group with leader: Link with id: 40465 has become failure prone
+Group with leader: Link with id: 18456 has become failure prone
+Group with leader: Link with id: 18570 has become failure prone
+Group with leader: Link with id: 46174 has become failure prone
+Group with leader: Link with id: 24169 has become failure prone
+Group with leader: Link with id: 47680 has become failure prone
+Group with leader: Link with id: 34411 has become failure prone
+Switch with id: [1,16,1] has become failure prone
+Group with leader: Link with id: 55633 has become failure prone
+Group with leader: Link with id: 21472 has become failure prone
+Group with leader: Link with id: 9556 has become failure prone
+Group with leader: Link with id: 27455 has become failure prone
+Group with leader: Link with id: 55057 has become failure prone
+Group with leader: Link with id: 15231 has become failure prone
+Group with leader: Link with id: 15522 has become failure prone
+Switch with id: [0,-1,93] has become failure prone
+Group with leader: Link with id: 10156 has become failure prone
+Switch with id: [1,18,2] has become failure prone
+Group with leader: Link with id: 35407 has become failure prone
+Group with leader: Link with id: 48396 has become failure prone
+Group with leader: Link with id: 45403 has become failure prone
+Group with leader: Link with id: 39577 has become failure prone
+Group with leader: Link with id: 38508 has become failure prone
+Group with leader: Link with id: 3260 has become failure prone
+Group with leader: Link with id: 48804 has become failure prone
+Group with leader: Link with id: 43824 has become failure prone
+Group with leader: Link with id: 47324 has become failure prone
+Group with leader: Link with id: 50420 has become failure prone
+Switch with id: [1,11,9] has become failure prone
+Switch with id: [1,20,8] has become failure prone
+Group with leader: Link with id: 52578 has become failure prone
+Group with leader: Link with id: 39028 has become failure prone
+Group with leader: Link with id: 55739 has become failure prone
+Group with leader: Link with id: 31351 has become failure prone
+Switch with id: [1,24,0] has become failure prone
+Switch with id: [1,4,5] has become failure prone
+Switch with id: [1,32,8] has become failure prone
+Switch with id: [2,16,8] has become failure prone
+Switch with id: [2,22,3] has become failure prone
+Group with leader: Link with id: 36448 has become failure prone
+Group with leader: Link with id: 8471 has become failure prone
+Group with leader: Link with id: 40584 has become failure prone
+Group with leader: Link with id: 19334 has become failure prone
+Group with leader: Link with id: 49475 has become failure prone
+Group with leader: Link with id: 49622 has become failure prone
+Group with leader: Link with id: 53120 has become failure prone
+Group with leader: Link with id: 47821 has become failure prone
+Group with leader: Link with id: 37474 has become failure prone
+Switch with id: [1,23,1] has become failure prone
+Group with leader: Link with id: 53538 has become failure prone
+Group with leader: Link with id: 14063 has become failure prone
+Switch with id: [1,36,0] has become failure prone
+Group with leader: Link with id: 35234 has become failure prone
+Group with leader: Link with id: 33225 has become failure prone
+Group with leader: Link with id: 50509 has become failure prone
+Group with leader: Link with id: 1113 has become failure prone
+Group with leader: Link with id: 2464 has become failure prone
+Group with leader: Link with id: 40913 has become failure prone
+Group with leader: Link with id: 3476 has become failure prone
+Group with leader: Link with id: 55212 has become failure prone
+Group with leader: Link with id: 53977 has become failure prone
+Group with leader: Link with id: 32461 has become failure prone
+Group with leader: Link with id: 45110 has become failure prone
+Group with leader: Link with id: 54983 has become failure prone
+Group with leader: Link with id: 53575 has become failure prone
+Group with leader: Link with id: 40449 has become failure prone
+Group with leader: Link with id: 49684 has become failure prone
+Group with leader: Link with id: 47039 has become failure prone
+Group with leader: Link with id: 38041 has become failure prone
+Group with leader: Link with id: 45486 has become failure prone
+Group with leader: Link with id: 26413 has become failure prone
+Group with leader: Link with id: 51082 has become failure prone
+Group with leader: Link with id: 11095 has become failure prone
+Group with leader: Link with id: 19412 has become failure prone
+Group with leader: Link with id: 52737 has become failure prone
+Group with leader: Link with id: 409 has become failure prone
+Group with leader: Link with id: 48815 has become failure prone
+Group with leader: Link with id: 13442 has become failure prone
+Group with leader: Link with id: 48341 has become failure prone
+Group with leader: Link with id: 4387 has become failure prone
+Group with leader: Link with id: 45082 has become failure prone
+Group with leader: Link with id: 53299 has become failure prone
+Group with leader: Link with id: 40351 has become failure prone
+Group with leader: Link with id: 21413 has become failure prone
+Group with leader: Link with id: 51897 has become failure prone
+Group with leader: Link with id: 43421 has become failure prone
+Group with leader: Link with id: 27170 has become failure prone
+Group with leader: Link with id: 46532 has become failure prone
+Group with leader: Link with id: 16458 has become failure prone
+Group with leader: Link with id: 12435 has become failure prone
+Group with leader: Link with id: 52994 has become failure prone
+Group with leader: Link with id: 31047 has become failure prone
+Group with leader: Link with id: 52331 has become failure prone
+Group with leader: Link with id: 44352 has become failure prone
+Group with leader: Link with id: 18358 has become failure prone
+Group with leader: Link with id: 44118 has become failure prone
+Group with leader: Link with id: 41146 has become failure prone
+Group with leader: Link with id: 51394 has become failure prone
+Group with leader: Link with id: 17142 has become failure prone
+Group with leader: Link with id: 48768 has become failure prone
+Group with leader: Link with id: 53598 has become failure prone
+Group with leader: Link with id: 4206 has become failure prone
+Group with leader: Link with id: 49109 has become failure prone
+Group with leader: Link with id: 34544 has become failure prone
+Group with leader: Link with id: 48115 has become failure prone
+Group with leader: Link with id: 39285 has become failure prone
+Group with leader: Link with id: 34070 has become failure prone
+Group with leader: Link with id: 50047 has become failure prone
+Group with leader: Link with id: 46147 has become failure prone
+Group with leader: Link with id: 24064 has become failure prone
+Group with leader: Link with id: 43626 has become failure prone
+Group with leader: Link with id: 49318 has become failure prone
+Group with leader: Link with id: 43949 has become failure prone
+Group with leader: Link with id: 27286 has become failure prone
+Group with leader: Link with id: 30522 has become failure prone
+Group with leader: Link with id: 55187 has become failure prone
+Group with leader: Link with id: 46733 has become failure prone
+Group with leader: Link with id: 54076 has become failure prone
+Group with leader: Link with id: 5151 has become failure prone
+Group with leader: Link with id: 21337 has become failure prone
+Group with leader: Link with id: 35388 has become failure prone
+Switch with id: [1,13,8] has become failure prone
+Group with leader: Link with id: 28513 has become failure prone
+Group with leader: Link with id: 11033 has become failure prone
+Group with leader: Link with id: 50281 has become failure prone
+Group with leader: Link with id: 28181 has become failure prone
+Group with leader: Link with id: 10309 has become failure prone
+Switch with id: [2,26,9] has become failure prone
+Switch with id: [1,1,5] has become failure prone
+Switch with id: [1,28,1] has become failure prone
+Switch with id: [1,23,7] has become failure prone
+Group with leader: Link with id: 36459 has become failure prone
+Group with leader: Link with id: 9150 has become failure prone
+Group with leader: Link with id: 40922 has become failure prone
+Group with leader: Link with id: 24299 has become failure prone
+Group with leader: Link with id: 33345 has become failure prone
+Group with leader: Link with id: 25449 has become failure prone
+Switch with id: [1,8,5] has become failure prone
+Group with leader: Link with id: 11248 has become failure prone
+Group with leader: Link with id: 43200 has become failure prone
+Group with leader: Link with id: 42769 has become failure prone
+Group with leader: Link with id: 35155 has become failure prone
+Switch with id: [2,16,5] has become failure prone
+Group with leader: Link with id: 45019 has become failure prone
+Group with leader: Link with id: 31493 has become failure prone
+Group with leader: Link with id: 40796 has become failure prone
+Group with leader: Link with id: 29591 has become failure prone
+Group with leader: Link with id: 55288 has become failure prone
+Group with leader: Link with id: 17555 has become failure prone
+Group with leader: Link with id: 11029 has become failure prone
+Group with leader: Link with id: 40415 has become failure prone
+Group with leader: Link with id: 9241 has become failure prone
+Group with leader: Link with id: 53385 has become failure prone
+Group with leader: Link with id: 18159 has become failure prone
+Group with leader: Link with id: 37368 has become failure prone
+Group with leader: Link with id: 45050 has become failure prone
+Group with leader: Link with id: 55842 has become failure prone
+Group with leader: Link with id: 41346 has become failure prone
+Group with leader: Link with id: 54400 has become failure prone
+Group with leader: Link with id: 16517 has become failure prone
+Group with leader: Link with id: 33120 has become failure prone
+Group with leader: Link with id: 46214 has become failure prone
+Group with leader: Link with id: 27165 has become failure prone
+Group with leader: Link with id: 1098 has become failure prone
+Group with leader: Link with id: 7011 has become failure prone
+Group with leader: Link with id: 18381 has become failure prone
+Switch with id: [1,24,3] has become failure prone
+Group with leader: Link with id: 52587 has become failure prone
+Group with leader: Link with id: 43541 has become failure prone
+Switch with id: [1,17,9] has become failure prone
+Group with leader: Link with id: 38093 has become failure prone
+Group with leader: Link with id: 45875 has become failure prone
+Group with leader: Link with id: 40561 has become failure prone
+Group with leader: Link with id: 44169 has become failure prone
+Group with leader: Link with id: 53765 has become failure prone
+Switch with id: [1,38,9] has become failure prone
+Switch with id: [2,15,7] has become failure prone
+Group with leader: Link with id: 456 has become failure prone
+Group with leader: Link with id: 43710 has become failure prone
+Group with leader: Link with id: 3532 has become failure prone
+Group with leader: Link with id: 46168 has become failure prone
+Group with leader: Link with id: 53383 has become failure prone
+Group with leader: Link with id: 41934 has become failure prone
+Group with leader: Link with id: 9249 has become failure prone
+Group with leader: Link with id: 28460 has become failure prone
+Group with leader: Link with id: 1385 has become failure prone
+Group with leader: Link with id: 6192 has become failure prone
+Group with leader: Link with id: 44633 has become failure prone
+Group with leader: Link with id: 41636 has become failure prone
+Group with leader: Link with id: 37020 has become failure prone
+Group with leader: Link with id: 13121 has become failure prone
+Group with leader: Link with id: 42828 has become failure prone
+Group with leader: Link with id: 21445 has become failure prone
+Group with leader: Link with id: 5513 has become failure prone
+Switch with id: [1,29,3] has become failure prone
+Group with leader: Link with id: 50243 has become failure prone
+Group with leader: Link with id: 44402 has become failure prone
+Group with leader: Link with id: 15370 has become failure prone
+Switch with id: [1,12,1] has become failure prone
+Switch with id: [1,8,7] has become failure prone
+Group with leader: Link with id: 41649 has become failure prone
+Group with leader: Link with id: 14564 has become failure prone
+Switch with id: [0,-1,271] has become failure prone
+Group with leader: Link with id: 53646 has become failure prone
+Switch with id: [1,5,2] has become failure prone
+Switch with id: [2,39,0] has become failure prone
+Group with leader: Link with id: 50015 has become failure prone
+Group with leader: Link with id: 44736 has become failure prone
+Group with leader: Link with id: 36105 has become failure prone
+Group with leader: Link with id: 38265 has become failure prone
+Group with leader: Link with id: 54580 has become failure prone
+Group with leader: Link with id: 48366 has become failure prone
+Group with leader: Link with id: 44024 has become failure prone
+Group with leader: Link with id: 19665 has become failure prone
+Group with leader: Link with id: 30211 has become failure prone
+Group with leader: Link with id: 17009 has become failure prone
+Group with leader: Link with id: 45139 has become failure prone
+Group with leader: Link with id: 48259 has become failure prone
+Group with leader: Link with id: 9287 has become failure prone
+Group with leader: Link with id: 7251 has become failure prone
+Group with leader: Link with id: 38701 has become failure prone
+Group with leader: Link with id: 45932 has become failure prone
+Group with leader: Link with id: 49339 has become failure prone
+Group with leader: Link with id: 20164 has become failure prone
+Group with leader: Link with id: 49610 has become failure prone
+Group with leader: Link with id: 45180 has become failure prone
+Group with leader: Link with id: 43753 has become failure prone
+Group with leader: Link with id: 43121 has become failure prone
+Group with leader: Link with id: 36334 has become failure prone
+Group with leader: Link with id: 49405 has become failure prone
+Group with leader: Link with id: 47616 has become failure prone
+Group with leader: Link with id: 36059 has become failure prone
+Group with leader: Link with id: 44610 has become failure prone
+Switch with id: [1,36,3] has become failure prone
+Group with leader: Link with id: 11753 has become failure prone
+Group with leader: Link with id: 16542 has become failure prone
+Group with leader: Link with id: 27535 has become failure prone
+Group with leader: Link with id: 28640 has become failure prone
+Group with leader: Link with id: 55002 has become failure prone
+Switch with id: [1,27,4] has become failure prone
+Group with leader: Link with id: 45100 has become failure prone
+Group with leader: Link with id: 20092 has become failure prone
+Group with leader: Link with id: 48838 has become failure prone
+Group with leader: Link with id: 37148 has become failure prone
+Group with leader: Link with id: 32085 has become failure prone
+Group with leader: Link with id: 37521 has become failure prone
+Group with leader: Link with id: 55737 has become failure prone
+Group with leader: Link with id: 6216 has become failure prone
+Group with leader: Link with id: 48565 has become failure prone
+Group with leader: Link with id: 45306 has become failure prone
+Group with leader: Link with id: 54464 has become failure prone
+Group with leader: Link with id: 23444 has become failure prone
+Group with leader: Link with id: 55263 has become failure prone
+Group with leader: Link with id: 24455 has become failure prone
+Group with leader: Link with id: 55147 has become failure prone
+Group with leader: Link with id: 45003 has become failure prone
+Group with leader: Link with id: 36073 has become failure prone
+Group with leader: Link with id: 40896 has become failure prone
+Group with leader: Link with id: 46259 has become failure prone
+Group with leader: Link with id: 54743 has become failure prone
+Group with leader: Link with id: 26297 has become failure prone
+Switch with id: [2,24,4] has become failure prone
+Group with leader: Link with id: 31671 has become failure prone
+Group with leader: Link with id: 4545 has become failure prone
+Group with leader: Link with id: 43547 has become failure prone
+Group with leader: Link with id: 43164 has become failure prone
+Group with leader: Link with id: 6272 has become failure prone
+Group with leader: Link with id: 3759 has become failure prone
+Group with leader: Link with id: 5440 has become failure prone
+Group with leader: Link with id: 18748 has become failure prone
+Switch with id: [1,3,4] has become failure prone
+Group with leader: Link with id: 10758 has become failure prone
+Group with leader: Link with id: 42011 has become failure prone
+Group with leader: Link with id: 11408 has become failure prone
+Group with leader: Link with id: 36170 has become failure prone
+Group with leader: Link with id: 18375 has become failure prone
+Group with leader: Link with id: 6757 has become failure prone
+Group with leader: Link with id: 21746 has become failure prone
+Group with leader: Link with id: 16217 has become failure prone
+Group with leader: Link with id: 34511 has become failure prone
+Group with leader: Link with id: 17377 has become failure prone
+Group with leader: Link with id: 1014 has become failure prone
+Group with leader: Link with id: 51312 has become failure prone
+Group with leader: Link with id: 52000 has become failure prone
+Group with leader: Link with id: 40620 has become failure prone
+Switch with id: [1,17,3] has become failure prone
+Group with leader: Link with id: 49861 has become failure prone
+Group with leader: Link with id: 31061 has become failure prone
+Group with leader: Link with id: 10041 has become failure prone
+Group with leader: Link with id: 45326 has become failure prone
+Group with leader: Link with id: 3655 has become failure prone
+Group with leader: Link with id: 17721 has become failure prone
+Group with leader: Link with id: 51285 has become failure prone
+Group with leader: Link with id: 8328 has become failure prone
+Group with leader: Link with id: 22206 has become failure prone
+Group with leader: Link with id: 39373 has become failure prone
+Group with leader: Link with id: 36492 has become failure prone
+Group with leader: Link with id: 47531 has become failure prone
+Group with leader: Link with id: 3065 has become failure prone
+Group with leader: Link with id: 41261 has become failure prone
+Group with leader: Link with id: 3083 has become failure prone
+Group with leader: Link with id: 19708 has become failure prone
+Group with leader: Link with id: 22263 has become failure prone
+Group with leader: Link with id: 8211 has become failure prone
+Group with leader: Link with id: 4102 has become failure prone
+Group with leader: Link with id: 1266 has become failure prone
+Group with leader: Link with id: 51598 has become failure prone
+Switch with id: [2,12,3] has become failure prone
+Group with leader: Link with id: 38420 has become failure prone
+Group with leader: Link with id: 20089 has become failure prone
+Group with leader: Link with id: 346 has become failure prone
+Group with leader: Link with id: 30475 has become failure prone
+Group with leader: Link with id: 30757 has become failure prone
+Group with leader: Link with id: 48320 has become failure prone
+Group with leader: Link with id: 18437 has become failure prone
+Group with leader: Link with id: 21083 has become failure prone
+Switch with id: [0,-1,83] has become failure prone
+Group with leader: Link with id: 23290 has become failure prone
+Group with leader: Link with id: 11611 has become failure prone
+Switch with id: [2,2,9] has become failure prone
+Group with leader: Link with id: 8581 has become failure prone
+Group with leader: Link with id: 54457 has become failure prone
+Group with leader: Link with id: 46016 has become failure prone
+Group with leader: Link with id: 32548 has become failure prone
+Group with leader: Link with id: 4203 has become failure prone
+Switch with id: [1,6,8] has become failure prone
+Switch with id: [2,24,6] has become failure prone
+Switch with id: [1,21,8] has become failure prone
+Switch with id: [0,-1,164] has become failure prone
+Switch with id: [2,2,0] has become failure prone
+Switch with id: [2,12,0] has become failure prone
+Switch with id: [2,23,3] has become failure prone
+Group with leader: Link with id: 29061 has become failure prone
+Group with leader: Link with id: 44639 has become failure prone
+Group with leader: Link with id: 27355 has become failure prone
+Group with leader: Link with id: 7200 has become failure prone
+Group with leader: Link with id: 26778 has become failure prone
+Group with leader: Link with id: 44417 has become failure prone
+Group with leader: Link with id: 7535 has become failure prone
+Group with leader: Link with id: 52430 has become failure prone
+Group with leader: Link with id: 27497 has become failure prone
+Group with leader: Link with id: 615 has become failure prone
+Group with leader: Link with id: 28188 has become failure prone
+Group with leader: Link with id: 48961 has become failure prone
+Group with leader: Link with id: 25060 has become failure prone
+Group with leader: Link with id: 7320 has become failure prone
+Group with leader: Link with id: 46804 has become failure prone
+Group with leader: Link with id: 23305 has become failure prone
+Group with leader: Link with id: 52162 has become failure prone
+Group with leader: Link with id: 42956 has become failure prone
+Switch with id: [2,36,2] has become failure prone
+Group with leader: Link with id: 17340 has become failure prone
+Group with leader: Link with id: 22489 has become failure prone
+Group with leader: Link with id: 29637 has become failure prone
+Group with leader: Link with id: 53616 has become failure prone
+Group with leader: Link with id: 33190 has become failure prone
+Group with leader: Link with id: 27587 has become failure prone
+Group with leader: Link with id: 39463 has become failure prone
+Group with leader: Link with id: 33019 has become failure prone
+Group with leader: Link with id: 53963 has become failure prone
+Switch with id: [2,39,9] has become failure prone
+Switch with id: [1,1,1] has become failure prone
+Group with leader: Link with id: 40598 has become failure prone
+Group with leader: Link with id: 13058 has become failure prone
+Group with leader: Link with id: 45054 has become failure prone
+Group with leader: Link with id: 22684 has become failure prone
+Group with leader: Link with id: 25725 has become failure prone
+Group with leader: Link with id: 16759 has become failure prone
+Group with leader: Link with id: 54795 has become failure prone
+Group with leader: Link with id: 45501 has become failure prone
+Group with leader: Link with id: 22771 has become failure prone
+Group with leader: Link with id: 53145 has become failure prone
+Group with leader: Link with id: 18187 has become failure prone
+Group with leader: Link with id: 1130 has become failure prone
+Group with leader: Link with id: 53712 has become failure prone
+Group with leader: Link with id: 51878 has become failure prone
+Group with leader: Link with id: 49852 has become failure prone
+Group with leader: Link with id: 7736 has become failure prone
+Group with leader: Link with id: 51129 has become failure prone
+Group with leader: Link with id: 9666 has become failure prone
+Group with leader: Link with id: 23648 has become failure prone
+Group with leader: Link with id: 48084 has become failure prone
+Group with leader: Link with id: 39355 has become failure prone
+Group with leader: Link with id: 51480 has become failure prone
+Switch with id: [2,5,3] has become failure prone
+Group with leader: Link with id: 37188 has become failure prone
+Group with leader: Link with id: 40860 has become failure prone
+Group with leader: Link with id: 20391 has become failure prone
+Group with leader: Link with id: 3170 has become failure prone
+Group with leader: Link with id: 46384 has become failure prone
+Group with leader: Link with id: 52867 has become failure prone
+Group with leader: Link with id: 45544 has become failure prone
+Switch with id: [1,2,1] has become failure prone
+Group with leader: Link with id: 10518 has become failure prone
+Switch with id: [1,16,1] has become failure prone
+Group with leader: Link with id: 44595 has become failure prone
+Group with leader: Link with id: 45268 has become failure prone
+Switch with id: [0,-1,93] has become failure prone
+Group with leader: Link with id: 49144 has become failure prone
+Group with leader: Link with id: 45994 has become failure prone
+Group with leader: Link with id: 53513 has become failure prone
+Group with leader: Link with id: 54566 has become failure prone
+Group with leader: Link with id: 44039 has become failure prone
+Group with leader: Link with id: 13507 has become failure prone
+Group with leader: Link with id: 17170 has become failure prone
+Group with leader: Link with id: 35479 has become failure prone
+Group with leader: Link with id: 41194 has become failure prone
+Group with leader: Link with id: 49229 has become failure prone
+Group with leader: Link with id: 11201 has become failure prone
+Group with leader: Link with id: 54290 has become failure prone
+Switch with id: [1,18,2] has become failure prone
+Switch with id: [1,11,9] has become failure prone
+Group with leader: Link with id: 731 has become failure prone
+Group with leader: Link with id: 50474 has become failure prone
+Group with leader: Link with id: 24523 has become failure prone
+Group with leader: Link with id: 6597 has become failure prone
+Group with leader: Link with id: 44208 has become failure prone
+Group with leader: Link with id: 51947 has become failure prone
+Group with leader: Link with id: 48839 has become failure prone
+Switch with id: [1,20,8] has become failure prone
+Group with leader: Link with id: 17256 has become failure prone
+Group with leader: Link with id: 49949 has become failure prone
+Group with leader: Link with id: 18406 has become failure prone
+Group with leader: Link with id: 49871 has become failure prone
+Group with leader: Link with id: 45081 has become failure prone
+Group with leader: Link with id: 17139 has become failure prone
+Group with leader: Link with id: 8277 has become failure prone
+Group with leader: Link with id: 6058 has become failure prone
+Group with leader: Link with id: 23239 has become failure prone
+Group with leader: Link with id: 43341 has become failure prone
+Group with leader: Link with id: 42567 has become failure prone
+Group with leader: Link with id: 55236 has become failure prone
+Group with leader: Link with id: 55009 has become failure prone
+Group with leader: Link with id: 50736 has become failure prone
+Group with leader: Link with id: 15252 has become failure prone
+Group with leader: Link with id: 1172 has become failure prone
+Switch with id: [1,24,0] has become failure prone
+Group with leader: Link with id: 34699 has become failure prone
+Group with leader: Link with id: 37661 has become failure prone
+Group with leader: Link with id: 30221 has become failure prone
+Group with leader: Link with id: 51385 has become failure prone
+Group with leader: Link with id: 38432 has become failure prone
+Group with leader: Link with id: 35128 has become failure prone
+Group with leader: Link with id: 19303 has become failure prone
+Group with leader: Link with id: 36172 has become failure prone
+Group with leader: Link with id: 52558 has become failure prone
+Group with leader: Link with id: 43101 has become failure prone
+Group with leader: Link with id: 36442 has become failure prone
+Group with leader: Link with id: 13787 has become failure prone
+Group with leader: Link with id: 44163 has become failure prone
+Group with leader: Link with id: 3289 has become failure prone
+Group with leader: Link with id: 36135 has become failure prone
+Group with leader: Link with id: 10549 has become failure prone
+Switch with id: [1,4,5] has become failure prone
+Group with leader: Link with id: 12727 has become failure prone
+Group with leader: Link with id: 46368 has become failure prone
+Switch with id: [2,22,3] has become failure prone
+Switch with id: [2,16,8] has become failure prone
+Switch with id: [1,32,8] has become failure prone
+Group with leader: Link with id: 19370 has become failure prone
+Group with leader: Link with id: 34015 has become failure prone
+Group with leader: Link with id: 18135 has become failure prone
+Group with leader: Link with id: 2508 has become failure prone
+Group with leader: Link with id: 51687 has become failure prone
+Group with leader: Link with id: 21467 has become failure prone
+Group with leader: Link with id: 43035 has become failure prone
+Group with leader: Link with id: 27465 has become failure prone
+Group with leader: Link with id: 39510 has become failure prone
+Group with leader: Link with id: 5583 has become failure prone
+Group with leader: Link with id: 44772 has become failure prone
+Group with leader: Link with id: 11343 has become failure prone
+Group with leader: Link with id: 28456 has become failure prone
+Group with leader: Link with id: 46543 has become failure prone
+Switch with id: [1,23,1] has become failure prone
+Switch with id: [1,36,0] has become failure prone
+Group with leader: Link with id: 44788 has become failure prone
+Group with leader: Link with id: 53980 has become failure prone
+Group with leader: Link with id: 22359 has become failure prone
+Group with leader: Link with id: 16745 has become failure prone
+Group with leader: Link with id: 30709 has become failure prone
+Group with leader: Link with id: 23518 has become failure prone
+Group with leader: Link with id: 21415 has become failure prone
+Group with leader: Link with id: 51877 has become failure prone
+Group with leader: Link with id: 1436 has become failure prone
+Group with leader: Link with id: 7086 has become failure prone
+Group with leader: Link with id: 53731 has become failure prone
+Group with leader: Link with id: 50434 has become failure prone
+Group with leader: Link with id: 43508 has become failure prone
+Switch with id: [1,13,8] has become failure prone
+Group with leader: Link with id: 34306 has become failure prone
+Switch with id: [2,26,9] has become failure prone
+Group with leader: Link with id: 26541 has become failure prone
+Group with leader: Link with id: 8649 has become failure prone
+Switch with id: [1,1,5] has become failure prone
+Group with leader: Link with id: 37476 has become failure prone
+Switch with id: [1,28,1] has become failure prone
+Group with leader: Link with id: 29106 has become failure prone
+Group with leader: Link with id: 6437 has become failure prone
+Group with leader: Link with id: 24077 has become failure prone
+Group with leader: Link with id: 49331 has become failure prone
+Group with leader: Link with id: 39207 has become failure prone
+Group with leader: Link with id: 24370 has become failure prone
+Switch with id: [1,23,7] has become failure prone
+Switch with id: [1,8,5] has become failure prone
+Switch with id: [2,16,5] has become failure prone
+Switch with id: [1,24,3] has become failure prone
+Switch with id: [1,17,9] has become failure prone
+Group with leader: Link with id: 55354 has become failure prone
+Group with leader: Link with id: 12348 has become failure prone
+Group with leader: Link with id: 27152 has become failure prone
+Group with leader: Link with id: 46684 has become failure prone
+Switch with id: [1,38,9] has become failure prone
+Switch with id: [2,15,7] has become failure prone
+Group with leader: Link with id: 46779 has become failure prone
+Group with leader: Link with id: 51924 has become failure prone
+Group with leader: Link with id: 40828 has become failure prone
+Group with leader: Link with id: 413 has become failure prone
+Group with leader: Link with id: 55954 has become failure prone
+Group with leader: Link with id: 44752 has become failure prone
+Group with leader: Link with id: 55990 has become failure prone
+Group with leader: Link with id: 17366 has become failure prone
+Group with leader: Link with id: 41976 has become failure prone
+Group with leader: Link with id: 16027 has become failure prone
+Group with leader: Link with id: 41640 has become failure prone
+Group with leader: Link with id: 45148 has become failure prone
+Group with leader: Link with id: 4244 has become failure prone
+Group with leader: Link with id: 13147 has become failure prone
+Group with leader: Link with id: 34790 has become failure prone
+Group with leader: Link with id: 46964 has become failure prone
+Group with leader: Link with id: 42233 has become failure prone
+Group with leader: Link with id: 16352 has become failure prone
+Group with leader: Link with id: 4604 has become failure prone
+Group with leader: Link with id: 45959 has become failure prone
+Group with leader: Link with id: 52075 has become failure prone
+Group with leader: Link with id: 40054 has become failure prone
+Group with leader: Link with id: 7603 has become failure prone
+Group with leader: Link with id: 27079 has become failure prone
+Group with leader: Link with id: 30563 has become failure prone
+Group with leader: Link with id: 12100 has become failure prone
+Group with leader: Link with id: 38258 has become failure prone
+Group with leader: Link with id: 40070 has become failure prone
+Group with leader: Link with id: 46815 has become failure prone
+Group with leader: Link with id: 18666 has become failure prone
+Group with leader: Link with id: 33657 has become failure prone
+Group with leader: Link with id: 54774 has become failure prone
+Group with leader: Link with id: 52387 has become failure prone
+Group with leader: Link with id: 49087 has become failure prone
+Group with leader: Link with id: 54620 has become failure prone
+Group with leader: Link with id: 37736 has become failure prone
+Group with leader: Link with id: 25648 has become failure prone
+Group with leader: Link with id: 26107 has become failure prone
+Group with leader: Link with id: 631 has become failure prone
+Group with leader: Link with id: 33726 has become failure prone
+Group with leader: Link with id: 25471 has become failure prone
+Group with leader: Link with id: 48635 has become failure prone
+Group with leader: Link with id: 55181 has become failure prone
+Switch with id: [1,29,3] has become failure prone
+Switch with id: [1,12,1] has become failure prone
+Switch with id: [1,8,7] has become failure prone
+Group with leader: Link with id: 5094 has become failure prone
+Group with leader: Link with id: 14701 has become failure prone
+Group with leader: Link with id: 41754 has become failure prone
+Switch with id: [0,-1,271] has become failure prone
+Group with leader: Link with id: 20186 has become failure prone
+Group with leader: Link with id: 41510 has become failure prone
+Switch with id: [1,5,2] has become failure prone
+Group with leader: Link with id: 15309 has become failure prone
+Switch with id: [2,39,0] has become failure prone

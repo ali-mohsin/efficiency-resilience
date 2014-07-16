@@ -29,6 +29,7 @@ public:
 		}
 	}
 	string toString();
+	Switch* getTor(Link*);
 	Switch* getTor();
 	int getPodID();
 	int getDeviceID();

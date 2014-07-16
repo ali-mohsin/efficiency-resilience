@@ -183,6 +183,7 @@ Pod* Topology::createMusaPod(int podId)
 		for(int j=0;j<hosts.size();j++)
 		{
 			Link* l=new Link(netDeviceID++,torCap,"Tor");
+			allLinks.push_back(l);
 			assert(hosts[j]!=NULL);
 			hosts[j]->connectToSwitch(otherSwitch,l);
 		}
@@ -263,7 +264,7 @@ void Topology::createMusaTree()
 		{
 
 			Switch* tobeConnected = allPods[j]->aggrs[switchNum%k];
-			cout<<"testing for "<<tobeConnected->toString()<<" s num: "<<switchNum%k<<endl;
+			// cout<<"testing for "<<tobeConnected->toString()<<" s num: "<<switchNum%k<<endl;
 			Link* l=new Link(netDeviceID++,coreCap,"Core");
 			allLinks.push_back(l);
 			coreSwitches[i]->connectToSwitch(tobeConnected,l);
