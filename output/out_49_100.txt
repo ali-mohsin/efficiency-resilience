@@ -3,93 +3,105 @@ VM = 49, BW = 100
 
 1 ================================
 Without Replication
-Tenants: 1216
-Within Racks: 940
-Within Pods: 271
-Inter Pod: 5
-TotalDemand: 6530779
-VMs left: 62
-downTime: 1.15022e+08 flows: 1216
-Availability: 99.6847
+Tenants: 1174
+Within Racks: 912
+Within Pods: 258
+Inter Pod: 4
+TotalDemand: 6461848
+VMs left: 49
+downTime: 7.46459e+07 flows: 1174
+Availability: 99.7881
 
 With 1:1 Replication
-Tenants: 387
-Within Racks: 898
-Within Pods: 262
-Inter Pod: 3
-TotalDemand: 2234195
-VMs left: 577
-downTime: 500 flows: 387
-Availability: 100
+Tenants: 1267
+Within Racks: 1022
+Within Pods: 238
+Inter Pod: 7
+TotalDemand: 5283028
+VMs left: 3
+downTime: 7.31897e+07 flows: 1267
+Availability: 99.8074
 
 2 ================================
 Without Replication
-Tenants: 1211
-Within Racks: 941
-Within Pods: 268
-Inter Pod: 2
-TotalDemand: 6372565
-VMs left: 67
-downTime: 1.29925e+08 flows: 1211
-Availability: 99.6424
+Tenants: 1173
+Within Racks: 886
+Within Pods: 283
+Inter Pod: 4
+TotalDemand: 6422393
+VMs left: 16
+downTime: 1.12299e+08 flows: 1173
+Availability: 99.6809
 
 With 1:1 Replication
-Tenants: 376
-Within Racks: 852
-Within Pods: 284
-Inter Pod: 3
-TotalDemand: 2191080
-VMs left: 91
-downTime: 900 flows: 376
-Availability: 100
+Tenants: 1254
+Within Racks: 984
+Within Pods: 265
+Inter Pod: 5
+TotalDemand: 5492453
+VMs left: 19
+downTime: 8.22185e+07 flows: 1254
+Availability: 99.7815
 
 3 ================================
 Without Replication
-Tenants: 1222
-Within Racks: 922
-Within Pods: 296
-Inter Pod: 4
-TotalDemand: 6636793
-VMs left: 55
-downTime: 8.30627e+07 flows: 1222
-Availability: 99.7734
+Tenants: 1201
+Within Racks: 923
+Within Pods: 272
+Inter Pod: 6
+TotalDemand: 6562994
+VMs left: 8
+downTime: 1.7672e+08 flows: 1201
+Availability: 99.5095
 
 With 1:1 Replication
-Tenants: 410
-Within Racks: 933
-Within Pods: 293
-Inter Pod: 6
-TotalDemand: 2167067
-VMs left: 18
-downTime: 900 flows: 410
-Availability: 100
+Tenants: 1260
+Within Racks: 998
+Within Pods: 255
+Inter Pod: 7
+TotalDemand: 5259219
+VMs left: 31
+downTime: 6.42239e+07 flows: 1260
+Availability: 99.8301
 
 4 ================================
 Without Replication
-Tenants: 1176
-Within Racks: 889
-Within Pods: 283
-Inter Pod: 4
-TotalDemand: 6715683
-VMs left: 72
-downTime: 8.85023e+07 flows: 1176
-Availability: 99.7491
+Tenants: 1196
+Within Racks: 911
+Within Pods: 279
+Inter Pod: 6
+TotalDemand: 6494349
+VMs left: 61
+downTime: 6.9832e+07 flows: 1196
+Availability: 99.8054
 
 With 1:1 Replication
-Tenants: 386
-Within Racks: 860
-Within Pods: 295
-Inter Pod: 3
-TotalDemand: 2141752
-VMs left: 4
-downTime: 2000 flows: 386
-Availability: 100
+Tenants: 1279
+Within Racks: 1022
+Within Pods: 250
+Inter Pod: 7
+TotalDemand: 5176488
+VMs left: 18
+downTime: 7.57693e+07 flows: 1279
+Availability: 99.8025
 
 5 ================================
 Without Replication
-Tenants: 1174
-Within Racks: 895
-Within Pods: 276
-Inter Pod: 3
-TotalDemand: 6300930
-VMs left: 3
+Tenants: 1200
+Within Racks: 932
+Within Pods: 264
+Inter Pod: 4
+TotalDemand: 6510733
+VMs left: 24
+downTime: 1.30853e+08 flows: 1200
+Availability: 99.6365
+
+With 1:1 Replication
+Tenants: 1264
+Within Racks: 1016
+Within Pods: 242
+Inter Pod: 6
+TotalDemand: 5468795
+VMs left: 31
+downTime: 6.72642e+07 flows: 1264
+Availability: 99.8226

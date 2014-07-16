@@ -42,7 +42,7 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	totalAccepted = 0;
 	ofstream fout;
 	fout.open("new_script.ns");
-	fout<<"#define FatTree -k 40 -reduncancy e2e -sharing no -oct yes -repeatForAll  -algo default -torLinks 1G -aggrLinks 1G -coreLinks 1G -failures enable -runFor 30000000 -seed "<<seedV<<"\n";
+	fout<<"#define FatTree -k 40 -reduncancy t2t -sharing no -oct yes -repeatForAll  -algo default -torLinks 1G -aggrLinks 1G -coreLinks 1G -failures enable -runFor 30000000 -seed "<<seedV<<"\n";
 	fout.close();
 
 	backUp=back;
