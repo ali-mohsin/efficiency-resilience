@@ -51,7 +51,7 @@ Controller::Controller(int kay,int tor,int aggr,int core,int back,int share, int
 	totalAccepted = 0;
 	ofstream fout;
 	fout.open("new_script.ns");
-	fout<<"#define FatTree -k 40 -reduncancy e2e -sharing no -oct yes -repeatForAll  -algo default -torLinks 1G -aggrLinks 1G -coreLinks 1G -failures enable -runFor 30000000 -seed "<<seedV<<"\n";
+	fout<<"#define FatTree -k 40 -reduncancy t2t -sharing no -oct yes -repeatForAll  -algo default -torLinks 1G -aggrLinks 1G -coreLinks 1G -failures enable -runFor 30000000 -seed "<<seedV<<"\n";
 	fout.close();
 
 	backUp=back;
@@ -929,7 +929,7 @@ void Controller::revert_to_primary()
 				{
 					tf->backup->destroy();
 					tf->backup=NULL;
-					// cout<<on_back[i]<<" moving back to primary"<<endl;
+					cout<<on_back[i]<<" moving back to primary"<<endl;
 				}
 				on_back.erase(on_back.begin()+i);
 				i--;
@@ -1045,8 +1045,8 @@ void Controller::detect_downTime(int factor)
 	if(oct && pool_to_pool)
 	{
 
-		// if(on_back.size()>0)
-		// 	cout<<"Flows on back: "<<on_back.size()<<endl;
+		if(on_back.size()>0)
+			cout<<"Flows on back: "<<on_back.size()<<endl;
 
 
 		for(int i=0;i<on_back.size();i++)
@@ -1054,11 +1054,11 @@ void Controller::detect_downTime(int factor)
 			TenantFlow* tf=on_back[i];
 			if(tf->isDown())
 			{
-				// cout<<"primary pod: "<<tf->root->getPodID()<<endl;
-				// if(tf->backup)
-				// 	cout<<"backup pod: "<<tf->backup->root->getPodID()<<endl;
-				// else
-				// 	cout<<"NULL backup"<<endl;
+				cout<<"primary pod: "<<tf->root->getPodID()<<endl;
+				if(tf->backup)
+					cout<<"backup pod: "<<tf->backup->root->getPodID()<<endl;
+				else
+					cout<<"NULL backup"<<endl;
 
 				downTime+=factor;
 				// cout<<" I on back and now down also "<<tf<<endl;
@@ -1078,12 +1078,12 @@ void Controller::detect_downTime(int factor)
 				}
 				else
 				{
-					// cout<<tenant_flows[i] << " could NOT find its back up"<<endl;
+					cout<<tenant_flows[i] << " could NOT find its back up"<<endl;
 					downTime+=factor;
 				}
 				// get backup tenant here
 				on_back.push_back(tenant_flows[i]);
-				// cout<<tenant_flows[i]<<" shifting to its backup"<<endl;
+				cout<<tenant_flows[i]<<" shifting to its backup"<<endl;
 				// push it into on_back here
 				// downTime+=factor;
 				// tenant_flows[i]->downTime+=factor;
